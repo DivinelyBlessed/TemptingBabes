@@ -331,14 +331,14 @@ nav {
 
 .carousel-wrap {
   width: 100%;
-  max-width: 980px;
+  max-width: 1120px;
   overflow: hidden;
   padding: 10px 0;
 }
 
 .carousel-stage {
   position: relative;
-  height: 400px;
+  height: 460px;
   width: 100%;
 }
 
@@ -367,9 +367,9 @@ nav {
 
 /* Entering from off-screen left */
 .pos-enter-left {
-  left: -30%;
-  width: 27%;
-  height: 76%;
+  left: -28%;
+  width: 25%;
+  height: 80%;
   transform: translateY(-50%) scale(0.86);
   opacity: 0;
   z-index: 0;
@@ -379,20 +379,20 @@ nav {
 /* Left visible slot */
 .pos-left {
   left: 0;
-  width: 27%;
-  height: 76%;
-  transform: translateY(-50%) scale(0.93);
-  opacity: 0.72;
+  width: 25%;
+  height: 80%;
+  transform: translateY(-50%) scale(0.95);
+  opacity: 0.78;
   z-index: 1;
-  filter: brightness(0.62);
+  filter: brightness(0.65);
   border: 1px solid rgba(255,255,255,0.08);
-  box-shadow: 0 12px 40px rgba(0,0,0,0.55);
+  box-shadow: 0 12px 48px rgba(0,0,0,0.6);
 }
 
 /* Center featured slot */
 .pos-center {
-  left: 30%;
-  width: 40%;
+  left: 27%;
+  width: 46%;
   height: 100%;
   transform: translateY(-50%) scale(1);
   opacity: 1;
@@ -404,22 +404,22 @@ nav {
 
 /* Right visible slot */
 .pos-right {
-  left: 73%;
-  width: 27%;
-  height: 76%;
-  transform: translateY(-50%) scale(0.93);
-  opacity: 0.72;
+  left: 75%;
+  width: 25%;
+  height: 80%;
+  transform: translateY(-50%) scale(0.95);
+  opacity: 0.78;
   z-index: 1;
-  filter: brightness(0.62);
+  filter: brightness(0.65);
   border: 1px solid rgba(255,255,255,0.08);
-  box-shadow: 0 12px 40px rgba(0,0,0,0.55);
+  box-shadow: 0 12px 48px rgba(0,0,0,0.6);
 }
 
 /* Exiting off-screen right */
 .pos-exit-right {
   left: 102%;
-  width: 27%;
-  height: 76%;
+  width: 25%;
+  height: 80%;
   transform: translateY(-50%) scale(0.86);
   opacity: 0;
   z-index: 0;
@@ -487,7 +487,7 @@ nav {
 /* Progress bar */
 .carousel-progress {
   width: 100%;
-  max-width: 980px;
+  max-width: 1120px;
   height: 3px;
   background: rgba(255,255,255,0.09);
   border-radius: 2px;
@@ -549,7 +549,7 @@ nav {
   .main-layout { flex-direction: column; padding: 0; gap: 0; }
   .carousel-section { padding: 16px; gap: 12px; width: 100%; }
 
-  .carousel-stage { height: 280px; }
+  .carousel-stage { height: 300px; }
 
   .pos-left, .pos-right, .pos-enter-left, .pos-exit-right { display: none; }
   .pos-center { left: 0; width: 100%; }
