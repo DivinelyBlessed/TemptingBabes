@@ -1,76 +1,89 @@
 const VIDEOS = [
-  'Asset/Videos/1.mp4',
-  'Asset/Videos/2.mp4',
-  'Asset/Videos/3.mp4',
-  'Asset/Videos/4.mp4',
-  'Asset/Videos/5.mp4',
-  'Asset/Videos/6.mp4'
+  'R8lQN39RKk8',
+  'dtwlxmwCWGs',
+  'YoR_ui5RBho',
+  'kYMZpVg9lCA',
+  'uyq-pcxnbWo',
+  'k2pfh_XeoT8'
 ];
 
-const INTERVAL  = 4500;  // ms between advances
-const TRANS_MS  = 720;   // must match CSS transition duration
+const INTERVAL = 4500;
+const TRANS_MS = 720;
 
-let centerIdx  = 1;
-let slots      = [];     // [leftEl, centerEl, rightEl]
-let advTimer   = null;
+let centerIdx   = 1;
+let slots       = [];
+let advTimer    = null;
 let isAnimating = false;
 
 function vi(offset) {
   return (centerIdx + offset + VIDEOS.length) % VIDEOS.length;
 }
 
-function makeSlot(src, posClass, vip, playIcon) {
+function makeEmbed(videoId) {
+  const iframe = document.createElement('iframe');
+  iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&loop=1&playlist=${videoId}&controls=0&rel=0&playsinline=1&modestbranding=1`;
+  iframe.setAttribute('allow', 'autoplay; encrypted-media');
+  iframe.setAttribute('frameborder', '0');
+  return iframe;
+}
+
+function makeThumb(videoId) {
+  const img = document.createElement('img');
+  img.src = `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`;
+  img.alt = '';
+  return img;
+}
+
+function vipOverlay() {
+  const ov = document.createElement('div');
+  ov.className = 'slot-vip';
+  ov.innerHTML =
+    '<div class="slot-vip-title"><span>💎</span> VIP Membership</div>' +
+    '<div class="slot-vip-sub">Unlock everything now</div>' +
+    '<button class="slot-vip-btn">Join VIP</button>';
+  return ov;
+}
+
+function makeSlot(videoId, posClass, isCenter) {
   const wrap = document.createElement('div');
   wrap.className = 'vid-slot ' + posClass;
+  wrap.dataset.videoId = videoId;
 
-  const vid = document.createElement('video');
-  vid.src = src;
-  vid.muted = true;
-  vid.loop  = true;
-  vid.playsInline = true;
-  vid.preload = 'metadata';
-  vid.disablePictureInPicture = true;
-  vid.setAttribute('controlsList', 'nodownload nofullscreen noremoteplayback');
-  vid.addEventListener('dblclick', e => e.preventDefault());
-  vid.addEventListener('contextmenu', e => e.preventDefault());
-  wrap.appendChild(vid);
-
-  if (vip) {
-    const ov = document.createElement('div');
-    ov.className = 'slot-vip';
-    ov.innerHTML =
-      '<div class="slot-vip-title"><span>💎</span> VIP Membership</div>' +
-      '<div class="slot-vip-sub">Unlock everything now</div>' +
-      '<button class="slot-vip-btn">Join VIP</button>';
-    wrap.appendChild(ov);
+  if (isCenter) {
+    wrap.appendChild(makeEmbed(videoId));
+  } else {
+    wrap.appendChild(makeThumb(videoId));
+    wrap.appendChild(vipOverlay());
   }
-
-  if (playIcon) {
-    const pb = document.createElement('div');
-    pb.className = 'slot-play-btn';
-    pb.innerHTML = '<svg width="24" height="24" viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg>';
-    wrap.appendChild(pb);
-  }
-
   return wrap;
+}
+
+function setContent(slot, isCenter) {
+  const videoId = slot.dataset.videoId;
+  slot.querySelectorAll('img, iframe').forEach(el => el.remove());
+
+  if (isCenter) {
+    slot.prepend(makeEmbed(videoId));
+    const vip = slot.querySelector('.slot-vip');
+    if (vip) vip.remove();
+  } else {
+    slot.prepend(makeThumb(videoId));
+    if (!slot.querySelector('.slot-vip')) slot.appendChild(vipOverlay());
+  }
 }
 
 function initCarousel() {
   const stage = document.getElementById('carouselStage');
   stage.innerHTML = '';
 
-  const left   = makeSlot(VIDEOS[vi(-1)], 'pos-left',   true,  false);
-  const center = makeSlot(VIDEOS[vi(0)],  'pos-center',  false, true);
-  const right  = makeSlot(VIDEOS[vi(1)],  'pos-right',   true,  false);
+  const left   = makeSlot(VIDEOS[vi(-1)], 'pos-left',   false);
+  const center = makeSlot(VIDEOS[vi(0)],  'pos-center',  true);
+  const right  = makeSlot(VIDEOS[vi(1)],  'pos-right',   false);
 
   stage.appendChild(left);
   stage.appendChild(center);
   stage.appendChild(right);
-
   slots = [left, center, right];
-  center.querySelector('video').play();
-
-  startProgress();
   scheduleNext();
 }
 
@@ -78,39 +91,21 @@ function advance() {
   if (isAnimating) return;
   isAnimating = true;
   clearTimeout(advTimer);
-  stopProgress();
 
   const stage = document.getElementById('carouselStage');
   const [leftEl, centerEl, rightEl] = slots;
 
-  // New video enters from the left (the one "behind" current left)
-  const incoming = makeSlot(VIDEOS[vi(-2)], 'pos-enter-left', true, false);
+  const incoming = makeSlot(VIDEOS[vi(-2)], 'pos-enter-left', false);
   stage.appendChild(incoming);
-
-  // Force reflow so the enter-left position is painted before transitioning
   incoming.getBoundingClientRect();
 
-  // Pause old center; new center will be the old left
-  centerEl.querySelector('video').pause();
-
-  // Kick off all transitions in next frame
   requestAnimationFrame(() => {
     incoming.className = 'vid-slot pos-left';
     leftEl.className   = 'vid-slot pos-center';
     centerEl.className = 'vid-slot pos-right';
     rightEl.className  = 'vid-slot pos-exit-right';
-
-    // Add play icon to new center, remove from old
-    if (!leftEl.querySelector('.slot-play-btn')) {
-      const pb = document.createElement('div');
-      pb.className = 'slot-play-btn';
-      pb.innerHTML = '<svg width="24" height="24" viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg>';
-      leftEl.appendChild(pb);
-    }
-    const oldPb = centerEl.querySelector('.slot-play-btn');
-    if (oldPb) oldPb.remove();
-
-    leftEl.querySelector('video').play();
+    setContent(leftEl, true);
+    setContent(centerEl, false);
   });
 
   setTimeout(() => {
@@ -118,7 +113,6 @@ function advance() {
     slots      = [incoming, leftEl, centerEl];
     centerIdx  = vi(-1);
     isAnimating = false;
-    startProgress();
     scheduleNext();
   }, TRANS_MS + 60);
 }
@@ -127,35 +121,21 @@ function reverse() {
   if (isAnimating) return;
   isAnimating = true;
   clearTimeout(advTimer);
-  stopProgress();
 
   const stage = document.getElementById('carouselStage');
   const [leftEl, centerEl, rightEl] = slots;
 
-  // New video enters from off-screen right
-  const incoming = makeSlot(VIDEOS[vi(2)], 'pos-exit-right', true, false);
+  const incoming = makeSlot(VIDEOS[vi(2)], 'pos-exit-right', false);
   stage.appendChild(incoming);
-
   incoming.getBoundingClientRect();
 
-  centerEl.querySelector('video').pause();
-
   requestAnimationFrame(() => {
-    incoming.className  = 'vid-slot pos-right';
-    rightEl.className   = 'vid-slot pos-center';
-    centerEl.className  = 'vid-slot pos-left';
-    leftEl.className    = 'vid-slot pos-enter-left'; // exits off-screen left
-
-    if (!rightEl.querySelector('.slot-play-btn')) {
-      const pb = document.createElement('div');
-      pb.className = 'slot-play-btn';
-      pb.innerHTML = '<svg width="24" height="24" viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg>';
-      rightEl.appendChild(pb);
-    }
-    const oldPb = centerEl.querySelector('.slot-play-btn');
-    if (oldPb) oldPb.remove();
-
-    rightEl.querySelector('video').play();
+    incoming.className = 'vid-slot pos-right';
+    rightEl.className  = 'vid-slot pos-center';
+    centerEl.className = 'vid-slot pos-left';
+    leftEl.className   = 'vid-slot pos-enter-left';
+    setContent(rightEl, true);
+    setContent(centerEl, false);
   });
 
   setTimeout(() => {
@@ -163,7 +143,6 @@ function reverse() {
     slots     = [centerEl, rightEl, incoming];
     centerIdx = vi(1);
     isAnimating = false;
-    startProgress();
     scheduleNext();
   }, TRANS_MS + 60);
 }
@@ -171,24 +150,6 @@ function reverse() {
 function scheduleNext() {
   clearTimeout(advTimer);
   advTimer = setTimeout(advance, INTERVAL);
-}
-
-function stopProgress() {
-  const bar = document.getElementById('progressBar');
-  if (!bar) return;
-  bar.style.transition = 'none';
-  bar.style.width = '0%';
-}
-
-function startProgress() {
-  const bar = document.getElementById('progressBar');
-  if (!bar) return;
-  bar.style.transition = 'none';
-  bar.style.width = '0%';
-  requestAnimationFrame(() => requestAnimationFrame(() => {
-    bar.style.transition = 'width ' + INTERVAL + 'ms linear';
-    bar.style.width = '100%';
-  }));
 }
 
 document.addEventListener('DOMContentLoaded', () => {

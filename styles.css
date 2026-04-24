@@ -374,6 +374,26 @@ nav {
   user-select: none;
 }
 
+.vid-slot img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  pointer-events: none;
+  user-select: none;
+}
+
+.vid-slot iframe {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 178%;
+  transform: translate(-50%, -50%);
+  border: none;
+  pointer-events: none;
+}
+
 /* Entering from off-screen left */
 .pos-enter-left {
   left: -30%;
