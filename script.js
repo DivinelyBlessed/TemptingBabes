@@ -1,10 +1,8 @@
 const VIDEOS = [
-  'R8lQN39RKk8',
-  'dtwlxmwCWGs',
-  'YoR_ui5RBho',
-  'kYMZpVg9lCA',
-  'uyq-pcxnbWo',
-  'k2pfh_XeoT8'
+  'EOyHy-aV8aQ',
+  'KuDuzKi8mNY',
+  'KwYnD5akv_0',
+  'W_IR7vtzB7w'
 ];
 
 const INTERVAL = 4500;
