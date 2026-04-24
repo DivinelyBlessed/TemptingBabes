@@ -4,7 +4,10 @@
       "Bash(awk '{print $NF}')",
       "Bash(git add *)",
       "Bash(git commit -m ' *)",
-      "Bash(git push *)"
+      "Bash(git push *)",
+      "Bash(git rm *)",
+      "Bash(echo \"Asset/Videos/\")",
+      "Bash(git commit *)"
     ]
   }
 }
