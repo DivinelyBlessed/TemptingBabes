@@ -79,7 +79,7 @@ function advance() {
   const stage = document.getElementById('carouselStage');
   const [leftEl, centerEl, rightEl] = slots;
 
-  // New video enters from the left
+  // New video enters from the left (the one "behind" current left)
   const incoming = makeSlot(VIDEOS[vi(-2)], 'pos-enter-left', true, false);
   stage.appendChild(incoming);
 
