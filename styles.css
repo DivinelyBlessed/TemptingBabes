@@ -371,7 +371,7 @@ nav {
 .pos-enter-left {
   left: -30%;
   width: 27%;
-  height: 88%;
+  height: 93%;
   transform: translateY(-50%) scale(0.86);
   opacity: 0;
   z-index: 0;
@@ -382,7 +382,7 @@ nav {
 .pos-left {
   left: 0;
   width: 27%;
-  height: 88%;
+  height: 93%;
   transform: translateY(-50%) scale(0.93);
   opacity: 0.72;
   z-index: 1;
@@ -408,7 +408,7 @@ nav {
 .pos-right {
   left: 73%;
   width: 27%;
-  height: 88%;
+  height: 93%;
   transform: translateY(-50%) scale(0.93);
   opacity: 0.72;
   z-index: 1;
@@ -421,7 +421,7 @@ nav {
 .pos-exit-right {
   left: 102%;
   width: 27%;
-  height: 88%;
+  height: 93%;
   transform: translateY(-50%) scale(0.86);
   opacity: 0;
   z-index: 0;
