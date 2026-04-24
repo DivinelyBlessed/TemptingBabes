@@ -96,46 +96,12 @@
 
 <!-- CAROUSEL -->
 <section class="carousel-section">
-  <div class="carousel-track">
-
-    <!-- Left Side Card -->
-    <div class="side-card" onclick="shift(-1)">
-      <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&q=80" alt="Side video"/>
-      <div class="vip-badge">
-        <div class="vip-title">
-          <span>💎</span> VIP Membership
-        </div>
-        <div class="vip-sub">Unlock everything now</div>
-        <button class="vip-cta">Join VIP</button>
-      </div>
-    </div>
-
-    <!-- Main Video Box -->
-    <div class="main-video">
-      <div class="play-btn">
-        <svg width="26" height="26" viewBox="0 0 24 24" fill="white">
-          <path d="M8 5v14l11-7z"/>
-        </svg>
-      </div>
-      <div class="main-label">VIDEO CAROUSEL BOX</div>
-    </div>
-
-    <!-- Right Side Card -->
-    <div class="side-card" onclick="shift(1)">
-      <img src="https://images.unsplash.com/photo-1501854140801-50d01698950b?w=400&q=80" alt="Side video"/>
-      <div class="vip-badge">
-        <div class="vip-title">
-          <span>💎</span> VIP Membership
-        </div>
-        <div class="vip-sub">Unlock everything now</div>
-        <button class="vip-cta">Join VIP</button>
-      </div>
-    </div>
-
-
+  <div class="carousel-wrap">
+    <div class="carousel-stage" id="carouselStage"></div>
   </div>
-
-<!-- CTA -->
+  <div class="carousel-progress">
+    <div class="carousel-progress-bar" id="progressBar"></div>
+  </div>
   <div class="cta-wrap">
     <button class="cta-btn">CLICK HERE</button>
   </div>
