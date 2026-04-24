@@ -1,5 +1,7 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+html { overflow-x: hidden; }
+
 :root {
   --bg: #0a0a0a;
   --accent: #ff3d6b;
@@ -611,7 +613,7 @@ nav {
   .scroll-divider { flex-shrink: 0; height: 100px; margin-bottom: 0; }
   .scroll-line { display: none; }
 
-  .carousel-stage { height: 480px; }
+  .carousel-stage { height: 420px; }
 
   .pos-left, .pos-right, .pos-enter-left, .pos-exit-right { display: none; }
   .pos-center { left: 0; width: 100%; }
