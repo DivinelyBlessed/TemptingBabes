@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PL9NPRYWP3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-PL9NPRYWP3');
+</script>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Sophie — Tempting Babes</title>
+<meta name="description" content="Sophie — model profile. San Diego born, inked and seductive. View her full profile."/>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<!-- Open Graph -->
+<meta property="og:type" content="website"/>
+<meta property="og:title" content="Sophie | Tempting Babes"/>
+<meta property="og:description" content="Sophie — model profile. San Diego born, inked and seductive. View her full profile."/>
+<meta property="og:image" content="https://strippersworldwide.com/assets/images/headers/girl-in-red-lingerie.jpg"/>
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Sophie | Tempting Babes"/>
+<meta name="twitter:image" content="https://strippersworldwide.com/assets/images/headers/girl-in-red-lingerie.jpg"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
+:root{
+  --bg:#0a0a0a;
+  --surface:#161616;
+  --surface2:#1c1c1c;
+  --border:rgba(255,255,255,0.07);
+  --accent:#ff3d6b;
+  --accent2:#ff8c00;
+  --text:#f0f0f8;
+  --muted:rgba(240,240,248,0.5);
+  --radius:14px;
+  --green:#22c55e;
+}
+
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg);
+  color:var(--text);
+  font-family:'DM Sans',sans-serif;
+  min-height:100vh;
+  overflow-x:hidden;
+  display:flex;
+  flex-direction:column;
+}
+
+/* Ambient glow orbs */
+body::before,body::after{
+  content:'';position:fixed;border-radius:50%;pointer-events:none;z-index:0;
+}
+body::before{
+  width:500px;height:500px;
+  background:radial-gradient(circle,rgba(255,61,107,0.18) 0%,transparent 70%);
+  top:-120px;left:-120px;filter:blur(80px);
+}
+body::after{
+  width:400px;height:400px;
+  background:radial-gradient(circle,rgba(255,140,0,0.12) 0%,transparent 70%);
+  bottom:-80px;right:-80px;filter:blur(80px);
+}
+
+/* ── NAV ── */
+nav{
+  position:sticky;top:0;z-index:200;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:10px 24px;
+  background:rgba(10,10,10,0.6);
+  backdrop-filter:blur(20px);
+  -webkit-backdrop-filter:blur(20px);
+  border-bottom:1px solid rgba(255,255,255,0.08);
+  box-shadow:0 4px 30px rgba(0,0,0,0.4);
+  gap:16px;
+}
+.logo{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:1.6rem;letter-spacing:2px;
+  background:linear-gradient(90deg,var(--accent2),var(--accent));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  text-decoration:none;
+}
+.tabs{
+  display:flex;gap:4px;
+  background:rgba(255,255,255,0.06);
+  backdrop-filter:blur(10px);
+  -webkit-backdrop-filter:blur(10px);
+  border:1px solid rgba(255,255,255,0.08);
+  border-radius:50px;padding:4px;
+  margin-left:auto;margin-right:auto;
+  transform:translateX(-27px);
+}
+.tab{
+  padding:7px 20px;border-radius:50px;border:none;
+  background:transparent;color:var(--muted);
+  font-family:'DM Sans',sans-serif;font-size:.9rem;font-weight:500;
+  cursor:pointer;transition:all .2s;
+  text-decoration:none;display:inline-block;
+}
+.tab.active{background:linear-gradient(135deg,var(--accent2),var(--accent));color:#fff;}
+.tab:not(.active):hover{color:#fff;background:rgba(255,255,255,0.08);}
+.join-btn{
+  padding:9px 22px;border-radius:50px;
+  background:linear-gradient(135deg,var(--accent),#c0003a);
+  color:#fff;font-family:'DM Sans',sans-serif;font-weight:600;font-size:0.9rem;
+  border:none;cursor:pointer;flex-shrink:0;white-space:nowrap;
+  box-shadow:0 4px 20px rgba(255,61,107,.4);
+  transition:transform .15s,box-shadow .15s;
+}
+.join-btn:hover{transform:scale(1.05);box-shadow:0 6px 28px rgba(255,61,107,.55);}
+
+/* ── TICKER ── */
+.ticker-wrap{
+  position:relative;z-index:1;
+  width:100%;
+  background:rgba(26,6,8,0.6);
+  backdrop-filter:blur(12px);
+  -webkit-backdrop-filter:blur(12px);
+  border-top:1px solid rgba(255,61,107,0.15);
+  border-bottom:1px solid rgba(255,61,107,0.15);
+  overflow:hidden;padding:0;
+  display:flex;align-items:center;
+  height:40px;margin-top:6px;
+}
+.ticker-label{
+  flex-shrink:0;background:#8b0000;color:#fff;
+  font-family:'Bebas Neue',sans-serif;
+  font-size:0.95rem;letter-spacing:2px;
+  padding:0 18px;height:100%;
+  display:flex;align-items:center;gap:6px;
+  white-space:nowrap;border-right:2px solid rgba(255,61,107,0.4);z-index:2;
+}
+.ticker-track{
+  display:flex;gap:60px;width:max-content;
+  animation:ticker-scroll 70s linear infinite;
+}
+.ticker-wrap:hover .ticker-track{animation-play-state:paused;}
+.ticker-item{
+  display:flex;align-items:center;gap:8px;
+  white-space:nowrap;font-size:.88rem;font-weight:500;
+}
+.ticker-dot{color:var(--accent2);font-size:1.1rem;}
+.ticker-name{color:#fff;}
+.ticker-result{color:var(--accent2);font-weight:600;}
+@keyframes ticker-scroll{
+  0%{transform:translateX(0);}100%{transform:translateX(-50%);}
+}
+
+/* ── PROFILE SECTION ── */
+.profile-section{
+  position:relative;z-index:1;
+  padding:16px 20px 60px;
+  flex:1;
+}
+#bubbles-canvas{
+  position:absolute;inset:0;
+  width:100%;height:100%;
+  pointer-events:none;z-index:0;
+}
+.container{max-width:1100px;margin:0 auto;position:relative;z-index:1;}
+
+/* ── BACK LINK ── */
+.back-link{
+  display:inline-flex;align-items:center;gap:8px;
+  color:var(--muted);text-decoration:none;
+  font-size:0.82rem;font-weight:600;letter-spacing:1px;
+  margin-bottom:32px;transition:color .2s;
+}
+.back-link:hover{color:var(--accent);}
+
+/* ── LAYOUT ── */
+.profile-layout{
+  display:grid;
+  grid-template-columns:360px 1fr;
+  gap:32px;align-items:start;
+}
+
+/* ── LEFT: IMAGE ── */
+.profile-image-wrap{
+  position:sticky;top:80px;
+}
+.profile-img-placeholder{
+  width:100%;
+  height:calc(100vh - 130px);
+  max-height:640px;
+  background:var(--surface);
+  border:1px solid rgba(255,61,107,0.2);
+  border-radius:18px;
+  display:flex;flex-direction:column;
+  align-items:center;justify-content:center;
+  gap:14px;
+  color:var(--muted);
+  font-size:0.85rem;font-weight:600;
+  letter-spacing:1px;text-transform:uppercase;
+  overflow:hidden;position:relative;
+  box-shadow:0 20px 60px rgba(0,0,0,0.5);
+}
+.profile-img-placeholder::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(255,61,107,0.1) 0%,transparent 65%);
+  pointer-events:none;
+}
+.profile-img-placeholder img{
+  width:100%;height:100%;
+  object-fit:cover;object-position:30% 20%;
+  border-radius:18px;
+}
+.profile-img-placeholder svg{opacity:0.2;position:relative;z-index:1;}
+.profile-img-placeholder span{position:relative;z-index:1;}
+
+/* ── RIGHT: CONTENT ── */
+.profile-name{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(2rem,3.5vw,2.8rem);
+  letter-spacing:3px;line-height:1.15;
+  margin-bottom:8px;
+  background:linear-gradient(90deg,#fff 0%,var(--accent2) 60%,var(--accent) 100%);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+}
+
+.cast-tag{
+  display:inline-flex;align-items:center;gap:8px;
+  background:rgba(255,61,107,0.1);
+  border:1px solid rgba(255,61,107,0.25);
+  border-radius:100px;padding:6px 16px;
+  font-size:0.75rem;font-weight:700;
+  color:var(--muted);letter-spacing:1px;
+  margin-bottom:20px;
+}
+.cast-tag span{color:var(--accent);}
+
+.about-heading{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:1.2rem;letter-spacing:3px;
+  background:linear-gradient(90deg,var(--accent2),var(--accent));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  margin-bottom:10px;
+}
+
+.profile-bio{
+  color:var(--muted);font-size:0.93rem;
+  line-height:1.75;margin-bottom:22px;
+  padding-bottom:20px;
+  border-bottom:1px solid rgba(255,255,255,0.07);
+}
+
+/* ── STATS ── */
+.profile-stats-heading{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:1.2rem;letter-spacing:3px;
+  background:linear-gradient(90deg,var(--accent2),var(--accent));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  text-transform:uppercase;
+  margin-bottom:14px;text-align:center;
+}
+
+.stats-grid{
+  display:grid;grid-template-columns:1fr 1fr;gap:0;
+}
+.stat-row{
+  display:flex;justify-content:space-between;align-items:center;
+  padding:8px 0;
+  border-bottom:1px solid rgba(255,255,255,0.06);
+  gap:12px;
+}
+.stat-row:last-child{border-bottom:none;}
+.stat-label{
+  font-size:0.75rem;font-weight:700;
+  letter-spacing:1.5px;text-transform:uppercase;
+  color:var(--muted);white-space:nowrap;
+}
+.stat-value{
+  font-size:0.9rem;font-weight:600;
+  color:var(--text);text-align:right;
+}
+.stats-col-left .stat-row{
+  padding-right:28px;
+  border-right:1px solid rgba(255,255,255,0.06);
+}
+.stats-col-right .stat-row{padding-left:28px;}
+
+/* ── CTA ── */
+.profile-cta-wrap{margin-top:32px;text-align:center;}
+.btn-primary{
+  display:inline-block;
+  background:linear-gradient(135deg,var(--accent2),var(--accent));
+  color:#fff;font-family:'Bebas Neue',sans-serif;
+  font-size:1.15rem;letter-spacing:2px;
+  padding:16px 44px;border-radius:100px;
+  text-decoration:none;border:none;cursor:pointer;
+  box-shadow:0 8px 40px rgba(255,61,107,0.35),inset 0 1px 0 rgba(255,255,255,0.2);
+  transition:transform .2s,box-shadow .2s;
+}
+.btn-primary:hover{
+  transform:translateY(-2px) scale(1.03);
+  box-shadow:0 16px 56px rgba(255,61,107,0.55);
+}
+
+/* ── MOBILE HEADER ── */
+.mobile-header{display:none;}
+.desktop-only{display:block;}
+
+/* ── FOOTER ── */
+footer{
+  position:relative;z-index:1;
+  border-top:1px solid rgba(255,255,255,0.06);
+  padding:36px 0 16px;
+  background:rgba(8,8,8,0.8);
+}
+.footer-grid{
+  max-width:1100px;margin:0 auto;
+  padding:0 40px;
+  display:grid;grid-template-columns:2fr 1fr 1fr;
+  gap:40px;margin-bottom:40px;
+}
+.footer-brand p{
+  font-size:0.85rem;color:var(--muted);
+  line-height:1.7;font-weight:300;max-width:280px;margin-top:12px;
+}
+.footer-brand-name{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:1.5rem;letter-spacing:2px;
+  background:linear-gradient(90deg,var(--accent2),var(--accent));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+}
+.footer-col h4{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:1rem;letter-spacing:2px;
+  color:var(--muted);margin-bottom:16px;
+}
+.footer-col a{
+  display:block;font-size:0.85rem;
+  color:rgba(240,240,248,0.35);
+  text-decoration:none;margin-bottom:10px;
+  transition:color .2s;
+}
+.footer-col a:hover{color:var(--accent);}
+.footer-bottom{
+  max-width:1100px;margin:0 auto;
+  padding:20px 40px 0;
+  border-top:1px solid rgba(255,255,255,0.06);
+  display:flex;justify-content:space-between;
+  align-items:flex-start;gap:20px;flex-wrap:wrap;
+}
+.footer-bottom span{
+  font-size:0.75rem;color:rgba(255,255,255,0.18);line-height:1.6;
+}
+
+/* ── MOBILE ── */
+@media(max-width:760px){
+  nav{padding:12px 16px;}
+  .tabs{display:none;}
+  .logo{font-size:1.3rem;}
+  .join-btn{padding:7px 16px;font-size:.82rem;}
+  .stat-row-hide-mobile{display:none!important;}
+  .mobile-header{display:block;margin-bottom:14px;}
+  .desktop-only{display:none!important;}
+  .profile-section{padding:20px 16px 40px;}
+  .profile-layout{grid-template-columns:1fr;gap:20px;}
+  .profile-image-wrap{position:static;width:98%;margin:0 auto;}
+  .profile-img-placeholder{height:480px;max-height:480px;border-radius:14px;}
+  .profile-name{font-size:2.2rem;text-align:center;}
+  .stats-grid{grid-template-columns:1fr;}
+  .stats-col-left .stat-row{padding-right:0;border-right:none;}
+  .stats-col-right .stat-row{padding-left:0;}
+  .footer-grid{grid-template-columns:1fr 1fr!important;gap:24px 16px!important;padding:0 20px!important;}
+  .footer-brand{grid-column:1/-1;}
+  .footer-bottom{padding:20px 20px 0;flex-direction:column;gap:10px;}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="logo" href="../index.html">Tempting Babes</a>
+  <div class="tabs">
+    <a class="tab" href="../Trending/index.html">New</a>
+    <a class="tab" href="../New/index.html">Trending</a>
+    <a class="tab active" href="../Offers/index.html">Offer</a>
+  </div>
+  <button class="join-btn">Join Free</button>
+</nav>
+
+<!-- TICKER -->
+<div class="ticker-wrap">
+  <div class="ticker-label">🔥 HOT</div>
+  <div class="ticker-track">
+    <span class="ticker-item"><span class="ticker-dot">•</span> <span class="ticker-name">Chloe S. — Rhode Island · High-interest refinance ·</span> <span class="ticker-result">Approved for 4.2% lower rate</span></span>
+    <span class="ticker-item"><span class="ticker-dot">•</span> <span class="ticker-name">Andre P. — New Jersey · No credit history ·</span> <span class="ticker-result">Loan approved fast</span></span>
+    <span class="ticker-item"><span class="ticker-dot">•</span> <span class="ticker-name">Justin C. — Colorado · Lease buyout ·</span> <span class="ticker-result">Funded in 24 hours</span></span>
+    <span class="ticker-item"><span class="ticker-dot">•</span> <span class="ticker-name">Maria T. — Florida · Debt consolidation ·</span> <span class="ticker-result">Saved $312/month</span></span>
+    <span class="ticker-item"><span class="ticker-dot">•</span> <span class="ticker-name">Derek W. — Texas · First-time buyer ·</span> <span class="ticker-result">Closed in 3 days</span></span>
+    <span class="ticker-item"><span class="ticker-dot">•</span> <span class="ticker-name">Sofia R. — California · Student refinance ·</span> <span class="ticker-result">Rate dropped by 3.8%</span></span>
+    <!-- duplicate for seamless loop -->
+    <span class="ticker-item"><span class="ticker-dot">•</span> <span class="ticker-name">Chloe S. — Rhode Island · High-interest refinance ·</span> <span class="ticker-result">Approved for 4.2% lower rate</span></span>
+    <span class="ticker-item"><span class="ticker-dot">•</span> <span class="ticker-name">Andre P. — New Jersey · No credit history ·</span> <span class="ticker-result">Loan approved fast</span></span>
+    <span class="ticker-item"><span class="ticker-dot">•</span> <span class="ticker-name">Justin C. — Colorado · Lease buyout ·</span> <span class="ticker-result">Funded in 24 hours</span></span>
+    <span class="ticker-item"><span class="ticker-dot">•</span> <span class="ticker-name">Maria T. — Florida · Debt consolidation ·</span> <span class="ticker-result">Saved $312/month</span></span>
+    <span class="ticker-item"><span class="ticker-dot">•</span> <span class="ticker-name">Derek W. — Texas · First-time buyer ·</span> <span class="ticker-result">Closed in 3 days</span></span>
+    <span class="ticker-item"><span class="ticker-dot">•</span> <span class="ticker-name">Sofia R. — California · Student refinance ·</span> <span class="ticker-result">Rate dropped by 3.8%</span></span>
+  </div>
+</div>
+
+<!-- PROFILE -->
+<section class="profile-section">
+  <canvas id="bubbles-canvas"></canvas>
+  <div class="container">
+
+    <div class="profile-layout">
+
+      <!-- LEFT: IMAGE -->
+      <div class="profile-image-wrap">
+
+        <!-- MOBILE: name + tag above image -->
+        <div class="mobile-header">
+          <div class="profile-name" style="text-align:center;">Sophie</div>
+          <div style="text-align:center;">
+            <div class="cast-tag">
+              <span>Age:</span> 24 &nbsp;·&nbsp; <span>City:</span> Los Angeles
+            </div>
+          </div>
+        </div>
+
+        <div class="profile-img-placeholder">
+          <img src="../Asset/sophie.jpg" alt="Sophie"
+               onerror="this.style.display='none'"
+               style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top;border-radius:18px;z-index:2;"/>
+          <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+            <circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
+          </svg>
+          <span>Profile Image</span>
+        </div>
+      </div>
+
+      <!-- RIGHT: CONTENT -->
+      <div class="profile-content">
+
+        <div class="profile-name desktop-only" style="text-align:center;">Sophie</div>
+        <div class="desktop-only" style="text-align:center;">
+          <div class="cast-tag">
+            <span>Age:</span> 24 &nbsp;·&nbsp; <span>City:</span> Los Angeles
+          </div>
+        </div>
+
+        <div class="about-heading">About Me</div>
+        <p class="profile-bio">
+          Warm, confident, and easy to be around. I enjoy good conversation, spontaneous plans, and making the most of every moment. Looking for something genuine with someone who feels just as easy to connect with.
+        </p>
+
+        <div class="profile-stats-heading">Profile</div>
+
+        <div class="stats-grid">
+          <div class="stats-col-left">
+            <div class="stat-row">
+              <span class="stat-label">Height</span>
+              <span class="stat-value">5 ft 4 in (162 cm)</span>
+            </div>
+            <div class="stat-row">
+              <span class="stat-label">Eye Color</span>
+              <span class="stat-value">Brown</span>
+            </div>
+            <div class="stat-row">
+              <span class="stat-label">Body Type</span>
+              <span class="stat-value">Slim</span>
+            </div>
+            <div class="stat-row">
+              <span class="stat-label">Interested In</span>
+              <span class="stat-value">Having fun</span>
+            </div>
+            <div class="stat-row">
+              <span class="stat-label">Occupation</span>
+              <span class="stat-value">Model</span>
+            </div>
+          </div>
+          <div class="stats-col-right">
+            <div class="stat-row stat-row-hide-mobile">
+              <span class="stat-label">Personality</span>
+              <span class="stat-value">—</span>
+            </div>
+            <div class="stat-row stat-row-hide-mobile">
+              <span class="stat-label">Nationality</span>
+              <span class="stat-value">American</span>
+            </div>
+            <div class="stat-row stat-row-hide-mobile">
+              <span class="stat-label">Ethnicity</span>
+              <span class="stat-value">Mixed (Caucasian)</span>
+            </div>
+            <div class="stat-row stat-row-hide-mobile">
+              <span class="stat-label">Pets</span>
+              <span class="stat-value">None</span>
+            </div>
+            <div class="stat-row stat-row-hide-mobile">
+              <span class="stat-label">Weight</span>
+              <span class="stat-value">108 lbs (49 kg)</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="profile-cta-wrap">
+          <a href="https://t.crdtg2.com/389314/7234?bo=2753,2754,2755,2756&aff_sub5=SF_006OG000004lmDN" class="btn-primary">
+            👉 Connect With Sophie
+          </a>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- BUBBLES CANVAS JS -->
+<script>
+(function(){
+  const canvas = document.getElementById('bubbles-canvas');
+  const ctx = canvas.getContext('2d');
+  const colors = ['#ff3d6b','#ff6b8a','#ff8c00','#ffaa44'];
+  let bubbles = [];
+
+  function resize(){
+    canvas.width  = canvas.offsetWidth;
+    canvas.height = canvas.offsetHeight;
+  }
+
+  function randomBubble(){
+    const r = Math.random() * 2.5 + 1;
+    return {
+      x: Math.random() * canvas.width,
+      y: canvas.height + r + 10,
+      r: r,
+      speedY: Math.random() * 0.6 + 0.2,
+      speedX: (Math.random() - 0.5) * 0.3,
+      opacity: Math.random() * 0.4 + 0.2,
+      color: colors[Math.floor(Math.random() * colors.length)]
+    };
+  }
+
+  function init(){
+    resize();
+    bubbles = [];
+    for(let i = 0; i < 25; i++){
+      const b = randomBubble();
+      b.y = Math.random() * canvas.height;
+      bubbles.push(b);
+    }
+  }
+
+  function draw(){
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    bubbles.forEach(b => {
+      ctx.beginPath();
+      ctx.arc(b.x, b.y, b.r, 0, Math.PI * 2);
+      ctx.fillStyle = b.color;
+      ctx.globalAlpha = b.opacity;
+      ctx.shadowBlur = 8;
+      ctx.shadowColor = b.color;
+      ctx.fill();
+      ctx.globalAlpha = 1;
+      ctx.shadowBlur = 0;
+      b.y -= b.speedY;
+      b.x += b.speedX;
+      if(b.y < -b.r * 2) Object.assign(b, randomBubble());
+    });
+    requestAnimationFrame(draw);
+  }
+
+  window.addEventListener('resize', init);
+  init();
+  draw();
+})();
+</script>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="footer-brand-name">Tempting Babes</div>
+      <p>Your all-in-one hub for Live Cams, Dating, AI Girls, VIP access and lots more. Built for instant connection and real interaction.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Explore</h4>
+      <a href="../Trending/index.html">New</a>
+      <a href="../New/index.html">Trending</a>
+      <a href="../Offers/index.html">Offers</a>
+    </div>
+    <div class="footer-col">
+      <h4>Legal &amp; Info</h4>
+      <a href="#">Terms of Use</a>
+      <a href="#">Privacy Policy</a>
+      <a href="#">Contact Us</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Tempting Babes. All rights reserved.</span>
+    <span>This site links to adult entertainment networks and is intended for adults aged 18 and over only. All models are 18+.</span>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Casual Encounters — Tempting Babes</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
+:root{
+  --bg:#0a0a0a;
+  --surface:#161616;
+  --surface2:#1c1c1c;
+  --border:rgba(255,255,255,0.07);
+  --accent:#ff3d6b;
+  --accent2:#ff8c00;
+  --text:#f0f0f8;
+  --muted:rgba(240,240,248,0.5);
+  --radius:14px;
+  --green:#22c55e;
+}
+
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg);
+  color:var(--text);
+  font-family:'DM Sans',sans-serif;
+  min-height:100vh;
+  overflow-x:hidden;
+  display:flex;
+  flex-direction:column;
+}
+
+/* Ambient glow orbs */
+body::before,body::after{
+  content:'';position:fixed;border-radius:50%;pointer-events:none;z-index:0;
+}
+body::before{
+  width:500px;height:500px;
+  background:radial-gradient(circle,rgba(255,61,107,0.18) 0%,transparent 70%);
+  top:-120px;left:-120px;filter:blur(80px);
+}
+body::after{
+  width:400px;height:400px;
+  background:radial-gradient(circle,rgba(255,140,0,0.12) 0%,transparent 70%);
+  bottom:-80px;right:-80px;filter:blur(80px);
+}
+
+/* ── NAV ── */
+nav{
+  position:sticky;top:0;z-index:200;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:10px 24px;
+  background:rgba(10,10,10,0.6);
+  backdrop-filter:blur(20px);
+  -webkit-backdrop-filter:blur(20px);
+  border-bottom:1px solid rgba(255,255,255,0.08);
+  box-shadow:0 4px 30px rgba(0,0,0,0.4);
+  gap:16px;
+}
+.logo{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:1.6rem;letter-spacing:2px;
+  background:linear-gradient(90deg,var(--accent2),var(--accent));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  text-decoration:none;
+}
+.tabs{
+  display:flex;gap:4px;
+  background:rgba(255,255,255,0.06);
+  backdrop-filter:blur(10px);
+  -webkit-backdrop-filter:blur(10px);
+  border:1px solid rgba(255,255,255,0.08);
+  border-radius:50px;padding:4px;
+  margin-left:auto;margin-right:auto;
+  transform:translateX(-27px);
+}
+.tab{
+  padding:7px 20px;border-radius:50px;border:none;
+  background:transparent;color:var(--muted);
+  font-family:'DM Sans',sans-serif;font-size:.9rem;font-weight:500;
+  cursor:pointer;transition:all .2s;
+  text-decoration:none;display:inline-block;
+}
+.tab.active{background:linear-gradient(135deg,var(--accent2),var(--accent));color:#fff;}
+.tab:not(.active):hover{color:#fff;background:rgba(255,255,255,0.08);}
+.join-btn{
+  padding:9px 22px;border-radius:50px;
+  background:linear-gradient(135deg,var(--accent),#c0003a);
+  color:#fff;font-family:'DM Sans',sans-serif;font-weight:600;font-size:0.9rem;
+  border:none;cursor:pointer;flex-shrink:0;white-space:nowrap;
+  box-shadow:0 4px 20px rgba(255,61,107,.4);
+  transition:transform .15s,box-shadow .15s;
+}
+.join-btn:hover{transform:scale(1.05);box-shadow:0 6px 28px rgba(255,61,107,.55);}
+
+/* ── TICKER ── */
+.ticker-wrap{
+  position:relative;z-index:1;
+  width:100%;
+  background:rgba(26,6,8,0.6);
+  backdrop-filter:blur(12px);
+  -webkit-backdrop-filter:blur(12px);
+  border-top:1px solid rgba(255,61,107,0.15);
+  border-bottom:1px solid rgba(255,61,107,0.15);
+  overflow:hidden;padding:0;
+  display:flex;align-items:center;
+  height:40px;margin-top:6px;
+}
+.ticker-label{
+  flex-shrink:0;background:#8b0000;color:#fff;
+  font-family:'Bebas Neue',sans-serif;
+  font-size:0.95rem;letter-spacing:2px;
+  padding:0 18px;height:100%;
+  display:flex;align-items:center;gap:6px;
+  white-space:nowrap;border-right:2px solid rgba(255,61,107,0.4);z-index:2;
+}
+.ticker-track{
+  display:flex;gap:60px;width:max-content;
+  animation:ticker-scroll 70s linear infinite;
+}
+.ticker-wrap:hover .ticker-track{animation-play-state:paused;}
+.ticker-item{
+  display:flex;align-items:center;gap:8px;
+  white-space:nowrap;font-size:.88rem;font-weight:500;
+}
+.ticker-dot{color:var(--accent2);font-size:1.1rem;}
+.ticker-name{color:#fff;}
+.ticker-result{color:var(--accent2);font-weight:600;}
+@keyframes ticker-scroll{
+  0%{transform:translateX(0);}100%{transform:translateX(-50%);}
+}
+
+/* ── PAGE BODY ── */
+.page-body{
+  position:relative;z-index:1;
+  flex:1;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:48px 20px 64px;
+}
+
+/* ── QUIZ CARD ── */
+.quiz-card{
+  width:100%;max-width:520px;
+  background:rgba(22,22,22,0.75);
+  backdrop-filter:blur(24px);
+  -webkit-backdrop-filter:blur(24px);
+  border:1px solid rgba(255,61,107,0.2);
+  border-radius:20px;
+  padding:40px 36px;
+  box-shadow:0 24px 80px rgba(0,0,0,0.6),
+             0 0 0 1px rgba(255,61,107,0.06),
+             inset 0 1px 0 rgba(255,255,255,0.05);
+  position:relative;overflow:hidden;
+  animation:fadeUp .6s ease both;
+}
+.quiz-card::before{
+  content:'';position:absolute;
+  top:0;left:0;right:0;height:3px;
+  background:linear-gradient(90deg,var(--accent2),var(--accent));
+}
+.quiz-card::after{
+  content:'';position:absolute;
+  width:350px;height:350px;border-radius:50%;
+  background:radial-gradient(circle,rgba(255,61,107,0.06),transparent 70%);
+  top:-120px;right:-80px;pointer-events:none;
+}
+
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(20px);}
+  to{opacity:1;transform:translateY(0);}
+}
+
+/* ── URGENCY TAG ── */
+.urgency-tag{
+  display:inline-flex;align-items:center;gap:8px;
+  background:rgba(255,140,0,0.12);
+  border:1px solid rgba(255,140,0,0.3);
+  color:var(--accent2);
+  font-size:12px;font-weight:700;
+  letter-spacing:0.06em;text-transform:uppercase;
+  padding:6px 14px;border-radius:100px;
+  margin-bottom:24px;
+}
+.urgency-dot{
+  width:8px;height:8px;border-radius:50%;
+  background:var(--accent2);flex-shrink:0;
+  animation:pulse-dot 1.6s ease-in-out infinite;
+}
+@keyframes pulse-dot{
+  0%,100%{opacity:1;transform:scale(1);}
+  50%{opacity:0.4;transform:scale(0.7);}
+}
+
+/* ── STEP INDICATOR ── */
+.step-indicator{
+  display:flex;align-items:center;gap:6px;
+  margin-bottom:28px;
+}
+.step-pip{
+  height:4px;flex:1;border-radius:2px;
+  background:rgba(255,255,255,0.1);
+  transition:background .4s;
+}
+.step-pip.done{background:var(--accent2);}
+.step-pip.active{background:linear-gradient(90deg,var(--accent2),var(--accent));}
+
+/* ── QUESTION BOX ── */
+.question-box{display:none;}
+.question-box.active{display:block;}
+
+.question-box h1{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(1.6rem,4vw,2.1rem);
+  letter-spacing:1.5px;line-height:1.15;
+  margin-bottom:24px;
+  background:linear-gradient(90deg,#fff,rgba(240,240,248,0.75));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+}
+
+/* ── OPTIONS ── */
+.options-list{list-style:none;padding:0;}
+.options-list li{
+  background:rgba(255,255,255,0.04);
+  border:1px solid rgba(255,255,255,0.08);
+  margin:10px 0;
+  padding:16px 20px;
+  border-radius:var(--radius);
+  cursor:pointer;
+  font-weight:500;
+  font-size:15px;
+  color:rgba(240,240,248,0.85);
+  transition:border-color .2s,background .2s,transform .15s,box-shadow .2s;
+  display:flex;align-items:center;gap:12px;
+  position:relative;overflow:hidden;
+}
+.options-list li::before{
+  content:'';
+  width:20px;height:20px;border-radius:50%;
+  border:2px solid rgba(255,255,255,0.2);
+  flex-shrink:0;
+  transition:border-color .2s,background .2s;
+}
+.options-list li:hover{
+  border-color:rgba(255,61,107,0.5);
+  background:rgba(255,61,107,0.08);
+  transform:translateX(4px);
+  box-shadow:0 4px 20px rgba(255,61,107,0.12);
+}
+.options-list li:hover::before{
+  border-color:var(--accent);
+  background:var(--accent);
+}
+
+/* ── LOADING ── */
+.progress-container{display:none;text-align:center;padding:16px 0;}
+.progress-container h1{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:1.8rem;letter-spacing:2px;
+  color:var(--muted);margin-bottom:24px;
+}
+.progress-wrap{
+  width:100%;height:8px;
+  background:rgba(255,255,255,0.08);
+  border-radius:100px;overflow:hidden;
+}
+.progress-bar{
+  height:100%;width:0%;
+  background:linear-gradient(90deg,var(--accent2),var(--accent));
+  border-radius:100px;
+  transition:width .15s ease;
+  box-shadow:0 0 12px rgba(255,61,107,0.4);
+}
+.progress-label{
+  margin-top:12px;font-size:13px;
+  color:var(--muted);letter-spacing:0.05em;
+}
+
+/* ── SUCCESS ── */
+#final h1{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:2.2rem;letter-spacing:2px;
+  background:linear-gradient(90deg,var(--green),#4ade80);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  margin-bottom:14px;
+}
+#final p{color:var(--muted);font-size:16px;margin-bottom:28px;line-height:1.6;}
+
+.match-count{
+  display:inline-flex;align-items:center;gap:8px;
+  background:rgba(34,197,94,0.1);
+  border:1px solid rgba(34,197,94,0.25);
+  color:var(--green);
+  font-size:13px;font-weight:700;
+  padding:6px 14px;border-radius:100px;
+  margin-bottom:24px;
+}
+.match-dot{
+  width:8px;height:8px;border-radius:50%;
+  background:var(--green);
+  animation:pulse-dot 1.6s ease-in-out infinite;
+}
+
+/* ── CTA BUTTON ── */
+.btn-next{
+  width:100%;
+  padding:18px;
+  border-radius:100px;
+  background:linear-gradient(135deg,var(--accent2),var(--accent));
+  color:#fff;
+  font-family:'Bebas Neue',sans-serif;
+  font-size:1.3rem;letter-spacing:2px;
+  border:none;cursor:pointer;
+  box-shadow:0 8px 40px rgba(255,61,107,0.35),inset 0 1px 0 rgba(255,255,255,0.2);
+  transition:transform .2s,box-shadow .2s;
+  position:relative;overflow:hidden;
+}
+.btn-next:hover{
+  transform:translateY(-2px) scale(1.02);
+  box-shadow:0 16px 56px rgba(255,61,107,0.55);
+}
+
+/* Shine animation */
+.shiney::after{
+  animation:shine 4s ease-in-out infinite;
+  content:"";
+  position:absolute;top:-110%;left:-210%;
+  width:200%;height:200%;
+  background:linear-gradient(to right,rgba(255,255,255,0.08) 0%,rgba(255,255,255,0.3) 92%,rgba(255,255,255,0) 100%);
+  pointer-events:none;
+}
+@keyframes shine{
+  10%{top:-30%;left:-30%;}
+  100%{top:-30%;left:-30%;opacity:0;}
+}
+
+/* ── FOOTER ── */
+footer{
+  position:relative;z-index:1;
+  border-top:1px solid rgba(255,255,255,0.06);
+  text-align:center;
+  padding:24px 20px;
+  font-size:12px;color:rgba(255,255,255,0.2);
+  line-height:1.8;
+}
+footer a{color:rgba(255,255,255,0.3);text-decoration:underline;}
+footer a:hover{color:var(--muted);}
+
+/* ── MOBILE ── */
+@media(max-width:768px){
+  nav{padding:12px 16px;}
+  .tabs{display:none;}
+  .logo{font-size:1.3rem;}
+  .join-btn{padding:7px 16px;font-size:.82rem;}
+  .quiz-card{padding:28px 20px;}
+  .page-body{padding:32px 16px 48px;}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="logo" href="../index.html">Tempting Babes</a>
+  <div class="tabs">
+    <a class="tab" href="../Trending/index.html">New</a>
+    <a class="tab" href="../New/index.html">Trending</a>
+    <a class="tab active" href="../Offers/index.html">Offer</a>
+  </div>
+  <button class="join-btn">Join Free</button>
+</nav>
+
+<!-- TICKER -->
+<div class="ticker-wrap">
+  <div class="ticker-label">🔥 HOT</div>
+  <div class="ticker-track">
+    <span class="ticker-item"><span class="ticker-dot">•</span> <span class="ticker-name">Chloe S. — Rhode Island · High-interest refinance ·</span> <span class="ticker-result">Approved for 4.2% lower rate</span></span>
+    <span class="ticker-item"><span class="ticker-dot">•</span> <span class="ticker-name">Andre P. — New Jersey · No credit history ·</span> <span class="ticker-result">Loan approved fast</span></span>
+    <span class="ticker-item"><span class="ticker-dot">•</span> <span class="ticker-name">Justin C. — Colorado · Lease buyout ·</span> <span class="ticker-result">Funded in 24 hours</span></span>
+    <span class="ticker-item"><span class="ticker-dot">•</span> <span class="ticker-name">Maria T. — Florida · Debt consolidation ·</span> <span class="ticker-result">Saved $312/month</span></span>
+    <span class="ticker-item"><span class="ticker-dot">•</span> <span class="ticker-name">Derek W. — Texas · First-time buyer ·</span> <span class="ticker-result">Closed in 3 days</span></span>
+    <span class="ticker-item"><span class="ticker-dot">•</span> <span class="ticker-name">Sofia R. — California · Student refinance ·</span> <span class="ticker-result">Rate dropped by 3.8%</span></span>
+    <!-- duplicate for seamless loop -->
+    <span class="ticker-item"><span class="ticker-dot">•</span> <span class="ticker-name">Chloe S. — Rhode Island · High-interest refinance ·</span> <span class="ticker-result">Approved for 4.2% lower rate</span></span>
+    <span class="ticker-item"><span class="ticker-dot">•</span> <span class="ticker-name">Andre P. — New Jersey · No credit history ·</span> <span class="ticker-result">Loan approved fast</span></span>
+    <span class="ticker-item"><span class="ticker-dot">•</span> <span class="ticker-name">Justin C. — Colorado · Lease buyout ·</span> <span class="ticker-result">Funded in 24 hours</span></span>
+    <span class="ticker-item"><span class="ticker-dot">•</span> <span class="ticker-name">Maria T. — Florida · Debt consolidation ·</span> <span class="ticker-result">Saved $312/month</span></span>
+    <span class="ticker-item"><span class="ticker-dot">•</span> <span class="ticker-name">Derek W. — Texas · First-time buyer ·</span> <span class="ticker-result">Closed in 3 days</span></span>
+    <span class="ticker-item"><span class="ticker-dot">•</span> <span class="ticker-name">Sofia R. — California · Student refinance ·</span> <span class="ticker-result">Rate dropped by 3.8%</span></span>
+  </div>
+</div>
+
+<!-- MAIN -->
+<div class="page-body">
+  <div class="quiz-card">
+
+    <!-- Urgency tag -->
+    <div class="urgency-tag">
+      <span class="urgency-dot"></span>
+      Warning: Limited Spots Available Today
+    </div>
+
+    <!-- Step progress pips -->
+    <div class="step-indicator" id="pips">
+      <div class="step-pip active" id="pip1"></div>
+      <div class="step-pip" id="pip2"></div>
+      <div class="step-pip" id="pip3"></div>
+    </div>
+
+    <!-- STEP 1 -->
+    <div id="step1" class="question-box active">
+      <h1>Are you looking for a casual hookup or a long-term relationship?</h1>
+      <ul class="options-list">
+        <li onclick="go(1, 2)">Casual Encounters / Hookups</li>
+        <li onclick="go(1, 2)">Discreet Dating</li>
+        <li onclick="go(1, 2)">One Night Stand</li>
+      </ul>
+    </div>
+
+    <!-- STEP 2 -->
+    <div id="step2" class="question-box">
+      <h1>Many of our members are private. Can you keep meetings discreet?</h1>
+      <ul class="options-list">
+        <li onclick="go(2, 3)">Yes, I value privacy</li>
+        <li onclick="go(2, 3)">Absolutely, no strings attached</li>
+      </ul>
+    </div>
+
+    <!-- STEP 3 -->
+    <div id="step3" class="question-box">
+      <h1>Last Question: Are you over 18?</h1>
+      <ul class="options-list">
+        <li onclick="finish()">Yes, I am 18+</li>
+        <li onclick="alert('Sorry, you must be 18 to join.')">No</li>
+      </ul>
+    </div>
+
+    <!-- LOADING -->
+    <div id="loading" class="progress-container">
+      <h1>Searching Local Matches...</h1>
+      <div class="progress-wrap">
+        <div id="bar" class="progress-bar"></div>
+      </div>
+      <div class="progress-label" id="progress-label">0%</div>
+    </div>
+
+    <!-- FINAL -->
+    <div id="final" class="question-box">
+      <h1>Success!</h1>
+      <div class="match-count">
+        <span class="match-dot"></span>
+        14 members near you — online now
+      </div>
+      <p>We found <strong style="color:var(--text);">14 members</strong> near you ready for a casual meeting right now.</p>
+      <button class="btn-next shiney" onclick="redirect()">View My Matches →</button>
+    </div>
+
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <p>You must be 18 or older to use this service. By continuing you agree to our
+    <a href="#">Terms of Service</a> &nbsp;·&nbsp;
+    <a href="#">Privacy Policy</a> &nbsp;·&nbsp;
+    <a href="#">Contact Us</a>
+  </p>
+</footer>
+
+<script>
+  function go(current, next) {
+    document.getElementById('step' + current).classList.remove('active');
+    document.getElementById('step' + next).classList.add('active');
+
+    // Update pips
+    document.getElementById('pip' + current).classList.remove('active');
+    document.getElementById('pip' + current).classList.add('done');
+    if (document.getElementById('pip' + next)) {
+      document.getElementById('pip' + next).classList.add('active');
+    }
+  }
+
+  function finish() {
+    document.getElementById('step3').classList.remove('active');
+    document.getElementById('pip3').classList.remove('active');
+    document.getElementById('pip3').classList.add('done');
+
+    const loadingEl = document.getElementById('loading');
+    loadingEl.style.display = 'block';
+
+    let w = 0;
+    const label = document.getElementById('progress-label');
+    const interval = setInterval(() => {
+      w += 10;
+      document.getElementById('bar').style.width = w + '%';
+      label.textContent = w + '%';
+      if (w >= 100) {
+        clearInterval(interval);
+        loadingEl.style.display = 'none';
+        document.getElementById('final').classList.add('active');
+      }
+    }, 150);
+  }
+
+  function redirect() {
+    window.location.href = "https://www.instabang.com/tours/zinstabangregisterthumbsbkg/?id=YOUR_AFFILIATE_ID";
+  }
+</script>
+</body>
+</html>
