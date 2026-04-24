@@ -207,7 +207,7 @@ nav {
   display: flex;
   align-items: flex-start;
   justify-content: center;
-  gap: 16px;
+  gap: 48px;
   padding: 0 16px;
   width: 100%;
 }
@@ -498,6 +498,28 @@ nav {
   transition: transform 0.15s;
 }
 .slot-vip-btn:hover { transform: scale(1.03); }
+
+/* Red play button on center slot */
+.slot-center-play-btn {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60px; height: 60px;
+  background: rgba(220, 0, 0, 0.88);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid rgba(255,255,255,0.9);
+  box-shadow: 0 4px 24px rgba(220,0,0,0.55);
+  z-index: 5;
+  cursor: pointer;
+  transition: transform 0.2s, background 0.2s;
+}
+.slot-center-play-btn:hover {
+  transform: translate(-50%, -50%) scale(1.12);
+  background: rgba(220, 0, 0, 1);
+}
 
 /* Play button overlay on center slot */
 .slot-play-btn {

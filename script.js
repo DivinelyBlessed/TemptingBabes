@@ -1,15 +1,13 @@
 const VIDEOS = [
   'EOyHy-aV8aQ',
-  'KuDuzKi8mNY',
   'KwYnD5akv_0',
-  'W_IR7vtzB7w',
   'YoR_ui5RBho',
   'kYMZpVg9lCA',
   'uyq-pcxnbWo',
   'k2pfh_XeoT8'
 ];
 
-const INTERVAL = 4500;
+const INTERVAL = 10000;
 const TRANS_MS = 720;
 
 let centerIdx   = 1;
@@ -26,6 +24,8 @@ function makeEmbed(videoId) {
   iframe.src = `https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&mute=1&loop=1&playlist=${videoId}&controls=0&rel=0&playsinline=1&modestbranding=1&showinfo=0&iv_load_policy=3&fs=0`;
   iframe.setAttribute('allow', 'autoplay; encrypted-media');
   iframe.setAttribute('frameborder', '0');
+  iframe.style.opacity   = '0';
+  iframe.style.transition = 'opacity 0.5s ease';
   return iframe;
 }
 
@@ -46,37 +46,60 @@ function vipOverlay() {
   return ov;
 }
 
-// All slots load their iframe immediately (z-index 1 via CSS).
-// Thumbnail sits on top (z-index 3 via CSS) as a cover while video buffers.
-// Center slot: thumbnail fades OUT after a delay to reveal the playing video.
-// Side slots: thumbnail stays opaque, VIP overlay on top (z-index 4).
+function makePlayBtn(slot) {
+  const btn = document.createElement('div');
+  btn.className = 'slot-center-play-btn';
+  btn.innerHTML = '<svg width="26" height="26" viewBox="0 0 24 24" fill="white"><polygon points="6,3 20,12 6,21"/></svg>';
+  btn.addEventListener('click', () => {
+    const thumb  = slot.querySelector('img');
+    const iframe = slot.querySelector('iframe');
+    btn.remove();
+    if (thumb)  { thumb.style.opacity  = '0'; }
+    if (iframe) { iframe.style.opacity = '1'; }
+  });
+  return btn;
+}
+
+// Center slot: iframe loads silently in background, thumbnail + red play button on top.
+// User clicks play when ready — by then the video has had time to buffer.
+// Side slots: thumbnail + VIP overlay only, no iframe.
 function makeSlot(videoId, posClass, isCenter) {
   const wrap = document.createElement('div');
   wrap.className      = 'vid-slot ' + posClass;
   wrap.dataset.videoId = videoId;
 
-  wrap.appendChild(makeEmbed(videoId));
-  const thumb = makeThumb(videoId);
-  wrap.appendChild(thumb);
-
   if (isCenter) {
-    setTimeout(() => { thumb.style.opacity = '0'; }, 1200);
+    wrap.appendChild(makeEmbed(videoId)); // loads silently in background
+    wrap.appendChild(makeThumb(videoId)); // covers iframe while loading
+    wrap.appendChild(makePlayBtn(wrap));  // red play button on top
   } else {
+    wrap.appendChild(makeThumb(videoId));
     wrap.appendChild(vipOverlay());
   }
   return wrap;
 }
 
-// Slot became center: remove VIP, fade thumbnail out to reveal playing video
+// Slot became center: remove VIP, add iframe loading in bg + play button
 function activateCenter(slot) {
   const vip = slot.querySelector('.slot-vip');
   if (vip) vip.remove();
-  const thumb = slot.querySelector('img');
-  if (thumb) setTimeout(() => { thumb.style.opacity = '0'; }, 700);
+
+  if (!slot.querySelector('iframe')) {
+    slot.insertBefore(makeEmbed(slot.dataset.videoId), slot.firstChild);
+  }
+
+  if (!slot.querySelector('.slot-center-play-btn')) {
+    slot.appendChild(makePlayBtn(slot));
+  }
 }
 
-// Slot left center: instantly restore thumbnail cover, add VIP overlay
+// Slot left center: remove iframe + play button, restore thumbnail + VIP
 function deactivateCenter(slot) {
+  const iframe  = slot.querySelector('iframe');
+  const playBtn = slot.querySelector('.slot-center-play-btn');
+  if (iframe)  iframe.remove();
+  if (playBtn) playBtn.remove();
+
   const thumb = slot.querySelector('img');
   if (thumb) {
     thumb.style.transition = 'none';
