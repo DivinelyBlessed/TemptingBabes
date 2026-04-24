@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Something Most Men Never Talk About — Tempting Babes</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
+:root{
+  --bg:#0a0a0a;
+  --surface:#161616;
+  --surface2:#1c1c1c;
+  --border:rgba(255,255,255,0.07);
+  --accent:#ff3d6b;
+  --accent2:#ff8c00;
+  --text:#f0f0f8;
+  --muted:rgba(240,240,248,0.5);
+  --radius:14px;
+  --green:#22c55e;
+}
+
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg);
+  color:var(--text);
+  font-family:'DM Sans',sans-serif;
+  min-height:100vh;
+  overflow-x:hidden;
+}
+
+/* Ambient glow orbs */
+body::before,body::after{
+  content:'';position:fixed;border-radius:50%;pointer-events:none;z-index:0;
+}
+body::before{
+  width:500px;height:500px;
+  background:radial-gradient(circle,rgba(255,61,107,0.15) 0%,transparent 70%);
+  top:-120px;left:-120px;filter:blur(80px);
+}
+body::after{
+  width:400px;height:400px;
+  background:radial-gradient(circle,rgba(255,140,0,0.1) 0%,transparent 70%);
+  bottom:-80px;right:-80px;filter:blur(80px);
+}
+
+/* ── NAV ── */
+nav{
+  position:sticky;top:0;z-index:200;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:10px 24px;
+  background:rgba(10,10,10,0.6);
+  backdrop-filter:blur(20px);
+  -webkit-backdrop-filter:blur(20px);
+  border-bottom:1px solid rgba(255,255,255,0.08);
+  box-shadow:0 4px 30px rgba(0,0,0,0.4);
+  gap:16px;
+}
+
+.logo{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:1.6rem;letter-spacing:2px;
+  background:linear-gradient(90deg,var(--accent2),var(--accent));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  text-decoration:none;
+}
+
+.tabs{
+  display:flex;gap:4px;
+  background:rgba(255,255,255,0.06);
+  backdrop-filter:blur(10px);
+  -webkit-backdrop-filter:blur(10px);
+  border:1px solid rgba(255,255,255,0.08);
+  border-radius:50px;padding:4px;
+  margin-left:auto;margin-right:auto;
+  transform:translateX(-27px);
+}
+.tab{
+  padding:7px 20px;border-radius:50px;border:none;
+  background:transparent;color:var(--muted);
+  font-family:'DM Sans',sans-serif;font-size:.9rem;font-weight:500;
+  cursor:pointer;transition:all .2s;
+  text-decoration:none;display:inline-block;
+}
+.tab.active{background:linear-gradient(135deg,var(--accent2),var(--accent));color:#fff;}
+.tab:not(.active):hover{color:#fff;background:rgba(255,255,255,0.08);}
+
+.join-btn{
+  padding:9px 22px;border-radius:50px;
+  background:linear-gradient(135deg,var(--accent),#c0003a);
+  color:#fff;font-family:'DM Sans',sans-serif;font-weight:600;font-size:0.9rem;
+  border:none;cursor:pointer;flex-shrink:0;white-space:nowrap;
+  box-shadow:0 4px 20px rgba(255,61,107,.4);
+  transition:transform .15s,box-shadow .15s;
+}
+.join-btn:hover{transform:scale(1.05);box-shadow:0 6px 28px rgba(255,61,107,.55);}
+
+/* ── TICKER ── */
+.ticker-wrap{
+  width:100%;
+  background:rgba(26,6,8,0.6);
+  backdrop-filter:blur(12px);
+  -webkit-backdrop-filter:blur(12px);
+  border-top:1px solid rgba(255,61,107,0.15);
+  border-bottom:1px solid rgba(255,61,107,0.15);
+  overflow:hidden;
+  padding:0;
+  display:flex;align-items:center;
+  height:40px;
+  margin-top:6px;
+  position:relative;z-index:1;
+}
+
+.ticker-label{
+  flex-shrink:0;
+  background:#8b0000;color:#fff;
+  font-family:'Bebas Neue',sans-serif;
+  font-size:0.95rem;letter-spacing:2px;
+  padding:0 18px;height:100%;
+  display:flex;align-items:center;gap:6px;
+  white-space:nowrap;
+  border-right:2px solid rgba(255,61,107,0.4);
+  z-index:2;
+}
+
+.ticker-track{
+  display:flex;gap:60px;
+  width:max-content;
+  animation:ticker-scroll 70s linear infinite;
+}
+.ticker-wrap:hover .ticker-track{animation-play-state:paused;}
+
+.ticker-item{
+  display:flex;align-items:center;gap:8px;
+  white-space:nowrap;font-size:.88rem;font-weight:500;
+}
+.ticker-dot{color:var(--accent2);font-size:1.1rem;}
+.ticker-name{color:#fff;}
+.ticker-result{color:var(--accent2);font-weight:600;}
+
+@keyframes ticker-scroll{
+  0%{transform:translateX(0);}
+  100%{transform:translateX(-50%);}
+}
+
+/* ── HERO BANNER ── */
+.article-hero{
+  position:relative;z-index:1;
+  background:linear-gradient(135deg,rgba(255,61,107,0.08),rgba(255,140,0,0.06));
+  border-bottom:1px solid rgba(255,255,255,0.06);
+  padding:52px 20px 44px;
+  text-align:center;
+  overflow:hidden;
+}
+.article-hero::before{
+  content:'';position:absolute;
+  width:600px;height:600px;border-radius:50%;
+  background:radial-gradient(circle,rgba(255,140,0,0.07),transparent 70%);
+  top:-200px;right:-100px;pointer-events:none;
+}
+
+.hero-tag{
+  display:inline-block;
+  background:rgba(255,61,107,0.15);
+  border:1px solid rgba(255,61,107,0.3);
+  color:var(--accent);
+  font-size:11px;font-weight:600;
+  letter-spacing:0.1em;text-transform:uppercase;
+  padding:5px 14px;border-radius:100px;
+  margin-bottom:20px;
+}
+
+.article-hero h1{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(2rem,6vw,3.6rem);
+  letter-spacing:2px;
+  line-height:1.15;
+  max-width:680px;margin:0 auto 18px;
+  background:linear-gradient(90deg,#fff 0%,var(--accent2) 60%,var(--accent) 100%);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+}
+
+.article-hero p{
+  color:var(--muted);font-size:16px;
+  max-width:500px;margin:0 auto;
+  line-height:1.7;
+}
+
+/* ── ARTICLE LAYOUT ── */
+.article-wrap{
+  position:relative;z-index:1;
+  max-width:720px;margin:0 auto;
+  padding:48px 20px 80px;
+}
+
+/* ── BYLINE ── */
+.byline{
+  display:flex;align-items:center;gap:12px;
+  margin-bottom:36px;padding-bottom:24px;
+  border-bottom:1px solid rgba(255,255,255,0.08);
+}
+
+.avatar{
+  width:44px;height:44px;border-radius:50%;
+  background:linear-gradient(135deg,var(--accent2),var(--accent));
+  display:flex;align-items:center;justify-content:center;
+  color:white;font-weight:700;font-size:16px;
+  flex-shrink:0;
+}
+
+.byline-name{font-weight:600;color:var(--text);font-size:14px;}
+.byline-meta{font-size:13px;color:var(--muted);margin-top:2px;}
+
+/* ── ARTICLE TEXT ── */
+.article-wrap p{
+  margin-bottom:22px;
+  color:rgba(240,240,248,0.8);
+  font-size:17px;line-height:1.8;
+}
+
+.article-wrap p.lead{
+  font-size:20px;font-style:italic;
+  color:var(--text);line-height:1.6;
+  border-left:3px solid var(--accent);
+  padding-left:20px;margin-bottom:32px;
+}
+
+.article-wrap h2{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:1.8rem;letter-spacing:1.5px;
+  margin:40px 0 16px;
+  background:linear-gradient(90deg,var(--text),var(--accent2));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+}
+
+/* ── IMAGE BLOCK ── */
+.img-block{
+  width:100%;height:220px;
+  background:linear-gradient(135deg,#1a0a20,#0f1a2e,#1a0a08);
+  border-radius:var(--radius);
+  margin:32px 0;
+  display:flex;align-items:center;justify-content:center;
+  flex-direction:column;gap:8px;
+  color:var(--muted);font-size:13px;
+  letter-spacing:0.05em;text-transform:uppercase;
+  border:1px solid rgba(255,255,255,0.06);
+  overflow:hidden;position:relative;
+}
+.img-block svg{opacity:0.3;}
+
+.img-caption{
+  font-size:13px;color:var(--muted);
+  text-align:center;margin-top:-20px;margin-bottom:28px;
+  font-style:italic;
+}
+
+/* ── CALLOUT ── */
+.callout{
+  background:rgba(255,140,0,0.07);
+  border-left:4px solid var(--accent2);
+  border-radius:0 var(--radius) var(--radius) 0;
+  padding:20px 22px;margin:32px 0;
+  border-top:1px solid rgba(255,140,0,0.12);
+  border-right:1px solid rgba(255,140,0,0.12);
+  border-bottom:1px solid rgba(255,140,0,0.12);
+}
+.callout p{
+  margin:0 !important;
+  color:rgba(255,200,100,0.9);
+  font-size:15px;
+}
+
+/* ── CHECK LIST ── */
+.check-list{list-style:none;margin:16px 0 28px;}
+.check-list li{
+  display:flex;align-items:flex-start;gap:12px;
+  margin-bottom:12px;
+  color:rgba(240,240,248,0.85);
+  font-size:16px;
+  background:rgba(255,255,255,0.03);
+  border:1px solid rgba(255,255,255,0.06);
+  border-radius:10px;padding:12px 16px;
+}
+.check-list li .icon{
+  color:var(--green);font-size:18px;
+  margin-top:1px;flex-shrink:0;
+}
+
+/* ── DIVIDER ── */
+.divider{
+  border:none;
+  border-top:1px solid rgba(255,255,255,0.08);
+  margin:40px 0;
+}
+
+/* ── TESTIMONIALS ── */
+.testimonials{display:flex;flex-direction:column;gap:14px;margin:28px 0;}
+
+.testi{
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  padding:20px;
+  transition:border-color .2s,box-shadow .2s;
+}
+.testi:hover{border-color:rgba(255,140,0,.25);box-shadow:0 8px 32px rgba(0,0,0,.4);}
+
+.testi-stars{color:var(--accent2);font-size:14px;margin-bottom:8px;letter-spacing:2px;}
+.testi-text{font-size:15px;color:rgba(240,240,248,0.75);line-height:1.6;margin-bottom:10px;}
+.testi-author{font-size:13px;font-weight:600;color:var(--muted);}
+
+/* ── TRUST BADGES ── */
+.trust-row{
+  display:flex;flex-wrap:wrap;gap:10px;margin:28px 0;
+}
+.trust-badge{
+  display:flex;align-items:center;gap:8px;
+  background:var(--surface);
+  border:1px solid rgba(255,255,255,0.08);
+  border-radius:10px;
+  padding:10px 14px;
+  font-size:13px;color:var(--text);font-weight:500;
+  flex:1 1 140px;
+}
+.trust-badge .ico{font-size:18px;}
+
+/* ── URGENCY BAR ── */
+.urgency-bar{
+  background:rgba(255,61,107,0.08);
+  border:1px solid rgba(255,61,107,0.2);
+  border-radius:var(--radius);
+  padding:14px 18px;margin:32px 0 24px;
+  display:flex;align-items:center;gap:10px;
+  font-size:14px;color:rgba(255,180,180,0.9);
+}
+.urgency-dot{
+  width:10px;height:10px;
+  background:var(--accent);border-radius:50%;
+  flex-shrink:0;
+  animation:pulse-dot 1.8s ease-in-out infinite;
+}
+@keyframes pulse-dot{
+  0%,100%{opacity:1;transform:scale(1);}
+  50%{opacity:0.5;transform:scale(0.85);}
+}
+
+/* ── CTA BLOCK ── */
+.cta-block{
+  text-align:center;
+  margin:8px 0 48px;
+  background:linear-gradient(135deg,rgba(255,61,107,0.07),rgba(255,140,0,0.07));
+  border:1px solid rgba(255,140,0,0.15);
+  border-radius:20px;
+  padding:32px 24px;
+  position:relative;overflow:hidden;
+}
+.cta-block::before{
+  content:'';position:absolute;
+  width:300px;height:300px;border-radius:50%;
+  background:radial-gradient(circle,rgba(255,140,0,0.08),transparent 70%);
+  top:-100px;right:-60px;pointer-events:none;
+}
+
+.cta-btn{
+  display:inline-block;
+  background:linear-gradient(135deg,var(--accent2),var(--accent));
+  color:white;
+  font-family:'Bebas Neue',sans-serif;
+  font-size:1.3rem;letter-spacing:2px;
+  padding:18px 48px;border-radius:100px;
+  text-decoration:none;cursor:pointer;border:none;
+  width:100%;max-width:480px;
+  box-shadow:0 8px 40px rgba(255,61,107,0.35),inset 0 1px 0 rgba(255,255,255,0.2);
+  transition:transform .2s,box-shadow .2s;
+  position:relative;
+}
+.cta-btn:hover{
+  transform:translateY(-3px) scale(1.03);
+  box-shadow:0 16px 56px rgba(255,61,107,0.55);
+}
+
+.cta-sub{
+  margin-top:14px;font-size:13px;color:var(--muted);
+}
+.cta-sub span{color:var(--green);font-weight:600;}
+
+/* ── FOOTER ── */
+footer{
+  position:relative;z-index:1;
+  border-top:1px solid rgba(255,255,255,0.06);
+  text-align:center;
+  padding:28px 20px;
+  font-size:12px;color:rgba(255,255,255,0.2);
+  line-height:1.8;
+}
+footer a{color:rgba(255,255,255,0.3);text-decoration:underline;}
+footer a:hover{color:var(--muted);}
+
+/* ── FADE IN ── */
+.fade-in{
+  opacity:0;transform:translateY(18px);
+  animation:fadeUp .7s ease forwards;
+}
+.fade-in:nth-child(2){animation-delay:.1s;}
+.fade-in:nth-child(3){animation-delay:.2s;}
+
+@keyframes fadeUp{
+  to{opacity:1;transform:translateY(0);}
+}
+
+/* ── MOBILE ── */
+@media(max-width:768px){
+  nav{padding:12px 16px;}
+  .tabs{display:none;}
+  .logo{font-size:1.3rem;}
+  .join-btn{padding:7px 16px;font-size:.82rem;}
+  .article-hero{padding:36px 16px 32px;}
+  .article-wrap{padding:32px 16px;}
+  .cta-btn{font-size:1.1rem;padding:16px 32px;}
+  .trust-row .trust-badge{flex:1 1 120px;}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="logo" href="../index.html">Tempting Babes</a>
+  <div class="tabs">
+    <a class="tab" href="../Trending/index.html">New</a>
+    <a class="tab" href="../New/index.html">Trending</a>
+    <a class="tab active" href="../Offers/index.html">Offer</a>
+  </div>
+  <button class="join-btn">Join Free</button>
+</nav>
+
+<!-- TICKER -->
+<div class="ticker-wrap">
+  <div class="ticker-label">🔥 HOT</div>
+  <div class="ticker-track">
+    <span class="ticker-item"><span class="ticker-dot">•</span> <span class="ticker-name">Chloe S. — Rhode Island · High-interest refinance ·</span> <span class="ticker-result">Approved for 4.2% lower rate</span></span>
+    <span class="ticker-item"><span class="ticker-dot">•</span> <span class="ticker-name">Andre P. — New Jersey · No credit history ·</span> <span class="ticker-result">Loan approved fast</span></span>
+    <span class="ticker-item"><span class="ticker-dot">•</span> <span class="ticker-name">Justin C. — Colorado · Lease buyout ·</span> <span class="ticker-result">Funded in 24 hours</span></span>
+    <span class="ticker-item"><span class="ticker-dot">•</span> <span class="ticker-name">Maria T. — Florida · Debt consolidation ·</span> <span class="ticker-result">Saved $312/month</span></span>
+    <span class="ticker-item"><span class="ticker-dot">•</span> <span class="ticker-name">Derek W. — Texas · First-time buyer ·</span> <span class="ticker-result">Closed in 3 days</span></span>
+    <span class="ticker-item"><span class="ticker-dot">•</span> <span class="ticker-name">Sofia R. — California · Student refinance ·</span> <span class="ticker-result">Rate dropped by 3.8%</span></span>
+    <!-- duplicate for seamless loop -->
+    <span class="ticker-item"><span class="ticker-dot">•</span> <span class="ticker-name">Chloe S. — Rhode Island · High-interest refinance ·</span> <span class="ticker-result">Approved for 4.2% lower rate</span></span>
+    <span class="ticker-item"><span class="ticker-dot">•</span> <span class="ticker-name">Andre P. — New Jersey · No credit history ·</span> <span class="ticker-result">Loan approved fast</span></span>
+    <span class="ticker-item"><span class="ticker-dot">•</span> <span class="ticker-name">Justin C. — Colorado · Lease buyout ·</span> <span class="ticker-result">Funded in 24 hours</span></span>
+    <span class="ticker-item"><span class="ticker-dot">•</span> <span class="ticker-name">Maria T. — Florida · Debt consolidation ·</span> <span class="ticker-result">Saved $312/month</span></span>
+    <span class="ticker-item"><span class="ticker-dot">•</span> <span class="ticker-name">Derek W. — Texas · First-time buyer ·</span> <span class="ticker-result">Closed in 3 days</span></span>
+    <span class="ticker-item"><span class="ticker-dot">•</span> <span class="ticker-name">Sofia R. — California · Student refinance ·</span> <span class="ticker-result">Rate dropped by 3.8%</span></span>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="article-hero">
+  <div class="fade-in">
+    <div class="hero-tag">Personal Story</div>
+    <h1>I Thought My Energy Was the Problem…<br>But It Was Something Else</h1>
+    <p>Men over 30 are quietly dealing with this — and most don't realize there's a simple fix.</p>
+  </div>
+</section>
+
+<!-- ARTICLE -->
+<main class="article-wrap">
+
+  <!-- BYLINE -->
+  <div class="byline">
+    <div class="avatar">M</div>
+    <div>
+      <div class="byline-name">Marcus D., 38</div>
+      <div class="byline-meta">Posted 3 days ago &nbsp;·&nbsp; 6 min read</div>
+    </div>
+  </div>
+
+  <!-- LEAD -->
+  <p class="lead">"I didn't notice it at first. Just less energy. Less drive. Less… me."</p>
+
+  <p>It started small. I'd get home from work and just want to sit. No motivation for the gym. No real presence with my partner. I figured it was stress — maybe work, maybe just getting older.</p>
+
+  <p>I tried everything that made sense on paper. More sleep. Better workouts. Cutting out caffeine after noon. I even tried a handful of supplements everyone on Reddit seemed to swear by.</p>
+
+  <p>Nothing really changed. Not in any meaningful way.</p>
+
+  <!-- IMAGE 1 -->
+  <div class="img-block">
+    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+      <circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
+    </svg>
+    <span>Lifestyle Image — Confident Man</span>
+  </div>
+  <p class="img-caption">Replace with a high-quality lifestyle image. No explicit content.</p>
+
+  <h2>The Part I Didn't Want to Admit</h2>
+
+  <p>Eventually, I had to be honest with myself. It wasn't just fatigue. It was affecting my confidence. My relationship. Things I didn't want to put into words, let alone search for online.</p>
+
+  <p>A lot of men deal with this quietly. It's not exactly dinner-table conversation. But performance, energy, and drive are all connected — and when one slips, the others usually follow.</p>
+
+  <div class="callout">
+    <p>Most solutions I found were either short-lived, had uncomfortable side effects, or just felt… extreme. I wasn't looking for a miracle. I just wanted to feel like myself again.</p>
+  </div>
+
+  <h2>What I Actually Found</h2>
+
+  <p>I came across something I almost scrolled past. A natural formula — no prescriptions, no harsh chemicals — specifically designed to support blood flow, energy, and male performance from the inside out.</p>
+
+  <p>I'll be honest: I was skeptical. I'd been burned before. But the ingredient list looked solid, the company was transparent about their sourcing, and there was a 60-day guarantee. Low risk enough to try.</p>
+
+  <!-- IMAGE 2 -->
+  <div class="img-block" style="height:180px;">
+    <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+      <rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 12h8M12 8v8"/>
+    </svg>
+    <span>Product Image</span>
+  </div>
+  <p class="img-caption">Place product image here. Keep neutral, clean background.</p>
+
+  <h2>A Few Weeks In…</h2>
+
+  <p>I didn't wake up transformed. That's not how this works. But over a few weeks, I noticed things shifting. More consistent energy through the day. Better mood. More motivation — in the gym and everywhere else.</p>
+
+  <p>My partner noticed before I said anything. That was enough for me.</p>
+
+  <hr class="divider"/>
+
+  <h2>What Stood Out</h2>
+
+  <ul class="check-list">
+    <li><span class="icon">✓</span> Supports healthy blood flow and circulation</li>
+    <li><span class="icon">✓</span> Helps with stamina and sustained energy levels</li>
+    <li><span class="icon">✓</span> Made with natural, researched ingredients</li>
+    <li><span class="icon">✓</span> No harsh side effects reported by most users</li>
+    <li><span class="icon">✓</span> Easy to fit into a daily routine</li>
+  </ul>
+
+  <!-- TESTIMONIALS -->
+  <h2>Others Are Noticing Too</h2>
+
+  <p>Turns out I wasn't alone. Thousands of men have been quietly using this — not expecting miracles, but consistently seeing results worth talking about.</p>
+
+  <div class="testimonials">
+    <div class="testi">
+      <div class="testi-stars">★★★★★</div>
+      <p class="testi-text">"Didn't expect much but after about 3 weeks I genuinely felt the difference. More energy, more drive. My wife even asked what changed."</p>
+      <div class="testi-author">— James R., 42, verified buyer</div>
+    </div>
+    <div class="testi">
+      <div class="testi-stars">★★★★★</div>
+      <p class="testi-text">"I've tried a few things like this over the years. This one actually works. Not overnight — but it works. Consistent use is key."</p>
+      <div class="testi-author">— Derek M., 37, verified buyer</div>
+    </div>
+    <div class="testi">
+      <div class="testi-stars">★★★★☆</div>
+      <p class="testi-text">"Skeptic turned believer. Took about two weeks but the energy difference was real. Will be reordering."</p>
+      <div class="testi-author">— T. Williamson, 44, verified buyer</div>
+    </div>
+  </div>
+
+  <!-- TRUST BADGES -->
+  <div class="trust-row">
+    <div class="trust-badge"><span class="ico">🏭</span> Certified Facility</div>
+    <div class="trust-badge"><span class="ico">🔬</span> Third-Party Tested</div>
+    <div class="trust-badge"><span class="ico">🌿</span> Natural Ingredients</div>
+    <div class="trust-badge"><span class="ico">↩️</span> 60-Day Guarantee</div>
+  </div>
+
+  <!-- URGENCY -->
+  <div class="urgency-bar">
+    <div class="urgency-dot"></div>
+    <span><strong>Note:</strong> Due to high demand, stock availability may be limited. Tap below to check current availability before it's gone.</span>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-block">
+    <button class="cta-btn" onclick="alert('Link your offer page here.')">
+      Check Availability &amp; See How It Works →
+    </button>
+    <p class="cta-sub"><span>✓ 60-Day Money-Back Guarantee</span> &nbsp;·&nbsp; No commitment required</p>
+  </div>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <p>This is a sponsored editorial. Results may vary. These statements have not been evaluated by the Food and Drug Administration.<br/>
+  This product is not intended to diagnose, treat, cure, or prevent any disease.</p>
+  <p style="margin-top:10px;">
+    <a href="#">Privacy Policy</a> &nbsp;·&nbsp;
+    <a href="#">Terms &amp; Conditions</a> &nbsp;·&nbsp;
+    <a href="#">Contact Us</a>
+  </p>
+</footer>
+
+</body>
+</html>

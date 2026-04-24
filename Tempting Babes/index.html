@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Video Carousel</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="logo">Tempting Babes</div>
+  <div class="tabs">
+    <a href="Trending/index.html" class="tab">New</a>
+    <a href="New/index.html" class="tab active">Trending</a>
+    <a href="Offers/index.html" class="tab">Offer</a>
+  </div>
+  <button class="join-btn">Join Free</button>
+</nav>
+
+<!-- TICKER -->
+<div class="ticker-wrap">
+  <div class="ticker-label">🔥 HOT</div>
+  <div class="ticker-track">
+    <span class="ticker-item"><span class="ticker-dot">•</span> <span class="ticker-name">Chloe S. — Rhode Island · High-interest refinance ·</span> <span class="ticker-result">Approved for 4.2% lower rate</span></span>
+    <span class="ticker-item"><span class="ticker-dot">•</span> <span class="ticker-name">Andre P. — New Jersey · No credit history ·</span> <span class="ticker-result">Loan approved fast</span></span>
+    <span class="ticker-item"><span class="ticker-dot">•</span> <span class="ticker-name">Justin C. — Colorado · Lease buyout ·</span> <span class="ticker-result">Funded in 24 hours</span></span>
+    <span class="ticker-item"><span class="ticker-dot">•</span> <span class="ticker-name">Maria T. — Florida · Debt consolidation ·</span> <span class="ticker-result">Saved $312/month</span></span>
+    <span class="ticker-item"><span class="ticker-dot">•</span> <span class="ticker-name">Derek W. — Texas · First-time buyer ·</span> <span class="ticker-result">Closed in 3 days</span></span>
+    <span class="ticker-item"><span class="ticker-dot">•</span> <span class="ticker-name">Sofia R. — California · Student refinance ·</span> <span class="ticker-result">Rate dropped by 3.8%</span></span>
+    <!-- duplicate for seamless loop -->
+    <span class="ticker-item"><span class="ticker-dot">•</span> <span class="ticker-name">Chloe S. — Rhode Island · High-interest refinance ·</span> <span class="ticker-result">Approved for 4.2% lower rate</span></span>
+    <span class="ticker-item"><span class="ticker-dot">•</span> <span class="ticker-name">Andre P. — New Jersey · No credit history ·</span> <span class="ticker-result">Loan approved fast</span></span>
+    <span class="ticker-item"><span class="ticker-dot">•</span> <span class="ticker-name">Justin C. — Colorado · Lease buyout ·</span> <span class="ticker-result">Funded in 24 hours</span></span>
+    <span class="ticker-item"><span class="ticker-dot">•</span> <span class="ticker-name">Maria T. — Florida · Debt consolidation ·</span> <span class="ticker-result">Saved $312/month</span></span>
+    <span class="ticker-item"><span class="ticker-dot">•</span> <span class="ticker-name">Derek W. — Texas · First-time buyer ·</span> <span class="ticker-result">Closed in 3 days</span></span>
+    <span class="ticker-item"><span class="ticker-dot">•</span> <span class="ticker-name">Sofia R. — California · Student refinance ·</span> <span class="ticker-result">Rate dropped by 3.8%</span></span>
+  </div>
+</div>
+
+<!-- HERO TITLE -->
+<div class="hero-title-wrap">
+  <h1 class="hero-title">These Girls Are Wild🔥</h1>
+</div>
+
+<!-- MAIN LAYOUT -->
+<div class="main-layout">
+
+  <!-- LEFT AD -->
+  <aside class="ad-panel ad-left">
+    <div class="ad-box">
+      <div class="ad-tag">AD</div>
+      <div class="ad-img-placeholder"></div>
+      <div class="ad-copy">
+        <div class="ad-headline">Hot Singles Near You</div>
+        <div class="ad-sub">Join 2M+ members today</div>
+        <button class="ad-btn">View Now</button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- SCROLL DIVIDER LEFT -->
+  <div class="scroll-divider">
+    <div class="scroll-line"></div>
+    <div class="scroll-icon">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="15 18 9 12 15 6"/>
+      </svg>
+    </div>
+    <div class="scroll-line"></div>
+  </div>
+
+<!-- CAROUSEL -->
+<section class="carousel-section">
+  <div class="carousel-track">
+
+    <!-- Left Side Card -->
+    <div class="side-card" onclick="shift(-1)">
+      <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&q=80" alt="Side video"/>
+      <div class="vip-badge">
+        <div class="vip-title">
+          <span>💎</span> VIP Membership
+        </div>
+        <div class="vip-sub">Unlock everything now</div>
+        <button class="vip-cta">Join VIP</button>
+      </div>
+    </div>
+
+    <!-- Main Video Box -->
+    <div class="main-video">
+      <div class="play-btn">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="white">
+          <path d="M8 5v14l11-7z"/>
+        </svg>
+      </div>
+      <div class="main-label">VIDEO CAROUSEL BOX</div>
+    </div>
+
+    <!-- Right Side Card -->
+    <div class="side-card" onclick="shift(1)">
+      <img src="https://images.unsplash.com/photo-1501854140801-50d01698950b?w=400&q=80" alt="Side video"/>
+      <div class="vip-badge">
+        <div class="vip-title">
+          <span>💎</span> VIP Membership
+        </div>
+        <div class="vip-sub">Unlock everything now</div>
+        <button class="vip-cta">Join VIP</button>
+      </div>
+    </div>
+
+
+  </div>
+
+<!-- CTA -->
+  <div class="cta-wrap">
+    <button class="cta-btn">CLICK HERE</button>
+  </div>
+</section>
+
+  <!-- SCROLL DIVIDER RIGHT -->
+  <div class="scroll-divider">
+    <div class="scroll-line"></div>
+    <div class="scroll-icon">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="9 18 15 12 9 6"/>
+      </svg>
+    </div>
+    <div class="scroll-line"></div>
+  </div>
+
+  <!-- RIGHT AD -->
+  <aside class="ad-panel ad-right">
+    <div class="ad-box">
+      <div class="ad-tag">AD</div>
+      <div class="ad-img-placeholder ad-img-3"></div>
+      <div class="ad-copy">
+        <div class="ad-headline">Live Cams 24/7</div>
+        <div class="ad-sub">Watch & chat in real time</div>
+        <button class="ad-btn">Go Live</button>
+      </div>
+    </div>
+  </aside>
+
+</div><!-- end .main-layout -->
+
+<script src="script.js"></script>
+</body>
+</html>
