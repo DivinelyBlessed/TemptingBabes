@@ -31,7 +31,7 @@ function makeEmbed(videoId) {
 
 function makeThumb(videoId) {
   const img = document.createElement('img');
-  img.src = `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`;
+  img.src = `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`;
   img.alt = '';
   return img;
 }
