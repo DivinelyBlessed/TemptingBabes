@@ -310,6 +310,13 @@ nav {
   color: #fff;
   animation: pulse-icon 2s ease-in-out infinite;
   flex-shrink: 0;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s;
+}
+.scroll-divider:hover .scroll-icon {
+  background: var(--accent);
+  border-color: var(--accent);
+  animation: none;
 }
 
 @keyframes pulse-icon {

@@ -123,6 +123,51 @@ function advance() {
   }, TRANS_MS + 60);
 }
 
+function reverse() {
+  if (isAnimating) return;
+  isAnimating = true;
+  clearTimeout(advTimer);
+  stopProgress();
+
+  const stage = document.getElementById('carouselStage');
+  const [leftEl, centerEl, rightEl] = slots;
+
+  // New video enters from off-screen right
+  const incoming = makeSlot(VIDEOS[vi(2)], 'pos-exit-right', true, false);
+  stage.appendChild(incoming);
+
+  incoming.getBoundingClientRect();
+
+  centerEl.querySelector('video').pause();
+
+  requestAnimationFrame(() => {
+    incoming.className  = 'vid-slot pos-right';
+    rightEl.className   = 'vid-slot pos-center';
+    centerEl.className  = 'vid-slot pos-left';
+    leftEl.className    = 'vid-slot pos-enter-left'; // exits off-screen left
+
+    if (!rightEl.querySelector('.slot-play-btn')) {
+      const pb = document.createElement('div');
+      pb.className = 'slot-play-btn';
+      pb.innerHTML = '<svg width="24" height="24" viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg>';
+      rightEl.appendChild(pb);
+    }
+    const oldPb = centerEl.querySelector('.slot-play-btn');
+    if (oldPb) oldPb.remove();
+
+    rightEl.querySelector('video').play();
+  });
+
+  setTimeout(() => {
+    leftEl.remove();
+    slots     = [centerEl, rightEl, incoming];
+    centerIdx = vi(1);
+    isAnimating = false;
+    startProgress();
+    scheduleNext();
+  }, TRANS_MS + 60);
+}
+
 function scheduleNext() {
   clearTimeout(advTimer);
   advTimer = setTimeout(advance, INTERVAL);
@@ -146,4 +191,8 @@ function startProgress() {
   }));
 }
 
-document.addEventListener('DOMContentLoaded', initCarousel);
+document.addEventListener('DOMContentLoaded', () => {
+  initCarousel();
+  document.getElementById('scrollLeft').addEventListener('click', reverse);
+  document.getElementById('scrollRight').addEventListener('click', advance);
+});
