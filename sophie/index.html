@@ -178,8 +178,12 @@ nav{
 .profile-layout{
   display:grid;
   grid-template-columns:360px 1fr;
+  grid-template-rows:auto auto;
   gap:32px;align-items:start;
 }
+.profile-image-wrap{ grid-column:1; grid-row:1/3; }
+.profile-about{ grid-column:2; grid-row:1; }
+.profile-stats{ grid-column:2; grid-row:2; }
 
 /* ── LEFT: IMAGE ── */
 .profile-image-wrap{
@@ -362,8 +366,10 @@ footer{
   .mobile-header{display:block;margin-bottom:14px;}
   .desktop-only{display:none!important;}
   .profile-section{padding:20px 16px 40px;}
-  .profile-layout{grid-template-columns:1fr;gap:20px;}
-  .profile-image-wrap{position:static;width:98%;margin:0 auto;}
+  .profile-layout{display:flex;flex-direction:column;gap:20px;}
+  .profile-about{order:1;}
+  .profile-image-wrap{order:2;position:static;width:98%;margin:0 auto;}
+  .profile-stats{order:3;}
   .profile-img-placeholder{height:480px;max-height:480px;border-radius:14px;}
   .profile-name{font-size:2.2rem;text-align:center;}
   .stats-grid{grid-template-columns:1fr;}
@@ -438,8 +444,8 @@ footer{
         </div>
       </div>
 
-      <!-- RIGHT: CONTENT -->
-      <div class="profile-content">
+      <!-- RIGHT: ABOUT -->
+      <div class="profile-about">
 
         <div class="profile-name desktop-only" style="text-align:center;">Sophie</div>
         <div class="desktop-only" style="text-align:center;">
@@ -452,6 +458,11 @@ footer{
         <p class="profile-bio">
           Warm, confident, and easy to be around. I enjoy good conversation, spontaneous plans, and making the most of every moment. Looking for something genuine with someone who feels just as easy to connect with.
         </p>
+
+      </div>
+
+      <!-- RIGHT: STATS -->
+      <div class="profile-stats">
 
         <div class="profile-stats-heading">Profile</div>
 
