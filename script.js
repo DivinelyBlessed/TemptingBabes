@@ -192,8 +192,69 @@ function scheduleNext() {
   advTimer = setTimeout(advance, INTERVAL);
 }
 
+// ── QUIZ POPUP ──
+const AFFILIATE_URL = '#'; // Replace # with your affiliate link
+
+const matchCounts = { Alabama:38,Alaska:29,Arizona:52,Arkansas:34,California:74,Colorado:48,Connecticut:41,Delaware:31,Florida:68,Georgia:57,Hawaii:27,Idaho:33,Illinois:61,Indiana:44,Iowa:36,Kansas:35,Kentucky:39,Louisiana:43,Maine:28,Maryland:49,Massachusetts:53,Michigan:55,Minnesota:46,Mississippi:32,Missouri:47,Montana:26,Nebraska:34,Nevada:51,NewHampshire:30,NewJersey:58,NewMexico:35,NewYork:72,NorthCarolina:56,NorthDakota:24,Ohio:59,Oklahoma:40,Oregon:45,Pennsylvania:62,RhodeIsland:31,SouthCarolina:42,SouthDakota:25,Tennessee:50,Texas:71,Utah:37,Vermont:23,Virginia:54,Washington:60,WestVirginia:29,Wisconsin:44,Wyoming:21 };
+
+function getMatchCount(state) {
+  const key = state.replace(/\s+/g, '');
+  return matchCounts[key] || Math.floor(Math.random() * 30) + 35;
+}
+
+function initQuiz() {
+  const overlay  = document.getElementById('quizOverlay');
+  const closeBtn = document.getElementById('quizClose');
+  const findBtn  = document.getElementById('quizFindBtn');
+  const ctaBtn   = document.getElementById('quizCtaBtn');
+  const ctaMain  = document.querySelector('.cta-btn');
+
+  function openQuiz() { overlay.classList.add('open'); }
+  function closeQuiz() { overlay.classList.remove('open'); resetQuiz(); }
+
+  function goToStep(n) {
+    document.querySelectorAll('.quiz-step').forEach(s => s.classList.remove('active'));
+    document.querySelectorAll('.quiz-dot').forEach(d => d.classList.remove('active'));
+    document.getElementById('quizStep' + n).classList.add('active');
+    if (n <= 3) document.getElementById('dot' + n).classList.add('active');
+  }
+
+  function resetQuiz() {
+    goToStep(1);
+    document.getElementById('quizLocation').value = '';
+  }
+
+  // Open on CLICK HERE
+  if (ctaMain) ctaMain.addEventListener('click', openQuiz);
+
+  // Close on X or overlay click
+  closeBtn.addEventListener('click', closeQuiz);
+  overlay.addEventListener('click', e => { if (e.target === overlay) closeQuiz(); });
+
+  // Step options (step 1 & 2)
+  document.querySelectorAll('.quiz-option').forEach(btn => {
+    btn.addEventListener('click', () => goToStep(Number(btn.dataset.step)));
+  });
+
+  // Step 3 → results
+  findBtn.addEventListener('click', () => {
+    const loc = document.getElementById('quizLocation').value;
+    if (!loc) { document.getElementById('quizLocation').style.borderColor = 'var(--accent)'; return; }
+    const count = getMatchCount(loc);
+    document.getElementById('matchCount').textContent  = count;
+    document.getElementById('matchLocation').textContent = loc;
+    document.getElementById('extraCount').textContent  = count - 4;
+    goToStep(4);
+  });
+
+  // Results CTA → affiliate
+  ctaBtn.href = AFFILIATE_URL;
+  ctaBtn.addEventListener('click', () => { setTimeout(closeQuiz, 300); });
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   initCarousel();
+  initQuiz();
   document.getElementById('scrollLeft').addEventListener('click', reverse);
   document.getElementById('scrollRight').addEventListener('click', advance);
 
