@@ -209,8 +209,8 @@ function initQuiz() {
   const ctaBtn   = document.getElementById('quizCtaBtn');
   const ctaMain  = document.querySelector('.cta-btn');
 
-  function openQuiz() { overlay.classList.add('open'); }
-  function closeQuiz() { overlay.classList.remove('open'); resetQuiz(); }
+  function openQuiz() { overlay.style.display = 'flex'; }
+  function closeQuiz() { overlay.style.display = 'none'; resetQuiz(); }
 
   function goToStep(n) {
     document.querySelectorAll('.quiz-step').forEach(s => s.classList.remove('active'));
