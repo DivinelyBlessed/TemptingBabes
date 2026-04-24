@@ -190,7 +190,7 @@ nav {
 .hero-title-wrap {
   width: 100%;
   text-align: center;
-  padding: 8px 20px 2px;
+  padding: 8px 20px 0;
 }
 
 .hero-title {
@@ -333,7 +333,7 @@ nav {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 4px 0 10px;
+  padding: 0 0 10px;
   gap: 10px;
   min-width: 0;
 }
@@ -661,6 +661,6 @@ nav {
   .pos-left, .pos-right, .pos-enter-left, .pos-exit-right { display: none; }
   .pos-center { left: 0; width: 100%; }
 
-  .cta-btn { padding: 14px 72px; font-size: 1.3rem; }
+  .cta-btn { padding: 14px 72px; font-size: 1.3rem; white-space: nowrap; }
   .cta-wrap { width: 100%; padding: 4px 16px 0; }
 }
