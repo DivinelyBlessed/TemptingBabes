@@ -140,6 +140,88 @@
 
 </div><!-- end .main-layout -->
 
+<!-- QUIZ POPUP -->
+<div class="quiz-overlay" id="quizOverlay">
+  <div class="quiz-modal">
+    <button class="quiz-close" id="quizClose">&#10005;</button>
+
+    <!-- Progress dots -->
+    <div class="quiz-dots">
+      <span class="quiz-dot active" id="dot1"></span>
+      <span class="quiz-dot" id="dot2"></span>
+      <span class="quiz-dot" id="dot3"></span>
+    </div>
+
+    <!-- Step 1 -->
+    <div class="quiz-step active" id="quizStep1">
+      <div class="quiz-emoji">🔥</div>
+      <h2 class="quiz-title">Find Your Perfect Match</h2>
+      <p class="quiz-sub">What are you looking for?</p>
+      <div class="quiz-options">
+        <button class="quiz-option" data-step="2">💋 Casual</button>
+        <button class="quiz-option" data-step="2">❤️ Dating</button>
+        <button class="quiz-option" data-step="2">💍 Something Serious</button>
+      </div>
+    </div>
+
+    <!-- Step 2 -->
+    <div class="quiz-step" id="quizStep2">
+      <div class="quiz-emoji">🎂</div>
+      <h2 class="quiz-title">Your Age Range?</h2>
+      <p class="quiz-sub">We'll find the best matches for you</p>
+      <div class="quiz-options">
+        <button class="quiz-option" data-step="3">18 – 25</button>
+        <button class="quiz-option" data-step="3">26 – 35</button>
+        <button class="quiz-option" data-step="3">36+</button>
+      </div>
+    </div>
+
+    <!-- Step 3 -->
+    <div class="quiz-step" id="quizStep3">
+      <div class="quiz-emoji">📍</div>
+      <h2 class="quiz-title">Your Location?</h2>
+      <p class="quiz-sub">Find singles near you right now</p>
+      <select class="quiz-select" id="quizLocation">
+        <option value="">Select your state...</option>
+        <option>Alabama</option><option>Alaska</option><option>Arizona</option>
+        <option>Arkansas</option><option>California</option><option>Colorado</option>
+        <option>Connecticut</option><option>Delaware</option><option>Florida</option>
+        <option>Georgia</option><option>Hawaii</option><option>Idaho</option>
+        <option>Illinois</option><option>Indiana</option><option>Iowa</option>
+        <option>Kansas</option><option>Kentucky</option><option>Louisiana</option>
+        <option>Maine</option><option>Maryland</option><option>Massachusetts</option>
+        <option>Michigan</option><option>Minnesota</option><option>Mississippi</option>
+        <option>Missouri</option><option>Montana</option><option>Nebraska</option>
+        <option>Nevada</option><option>New Hampshire</option><option>New Jersey</option>
+        <option>New Mexico</option><option>New York</option><option>North Carolina</option>
+        <option>North Dakota</option><option>Ohio</option><option>Oklahoma</option>
+        <option>Oregon</option><option>Pennsylvania</option><option>Rhode Island</option>
+        <option>South Carolina</option><option>South Dakota</option><option>Tennessee</option>
+        <option>Texas</option><option>Utah</option><option>Vermont</option>
+        <option>Virginia</option><option>Washington</option><option>West Virginia</option>
+        <option>Wisconsin</option><option>Wyoming</option>
+      </select>
+      <button class="quiz-find-btn" id="quizFindBtn">Find My Matches →</button>
+    </div>
+
+    <!-- Step 4 — Results -->
+    <div class="quiz-step" id="quizStep4">
+      <div class="quiz-result-icon">🎉</div>
+      <h2 class="quiz-result-count"><span id="matchCount">47</span> Matches Near You!</h2>
+      <p class="quiz-result-sub">Hot singles in <span id="matchLocation">your area</span> are waiting for you right now</p>
+      <div class="quiz-profiles">
+        <div class="quiz-profile"></div>
+        <div class="quiz-profile"></div>
+        <div class="quiz-profile"></div>
+        <div class="quiz-profile"></div>
+        <div class="quiz-profile quiz-profile-more">+<span id="extraCount">43</span></div>
+      </div>
+      <a href="#" class="quiz-cta-btn" id="quizCtaBtn">View My Matches →</a>
+      <p class="quiz-disclaimer">Free to join · No credit card required</p>
+    </div>
+  </div>
+</div>
+
 <script src="script.js"></script>
 </body>
 </html>
