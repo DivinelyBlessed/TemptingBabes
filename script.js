@@ -44,56 +44,45 @@ function vipOverlay() {
   return ov;
 }
 
-// Build a slot — thumbnail always present as fallback backdrop
+// All slots load their iframe immediately (z-index 1 via CSS).
+// Thumbnail sits on top (z-index 3 via CSS) as a cover while video buffers.
+// Center slot: thumbnail fades OUT after a delay to reveal the playing video.
+// Side slots: thumbnail stays opaque, VIP overlay on top (z-index 4).
 function makeSlot(videoId, posClass, isCenter) {
   const wrap = document.createElement('div');
   wrap.className      = 'vid-slot ' + posClass;
   wrap.dataset.videoId = videoId;
 
-  wrap.appendChild(makeThumb(videoId)); // backdrop for all slots
+  wrap.appendChild(makeEmbed(videoId));
+  const thumb = makeThumb(videoId);
+  wrap.appendChild(thumb);
 
   if (isCenter) {
-    const iframe = makeEmbed(videoId);
-    iframe.style.opacity   = '0';
-    iframe.style.transition = 'opacity 0.4s ease';
-    wrap.appendChild(iframe);
-    requestAnimationFrame(() => requestAnimationFrame(() => {
-      iframe.style.opacity = '1';
-    }));
+    setTimeout(() => { thumb.style.opacity = '0'; }, 1200);
   } else {
     wrap.appendChild(vipOverlay());
   }
   return wrap;
 }
 
-// Start silently pre-loading the next center video inside a side slot
-function preloadSlot(slot) {
-  if (slot.querySelector('iframe')) return;
-  const iframe = makeEmbed(slot.dataset.videoId);
-  iframe.style.opacity   = '0';
-  iframe.style.transition = 'opacity 0.4s ease';
-  const vip = slot.querySelector('.slot-vip');
-  slot.insertBefore(iframe, vip || null);
-}
-
-// Reveal the pre-loaded iframe (slot just became center)
+// Slot became center: remove VIP, fade thumbnail out to reveal playing video
 function activateCenter(slot) {
-  let iframe = slot.querySelector('iframe');
-  if (!iframe) {
-    iframe = makeEmbed(slot.dataset.videoId);
-    iframe.style.opacity   = '0';
-    iframe.style.transition = 'opacity 0.4s ease';
-    slot.appendChild(iframe);
-  }
-  requestAnimationFrame(() => { iframe.style.opacity = '1'; });
   const vip = slot.querySelector('.slot-vip');
   if (vip) vip.remove();
+  const thumb = slot.querySelector('img');
+  if (thumb) setTimeout(() => { thumb.style.opacity = '0'; }, 700);
 }
 
-// Strip iframe, restore VIP overlay (slot leaving center)
+// Slot left center: instantly restore thumbnail cover, add VIP overlay
 function deactivateCenter(slot) {
-  const iframe = slot.querySelector('iframe');
-  if (iframe) iframe.remove();
+  const thumb = slot.querySelector('img');
+  if (thumb) {
+    thumb.style.transition = 'none';
+    thumb.style.opacity    = '1';
+    requestAnimationFrame(() => requestAnimationFrame(() => {
+      thumb.style.transition = '';
+    }));
+  }
   if (!slot.querySelector('.slot-vip')) slot.appendChild(vipOverlay());
 }
 
@@ -110,7 +99,6 @@ function initCarousel() {
   stage.appendChild(right);
   slots = [left, center, right];
 
-  preloadSlot(left); // silently start loading the next center
   scheduleNext();
 }
 
@@ -137,10 +125,9 @@ function advance() {
 
   setTimeout(() => {
     rightEl.remove();
-    slots     = [incoming, leftEl, centerEl];
-    centerIdx = vi(-1);
+    slots       = [incoming, leftEl, centerEl];
+    centerIdx   = vi(-1);
     isAnimating = false;
-    preloadSlot(incoming);
     scheduleNext();
   }, TRANS_MS + 60);
 }
@@ -168,10 +155,9 @@ function reverse() {
 
   setTimeout(() => {
     leftEl.remove();
-    slots     = [centerEl, rightEl, incoming];
-    centerIdx = vi(1);
+    slots       = [centerEl, rightEl, incoming];
+    centerIdx   = vi(1);
     isAnimating = false;
-    preloadSlot(incoming);
     scheduleNext();
   }, TRANS_MS + 60);
 }
