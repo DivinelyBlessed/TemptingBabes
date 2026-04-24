@@ -44,46 +44,73 @@ function vipOverlay() {
   return ov;
 }
 
+// Build a slot — thumbnail always present as fallback backdrop
 function makeSlot(videoId, posClass, isCenter) {
   const wrap = document.createElement('div');
-  wrap.className = 'vid-slot ' + posClass;
+  wrap.className      = 'vid-slot ' + posClass;
   wrap.dataset.videoId = videoId;
 
+  wrap.appendChild(makeThumb(videoId)); // backdrop for all slots
+
   if (isCenter) {
-    wrap.appendChild(makeEmbed(videoId));
+    const iframe = makeEmbed(videoId);
+    iframe.style.opacity   = '0';
+    iframe.style.transition = 'opacity 0.4s ease';
+    wrap.appendChild(iframe);
+    requestAnimationFrame(() => requestAnimationFrame(() => {
+      iframe.style.opacity = '1';
+    }));
   } else {
-    wrap.appendChild(makeThumb(videoId));
     wrap.appendChild(vipOverlay());
   }
   return wrap;
 }
 
-function setContent(slot, isCenter) {
-  const videoId = slot.dataset.videoId;
-  slot.querySelectorAll('img, iframe').forEach(el => el.remove());
+// Start silently pre-loading the next center video inside a side slot
+function preloadSlot(slot) {
+  if (slot.querySelector('iframe')) return;
+  const iframe = makeEmbed(slot.dataset.videoId);
+  iframe.style.opacity   = '0';
+  iframe.style.transition = 'opacity 0.4s ease';
+  const vip = slot.querySelector('.slot-vip');
+  slot.insertBefore(iframe, vip || null);
+}
 
-  if (isCenter) {
-    slot.prepend(makeEmbed(videoId));
-    const vip = slot.querySelector('.slot-vip');
-    if (vip) vip.remove();
-  } else {
-    slot.prepend(makeThumb(videoId));
-    if (!slot.querySelector('.slot-vip')) slot.appendChild(vipOverlay());
+// Reveal the pre-loaded iframe (slot just became center)
+function activateCenter(slot) {
+  let iframe = slot.querySelector('iframe');
+  if (!iframe) {
+    iframe = makeEmbed(slot.dataset.videoId);
+    iframe.style.opacity   = '0';
+    iframe.style.transition = 'opacity 0.4s ease';
+    slot.appendChild(iframe);
   }
+  requestAnimationFrame(() => { iframe.style.opacity = '1'; });
+  const vip = slot.querySelector('.slot-vip');
+  if (vip) vip.remove();
+}
+
+// Strip iframe, restore VIP overlay (slot leaving center)
+function deactivateCenter(slot) {
+  const iframe = slot.querySelector('iframe');
+  if (iframe) iframe.remove();
+  if (!slot.querySelector('.slot-vip')) slot.appendChild(vipOverlay());
 }
 
 function initCarousel() {
   const stage = document.getElementById('carouselStage');
   stage.innerHTML = '';
 
-  const left   = makeSlot(VIDEOS[vi(-1)], 'pos-left',   false);
-  const center = makeSlot(VIDEOS[vi(0)],  'pos-center',  true);
-  const right  = makeSlot(VIDEOS[vi(1)],  'pos-right',   false);
+  const left   = makeSlot(VIDEOS[vi(-1)], 'pos-left',  false);
+  const center = makeSlot(VIDEOS[vi(0)],  'pos-center', true);
+  const right  = makeSlot(VIDEOS[vi(1)],  'pos-right',  false);
 
   stage.appendChild(left);
   stage.appendChild(center);
   stage.appendChild(right);
   slots = [left, center, right];
+
+  preloadSlot(left); // silently start loading the next center
   scheduleNext();
 }
 
@@ -104,15 +131,16 @@ function advance() {
     leftEl.className   = 'vid-slot pos-center';
     centerEl.className = 'vid-slot pos-right';
     rightEl.className  = 'vid-slot pos-exit-right';
-    setContent(leftEl, true);
-    setContent(centerEl, false);
+    activateCenter(leftEl);
+    deactivateCenter(centerEl);
   });
 
   setTimeout(() => {
     rightEl.remove();
-    slots      = [incoming, leftEl, centerEl];
-    centerIdx  = vi(-1);
+    slots     = [incoming, leftEl, centerEl];
+    centerIdx = vi(-1);
     isAnimating = false;
+    preloadSlot(incoming);
     scheduleNext();
   }, TRANS_MS + 60);
 }
@@ -134,8 +162,8 @@ function reverse() {
     rightEl.className  = 'vid-slot pos-center';
     centerEl.className = 'vid-slot pos-left';
     leftEl.className   = 'vid-slot pos-enter-left';
-    setContent(rightEl, true);
-    setContent(centerEl, false);
+    activateCenter(rightEl);
+    deactivateCenter(centerEl);
   });
 
   setTimeout(() => {
@@ -143,6 +171,7 @@ function reverse() {
     slots     = [centerEl, rightEl, incoming];
     centerIdx = vi(1);
     isAnimating = false;
+    preloadSlot(incoming);
     scheduleNext();
   }, TRANS_MS + 60);
 }
