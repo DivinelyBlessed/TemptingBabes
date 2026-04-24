@@ -367,9 +367,10 @@ footer{
   .desktop-only{display:none!important;}
   .profile-section{padding:20px 16px 40px;}
   .profile-layout{display:flex;flex-direction:column;gap:20px;}
-  .profile-about{order:1;}
-  .profile-image-wrap{order:2;position:static;width:98%;margin:0 auto;}
-  .profile-stats{order:3;}
+  .mobile-header{order:1;display:flex;flex-direction:column;align-items:center;text-align:center;}
+  .profile-about{order:2;}
+  .profile-image-wrap{order:3;position:static;width:98%;margin:0 auto;}
+  .profile-stats{order:4;}
   .profile-img-placeholder{height:480px;max-height:480px;border-radius:14px;}
   .profile-name{font-size:2.2rem;text-align:center;}
   .stats-grid{grid-template-columns:1fr;}
@@ -421,18 +422,18 @@ footer{
 
     <div class="profile-layout">
 
-      <!-- LEFT: IMAGE -->
-      <div class="profile-image-wrap">
-
-        <!-- MOBILE: name + tag above image -->
-        <div class="mobile-header">
-          <div class="profile-name" style="text-align:center;">Sophie</div>
-          <div style="text-align:center;">
-            <div class="cast-tag">
-              <span>Age:</span> 24 &nbsp;·&nbsp; <span>City:</span> Los Angeles
-            </div>
+      <!-- MOBILE: name + tag (shown above about on mobile) -->
+      <div class="mobile-header">
+        <div class="profile-name">Sophie</div>
+        <div>
+          <div class="cast-tag">
+            <span>Age:</span> 24 &nbsp;·&nbsp; <span>City:</span> Los Angeles
           </div>
         </div>
+      </div>
+
+      <!-- LEFT: IMAGE -->
+      <div class="profile-image-wrap">
 
         <div class="profile-img-placeholder">
           <img src="../Asset/Images/sophie.jpg" alt="Sophie"
