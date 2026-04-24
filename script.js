@@ -29,6 +29,10 @@ function makeSlot(src, posClass, vip, playIcon) {
   vid.loop  = true;
   vid.playsInline = true;
   vid.preload = 'metadata';
+  vid.disablePictureInPicture = true;
+  vid.setAttribute('controlsList', 'nodownload nofullscreen noremoteplayback');
+  vid.addEventListener('dblclick', e => e.preventDefault());
+  vid.addEventListener('contextmenu', e => e.preventDefault());
   wrap.appendChild(vid);
 
   if (vip) {
