@@ -605,13 +605,13 @@ nav {
 
   .ad-panel { display: none; }
 
-  .main-layout { flex-direction: row; align-items: center; padding: 0; gap: 0; }
+  .main-layout { flex-direction: row; align-items: center; padding: 0 14px; gap: 0; }
   .carousel-section { padding: 16px; gap: 12px; width: 100%; }
 
   .scroll-divider { flex-shrink: 0; height: 100px; margin-bottom: 0; }
   .scroll-line { display: none; }
 
-  .carousel-stage { height: 380px; }
+  .carousel-stage { height: 480px; }
 
   .pos-left, .pos-right, .pos-enter-left, .pos-exit-right { display: none; }
   .pos-center { left: 0; width: 100%; }
