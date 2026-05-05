@@ -60,6 +60,13 @@ function makePlayBtn(slot) {
   return btn;
 }
 
+function makeSidePlayBtn() {
+  const btn = document.createElement('div');
+  btn.className = 'slot-side-play-btn';
+  btn.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="white"><polygon points="6,3 20,12 6,21"/></svg>';
+  return btn;
+}
+
 // Center slot: iframe loads silently in background, thumbnail + red play button on top.
 // User clicks play when ready — by then the video has had time to buffer.
 // Side slots: thumbnail + VIP overlay only, no iframe.
@@ -75,6 +82,7 @@ function makeSlot(videoId, posClass, isCenter) {
   } else {
     wrap.appendChild(makeThumb(videoId));
     wrap.appendChild(vipOverlay());
+    wrap.appendChild(makeSidePlayBtn());
   }
   return wrap;
 }
@@ -83,6 +91,8 @@ function makeSlot(videoId, posClass, isCenter) {
 function activateCenter(slot) {
   const vip = slot.querySelector('.slot-vip');
   if (vip) vip.remove();
+  const sidePlay = slot.querySelector('.slot-side-play-btn');
+  if (sidePlay) sidePlay.remove();
 
   if (!slot.querySelector('iframe')) {
     slot.insertBefore(makeEmbed(slot.dataset.videoId), slot.firstChild);
@@ -109,11 +119,13 @@ function deactivateCenter(slot) {
     }));
   }
   if (!slot.querySelector('.slot-vip')) slot.appendChild(vipOverlay());
+  if (!slot.querySelector('.slot-side-play-btn')) slot.appendChild(makeSidePlayBtn());
 }
 
 function initCarousel() {
   const stage = document.getElementById('carouselStage');
   stage.innerHTML = '';
+  stage.classList.add('carousel-loading');
 
   const left   = makeSlot(VIDEOS[vi(-1)], 'pos-left',  false);
   const center = makeSlot(VIDEOS[vi(0)],  'pos-center', true);
@@ -123,6 +135,12 @@ function initCarousel() {
   stage.appendChild(center);
   stage.appendChild(right);
   slots = [left, center, right];
+
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => {
+      stage.classList.remove('carousel-loading');
+    });
+  });
 
   scheduleNext();
 }
@@ -193,7 +211,8 @@ function scheduleNext() {
 }
 
 // ── QUIZ POPUP ──
-const AFFILIATE_URL = '#'; // Replace # with your affiliate link
+const DATING_URL = 'https://t.mbjms.com';
+const AI_URL     = 'https://t.vlmai-1.com';
 
 const matchCounts = { Alabama:38,Alaska:29,Arizona:52,Arkansas:34,California:74,Colorado:48,Connecticut:41,Delaware:31,Florida:68,Georgia:57,Hawaii:27,Idaho:33,Illinois:61,Indiana:44,Iowa:36,Kansas:35,Kentucky:39,Louisiana:43,Maine:28,Maryland:49,Massachusetts:53,Michigan:55,Minnesota:46,Mississippi:32,Missouri:47,Montana:26,Nebraska:34,Nevada:51,NewHampshire:30,NewJersey:58,NewMexico:35,NewYork:72,NorthCarolina:56,NorthDakota:24,Ohio:59,Oklahoma:40,Oregon:45,Pennsylvania:62,RhodeIsland:31,SouthCarolina:42,SouthDakota:25,Tennessee:50,Texas:71,Utah:37,Vermont:23,Virginia:54,Washington:60,WestVirginia:29,Wisconsin:44,Wyoming:21 };
 
@@ -206,55 +225,239 @@ function initQuiz() {
   const overlay  = document.getElementById('quizOverlay');
   const closeBtn = document.getElementById('quizClose');
   const findBtn  = document.getElementById('quizFindBtn');
-  const ctaBtn   = document.getElementById('quizCtaBtn');
-  const ctaMain  = document.querySelector('.cta-btn');
+
+  let datingScore = 0;
+  let aiScore     = 0;
 
   function openQuiz() { overlay.style.display = 'flex'; }
-  function closeQuiz() { overlay.style.display = 'none'; resetQuiz(); }
 
-  function goToStep(n) {
+  function closeQuiz() {
+    overlay.style.display = 'none';
+    resetQuiz();
+  }
+
+  function showStep(id) {
     document.querySelectorAll('.quiz-step').forEach(s => s.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+  }
+
+  function updateDots(n) {
     document.querySelectorAll('.quiz-dot').forEach(d => d.classList.remove('active'));
-    document.getElementById('quizStep' + n).classList.add('active');
-    if (n <= 3) document.getElementById('dot' + n).classList.add('active');
+    const dot = document.getElementById('dot' + n);
+    if (dot) dot.classList.add('active');
   }
 
   function resetQuiz() {
-    goToStep(1);
+    datingScore = 0;
+    aiScore     = 0;
+    showStep('quizStep1');
+    updateDots(1);
     document.getElementById('quizLocation').value = '';
   }
 
-  // Open on CLICK HERE
-  if (ctaMain) ctaMain.addEventListener('click', openQuiz);
+  function route() {
+    if (datingScore >= aiScore) {
+      showStep('quizStep5');
+    } else {
+      if (typeof gtag !== 'undefined') gtag('event', 'quiz_routed_ai', { dating: datingScore, ai: aiScore });
+      showStep('quizResultAI');
+    }
+  }
 
-  // Close on X or overlay click
+  function showDatingResult(loc) {
+    const count = getMatchCount(loc);
+    document.getElementById('matchCount').textContent    = count;
+    document.getElementById('matchLocation').textContent = loc;
+    document.getElementById('extraCount').textContent    = count - 4;
+    if (typeof gtag !== 'undefined') gtag('event', 'quiz_routed_dating', { dating: datingScore, ai: aiScore, state: loc });
+    showStep('quizResultDating');
+  }
+
+  // Open triggers
+  document.querySelectorAll('.cta-btn').forEach(btn => {
+    btn.addEventListener('click', openQuiz);
+  });
+
+  // Close
   closeBtn.addEventListener('click', closeQuiz);
   overlay.addEventListener('click', e => { if (e.target === overlay) closeQuiz(); });
 
-  // Step options (step 1 & 2)
+  // Option buttons — accumulate scores, advance step
   document.querySelectorAll('.quiz-option').forEach(btn => {
-    btn.addEventListener('click', () => goToStep(Number(btn.dataset.step)));
+    btn.addEventListener('click', () => {
+      datingScore += Number(btn.dataset.dating || 0);
+      aiScore     += Number(btn.dataset.ai     || 0);
+
+      const next = btn.dataset.next;
+      if (next === 'route') {
+        route();
+      } else {
+        const n = Number(next);
+        showStep('quizStep' + n);
+        updateDots(n);
+      }
+    });
   });
 
-  // Step 3 → results
+  // Location step → dating result
   findBtn.addEventListener('click', () => {
     const loc = document.getElementById('quizLocation').value;
     if (!loc) { document.getElementById('quizLocation').style.borderColor = 'var(--accent)'; return; }
-    const count = getMatchCount(loc);
-    document.getElementById('matchCount').textContent  = count;
-    document.getElementById('matchLocation').textContent = loc;
-    document.getElementById('extraCount').textContent  = count - 4;
-    goToStep(4);
+    showDatingResult(loc);
   });
 
-  // Results CTA → affiliate
-  ctaBtn.href = AFFILIATE_URL;
-  ctaBtn.addEventListener('click', () => { setTimeout(closeQuiz, 300); });
+  // Result CTAs
+  document.getElementById('quizCtaBtn').addEventListener('click', () => { setTimeout(closeQuiz, 300); });
+  document.getElementById('quizCtaBtnAI').addEventListener('click', () => { setTimeout(closeQuiz, 300); });
+}
+
+// ── JOIN FREE QUIZ ──
+function initJoinFreeQuiz() {
+  const overlay  = document.getElementById('joinFreeOverlay');
+  const closeBtn = document.getElementById('joinFreeClose');
+  const findBtn  = document.getElementById('jfFindBtn');
+  if (!overlay) return;
+
+  let datingScore = 0;
+  let aiScore     = 0;
+
+  function openJF() { overlay.style.display = 'flex'; }
+
+  function closeJF() {
+    overlay.style.display = 'none';
+    resetJF();
+  }
+
+  function showStep(id) {
+    overlay.querySelectorAll('.quiz-step').forEach(s => s.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+  }
+
+  function updateDots(n) {
+    overlay.querySelectorAll('.quiz-dot').forEach(d => d.classList.remove('active'));
+    const dot = document.getElementById('jfDot' + n);
+    if (dot) dot.classList.add('active');
+  }
+
+  function resetJF() {
+    datingScore = 0;
+    aiScore     = 0;
+    showStep('jfStep1');
+    updateDots(1);
+    document.getElementById('jfLocation').value = '';
+  }
+
+  function route() {
+    if (datingScore >= aiScore) {
+      showStep('jfStepLocation');
+    } else {
+      if (typeof gtag !== 'undefined') gtag('event', 'jf_quiz_routed_ai', { dating: datingScore, ai: aiScore });
+      showStep('jfResultAI');
+    }
+  }
+
+  function showDatingResult(loc) {
+    const count = getMatchCount(loc);
+    document.getElementById('jfMatchCount').textContent    = count;
+    document.getElementById('jfMatchLocation').textContent = loc;
+    document.getElementById('jfExtraCount').textContent    = count - 4;
+    if (typeof gtag !== 'undefined') gtag('event', 'jf_quiz_routed_dating', { dating: datingScore, ai: aiScore, state: loc });
+    showStep('jfResultDating');
+  }
+
+  // Wire join-btn in navbar
+  document.querySelectorAll('.join-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      if (typeof gtag !== 'undefined') gtag('event', 'join_free_click');
+      openJF();
+    });
+  });
+
+  closeBtn.addEventListener('click', closeJF);
+  overlay.addEventListener('click', e => { if (e.target === overlay) closeJF(); });
+
+  // Option buttons
+  overlay.querySelectorAll('.jf-option').forEach(btn => {
+    btn.addEventListener('click', () => {
+      datingScore += Number(btn.dataset.dating || 0);
+      aiScore     += Number(btn.dataset.ai     || 0);
+
+      const next = btn.dataset.next;
+      if (next === 'route') {
+        route();
+      } else {
+        const n = Number(next);
+        showStep('jfStep' + n);
+        updateDots(n);
+      }
+    });
+  });
+
+  // Location step → dating result
+  findBtn.addEventListener('click', () => {
+    const loc = document.getElementById('jfLocation').value;
+    if (!loc) { document.getElementById('jfLocation').style.borderColor = 'var(--accent)'; return; }
+    showDatingResult(loc);
+  });
+
+  document.getElementById('jfCtaBtn').addEventListener('click', () => { setTimeout(closeJF, 300); });
+  document.getElementById('jfCtaBtnAI').addEventListener('click', () => { setTimeout(closeJF, 300); });
+}
+
+// ── A/B TEST ──
+function initABTest() {
+  let variant = localStorage.getItem('cta_variant');
+  if (!variant) {
+    variant = Math.random() < 0.5 ? 'A' : 'B';
+    localStorage.setItem('cta_variant', variant);
+  }
+  if (variant === 'B') {
+    document.querySelectorAll('.cta-btn').forEach(btn => {
+      if (btn.textContent.trim() === 'CLICK HERE') btn.textContent = 'SEE WHO\'S ONLINE NOW';
+    });
+  }
+  document.querySelectorAll('.cta-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      if (typeof gtag !== 'undefined') gtag('event', 'cta_click', { cta_variant: variant });
+    });
+  });
+}
+
+// ── EXIT INTENT ──
+function initExitIntent() {
+  const overlay = document.getElementById('exitOverlay');
+  const closeBtn = document.getElementById('exitClose');
+  if (!overlay) return;
+
+  let shown = sessionStorage.getItem('exit_shown');
+
+  function showExit() {
+    if (shown) return;
+    shown = true;
+    sessionStorage.setItem('exit_shown', '1');
+    overlay.classList.add('open');
+    if (typeof gtag !== 'undefined') gtag('event', 'exit_intent_shown');
+  }
+
+  document.addEventListener('mouseleave', e => {
+    if (e.clientY < 10) showExit();
+  });
+
+  closeBtn.addEventListener('click', () => overlay.classList.remove('open'));
+  overlay.addEventListener('click', e => { if (e.target === overlay) overlay.classList.remove('open'); });
+
+  document.getElementById('exitCta').addEventListener('click', () => {
+    if (typeof gtag !== 'undefined') gtag('event', 'exit_intent_cta_click');
+    setTimeout(() => overlay.classList.remove('open'), 300);
+  });
 }
 
 document.addEventListener('DOMContentLoaded', () => {
   initCarousel();
   initQuiz();
+  initJoinFreeQuiz();
+  initABTest();
+  initExitIntent();
   document.getElementById('scrollLeft').addEventListener('click', reverse);
   document.getElementById('scrollRight').addEventListener('click', advance);
 

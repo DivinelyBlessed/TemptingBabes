@@ -116,7 +116,7 @@
     .join-btn {
       padding: 9px 22px;
       border-radius: 50px;
-      background: linear-gradient(135deg, var(--accent), #c0003a);
+      background: linear-gradient(135deg, var(--accent2), var(--accent));
       color: #fff;
       font-family: 'DM Sans', sans-serif;
       font-weight: 600;
@@ -124,11 +124,11 @@
       border: none;
       cursor: pointer;
       transition: transform 0.15s, box-shadow 0.15s;
-      box-shadow: 0 4px 20px rgba(255,61,107,0.4);
+      box-shadow: 0 4px 20px rgba(255,140,0,0.4);
       flex-shrink: 0;
       white-space: nowrap;
     }
-    .join-btn:hover { transform: scale(1.05); box-shadow: 0 6px 28px rgba(255,61,107,0.55); }
+    .join-btn:hover { transform: scale(1.05); box-shadow: 0 6px 28px rgba(255,140,0,0.55); }
 
     /* ─── LIVE TICKER ─── */
     .live-bar {
@@ -224,7 +224,7 @@
       width: 100%;
       padding: 7px;
       border-radius: 50px;
-      background: linear-gradient(135deg, var(--accent), #c0003a);
+      background: linear-gradient(135deg, var(--accent2), var(--accent));
       color: #fff;
       font-size: 0.72rem;
       font-weight: 700;
@@ -408,7 +408,7 @@
       text-align: center;
     }
     .card-watch-btn:hover {
-      background: linear-gradient(135deg, var(--accent), #c0003a);
+      background: linear-gradient(135deg, var(--accent2), var(--accent));
       border-color: var(--accent);
       color: #fff;
     }
@@ -481,7 +481,7 @@
     .inline-ad-btn {
       padding: 10px 32px;
       border-radius: 50px;
-      background: linear-gradient(135deg, var(--accent), #c0003a);
+      background: linear-gradient(135deg, var(--accent2), var(--accent));
       color: #fff;
       font-weight: 700;
       font-size: 0.88rem;
@@ -668,6 +668,23 @@
       box-shadow: 0 14px 48px rgba(255,200,120,0.4);
     }
 
+    /* ─── MOBILE MENU ─── */
+    .menu-btn { display: none; }
+    .mobile-menu {
+      display: none; flex-direction: column; align-items: center;
+      background: rgba(10,10,10,0.97); backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      padding: 4px 16px 4px; position: relative; z-index: 99;
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-tab {
+      padding: 13px 16px; color: rgba(255,255,255,0.5); text-decoration: none;
+      font-size: 1rem; font-weight: 500; border-radius: 10px;
+      transition: background 0.2s, color 0.2s;
+    }
+    .mobile-tab:hover { background: rgba(255,255,255,0.07); color: #fff; }
+
     /* ─── RESPONSIVE ─── */
     @media (max-width: 1100px) {
       :root { --sidebar-w: 160px; }
@@ -683,13 +700,23 @@
       .trend-card { flex: 0 0 160px; }
     }
 
-    @media (max-width: 560px) {
+    @media (max-width: 768px) {
+      nav { padding: 13px 8px 11px 12px; gap: 0; align-items: center; }
       .nav-tabs { display: none; }
-      .logo { font-size: 1.4rem; }
+      .tabs { display: none; }
+      .logo { font-size: 1.3rem; padding-top: 4px; }
+      .join-btn { margin-left: auto; padding: 7px 16px; font-size: 0.82rem; }
+      .menu-btn {
+        display: flex; align-items: center; justify-content: center;
+        background: transparent; border: 1px solid rgba(255,255,255,0.25);
+        color: #fff; width: 34px; height: 34px; border-radius: 8px;
+        font-size: 1.1rem; cursor: pointer; margin-left: 4px; flex-shrink: 0;
+      }
       .trend-card { flex: 0 0 150px; }
       .cta-banner { flex-direction: column; text-align: center; }
       .cta-banner-title { font-size: 1.6rem; }
     }
+
   </style>
 </head>
 <body>
@@ -698,12 +725,18 @@
 <nav>
   <a href="../index.html" class="logo">Tempting Babes</a>
   <div class="tabs">
-    <a href="../New/index.html" class="tab">New</a>
+    <a href="../New/index.html" class="tab">VIP</a>
     <a href="../Trending/index.html" class="tab active">Trending</a>
-    <a href="../Offers/index.html" class="tab">Offer</a>
+    <a href="../Offers/index.html" class="tab">Offers</a>
   </div>
   <button class="join-btn">Join Free</button>
+  <button class="menu-btn" id="menuBtn">&#9776;</button>
 </nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="../New/index.html" class="mobile-tab">VIP</a>
+  <a href="../Trending/index.html" class="mobile-tab">Trending</a>
+  <a href="../Offers/index.html" class="mobile-tab">Offers</a>
+</div>
 
 <!-- LIVE TICKER -->
 <div class="live-bar">
@@ -962,8 +995,11 @@
       tab.classList.add('active');
     });
   });
-
-
+</script>
+<script>
+  const menuBtn = document.getElementById('menuBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+  if (menuBtn) menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('open'));
 </script>
 </body>
 </html>

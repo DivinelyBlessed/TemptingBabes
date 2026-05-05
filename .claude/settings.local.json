@@ -7,7 +7,33 @@
       "Bash(git push *)",
       "Bash(git rm *)",
       "Bash(echo \"Asset/Videos/\")",
-      "Bash(git commit *)"
+      "Bash(git commit *)",
+      "WebFetch(domain:collection.cloudinary.com)",
+      "WebFetch(domain:res.cloudinary.com)",
+      "Bash(mkdir -p \"c:\\\\Users\\\\Hp\\\\OneDrive\\\\Desktop\\\\2 - temptingBabes\\\\Dating\\\\rose\")",
+      "Bash(mkdir -p \"c:\\\\Users\\\\Hp\\\\OneDrive\\\\Desktop\\\\2 - temptingBabes\\\\Dating\\\\chloe\")",
+      "Bash(mkdir -p \"c:\\\\Users\\\\Hp\\\\OneDrive\\\\Desktop\\\\2 - temptingBabes\\\\Dating\\\\anita\")",
+      "Bash(mkdir -p \"c:\\\\Users\\\\Hp\\\\OneDrive\\\\Desktop\\\\2 - temptingBabes\\\\Dating\\\\angel\")",
+      "Bash(mkdir -p \"c:\\\\Users\\\\Hp\\\\OneDrive\\\\Desktop\\\\2 - temptingBabes\\\\Dating\\\\corina\")",
+      "Bash(mkdir -p \"c:\\\\Users\\\\Hp\\\\OneDrive\\\\Desktop\\\\2 - temptingBabes\\\\Dating\\\\cassandra\")",
+      "Bash(mkdir -p \"c:\\\\Users\\\\Hp\\\\OneDrive\\\\Desktop\\\\2 - temptingBabes\\\\Dating\\\\emily\")",
+      "Bash(mkdir -p \"c:\\\\Users\\\\Hp\\\\OneDrive\\\\Desktop\\\\2 - temptingBabes\\\\Dating\\\\charlie\")",
+      "Bash(mkdir -p \"C:/Users/Hp/OneDrive/Desktop/2 - temptingBabes/Dating/charlie\")",
+      "Bash(mkdir -p \"C:/Users/Hp/OneDrive/Desktop/2 - temptingBabes/Dating/nicole\")",
+      "Bash(mkdir -p \"C:/Users/Hp/OneDrive/Desktop/2 - temptingBabes/Dating/tracy\")",
+      "Bash(python3 inject_popup.py)",
+      "Bash(python \"c:/Users/Hp/OneDrive/Desktop/2 - temptingBabes/inject_popup.py\")",
+      "PowerShell(node --version 2>&1)",
+      "PowerShell(node -e \"console.log\\('node ok'\\)\")",
+      "PowerShell(node \"c:/Users/Hp/OneDrive/Desktop/2 - temptingBabes/inject_popup.js\")",
+      "PowerShell(node \"c:/Users/Hp/OneDrive/Desktop/2 - temptingBabes/scan_popup.js\")",
+      "PowerShell(node \"c:/Users/Hp/OneDrive/Desktop/2 - temptingBabes/reset_cta.js\")",
+      "Read(//c/Users/Hp/OneDrive/Desktop/StrippersWorldwide/Strippers-Worldwide/**)"
+    ],
+    "additionalDirectories": [
+      "c:\\Users\\Hp\\OneDrive\\Desktop\\2 - temptingBabes\\Dating\\monica",
+      "c:\\Users\\Hp\\OneDrive\\Desktop\\2 - temptingBabes\\Blog\\dating-advice",
+      "C:\\Users\\Hp\\OneDrive\\Desktop\\StrippersWorldwide\\Strippers-Worldwide\\ai-girls"
     ]
   }
 }
