@@ -49,3 +49,11 @@
   for = "/robots.txt"
   [headers.values]
     Cache-Control = "public, max-age=86400"
+
+# ── GPC signal file ──────────────────────────────────────────
+[[headers]]
+  for = "/.well-known/gpc.json"
+  [headers.values]
+    Content-Type  = "application/json"
+    Cache-Control = "public, max-age=86400"
+    Access-Control-Allow-Origin = "*"

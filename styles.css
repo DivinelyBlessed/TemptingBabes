@@ -651,25 +651,25 @@ nav {
 .cta-btn:hover::after { background: rgba(255,255,255,0.08); }
 .cta-btn:active { transform: translateY(0) scale(0.99); }
 
-/* ── SEO TEXT BLOCK — crawlable but visually invisible ── */
+/* ── SEO TEXT BLOCK ── */
 .seo-text-block {
   max-width: 860px;
   margin: 0 auto;
-  padding: 4px 40px 0;
+  padding: 48px 40px 8px;
   text-align: center;
-  pointer-events: none;
-  user-select: none;
 }
 .seo-text-block h2 {
-  font-size: 0.1px;
-  color: #0a0a0a;
-  line-height: 0;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.6rem;
+  letter-spacing: 2px;
+  color: rgba(255,255,255,0.75);
+  margin-bottom: 16px;
 }
 .seo-text-block p {
-  font-size: 0.1px;
-  color: #0a0a0a;
-  line-height: 0;
-  margin-bottom: 0;
+  font-size: 0.95rem;
+  color: var(--muted);
+  line-height: 1.7;
+  margin-bottom: 10px;
 }
 
 /* ── EXIT INTENT POPUP ── */
