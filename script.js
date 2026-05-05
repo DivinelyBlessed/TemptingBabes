@@ -24,6 +24,7 @@ function makeEmbed(videoId) {
   iframe.src = `https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&mute=1&loop=1&playlist=${videoId}&controls=0&rel=0&playsinline=1&modestbranding=1&showinfo=0&iv_load_policy=3&fs=0`;
   iframe.setAttribute('allow', 'autoplay; encrypted-media');
   iframe.setAttribute('frameborder', '0');
+  iframe.title = 'Video preview';
   iframe.style.opacity   = '0';
   iframe.style.transition = 'opacity 0.5s ease';
   return iframe;
@@ -31,7 +32,7 @@ function makeEmbed(videoId) {
 
 function makeThumb(videoId) {
   const img = document.createElement('img');
-  img.src = `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`;
+  img.src = `https://i.ytimg.com/vi/${videoId}/maxresdefault.jpg`;
   img.alt = '';
   return img;
 }
