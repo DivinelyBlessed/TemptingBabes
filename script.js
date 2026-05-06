@@ -312,97 +312,160 @@ function initQuiz() {
   document.getElementById('quizCtaBtnAI').addEventListener('click', () => { setTimeout(closeQuiz, 300); });
 }
 
-// ── JOIN FREE QUIZ ──
+// ── JOIN FREE POPUP v2 ──
+const JF_PLATFORMS = {
+  hookups: {
+    name: 'AdultFriendFinder',
+    tag: 'Hookups & Fast Connections',
+    stats: ['12,400+ active members right now', 'Real engagement — verified profiles', 'Special access link for TB users'],
+    url: 'https://t.mbjms.com/389314/3785/0?bo=2753,2754,2755,2756&po=6456&aff_sub5=SF_006OG000004lmDN'
+  },
+  dates: {
+    name: 'Match',
+    tag: 'Real Conversations & Dates',
+    stats: ['8,200+ active tonight in your area', 'High reply rates — no ghost town', 'No card needed to start browsing'],
+    url: 'https://t.mbjms.com/389314/3785/0?bo=2753,2754,2755,2756&po=6456&aff_sub5=SF_006OG000004lmDN'
+  },
+  live: {
+    name: 'LiveJasmin',
+    tag: 'Live Cam & Visual Experiences',
+    stats: ['3,800+ performers streaming live now', 'HD quality, instant access', 'Free credits for new Tempting Babes users'],
+    url: 'https://t.mbjms.com/389314/3785/0?bo=2753,2754,2755,2756&po=6456&aff_sub5=SF_006OG000004lmDN'
+  },
+  ai: {
+    name: 'DreamGF AI',
+    tag: 'AI Companion — Zero Ghosting',
+    stats: ['Always available — 24/7, no waiting', 'Personalised to your exact vibe', 'Start free, no commitment required'],
+    url: 'https://t.vlmai-1.com'
+  }
+};
+
 function initJoinFreeQuiz() {
   const overlay  = document.getElementById('joinFreeOverlay');
   const closeBtn = document.getElementById('joinFreeClose');
-  const findBtn  = document.getElementById('jfFindBtn');
   if (!overlay) return;
 
-  let datingScore = 0;
-  let aiScore     = 0;
+  let craving = 'hookups';
 
-  function openJF() { overlay.style.display = 'flex'; }
+  // ── Helpers ──
+  function openJF() {
+    overlay.style.display = 'flex';
+    showStep('jfAgeGate');
+    setProgress(0);
+    document.getElementById('jfProgressWrap').style.display = 'none';
+    if (typeof gtag !== 'undefined') gtag('event', 'join_free_open');
+  }
 
   function closeJF() {
     overlay.style.display = 'none';
-    resetJF();
+    craving = 'hookups';
+    const emailEl = document.getElementById('jfEmailInput');
+    if (emailEl) { emailEl.value = ''; emailEl.style.borderColor = ''; }
+    const locEl = document.getElementById('jfLocation');
+    if (locEl) locEl.value = '';
   }
 
   function showStep(id) {
     overlay.querySelectorAll('.quiz-step').forEach(s => s.classList.remove('active'));
-    document.getElementById(id).classList.add('active');
+    const el = document.getElementById(id);
+    if (el) el.classList.add('active');
   }
 
-  function updateDots(n) {
-    overlay.querySelectorAll('.quiz-dot').forEach(d => d.classList.remove('active'));
-    const dot = document.getElementById('jfDot' + n);
-    if (dot) dot.classList.add('active');
+  function setProgress(pct) {
+    const bar = document.getElementById('jfBar');
+    if (bar) bar.style.width = pct + '%';
   }
 
-  function resetJF() {
-    datingScore = 0;
-    aiScore     = 0;
-    showStep('jfStep1');
-    updateDots(1);
-    document.getElementById('jfLocation').value = '';
+  function advanceTo(stepId, progressPct) {
+    showStep(stepId);
+    const wrap = document.getElementById('jfProgressWrap');
+    if (wrap) wrap.style.display = stepId === 'jfAgeGate' ? 'none' : 'block';
+    setProgress(progressPct || 0);
   }
 
-  function route() {
-    if (datingScore >= aiScore) {
-      showStep('jfStepLocation');
-    } else {
-      if (typeof gtag !== 'undefined') gtag('event', 'jf_quiz_routed_ai', { dating: datingScore, ai: aiScore });
-      showStep('jfResultAI');
-    }
-  }
+  // ── Build result card ──
+  function buildResult() {
+    const p = JF_PLATFORMS[craving] || JF_PLATFORMS.hookups;
+    const cravingLabels = {
+      hookups: 'fast & flirty hookups',
+      dates:   'real conversations & dates',
+      live:    'live cam experiences',
+      ai:      'an always-on AI companion'
+    };
+    document.getElementById('jfResultSub').textContent =
+      'Since you\'re looking for ' + (cravingLabels[craving] || 'the right connection') +
+      ', ' + p.name + ' is the top match for you right now.';
+    document.getElementById('jfResultName').textContent = p.name;
+    document.getElementById('jfResultTag').textContent  = p.tag;
 
-  function showDatingResult(loc) {
-    const count = getMatchCount(loc);
-    document.getElementById('jfMatchCount').textContent    = count;
-    document.getElementById('jfMatchLocation').textContent = loc;
-    document.getElementById('jfExtraCount').textContent    = count - 4;
-    if (typeof gtag !== 'undefined') gtag('event', 'jf_quiz_routed_dating', { dating: datingScore, ai: aiScore, state: loc });
-    showStep('jfResultDating');
-  }
-
-  // Wire join-btn in navbar
-  document.querySelectorAll('.join-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-      if (typeof gtag !== 'undefined') gtag('event', 'join_free_click');
-      openJF();
+    const list = document.getElementById('jfResultStats');
+    list.innerHTML = '';
+    p.stats.forEach(s => {
+      const li = document.createElement('li');
+      li.textContent = s;
+      list.appendChild(li);
     });
+
+    const cta = document.getElementById('jfCtaBtn');
+    cta.href        = p.url;
+    cta.textContent = 'Go to ' + p.name + ' Now →';
+
+    if (typeof gtag !== 'undefined') gtag('event', 'jf_quiz_complete', { craving });
+  }
+
+  // ── Wire join-btn across the page ──
+  document.querySelectorAll('.join-btn').forEach(btn => {
+    btn.addEventListener('click', () => openJF());
   });
 
+  // Close
   closeBtn.addEventListener('click', closeJF);
   overlay.addEventListener('click', e => { if (e.target === overlay) closeJF(); });
 
-  // Option buttons
-  overlay.querySelectorAll('.jf-option').forEach(btn => {
-    btn.addEventListener('click', () => {
-      datingScore += Number(btn.dataset.dating || 0);
-      aiScore     += Number(btn.dataset.ai     || 0);
+  // Age gate
+  document.getElementById('jfEnterBtn').addEventListener('click', () => {
+    if (typeof gtag !== 'undefined') gtag('event', 'jf_age_confirmed');
+    advanceTo('jfStep1', 10);
+  });
+  document.getElementById('jfExitBtn').addEventListener('click', closeJF);
 
+  // Card option buttons — auto-advance on click
+  overlay.querySelectorAll('.jf-option-card').forEach(btn => {
+    btn.addEventListener('click', () => {
+      // Store craving from Q1
+      if (btn.dataset.craving) craving = btn.dataset.craving;
+
+      // Visual flash
+      btn.classList.add('selected');
       const next = btn.dataset.next;
-      if (next === 'route') {
-        route();
-      } else {
-        const n = Number(next);
-        showStep('jfStep' + n);
-        updateDots(n);
-      }
+      const progressMap = { jfStep2: 35, jfStep3: 60, jfStepLocation: 80, jfStepEmail: 95 };
+      setTimeout(() => advanceTo(next, progressMap[next] || 50), 180);
     });
   });
 
-  // Location step → dating result
-  findBtn.addEventListener('click', () => {
-    const loc = document.getElementById('jfLocation').value;
-    if (!loc) { document.getElementById('jfLocation').style.borderColor = 'var(--accent)'; return; }
-    showDatingResult(loc);
+  // Location → email
+  document.getElementById('jfFindBtn').addEventListener('click', () => {
+    const loc = document.getElementById('jfLocation');
+    if (!loc.value) { loc.style.borderColor = 'var(--accent)'; return; }
+    loc.style.borderColor = '';
+    advanceTo('jfStepEmail', 92);
   });
 
-  document.getElementById('jfCtaBtn').addEventListener('click', () => { setTimeout(closeJF, 300); });
-  document.getElementById('jfCtaBtnAI').addEventListener('click', () => { setTimeout(closeJF, 300); });
+  // Email → result
+  document.getElementById('jfEmailBtn').addEventListener('click', () => {
+    const emailEl = document.getElementById('jfEmailInput');
+    const val = emailEl.value.trim();
+    const valid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val);
+    if (!valid) {
+      emailEl.style.borderColor = 'var(--accent)';
+      emailEl.placeholder = 'Please enter a valid email';
+      return;
+    }
+    emailEl.style.borderColor = '';
+    if (typeof gtag !== 'undefined') gtag('event', 'jf_email_submitted');
+    buildResult();
+    advanceTo('jfResult', 100);
+  });
 }
 
 // ── A/B TEST ──

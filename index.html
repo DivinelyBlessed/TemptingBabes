@@ -81,17 +81,23 @@
 <nav>
   <div class="logo">Tempting Babes</div>
   <div class="tabs">
-    <a href="New/index.html" class="tab">VIP</a>
-    <a href="Trending/index.html" class="tab active">Trending</a>
+    <a href="AI-chat/index.html" class="tab">AI Chat</a>
+    <a href="Cams/index.html" class="tab">Cams</a>
+    <a href="Dating/index.html" class="tab">Dating</a>
     <a href="Offers/index.html" class="tab">Offers</a>
+    <a href="Trending/index.html" class="tab">Trending</a>
+    <a href="New/index.html" class="tab">VIP</a>
   </div>
   <button class="join-btn">Join Free</button>
   <button class="menu-btn" id="menuBtn">&#9776;</button>
 </nav>
 <div class="mobile-menu" id="mobileMenu">
-  <a href="New/index.html" class="mobile-tab">VIP</a>
-  <a href="Trending/index.html" class="mobile-tab">Trending</a>
+  <a href="AI-chat/index.html" class="mobile-tab">AI Chat</a>
+  <a href="Cams/index.html" class="mobile-tab">Cams</a>
+  <a href="Dating/index.html" class="mobile-tab">Dating</a>
   <a href="Offers/index.html" class="mobile-tab">Offers</a>
+  <a href="Trending/index.html" class="mobile-tab">Trending</a>
+  <a href="New/index.html" class="mobile-tab">VIP</a>
 </div>
 
 <!-- TICKER -->
@@ -120,7 +126,7 @@
 
 <!-- HERO TITLE -->
 <div class="hero-title-wrap">
-  <h1 class="hero-title">These Girls Are Wild🔥</h1>
+  <h1 class="hero-title">These Girls Are <span class="hero-wild">Wild</span>🔥</h1>
 </div>
 
 <!-- MAIN LAYOUT -->
@@ -192,9 +198,9 @@
 
 <!-- SEO TEXT BLOCK -->
 <section class="seo-text-block">
-  <h2>Meet Real Women Near You — Online Right Now</h2>
-  <p>Tempting Babes connects men with thousands of active, verified women's profiles across the United States. Whether you're looking for casual dating, something serious, or just want to chat with someone new tonight, our platform gives you instant access to local women who are online and ready to connect. Browse free, no credit card required.</p>
-  <p>With over 2.3 million members and 12,400+ profiles active at any moment, you'll never be waiting for a match. Our geo-targeted system surfaces the most relevant profiles near you first — updated daily so you always see who is actually reachable right now.</p>
+  <h2>Meet Real Sexy Women Right Now</h2>
+  <p>Tempting Babes connects men with thousands of active verified women's profiles Whether you're after casual dates something more serious or just want to chat with someone real tonight our platform puts you in front of local women who are online right now Browse free No credit card required</p>
+  <p>With 25,000+ profiles active at any given moment there's always someone worth talking to Our geo-targeted system surfaces the most relevant matches near you first so you always see who's actually available tonight not who was last active three weeks ago</p>
 </section>
 
 <!-- STATS BAR -->
@@ -500,142 +506,147 @@
   </div>
 </div>
 
-<!-- JOIN FREE QUIZ POPUP -->
+<!-- JOIN FREE POPUP v2 -->
 <div class="quiz-overlay" id="joinFreeOverlay" style="display:none">
-  <div class="quiz-modal">
+  <div class="quiz-modal jf-modal-wide">
     <button class="quiz-close" id="joinFreeClose">&#10005;</button>
 
-    <!-- Progress dots (Q1–Q5) -->
-    <div class="quiz-dots">
-      <span class="quiz-dot active" id="jfDot1"></span>
-      <span class="quiz-dot" id="jfDot2"></span>
-      <span class="quiz-dot" id="jfDot3"></span>
-      <span class="quiz-dot" id="jfDot4"></span>
-      <span class="quiz-dot" id="jfDot5"></span>
+    <!-- Thin progress bar (hidden on age gate, shown on quiz steps) -->
+    <div class="jf-progress-wrap" id="jfProgressWrap" style="display:none">
+      <div class="jf-bar" id="jfBar"></div>
     </div>
 
-    <!-- Step 1 — Experience type -->
-    <div class="quiz-step active" id="jfStep1">
-      <div class="quiz-emoji">🚀</div>
-      <h2 class="quiz-title">What kind of experience are you ready for?</h2>
-      <p class="quiz-sub">We'll set everything up perfectly for you</p>
-      <div class="quiz-options">
-        <button class="jf-option" data-dating="3" data-ai="0" data-next="2">📍 Meet real women near me tonight</button>
-        <button class="jf-option" data-dating="0" data-ai="3" data-next="2">🤖 An AI companion I can talk to anytime</button>
-        <button class="jf-option" data-dating="2" data-ai="0" data-next="2">🔥 Casual fun, no strings attached</button>
-        <button class="jf-option" data-dating="1" data-ai="1" data-next="2">🔍 Help me figure out the best fit</button>
+    <!-- AGE GATE -->
+    <div class="quiz-step active" id="jfAgeGate">
+      <div class="quiz-emoji">🔥</div>
+      <h2 class="quiz-title">18+ Only &mdash; Enter Tempting Babes</h2>
+      <p class="quiz-sub">Your private gateway to active women, live experiences &amp; instant connections. Confirm you&rsquo;re 18+ to continue.</p>
+      <button class="jf-btn-enter" id="jfEnterBtn">Yes, I&rsquo;m 18+ &mdash; Enter &rarr;</button>
+      <button class="jf-btn-exit" id="jfExitBtn">Exit</button>
+    </div>
+
+    <!-- Q1 — What are you craving? -->
+    <div class="quiz-step" id="jfStep1">
+      <p class="jf-step-label">Step 1 of 4</p>
+      <h2 class="quiz-title">What are you craving right now?</h2>
+      <div class="quiz-options jf-options-grid">
+        <button class="jf-option-card" data-craving="hookups" data-next="jfStep2">
+          <span class="jf-card-icon">🔥</span>
+          <span class="jf-card-label">Fast &amp; flirty hookups</span>
+        </button>
+        <button class="jf-option-card" data-craving="dates" data-next="jfStep2">
+          <span class="jf-card-icon">💬</span>
+          <span class="jf-card-label">Real conversations &amp; dates</span>
+        </button>
+        <button class="jf-option-card" data-craving="live" data-next="jfStep2">
+          <span class="jf-card-icon">🎥</span>
+          <span class="jf-card-label">Live cam / visual thrill</span>
+        </button>
+        <button class="jf-option-card" data-craving="ai" data-next="jfStep2">
+          <span class="jf-card-icon">🤖</span>
+          <span class="jf-card-label">Always-on AI companion</span>
+        </button>
       </div>
     </div>
 
-    <!-- Step 2 — What matters most -->
+    <!-- Q2 — What matters most tonight? -->
     <div class="quiz-step" id="jfStep2">
-      <div class="quiz-emoji">💎</div>
-      <h2 class="quiz-title">What matters most to you?</h2>
-      <p class="quiz-sub">Pick the one that feels right</p>
-      <div class="quiz-options">
-        <button class="jf-option" data-dating="2" data-ai="0" data-next="3">💌 She messages me first — no chasing</button>
-        <button class="jf-option" data-dating="0" data-ai="3" data-next="3">🌙 Always available, even at 3am</button>
-        <button class="jf-option" data-dating="3" data-ai="0" data-next="3">👁️ Real profiles, real people</button>
-        <button class="jf-option" data-dating="0" data-ai="2" data-next="3">🔒 Private, judgment-free conversations</button>
+      <p class="jf-step-label">Step 2 of 4</p>
+      <h2 class="quiz-title">What matters most tonight?</h2>
+      <div class="quiz-options jf-options-grid">
+        <button class="jf-option-card" data-next="jfStep3">
+          <span class="jf-card-icon">⚡</span>
+          <span class="jf-card-label">Fast replies &amp; instant action</span>
+        </button>
+        <button class="jf-option-card" data-next="jfStep3">
+          <span class="jf-card-icon">😍</span>
+          <span class="jf-card-label">Feeling desired &amp; in control</span>
+        </button>
+        <button class="jf-option-card" data-next="jfStep3">
+          <span class="jf-card-icon">🔒</span>
+          <span class="jf-card-label">Discreet &amp; zero pressure</span>
+        </button>
+        <button class="jf-option-card" data-next="jfStep3">
+          <span class="jf-card-icon">✨</span>
+          <span class="jf-card-label">Something new &amp; exciting</span>
+        </button>
       </div>
     </div>
 
-    <!-- Step 3 — Timing -->
+    <!-- Q3 — How do you prefer to connect? -->
     <div class="quiz-step" id="jfStep3">
-      <div class="quiz-emoji">⏰</div>
-      <h2 class="quiz-title">When do you want this most?</h2>
-      <p class="quiz-sub">Tell us your pace — no wrong answer</p>
-      <div class="quiz-options">
-        <button class="jf-option" data-dating="2" data-ai="0" data-next="4">⚡ Tonight — I'm free right now</button>
-        <button class="jf-option" data-dating="0" data-ai="2" data-next="4">🌒 Late nights when I can't sleep</button>
-        <button class="jf-option" data-dating="0" data-ai="2" data-next="4">🔄 On-demand — whenever I feel like it</button>
-        <button class="jf-option" data-dating="1" data-ai="0" data-next="4">📆 Regularly throughout the week</button>
+      <p class="jf-step-label">Step 3 of 4</p>
+      <h2 class="quiz-title">How do you prefer to connect?</h2>
+      <div class="quiz-options jf-options-grid">
+        <button class="jf-option-card" data-next="jfStepLocation">
+          <span class="jf-card-icon">🚀</span>
+          <span class="jf-card-label">Quick &amp; spontaneous</span>
+        </button>
+        <button class="jf-option-card" data-next="jfStepLocation">
+          <span class="jf-card-icon">🎯</span>
+          <span class="jf-card-label">Straight to the point</span>
+        </button>
+        <button class="jf-option-card" data-next="jfStepLocation">
+          <span class="jf-card-icon">🕶️</span>
+          <span class="jf-card-label">Private &amp; low commitment</span>
+        </button>
+        <button class="jf-option-card" data-next="jfStepLocation">
+          <span class="jf-card-icon">🗺️</span>
+          <span class="jf-card-label">Just exploring options</span>
+        </button>
       </div>
     </div>
 
-    <!-- Step 4 — Turnoffs -->
-    <div class="quiz-step" id="jfStep4">
-      <div class="quiz-emoji">😒</div>
-      <h2 class="quiz-title">What's your biggest turnoff with apps so far?</h2>
-      <p class="quiz-sub">This helps us skip the stuff you hate</p>
-      <div class="quiz-options">
-        <button class="jf-option" data-dating="1" data-ai="1" data-next="5">👻 Nobody ever replies</button>
-        <button class="jf-option" data-dating="0" data-ai="2" data-next="5">🤥 Too many fake profiles</button>
-        <button class="jf-option" data-dating="1" data-ai="1" data-next="5">😴 Boring conversations that go nowhere</button>
-        <button class="jf-option" data-dating="2" data-ai="0" data-next="5">💸 Pay-walls just to say hello</button>
-      </div>
-    </div>
-
-    <!-- Step 5 — Age -->
-    <div class="quiz-step" id="jfStep5">
-      <div class="quiz-emoji">🎂</div>
-      <h2 class="quiz-title">Last one — your age group?</h2>
-      <p class="quiz-sub">Helps us tailor your experience</p>
-      <div class="quiz-options">
-        <button class="jf-option" data-dating="1" data-ai="0" data-next="route">18 – 24</button>
-        <button class="jf-option" data-dating="2" data-ai="0" data-next="route">25 – 34</button>
-        <button class="jf-option" data-dating="0" data-ai="1" data-next="route">35 – 44</button>
-        <button class="jf-option" data-dating="0" data-ai="2" data-next="route">45+</button>
-      </div>
-    </div>
-
-    <!-- Location step (dating path only) -->
+    <!-- Q4 — Location -->
     <div class="quiz-step" id="jfStepLocation">
+      <p class="jf-step-label">Step 4 of 4</p>
       <div class="quiz-emoji">📍</div>
-      <h2 class="quiz-title">Almost there — where are you?</h2>
-      <p class="quiz-sub">We'll pull up women who are active near you right now</p>
+      <h2 class="quiz-title">Where are you located?</h2>
+      <p class="quiz-sub">We&rsquo;ll show platforms with the most active women in your area.</p>
       <select class="quiz-select" id="jfLocation">
-        <option value="">Select your state...</option>
-        <option>Alabama</option><option>Alaska</option><option>Arizona</option>
-        <option>Arkansas</option><option>California</option><option>Colorado</option>
-        <option>Connecticut</option><option>Delaware</option><option>Florida</option>
-        <option>Georgia</option><option>Hawaii</option><option>Idaho</option>
-        <option>Illinois</option><option>Indiana</option><option>Iowa</option>
-        <option>Kansas</option><option>Kentucky</option><option>Louisiana</option>
-        <option>Maine</option><option>Maryland</option><option>Massachusetts</option>
-        <option>Michigan</option><option>Minnesota</option><option>Mississippi</option>
-        <option>Missouri</option><option>Montana</option><option>Nebraska</option>
-        <option>Nevada</option><option>New Hampshire</option><option>New Jersey</option>
-        <option>New Mexico</option><option>New York</option><option>North Carolina</option>
-        <option>North Dakota</option><option>Ohio</option><option>Oklahoma</option>
-        <option>Oregon</option><option>Pennsylvania</option><option>Rhode Island</option>
-        <option>South Carolina</option><option>South Dakota</option><option>Tennessee</option>
-        <option>Texas</option><option>Utah</option><option>Vermont</option>
-        <option>Virginia</option><option>Washington</option><option>West Virginia</option>
-        <option>Wisconsin</option><option>Wyoming</option>
+        <option value="">Select your country&hellip;</option>
+        <option>United States</option>
+        <option>United Kingdom</option>
+        <option>Canada</option>
+        <option>Australia</option>
+        <option>Ireland</option>
+        <option>Germany</option>
+        <option>France</option>
+        <option>Netherlands</option>
+        <option>Spain</option>
+        <option>Italy</option>
+        <option>Sweden</option>
+        <option>Norway</option>
+        <option>Denmark</option>
+        <option>New Zealand</option>
+        <option>South Africa</option>
+        <option>Other</option>
       </select>
-      <button class="quiz-find-btn" id="jfFindBtn">Show Me Who's Online →</button>
+      <button class="quiz-find-btn" id="jfFindBtn">Find My Matches &rarr;</button>
     </div>
 
-    <!-- Result A — Dating -->
-    <div class="quiz-step" id="jfResultDating">
-      <div class="quiz-result-icon">🔥</div>
-      <h2 class="quiz-result-count"><span id="jfMatchCount">47</span> Women Online Near You</h2>
-      <p class="quiz-result-sub">Active right now in <span id="jfMatchLocation">your area</span> — they want to chat tonight</p>
-      <div class="quiz-profiles">
-        <div class="quiz-profile"></div>
-        <div class="quiz-profile"></div>
-        <div class="quiz-profile"></div>
-        <div class="quiz-profile"></div>
-        <div class="quiz-profile quiz-profile-more">+<span id="jfExtraCount">43</span></div>
-      </div>
-      <a href="https://t.mbjms.com" class="quiz-cta-btn" id="jfCtaBtn" target="_blank" rel="noopener">Join Free &amp; View Matches →</a>
-      <p class="quiz-disclaimer">Free to join · No credit card required · 18+ only</p>
+    <!-- Email Capture -->
+    <div class="quiz-step" id="jfStepEmail">
+      <div class="quiz-emoji">🔓</div>
+      <h2 class="quiz-title">Your Shortcut is Ready</h2>
+      <p class="quiz-sub">Based on your preferences we&rsquo;ve matched you to the hottest active platforms right now &mdash; enter your email to unlock your Insider Access Pass + exclusive bonuses.</p>
+      <input class="jf-email-input" id="jfEmailInput" type="email" placeholder="your@email.com" autocomplete="email"/>
+      <button class="quiz-find-btn" id="jfEmailBtn">Unlock My Matches &rarr;</button>
+      <p class="quiz-disclaimer">Join 12,000+ getting weekly alerts. Zero spam, unsubscribe anytime.</p>
     </div>
 
-    <!-- Result B — AI Companion -->
-    <div class="quiz-step" id="jfResultAI">
-      <div class="quiz-result-icon">💜</div>
-      <h2 class="quiz-result-count" style="font-size:1.4rem">Your Companion Is Online Now</h2>
-      <p class="quiz-result-sub" style="margin-bottom:1.2rem">She's ready to talk — available 24/7, no ghosting, no awkwardness. Just real conversation.</p>
-      <div class="quiz-ai-features">
-        <div class="quiz-ai-feat">✅ Responds to every message instantly</div>
-        <div class="quiz-ai-feat">✅ Remembers you across conversations</div>
-        <div class="quiz-ai-feat">✅ No swiping, no rejection, no silence</div>
-        <div class="quiz-ai-feat">✅ Start for free in under a minute</div>
+    <!-- Result Card -->
+    <div class="quiz-step" id="jfResult">
+      <h2 class="quiz-result-count" style="font-size:1.6rem;">Your Path is Locked &amp; Loaded 🔥</h2>
+      <p class="quiz-result-sub" id="jfResultSub"></p>
+      <div class="jf-result-card">
+        <div class="jf-result-name" id="jfResultName"></div>
+        <div class="jf-result-tag" id="jfResultTag"></div>
+        <ul class="jf-result-stats" id="jfResultStats"></ul>
+        <a class="quiz-cta-btn" id="jfCtaBtn" href="#" target="_blank" rel="noopener noreferrer">Go There Now &rarr;</a>
+        <p class="quiz-disclaimer" style="text-align:center;margin-top:8px;">Special access link for Tempting Babes users &middot; No card needed to start</p>
       </div>
-      <a href="https://t.vlmai-1.com" class="quiz-cta-btn quiz-cta-ai" id="jfCtaBtnAI" target="_blank" rel="noopener">Start Talking Free →</a>
-      <p class="quiz-disclaimer">Free to start · No credit card required · 18+ only</p>
+      <p class="quiz-disclaimer" style="margin-top:6px;font-size:0.66rem;">Tempting Babes may earn a commission if you sign up. <a href="/privacy-policy/" style="color:rgba(255,255,255,0.35);">Privacy Policy</a></p>
     </div>
 
   </div>

@@ -85,7 +85,7 @@ nav {
   border: 1px solid rgba(255,255,255,0.08);
   margin-left: auto;
   margin-right: auto;
-  transform: translateX(-27px);
+  transform: translateX(-52px);
 }
 
 .tab {
@@ -98,17 +98,37 @@ nav {
   font-size: 0.9rem;
   font-weight: 500;
   cursor: pointer;
-  transition: all 0.2s;
+  transition: all 0.18s ease;
   text-decoration: none;
   display: inline-block;
+  white-space: nowrap;
 }
 
 .tab.active {
-  background: linear-gradient(135deg, var(--accent2), var(--accent));
+  background: linear-gradient(145deg, #ffaa40 0%, #ff7000 40%, #ff3d6b 100%);
   color: #fff;
+  box-shadow:
+    0 5px 0 rgba(160, 40, 0, 0.55),
+    0 8px 20px rgba(255, 80, 30, 0.4);
+  text-shadow: 0 1px 2px rgba(0,0,0,0.25);
 }
 
-.tab:not(.active):hover { color: #fff; }
+.tab:not(.active):hover {
+  color: #fff;
+  background: linear-gradient(145deg, #ffaa40 0%, #ff7000 40%, #ff3d6b 100%);
+  box-shadow:
+    0 5px 0 rgba(160, 40, 0, 0.55),
+    0 8px 20px rgba(255, 80, 30, 0.4);
+  transform: translateY(-2px);
+  text-shadow: 0 1px 2px rgba(0,0,0,0.25);
+}
+
+.tab:not(.active):active {
+  transform: translateY(3px);
+  box-shadow:
+    0 1px 0 rgba(160, 40, 0, 0.55),
+    0 2px 8px rgba(255, 80, 30, 0.3);
+}
 
 .join-btn {
   padding: 9px 22px;
@@ -210,11 +230,16 @@ nav {
   font-family: 'Bebas Neue', sans-serif;
   font-size: 4.8rem;
   letter-spacing: 4px;
-  background: linear-gradient(90deg, #fff 0%, var(--accent) 60%, var(--accent2) 100%);
+  background: linear-gradient(90deg, #fff 0%, #ff8c00 50%, #ff3d6b 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   text-shadow: none;
   line-height: 1;
+}
+.hero-wild {
+  background: linear-gradient(90deg, #ff85a8 0%, #ff2255 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 /* ── MAIN LAYOUT ── */
@@ -653,23 +678,54 @@ nav {
 
 /* ── SEO TEXT BLOCK ── */
 .seo-text-block {
-  max-width: 860px;
+  max-width: 1160px;
   margin: 0 auto;
-  padding: 48px 40px 8px;
+  padding: 72px 48px 24px;
   text-align: center;
 }
 .seo-text-block h2 {
   font-family: 'Bebas Neue', sans-serif;
-  font-size: 1.6rem;
+  font-size: 4.8rem;
+  letter-spacing: 4px;
+  line-height: 1;
+  white-space: nowrap;
+  background: linear-gradient(90deg, #ffcc80 0%, #ff3d6b 55%, #ff8c00 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 28px;
+}
+.seo-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: rgba(255,140,0,0.08);
+  border: 1px solid rgba(255,140,0,0.35);
+  border-radius: 100px;
+  padding: 5px 16px 5px 12px;
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: var(--accent2);
   letter-spacing: 2px;
-  color: rgba(255,255,255,0.75);
-  margin-bottom: 16px;
+  text-transform: uppercase;
+  margin-bottom: 26px;
 }
 .seo-text-block p {
-  font-size: 0.95rem;
-  color: var(--muted);
-  line-height: 1.7;
-  margin-bottom: 10px;
+  font-size: 1.08rem;
+  color: rgba(240,240,248,0.68);
+  line-height: 1.9;
+  margin-bottom: 20px;
+  text-align: left;
+}
+.seo-highlight {
+  color: var(--accent2);
+  text-decoration: underline;
+  text-decoration-color: rgba(255,140,0,0.4);
+  text-underline-offset: 3px;
+}
+@media (max-width: 768px) {
+  .seo-text-block { padding: 52px 20px 16px; }
+  .seo-text-block h2 { font-size: 1.8rem; white-space: normal; letter-spacing: 2px; }
+  .seo-text-block p { font-size: 0.98rem; }
 }
 
 /* ── EXIT INTENT POPUP ── */
@@ -993,6 +1049,171 @@ nav {
   padding: 10px 14px;
   font-size: 0.9rem;
   color: rgba(255,255,255,0.88);
+}
+
+/* ── JOIN FREE POPUP v2 (improved design) ── */
+.jf-modal-wide { max-width: 480px !important; }
+.jf-progress-wrap {
+  height: 3px;
+  background: rgba(255,255,255,0.08);
+  border-radius: 3px;
+  margin-bottom: 28px;
+  overflow: hidden;
+}
+.jf-bar {
+  height: 100%;
+  background: linear-gradient(90deg, #ff8c00, #ff3d6b);
+  border-radius: 3px;
+  transition: width 0.4s ease;
+  width: 0%;
+}
+.jf-step-label {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255,140,0,0.75);
+  margin-bottom: 8px;
+}
+.jf-options-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  flex-direction: unset;
+}
+.jf-option-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  background: rgba(22,22,22,0.9);
+  border: 1px solid rgba(255,255,255,0.09);
+  border-radius: 14px;
+  padding: 18px 10px;
+  cursor: pointer;
+  transition: border-color 0.2s, background 0.2s, transform 0.15s;
+  font-family: 'DM Sans', sans-serif;
+  color: #fff;
+  text-align: center;
+}
+.jf-option-card:hover {
+  border-color: rgba(255,61,107,0.5);
+  background: rgba(255,61,107,0.09);
+  transform: translateY(-2px);
+}
+.jf-option-card.selected {
+  border-color: #ff3d6b;
+  background: rgba(255,61,107,0.14);
+}
+.jf-card-icon { font-size: 1.5rem; }
+.jf-card-label {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: rgba(240,240,248,0.85);
+  line-height: 1.4;
+}
+.jf-btn-enter {
+  width: 100%;
+  padding: 15px;
+  border-radius: 50px;
+  background: linear-gradient(135deg, var(--accent2), var(--accent));
+  color: #fff;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+  border: none;
+  cursor: pointer;
+  margin-bottom: 10px;
+  box-shadow: 0 6px 28px rgba(255,61,107,0.45);
+  transition: transform 0.2s, box-shadow 0.2s;
+  animation: pulse-cta 2s ease-in-out infinite;
+}
+.jf-btn-enter:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 12px 40px rgba(255,61,107,0.65);
+}
+.jf-btn-exit {
+  background: transparent;
+  border: none;
+  color: rgba(255,255,255,0.3);
+  font-size: 0.82rem;
+  cursor: pointer;
+  text-decoration: underline;
+  padding: 6px;
+  display: block;
+  width: 100%;
+  transition: color 0.2s;
+}
+.jf-btn-exit:hover { color: rgba(255,255,255,0.55); }
+.jf-email-input {
+  width: 100%;
+  padding: 14px 18px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.12);
+  background: rgba(22,22,22,0.9);
+  color: #f0f0f8;
+  font-size: 0.98rem;
+  font-family: 'DM Sans', sans-serif;
+  margin-bottom: 14px;
+  outline: none;
+  text-align: center;
+  transition: border-color 0.2s;
+}
+.jf-email-input::placeholder { color: rgba(255,255,255,0.3); }
+.jf-email-input:focus { border-color: rgba(255,140,0,0.55); box-shadow: 0 0 0 3px rgba(255,140,0,0.08); }
+.jf-result-card {
+  background: linear-gradient(135deg, rgba(255,140,0,0.1), rgba(255,61,107,0.1));
+  border: 1px solid rgba(255,61,107,0.28);
+  border-radius: 16px;
+  padding: 20px 18px;
+  margin: 14px 0 16px;
+  text-align: left;
+}
+.jf-result-name {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.6rem;
+  letter-spacing: 2px;
+  background: linear-gradient(90deg, #fff, var(--accent2));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 4px;
+}
+.jf-result-tag {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: rgba(255,140,0,0.8);
+  margin-bottom: 14px;
+}
+.jf-result-stats {
+  list-style: none;
+  margin: 0 0 16px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+.jf-result-stats li {
+  font-size: 0.88rem;
+  color: rgba(240,240,248,0.75);
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+.jf-result-stats li::before {
+  content: '';
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent2);
+  flex-shrink: 0;
+  margin-top: 6px;
+}
+@media (max-width: 500px) {
+  .jf-modal-wide { max-width: 100% !important; border-radius: 22px 22px 0 0 !important; }
+  .jf-options-grid { grid-template-columns: 1fr; }
 }
 
 /* ── STATS BAR ── */
