@@ -7,7 +7,7 @@
 # This 301 redirect prevents your netlify.app URL from creating
 # duplicate content that competes with your real domain in Google.
 [[redirects]]
-  from   = "https://YOUR-SITE-NAME.netlify.app/*"
+  from   = "https://tempting-babes.netlify.app/*"
   to     = "https://www.temptingbabes.com/:splat"
   status = 301
   force  = true
