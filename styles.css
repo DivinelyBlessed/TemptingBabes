@@ -237,9 +237,9 @@ nav {
   line-height: 1;
 }
 .hero-wild {
-  background: linear-gradient(90deg, #ff85a8 0%, #ff2255 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  background: none;
+  -webkit-background-clip: unset;
+  -webkit-text-fill-color: #ff2d78;
 }
 
 /* ── MAIN LAYOUT ── */
