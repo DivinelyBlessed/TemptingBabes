@@ -766,50 +766,22 @@ function initHeroWord() {
   setTimeout(cycle, HOLDS[0]);
 }
 
-function initSwipe() {
-  const stage = document.getElementById('carouselStage');
-  if (!stage) return;
-  let startX = 0;
-  stage.addEventListener('touchstart', e => { startX = e.touches[0].clientX; }, { passive: true });
-  stage.addEventListener('touchend', e => {
-    const dx = e.changedTouches[0].clientX - startX;
-    if (Math.abs(dx) < 40) return;
-    dx < 0 ? advance() : reverse();
-  }, { passive: true });
-}
-
 document.addEventListener('DOMContentLoaded', () => {
-  // ── Critical path — runs immediately ──
   initGetAccessPopup();
   initHeroWord();
-
-  // Wire mobile sticky button to the same age gate flow
-  const stickyBtn = document.getElementById('mobileStickyBtn');
-  if (stickyBtn) {
-    stickyBtn.addEventListener('click', () => {
-      document.getElementById('getAccessBtn')?.click();
-    });
-  }
+  initCarousel();
+  initQuiz();
+  initJoinFreeQuiz();
+  initABTest();
+  initExitIntent();
+  document.getElementById('scrollLeft').addEventListener('click', reverse);
+  document.getElementById('scrollRight').addEventListener('click', advance);
 
   const menuBtn    = document.getElementById('menuBtn');
   const mobileMenu = document.getElementById('mobileMenu');
-  if (menuBtn) menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('open'));
-
-  // ── Deferred — non-critical, runs when browser is idle ──
-  const deferred = () => {
-    initCarousel();
-    initSwipe();
-    initQuiz();
-    initJoinFreeQuiz();
-    initABTest();
-    initExitIntent();
-    document.getElementById('scrollLeft')?.addEventListener('click', reverse);
-    document.getElementById('scrollRight')?.addEventListener('click', advance);
-  };
-
-  if ('requestIdleCallback' in window) {
-    requestIdleCallback(deferred, { timeout: 1500 });
-  } else {
-    setTimeout(deferred, 200);
+  if (menuBtn) {
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('open');
+    });
   }
 });
