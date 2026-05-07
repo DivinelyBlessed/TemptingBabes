@@ -733,15 +733,11 @@ function initHeroWord() {
   if (!el) return;
 
   const WORDS = ['Wild', 'Spicy', 'Flirty', 'Teasing', 'Naughty', 'Seductive', 'Irresistible', 'Tempting'];
-  const HOLDS = [350, 400, 450, 500, 600, 800, 1200, 3000];
+  const HOLDS = [350, 400, 450, 500, 600, 800, 700, 3000];
   let idx = 0;
 
   function setWord(i) {
     el.textContent = WORDS[i];
-    const isTempting = WORDS[i] === 'Tempting';
-    el.style.textDecoration = isTempting ? 'underline' : 'none';
-    el.style.textDecorationColor = '#e8456a';
-    el.style.textUnderlineOffset = '5px';
   }
 
   setWord(0);
