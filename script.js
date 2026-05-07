@@ -313,6 +313,39 @@ function initQuiz() {
 }
 
 // ── JOIN FREE POPUP v2 ──
+const JF_COUNTRIES = [
+  'Afghanistan','Albania','Algeria','Andorra','Angola','Antigua and Barbuda',
+  'Argentina','Armenia','Australia','Austria','Azerbaijan','Bahamas','Bahrain',
+  'Bangladesh','Barbados','Belarus','Belgium','Belize','Benin','Bhutan',
+  'Bolivia','Bosnia and Herzegovina','Botswana','Brazil','Brunei','Bulgaria',
+  'Burkina Faso','Burundi','Cabo Verde','Cambodia','Cameroon','Canada',
+  'Central African Republic','Chad','Chile','China','Colombia','Comoros',
+  'Congo (Republic)','Congo (DR)','Costa Rica','Croatia','Cuba','Cyprus',
+  'Czech Republic','Denmark','Djibouti','Dominica','Dominican Republic',
+  'Ecuador','Egypt','El Salvador','Equatorial Guinea','Eritrea','Estonia',
+  'Eswatini','Ethiopia','Fiji','Finland','France','Gabon','Gambia','Georgia',
+  'Germany','Ghana','Greece','Grenada','Guatemala','Guinea','Guinea-Bissau',
+  'Guyana','Haiti','Honduras','Hungary','Iceland','India','Indonesia','Iran',
+  'Iraq','Ireland','Israel','Italy','Jamaica','Japan','Jordan','Kazakhstan',
+  'Kenya','Kiribati','Kuwait','Kyrgyzstan','Laos','Latvia','Lebanon','Lesotho',
+  'Liberia','Libya','Liechtenstein','Lithuania','Luxembourg','Madagascar',
+  'Malawi','Malaysia','Maldives','Mali','Malta','Marshall Islands','Mauritania',
+  'Mauritius','Mexico','Micronesia','Moldova','Monaco','Mongolia','Montenegro',
+  'Morocco','Mozambique','Myanmar','Namibia','Nauru','Nepal','Netherlands',
+  'New Zealand','Nicaragua','Niger','Nigeria','North Korea','North Macedonia',
+  'Norway','Oman','Pakistan','Palau','Panama','Papua New Guinea','Paraguay',
+  'Peru','Philippines','Poland','Portugal','Qatar','Romania','Russia','Rwanda',
+  'Saint Kitts and Nevis','Saint Lucia','Saint Vincent and the Grenadines',
+  'Samoa','San Marino','São Tomé and Príncipe','Saudi Arabia','Senegal','Serbia',
+  'Seychelles','Sierra Leone','Singapore','Slovakia','Slovenia','Solomon Islands',
+  'Somalia','South Africa','South Korea','South Sudan','Spain','Sri Lanka',
+  'Sudan','Suriname','Sweden','Switzerland','Syria','Taiwan','Tajikistan',
+  'Tanzania','Thailand','Timor-Leste','Togo','Tonga','Trinidad and Tobago',
+  'Tunisia','Turkey','Turkmenistan','Tuvalu','Uganda','Ukraine',
+  'United Arab Emirates','United Kingdom','United States','Uruguay','Uzbekistan',
+  'Vanuatu','Venezuela','Vietnam','Yemen','Zambia','Zimbabwe'
+];
+
 const JF_PLATFORMS = {
   hookups: {
     headline: '#1 Rated Platform For You',
@@ -365,6 +398,12 @@ function initJoinFreeQuiz() {
     if (emailEl) { emailEl.value = ''; emailEl.style.borderColor = ''; }
     const locEl = document.getElementById('jfLocation');
     if (locEl) locEl.value = '';
+    const countryLabel = document.getElementById('jfCountryLabel');
+    if (countryLabel) countryLabel.textContent = 'Select your country…';
+    const countryTrigger = document.getElementById('jfCountryTrigger');
+    if (countryTrigger) { countryTrigger.classList.remove('has-value'); countryTrigger.style.borderColor = ''; }
+    const countryDropdown = document.getElementById('jfCountryDropdown');
+    if (countryDropdown) countryDropdown.classList.remove('open');
     const bar = document.getElementById('jfScanBar');
     if (bar) bar.style.width = '0%';
     ['jfCheck1','jfCheck2','jfCheck3'].forEach(id => {
@@ -437,27 +476,17 @@ function initJoinFreeQuiz() {
 
   // ── Build result card ──
   function buildResult() {
-    const p = JF_PLATFORMS[craving] || JF_PLATFORMS.hookups;
-    const location = (document.getElementById('jfLocation').value || 'your area');
+    const p        = JF_PLATFORMS[craving] || JF_PLATFORMS.hookups;
+    const location = document.getElementById('jfLocation').value || 'your area';
     const count    = Math.floor(Math.random() * 35) + 22;
 
     document.getElementById('jfResultHeading').textContent = count + ' Women Online Near You';
     document.getElementById('jfResultSub').textContent =
-      'Active right now in ' + location + ' — they want to chat tonight';
-    document.getElementById('jfResultName').textContent = p.headline;
-    document.getElementById('jfResultTag').textContent  = p.tag;
-
-    const list = document.getElementById('jfResultStats');
-    list.innerHTML = '';
-    p.stats.forEach(s => {
-      const li = document.createElement('li');
-      li.textContent = s;
-      list.appendChild(li);
-    });
+      'Your preferences are locked in. We\'ve lined up the most active women in ' + location +
+      ' — expect some of the hottest profiles heading straight to your inbox. Don\'t say we didn\'t warn you.';
 
     const cta = document.getElementById('jfCtaBtn');
-    cta.href        = p.url;
-    cta.textContent = 'Claim My Free Access →';
+    cta.href = p.url;
 
     if (typeof gtag !== 'undefined') gtag('event', 'jf_quiz_complete', { craving });
   }
@@ -510,11 +539,60 @@ function initJoinFreeQuiz() {
     });
   });
 
+  // ── Custom country picker ──
+  (function initCountryPicker() {
+    const trigger  = document.getElementById('jfCountryTrigger');
+    const dropdown = document.getElementById('jfCountryDropdown');
+    const search   = document.getElementById('jfCountrySearch');
+    const opts     = document.getElementById('jfCountryOpts');
+    const hidden   = document.getElementById('jfLocation');
+    const label    = document.getElementById('jfCountryLabel');
+    if (!trigger) return;
+
+    function renderOpts(filter) {
+      opts.innerHTML = '';
+      const f = filter.toLowerCase();
+      JF_COUNTRIES.filter(c => c.toLowerCase().includes(f)).forEach(c => {
+        const div = document.createElement('div');
+        div.className = 'jf-country-opt';
+        div.textContent = c;
+        div.addEventListener('mousedown', e => {
+          e.preventDefault();
+          hidden.value = c;
+          label.textContent = c;
+          trigger.classList.add('has-value');
+          trigger.style.borderColor = '';
+          dropdown.classList.remove('open');
+        });
+        opts.appendChild(div);
+      });
+    }
+
+    trigger.addEventListener('click', () => {
+      dropdown.classList.toggle('open');
+      if (dropdown.classList.contains('open')) {
+        search.value = '';
+        renderOpts('');
+        setTimeout(() => search.focus(), 50);
+      }
+    });
+
+    search.addEventListener('input', () => renderOpts(search.value));
+
+    document.addEventListener('click', e => {
+      const wrap = document.getElementById('jfCountryWrap');
+      if (wrap && !wrap.contains(e.target)) dropdown.classList.remove('open');
+    });
+
+    renderOpts('');
+  })();
+
   // Location → scan → email
   document.getElementById('jfFindBtn').addEventListener('click', () => {
-    const loc = document.getElementById('jfLocation');
-    if (!loc.value) { loc.style.borderColor = 'var(--accent)'; return; }
-    loc.style.borderColor = '';
+    const locVal  = document.getElementById('jfLocation').value;
+    const trigger = document.getElementById('jfCountryTrigger');
+    if (!locVal) { if (trigger) trigger.style.borderColor = 'var(--accent)'; return; }
+    if (trigger) trigger.style.borderColor = '';
     advanceTo('jfStepScan', 88);
     runScan(() => advanceTo('jfStepEmail', 92));
   });
