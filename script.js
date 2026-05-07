@@ -663,12 +663,52 @@ function initExitIntent() {
   });
 }
 
+function initGetAccessPopup() {
+  const overlay = document.getElementById('getAccessOverlay');
+  const form    = document.getElementById('gaForm');
+  const emailEl = document.getElementById('gaEmail');
+  if (!overlay || !form) return;
+
+  const AFFILIATE_URL = 'https://t.mbjms.com/visit/?bta=36027&nci=5349&afp=getaccess';
+
+  function openGA() {
+    overlay.style.display = 'flex';
+    if (emailEl) emailEl.value = '';
+    if (typeof gtag !== 'undefined') gtag('event', 'ga_popup_open');
+  }
+  function closeGA() { overlay.style.display = 'none'; }
+
+  const btn = document.getElementById('getAccessBtn');
+  if (btn) btn.addEventListener('click', openGA);
+
+  document.getElementById('gaClose')?.addEventListener('click', closeGA);
+  document.getElementById('gaCloseRight')?.addEventListener('click', closeGA);
+  overlay.addEventListener('click', e => { if (e.target === overlay) closeGA(); });
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && overlay.style.display !== 'none') closeGA();
+  });
+
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    const email = emailEl ? emailEl.value.trim() : '';
+    if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      if (emailEl) { emailEl.focus(); emailEl.style.borderColor = '#ff3d6b'; }
+      return;
+    }
+    if (typeof gtag !== 'undefined') gtag('event', 'ga_email_submit');
+    window.open(AFFILIATE_URL + '&email=' + encodeURIComponent(email), '_blank', 'noopener,noreferrer');
+    closeGA();
+  });
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   initCarousel();
   initQuiz();
   initJoinFreeQuiz();
   initABTest();
   initExitIntent();
+  initGetAccessPopup();
   document.getElementById('scrollLeft').addEventListener('click', reverse);
   document.getElementById('scrollRight').addEventListener('click', advance);
 
