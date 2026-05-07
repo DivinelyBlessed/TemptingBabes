@@ -271,13 +271,13 @@ nav {
 }
 .ag-brand {
   font-family: 'Playfair Display', serif;
-  font-size: 0.82rem;
+  font-weight: 900;
+  font-size: 1.35rem;
   letter-spacing: 1.5px;
-  background: linear-gradient(90deg, #ff8c00, #ff3d6b);
+  background: linear-gradient(90deg, var(--accent2), var(--accent));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   margin-bottom: 18px;
-  opacity: 0.85;
 }
 .ag-title {
   font-family: 'Bebas Neue', sans-serif;
