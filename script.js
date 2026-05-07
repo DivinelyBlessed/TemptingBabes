@@ -707,19 +707,16 @@ function initHeroWord() {
   if (!el) return;
 
   const WORDS = ['Wild', 'Wicked', 'Naughty', 'Spicy', 'Seductive', 'Teasing', 'Tempting'];
-  // Hold duration per word — escalates, climaxes at Tempting
-  const HOLDS = [2000, 1700, 1400, 1100, 800, 500, 3500];
+  // Escalating pace — slow build → rapid → climax on Tempting
+  const HOLDS = [1400, 1100, 850, 650, 450, 280, 3000];
   let idx = 0;
 
-  // Lock width to widest word — left-align so no gap before the word
-  const widths = WORDS.map(w => { el.textContent = w; return el.offsetWidth; });
-  el.style.minWidth = Math.max(...widths) + 'px';
-  el.style.textAlign = 'left';
   el.textContent = WORDS[0];
 
   function cycle() {
+    // Fade out — layout shift happens while invisible
     el.style.opacity = '0';
-    el.style.transform = 'translateY(-12px) scale(0.9)';
+    el.style.transform = 'translateY(-10px) scale(0.92)';
 
     setTimeout(() => {
       idx = (idx + 1) % WORDS.length;
@@ -727,16 +724,16 @@ function initHeroWord() {
 
       el.style.transition = 'none';
       el.style.opacity = '0';
-      el.style.transform = 'translateY(12px) scale(1.08)';
+      el.style.transform = 'translateY(10px) scale(1.06)';
 
       requestAnimationFrame(() => requestAnimationFrame(() => {
-        el.style.transition = 'opacity 0.28s ease, transform 0.28s ease';
+        el.style.transition = 'opacity 0.25s ease, transform 0.25s ease';
         el.style.opacity = '1';
         el.style.transform = 'translateY(0) scale(1)';
       }));
 
       setTimeout(cycle, HOLDS[idx]);
-    }, 300);
+    }, 260);
   }
 
   setTimeout(cycle, HOLDS[0]);
