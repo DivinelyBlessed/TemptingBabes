@@ -193,7 +193,9 @@ nav {
   display: flex;
   gap: 60px;
   width: max-content;
-  animation: ticker-scroll 70s linear infinite;
+  animation: ticker-scroll 70s linear infinite, ticker-fadein 0.4s ease 0.25s both;
+  will-change: transform;
+  backface-visibility: hidden;
 }
 
 .ticker-wrap:hover .ticker-track {
@@ -217,6 +219,10 @@ nav {
 @keyframes ticker-scroll {
   0%   { transform: translateX(0); }
   100% { transform: translateX(-50%); }
+}
+@keyframes ticker-fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
 }
 
 /* ── HERO TITLE ── */
