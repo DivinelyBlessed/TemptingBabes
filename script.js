@@ -663,6 +663,24 @@ function initExitIntent() {
   });
 }
 
+function initAgeGate(onConfirmed) {
+  const agOverlay = document.getElementById('ageGateOverlay');
+  if (!agOverlay) { onConfirmed(); return; }
+
+  document.getElementById('ageGateYes')?.addEventListener('click', () => {
+    sessionStorage.setItem('ageVerified', '1');
+    agOverlay.style.display = 'none';
+    onConfirmed();
+  });
+
+  document.getElementById('ageGateNo')?.addEventListener('click', () => {
+    agOverlay.style.display = 'none';
+    window.location.href = 'https://www.google.com';
+  });
+
+  return agOverlay;
+}
+
 function initGetAccessPopup() {
   const overlay = document.getElementById('getAccessOverlay');
   const form    = document.getElementById('gaForm');
@@ -678,8 +696,16 @@ function initGetAccessPopup() {
   }
   function closeGA() { overlay.style.display = 'none'; }
 
+  const agOverlay = initAgeGate(openGA);
+
   const btn = document.getElementById('getAccessBtn');
-  if (btn) btn.addEventListener('click', openGA);
+  if (btn) btn.addEventListener('click', () => {
+    if (sessionStorage.getItem('ageVerified')) {
+      openGA();
+    } else {
+      agOverlay.style.display = 'flex';
+    }
+  });
 
   document.getElementById('gaClose')?.addEventListener('click', closeGA);
   document.getElementById('gaCloseRight')?.addEventListener('click', closeGA);
@@ -706,20 +732,25 @@ function initHeroWord() {
   const el = document.getElementById('heroWild');
   if (!el) return;
 
-  const WORDS = ['Wild', 'Spicy', 'Flirty', 'Teasing', 'Naughty', 'Seductive', 'Irresistible', 'Tempting'];
-  const HOLDS = [350, 400, 450, 500, 600, 800, 1200, 3000];
+  const WORDS  = ['Wild', 'Spicy', 'Flirty', 'Teasing', 'Naughty', 'Seductive', 'Irresistible', 'Tempting'];
+  const EMOJIS = ['🔥', '🌶️', '💋', '😏', '😈', '🫦', '✨', '🍑'];
+  const HOLDS  = [350, 400, 450, 500, 600, 800, 1200, 3000];
   let idx = 0;
 
-  el.textContent = WORDS[0];
+  function setWord(i) {
+    el.textContent = WORDS[i];
+    el.style.setProperty('--hero-emoji', `'${EMOJIS[i]}'`);
+  }
+
+  setWord(0);
 
   function cycle() {
-    // Fade out — layout shift happens while invisible
     el.style.opacity = '0';
     el.style.transform = 'translateY(-10px) scale(0.92)';
 
     setTimeout(() => {
       idx = (idx + 1) % WORDS.length;
-      el.textContent = WORDS[idx];
+      setWord(idx);
 
       el.style.transition = 'none';
       el.style.opacity = '0';

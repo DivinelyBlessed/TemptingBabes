@@ -246,11 +246,98 @@ nav {
   will-change: opacity, transform;
 }
 .hero-wild::after {
-  content: '🔥';
+  content: var(--hero-emoji, '🔥');
   -webkit-text-fill-color: initial;
   letter-spacing: 0;
   margin-left: 2px;
 }
+
+/* ── AGE GATE ── */
+.ag-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+.ag-modal {
+  background: #111;
+  border: 1px solid rgba(255,61,107,0.2);
+  border-radius: 20px;
+  padding: 40px 36px 32px;
+  max-width: 460px;
+  width: 90%;
+  text-align: center;
+  box-shadow: 0 24px 80px rgba(0,0,0,0.6), 0 0 0 1px rgba(255,255,255,0.04);
+}
+.ag-brand {
+  font-family: 'Playfair Display', serif;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  background: linear-gradient(90deg, #ff8c00, #ff3d6b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 22px;
+}
+.ag-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 3rem;
+  letter-spacing: 3px;
+  color: #fff;
+  margin-bottom: 14px;
+  line-height: 1;
+}
+.ag-body {
+  font-size: 0.92rem;
+  color: rgba(255,255,255,0.55);
+  line-height: 1.6;
+  margin-bottom: 28px;
+}
+.ag-yes {
+  display: block;
+  width: 100%;
+  padding: 16px 24px;
+  border-radius: 50px;
+  border: none;
+  background: linear-gradient(135deg, #ff8c00, #ff3d6b);
+  color: #fff;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 6px 28px rgba(255,61,107,0.4);
+  margin-bottom: 12px;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.ag-yes:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 36px rgba(255,61,107,0.55);
+}
+.ag-no {
+  display: block;
+  width: 100%;
+  padding: 14px 24px;
+  border-radius: 50px;
+  border: 1px solid rgba(255,255,255,0.15);
+  background: transparent;
+  color: rgba(255,255,255,0.5);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.9rem;
+  cursor: pointer;
+  margin-bottom: 20px;
+  transition: border-color 0.15s ease, color 0.15s ease;
+}
+.ag-no:hover { border-color: rgba(255,255,255,0.35); color: rgba(255,255,255,0.75); }
+.ag-legal {
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.3);
+  line-height: 1.5;
+}
+.ag-link { color: rgba(255,255,255,0.4); text-decoration: underline; }
 
 /* ── MAIN LAYOUT ── */
 .main-layout {
