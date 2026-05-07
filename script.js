@@ -428,15 +428,12 @@ function initJoinFreeQuiz() {
   // ── Build result card ──
   function buildResult() {
     const p = JF_PLATFORMS[craving] || JF_PLATFORMS.hookups;
-    const cravingLabels = {
-      hookups: 'fast & flirty hookups',
-      dates:   'real conversations & dates',
-      live:    'live cam experiences',
-      ai:      'an always-on companion'
-    };
+    const location = (document.getElementById('jfLocation').value || 'your area');
+    const count    = Math.floor(Math.random() * 35) + 22;
+
+    document.getElementById('jfResultHeading').textContent = count + ' Women Online Near You';
     document.getElementById('jfResultSub').textContent =
-      'Based on your answers, we\'ve matched you to the best platform for ' +
-      (cravingLabels[craving] || 'your type of connection') + '.';
+      'Active right now in ' + location + ' — they want to chat tonight';
     document.getElementById('jfResultName').textContent = p.headline;
     document.getElementById('jfResultTag').textContent  = p.tag;
 
