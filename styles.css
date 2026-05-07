@@ -245,12 +245,6 @@ nav {
   transition: opacity 0.3s ease, transform 0.3s ease;
   will-change: opacity, transform;
 }
-.hero-wild::after {
-  content: var(--hero-emoji, '🔥');
-  -webkit-text-fill-color: initial;
-  letter-spacing: 0;
-  margin-left: 2px;
-}
 
 /* ── AGE GATE ── */
 .ag-overlay {
