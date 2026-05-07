@@ -707,7 +707,7 @@ function initHeroWord() {
   if (!el) return;
 
   const WORDS = ['Wild', 'Spicy', 'Flirty', 'Teasing', 'Naughty', 'Seductive', 'Irresistible', 'Tempting'];
-  const HOLDS = [3000, 350, 400, 450, 500, 700, 1000, 1400];
+  const HOLDS = [350, 400, 450, 500, 600, 800, 1200, 3000];
   let idx = 0;
 
   el.textContent = WORDS[0];
