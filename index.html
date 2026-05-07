@@ -768,5 +768,29 @@
 })();
 </script>
 
+<script>
+/* Critical inline: wires Join Free → age gate with zero network delay */
+(function(){
+  var btn = document.getElementById('getAccessBtn');
+  var ag  = document.getElementById('ageGateOverlay');
+  var ga  = document.getElementById('getAccessOverlay');
+  if (!btn || !ag) return;
+  btn.addEventListener('click', function() { ag.style.display = 'flex'; });
+  var yBtn = document.getElementById('ageGateYes');
+  var nBtn = document.getElementById('ageGateNo');
+  if (yBtn) yBtn.addEventListener('click', function() {
+    ag.style.display = 'none';
+    if (ga) ga.style.display = 'flex';
+  });
+  if (nBtn) nBtn.addEventListener('click', function() {
+    ag.style.display = 'none';
+    window.location.href = 'https://www.google.com';
+  });
+  if (ga) ga.addEventListener('click', function(e) {
+    if (e.target === ga) ga.style.display = 'none';
+  });
+})();
+</script>
+
 </body>
 </html>

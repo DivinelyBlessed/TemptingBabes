@@ -695,16 +695,9 @@ function initGetAccessPopup() {
   }
   function closeGA() { overlay.style.display = 'none'; }
 
-  const agOverlay = initAgeGate(openGA);
-
-  const btn = document.getElementById('getAccessBtn');
-  if (btn) btn.addEventListener('click', () => {
-    if (agOverlay) {
-      agOverlay.style.display = 'flex';
-    } else {
-      openGA();
-    }
-  });
+  // Button + age gate basic flow handled by inline script for instant response.
+  // initAgeGate wires the Yes button to also submit email via openGA (form validation).
+  initAgeGate(openGA);
 
   document.getElementById('gaClose')?.addEventListener('click', closeGA);
   document.getElementById('gaCloseRight')?.addEventListener('click', closeGA);
