@@ -707,16 +707,17 @@ function initHeroWord() {
   if (!el) return;
 
   const WORDS = ['Wild', 'Wicked', 'Naughty', 'Spicy', 'Seductive', 'Teasing', 'Tempting'];
+  // Hold duration per word — escalates, climaxes at Tempting
+  const HOLDS = [2000, 1700, 1400, 1100, 800, 500, 3500];
   let idx = 0;
 
-  // Lock width to widest word so "These Girls Are" never shifts
+  // Lock width to widest word — left-align so no gap before the word
   const widths = WORDS.map(w => { el.textContent = w; return el.offsetWidth; });
   el.style.minWidth = Math.max(...widths) + 'px';
-  el.style.textAlign = 'center';
+  el.style.textAlign = 'left';
   el.textContent = WORDS[0];
 
   function cycle() {
-    // Exit: slide up, fade out
     el.style.opacity = '0';
     el.style.transform = 'translateY(-12px) scale(0.9)';
 
@@ -724,23 +725,21 @@ function initHeroWord() {
       idx = (idx + 1) % WORDS.length;
       el.textContent = WORDS[idx];
 
-      // Snap below with no transition
       el.style.transition = 'none';
       el.style.opacity = '0';
       el.style.transform = 'translateY(12px) scale(1.08)';
 
       requestAnimationFrame(() => requestAnimationFrame(() => {
-        el.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+        el.style.transition = 'opacity 0.28s ease, transform 0.28s ease';
         el.style.opacity = '1';
         el.style.transform = 'translateY(0) scale(1)';
       }));
 
-      // Tempting gets a longer rest before looping
-      setTimeout(cycle, WORDS[idx] === 'Tempting' ? 3200 : 1100);
-    }, 320);
+      setTimeout(cycle, HOLDS[idx]);
+    }, 300);
   }
 
-  setTimeout(cycle, 1600);
+  setTimeout(cycle, HOLDS[0]);
 }
 
 document.addEventListener('DOMContentLoaded', () => {
