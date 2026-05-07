@@ -706,34 +706,67 @@ function initHeroWord() {
   const el = document.getElementById('heroWild');
   if (!el) return;
 
-  const WORDS = ['Wild', 'Wicked', 'Naughty', 'Spicy', 'Seductive', 'Teasing', 'Tempting'];
-  // Escalating pace — slow build → rapid → climax on Tempting
-  const HOLDS = [1400, 1100, 850, 650, 450, 280, 3000];
+  // 13-word arc: playful → intense → CLIMAX
+  const WORDS = [
+    'Wild','Flirty','Daring','Bold','Naughty',
+    'Fiery','Wicked','Sultry','Spicy','Irresistible',
+    'Seductive','Teasing','Tempting'
+  ];
+  // Color arc: warm amber → deep crimson → vivid pink burst at Tempting
+  const COLORS = [
+    '#ff8c00','#ff7515','#ff5e22','#ff4730','#ff3040',
+    '#ff2052','#ff1064','#ee0867','#dd0060','#cc0055',
+    '#bb004a','#aa003f','#ff3d6b'
+  ];
+  // Visual scale arc: grows 0% → 12% across words (transform only, no layout shift)
+  const SCALES = [
+    1.00, 1.01, 1.02, 1.03, 1.04,
+    1.05, 1.06, 1.07, 1.08, 1.09,
+    1.10, 1.11, 1.14
+  ];
+  // Hold times: slow build → rapid fire → long climax at Tempting
+  const HOLDS = [
+    1500, 1280, 1080, 900, 740,
+    600,  480,  370,  280, 210,
+    155,  120,  3400
+  ];
+
   let idx = 0;
 
+  function apply() {
+    el.style.webkitTextFillColor = COLORS[idx];
+    if (idx === WORDS.length - 1) {
+      // Tempting: vivid glow
+      el.style.textShadow = '0 0 22px rgba(255,61,107,0.75), 0 0 50px rgba(255,61,107,0.35)';
+    } else {
+      el.style.textShadow = '';
+    }
+  }
+
   el.textContent = WORDS[0];
+  apply();
 
   function cycle() {
-    // Fade out — layout shift happens while invisible
     el.style.opacity = '0';
-    el.style.transform = 'translateY(-10px) scale(0.92)';
+    el.style.transform = `translateY(-10px) scale(${SCALES[idx] * 0.91})`;
 
     setTimeout(() => {
       idx = (idx + 1) % WORDS.length;
       el.textContent = WORDS[idx];
+      apply();
 
       el.style.transition = 'none';
       el.style.opacity = '0';
-      el.style.transform = 'translateY(10px) scale(1.06)';
+      el.style.transform = `translateY(10px) scale(${SCALES[idx] * 1.06})`;
 
       requestAnimationFrame(() => requestAnimationFrame(() => {
-        el.style.transition = 'opacity 0.25s ease, transform 0.25s ease';
+        el.style.transition = 'opacity 0.22s ease, transform 0.22s ease';
         el.style.opacity = '1';
-        el.style.transform = 'translateY(0) scale(1)';
+        el.style.transform = `translateY(0) scale(${SCALES[idx]})`;
       }));
 
       setTimeout(cycle, HOLDS[idx]);
-    }, 260);
+    }, 240);
   }
 
   setTimeout(cycle, HOLDS[0]);

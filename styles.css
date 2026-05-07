@@ -240,8 +240,8 @@ nav {
   display: inline-block;
   background: none;
   -webkit-background-clip: unset;
-  -webkit-text-fill-color: #e8456a;
-  transition: opacity 0.3s ease, transform 0.3s ease;
+  -webkit-text-fill-color: #ff8c00;
+  transition: opacity 0.22s ease, transform 0.22s ease;
   will-change: opacity, transform;
 }
 
