@@ -607,15 +607,53 @@ footer a:hover{color:var(--muted);}
 </main>
 
 <!-- FOOTER -->
-<footer>
-  <p>This is a sponsored editorial. Results may vary. These statements have not been evaluated by the Food and Drug Administration.<br/>
-  This product is not intended to diagnose, treat, cure, or prevent any disease.</p>
-  <p style="margin-top:10px;">
-    <a href="#">Privacy Policy</a> &nbsp;·&nbsp;
-    <a href="#">Terms &amp; Conditions</a> &nbsp;·&nbsp;
-    <a href="#">Contact Us</a>
-  </p>
-</footer>
 
+
+
+<style>
+/* SITE FOOTER */
+.site-footer{background:#080808;border-top:1px solid rgba(255,61,107,0.15);padding:52px 40px 28px;position:relative;z-index:1;font-family:'DM Sans',Arial,sans-serif;}
+.footer-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:48px;padding-bottom:40px;border-bottom:1px solid rgba(255,255,255,0.07);}
+.footer-logo{font-family:'Playfair Display',Georgia,serif;font-weight:900;font-size:1.4rem;letter-spacing:1.5px;background:linear-gradient(90deg,#ff8c00,#ff3d6b);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:14px;display:inline-block;}
+.footer-tagline{font-size:0.88rem;color:rgba(255,255,255,0.45);line-height:1.7;max-width:280px;}
+.footer-col-title{font-size:0.72rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.35);margin-bottom:18px;}
+.footer-links{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:12px;}
+.footer-links a{font-size:0.92rem;color:rgba(255,255,255,0.6);text-decoration:none;transition:color 0.18s;}
+.footer-links a:hover{color:#ff3d6b;}
+.footer-bottom{max-width:1100px;margin:28px auto 0;text-align:center;font-size:0.78rem;color:rgba(255,255,255,0.22);}
+@media(max-width:768px){.site-footer{padding:40px 20px 24px;}.footer-inner{grid-template-columns:1fr 1fr;gap:32px;}.footer-brand{grid-column:1/-1;}}
+@media(max-width:480px){.footer-inner{grid-template-columns:1fr;}}
+</style>
+<!-- SITE FOOTER -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="footer-logo">Tempting Babes</div>
+      <p class="footer-tagline">Your all-in-one hub for Dating, Live Cams, AI Girls and VIP access. Built for real connections and instant interaction.</p>
+    </div>
+    <nav class="footer-col" aria-label="Explore">
+      <h4 class="footer-col-title">Explore</h4>
+      <ul class="footer-links">
+        <li><a href="/AI-chat/">AI Chat</a></li>
+        <li><a href="/Cams/">Live Cams</a></li>
+        <li><a href="/Dating/">Dating</a></li>
+        <li><a href="/Offers/">Hot Offers</a></li>
+        <li><a href="/Trending/">Trending</a></li>
+        <li><a href="/New/">New</a></li>
+      </ul>
+    </nav>
+    <nav class="footer-col" aria-label="Legal and Info">
+      <h4 class="footer-col-title">Legal &amp; Info</h4>
+      <ul class="footer-links">
+        <li><a href="/Blog/dating-advice/">Blog</a></li>
+        <li><a href="/About/">About</a></li>
+        <li><a href="/privacy-policy/">Privacy Policy</a></li>
+      </ul>
+    </nav>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 Tempting Babes &nbsp;&middot;&nbsp; 18+ Only &nbsp;&middot;&nbsp; All rights reserved.</p>
+  </div>
+</footer>
 </body>
 </html>
