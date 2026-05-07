@@ -491,10 +491,11 @@ function initJoinFreeQuiz() {
     if (typeof gtag !== 'undefined') gtag('event', 'jf_quiz_complete', { craving });
   }
 
-  // ── Wire join-btn across the page ──
-  document.querySelectorAll('.join-btn').forEach(btn => {
-    btn.addEventListener('click', () => openJF());
-  });
+  // ── Wire FIND MY MATCH to join free quiz ──
+  const findBtn = document.getElementById('findMyMatchBtn');
+  if (findBtn) findBtn.addEventListener('click', () => openJF());
+
+  // JOIN FREE button — no funnel assigned yet
 
   // Close
   closeBtn.addEventListener('click', closeJF);
