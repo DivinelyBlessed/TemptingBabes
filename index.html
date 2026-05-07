@@ -46,9 +46,9 @@
   <!-- Preload LCP image (first carousel thumbnail) so browser finds it before JS runs -->
   <link rel="preload" as="image" href="https://i.ytimg.com/vi/KwYnD5akv_0/maxresdefault.jpg" fetchpriority="high">
   <!-- Load Google Fonts async — eliminates render-blocking -->
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@700;900&display=swap">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@700;900&display=swap" media="print" onload="this.media='all'">
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@700;900&display=swap"></noscript>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@700;900&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@700;900&display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@700;900&display=swap"></noscript>
   <link rel="stylesheet" href="styles.css"/>
   <script src="script.js" defer></script>
 <script type="application/ld+json">
@@ -371,7 +371,7 @@
 
 <!-- FINAL CTA SECTION -->
 <section class="final-cta-section">
-  <h2 class="final-cta-title">Your Match Is Online Right Now.</h2>
+  <h2 class="final-cta-title">Your Match Is Online Right Now</h2>
   <p class="final-cta-sub">Thousands of real profiles are waiting. Free to join — no credit card needed. Start in under 60 seconds.</p>
   <div class="cta-wrap" style="position:relative;z-index:1;">
     <button class="cta-btn" id="findMyMatchBtn">FIND MY MATCH</button>
@@ -530,6 +530,7 @@
       <h2 class="ga-title">Get Instant Access</h2>
       <p class="ga-sub">Join 2.3M+ members and find your match tonight</p>
       <form class="ga-form" id="gaForm" novalidate>
+        <input class="ga-input" id="gaName" type="text" placeholder="Enter your name" autocomplete="given-name">
         <input class="ga-input" id="gaEmail" type="email" placeholder="Enter your email" autocomplete="email">
         <button class="ga-submit" type="submit">Join Now</button>
       </form>
