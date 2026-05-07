@@ -824,9 +824,10 @@ nav {
   background: #111;
   border: 1px solid rgba(255,140,0,0.25);
   border-radius: 24px;
-  padding: 36px 32px 32px;
+  padding: 44px 36px 40px;
   width: 100%;
   max-width: 420px;
+  min-height: 520px;
   position: relative;
   box-shadow: 0 32px 80px rgba(0,0,0,0.7), 0 0 40px rgba(255,61,107,0.12);
   animation: quizIn 0.3s cubic-bezier(0.34,1.56,0.64,1);
