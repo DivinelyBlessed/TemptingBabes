@@ -1807,6 +1807,7 @@ nav {
   color: #fff;
   line-height: 1.15;
   margin-bottom: 10px;
+  white-space: nowrap;
 }
 .ga-free { color: var(--accent); }
 .ga-sub {
@@ -1825,9 +1826,10 @@ nav {
   font-size: 1.05rem;
   font-family: inherit;
   outline: none;
+  text-align: center;
   transition: border-color 0.2s;
 }
-.ga-input::placeholder { color: rgba(255,255,255,0.35); }
+.ga-input::placeholder { color: rgba(255,255,255,0.35); text-align: center; }
 .ga-input:focus { border-color: var(--accent); }
 .ga-submit {
   background: linear-gradient(90deg, var(--accent), #ff6b35);
