@@ -706,9 +706,8 @@ function initHeroWord() {
   const el = document.getElementById('heroWild');
   if (!el) return;
 
-  // Starts on Tempting, cycles through, climaxes back on Tempting
-  const WORDS = ['Tempting', 'Irresistible', 'Seductive', 'Naughty', 'Wild', 'Flirty', 'Spicy', 'Teasing'];
-  const HOLDS = [3000, 1400, 1200, 1000, 800, 600, 420, 260];
+  const WORDS = ['Spicy', 'Flirty', 'Teasing', 'Naughty', 'Seductive', 'Irresistible', 'Tempting'];
+  const HOLDS = [400, 450, 500, 600, 800, 1200, 3000];
   let idx = 0;
 
   // Lock span to the widest word's width so "These Girls Are" never shifts
