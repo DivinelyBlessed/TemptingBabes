@@ -668,7 +668,6 @@ function initAgeGate(onConfirmed) {
   if (!agOverlay) { onConfirmed(); return; }
 
   document.getElementById('ageGateYes')?.addEventListener('click', () => {
-    sessionStorage.setItem('ageVerified', '1');
     agOverlay.style.display = 'none';
     onConfirmed();
   });
@@ -700,10 +699,10 @@ function initGetAccessPopup() {
 
   const btn = document.getElementById('getAccessBtn');
   if (btn) btn.addEventListener('click', () => {
-    if (sessionStorage.getItem('ageVerified')) {
-      openGA();
-    } else {
+    if (agOverlay) {
       agOverlay.style.display = 'flex';
+    } else {
+      openGA();
     }
   });
 
@@ -768,13 +767,13 @@ function initHeroWord() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+  initGetAccessPopup();
+  initHeroWord();
   initCarousel();
   initQuiz();
   initJoinFreeQuiz();
   initABTest();
   initExitIntent();
-  initGetAccessPopup();
-  initHeroWord();
   document.getElementById('scrollLeft').addEventListener('click', reverse);
   document.getElementById('scrollRight').addEventListener('click', advance);
 
