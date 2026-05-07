@@ -706,9 +706,9 @@ function initHeroWord() {
   const el = document.getElementById('heroWild');
   if (!el) return;
 
-  const WORDS = ['Wild', 'Wicked', 'Naughty', 'Spicy', 'Seductive', 'Teasing', 'Tempting'];
+  const WORDS = ['Irresistible', 'Seductive', 'Naughty', 'Wild', 'Flirty', 'Spicy', 'Teasing', 'Tempting'];
   // Escalating pace — slow build → rapid → climax on Tempting
-  const HOLDS = [1400, 1100, 850, 650, 450, 280, 3000];
+  const HOLDS = [1400, 1200, 1000, 800, 600, 420, 260, 3000];
   let idx = 0;
 
   el.textContent = WORDS[0];
