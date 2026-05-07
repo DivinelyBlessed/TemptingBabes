@@ -356,10 +356,26 @@ function initJoinFreeQuiz() {
   const NO_NAV = ['jfAgeGate', 'jfStepScan', 'jfResult'];
 
   // ── Helpers ──
-  function openJF() {
-    overlay.style.display = 'flex';
+  function resetJF() {
+    craving = 'hookups';
     currentStep = 'jfAgeGate';
     stepHistory = [];
+    overlay.querySelectorAll('.jf-option-card.selected').forEach(el => el.classList.remove('selected'));
+    const emailEl = document.getElementById('jfEmailInput');
+    if (emailEl) { emailEl.value = ''; emailEl.style.borderColor = ''; }
+    const locEl = document.getElementById('jfLocation');
+    if (locEl) locEl.value = '';
+    const bar = document.getElementById('jfScanBar');
+    if (bar) bar.style.width = '0%';
+    ['jfCheck1','jfCheck2','jfCheck3'].forEach(id => {
+      const el = document.getElementById(id);
+      if (el) el.classList.remove('lit');
+    });
+  }
+
+  function openJF() {
+    resetJF();
+    overlay.style.display = 'flex';
     showStep('jfAgeGate');
     setProgress(0);
     document.getElementById('jfProgressWrap').style.display = 'none';
@@ -369,13 +385,7 @@ function initJoinFreeQuiz() {
 
   function closeJF() {
     overlay.style.display = 'none';
-    craving = 'hookups';
-    currentStep = 'jfAgeGate';
-    stepHistory = [];
-    const emailEl = document.getElementById('jfEmailInput');
-    if (emailEl) { emailEl.value = ''; emailEl.style.borderColor = ''; }
-    const locEl = document.getElementById('jfLocation');
-    if (locEl) locEl.value = '';
+    resetJF();
   }
 
   function showStep(id) {

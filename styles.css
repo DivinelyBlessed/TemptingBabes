@@ -828,6 +828,8 @@ nav {
   width: 100%;
   max-width: 420px;
   min-height: 560px;
+  display: flex;
+  flex-direction: column;
   position: relative;
   box-shadow: 0 32px 80px rgba(0,0,0,0.7), 0 0 40px rgba(255,61,107,0.12);
   animation: quizIn 0.3s cubic-bezier(0.34,1.56,0.64,1);
@@ -869,7 +871,14 @@ nav {
 .quiz-dot.active { background: var(--accent); }
 
 .quiz-step { display: none; text-align: center; }
-.quiz-step.active { display: block; animation: fadeStep 0.3s ease; }
+.quiz-step.active {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  animation: fadeStep 0.3s ease;
+}
+.quiz-step.active > * { width: 100%; }
 @keyframes fadeStep {
   from { opacity: 0; transform: translateY(10px); }
   to   { opacity: 1; transform: translateY(0); }
@@ -965,8 +974,10 @@ nav {
 .quiz-select option { background: #1a1a1a; color: #fff; }
 
 .quiz-find-btn {
-  width: 100%;
-  padding: 14px;
+  width: auto;
+  padding: 13px 40px;
+  display: block;
+  margin: 0 auto;
   border-radius: 50px;
   background: linear-gradient(135deg, var(--accent2), var(--accent));
   color: #fff;
@@ -1250,7 +1261,7 @@ nav {
   font-size: 2.8rem;
   margin-bottom: 16px;
   display: inline-block;
-  animation: jf-scan-circular 1.5s linear infinite;
+  animation: jf-scan-circular 4s ease-in-out infinite;
 }
 @keyframes jf-scan-circular {
   0%   { transform: translate(0px, -14px); }
