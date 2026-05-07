@@ -1802,15 +1802,15 @@ nav {
 }
 .ga-close:hover { background: rgba(255,255,255,0.18); color: #fff; }
 .ga-title {
-  font-size: 2rem;
+  font-size: 2.3rem;
   font-weight: 800;
   color: #fff;
   line-height: 1.15;
-  margin-bottom: 8px;
+  margin-bottom: 10px;
 }
 .ga-free { color: var(--accent); }
 .ga-sub {
-  font-size: 0.88rem;
+  font-size: 1rem;
   color: rgba(255,255,255,0.55);
   margin-bottom: 28px;
   line-height: 1.4;
@@ -1820,9 +1820,9 @@ nav {
   background: #1a1a1a;
   border: 1px solid rgba(255,255,255,0.12);
   border-radius: 10px;
-  padding: 13px 16px;
+  padding: 14px 16px;
   color: #fff;
-  font-size: 0.95rem;
+  font-size: 1.05rem;
   font-family: inherit;
   outline: none;
   transition: border-color 0.2s;
@@ -1833,9 +1833,9 @@ nav {
   background: linear-gradient(90deg, var(--accent), #ff6b35);
   border: none;
   border-radius: 10px;
-  padding: 14px 20px;
+  padding: 15px 20px;
   color: #fff;
-  font-size: 1rem;
+  font-size: 1.1rem;
   font-weight: 700;
   font-family: inherit;
   cursor: pointer;
@@ -1844,18 +1844,18 @@ nav {
 }
 .ga-submit:hover { opacity: 0.9; transform: translateY(-1px); }
 .ga-already {
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   color: rgba(255,255,255,0.4);
-  margin-top: 14px;
+  margin-top: 16px;
   text-align: center;
 }
 .ga-login { color: var(--accent); text-decoration: none; }
 .ga-login:hover { text-decoration: underline; }
 .ga-legal {
-  font-size: 0.72rem;
+  font-size: 0.8rem;
   color: rgba(255,255,255,0.28);
-  margin-top: 10px;
-  line-height: 1.4;
+  margin-top: 12px;
+  line-height: 1.5;
   text-align: center;
 }
 .ga-right {
@@ -1966,10 +1966,10 @@ nav {
 
   /* ── Get Access popup mobile ── */
   .ga-modal { flex-direction: column; max-width: 96vw; min-height: unset; border-radius: 16px; }
-  .ga-left { padding: 28px 22px 24px; }
-  .ga-right { min-height: 200px; border-radius: 0 0 16px 16px; }
+  .ga-right { min-height: 220px; border-radius: 16px 16px 0 0; }
+  .ga-left { padding: 28px 22px 24px; border-radius: 0 0 16px 16px; }
   .ga-benefits { padding: 20px 18px; }
   .ga-benefits-title { font-size: 1rem; }
-  .ga-title { font-size: 1.6rem; }
+  .ga-title { font-size: 1.7rem; }
 }
 }
