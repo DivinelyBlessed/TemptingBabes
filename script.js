@@ -315,27 +315,27 @@ function initQuiz() {
 // ── JOIN FREE POPUP v2 ──
 const JF_PLATFORMS = {
   hookups: {
-    name: 'AdultFriendFinder',
-    tag: 'Hookups & Fast Connections',
-    stats: ['12,400+ active members right now', 'Real engagement — verified profiles', 'Special access link for TB users'],
+    headline: '#1 Rated Platform For You',
+    tag: 'Fast Connections & Hookups',
+    stats: ['12,400+ women active in your area right now', 'Highest match rate for casual connections', 'Free access — no card needed to start'],
     url: 'https://t.mbjms.com/389314/3785/0?bo=2753,2754,2755,2756&po=6456&aff_sub5=SF_006OG000004lmDN'
   },
   dates: {
-    name: 'Match',
+    headline: 'Your Best Match Tonight',
     tag: 'Real Conversations & Dates',
-    stats: ['8,200+ active tonight in your area', 'High reply rates — no ghost town', 'No card needed to start browsing'],
+    stats: ['8,200+ singles active near you tonight', 'High reply rates — most respond within minutes', 'Free to browse — no commitment required'],
     url: 'https://t.mbjms.com/389314/3785/0?bo=2753,2754,2755,2756&po=6456&aff_sub5=SF_006OG000004lmDN'
   },
   live: {
-    name: 'LiveJasmin',
+    headline: 'Top Live Platform Right Now',
     tag: 'Live Cam & Visual Experiences',
-    stats: ['3,800+ performers streaming live now', 'HD quality, instant access', 'Free credits for new Tempting Babes users'],
+    stats: ['3,800+ live streams happening right now', 'HD quality — instant access from your device', 'Free credits available for new members'],
     url: 'https://t.mbjms.com/389314/3785/0?bo=2753,2754,2755,2756&po=6456&aff_sub5=SF_006OG000004lmDN'
   },
   ai: {
-    name: 'DreamGF AI',
-    tag: 'AI Companion — Zero Ghosting',
-    stats: ['Always available — 24/7, no waiting', 'Personalised to your exact vibe', 'Start free, no commitment required'],
+    headline: 'Your AI Companion Is Ready',
+    tag: 'Always-On AI Companion',
+    stats: ['Available 24/7 — responds in seconds', 'Personalised to your exact preferences', 'Start free — no credit card required'],
     url: 'https://t.vlmai-1.com'
   }
 };
@@ -383,6 +383,19 @@ function initJoinFreeQuiz() {
     setProgress(progressPct || 0);
   }
 
+  // ── Scan animation ──
+  function runScan(onDone) {
+    const bar = document.getElementById('jfScanBar');
+    const checks = ['jfCheck1', 'jfCheck2', 'jfCheck3'];
+    if (bar) bar.style.width = '0%';
+    checks.forEach(id => { const el = document.getElementById(id); if (el) el.classList.remove('lit'); });
+    setTimeout(() => { if (bar) bar.style.width = '100%'; }, 50);
+    setTimeout(() => { const el = document.getElementById('jfCheck1'); if (el) el.classList.add('lit'); }, 700);
+    setTimeout(() => { const el = document.getElementById('jfCheck2'); if (el) el.classList.add('lit'); }, 1600);
+    setTimeout(() => { const el = document.getElementById('jfCheck3'); if (el) el.classList.add('lit'); }, 2600);
+    setTimeout(() => onDone(), 3200);
+  }
+
   // ── Build result card ──
   function buildResult() {
     const p = JF_PLATFORMS[craving] || JF_PLATFORMS.hookups;
@@ -390,12 +403,12 @@ function initJoinFreeQuiz() {
       hookups: 'fast & flirty hookups',
       dates:   'real conversations & dates',
       live:    'live cam experiences',
-      ai:      'an always-on AI companion'
+      ai:      'an always-on companion'
     };
     document.getElementById('jfResultSub').textContent =
-      'Since you\'re looking for ' + (cravingLabels[craving] || 'the right connection') +
-      ', ' + p.name + ' is the top match for you right now.';
-    document.getElementById('jfResultName').textContent = p.name;
+      'Based on your answers, we\'ve matched you to the best platform for ' +
+      (cravingLabels[craving] || 'your type of connection') + '.';
+    document.getElementById('jfResultName').textContent = p.headline;
     document.getElementById('jfResultTag').textContent  = p.tag;
 
     const list = document.getElementById('jfResultStats');
@@ -408,7 +421,7 @@ function initJoinFreeQuiz() {
 
     const cta = document.getElementById('jfCtaBtn');
     cta.href        = p.url;
-    cta.textContent = 'Go to ' + p.name + ' Now →';
+    cta.textContent = 'Claim My Free Access →';
 
     if (typeof gtag !== 'undefined') gtag('event', 'jf_quiz_complete', { craving });
   }
@@ -438,17 +451,18 @@ function initJoinFreeQuiz() {
       // Visual flash
       btn.classList.add('selected');
       const next = btn.dataset.next;
-      const progressMap = { jfStep2: 35, jfStep3: 60, jfStepLocation: 80, jfStepEmail: 95 };
+      const progressMap = { jfStep2: 35, jfStep3: 60, jfStepLocation: 80, jfStepScan: 88, jfStepEmail: 95 };
       setTimeout(() => advanceTo(next, progressMap[next] || 50), 180);
     });
   });
 
-  // Location → email
+  // Location → scan → email
   document.getElementById('jfFindBtn').addEventListener('click', () => {
     const loc = document.getElementById('jfLocation');
     if (!loc.value) { loc.style.borderColor = 'var(--accent)'; return; }
     loc.style.borderColor = '';
-    advanceTo('jfStepEmail', 92);
+    advanceTo('jfStepScan', 88);
+    runScan(() => advanceTo('jfStepEmail', 92));
   });
 
   // Email → result
