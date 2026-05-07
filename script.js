@@ -711,6 +711,11 @@ function initHeroWord() {
   const HOLDS = [3000, 1400, 1200, 1000, 800, 600, 420, 260];
   let idx = 0;
 
+  // Lock span to the widest word's width so "These Girls Are" never shifts
+  el.style.display = 'inline-block';
+  el.style.textAlign = 'center';
+  const maxW = Math.max(...WORDS.map(w => { el.textContent = w; return el.offsetWidth; }));
+  el.style.width = maxW + 'px';
   el.textContent = WORDS[0];
 
   function cycle() {
