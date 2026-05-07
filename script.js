@@ -702,6 +702,37 @@ function initGetAccessPopup() {
   });
 }
 
+function initHeroWord() {
+  const el = document.getElementById('heroWild');
+  if (!el) return;
+
+  const WORDS = ['Wild', 'Wicked', 'Naughty', 'Spicy', 'Seductive', 'Teasing', 'Tempting'];
+  let idx = 0;
+
+  setInterval(() => {
+    // Exit: fade up and out
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(-14px) scale(0.88)';
+
+    setTimeout(() => {
+      idx = (idx + 1) % WORDS.length;
+      el.textContent = WORDS[idx];
+
+      // Snap to entry position (no transition)
+      el.style.transition = 'none';
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(14px) scale(1.1)';
+
+      // Re-enable transition and animate in
+      requestAnimationFrame(() => requestAnimationFrame(() => {
+        el.style.transition = 'opacity 0.38s ease, transform 0.38s ease';
+        el.style.opacity = '1';
+        el.style.transform = 'translateY(0) scale(1)';
+      }));
+    }, 400);
+  }, 2800);
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   initCarousel();
   initQuiz();
@@ -709,6 +740,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initABTest();
   initExitIntent();
   initGetAccessPopup();
+  initHeroWord();
   document.getElementById('scrollLeft').addEventListener('click', reverse);
   document.getElementById('scrollRight').addEventListener('click', advance);
 
