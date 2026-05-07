@@ -511,6 +511,12 @@
   <div class="quiz-modal jf-modal-wide">
     <button class="quiz-close" id="joinFreeClose">&#10005;</button>
 
+    <!-- Back / Next nav — shown from Step 1 onwards -->
+    <div class="jf-nav-row" id="jfNavRow" style="display:none">
+      <button class="jf-nav-back" id="jfBackBtn">&#8592; Back</button>
+      <button class="jf-nav-fwd hidden" id="jfFwdBtn">Next &#8594;</button>
+    </div>
+
     <!-- Thin progress bar (hidden on age gate, shown on quiz steps) -->
     <div class="jf-progress-wrap" id="jfProgressWrap" style="display:none">
       <div class="jf-bar" id="jfBar"></div>

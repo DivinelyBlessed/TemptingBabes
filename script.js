@@ -346,19 +346,32 @@ function initJoinFreeQuiz() {
   if (!overlay) return;
 
   let craving = 'hookups';
+  let currentStep = 'jfAgeGate';
+  let stepHistory = [];
+
+  // Steps where Next (skip) button is shown
+  const SKIP_STEPS = ['jfStep1', 'jfStep2', 'jfStep3'];
+  const SKIP_NEXT  = { jfStep1: ['jfStep2', 35], jfStep2: ['jfStep3', 60], jfStep3: ['jfStepLocation', 80] };
+  // Steps with no nav row
+  const NO_NAV = ['jfAgeGate', 'jfStepScan', 'jfResult'];
 
   // ── Helpers ──
   function openJF() {
     overlay.style.display = 'flex';
+    currentStep = 'jfAgeGate';
+    stepHistory = [];
     showStep('jfAgeGate');
     setProgress(0);
     document.getElementById('jfProgressWrap').style.display = 'none';
+    document.getElementById('jfNavRow').style.display = 'none';
     if (typeof gtag !== 'undefined') gtag('event', 'join_free_open');
   }
 
   function closeJF() {
     overlay.style.display = 'none';
     craving = 'hookups';
+    currentStep = 'jfAgeGate';
+    stepHistory = [];
     const emailEl = document.getElementById('jfEmailInput');
     if (emailEl) { emailEl.value = ''; emailEl.style.borderColor = ''; }
     const locEl = document.getElementById('jfLocation');
@@ -376,11 +389,27 @@ function initJoinFreeQuiz() {
     if (bar) bar.style.width = pct + '%';
   }
 
+  function updateNav(stepId) {
+    const navRow  = document.getElementById('jfNavRow');
+    const backBtn = document.getElementById('jfBackBtn');
+    const fwdBtn  = document.getElementById('jfFwdBtn');
+    if (NO_NAV.includes(stepId)) {
+      navRow.style.display = 'none';
+      return;
+    }
+    navRow.style.display = 'flex';
+    backBtn.classList.toggle('hidden', stepHistory.length === 0);
+    fwdBtn.classList.toggle('hidden', !SKIP_STEPS.includes(stepId));
+  }
+
   function advanceTo(stepId, progressPct) {
+    if (currentStep !== stepId) stepHistory.push(currentStep);
+    currentStep = stepId;
     showStep(stepId);
     const wrap = document.getElementById('jfProgressWrap');
     if (wrap) wrap.style.display = stepId === 'jfAgeGate' ? 'none' : 'block';
     setProgress(progressPct || 0);
+    updateNav(stepId);
   }
 
   // ── Scan animation ──
@@ -441,6 +470,24 @@ function initJoinFreeQuiz() {
     advanceTo('jfStep1', 10);
   });
   document.getElementById('jfExitBtn').addEventListener('click', closeJF);
+
+  // Back button
+  document.getElementById('jfBackBtn').addEventListener('click', () => {
+    if (stepHistory.length === 0) return;
+    const prev = stepHistory.pop();
+    currentStep = prev;
+    showStep(prev);
+    const wrap = document.getElementById('jfProgressWrap');
+    if (wrap) wrap.style.display = prev === 'jfAgeGate' ? 'none' : 'block';
+    updateNav(prev);
+  });
+
+  // Next (skip) button — only active on Q1–Q3
+  document.getElementById('jfFwdBtn').addEventListener('click', () => {
+    const entry = SKIP_NEXT[currentStep];
+    if (!entry) return;
+    advanceTo(entry[0], entry[1]);
+  });
 
   // Card option buttons — auto-advance on click
   overlay.querySelectorAll('.jf-option-card').forEach(btn => {
