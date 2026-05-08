@@ -785,34 +785,28 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
-// Tab hover — fully JS-driven so it works on page load without waiting for mouse movement.
-// Chrome does not apply CSS :hover or fire pointerenter until the mouse moves after navigation.
-// Fix: store cursor position in sessionStorage on every page; on load check stored coords
-// against each tab's bounding rect and add .hovered directly.
+// Tab hover — driven by mousemove so add/remove is always accurate.
+// mousemove re-checks all tabs on every cursor movement, so .hovered is removed
+// the instant the cursor leaves — no permanent highlight possible.
 (function () {
-  const tabs = document.querySelectorAll('nav .tab');
+  var tabs = document.querySelectorAll('nav .tab');
 
-  // Persist cursor position so the next page can read it immediately on load
+  function updateHover(x, y) {
+    tabs.forEach(function (tab) {
+      var r = tab.getBoundingClientRect();
+      tab.classList.toggle('hovered', x >= r.left && x <= r.right && y >= r.top && y <= r.bottom);
+    });
+  }
+
+  // Update hover on every cursor movement + store position for next page load
   document.addEventListener('mousemove', function (e) {
     sessionStorage.setItem('tb_mx', e.clientX);
     sessionStorage.setItem('tb_my', e.clientY);
+    updateHover(e.clientX, e.clientY);
   }, { passive: true });
 
-  // Ongoing hover for all interactions after load
-  tabs.forEach(function (tab) {
-    tab.addEventListener('pointerenter', function () { tab.classList.add('hovered'); });
-    tab.addEventListener('pointerleave', function () { tab.classList.remove('hovered'); });
-  });
-
-  // On page load: if cursor is already sitting over a tab, apply hovered immediately
+  // On page load: apply hover if cursor is already over a tab (coords from previous page)
   var x = parseFloat(sessionStorage.getItem('tb_mx') || '');
   var y = parseFloat(sessionStorage.getItem('tb_my') || '');
-  if (x && y) {
-    tabs.forEach(function (tab) {
-      var r = tab.getBoundingClientRect();
-      if (x >= r.left && x <= r.right && y >= r.top && y <= r.bottom) {
-        tab.classList.add('hovered');
-      }
-    });
-  }
+  if (x && y) updateHover(x, y);
 }());
