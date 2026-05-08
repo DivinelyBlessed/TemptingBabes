@@ -941,5 +941,58 @@
     <p>18+ Only &nbsp;&middot;&nbsp; All rights reserved &nbsp;&middot;&nbsp; Tempting Babes&copy; 2026</p>
   </div>
 </footer>
+
+<!-- AGE GATE -->
+<div class="ag-overlay" id="ageGateOverlay" style="display:none">
+  <div class="ag-modal">
+    <div class="ag-brand">Tempting Babes</div>
+    <h2 class="ag-title">Are You 18+?</h2>
+    <p class="ag-body">This website contains adult content and is strictly for users who are 18 years of age or older. Please confirm your age to continue.</p>
+    <button class="ag-yes" id="ageGateYes">&#10003; Yes, I Am 18 or Older &mdash; Enter</button>
+    <button class="ag-no" id="ageGateNo">No, Take Me Away</button>
+    <p class="ag-legal">By entering, you confirm you are 18+ and agree to our <a href="/privacy-policy/" class="ag-link">Terms of Service and Privacy Policy</a>. This site contains affiliate links.</p>
+  </div>
+</div>
+
+<!-- GET ACCESS POPUP -->
+<div class="ga-overlay" id="getAccessOverlay" style="display:none">
+  <div class="ga-modal">
+    <button class="ga-close" id="gaClose">&#10005;</button>
+    <div class="ga-right">
+      <div class="ga-benefits">
+        <h3 class="ga-benefits-title">Member Benefits</h3>
+        <ul class="ga-benefits-list">
+          <li>Browse 12,400+ Live Profiles</li>
+          <li>Match with Women Near You Tonight</li>
+          <li>Exclusive Cam &amp; Chat Access</li>
+          <li>100% Discreet &amp; Anonymous</li>
+          <li>Free to Join — No Card Needed</li>
+        </ul>
+      </div>
+    </div>
+    <div class="ga-left">
+      <h2 class="ga-title">Get Instant Access</h2>
+      <p class="ga-sub">Join 2.3M+ members and find your match tonight</p>
+      <form class="ga-form" id="gaForm" novalidate>
+        <input class="ga-input" id="gaName" type="text" placeholder="Enter your name" autocomplete="given-name">
+        <input class="ga-input" id="gaEmail" type="email" placeholder="Enter your email" autocomplete="email">
+        <button class="ga-submit" type="submit">Join Now</button>
+      </form>
+      <p class="ga-already">Already a member? <a href="https://t.mbjms.com/389314/3785/0?bo=2753,2754,2755,2756&po=6456&aff_sub5=SF_006OG000004lmDN" class="ga-login" target="_blank" rel="noopener">Login</a></p>
+      <p class="ga-legal">By continuing you confirm you are 18+ and agree to our <a href="/privacy-policy/">Privacy Policy</a>. Tempting Babes may earn a commission if you sign up.</p>
+    </div>
+  </div>
+</div>
+
+<script>
+/* Wire Join Free button → age gate (script.js handles the rest) */
+(function(){
+  var btn = document.getElementById('getAccessBtn');
+  var ag  = document.getElementById('ageGateOverlay');
+  if (!btn || !ag) return;
+  btn.addEventListener('click', function() { ag.style.display = 'flex'; });
+})();
+</script>
+
 </body>
 </html>

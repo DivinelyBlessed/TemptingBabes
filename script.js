@@ -125,6 +125,7 @@ function deactivateCenter(slot) {
 
 function initCarousel() {
   const stage = document.getElementById('carouselStage');
+  if (!stage) return;
   stage.innerHTML = '';
   stage.classList.add('carousel-loading');
 
@@ -224,6 +225,7 @@ function getMatchCount(state) {
 
 function initQuiz() {
   const overlay  = document.getElementById('quizOverlay');
+  if (!overlay) return;
   const closeBtn = document.getElementById('quizClose');
   const findBtn  = document.getElementById('quizFindBtn');
 
@@ -767,8 +769,8 @@ document.addEventListener('DOMContentLoaded', () => {
   initJoinFreeQuiz();
   initABTest();
   initExitIntent();
-  document.getElementById('scrollLeft').addEventListener('click', reverse);
-  document.getElementById('scrollRight').addEventListener('click', advance);
+  document.getElementById('scrollLeft')?.addEventListener('click', reverse);
+  document.getElementById('scrollRight')?.addEventListener('click', advance);
 
   const menuBtn    = document.getElementById('menuBtn');
   const mobileMenu = document.getElementById('mobileMenu');
