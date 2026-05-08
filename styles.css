@@ -1872,7 +1872,7 @@ nav {
 }
 .footer-inner {
   max-width: 1100px;
-  margin: 0 auto;
+  margin: 0;
   display: grid !important;
   grid-template-columns: 1.6fr 1fr 1fr;
   gap: 48px;
