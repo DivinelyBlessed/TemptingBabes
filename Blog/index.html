@@ -54,15 +54,12 @@
 
     /* ── CATEGORY SECTION ── */
     .cat-section {
-      margin-bottom: 64px;
+      margin-bottom: 72px;
     }
     .cat-section-hd {
       display: flex;
       align-items: center;
-      justify-content: space-between;
-      padding-bottom: 18px;
       margin-bottom: 24px;
-      border-bottom: 2px solid var(--cat-color, #ff3d6b);
     }
     .cat-section-title {
       font-family: 'Bebas Neue', sans-serif;
@@ -78,16 +75,6 @@
       font-size: 1.4rem;
       line-height: 1;
     }
-    .view-all-link {
-      font-family: 'DM Sans', sans-serif;
-      font-size: 0.85rem;
-      font-weight: 700;
-      color: var(--cat-color, #ff3d6b);
-      text-decoration: none;
-      white-space: nowrap;
-      transition: opacity 0.2s;
-    }
-    .view-all-link:hover { opacity: 0.7; }
 
     /* ── POSTS ROW ── */
     .posts-row {
@@ -97,6 +84,20 @@
     }
     @media (max-width: 900px) { .posts-row { grid-template-columns: repeat(2, 1fr); } }
     @media (max-width: 540px)  { .posts-row { grid-template-columns: 1fr; } }
+
+    /* ── VIEW MORE LINK ── */
+    .view-all-link {
+      display: block;
+      text-align: center;
+      margin-top: 20px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--cat-color, #ff3d6b);
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+    .view-all-link:hover { opacity: 0.7; }
 
     /* ── ARTICLE CARD ── */
     .article-card {
@@ -218,7 +219,6 @@
   <section class="cat-section" style="--cat-color:#8b5cf6;">
     <div class="cat-section-hd">
       <h2 class="cat-section-title"><span class="cat-emoji">🧠</span> Psychology</h2>
-      <a href="dating-advice/" class="view-all-link">View More Posts &rsaquo;</a>
     </div>
     <div class="posts-row">
       <a href="dating-advice/doom-scrolling-vs-connecting/" class="article-card">
@@ -243,13 +243,13 @@
         </div>
       </a>
     </div>
+    <a href="dating-advice/" class="view-all-link">View More Posts &rsaquo;</a>
   </section>
 
   <!-- ── GET MATCHES ── -->
   <section class="cat-section" style="--cat-color:#ff3d6b;">
     <div class="cat-section-hd">
       <h2 class="cat-section-title"><span class="cat-emoji">🔥</span> Get Matches</h2>
-      <a href="dating-advice/" class="view-all-link">View More Posts &rsaquo;</a>
     </div>
     <div class="posts-row">
       <a href="dating-advice/find-active-women-online-near-you/" class="article-card">
@@ -274,13 +274,13 @@
         </div>
       </a>
     </div>
+    <a href="dating-advice/" class="view-all-link">View More Posts &rsaquo;</a>
   </section>
 
   <!-- ── MISTAKES ── -->
   <section class="cat-section" style="--cat-color:#ef4444;">
     <div class="cat-section-hd">
       <h2 class="cat-section-title"><span class="cat-emoji">✕</span> Mistakes</h2>
-      <a href="dating-advice/" class="view-all-link">View More Posts &rsaquo;</a>
     </div>
     <div class="posts-row">
       <a href="dating-advice/no-matches-tinder-real-reason/" class="article-card">
@@ -305,13 +305,13 @@
         </div>
       </div>
     </div>
+    <a href="dating-advice/" class="view-all-link">View More Posts &rsaquo;</a>
   </section>
 
   <!-- ── DATING APPS ── -->
   <section class="cat-section" style="--cat-color:#3b82f6;">
     <div class="cat-section-hd">
       <h2 class="cat-section-title"><span class="cat-emoji">📱</span> Dating Apps</h2>
-      <a href="dating-advice/" class="view-all-link">View More Posts &rsaquo;</a>
     </div>
     <div class="posts-row">
       <a href="dating-advice/dating-apps-designed-to-keep-you-single/" class="article-card">
@@ -336,13 +336,13 @@
         </div>
       </div>
     </div>
+    <a href="dating-advice/" class="view-all-link">View More Posts &rsaquo;</a>
   </section>
 
   <!-- ── TEXTING & SEDUCTION ── -->
   <section class="cat-section" style="--cat-color:#ec4899;">
     <div class="cat-section-hd">
       <h2 class="cat-section-title"><span class="cat-emoji">💬</span> Texting &amp; Seduction</h2>
-      <a href="dating-advice/" class="view-all-link">View More Posts &rsaquo;</a>
     </div>
     <div class="posts-row">
       <a href="dating-advice/what-women-want-first-message/" class="article-card">
@@ -367,13 +367,13 @@
         </div>
       </div>
     </div>
+    <a href="dating-advice/" class="view-all-link">View More Posts &rsaquo;</a>
   </section>
 
   <!-- ── AI DATING ── -->
   <section class="cat-section" style="--cat-color:#22d3ee;">
     <div class="cat-section-hd">
       <h2 class="cat-section-title"><span class="cat-emoji">🤖</span> AI Dating</h2>
-      <a href="dating-advice/" class="view-all-link">View More Posts &rsaquo;</a>
     </div>
     <div class="posts-row">
       <a href="dating-advice/talking-to-ai-companion/" class="article-card">
@@ -398,13 +398,13 @@
         </div>
       </div>
     </div>
+    <a href="dating-advice/" class="view-all-link">View More Posts &rsaquo;</a>
   </section>
 
   <!-- ── APP REVIEWS ── -->
   <section class="cat-section" style="--cat-color:#f97316;">
     <div class="cat-section-hd">
       <h2 class="cat-section-title"><span class="cat-emoji">⭐</span> App Reviews</h2>
-      <a href="dating-advice/" class="view-all-link">View More Posts &rsaquo;</a>
     </div>
     <div class="posts-row">
       <a href="dating-advice/ai-girlfriend-apps-ranked-2026/" class="article-card">
@@ -429,13 +429,13 @@
         </div>
       </div>
     </div>
+    <a href="dating-advice/" class="view-all-link">View More Posts &rsaquo;</a>
   </section>
 
   <!-- ── LEVEL UP ── -->
   <section class="cat-section" style="--cat-color:#22c55e;">
     <div class="cat-section-hd">
       <h2 class="cat-section-title"><span class="cat-emoji">💪</span> Level Up</h2>
-      <a href="dating-advice/" class="view-all-link">View More Posts &rsaquo;</a>
     </div>
     <div class="posts-row">
       <div class="article-card is-placeholder">
@@ -460,13 +460,13 @@
         </div>
       </div>
     </div>
+    <a href="dating-advice/" class="view-all-link">View More Posts &rsaquo;</a>
   </section>
 
   <!-- ── PROFILE OPTIMISATION ── -->
   <section class="cat-section" style="--cat-color:#06b6d4;">
     <div class="cat-section-hd">
       <h2 class="cat-section-title"><span class="cat-emoji">📸</span> Profile Optimisation</h2>
-      <a href="dating-advice/" class="view-all-link">View More Posts &rsaquo;</a>
     </div>
     <div class="posts-row">
       <div class="article-card is-placeholder">
@@ -491,13 +491,13 @@
         </div>
       </div>
     </div>
+    <a href="dating-advice/" class="view-all-link">View More Posts &rsaquo;</a>
   </section>
 
   <!-- ── HOOKUPS ── -->
   <section class="cat-section" style="--cat-color:#f59e0b;">
     <div class="cat-section-hd">
       <h2 class="cat-section-title"><span class="cat-emoji">⚡</span> Hookups</h2>
-      <a href="dating-advice/" class="view-all-link">View More Posts &rsaquo;</a>
     </div>
     <div class="posts-row">
       <div class="article-card is-placeholder">
@@ -522,13 +522,13 @@
         </div>
       </div>
     </div>
+    <a href="dating-advice/" class="view-all-link">View More Posts &rsaquo;</a>
   </section>
 
   <!-- ── FIRST DATES ── -->
   <section class="cat-section" style="--cat-color:#eab308;">
     <div class="cat-section-hd">
       <h2 class="cat-section-title"><span class="cat-emoji">📍</span> First Dates</h2>
-      <a href="dating-advice/" class="view-all-link">View More Posts &rsaquo;</a>
     </div>
     <div class="posts-row">
       <div class="article-card is-placeholder">
@@ -553,13 +553,13 @@
         </div>
       </div>
     </div>
+    <a href="dating-advice/" class="view-all-link">View More Posts &rsaquo;</a>
   </section>
 
   <!-- ── LIVE CAMS ── -->
   <section class="cat-section" style="--cat-color:#d946ef;">
     <div class="cat-section-hd">
       <h2 class="cat-section-title"><span class="cat-emoji">🎥</span> Live Cams</h2>
-      <a href="dating-advice/" class="view-all-link">View More Posts &rsaquo;</a>
     </div>
     <div class="posts-row">
       <div class="article-card is-placeholder">
@@ -584,6 +584,7 @@
         </div>
       </div>
     </div>
+    <a href="dating-advice/" class="view-all-link">View More Posts &rsaquo;</a>
   </section>
 
 </div><!-- end .blog-wrap -->
