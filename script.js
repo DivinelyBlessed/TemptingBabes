@@ -676,7 +676,11 @@ function initAgeGate(onConfirmed) {
 
   document.getElementById('ageGateNo')?.addEventListener('click', () => {
     agOverlay.style.display = 'none';
-    window.location.href = 'https://www.google.com';
+    window.location.href = '/';
+  });
+
+  agOverlay.addEventListener('click', e => {
+    if (e.target === agOverlay) agOverlay.style.display = 'none';
   });
 
   return agOverlay;

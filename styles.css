@@ -262,14 +262,14 @@ nav {
 }
 .ag-modal {
   background: linear-gradient(160deg, #161616 0%, #0e0e0e 100%);
-  border: 1px solid rgba(255,61,107,0.18);
-  border-top: 2px solid #ff3d6b;
+  border: 1px solid rgba(255,140,0,0.22);
+  border-top: 2px solid #ff8c00;
   border-radius: 20px;
-  padding: 36px 28px 28px;
-  max-width: 360px;
-  width: 88%;
+  padding: 36px 40px 32px;
+  max-width: 480px;
+  width: 92%;
   text-align: center;
-  box-shadow: 0 32px 80px rgba(0,0,0,0.7), 0 0 60px rgba(255,61,107,0.08);
+  box-shadow: 0 32px 80px rgba(0,0,0,0.7), 0 0 70px rgba(255,140,0,0.13);
 }
 .ag-brand {
   font-family: 'Playfair Display', serif;

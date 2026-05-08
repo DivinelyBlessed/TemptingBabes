@@ -782,7 +782,10 @@
   });
   if (nBtn) nBtn.addEventListener('click', function() {
     ag.style.display = 'none';
-    window.location.href = 'https://www.google.com';
+    window.location.href = '/';
+  });
+  ag.addEventListener('click', function(e) {
+    if (e.target === ag) ag.style.display = 'none';
   });
   if (ga) ga.addEventListener('click', function(e) {
     if (e.target === ga) ga.style.display = 'none';
