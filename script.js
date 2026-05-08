@@ -783,12 +783,20 @@ document.addEventListener('DOMContentLoaded', () => {
       mobileMenu.classList.toggle('open');
     });
   }
+});
 
-  // JS-driven hover: pointerenter/leave fires immediately on page load if cursor is already over a tab,
-  // unlike CSS :hover which requires mouse movement after navigation.
-  document.querySelectorAll('nav .tab').forEach(tab => {
+// Tab hover — runs immediately when script loads (defer means DOM is already ready).
+// pointerenter/leave handles ongoing hover; setTimeout+:hover check catches the
+// cursor-already-over-tab-on-page-load case where pointerenter never fires.
+(function () {
+  const tabs = document.querySelectorAll('nav .tab');
+  tabs.forEach(tab => {
     tab.addEventListener('pointerenter', () => tab.classList.add('hovered'));
     tab.addEventListener('pointerleave', () => tab.classList.remove('hovered'));
   });
-
-});
+  setTimeout(() => {
+    tabs.forEach(tab => {
+      if (tab.matches(':hover')) tab.classList.add('hovered');
+    });
+  }, 50);
+}());
