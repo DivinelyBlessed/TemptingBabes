@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script>
+    if (!navigator.globalPrivacyControl) {
+      var _ga = document.createElement('script');
+      _ga.async = true;
+      _ga.src = 'https://www.googletagmanager.com/gtag/js?id=G-PL9NPRYWP3';
+      document.head.appendChild(_ga);
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-PL9NPRYWP3', { anonymize_ip: true });
+    }
+  </script>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Blog &mdash; Dating Advice &amp; Guides | Tempting Babes</title>
+  <meta name="description" content="Practical dating advice for men. Improve your profile, get more matches, master texting, and level up your dating game with guides from Tempting Babes."/>
+  <meta name="robots" content="index, follow"/>
+  <link rel="canonical" href="https://www.temptingbabes.com/Blog/"/>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600;700&family=Playfair+Display:wght@700;900&display=swap"/>
+  <link rel="stylesheet" href="../styles.css"/>
+  <script src="../script.js" defer></script>
+  <style>
+    /* ── HERO ── */
+    .blog-hero {
+      text-align: center;
+      padding: 72px 24px 56px;
+      background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(255,61,107,0.18) 0%, transparent 70%);
+    }
+    .blog-hero-label {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #ff3d6b;
+      margin-bottom: 16px;
+    }
+    .blog-hero h1 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(3rem, 8vw, 6rem);
+      line-height: 0.95;
+      color: #fff;
+      margin: 0 0 20px;
+    }
+    .blog-hero h1 span {
+      background: linear-gradient(135deg, #ff3d6b 0%, #ff8c42 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .blog-hero p {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 1.1rem;
+      color: rgba(255,255,255,0.6);
+      max-width: 520px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    /* ── SECTION TITLES ── */
+    .blog-section {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 24px 72px;
+    }
+    .section-header {
+      display: flex;
+      align-items: baseline;
+      gap: 16px;
+      margin-bottom: 32px;
+    }
+    .section-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2rem;
+      color: #fff;
+      letter-spacing: 1px;
+    }
+    .section-count {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: rgba(255,255,255,0.3);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    /* ── CATEGORY GRID ── */
+    .cat-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+    @media (max-width: 1024px) { .cat-grid { grid-template-columns: repeat(3, 1fr); } }
+    @media (max-width: 680px)  { .cat-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 420px)  { .cat-grid { grid-template-columns: 1fr; } }
+
+    .cat-card {
+      background: #111;
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 14px;
+      padding: 24px 20px 20px;
+      text-decoration: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease;
+    }
+    .cat-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: var(--cat-color, #ff3d6b);
+      border-radius: 14px 14px 0 0;
+    }
+    .cat-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(255,255,255,0.15);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.5);
+    }
+    .cat-icon {
+      font-size: 1.6rem;
+      line-height: 1;
+    }
+    .cat-name {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #fff;
+      line-height: 1.3;
+    }
+    .cat-desc {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.45);
+      line-height: 1.5;
+      flex: 1;
+    }
+    .cat-arrow {
+      font-size: 0.85rem;
+      color: var(--cat-color, #ff3d6b);
+      font-weight: 700;
+      align-self: flex-start;
+    }
+
+    /* ── DIVIDER ── */
+    .blog-divider {
+      max-width: 1240px;
+      margin: 0 auto 56px;
+      padding: 0 24px;
+      border: none;
+      border-top: 1px solid rgba(255,255,255,0.07);
+    }
+
+    /* ── POST GRID ── */
+    .post-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    @media (max-width: 900px) { .post-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 560px) { .post-grid { grid-template-columns: 1fr; } }
+
+    .post-card {
+      background: #111;
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 14px;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      text-decoration: none;
+      transition: transform 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease;
+    }
+    .post-card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(255,255,255,0.14);
+      box-shadow: 0 10px 36px rgba(0,0,0,0.45);
+    }
+    .post-tag {
+      display: inline-block;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 20px;
+      background: var(--tag-color, #ff3d6b);
+      color: #fff;
+      align-self: flex-start;
+    }
+    .post-title {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: #fff;
+      line-height: 1.4;
+      flex: 1;
+    }
+    .post-read {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--tag-color, #ff3d6b);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .post-read::after { content: '→'; }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="logo">Tempting Babes</div>
+  <div class="tabs">
+    <a href="../AI-chat/index.html" class="tab">AI Chat</a>
+    <a href="../Cams/index.html" class="tab">Cams</a>
+    <a href="../Dating/index.html" class="tab">Dating</a>
+    <a href="../Offers/index.html" class="tab">Offers</a>
+    <a href="../Trending/index.html" class="tab">Trending</a>
+    <a href="../New/index.html" class="tab">VIP</a>
+  </div>
+  <button class="join-btn">Join Free</button>
+  <button class="menu-btn" id="menuBtn">&#9776;</button>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="../AI-chat/index.html" class="mobile-tab">AI Chat</a>
+  <a href="../Cams/index.html" class="mobile-tab">Cams</a>
+  <a href="../Dating/index.html" class="mobile-tab">Dating</a>
+  <a href="../Offers/index.html" class="mobile-tab">Offers</a>
+  <a href="../Trending/index.html" class="mobile-tab">Trending</a>
+  <a href="../New/index.html" class="mobile-tab">VIP</a>
+</div>
+
+<!-- HERO -->
+<section class="blog-hero">
+  <p class="blog-hero-label">The Tempting Babes Blog</p>
+  <h1>Dating <span>Guides</span><br>That Actually Work</h1>
+  <p>Real talk on dating apps, texting, psychology, and levelling up — no fluff, no cope.</p>
+</section>
+
+<!-- CATEGORIES -->
+<div class="blog-section">
+  <div class="section-header">
+    <h2 class="section-title">Browse by Topic</h2>
+    <span class="section-count">12 categories</span>
+  </div>
+  <div class="cat-grid">
+
+    <a href="dating-advice/" class="cat-card" style="--cat-color:#22c55e;">
+      <div class="cat-icon">💪</div>
+      <div class="cat-name">Level Up</div>
+      <div class="cat-desc">Confidence, lifestyle, grooming — become the man women want to meet.</div>
+      <div class="cat-arrow">Explore →</div>
+    </a>
+
+    <a href="dating-advice/" class="cat-card" style="--cat-color:#3b82f6;">
+      <div class="cat-icon">📱</div>
+      <div class="cat-name">Dating Apps</div>
+      <div class="cat-desc">Which apps are worth your time and how to actually use them.</div>
+      <div class="cat-arrow">Explore →</div>
+    </a>
+
+    <a href="dating-advice/" class="cat-card" style="--cat-color:#f97316;">
+      <div class="cat-icon">⭐</div>
+      <div class="cat-name">App Reviews</div>
+      <div class="cat-desc">Honest breakdowns of every major dating and AI platform.</div>
+      <div class="cat-arrow">Explore →</div>
+    </a>
+
+    <a href="dating-advice/" class="cat-card" style="--cat-color:#06b6d4;">
+      <div class="cat-icon">📸</div>
+      <div class="cat-name">Profile Optimisation</div>
+      <div class="cat-desc">Photos, bio, prompts — the full profile audit to get more right swipes.</div>
+      <div class="cat-arrow">Explore →</div>
+    </a>
+
+    <a href="dating-advice/" class="cat-card" style="--cat-color:#ff3d6b;">
+      <div class="cat-icon">🔥</div>
+      <div class="cat-name">Get Matches</div>
+      <div class="cat-desc">Proven tactics to multiply your match rate and fill your inbox.</div>
+      <div class="cat-arrow">Explore →</div>
+    </a>
+
+    <a href="dating-advice/" class="cat-card" style="--cat-color:#f59e0b;">
+      <div class="cat-icon">⚡</div>
+      <div class="cat-name">Hookups</div>
+      <div class="cat-desc">Fast connections, intent-driven conversations, and cutting to the chase.</div>
+      <div class="cat-arrow">Explore →</div>
+    </a>
+
+    <a href="dating-advice/" class="cat-card" style="--cat-color:#ec4899;">
+      <div class="cat-icon">💬</div>
+      <div class="cat-name">Texting &amp; Seduction</div>
+      <div class="cat-desc">First messages, conversation flow, and turning matches into dates.</div>
+      <div class="cat-arrow">Explore →</div>
+    </a>
+
+    <a href="dating-advice/" class="cat-card" style="--cat-color:#8b5cf6;">
+      <div class="cat-icon">🧠</div>
+      <div class="cat-name">Psychology</div>
+      <div class="cat-desc">Attraction, behaviour, and the mental side of modern dating.</div>
+      <div class="cat-arrow">Explore →</div>
+    </a>
+
+    <a href="dating-advice/" class="cat-card" style="--cat-color:#eab308;">
+      <div class="cat-icon">📍</div>
+      <div class="cat-name">First Dates</div>
+      <div class="cat-desc">Where to go, what to say, and how to turn a meetup into a second date.</div>
+      <div class="cat-arrow">Explore →</div>
+    </a>
+
+    <a href="dating-advice/" class="cat-card" style="--cat-color:#ef4444;">
+      <div class="cat-icon">✕</div>
+      <div class="cat-name">Mistakes</div>
+      <div class="cat-desc">Turn-offs, failure modes, and the red flags you're sending without knowing it.</div>
+      <div class="cat-arrow">Explore →</div>
+    </a>
+
+    <a href="dating-advice/" class="cat-card" style="--cat-color:#22d3ee;">
+      <div class="cat-icon">🤖</div>
+      <div class="cat-name">AI Dating</div>
+      <div class="cat-desc">Virtual companions, AI practice, and what the future of dating actually looks like.</div>
+      <div class="cat-arrow">Explore →</div>
+    </a>
+
+    <a href="dating-advice/" class="cat-card" style="--cat-color:#d946ef;">
+      <div class="cat-icon">🎥</div>
+      <div class="cat-name">Live Cams</div>
+      <div class="cat-desc">Get the most from live platforms — tips, etiquette, and top picks.</div>
+      <div class="cat-arrow">Explore →</div>
+    </a>
+
+  </div>
+</div>
+
+<hr class="blog-divider"/>
+
+<!-- LATEST ARTICLES -->
+<div class="blog-section">
+  <div class="section-header">
+    <h2 class="section-title">Latest Articles</h2>
+    <span class="section-count">17 posts</span>
+  </div>
+  <div class="post-grid">
+
+    <a href="dating-advice/no-matches-tinder-real-reason/" class="post-card" style="--tag-color:#ef4444;">
+      <span class="post-tag">Mistakes</span>
+      <div class="post-title">No Matches on Tinder? The Real Reason</div>
+      <div class="post-read">Read now</div>
+    </a>
+
+    <a href="dating-advice/why-women-dont-reply-dating-apps/" class="post-card" style="--tag-color:#ef4444;">
+      <span class="post-tag">Mistakes</span>
+      <div class="post-title">Why Women Don't Reply on Dating Apps</div>
+      <div class="post-read">Read now</div>
+    </a>
+
+    <a href="dating-advice/doom-scrolling-vs-connecting/" class="post-card" style="--tag-color:#8b5cf6;">
+      <span class="post-tag">Psychology</span>
+      <div class="post-title">Doom Scrolling vs. Actually Connecting</div>
+      <div class="post-read">Read now</div>
+    </a>
+
+    <a href="dating-advice/midnight-ache-scrolling-loneliness/" class="post-card" style="--tag-color:#8b5cf6;">
+      <span class="post-tag">Psychology</span>
+      <div class="post-title">The Midnight Ache: Why You Scroll Instead of Connect</div>
+      <div class="post-read">Read now</div>
+    </a>
+
+    <a href="dating-advice/3am-loneliness-brain/" class="post-card" style="--tag-color:#8b5cf6;">
+      <span class="post-tag">Psychology</span>
+      <div class="post-title">What Your 3AM Brain Is Really Telling You</div>
+      <div class="post-read">Read now</div>
+    </a>
+
+    <a href="dating-advice/lonely-weekends/" class="post-card" style="--tag-color:#8b5cf6;">
+      <span class="post-tag">Psychology</span>
+      <div class="post-title">The Lonely Weekend Problem</div>
+      <div class="post-read">Read now</div>
+    </a>
+
+    <a href="dating-advice/talking-to-ai-companion/" class="post-card" style="--tag-color:#22d3ee;">
+      <span class="post-tag">AI Dating</span>
+      <div class="post-title">What Talking to an AI Companion Actually Feels Like</div>
+      <div class="post-read">Read now</div>
+    </a>
+
+    <a href="dating-advice/ai-chat-men-over-30/" class="post-card" style="--tag-color:#22d3ee;">
+      <span class="post-tag">AI Dating</span>
+      <div class="post-title">AI Chat for Men Over 30 — Is It Worth Your Time?</div>
+      <div class="post-read">Read now</div>
+    </a>
+
+    <a href="dating-advice/ai-girlfriend-apps-ranked-2026/" class="post-card" style="--tag-color:#f97316;">
+      <span class="post-tag">App Reviews</span>
+      <div class="post-title">AI Girlfriend Apps Ranked 2026</div>
+      <div class="post-read">Read now</div>
+    </a>
+
+    <a href="dating-advice/dating-apps-designed-to-keep-you-single/" class="post-card" style="--tag-color:#3b82f6;">
+      <span class="post-tag">Dating Apps</span>
+      <div class="post-title">Are Dating Apps Designed to Keep You Single?</div>
+      <div class="post-read">Read now</div>
+    </a>
+
+    <a href="dating-advice/average-man-dating-app-stats/" class="post-card" style="--tag-color:#3b82f6;">
+      <span class="post-tag">Dating Apps</span>
+      <div class="post-title">The Average Man's Dating App Stats</div>
+      <div class="post-read">Read now</div>
+    </a>
+
+    <a href="dating-advice/what-women-want-first-message/" class="post-card" style="--tag-color:#ec4899;">
+      <span class="post-tag">Texting &amp; Seduction</span>
+      <div class="post-title">What Women Actually Want in a First Message</div>
+      <div class="post-read">Read now</div>
+    </a>
+
+    <a href="dating-advice/start-conversation-online-without-being-ignored/" class="post-card" style="--tag-color:#ec4899;">
+      <span class="post-tag">Texting &amp; Seduction</span>
+      <div class="post-title">How to Start a Conversation Online Without Being Ignored</div>
+      <div class="post-read">Read now</div>
+    </a>
+
+    <a href="dating-advice/find-active-women-online-near-you/" class="post-card" style="--tag-color:#ff3d6b;">
+      <span class="post-tag">Get Matches</span>
+      <div class="post-title">How to Find Active Women Online Near You</div>
+      <div class="post-read">Read now</div>
+    </a>
+
+    <a href="dating-advice/matching-vs-connecting/" class="post-card" style="--tag-color:#ff3d6b;">
+      <span class="post-tag">Get Matches</span>
+      <div class="post-title">Matching vs. Actually Connecting</div>
+      <div class="post-read">Read now</div>
+    </a>
+
+    <a href="dating-advice/low-social-circle-meet-women/" class="post-card" style="--tag-color:#ff3d6b;">
+      <span class="post-tag">Get Matches</span>
+      <div class="post-title">Low Social Circle? How to Meet Women Anyway</div>
+      <div class="post-read">Read now</div>
+    </a>
+
+    <a href="dating-advice/no-social-circle-get-matched/" class="post-card" style="--tag-color:#ff3d6b;">
+      <span class="post-tag">Get Matches</span>
+      <div class="post-title">No Social Circle? How to Get Matched</div>
+      <div class="post-read">Read now</div>
+    </a>
+
+  </div>
+</div>
+
+<!-- SITE FOOTER -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="footer-logo">Tempting Babes</div>
+      <p class="footer-tagline">Your all-in-one hub for Dating, Live Cams, AI Girls and VIP access. Built for real connections and instant interaction.</p>
+    </div>
+    <div class="footer-col">
+      <h4 class="footer-col-title">Explore</h4>
+      <ul class="footer-links">
+        <li><a href="/Blog/">Blog</a></li>
+        <li><a href="/World-Cup/">World Cup</a></li>
+        <li><a href="/Freebies/">Freebies</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4 class="footer-col-title">Legal &amp; Info</h4>
+      <ul class="footer-links">
+        <li><a href="/About/">About</a></li>
+        <li><a href="/privacy-policy/">Privacy Policy</a></li>
+        <li><a href="/terms/">Terms of Service</a></li>
+        <li><a href="/dmca/">DMCA Policy</a></li>
+        <li><a href="/contact/">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>18+ Only &nbsp;&middot;&nbsp; All rights reserved &nbsp;&middot;&nbsp; Tempting Babes&copy; 2026</p>
+  </div>
+</footer>
+</body>
+</html>
