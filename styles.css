@@ -72,6 +72,16 @@ nav {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.logo-img {
+  height: 28px;
+  width: auto;
+  flex-shrink: 0;
+  display: block;
 }
 
 .tabs {
