@@ -784,13 +784,4 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Mark the current page's tab as active
-  const path = window.location.pathname.toLowerCase();
-  document.querySelectorAll('nav .tab').forEach(tab => {
-    const href = (tab.getAttribute('href') || '').toLowerCase().replace('../', '');
-    const folder = href.split('/')[0];
-    if (folder && path.includes('/' + folder)) {
-      tab.classList.add('active');
-    }
-  });
 });
