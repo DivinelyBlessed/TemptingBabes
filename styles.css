@@ -244,7 +244,7 @@ nav {
   display: inline-block;
   background: none;
   -webkit-background-clip: unset;
-  -webkit-text-fill-color: #e8184a;
+  -webkit-text-fill-color: #ff2255;
   transition: opacity 0.3s ease, transform 0.3s ease;
   will-change: opacity, transform;
 }
