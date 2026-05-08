@@ -785,18 +785,34 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
-// Tab hover — runs immediately when script loads (defer means DOM is already ready).
-// pointerenter/leave handles ongoing hover; setTimeout+:hover check catches the
-// cursor-already-over-tab-on-page-load case where pointerenter never fires.
+// Tab hover — fully JS-driven so it works on page load without waiting for mouse movement.
+// Chrome does not apply CSS :hover or fire pointerenter until the mouse moves after navigation.
+// Fix: store cursor position in sessionStorage on every page; on load check stored coords
+// against each tab's bounding rect and add .hovered directly.
 (function () {
   const tabs = document.querySelectorAll('nav .tab');
-  tabs.forEach(tab => {
-    tab.addEventListener('pointerenter', () => tab.classList.add('hovered'));
-    tab.addEventListener('pointerleave', () => tab.classList.remove('hovered'));
+
+  // Persist cursor position so the next page can read it immediately on load
+  document.addEventListener('mousemove', function (e) {
+    sessionStorage.setItem('tb_mx', e.clientX);
+    sessionStorage.setItem('tb_my', e.clientY);
+  }, { passive: true });
+
+  // Ongoing hover for all interactions after load
+  tabs.forEach(function (tab) {
+    tab.addEventListener('pointerenter', function () { tab.classList.add('hovered'); });
+    tab.addEventListener('pointerleave', function () { tab.classList.remove('hovered'); });
   });
-  setTimeout(() => {
-    tabs.forEach(tab => {
-      if (tab.matches(':hover')) tab.classList.add('hovered');
+
+  // On page load: if cursor is already sitting over a tab, apply hovered immediately
+  var x = parseFloat(sessionStorage.getItem('tb_mx') || '');
+  var y = parseFloat(sessionStorage.getItem('tb_my') || '');
+  if (x && y) {
+    tabs.forEach(function (tab) {
+      var r = tab.getBoundingClientRect();
+      if (x >= r.left && x <= r.right && y >= r.top && y <= r.bottom) {
+        tab.classList.add('hovered');
+      }
     });
-  }, 50);
+  }
 }());
