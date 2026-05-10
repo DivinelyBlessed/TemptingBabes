@@ -84,6 +84,7 @@ nav {
 
 .logo-img {
   height: 42px;
+  max-height: 42px;
   width: auto;
   flex-shrink: 0;
   display: block;
