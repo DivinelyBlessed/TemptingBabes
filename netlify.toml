@@ -16,6 +16,55 @@
   status = 301
   force  = true
 
+# ── Old spaced-folder URLs → new hyphenated URLs ─────────────
+[[redirects]]
+  from   = "/Endura Naturals/*"
+  to     = "/endura-naturals/:splat"
+  status = 301
+  force  = true
+
+[[redirects]]
+  from   = "/Endura Naturals"
+  to     = "/endura-naturals/"
+  status = 301
+  force  = true
+
+[[redirects]]
+  from   = "/Our Dream AI/*"
+  to     = "/our-dream-ai/:splat"
+  status = 301
+  force  = true
+
+[[redirects]]
+  from   = "/Our Dream AI"
+  to     = "/our-dream-ai/"
+  status = 301
+  force  = true
+
+[[redirects]]
+  from   = "/Sex Messanger/*"
+  to     = "/sex-messanger/:splat"
+  status = 301
+  force  = true
+
+[[redirects]]
+  from   = "/Sex Messanger"
+  to     = "/sex-messanger/"
+  status = 301
+  force  = true
+
+[[redirects]]
+  from   = "/Ways To Meet/*"
+  to     = "/ways-to-meet/:splat"
+  status = 301
+  force  = true
+
+[[redirects]]
+  from   = "/Ways To Meet"
+  to     = "/ways-to-meet/"
+  status = 301
+  force  = true
+
 # ── Security headers on every page ───────────────────────────
 [[headers]]
   for = "/*"

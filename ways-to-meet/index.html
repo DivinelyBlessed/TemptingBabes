@@ -11,17 +11,17 @@
 </script>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Hidden Discovery: AI Personalization — Tempting Babes</title>
-<meta name="description" content="AI-powered personalization on Tempting Babes. Discover content made just for you."/>
-<link rel="canonical" href="https://www.temptingbabes.com/Our%20Dream%20AI/"/>
+<title>Find Your Match — Tempting Babes</title>
+<meta name="description" content="Find your match on Tempting Babes. Real ways to meet people near you — free to join."/>
+<link rel="canonical" href="https://www.temptingbabes.com/ways-to-meet/"/>
 <link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
 <meta property="og:type" content="website"/>
-<meta property="og:title" content="Hidden Discovery: AI Personalization — Tempting Babes"/>
-<meta property="og:description" content="AI-powered personalization on Tempting Babes. Discover content made just for you."/>
-<meta property="og:url" content="https://www.temptingbabes.com/Our%20Dream%20AI/"/>
+<meta property="og:title" content="Find Your Match — Tempting Babes"/>
+<meta property="og:description" content="Find your match on Tempting Babes. Real ways to meet people near you — free to join."/>
+<meta property="og:url" content="https://www.temptingbabes.com/Ways%20To%20Meet/"/>
 <meta property="og:image" content="https://www.temptingbabes.com/Asset/sophie.jpg"/>
 <meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:title" content="Hidden Discovery: AI Personalization — Tempting Babes"/>
+<meta name="twitter:title" content="Find Your Match — Tempting Babes"/>
 <meta name="twitter:image" content="https://www.temptingbabes.com/Asset/sophie.jpg"/>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
 <style>
@@ -48,7 +48,6 @@ body{
   overflow-x:hidden;
   display:flex;
   flex-direction:column;
-  line-height:1.6;
 }
 
 /* Ambient glow orbs */
@@ -64,68 +63,6 @@ body::after{
   width:400px;height:400px;
   background:radial-gradient(circle,rgba(255,140,0,0.12) 0%,transparent 70%);
   bottom:-80px;right:-80px;filter:blur(80px);
-}
-
-/* ── AGE GATE ── */
-#age-gate{
-  position:fixed;
-  top:0;left:0;width:100%;height:100%;
-  background:rgba(8,8,8,0.97);
-  backdrop-filter:blur(16px);
-  -webkit-backdrop-filter:blur(16px);
-  z-index:999;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-  padding:20px;
-}
-.age-gate-card{
-  background:rgba(22,22,22,0.9);
-  border:1px solid rgba(255,61,107,0.25);
-  border-radius:20px;
-  padding:48px 40px;
-  max-width:380px;width:100%;
-  box-shadow:0 24px 80px rgba(0,0,0,0.7),inset 0 1px 0 rgba(255,255,255,0.05);
-  position:relative;overflow:hidden;
-}
-.age-gate-card::before{
-  content:'';position:absolute;
-  top:0;left:0;right:0;height:3px;
-  background:linear-gradient(90deg,var(--accent2),var(--accent));
-}
-.age-gate-card::after{
-  content:'';position:absolute;
-  width:300px;height:300px;border-radius:50%;
-  background:radial-gradient(circle,rgba(255,61,107,0.07),transparent 70%);
-  top:-100px;right:-80px;pointer-events:none;
-}
-.age-gate-icon{
-  font-size:2.8rem;margin-bottom:16px;display:block;
-}
-.age-gate-card h2{
-  font-family:'Bebas Neue',sans-serif;
-  font-size:2rem;letter-spacing:2px;
-  background:linear-gradient(90deg,#fff,rgba(240,240,248,0.75));
-  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
-  margin-bottom:12px;
-}
-.age-gate-card p{
-  color:var(--muted);font-size:15px;margin-bottom:28px;line-height:1.6;
-}
-.btn-age{
-  display:block;width:100%;
-  padding:16px;border-radius:100px;
-  background:linear-gradient(135deg,var(--accent2),var(--accent));
-  color:#fff;font-family:'Bebas Neue',sans-serif;
-  font-size:1.25rem;letter-spacing:2px;
-  border:none;cursor:pointer;
-  box-shadow:0 8px 40px rgba(255,61,107,0.35),inset 0 1px 0 rgba(255,255,255,0.2);
-  transition:transform .2s,box-shadow .2s;
-}
-.btn-age:hover{
-  transform:translateY(-2px) scale(1.03);
-  box-shadow:0 16px 56px rgba(255,61,107,0.55);
 }
 
 /* ── NAV ── */
@@ -213,53 +150,41 @@ nav{
   0%{transform:translateX(0);}100%{transform:translateX(-50%);}
 }
 
-/* ── SITE HEADER BAR ── */
-.site-bar{
-  position:relative;z-index:1;
-  text-align:center;
-  padding:10px 16px;
-  font-size:11px;font-weight:700;
-  letter-spacing:0.12em;text-transform:uppercase;
-  color:var(--muted);
-  border-bottom:1px solid rgba(255,255,255,0.05);
-  background:rgba(255,255,255,0.02);
-}
-.site-bar span{color:var(--accent2);}
-
 /* ── PAGE BODY ── */
 .page-body{
   position:relative;z-index:1;
   flex:1;
   display:flex;
-  align-items:flex-start;
+  align-items:center;
   justify-content:center;
-  padding:36px 20px 64px;
+  padding:48px 20px 64px;
 }
 
-/* ── CONTENT CARD ── */
-.content-card{
-  width:100%;max-width:520px;
+/* ── QUIZ CARD ── */
+.quiz-card{
+  width:100%;max-width:540px;
   background:rgba(22,22,22,0.75);
   backdrop-filter:blur(24px);
   -webkit-backdrop-filter:blur(24px);
-  border:1px solid rgba(255,255,255,0.07);
+  border:1px solid rgba(255,61,107,0.2);
   border-radius:20px;
-  padding:36px;
-  box-shadow:0 24px 80px rgba(0,0,0,0.5),
-             inset 0 1px 0 rgba(255,255,255,0.04);
+  padding:40px 36px;
+  box-shadow:0 24px 80px rgba(0,0,0,0.6),
+             0 0 0 1px rgba(255,61,107,0.06),
+             inset 0 1px 0 rgba(255,255,255,0.05);
   position:relative;overflow:hidden;
   animation:fadeUp .6s ease both;
 }
-.content-card::before{
+.quiz-card::before{
   content:'';position:absolute;
   top:0;left:0;right:0;height:3px;
   background:linear-gradient(90deg,var(--accent2),var(--accent));
 }
-.content-card::after{
+.quiz-card::after{
   content:'';position:absolute;
-  width:300px;height:300px;border-radius:50%;
-  background:radial-gradient(circle,rgba(255,140,0,0.05),transparent 70%);
-  top:-100px;right:-60px;pointer-events:none;
+  width:350px;height:350px;border-radius:50%;
+  background:radial-gradient(circle,rgba(255,61,107,0.06),transparent 70%);
+  top:-120px;right:-80px;pointer-events:none;
 }
 
 @keyframes fadeUp{
@@ -267,20 +192,113 @@ nav{
   to{opacity:1;transform:translateY(0);}
 }
 
-/* ── TRENDING TAG ── */
-.trending-tag{
+/* ── PROGRESS BAR ── */
+.progress-wrap{
+  width:100%;height:6px;
+  background:rgba(255,255,255,0.08);
+  border-radius:100px;
+  margin-bottom:32px;
+  overflow:hidden;
+}
+.progress-fill{
+  height:100%;width:33%;
+  background:linear-gradient(90deg,var(--accent2),var(--accent));
+  border-radius:100px;
+  transition:width .5s cubic-bezier(.22,1,.36,1);
+  box-shadow:0 0 10px rgba(255,61,107,0.4);
+}
+
+/* ── STEP ── */
+.step{display:none;}
+.step.active{display:block;}
+
+.step h1{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(1.7rem,4vw,2.2rem);
+  letter-spacing:1.5px;line-height:1.15;
+  margin-bottom:12px;
+  background:linear-gradient(90deg,#fff,rgba(240,240,248,0.75));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+}
+.step p{
+  color:var(--muted);font-size:16px;
+  margin-bottom:28px;line-height:1.6;
+}
+
+/* ── OPTION BUTTONS ── */
+.btn-option{
+  display:flex;align-items:center;gap:14px;
+  width:100%;
+  padding:16px 20px;
+  margin:10px 0;
+  background:rgba(255,255,255,0.04);
+  border:1px solid rgba(255,255,255,0.08);
+  border-radius:var(--radius);
+  font-family:'DM Sans',sans-serif;
+  font-size:15px;font-weight:500;
+  color:rgba(240,240,248,0.85);
+  cursor:pointer;
+  transition:border-color .2s,background .2s,transform .15s,box-shadow .2s;
+  text-align:left;
+  position:relative;overflow:hidden;
+}
+.btn-option::before{
+  content:'';
+  width:20px;height:20px;border-radius:50%;
+  border:2px solid rgba(255,255,255,0.2);
+  flex-shrink:0;
+  transition:border-color .2s,background .2s;
+}
+.btn-option:hover{
+  border-color:rgba(255,61,107,0.5);
+  background:rgba(255,61,107,0.08);
+  transform:translateX(4px);
+  box-shadow:0 4px 20px rgba(255,61,107,0.12);
+}
+.btn-option:hover::before{
+  border-color:var(--accent);
+  background:var(--accent);
+}
+
+/* ── LOADING SPINNER ── */
+.spinner-wrap{
+  display:flex;flex-direction:column;
+  align-items:center;gap:20px;
+  padding:24px 0 16px;
+}
+.loading-spinner{
+  width:44px;height:44px;border-radius:50%;
+  border:3px solid rgba(255,255,255,0.08);
+  border-top:3px solid var(--accent);
+  animation:spin 0.9s linear infinite;
+}
+@keyframes spin{0%{transform:rotate(0deg);}100%{transform:rotate(360deg);}}
+
+.spinner-label{
+  font-size:13px;color:var(--muted);
+  letter-spacing:0.06em;text-transform:uppercase;
+}
+
+/* ── FINAL SUCCESS ── */
+#final h1{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:2.4rem;letter-spacing:2px;
+  background:linear-gradient(90deg,var(--green),#4ade80);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  margin-bottom:12px;
+}
+.match-badge{
   display:inline-flex;align-items:center;gap:8px;
-  background:rgba(255,61,107,0.12);
-  border:1px solid rgba(255,61,107,0.25);
-  color:var(--accent);
-  font-size:11px;font-weight:700;
-  letter-spacing:0.1em;text-transform:uppercase;
-  padding:5px 12px;border-radius:100px;
+  background:rgba(34,197,94,0.1);
+  border:1px solid rgba(34,197,94,0.25);
+  color:var(--green);
+  font-size:13px;font-weight:700;
+  padding:6px 14px;border-radius:100px;
   margin-bottom:20px;
 }
-.trending-dot{
-  width:7px;height:7px;border-radius:50%;
-  background:var(--accent);
+.match-badge-dot{
+  width:8px;height:8px;border-radius:50%;
+  background:var(--green);
   animation:pulse-dot 1.6s ease-in-out infinite;
 }
 @keyframes pulse-dot{
@@ -288,126 +306,24 @@ nav{
   50%{opacity:0.4;transform:scale(0.7);}
 }
 
-/* ── HEADLINE ── */
-.content-card h1{
-  font-family:'Bebas Neue',sans-serif;
-  font-size:clamp(1.7rem,4.5vw,2.2rem);
-  letter-spacing:1.5px;line-height:1.15;
-  margin-bottom:12px;
-  background:linear-gradient(90deg,#fff 0%,var(--accent2) 70%,var(--accent) 100%);
-  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
-}
-.subhead{
-  color:var(--muted);font-size:15px;
-  margin-bottom:24px;line-height:1.65;
-}
-
-/* ── PREVIEW BOX ── */
-.preview-box{
-  width:100%;height:220px;
-  background:linear-gradient(135deg,#1a0a20,#0f1428,#1a1008);
-  border-radius:var(--radius);
-  border:1px solid rgba(255,255,255,0.06);
-  margin-bottom:24px;
-  position:relative;overflow:hidden;
-  filter:blur(5px);
-  transition:filter .3s;
-}
-.preview-box:hover{filter:blur(3px);}
-.preview-box-inner{
-  width:100%;height:100%;
-  display:flex;align-items:center;justify-content:center;
-  background:linear-gradient(135deg,
-    rgba(255,61,107,0.08) 0%,
-    rgba(255,140,0,0.06) 50%,
-    rgba(0,100,200,0.08) 100%);
-}
-.preview-box-inner svg{opacity:0.15;}
-
-.preview-label-wrap{
-  position:absolute;
-  top:0;left:0;right:0;bottom:0;
-  display:flex;align-items:center;justify-content:center;
-  filter:none;z-index:2;
-}
-.preview-label{
-  background:rgba(0,0,0,0.75);
-  backdrop-filter:blur(8px);
-  -webkit-backdrop-filter:blur(8px);
-  color:#fff;font-weight:600;font-size:14px;
-  padding:10px 22px;border-radius:100px;
-  border:1px solid rgba(255,255,255,0.12);
-  letter-spacing:0.04em;
-}
-
-/* ── STORY BLOCK ── */
-.story-block{
-  font-size:16px;color:rgba(240,240,248,0.8);
-  margin-bottom:24px;line-height:1.75;
-}
-.story-block b{color:var(--text);}
-
-/* ── BULLETS ── */
-.bullets{
-  list-style:none;padding:0;
-  margin:0 0 28px;
-  display:flex;flex-direction:column;gap:10px;
-}
-.bullets li{
-  display:flex;align-items:center;gap:12px;
-  background:rgba(255,255,255,0.03);
-  border:1px solid rgba(255,255,255,0.06);
-  border-radius:10px;
-  padding:12px 16px;
-  font-size:15px;color:rgba(240,240,248,0.85);
-}
-.bullets li::before{
-  content:'✓';
-  color:var(--green);font-weight:700;
-  font-size:15px;flex-shrink:0;
-}
-
 /* ── CTA BUTTON ── */
-.cta-btn{
+.btn-cta{
   display:block;width:100%;
-  padding:18px;border-radius:100px;
+  padding:18px;
+  border-radius:100px;
   background:linear-gradient(135deg,var(--accent2),var(--accent));
-  color:#fff;font-family:'Bebas Neue',sans-serif;
+  color:#fff;
+  font-family:'Bebas Neue',sans-serif;
   font-size:1.3rem;letter-spacing:2px;
-  text-align:center;text-decoration:none;
   border:none;cursor:pointer;
   box-shadow:0 8px 40px rgba(255,61,107,0.35),inset 0 1px 0 rgba(255,255,255,0.2);
   transition:transform .2s,box-shadow .2s;
-  position:relative;overflow:hidden;
+  margin-top:8px;
 }
-.cta-btn::after{
-  content:'';position:absolute;
-  inset:0;
-  background:rgba(255,255,255,0);
-  transition:background .2s;
-}
-.cta-btn:hover{
+.btn-cta:hover{
   transform:translateY(-2px) scale(1.02);
   box-shadow:0 16px 56px rgba(255,61,107,0.55);
 }
-.cta-btn:hover::after{background:rgba(255,255,255,0.06);}
-.cta-btn:active{transform:scale(0.99);}
-
-/* ── SOCIAL PROOF ── */
-.social-proof{
-  margin-top:28px;padding-top:24px;
-  border-top:1px solid rgba(255,255,255,0.06);
-  display:flex;flex-direction:column;gap:10px;
-}
-.comment{
-  background:rgba(255,255,255,0.03);
-  border:1px solid rgba(255,255,255,0.06);
-  border-radius:10px;
-  padding:12px 16px;
-  font-size:14px;color:var(--muted);
-  line-height:1.5;
-}
-.comment b{color:var(--accent2);}
 
 /* ── FOOTER ── */
 footer{
@@ -427,23 +343,12 @@ footer a:hover{color:var(--muted);}
   .tabs{display:none;}
   .logo{font-size:1.3rem;}
   .join-btn{padding:7px 16px;font-size:.82rem;}
-  .content-card{padding:24px 18px;}
-  .page-body{padding:24px 14px 48px;}
-  .age-gate-card{padding:36px 24px;}
+  .quiz-card{padding:28px 20px;}
+  .page-body{padding:32px 16px 48px;}
 }
 </style>
 </head>
 <body>
-
-<!-- AGE GATE -->
-<div id="age-gate">
-  <div class="age-gate-card">
-    <span class="age-gate-icon">🔞</span>
-    <h2>Confirm Your Age</h2>
-    <p>You must be at least 18+ to view this discovery.</p>
-    <button class="btn-age" onclick="closeGate()">I Am 18+</button>
-  </div>
-</div>
 
 <!-- NAV -->
 <nav>
@@ -479,53 +384,51 @@ footer a:hover{color:var(--muted);}
   </div>
 </div>
 
-<!-- SITE BAR -->
-<div class="site-bar">Trending Discovery &bull; <span>April 2026</span></div>
-
 <!-- MAIN -->
 <div class="page-body">
-  <div class="content-card">
+  <div class="quiz-card">
 
-    <div class="trending-tag">
-      <span class="trending-dot"></span>
-      Trending Now
+    <!-- Progress bar -->
+    <div class="progress-wrap">
+      <div class="progress-fill" id="progress"></div>
     </div>
 
-    <h1>This New AI Is Blowing Up… But Most People Don't Know What It Really Does</h1>
-    <p class="subhead">It creates hyper-realistic, fully personalized content in seconds… and people are quietly obsessed with it.</p>
+    <!-- STEP 1 -->
+    <div class="step active" id="step1">
+      <h1>Welcome to WaystoMeet</h1>
+      <p>Where every dating taste finds a match. What are you looking for today?</p>
+      <button class="btn-option" onclick="nextStep(1, 2, 66)">Casual Dating</button>
+      <button class="btn-option" onclick="nextStep(1, 2, 66)">Serious Relationship</button>
+      <button class="btn-option" onclick="nextStep(1, 2, 66)">Just Exploring</button>
+    </div>
 
-    <!-- Blurred preview -->
-    <div style="position:relative;margin-bottom:24px;">
-      <div class="preview-box">
-        <div class="preview-box-inner">
-          <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1">
-            <rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/>
-          </svg>
-        </div>
+    <!-- STEP 2 -->
+    <div class="step" id="step2">
+      <h1>Your Location</h1>
+      <p>We have active members in your area. Is your schedule flexible for a meetup this week?</p>
+      <button class="btn-option" onclick="nextStep(2, 3, 100)">Yes, I'm flexible</button>
+      <button class="btn-option" onclick="nextStep(2, 3, 100)">Only on weekends</button>
+    </div>
+
+    <!-- STEP 3 — loading -->
+    <div class="step" id="step3">
+      <h1>Finding Matches...</h1>
+      <p>Analyzing your preferences against our local database.</p>
+      <div class="spinner-wrap">
+        <div class="loading-spinner"></div>
+        <span class="spinner-label">Searching nearby members</span>
       </div>
-      <div class="preview-label-wrap">
-        <span class="preview-label">🔒 Tap to Unlock Preview</span>
+    </div>
+
+    <!-- FINAL -->
+    <div class="step" id="final">
+      <h1>Matches Found!</h1>
+      <div class="match-badge">
+        <span class="match-badge-dot"></span>
+        18 members near you — online now
       </div>
-    </div>
-
-    <div class="story-block">
-      I kept seeing people talk about this AI tool in random forums. At first, I thought it was just another gimmick...
-      <br/><br/>
-      But then I tried it. You can literally customize everything: the look, the vibe, the personality. It generates insanely realistic results in seconds. And honestly? <b>It's kind of addictive.</b>
-    </div>
-
-    <ul class="bullets">
-      <li>Create exactly what you imagine</li>
-      <li>Fully personalized experience</li>
-      <li>Instant results — no waiting</li>
-      <li>Private &amp; discreet</li>
-    </ul>
-
-    <a href="https://OFFER_LINK_HERE" class="cta-btn">Unlock It Now (Free) →</a>
-
-    <div class="social-proof">
-      <div class="comment"><b>@alex_j:</b> Didn't expect it to be this realistic... lowkey addictive 😅</div>
-      <div class="comment"><b>@mikes92:</b> This is the future 100%</div>
+      <p>We found <strong style="color:var(--text);">18 people</strong> matching your criteria in your city.</p>
+      <button class="btn-cta" onclick="redirect()">Create My Free Profile →</button>
     </div>
 
   </div>
@@ -535,8 +438,21 @@ footer a:hover{color:var(--muted);}
 
 
 <script>
-  function closeGate() {
-    document.getElementById('age-gate').style.display = 'none';
+  function nextStep(current, next, progress) {
+    document.getElementById('step' + current).classList.remove('active');
+    document.getElementById('step' + next).classList.add('active');
+    document.getElementById('progress').style.width = progress + '%';
+
+    if (next === 3) {
+      setTimeout(() => {
+        document.getElementById('step3').classList.remove('active');
+        document.getElementById('final').classList.add('active');
+      }, 2000);
+    }
+  }
+
+  function redirect() {
+    window.location.href = "https://waystomeet.com/"; // Replace with affiliate link
   }
 </script>
 
