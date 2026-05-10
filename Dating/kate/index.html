@@ -98,11 +98,11 @@ nav{
   cursor:pointer;transition:all .2s;
   text-decoration:none;display:inline-block;
 }
-.tab.active{background:linear-gradient(135deg,var(--accent2),var(--accent));color:#fff;}
+.tab.active{background:linear-gradient(135deg,#ff8c00,#ff3d6b);color:#fff;}
 .tab:not(.active):hover{color:#fff;background:rgba(255,255,255,0.08);}
 .join-btn{
   padding:9px 22px;border-radius:50px;
-  background:linear-gradient(135deg,var(--accent2),var(--accent));
+  background:linear-gradient(135deg,#ff8c00,#ff3d6b);
   color:#fff;font-family:'DM Sans',sans-serif;font-weight:600;font-size:0.9rem;
   border:none;cursor:pointer;flex-shrink:0;white-space:nowrap;
   box-shadow:0 4px 20px rgba(255,140,0,.4);
@@ -175,8 +175,7 @@ nav{
   font-size:clamp(2rem,3.5vw,2.8rem);
   letter-spacing:3px;line-height:1.15;
   margin-bottom:8px;
-  background:linear-gradient(90deg,#fff 0%,var(--accent2) 60%,var(--accent) 100%);
-  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  color:#ff8c00;
 }
 
 .cast-tag{
@@ -242,7 +241,7 @@ nav{
 .profile-cta-wrap{margin-top:32px;text-align:center;}
 .btn-primary{
   display:inline-block;
-  background:linear-gradient(135deg,var(--accent2),var(--accent));
+  background:linear-gradient(135deg,#ff8c00,#ff3d6b);
   color:#fff;font-family:'Bebas Neue',sans-serif;
   font-size:1.15rem;letter-spacing:2px;
   padding:16px 44px;border-radius:100px;
@@ -330,29 +329,32 @@ footer{
 }
 .match-count{font-size:0.78rem;color:rgba(255,140,0,0.8);font-weight:600;letter-spacing:0.3px;margin-bottom:16px;}
 
-.pf-footer{background:#080808;border-top:1px solid rgba(255,255,255,0.06);margin-top:40px;width:100%;box-sizing:border-box;padding:28px 20px 0;}
-.pf-footer-brand{margin-bottom:20px;}
-.pf-footer-logo{font-family:'Bebas Neue',sans-serif;font-size:1.3rem;letter-spacing:2px;background:linear-gradient(90deg,var(--accent2),var(--accent));-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:6px;}
-.pf-footer-tagline{font-size:0.78rem;color:rgba(255,255,255,0.28);line-height:1.6;}
-.pf-footer-cols{display:flex;gap:28px;flex-wrap:wrap;margin-bottom:20px;}
-.pf-footer-col{flex:1 1 90px;min-width:0;}
-.pf-footer-col-title{font-size:0.68rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.3);margin-bottom:10px;}
-.pf-footer-links{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:8px;}
-.pf-footer-links a{font-size:0.83rem;color:rgba(255,255,255,0.45);text-decoration:none;display:block;}
-.pf-footer-links a:hover{color:#fff;}
-.pf-footer-bottom{border-top:1px solid rgba(255,255,255,0.05);margin:0 -20px;padding:14px 20px;text-align:center;}
-.pf-footer-bottom p{font-size:0.7rem;color:rgba(255,255,255,0.16);line-height:1.7;}
 </style>
 </head>
 <body>
 
 <!-- NAV -->
 <nav>
-  <a class="logo" href="../../index.html"><img src="/Asset/Logo/logo.webp" alt="" class="logo-img"><span class="logo-text">Tempting Babes</span></a>
-  
-  <button class="join-btn">Join Free</button>
-  
+  <a class="logo" href="/"><img src="/Asset/Logo/logo.webp" alt="" class="logo-img"><span class="logo-text" style="font-family:'Playfair Display',serif;font-weight:900;font-size:1.35rem;line-height:1;letter-spacing:1.5px;background:linear-gradient(90deg,#ff8c00,#ff3d6b);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-left:-10px;">Tempting Babes</span></a>
+  <div class="tabs">
+    <a href="/AI-chat/" class="tab">AI Chat</a>
+    <a href="/Cams/" class="tab">Cams</a>
+    <a href="/Dating/" class="tab">Dating</a>
+    <a href="/Offers/" class="tab">Offers</a>
+    <a href="/Trending/" class="tab">Trending</a>
+    <a href="/New/" class="tab"><span class="tab-star">⭐</span>VIP</a>
+  </div>
+  <button class="join-btn" id="getAccessBtn" style="background:linear-gradient(135deg,#ff8c00,#ff3d6b);">Join Free</button>
+  <button class="menu-btn" id="menuBtn">&#9776;</button>
 </nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="/AI-chat/" class="mobile-tab">AI Chat</a>
+  <a href="/Cams/" class="mobile-tab">Cams</a>
+  <a href="/Dating/" class="mobile-tab">Dating</a>
+  <a href="/Offers/" class="mobile-tab">Offers</a>
+  <a href="/Trending/" class="mobile-tab">Trending</a>
+  <a href="/New/" class="mobile-tab"><span class="tab-star">⭐</span>VIP</a>
+</div>
 
 
 <!-- TICKER -->
@@ -533,36 +535,7 @@ footer{
 </script>
 
 <!-- FOOTER -->
-<footer class="pf-footer">
-  <div class="pf-footer-brand">
-    <div class="pf-footer-logo">Tempting Babes</div>
-    <p class="pf-footer-tagline">Your all-in-one hub for Dating, Live Cams, AI Girls and VIP access.</p>
-  </div>
-  <div class="pf-footer-cols">
-    <div class="pf-footer-col">
-      <h4 class="pf-footer-col-title">Explore</h4>
-      <ul class="pf-footer-links">
-        <li><a href="../../Blog/">Blog</a></li>
-        <li><a href="../../Dating/">Dating</a></li>
-        <li><a href="../../AI-chat/">AI Chat</a></li>
-        <li><a href="../../Cams/">Cams</a></li>
-      </ul>
-    </div>
-    <div class="pf-footer-col">
-      <h4 class="pf-footer-col-title">Legal</h4>
-      <ul class="pf-footer-links">
-        <li><a href="../../About/">About</a></li>
-        <li><a href="../../privacy-policy/">Privacy Policy</a></li>
-        <li><a href="../../terms/">Terms of Service</a></li>
-        <li><a href="../../dmca/">DMCA</a></li>
-        <li><a href="../../Contact/">Contact</a></li>
-      </ul>
-    </div>
-  </div>
-  <div class="pf-footer-bottom">
-    <p>18+ Only &nbsp;&middot;&nbsp; All models are 18+. This site links to adult entertainment networks and is intended for adults aged 18 and above. &nbsp;&middot;&nbsp; &copy; Tempting Babes 2026</p>
-  </div>
-</footer>
+
 
 <script>
   const menuBtn = document.getElementById('menuBtn');
