@@ -2,6 +2,10 @@
 # Netlify Configuration — temptingbabes.com
 # ──────────────────────────────────────────────────────────────
 
+[build]
+  command = "node build.js"
+  publish = "."
+
 # IMPORTANT: Replace "YOUR-SITE-NAME" below with your actual Netlify
 # site slug (found in Netlify dashboard → Site configuration → Site name).
 # This 301 redirect prevents your netlify.app URL from creating

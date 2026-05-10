@@ -14,7 +14,7 @@
 <meta name="description" content="Tracy is online and waiting to chat. AI companion — available 24/7, no judgment, real conversation. Start free."/>
 <link rel="canonical" href="https://www.temptingbabes.com/Dating/tracy/"/>
 <link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet"/>
 <meta property="og:type" content="website"/>
 <meta property="og:title" content="Tracy | Tempting Babes"/>
 <meta property="og:description" content="Tracy is online and waiting to chat. Available 24/7, no judgment."/>
@@ -25,13 +25,15 @@
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{--bg:#0a0a0a;--surface:#161616;--accent:#ff3d6b;--accent2:#ff8c00;--text:#f0f0f8;--muted:rgba(240,240,248,0.5);--green:#22c55e;}
-html{scroll-behavior:smooth}
+html{scroll-behavior:smooth;overflow-x:hidden;}
 body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;min-height:100vh;overflow-x:hidden;display:flex;flex-direction:column;}
 body::before,body::after{content:'';position:fixed;border-radius:50%;pointer-events:none;z-index:0;}
 body::before{width:500px;height:500px;background:radial-gradient(circle,rgba(255,61,107,0.18) 0%,transparent 70%);top:-120px;left:-120px;filter:blur(80px);}
 body::after{width:400px;height:400px;background:radial-gradient(circle,rgba(255,140,0,0.12) 0%,transparent 70%);bottom:-80px;right:-80px;filter:blur(80px);}
 nav{position:sticky;top:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:10px 24px;background:rgba(10,10,10,0.6);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,0.08);box-shadow:0 4px 30px rgba(0,0,0,0.4);gap:16px;}
-.logo{font-family:'Bebas Neue',sans-serif;font-size:1.6rem;letter-spacing:2px;background:linear-gradient(90deg,var(--accent2),var(--accent));-webkit-background-clip:text;-webkit-text-fill-color:transparent;text-decoration:none;}
+.logo{text-decoration:none;display:inline-flex;align-items:center;gap:0;}
+.logo-img{height:42px;width:auto;flex-shrink:0;display:block;}
+.logo-text{font-family:'Playfair Display',serif;font-weight:900;font-size:1.35rem;letter-spacing:1.5px;background:linear-gradient(90deg,var(--accent2),var(--accent));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-left:-10px;}
 .tabs{display:flex;gap:4px;background:rgba(255,255,255,0.06);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,0.08);border-radius:50px;padding:4px;margin-left:auto;margin-right:auto;transform:translateX(-27px);}
 .tab{padding:7px 20px;border-radius:50px;border:none;background:transparent;color:var(--muted);font-family:'DM Sans',sans-serif;font-size:.9rem;font-weight:500;cursor:pointer;transition:all .2s;text-decoration:none;display:inline-block;}
 .tab.active{background:linear-gradient(135deg,var(--accent2),var(--accent));color:#fff;}
@@ -88,9 +90,9 @@ footer{position:relative;z-index:1;border-top:1px solid rgba(255,255,255,0.06);p
   .profile-section{padding:20px 16px 40px;}
   .profile-layout{display:flex;flex-direction:column;gap:0;}
   .mobile-header{display:block;width:100%;text-align:center;order:1;}
-  .profile-about{order:2;width:385px;max-width:100%;margin:0 auto;}
+  .profile-about{order:3;width:385px;max-width:100%;margin:0 auto;}
   .profile-bio{text-align:justify;margin-bottom:0;padding-bottom:16px;border-bottom:none;}
-  .profile-image-wrap{order:3;position:static;width:98%;margin:0 auto;margin-bottom:12px;}
+  .profile-image-wrap{order:2;position:static;width:98%;margin:0 auto;margin-bottom:12px;}
   .profile-stats{order:4;display:flex;flex-direction:column;align-items:center;width:100%;}
   .profile-stats-heading{width:100%;text-align:center;}
   .profile-img-placeholder{height:480px;max-height:480px;border-radius:14px;}
@@ -103,37 +105,36 @@ footer{position:relative;z-index:1;border-top:1px solid rgba(255,255,255,0.06);p
   .footer-bottom{padding:20px 20px 0;flex-direction:column;gap:10px;align-items:center;text-align:center;}
 }
 .match-count{font-size:0.78rem;color:rgba(255,140,0,0.8);font-weight:600;letter-spacing:0.3px;margin-bottom:16px;}
+
+.pf-footer{background:#080808;border-top:1px solid rgba(255,255,255,0.06);margin-top:40px;width:100%;box-sizing:border-box;padding:28px 20px 0;}
+.pf-footer-brand{margin-bottom:20px;}
+.pf-footer-logo{font-family:'Bebas Neue',sans-serif;font-size:1.3rem;letter-spacing:2px;background:linear-gradient(90deg,var(--accent2),var(--accent));-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:6px;}
+.pf-footer-tagline{font-size:0.78rem;color:rgba(255,255,255,0.28);line-height:1.6;}
+.pf-footer-cols{display:flex;gap:28px;flex-wrap:wrap;margin-bottom:20px;}
+.pf-footer-col{flex:1 1 90px;min-width:0;}
+.pf-footer-col-title{font-size:0.68rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.3);margin-bottom:10px;}
+.pf-footer-links{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:8px;}
+.pf-footer-links a{font-size:0.83rem;color:rgba(255,255,255,0.45);text-decoration:none;display:block;}
+.pf-footer-links a:hover{color:#fff;}
+.pf-footer-bottom{border-top:1px solid rgba(255,255,255,0.05);margin:0 -20px;padding:14px 20px;text-align:center;}
+.pf-footer-bottom p{font-size:0.7rem;color:rgba(255,255,255,0.16);line-height:1.7;}
 </style>
 </head>
 <body>
 <nav>
   <a class="logo" href="../../index.html"><img src="/Asset/Logo/logo.webp" alt="" class="logo-img"><span class="logo-text">Tempting Babes</span></a>
-  <div class="tabs">
-    <a href="../../AI-chat/index.html" class="tab">AI Chat</a>
-    <a href="../../Cams/index.html" class="tab">Cams</a>
-    <a href="../../Dating/index.html" class="tab">Dating</a>
-    <a href="../../Offers/index.html" class="tab">Offers</a>
-    <a href="../../Trending/index.html" class="tab">Trending</a>
-    <a href="../../New/index.html" class="tab">VIP</a>
-  </div>
+  
   <button class="join-btn">Join Free</button>
-  <button class="menu-btn" id="menuBtn">&#9776;</button>
+  
 </nav>
-<div class="mobile-menu" id="mobileMenu">
-  <a href="../../AI-chat/index.html" class="mobile-tab">AI Chat</a>
-  <a href="../../Cams/index.html" class="mobile-tab">Cams</a>
-  <a href="../../Dating/index.html" class="mobile-tab">Dating</a>
-  <a href="../../Offers/index.html" class="mobile-tab">Offers</a>
-  <a href="../../Trending/index.html" class="mobile-tab">Trending</a>
-  <a href="../../New/index.html" class="mobile-tab">VIP</a>
-</div>
+
 <section class="profile-section">
   <canvas id="bubbles-canvas"></canvas>
   <div class="container">
     <div class="profile-layout">
       <div class="mobile-header">        <div class="profile-name">Tracy</div>
-        <div><div class="cast-tag"><span>Age:</span> 29 &nbsp;·&nbsp; <span>City:</span> New York &nbsp;·&nbsp; <span style="color:#22c55e;">● Online Now</span></div></div>
-        <p style="font-size:0.72rem;color:rgba(255,255,255,0.35);margin-top:6px;margin-bottom:8px;">Last active: 4 mins ago</p>
+        <div><div class="cast-tag"><span>Age:</span> 29 &nbsp;·&nbsp; <span>City:</span> New York</div></div>
+        
       </div>
       <div class="profile-image-wrap">
         <div class="profile-img-placeholder">
@@ -146,10 +147,10 @@ footer{position:relative;z-index:1;border-top:1px solid rgba(255,255,255,0.06);p
         <div class="desktop-only" style="text-align:center;"></div>
         <div class="profile-name desktop-only" style="text-align:center;">Tracy</div>
         <div class="desktop-only" style="text-align:center;">
-          <div class="cast-tag"><span>Age:</span> 29 &nbsp;·&nbsp; <span>City:</span> New York &nbsp;·&nbsp; <span style="color:#22c55e;">● Online Now</span></div>
+          <div class="cast-tag"><span>Age:</span> 29 &nbsp;·&nbsp; <span>City:</span> New York</div>
         </div>
-        <p class="desktop-only" style="text-align:center;font-size:0.72rem;color:rgba(255,255,255,0.35);margin-top:-14px;margin-bottom:14px;">Last active: 4 mins ago</p>
-        <div class="about-heading">About Me</div>
+        
+        <div class="about-heading">About</div>
         <p class="profile-bio">New York made me sharp, life made me interesting. I'm Tracy — I say what I think, I mean what I say, and I never waste time. I'm always here when you want someone who actually engages. If you can keep up, message me. You won't regret it.</p>
       </div>
       <div class="profile-stats">
@@ -171,7 +172,7 @@ footer{position:relative;z-index:1;border-top:1px solid rgba(255,255,255,0.06);p
           </div>
         </div>
         <div class="profile-cta-wrap">
-          <p class="match-count">🔥 247 people matched today</p>
+          
           <a href="https://t.crdtg2.com/389314/4299/37954?bo=2753,2754,2755,2756&po=6456&aff_sub5=SF_006OG000004lmDN" class="btn-primary">💬 Chat With Tracy Now</a>
           <p style="margin-top:12px;font-size:0.72rem;color:rgba(255,255,255,0.3);letter-spacing:0.5px;">Age verification required · Secure &amp; discreet billing</p>
         </div>
@@ -191,10 +192,34 @@ footer{position:relative;z-index:1;border-top:1px solid rgba(255,255,255,0.06);p
   window.addEventListener('resize',init);init();draw();
 })();
 </script>
-<footer>
-  <div class="footer-bottom" style="flex-direction:column;align-items:center;text-align:center;">
-    <span>This site links to adult entertainment networks and is intended for adults aged 18 and over only. All models are 18+.</span>
-    <span>All rights reserved. &copy;Tempting Babes.</span>
+<footer class="pf-footer">
+  <div class="pf-footer-brand">
+    <div class="pf-footer-logo">Tempting Babes</div>
+    <p class="pf-footer-tagline">Your all-in-one hub for Dating, Live Cams, AI Girls and VIP access.</p>
+  </div>
+  <div class="pf-footer-cols">
+    <div class="pf-footer-col">
+      <h4 class="pf-footer-col-title">Explore</h4>
+      <ul class="pf-footer-links">
+        <li><a href="../../Blog/">Blog</a></li>
+        <li><a href="../../Dating/">Dating</a></li>
+        <li><a href="../../AI-chat/">AI Chat</a></li>
+        <li><a href="../../Cams/">Cams</a></li>
+      </ul>
+    </div>
+    <div class="pf-footer-col">
+      <h4 class="pf-footer-col-title">Legal</h4>
+      <ul class="pf-footer-links">
+        <li><a href="../../About/">About</a></li>
+        <li><a href="../../privacy-policy/">Privacy Policy</a></li>
+        <li><a href="../../terms/">Terms of Service</a></li>
+        <li><a href="../../dmca/">DMCA</a></li>
+        <li><a href="../../Contact/">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="pf-footer-bottom">
+    <p>18+ Only &nbsp;&middot;&nbsp; All models are 18+. This site links to adult entertainment networks and is intended for adults aged 18 and above. &nbsp;&middot;&nbsp; &copy; Tempting Babes 2026</p>
   </div>
 </footer>
 <script>

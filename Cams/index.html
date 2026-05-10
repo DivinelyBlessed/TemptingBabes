@@ -457,25 +457,25 @@ footer{text-align:center;padding:28px 20px;font-size:.75rem;color:rgba(255,255,2
 
 <!-- NAV -->
 <nav>
-  <a class="logo" href="../index.html"><img src="/Asset/Logo/logo.webp" alt="" class="logo-img"><span class="logo-text">Tempting Babes</span></a>
+  <a class="logo" href="/"><img src="/Asset/Logo/logo.webp" alt="" class="logo-img"><span class="logo-text">Tempting Babes</span></a>
   <div class="tabs">
-    <a href="../AI-chat/index.html" class="tab">AI Chat</a>
-    <a href="../Cams/index.html" class="tab">Cams</a>
-    <a href="../Dating/index.html" class="tab">Dating</a>
-    <a href="../Offers/index.html" class="tab">Offers</a>
-    <a href="../Trending/index.html" class="tab">Trending</a>
-    <a href="../New/index.html" class="tab">VIP</a>
+    <a href="/AI-chat/" class="tab">AI Chat</a>
+    <a href="/Cams/" class="tab">Cams</a>
+    <a href="/Dating/" class="tab">Dating</a>
+    <a href="/Offers/" class="tab">Offers</a>
+    <a href="/Trending/" class="tab">Trending</a>
+    <a href="/New/" class="tab"><span class="tab-star">⭐</span>VIP</a>
   </div>
   <button class="join-btn" id="getAccessBtn">Join Free</button>
   <button class="menu-btn" id="menuBtn">&#9776;</button>
 </nav>
 <div class="mobile-menu" id="mobileMenu">
-  <a href="../AI-chat/index.html" class="mobile-tab">AI Chat</a>
-  <a href="../Cams/index.html" class="mobile-tab">Cams</a>
-  <a href="../Dating/index.html" class="mobile-tab">Dating</a>
-  <a href="../Offers/index.html" class="mobile-tab">Offers</a>
-  <a href="../Trending/index.html" class="mobile-tab">Trending</a>
-  <a href="../New/index.html" class="mobile-tab">VIP</a>
+  <a href="/AI-chat/" class="mobile-tab">AI Chat</a>
+  <a href="/Cams/" class="mobile-tab">Cams</a>
+  <a href="/Dating/" class="mobile-tab">Dating</a>
+  <a href="/Offers/" class="mobile-tab">Offers</a>
+  <a href="/Trending/" class="mobile-tab">Trending</a>
+  <a href="/New/" class="mobile-tab"><span class="tab-star">⭐</span>VIP</a>
 </div>
 
 <!-- HERO -->
@@ -1116,9 +1116,6 @@ footer{text-align:center;padding:28px 20px;font-size:.75rem;color:rgba(255,255,2
     b.addEventListener('click',openQ);
   });
   document.getElementById('pjfCta').addEventListener('click',function(){setTimeout(closeQ,300);});
-  // Menu
-  var mb=document.getElementById('menuBtn'),mm=document.getElementById('mobileMenu');
-  if(mb)mb.addEventListener('click',function(){mm.classList.toggle('open');});
   // GA tracking
   ['heroCtaBtn','ctaMainBtn'].forEach(function(id){
     var el=document.getElementById(id);
@@ -1143,7 +1140,7 @@ footer{text-align:center;padding:28px 20px;font-size:.75rem;color:rgba(255,255,2
 .footer-bottom{max-width:1100px;margin:28px auto 0;text-align:center;font-size:0.78rem;color:rgba(255,255,255,0.22);}
 .footer-bottom p{margin:0;color:rgba(255,255,255,0.22);-webkit-text-fill-color:rgba(255,255,255,0.22);}
 @media(max-width:768px){.site-footer{padding:40px 20px 24px;}.footer-inner{grid-template-columns:1fr 1fr!important;gap:32px;}.footer-brand{grid-column:1/-1;}}
-@media(max-width:480px){.footer-inner{grid-template-columns:1fr!important;}}
+@media(max-width:480px){.footer-inner{grid-template-columns:1fr 1fr!important;gap:20px;}.footer-brand{grid-column:1/-1;}.footer-col:nth-child(2){order:2;}.footer-col:nth-child(3){order:1;}}
 </style>
 
 <!-- SITE FOOTER -->
