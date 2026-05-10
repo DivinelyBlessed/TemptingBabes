@@ -30,14 +30,14 @@
   <meta name="twitter:description" content="Your filter for dating, AI companions, live experiences, and adult offers. Active platforms only."/>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600;700&display=swap" media="print" onload="this.media='all'"/>
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600;700&display=swap"/></noscript>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600;700&display=swap"/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&display=block"/>
   <link rel="stylesheet" href="../styles.css"/>
 
   <style>
     /* ── RESET & BASE ── */
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-    :root{--bg:#0a0a0a;--surface:#161616;--accent:#ff8c00;--accent2:#ff8c00;--text:#f0f0f8;--muted:rgba(240,240,248,0.5);--border:rgba(255,255,255,0.07);--radius:16px;}
+    :root{--bg:#0a0a0a;--surface:#161616;--accent:#ff3d6b;--accent2:#ff8c00;--text:#f0f0f8;--muted:rgba(240,240,248,0.5);--border:rgba(255,255,255,0.07);--radius:16px;}
     html{scroll-behavior:smooth}
     body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;min-height:100vh;overflow-x:hidden;display:flex;flex-direction:column;line-height:1.7;}
     body::before,body::after{content:'';position:fixed;border-radius:50%;pointer-events:none;z-index:0;}
@@ -226,6 +226,13 @@
       .cta-block { padding: 20px 20px; }
       .cta-block h2 { font-size: 2rem; letter-spacing: 2px; }
     }
+  
+/* ── NAV LOGO (explicit override to match main index) ── */
+.logo{text-decoration:none;display:inline-flex;align-items:center;gap:0;}
+.logo-text{font-family:'Playfair Display',serif;font-weight:900;font-size:1.35rem;line-height:1;letter-spacing:1.5px;background:linear-gradient(90deg,var(--accent2),var(--accent));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-left:-10px;}
+.logo-img{height:42px;width:auto;flex-shrink:0;display:block;}
+.join-btn{padding:9px 22px;border-radius:50px;background:linear-gradient(135deg,var(--accent2),var(--accent));color:#fff;font-family:'DM Sans',sans-serif;font-weight:600;font-size:0.9rem;border:none;cursor:pointer;box-shadow:0 4px 20px rgba(255,140,0,0.4);}
+
   </style>
 
   <script type="application/ld+json">
@@ -260,7 +267,7 @@
 
 <!-- NAV -->
 <nav>
-  <a class="logo" href="/"><img src="/Asset/Logo/logo.webp" alt="" class="logo-img"><span class="logo-text">Tempting Babes</span></a>
+  <a class="logo" href="/"><img src="/Asset/Logo/logo.webp" alt="" class="logo-img"><span class="logo-text" style="font-family:'Playfair Display',serif;font-weight:900;font-size:1.35rem;line-height:1;letter-spacing:1.5px;background:linear-gradient(90deg,#ff8c00,#ff3d6b);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-left:-10px;">Tempting Babes</span></a>
   <div class="tabs">
     <a href="/AI-chat/" class="tab">AI Chat</a>
     <a href="/Cams/" class="tab">Cams</a>
@@ -269,7 +276,7 @@
     <a href="/Trending/" class="tab">Trending</a>
     <a href="/New/" class="tab"><span class="tab-star">⭐</span>VIP</a>
   </div>
-  <button class="join-btn" id="getAccessBtn">Join Free</button>
+  <button class="join-btn" id="getAccessBtn" style="background:linear-gradient(135deg,#ff8c00,#ff3d6b);">Join Free</button>
   <button class="menu-btn" id="menuBtn">&#9776;</button>
 </nav>
 <div class="mobile-menu" id="mobileMenu">

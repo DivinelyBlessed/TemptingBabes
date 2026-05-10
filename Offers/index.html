@@ -36,7 +36,7 @@
   --surface:#161616;
   --surface2:#1c1c1c;
   --border:rgba(255,255,255,0.07);
-  --accent:#ff8c00;
+  --accent: #ff3d6b;
   --accent2:#ff8c00;
   --accent3:#00d4ff;
   --text:#f0f0f8;
@@ -434,13 +434,19 @@ footer{
   -webkit-overflow-scrolling:touch;
   scrollbar-width:none;
 }
+
+/* ── NAV LOGO (explicit override to match main index) ── */
+.logo{text-decoration:none;display:inline-flex;align-items:center;gap:0;}
+.logo-text{font-family:'Playfair Display',serif;font-weight:900;font-size:1.35rem;letter-spacing:1.5px;background:linear-gradient(90deg,var(--accent2),var(--accent));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-left:-10px;}
+.logo-img{height:42px;width:auto;flex-shrink:0;display:block;}
+.join-btn{padding:9px 22px;border-radius:50px;background:linear-gradient(135deg,var(--accent2),var(--accent));color:#fff;font-family:'DM Sans',sans-serif;font-weight:600;font-size:0.9rem;border:none;cursor:pointer;box-shadow:0 4px 20px rgba(255,140,0,0.4);}
 </style>
 </head>
 <body>
 
 <!-- ── NAV ── -->
 <nav>
-  <a class="logo" href="/"><img src="/Asset/Logo/logo.webp" alt="" class="logo-img"><span class="logo-text">Tempting Babes</span></a>
+  <a class="logo" href="/"><img src="/Asset/Logo/logo.webp" alt="" class="logo-img"><span class="logo-text" style="font-family:'Playfair Display',serif;font-weight:900;font-size:1.35rem;line-height:1;letter-spacing:1.5px;background:linear-gradient(90deg,#ff8c00,#ff3d6b);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-left:-10px;">Tempting Babes</span></a>
   <div class="tabs">
     <a href="/AI-chat/" class="tab">AI Chat</a>
     <a href="/Cams/" class="tab">Cams</a>
@@ -449,7 +455,7 @@ footer{
     <a href="/Trending/" class="tab">Trending</a>
     <a href="/New/" class="tab"><span class="tab-star">⭐</span>VIP</a>
   </div>
-  <button class="join-btn" id="getAccessBtn">Join Free</button>
+  <button class="join-btn" id="getAccessBtn" style="background:linear-gradient(135deg,#ff8c00,#ff3d6b);">Join Free</button>
   <button class="menu-btn" id="menuBtn">&#9776;</button>
 </nav>
 <div class="mobile-menu" id="mobileMenu">

@@ -24,6 +24,7 @@
 <meta name="twitter:title" content="Casual Encounters — Tempting Babes"/>
 <meta name="twitter:image" content="https://www.temptingbabes.com/Asset/sophie.jpg"/>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&display=block" rel="stylesheet"/>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 
@@ -32,7 +33,7 @@
   --surface:#161616;
   --surface2:#1c1c1c;
   --border:rgba(255,255,255,0.07);
-  --accent:#ff8c00;
+  --accent:#ff3d6b;
   --accent2:#ff8c00;
   --text:#f0f0f8;
   --muted:rgba(240,240,248,0.5);
@@ -79,12 +80,23 @@ nav{
   gap:16px;
 }
 .logo{
-  font-family:'Bebas Neue',sans-serif;
-  font-size:1.6rem;letter-spacing:2px;
+  text-decoration:none;
+  display:inline-flex;
+  align-items:center;
+  gap:0;
+}
+.logo-text{
+  font-family:'Playfair Display',serif;
+  font-weight:900;
+  font-size:1.35rem;
+  line-height:1;
+  letter-spacing:1.5px;
   background:linear-gradient(90deg,var(--accent2),var(--accent));
   -webkit-background-clip:text;-webkit-text-fill-color:transparent;
-  text-decoration:none;
+  background-clip:text;
+  margin-left:-10px;
 }
+.logo-img{height:42px;width:auto;flex-shrink:0;display:block;}
 .tabs{
   display:flex;gap:4px;
   background:rgba(255,255,255,0.06);
@@ -383,17 +395,26 @@ footer a:hover{color:var(--muted);}
 
 <!-- NAV -->
 <nav>
-  <a class="logo" href="../index.html"><img src="/Asset/Logo/logo.webp" alt="" class="logo-img"><span class="logo-text">Tempting Babes</span></a>
+  <a class="logo" href="/"><img src="/Asset/Logo/logo.webp" alt="" class="logo-img"><span class="logo-text" style="font-family:'Playfair Display',serif;font-weight:900;font-size:1.35rem;line-height:1;letter-spacing:1.5px;background:linear-gradient(90deg,#ff8c00,#ff3d6b);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-left:-10px;">Tempting Babes</span></a>
   <div class="tabs">
-    <a href="../AI-chat/index.html" class="tab">AI Chat</a>
-    <a href="../Cams/index.html" class="tab">Cams</a>
-    <a href="../Dating/index.html" class="tab">Dating</a>
-    <a href="../Offers/index.html" class="tab">Offers</a>
-    <a href="../Trending/index.html" class="tab">Trending</a>
-    <a href="../New/index.html" class="tab"><span class="tab-star">⭐</span>VIP</a>
+    <a href="/AI-chat/" class="tab">AI Chat</a>
+    <a href="/Cams/" class="tab">Cams</a>
+    <a href="/Dating/" class="tab">Dating</a>
+    <a href="/Offers/" class="tab">Offers</a>
+    <a href="/Trending/" class="tab">Trending</a>
+    <a href="/New/" class="tab"><span class="tab-star">⭐</span>VIP</a>
   </div>
-  <button class="join-btn" id="getAccessBtn">Join Free</button>
+  <button class="join-btn" id="getAccessBtn" style="background:linear-gradient(135deg,#ff8c00,#ff3d6b);">Join Free</button>
+  <button class="menu-btn" id="menuBtn">&#9776;</button>
 </nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="/AI-chat/" class="mobile-tab">AI Chat</a>
+  <a href="/Cams/" class="mobile-tab">Cams</a>
+  <a href="/Dating/" class="mobile-tab">Dating</a>
+  <a href="/Offers/" class="mobile-tab">Offers</a>
+  <a href="/Trending/" class="mobile-tab">Trending</a>
+  <a href="/New/" class="mobile-tab"><span class="tab-star">⭐</span>VIP</a>
+</div>
 
 <!-- TICKER -->
 <div class="ticker-wrap">
