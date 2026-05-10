@@ -25,7 +25,7 @@
 <meta name="twitter:image" content="https://res.cloudinary.com/doslc6l1h/image/upload/v1777353790/Chloe_pgy97u.jpg"/>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{--bg:#0a0a0a;--surface:#161616;--accent:#ff3d6b;--accent2:#ff8c00;--text:#f0f0f8;--muted:rgba(240,240,248,0.5);--green:#22c55e;}
+:root{--bg:#0a0a0a;--surface:#161616;--accent:#ff8c00;--accent2:#ff8c00;--text:#f0f0f8;--muted:rgba(240,240,248,0.5);--green:#22c55e;}
 html{scroll-behavior:smooth;overflow-x:hidden;}
 body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;min-height:100vh;overflow-x:hidden;display:flex;flex-direction:column;}
 body::before,body::after{content:'';position:fixed;border-radius:50%;pointer-events:none;z-index:0;}
@@ -185,7 +185,7 @@ footer{position:relative;z-index:1;border-top:1px solid rgba(255,255,255,0.06);p
 <script>
 (function(){
   const canvas=document.getElementById('bubbles-canvas'),ctx=canvas.getContext('2d');
-  const colors=['#ff3d6b','#ff6b8a','#ff8c00','#ffaa44'];
+  const colors=['#ff8c00','#ff6b8a','#ff8c00','#ffaa44'];
   let bubbles=[];
   function resize(){canvas.width=canvas.offsetWidth;canvas.height=canvas.offsetHeight;}
   function randomBubble(){const r=Math.random()*2.5+1;return{x:Math.random()*canvas.width,y:canvas.height+r+10,r,speedY:Math.random()*0.6+0.2,speedX:(Math.random()-0.5)*0.3,opacity:Math.random()*0.4+0.2,color:colors[Math.floor(Math.random()*colors.length)]};}
@@ -232,17 +232,17 @@ footer{position:relative;z-index:1;border-top:1px solid rgba(255,255,255,0.06);p
 <style>
 #pjfOv{display:none;position:fixed;inset:0;background:rgba(0,0,0,.85);z-index:9999;align-items:center;justify-content:center;}
 #pjfOv.open{display:flex;}
-#pjfM{background:#111;border:1px solid #ff3d6b44;border-radius:16px;padding:2rem 1.5rem;max-width:480px;width:90%;position:relative;text-align:center;}
+#pjfM{background:#111;border:1px solid #ff8c0044;border-radius:16px;padding:2rem 1.5rem;max-width:480px;width:90%;position:relative;text-align:center;}
 #pjfX{position:absolute;top:1rem;right:1rem;background:none;border:none;color:#888;font-size:1.4rem;cursor:pointer;line-height:1;}
 .pjfd{display:inline-block;width:8px;height:8px;border-radius:50%;background:#333;margin:0 3px;transition:background .2s;}
-.pjfd.on{background:#ff3d6b;}
+.pjfd.on{background:#ff8c00;}
 .pjs{display:none;flex-direction:column;gap:1rem;}
 .pjs.on{display:flex;}
 .pjsh{font-family:'Bebas Neue',sans-serif;font-size:1.5rem;color:#fff;margin:0 0 .25rem;}
 .pjss{font-size:.85rem;color:#aaa;margin:0 0 1rem;}
 .pjso{background:#1a1a1a;border:1px solid #333;border-radius:10px;padding:.85rem 1rem;color:#fff;font-size:.9rem;cursor:pointer;text-align:left;transition:border-color .2s,background .2s;}
-.pjso:hover{border-color:#ff3d6b;background:#1f0a10;}
-.pjscta{display:block;background:linear-gradient(135deg,#ff3d6b,#ff8c00);color:#fff;font-weight:700;padding:1rem;border-radius:10px;text-decoration:none;font-size:1rem;margin-top:.5rem;}
+.pjso:hover{border-color:#ff8c00;background:#1f0a10;}
+.pjscta{display:block;background:linear-gradient(135deg,#ff8c00,#ff8c00);color:#fff;font-weight:700;padding:1rem;border-radius:10px;text-decoration:none;font-size:1rem;margin-top:.5rem;}
 .pjscta:hover{opacity:.9;}
 </style>
 <div id="pjfOv">

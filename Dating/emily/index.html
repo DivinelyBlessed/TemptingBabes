@@ -24,7 +24,7 @@
 <meta name="twitter:image" content="https://res.cloudinary.com/doslc6l1h/image/upload/v1777368217/Emily_lwa1nn.jpg"/>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{--bg:#0a0a0a;--surface:#161616;--accent:#ff3d6b;--accent2:#ff8c00;--text:#f0f0f8;--muted:rgba(240,240,248,0.5);--green:#22c55e;}
+:root{--bg:#0a0a0a;--surface:#161616;--accent:#ff8c00;--accent2:#ff8c00;--text:#f0f0f8;--muted:rgba(240,240,248,0.5);--green:#22c55e;}
 html{scroll-behavior:smooth;overflow-x:hidden;}
 body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;min-height:100vh;overflow-x:hidden;display:flex;flex-direction:column;}
 body::before,body::after{content:'';position:fixed;border-radius:50%;pointer-events:none;z-index:0;}
@@ -183,7 +183,7 @@ footer{position:relative;z-index:1;border-top:1px solid rgba(255,255,255,0.06);p
 <script>
 (function(){
   const canvas=document.getElementById('bubbles-canvas'),ctx=canvas.getContext('2d');
-  const colors=['#ff3d6b','#ff6b8a','#ff8c00','#ffaa44'];
+  const colors=['#ff8c00','#ff6b8a','#ff8c00','#ffaa44'];
   let bubbles=[];
   function resize(){canvas.width=canvas.offsetWidth;canvas.height=canvas.offsetHeight;}
   function randomBubble(){const r=Math.random()*2.5+1;return{x:Math.random()*canvas.width,y:canvas.height+r+10,r,speedY:Math.random()*0.6+0.2,speedX:(Math.random()-0.5)*0.3,opacity:Math.random()*0.4+0.2,color:colors[Math.floor(Math.random()*colors.length)]};}
@@ -234,7 +234,7 @@ footer{position:relative;z-index:1;border-top:1px solid rgba(255,255,255,0.06);p
 #pjfX{position:absolute;top:16px;right:16px;background:rgba(255,255,255,0.08);border:none;color:#fff;width:32px;height:32px;border-radius:50%;cursor:pointer;font-size:14px;}
 .pjfd-wrap{display:flex;gap:6px;justify-content:center;margin-bottom:24px;}
 .pjfd{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,0.2);transition:background .3s;}
-.pjfd.on{background:#ff3d6b;}
+.pjfd.on{background:#ff8c00;}
 .pjs{display:none;text-align:center;}
 .pjs.on{display:block;}
 .pjf-emoji{font-size:2.5rem;margin-bottom:12px;}

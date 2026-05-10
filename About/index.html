@@ -37,7 +37,7 @@
   <style>
     /* ── RESET & BASE ── */
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-    :root{--bg:#0a0a0a;--surface:#161616;--accent:#ff3d6b;--accent2:#ff8c00;--text:#f0f0f8;--muted:rgba(240,240,248,0.5);--border:rgba(255,255,255,0.07);--radius:16px;}
+    :root{--bg:#0a0a0a;--surface:#161616;--accent:#ff8c00;--accent2:#ff8c00;--text:#f0f0f8;--muted:rgba(240,240,248,0.5);--border:rgba(255,255,255,0.07);--radius:16px;}
     html{scroll-behavior:smooth}
     body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;min-height:100vh;overflow-x:hidden;display:flex;flex-direction:column;line-height:1.7;}
     body::before,body::after{content:'';position:fixed;border-radius:50%;pointer-events:none;z-index:0;}
@@ -48,7 +48,7 @@
     .pillar-hero {
       max-width: 1020px;
       margin: 0 auto;
-      padding: 52px 40px 36px;
+      padding: 52px 40px 16px;
       text-align: center;
       position: relative;
       z-index: 1;
@@ -58,46 +58,26 @@
       font-size: clamp(3rem, 5.5vw, 5.2rem);
       letter-spacing: 3px;
       line-height: 1.06;
-      background: linear-gradient(90deg, #fff 0%, #c084fc 55%, var(--accent) 100%);
+      background: linear-gradient(90deg, #fff 0%, var(--accent2) 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      margin-bottom: 20px;
-    }
-    .pillar-hero-sub {
-      font-size: 1.18rem;
-      line-height: 1.85;
-      color: rgba(240,240,248,0.72);
       margin-bottom: 0;
     }
 
-    /* ── BREADCRUMB ── */
-    .pillar-crumb {
-      max-width: 1020px;
-      margin: 0 auto;
-      padding: 16px 40px 0;
-      font-size: 0.82rem;
-      color: rgba(255,255,255,0.4);
-      position: relative;
-      z-index: 1;
-    }
-    .pillar-crumb a { color: rgba(255,255,255,0.55); text-decoration: none; transition: color 0.2s; }
-    .pillar-crumb a:hover { color: var(--accent2); }
-    .pillar-crumb-sep { margin: 0 8px; color: rgba(255,255,255,0.25); }
-    .pillar-crumb-current { color: #c084fc; }
-
     /* ── ARTICLE LAYOUT ── */
     main { flex: 1; position: relative; z-index: 1; }
-    .article-wrap { max-width: 1020px; margin: 0 auto; padding: 48px 40px 80px; }
+    .article-wrap { max-width: 1020px; margin: 0 auto; padding: 28px 40px 80px; }
     .article-wrap p { font-size: 1.18rem; color: rgba(240,240,248,0.72); line-height: 1.95; margin-bottom: 24px; }
     .article-wrap h2 {
       font-family: 'Bebas Neue', sans-serif;
-      font-size: clamp(2.4rem, 3.2vw, 2.9rem);
+      font-size: clamp(2.7rem, 3.5vw, 3.2rem);
       letter-spacing: 2.5px;
       background: linear-gradient(90deg, #fff 0%, var(--accent2) 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      margin: 48px 0 18px;
+      margin: 72px 0 18px;
       line-height: 1.12;
+      text-align: center;
     }
     .hero-tag {
       display: inline-flex;
@@ -121,17 +101,18 @@
     .point-item { display: flex; gap: 14px; align-items: flex-start; }
     .point-num {
       flex-shrink: 0;
-      width: 28px; height: 28px;
+      width: 36px; height: 36px;
       border-radius: 50%;
       background: linear-gradient(135deg, var(--accent2), var(--accent));
       display: flex;
       align-items: center;
       justify-content: center;
       font-family: 'Bebas Neue', sans-serif;
-      font-size: 0.85rem;
+      font-size: 1.1rem;
       color: #fff;
-      margin-top: 2px;
+      margin-top: 0;
     }
+    .point-item { display: flex; gap: 14px; align-items: center; }
     .point-item p { margin-bottom: 0; }
 
     /* ── BULLET LIST ── */
@@ -167,26 +148,26 @@
     /* ── MID CTA ── */
     .mid-cta {
       display: flex;
+      flex-direction: column;
       align-items: center;
-      justify-content: space-between;
-      gap: 20px;
+      gap: 12px;
       background: linear-gradient(135deg, rgba(255,61,107,0.12), rgba(255,140,0,0.09));
       border: 1px solid rgba(255,61,107,0.28);
       border-radius: 14px;
-      padding: 18px 24px;
+      padding: 16px 24px;
       margin: 36px 0;
+      text-align: center;
     }
-    .mid-cta-text strong { color: #fff; font-size: 1rem; display: block; margin-bottom: 3px; }
+    .mid-cta-text strong { color: #fff; font-size: 1rem; display: block; margin-bottom: 2px; }
     .mid-cta-text span { color: var(--muted); font-size: 0.85rem; }
     .mid-cta-btn {
-      flex-shrink: 0;
       display: inline-block;
       background: linear-gradient(135deg, var(--accent2), var(--accent));
       color: #fff;
       font-family: 'Bebas Neue', sans-serif;
       font-size: 1rem;
       letter-spacing: 1.5px;
-      padding: 12px 28px;
+      padding: 10px 28px;
       border-radius: 100px;
       text-decoration: none;
       white-space: nowrap;
@@ -200,7 +181,7 @@
       background: linear-gradient(135deg, rgba(255,140,0,0.13), rgba(255,61,107,0.13));
       border: 1px solid rgba(255,61,107,0.32);
       border-radius: 20px;
-      padding: 44px 36px;
+      padding: 24px 36px;
       text-align: center;
       margin: 48px auto 0;
       box-shadow: 0 0 60px rgba(255,61,107,0.1), 0 0 40px rgba(255,140,0,0.07), inset 0 1px 0 rgba(255,255,255,0.06);
@@ -212,7 +193,7 @@
       background: linear-gradient(90deg, #fff, var(--accent2));
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      margin: 0 0 12px;
+      margin: 24px 0 12px;
     }
     .cta-block > p {
       color: var(--muted);
@@ -238,20 +219,11 @@
     .btn-primary:hover { transform: translateY(-2px) scale(1.03); box-shadow: 0 16px 56px rgba(255,61,107,0.7); }
     .cta-micro { margin-top: 14px !important; font-size: 0.72rem !important; color: rgba(255,255,255,0.22) !important; }
 
-    /* ── FOOTER ── */
-    footer { position: relative; z-index: 1; border-top: 1px solid var(--border); padding: 20px 0; background: rgba(8,8,8,0.8); }
-    .footer-inner { max-width: 1020px; margin: 0 auto; padding: 0 40px; text-align: center; }
-    .footer-inner span { font-size: 0.75rem; color: rgba(255,255,255,0.18); line-height: 1.7; display: block; }
-    .footer-inner a { color: rgba(255,255,255,0.35); text-decoration: none; transition: color 0.2s; }
-    .footer-inner a:hover { color: var(--accent2); }
-
     /* ── MOBILE ── */
     @media (max-width: 760px) {
-      .pillar-crumb { padding: 12px 20px 0; }
-      .pillar-hero { padding: 36px 20px 24px; }
-      .article-wrap { padding: 32px 20px 60px; }
-      .cta-block { padding: 28px 20px; }
-      .mid-cta { flex-direction: column; text-align: center; gap: 14px; }
+      .pillar-hero { padding: 36px 20px 10px; }
+      .article-wrap { padding: 20px 20px 60px; }
+      .cta-block { padding: 20px 20px; }
       .cta-block h2 { font-size: 2rem; letter-spacing: 2px; }
     }
   </style>
@@ -309,124 +281,86 @@
   <a href="/New/" class="mobile-tab"><span class="tab-star">⭐</span>VIP</a>
 </div>
 
-<!-- BREADCRUMB -->
-<nav class="pillar-crumb" aria-label="Breadcrumb">
-  <a href="../">Home</a>
-  <span class="pillar-crumb-sep">›</span>
-  <span class="pillar-crumb-current">About</span>
-</nav>
-
 <!-- HERO -->
 <header class="pillar-hero">
+  <div class="hero-tag">✦ About Us</div>
   <h1>Your Shortcut To The Action</h1>
-  <p class="pillar-hero-sub">
-    Most people spend hours downloading apps only to find dead profiles, empty chats, and inboxes full of bots. We cut through that noise and point you toward the platforms that are actually worth your time.
-  </p>
 </header>
 
 <!-- ARTICLE BODY -->
 <main>
   <div class="article-wrap">
 
-    <div class="hero-tag">✦ About Us</div>
+    <p>Tempting Babes is not another dating app or chat service, we are the smart step before that. Most guys waste hours on dating apps, only to find fake profiles, ghosted chats, and bot-filled inboxes. We cut straight through the noise to platforms actually worth your time.</p>
 
-    <p>The online space is crowded, fragmented, and full of noise. That is the problem we set out to solve. Tempting Babes is not a dating app or a chat service — it is the step before that. A filter. A guide. A shortcut to the platforms that have already been tested so you do not have to waste time finding out the hard way.</p>
-
-    <p>Our goal is simple: help you skip the guesswork and get to what fits faster. No account needed to browse. No filler. Just curated picks that have been checked for real activity, honest pricing, and straightforward access.</p>
+    <p>Our mission is simple: skip the guesswork and get to real connections or instant interaction faster. We provide the &ldquo;insider&rsquo;s knowledge&rdquo; to the digital space, showing you where real engagement is happening right now.</p>
 
     <h2>What We Cover</h2>
 
-    <p>We have organised the digital connection space into five distinct categories. Each one is designed to get you to the right kind of experience faster, without sorting through everything yourself.</p>
+    <p>We have organized the digital connection space into five distinct categories. Each one is designed to get you to the right kind of experience faster:</p>
 
     <div class="three-points">
       <div class="point-item">
         <div class="point-num">1</div>
-        <p><span class="bold-lead">Dating Platforms.</span> For people looking for real conversations, casual meetups, or something more serious. We only feature platforms with active user bases — no ghost towns, no dead inboxes.</p>
+        <p><span class="bold-lead">Dating Platforms.</span> For real conversations, casual meetups, or something more serious. We only feature platforms with active user bases &mdash; no ghost towns. These are where real women are online, messaging, and open to connecting, whether for casual fun or dating with potential.</p>
       </div>
       <div class="point-item">
         <div class="point-num">2</div>
-        <p><span class="bold-lead">AI Companions.</span> For those who want personalised chat and always-on interaction. Tested for responsiveness and actual depth of experience — not just flashy marketing copy.</p>
+        <p><span class="bold-lead">AI Companions.</span> For personalized chat and always-on interaction. We test for responsiveness, depth of personality, and real-world experience, not just marketing hype. Enjoy flirty banter, engaging conversations, or deeper connections 24/7, with zero pressure or judgement.</p>
       </div>
       <div class="point-item">
         <div class="point-num">3</div>
-        <p><span class="bold-lead">Live Experiences.</span> For users who want something more immediate, more interactive, and a little less passive. Real-time platforms with verifiable activity.</p>
+        <p><span class="bold-lead">Live Experiences.</span> For immediate, interactive excitement. We highlight real-time platforms with verifiable activity. From live streams to private shows, genuine performers deliver instant human connection exactly when you want it.</p>
       </div>
       <div class="point-item">
         <div class="point-num">4</div>
-        <p><span class="bold-lead">Adult Offers.</span> Curated adult-focused platforms with exclusive offers and more direct access to the kind of content or experiences you are actually after.</p>
+        <p><span class="bold-lead">Adult Offers.</span> Exclusive adult-focused platforms that give you more direct access to premium content, spicy offers, and the experiences you won&rsquo;t find elsewhere. We only include high-quality options that respect your privacy and cut through the shady, low-effort sites.</p>
       </div>
       <div class="point-item">
         <div class="point-num">5</div>
-        <p><span class="bold-lead">Blog &amp; Lifestyle.</span> Tips, insights, trends, and lifestyle content that helps you explore the space with more confidence and less guesswork.</p>
+        <p><span class="bold-lead">Blog &amp; Lifestyle.</span> Expert tips, profile optimization, dating strategies, trends, and image coaching to help you navigate the scene with more confidence and a stronger &ldquo;alpha&rdquo; presence.</p>
       </div>
     </div>
 
-    <div class="mid-cta">
-      <div class="mid-cta-text">
-        <strong>Ready to find what actually works?</strong>
-        <span>Browse the full curated list — no signup needed.</span>
-      </div>
-      <a href="../" class="mid-cta-btn">Explore Now &rarr;</a>
-    </div>
-
-    <h2>Why We Built This</h2>
-
-    <p>Too many platforms make big promises, only to leave you sifting through fake profiles once you join. Apps that have not been updated in years still rank at the top of search results. Review sites that claim to be independent get paid to push certain platforms regardless of quality.</p>
-
-    <p>Tempting Babes was built to act as your filter. We review platforms for activity, clarity, and real usability — so you can spend less time searching and more time in the experience you actually came for.</p>
-
-    <div class="highlight-box">
-      <p>Think of us as the guide that helps you avoid the wrong choice from the start. Not an app. Not a service. Just an honest look at what is actually out there, and which parts of it are worth your time.</p>
-    </div>
-
-    <h2>How It Works</h2>
-
-    <p>Three steps. No account needed to browse.</p>
+    <h2>How It Works &mdash; 3 Simple Steps</h2>
 
     <div class="three-points">
       <div class="point-item">
         <div class="point-num">1</div>
-        <p><span class="bold-lead">Pick Your Vibe.</span> Choose the type of experience you are after — dating, AI companions, live, adult, or lifestyle content. Each category is built for a specific kind of intent.</p>
+        <p><span class="bold-lead">Pick Your Vibe.</span> Choose the type of experience you&rsquo;re after.</p>
       </div>
       <div class="point-item">
         <div class="point-num">2</div>
-        <p><span class="bold-lead">Browse the List.</span> Curated options that match your intent. No ads disguised as recommendations. No filler platforms added to pad the numbers.</p>
+        <p><span class="bold-lead">Browse the Options.</span> Handpicked options that match your intent.</p>
       </div>
       <div class="point-item">
         <div class="point-num">3</div>
-        <p><span class="bold-lead">Go Straight To It.</span> Click through to the platform that feels right. No unnecessary detours, no surprise signup walls, no wasted time.</p>
+        <p><span class="bold-lead">Go Straight To It.</span> Click through to the platform that feels right.</p>
       </div>
     </div>
 
-    <h2>The Tempting Babes Difference</h2>
+    <h2>Why We Are Different</h2>
 
-    <p>We are not a dating app or a chat service — we are the step before that. Our focus is on platforms that actually work. Before anything gets featured, we check for four things:</p>
+    <p>We focus only on platforms that actually work. Before anything gets featured, we check for:</p>
 
     <ul class="bullet-list">
-      <li>Active user bases — not dead profile graveyards where messages go unanswered</li>
-      <li>Transparent pricing with no hidden charges buried in the fine print</li>
-      <li>Privacy — platforms that respect the fact you are there and handle your data accordingly</li>
-      <li>Real-world usefulness — does it actually deliver on what it promises</li>
+      <li><span class="bold-lead">Active and engaged user bases</span></li>
+      <li><span class="bold-lead">Transparent pricing with no hidden fees</span></li>
+      <li><span class="bold-lead">Strong privacy standards</span></li>
+      <li><span class="bold-lead">Real-world performance and trustworthiness</span></li>
     </ul>
 
-    <p>If something does not meet those standards, it does not get featured. Simple as that. The list stays short on purpose — a smaller set of things that work beats a long list of things that waste your time.</p>
+    <p>If a platform doesn&rsquo;t meet our standards, it doesn&rsquo;t get featured. We keep our list intentionally short because quality matters more than quantity.</p>
 
     <h2>Affiliate Disclaimer</h2>
 
-    <p>Tempting Babes may include affiliate links throughout the site. That means we may earn a commission if you click through and sign up or make a purchase — at no extra cost to you.</p>
+    <p>Tempting Babes may include affiliate links. That means we may earn a commission if you click through and sign up or make a purchase, at no extra cost to you.</p>
 
-    <p>These commissions help support the site and keep our content free to access. They never affect our editorial standards, our rankings, or our recommendations. A platform earns its place here by meeting our criteria, not by paying for it.</p>
-
-    <div class="highlight-box">
-      <p>We are legally required to disclose this, and we are genuinely fine with it. You deserve to know when a recommendation has a financial element behind it. Our job is to be useful — not to hide the mechanics of how this works.</p>
-      <p>If you have questions about how we evaluate platforms or why something is or is not featured, you can reach us through the contact details in our <a href="../privacy-policy/" style="color:var(--accent2);text-decoration:underline;text-underline-offset:3px;">Privacy Policy</a>.</p>
-    </div>
+    <p>These commissions help support the site and keep our content free to access. They never affect our editorial standards, rankings, or recommendations. A platform earns its place here by meeting our strict criteria.</p>
 
     <div class="cta-block">
-      <h2>Start With The Right Choice</h2>
-      <p>Not a random one. Pick your vibe, browse the curated picks, and skip straight to what fits.</p>
-      <a href="../" class="btn-primary">Explore Tempting Babes &rarr;</a>
-      <p class="cta-micro">Free to browse &middot; No signup required &middot; 18+ only</p>
+      <h2>Ready To Stop Wasting Time And Start Connecting?</h2>
+      <a href="/" class="btn-primary">Explore Now &rarr;</a>
     </div>
 
   </div>
