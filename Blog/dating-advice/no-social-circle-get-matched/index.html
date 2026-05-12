@@ -248,7 +248,16 @@ footer{position:relative;z-index:1;border-top:1px solid var(--border);padding:20
   .sticky-bar-btn{flex-shrink:0;display:inline-block;background:linear-gradient(135deg,var(--accent2),var(--accent));color:#fff;font-family:'Bebas Neue',sans-serif;font-size:.88rem;letter-spacing:1.5px;padding:10px 20px;border-radius:100px;text-decoration:none;box-shadow:0 4px 16px rgba(255,61,107,0.45);}
   body{padding-bottom:68px;}
 }
-</style>
+
+    .related-section{margin:48px 0 0;padding:32px 0 0;border-top:1px solid rgba(255,255,255,0.07);}
+    .related-section h3{font-family:'Bebas Neue',sans-serif;font-size:1.5rem;color:#fff;letter-spacing:1px;margin:0 0 20px;}
+    .related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+    @media(max-width:700px){.related-grid{grid-template-columns:1fr;}}
+    .related-card{background:#111;border:1px solid rgba(255,255,255,0.07);border-radius:12px;padding:16px 18px;text-decoration:none;display:block;transition:border-color .2s,transform .2s;}
+    .related-card:hover{border-color:rgba(255,140,0,.4);transform:translateY(-2px);}
+    .related-card .rc-cat{font-family:'DM Sans',sans-serif;font-size:0.65rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#ff8c00;margin-bottom:6px;}
+    .related-card .rc-title{font-family:'DM Sans',sans-serif;font-size:0.88rem;font-weight:700;color:#fff;line-height:1.4;}
+  </style>
 <script type="application/ld+json">
 [
   {
@@ -306,23 +315,25 @@ footer{position:relative;z-index:1;border-top:1px solid var(--border);padding:20
 <nav>
   <a class="logo" href="/"><img src="/Asset/Logo/logo.webp" alt="" class="logo-img" style="height:42px;width:auto;flex-shrink:0;display:block;"><span class="logo-text" style="font-family:'Playfair Display',serif;font-weight:900;font-size:1.35rem;line-height:1;letter-spacing:1.5px;background:linear-gradient(90deg,#ff8c00,#ff3d6b);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-left:-10px;">Tempting Babes</span></a>
   <div class="tabs">
-    <a href="/AI-chat/" class="tab">AI Chat</a>
-    <a href="/Cams/" class="tab">Cams</a>
-    <a href="/Dating/" class="tab">Dating</a>
-    <a href="/Offers/" class="tab">Offers</a>
-    <a href="/Trending/" class="tab">Trending</a>
-    <a href="/New/" class="tab"><span class="tab-star">⭐</span>VIP</a>
+    <a href="/ai-chat/" class="tab">AI Chat</a>
+    <a href="/cams/" class="tab">Cams</a>
+    <a href="/dating/" class="tab">Dating</a>
+    <a href="/offers/" class="tab">Offers</a>
+    <a href="/Blog/" class="tab">Blog</a>
+    <a href="/trending/" class="tab">Trending</a>
+    <a href="/new/" class="tab"><span class="tab-star">⭐</span>VIP</a>
   </div>
   <button class="join-btn" id="getAccessBtn" style="background:linear-gradient(135deg,#ff8c00,#ff3d6b);">Join Free</button>
   <button class="menu-btn" id="menuBtn">&#9776;</button>
 </nav>
 <div class="mobile-menu" id="mobileMenu">
-  <a href="/AI-chat/" class="mobile-tab">AI Chat</a>
-  <a href="/Cams/" class="mobile-tab">Cams</a>
-  <a href="/Dating/" class="mobile-tab">Dating</a>
-  <a href="/Offers/" class="mobile-tab">Offers</a>
-  <a href="/Trending/" class="mobile-tab">Trending</a>
-  <a href="/New/" class="mobile-tab"><span class="tab-star">⭐</span>VIP</a>
+  <a href="/ai-chat/" class="mobile-tab">AI Chat</a>
+  <a href="/cams/" class="mobile-tab">Cams</a>
+  <a href="/dating/" class="mobile-tab">Dating</a>
+  <a href="/offers/" class="mobile-tab">Offers</a>
+  <a href="/Blog/" class="mobile-tab">Blog</a>
+  <a href="/trending/" class="mobile-tab">Trending</a>
+  <a href="/new/" class="mobile-tab"><span class="tab-star">⭐</span>VIP</a>
 </div>
 
 <div class="hero">
@@ -499,6 +510,16 @@ footer{position:relative;z-index:1;border-top:1px solid var(--border);padding:20
 </style>
 
 <!-- SITE FOOTER -->
+
+    <div class="related-section">
+      <h3>Related Guides</h3>
+      <div class="related-grid">
+        <a href="/Blog/dating-advice/low-social-circle-meet-women/" class="related-card"><p class="rc-cat">dating advice</p><p class="rc-title">Low Social Circle? How to Meet Women Anyway</p></a>
+        <a href="/Blog/dating-advice/find-active-women-online-near-you/" class="related-card"><p class="rc-cat">dating advice</p><p class="rc-title">How to Find Active Women Online Near You</p></a>
+        <a href="/Blog/dating-apps/dating-apps-designed-to-keep-you-single/" class="related-card"><p class="rc-cat">dating apps</p><p class="rc-title">Are Dating Apps Designed to Keep You Single?</p></a>
+      </div>
+    </div>
+
 <footer class="site-footer">
   <div class="footer-inner">
     <div class="footer-brand">
@@ -509,14 +530,15 @@ footer{position:relative;z-index:1;border-top:1px solid var(--border);padding:20
       <h4 class="footer-col-title">Explore</h4>
       <ul class="footer-links">
         <li><a href="/Blog/">Blog</a></li>
-        <li><a href="/World-Cup/">FIFA World Cup 2026</a></li>
-        <li><a href="/Freebies/">Freebies</a></li>
+        <li><a href="/world-cup/">FIFA World Cup 2026</a></li>
+        <li><a href="/ways-to-meet/">Ways to Meet</a></li>
+        <li><a href="/popular/">Popular Girls</a></li>
       </ul>
     </div>
     <div class="footer-col">
       <h4 class="footer-col-title">Legal &amp; Info</h4>
       <ul class="footer-links">
-        <li><a href="/About/">About</a></li>
+        <li><a href="/about/">About</a></li>
         <li><a href="/privacy-policy/">Privacy Policy</a></li>
         <li><a href="/terms/">Terms of Service</a></li>
         <li><a href="/dmca/">DMCA Policy</a></li>
@@ -809,23 +831,23 @@ footer{position:relative;z-index:1;border-top:1px solid var(--border);padding:20
 <nav>
   <a class="logo" href="../../../index.html"><img src="/Asset/Logo/logo.webp" alt="" class="logo-img"><span class="logo-text">Tempting Babes</span></a>
   <div class="tabs">
-    <a href="../../../AI-chat/index.html" class="tab">AI Chat</a>
-    <a href="../../../Cams/index.html" class="tab">Cams</a>
-    <a href="../../../Dating/index.html" class="tab">Dating</a>
-    <a href="../../../Offers/index.html" class="tab">Offers</a>
-    <a href="../../../Trending/index.html" class="tab">Trending</a>
-    <a href="../../../New/index.html" class="tab"><span class="tab-star">⭐</span>VIP</a>
+    <a href="../../../ai-chat/index.html" class="tab">AI Chat</a>
+    <a href="../../../cams/index.html" class="tab">Cams</a>
+    <a href="../../../dating/index.html" class="tab">Dating</a>
+    <a href="../../../offers/index.html" class="tab">Offers</a>
+    <a href="../../../trending/index.html" class="tab">Trending</a>
+    <a href="../../../new/index.html" class="tab"><span class="tab-star">⭐</span>VIP</a>
   </div>
   <a class="join-btn" href="https://t.crdtg2.com/389314/4299/37954?bo=2753,2754,2755,2756&po=6456&aff_sub5=SF_006OG000004lmDN">Join Free</a>
   <button class="menu-btn" id="menuBtn">&#9776;</button>
 </nav>
 <div class="mobile-menu" id="mobileMenu">
-  <a href="../../../AI-chat/index.html" class="mobile-tab">AI Chat</a>
-  <a href="../../../Cams/index.html" class="mobile-tab">Cams</a>
-  <a href="../../../Dating/index.html" class="mobile-tab">Dating</a>
-  <a href="../../../Offers/index.html" class="mobile-tab">Offers</a>
-  <a href="../../../Trending/index.html" class="mobile-tab">Trending</a>
-  <a href="../../../New/index.html" class="mobile-tab"><span class="tab-star">⭐</span>VIP</a>
+  <a href="../../../ai-chat/index.html" class="mobile-tab">AI Chat</a>
+  <a href="../../../cams/index.html" class="mobile-tab">Cams</a>
+  <a href="../../../dating/index.html" class="mobile-tab">Dating</a>
+  <a href="../../../offers/index.html" class="mobile-tab">Offers</a>
+  <a href="../../../trending/index.html" class="mobile-tab">Trending</a>
+  <a href="../../../new/index.html" class="mobile-tab"><span class="tab-star">⭐</span>VIP</a>
 </div>
 
 <div class="hero">
@@ -1060,23 +1082,23 @@ footer{position:relative;z-index:1;border-top:1px solid var(--border);padding:20
 <nav>
   <a class="logo" href="../../../index.html"><img src="/Asset/Logo/logo.webp" alt="" class="logo-img"><span class="logo-text">Tempting Babes</span></a>
   <div class="tabs">
-    <a href="../../../AI-chat/index.html" class="tab">AI Chat</a>
-    <a href="../../../Cams/index.html" class="tab">Cams</a>
-    <a href="../../../Dating/index.html" class="tab">Dating</a>
-    <a href="../../../Offers/index.html" class="tab">Offers</a>
-    <a href="../../../Trending/index.html" class="tab">Trending</a>
-    <a href="../../../New/index.html" class="tab"><span class="tab-star">⭐</span>VIP</a>
+    <a href="../../../ai-chat/index.html" class="tab">AI Chat</a>
+    <a href="../../../cams/index.html" class="tab">Cams</a>
+    <a href="../../../dating/index.html" class="tab">Dating</a>
+    <a href="../../../offers/index.html" class="tab">Offers</a>
+    <a href="../../../trending/index.html" class="tab">Trending</a>
+    <a href="../../../new/index.html" class="tab"><span class="tab-star">⭐</span>VIP</a>
   </div>
   <a class="join-btn" href="https://t.crdtg2.com/389314/4299/37954?bo=2753,2754,2755,2756&po=6456&aff_sub5=SF_006OG000004lmDN">Join Free</a>
   <button class="menu-btn" id="menuBtn">&#9776;</button>
 </nav>
 <div class="mobile-menu" id="mobileMenu">
-  <a href="../../../AI-chat/index.html" class="mobile-tab">AI Chat</a>
-  <a href="../../../Cams/index.html" class="mobile-tab">Cams</a>
-  <a href="../../../Dating/index.html" class="mobile-tab">Dating</a>
-  <a href="../../../Offers/index.html" class="mobile-tab">Offers</a>
-  <a href="../../../Trending/index.html" class="mobile-tab">Trending</a>
-  <a href="../../../New/index.html" class="mobile-tab"><span class="tab-star">⭐</span>VIP</a>
+  <a href="../../../ai-chat/index.html" class="mobile-tab">AI Chat</a>
+  <a href="../../../cams/index.html" class="mobile-tab">Cams</a>
+  <a href="../../../dating/index.html" class="mobile-tab">Dating</a>
+  <a href="../../../offers/index.html" class="mobile-tab">Offers</a>
+  <a href="../../../trending/index.html" class="mobile-tab">Trending</a>
+  <a href="../../../new/index.html" class="mobile-tab"><span class="tab-star">⭐</span>VIP</a>
 </div>
 
 <div class="hero">
@@ -1394,23 +1416,23 @@ footer{position:relative;z-index:1;border-top:1px solid var(--border);padding:20
 <nav>
   <a class="logo" href="../../../index.html"><img src="/Asset/Logo/logo.webp" alt="" class="logo-img"><span class="logo-text">Tempting Babes</span></a>
   <div class="tabs">
-    <a href="../../../AI-chat/index.html" class="tab">AI Chat</a>
-    <a href="../../../Cams/index.html" class="tab">Cams</a>
-    <a href="../../../Dating/index.html" class="tab">Dating</a>
-    <a href="../../../Offers/index.html" class="tab">Offers</a>
-    <a href="../../../Trending/index.html" class="tab">Trending</a>
-    <a href="../../../New/index.html" class="tab"><span class="tab-star">⭐</span>VIP</a>
+    <a href="../../../ai-chat/index.html" class="tab">AI Chat</a>
+    <a href="../../../cams/index.html" class="tab">Cams</a>
+    <a href="../../../dating/index.html" class="tab">Dating</a>
+    <a href="../../../offers/index.html" class="tab">Offers</a>
+    <a href="../../../trending/index.html" class="tab">Trending</a>
+    <a href="../../../new/index.html" class="tab"><span class="tab-star">⭐</span>VIP</a>
   </div>
   <a class="join-btn" href="https://t.crdtg2.com/389314/4299/37954?bo=2753,2754,2755,2756&po=6456&aff_sub5=SF_006OG000004lmDN">Join Free</a>
   <button class="menu-btn" id="menuBtn">&#9776;</button>
 </nav>
 <div class="mobile-menu" id="mobileMenu">
-  <a href="../../../AI-chat/index.html" class="mobile-tab">AI Chat</a>
-  <a href="../../../Cams/index.html" class="mobile-tab">Cams</a>
-  <a href="../../../Dating/index.html" class="mobile-tab">Dating</a>
-  <a href="../../../Offers/index.html" class="mobile-tab">Offers</a>
-  <a href="../../../Trending/index.html" class="mobile-tab">Trending</a>
-  <a href="../../../New/index.html" class="mobile-tab"><span class="tab-star">⭐</span>VIP</a>
+  <a href="../../../ai-chat/index.html" class="mobile-tab">AI Chat</a>
+  <a href="../../../cams/index.html" class="mobile-tab">Cams</a>
+  <a href="../../../dating/index.html" class="mobile-tab">Dating</a>
+  <a href="../../../offers/index.html" class="mobile-tab">Offers</a>
+  <a href="../../../trending/index.html" class="mobile-tab">Trending</a>
+  <a href="../../../new/index.html" class="mobile-tab"><span class="tab-star">⭐</span>VIP</a>
 </div>
 
 <div class="hero">
@@ -1804,23 +1826,23 @@ footer{position:relative;z-index:1;border-top:1px solid var(--border);padding:20
 <nav>
   <a class="logo" href="../../../index.html"><img src="/Asset/Logo/logo.webp" alt="" class="logo-img"><span class="logo-text">Tempting Babes</span></a>
   <div class="tabs">
-    <a href="../../../AI-chat/index.html" class="tab">AI Chat</a>
-    <a href="../../../Cams/index.html" class="tab">Cams</a>
-    <a href="../../../Dating/index.html" class="tab">Dating</a>
-    <a href="../../../Offers/index.html" class="tab">Offers</a>
-    <a href="../../../Trending/index.html" class="tab">Trending</a>
-    <a href="../../../New/index.html" class="tab"><span class="tab-star">⭐</span>VIP</a>
+    <a href="../../../ai-chat/index.html" class="tab">AI Chat</a>
+    <a href="../../../cams/index.html" class="tab">Cams</a>
+    <a href="../../../dating/index.html" class="tab">Dating</a>
+    <a href="../../../offers/index.html" class="tab">Offers</a>
+    <a href="../../../trending/index.html" class="tab">Trending</a>
+    <a href="../../../new/index.html" class="tab"><span class="tab-star">⭐</span>VIP</a>
   </div>
   <a class="join-btn" href="https://t.crdtg2.com/389314/4299/37954?bo=2753,2754,2755,2756&po=6456&aff_sub5=SF_006OG000004lmDN">Join Free</a>
   <button class="menu-btn" id="menuBtn">&#9776;</button>
 </nav>
 <div class="mobile-menu" id="mobileMenu">
-  <a href="../../../AI-chat/index.html" class="mobile-tab">AI Chat</a>
-  <a href="../../../Cams/index.html" class="mobile-tab">Cams</a>
-  <a href="../../../Dating/index.html" class="mobile-tab">Dating</a>
-  <a href="../../../Offers/index.html" class="mobile-tab">Offers</a>
-  <a href="../../../Trending/index.html" class="mobile-tab">Trending</a>
-  <a href="../../../New/index.html" class="mobile-tab"><span class="tab-star">⭐</span>VIP</a>
+  <a href="../../../ai-chat/index.html" class="mobile-tab">AI Chat</a>
+  <a href="../../../cams/index.html" class="mobile-tab">Cams</a>
+  <a href="../../../dating/index.html" class="mobile-tab">Dating</a>
+  <a href="../../../offers/index.html" class="mobile-tab">Offers</a>
+  <a href="../../../trending/index.html" class="mobile-tab">Trending</a>
+  <a href="../../../new/index.html" class="mobile-tab"><span class="tab-star">⭐</span>VIP</a>
 </div>
 
 <div class="hero">
@@ -2257,23 +2279,23 @@ footer{position:relative;z-index:1;border-top:1px solid var(--border);padding:20
 <nav>
   <a class="logo" href="../../../index.html"><img src="/Asset/Logo/logo.webp" alt="" class="logo-img"><span class="logo-text">Tempting Babes</span></a>
   <div class="tabs">
-    <a href="../../../AI-chat/index.html" class="tab">AI Chat</a>
-    <a href="../../../Cams/index.html" class="tab">Cams</a>
-    <a href="../../../Dating/index.html" class="tab">Dating</a>
-    <a href="../../../Offers/index.html" class="tab">Offers</a>
-    <a href="../../../Trending/index.html" class="tab">Trending</a>
-    <a href="../../../New/index.html" class="tab"><span class="tab-star">⭐</span>VIP</a>
+    <a href="../../../ai-chat/index.html" class="tab">AI Chat</a>
+    <a href="../../../cams/index.html" class="tab">Cams</a>
+    <a href="../../../dating/index.html" class="tab">Dating</a>
+    <a href="../../../offers/index.html" class="tab">Offers</a>
+    <a href="../../../trending/index.html" class="tab">Trending</a>
+    <a href="../../../new/index.html" class="tab"><span class="tab-star">⭐</span>VIP</a>
   </div>
   <a class="join-btn" href="https://t.crdtg2.com/389314/4299/37954?bo=2753,2754,2755,2756&po=6456&aff_sub5=SF_006OG000004lmDN">Join Free</a>
   <button class="menu-btn" id="menuBtn">&#9776;</button>
 </nav>
 <div class="mobile-menu" id="mobileMenu">
-  <a href="../../../AI-chat/index.html" class="mobile-tab">AI Chat</a>
-  <a href="../../../Cams/index.html" class="mobile-tab">Cams</a>
-  <a href="../../../Dating/index.html" class="mobile-tab">Dating</a>
-  <a href="../../../Offers/index.html" class="mobile-tab">Offers</a>
-  <a href="../../../Trending/index.html" class="mobile-tab">Trending</a>
-  <a href="../../../New/index.html" class="mobile-tab"><span class="tab-star">⭐</span>VIP</a>
+  <a href="../../../ai-chat/index.html" class="mobile-tab">AI Chat</a>
+  <a href="../../../cams/index.html" class="mobile-tab">Cams</a>
+  <a href="../../../dating/index.html" class="mobile-tab">Dating</a>
+  <a href="../../../offers/index.html" class="mobile-tab">Offers</a>
+  <a href="../../../trending/index.html" class="mobile-tab">Trending</a>
+  <a href="../../../new/index.html" class="mobile-tab"><span class="tab-star">⭐</span>VIP</a>
 </div>
 
 <div class="hero">
@@ -2508,23 +2530,23 @@ footer{position:relative;z-index:1;border-top:1px solid var(--border);padding:20
 <nav>
   <a class="logo" href="../../../index.html"><img src="/Asset/Logo/logo.webp" alt="" class="logo-img"><span class="logo-text">Tempting Babes</span></a>
   <div class="tabs">
-    <a href="../../../AI-chat/index.html" class="tab">AI Chat</a>
-    <a href="../../../Cams/index.html" class="tab">Cams</a>
-    <a href="../../../Dating/index.html" class="tab">Dating</a>
-    <a href="../../../Offers/index.html" class="tab">Offers</a>
-    <a href="../../../Trending/index.html" class="tab">Trending</a>
-    <a href="../../../New/index.html" class="tab"><span class="tab-star">⭐</span>VIP</a>
+    <a href="../../../ai-chat/index.html" class="tab">AI Chat</a>
+    <a href="../../../cams/index.html" class="tab">Cams</a>
+    <a href="../../../dating/index.html" class="tab">Dating</a>
+    <a href="../../../offers/index.html" class="tab">Offers</a>
+    <a href="../../../trending/index.html" class="tab">Trending</a>
+    <a href="../../../new/index.html" class="tab"><span class="tab-star">⭐</span>VIP</a>
   </div>
   <a class="join-btn" href="https://t.crdtg2.com/389314/4299/37954?bo=2753,2754,2755,2756&po=6456&aff_sub5=SF_006OG000004lmDN">Join Free</a>
   <button class="menu-btn" id="menuBtn">&#9776;</button>
 </nav>
 <div class="mobile-menu" id="mobileMenu">
-  <a href="../../../AI-chat/index.html" class="mobile-tab">AI Chat</a>
-  <a href="../../../Cams/index.html" class="mobile-tab">Cams</a>
-  <a href="../../../Dating/index.html" class="mobile-tab">Dating</a>
-  <a href="../../../Offers/index.html" class="mobile-tab">Offers</a>
-  <a href="../../../Trending/index.html" class="mobile-tab">Trending</a>
-  <a href="../../../New/index.html" class="mobile-tab"><span class="tab-star">⭐</span>VIP</a>
+  <a href="../../../ai-chat/index.html" class="mobile-tab">AI Chat</a>
+  <a href="../../../cams/index.html" class="mobile-tab">Cams</a>
+  <a href="../../../dating/index.html" class="mobile-tab">Dating</a>
+  <a href="../../../offers/index.html" class="mobile-tab">Offers</a>
+  <a href="../../../trending/index.html" class="mobile-tab">Trending</a>
+  <a href="../../../new/index.html" class="mobile-tab"><span class="tab-star">⭐</span>VIP</a>
 </div>
 
 <div class="hero">
@@ -3039,23 +3061,23 @@ footer{position:relative;z-index:1;border-top:1px solid var(--border);padding:20
 <nav>
   <a class="logo" href="../../../index.html"><img src="/Asset/Logo/logo.webp" alt="" class="logo-img"><span class="logo-text">Tempting Babes</span></a>
   <div class="tabs">
-    <a href="../../../AI-chat/index.html" class="tab">AI Chat</a>
-    <a href="../../../Cams/index.html" class="tab">Cams</a>
-    <a href="../../../Dating/index.html" class="tab">Dating</a>
-    <a href="../../../Offers/index.html" class="tab">Offers</a>
-    <a href="../../../Trending/index.html" class="tab">Trending</a>
-    <a href="../../../New/index.html" class="tab"><span class="tab-star">⭐</span>VIP</a>
+    <a href="../../../ai-chat/index.html" class="tab">AI Chat</a>
+    <a href="../../../cams/index.html" class="tab">Cams</a>
+    <a href="../../../dating/index.html" class="tab">Dating</a>
+    <a href="../../../offers/index.html" class="tab">Offers</a>
+    <a href="../../../trending/index.html" class="tab">Trending</a>
+    <a href="../../../new/index.html" class="tab"><span class="tab-star">⭐</span>VIP</a>
   </div>
   <a class="join-btn" href="https://t.crdtg2.com/389314/4299/37954?bo=2753,2754,2755,2756&po=6456&aff_sub5=SF_006OG000004lmDN">Join Free</a>
   <button class="menu-btn" id="menuBtn">&#9776;</button>
 </nav>
 <div class="mobile-menu" id="mobileMenu">
-  <a href="../../../AI-chat/index.html" class="mobile-tab">AI Chat</a>
-  <a href="../../../Cams/index.html" class="mobile-tab">Cams</a>
-  <a href="../../../Dating/index.html" class="mobile-tab">Dating</a>
-  <a href="../../../Offers/index.html" class="mobile-tab">Offers</a>
-  <a href="../../../Trending/index.html" class="mobile-tab">Trending</a>
-  <a href="../../../New/index.html" class="mobile-tab"><span class="tab-star">⭐</span>VIP</a>
+  <a href="../../../ai-chat/index.html" class="mobile-tab">AI Chat</a>
+  <a href="../../../cams/index.html" class="mobile-tab">Cams</a>
+  <a href="../../../dating/index.html" class="mobile-tab">Dating</a>
+  <a href="../../../offers/index.html" class="mobile-tab">Offers</a>
+  <a href="../../../trending/index.html" class="mobile-tab">Trending</a>
+  <a href="../../../new/index.html" class="mobile-tab"><span class="tab-star">⭐</span>VIP</a>
 </div>
 
 <div class="hero">
@@ -3492,23 +3514,23 @@ footer{position:relative;z-index:1;border-top:1px solid var(--border);padding:20
 <nav>
   <a class="logo" href="../../../index.html"><img src="/Asset/Logo/logo.webp" alt="" class="logo-img"><span class="logo-text">Tempting Babes</span></a>
   <div class="tabs">
-    <a href="../../../AI-chat/index.html" class="tab">AI Chat</a>
-    <a href="../../../Cams/index.html" class="tab">Cams</a>
-    <a href="../../../Dating/index.html" class="tab">Dating</a>
-    <a href="../../../Offers/index.html" class="tab">Offers</a>
-    <a href="../../../Trending/index.html" class="tab">Trending</a>
-    <a href="../../../New/index.html" class="tab"><span class="tab-star">⭐</span>VIP</a>
+    <a href="../../../ai-chat/index.html" class="tab">AI Chat</a>
+    <a href="../../../cams/index.html" class="tab">Cams</a>
+    <a href="../../../dating/index.html" class="tab">Dating</a>
+    <a href="../../../offers/index.html" class="tab">Offers</a>
+    <a href="../../../trending/index.html" class="tab">Trending</a>
+    <a href="../../../new/index.html" class="tab"><span class="tab-star">⭐</span>VIP</a>
   </div>
   <a class="join-btn" href="https://t.crdtg2.com/389314/4299/37954?bo=2753,2754,2755,2756&po=6456&aff_sub5=SF_006OG000004lmDN">Join Free</a>
   <button class="menu-btn" id="menuBtn">&#9776;</button>
 </nav>
 <div class="mobile-menu" id="mobileMenu">
-  <a href="../../../AI-chat/index.html" class="mobile-tab">AI Chat</a>
-  <a href="../../../Cams/index.html" class="mobile-tab">Cams</a>
-  <a href="../../../Dating/index.html" class="mobile-tab">Dating</a>
-  <a href="../../../Offers/index.html" class="mobile-tab">Offers</a>
-  <a href="../../../Trending/index.html" class="mobile-tab">Trending</a>
-  <a href="../../../New/index.html" class="mobile-tab"><span class="tab-star">⭐</span>VIP</a>
+  <a href="../../../ai-chat/index.html" class="mobile-tab">AI Chat</a>
+  <a href="../../../cams/index.html" class="mobile-tab">Cams</a>
+  <a href="../../../dating/index.html" class="mobile-tab">Dating</a>
+  <a href="../../../offers/index.html" class="mobile-tab">Offers</a>
+  <a href="../../../trending/index.html" class="mobile-tab">Trending</a>
+  <a href="../../../new/index.html" class="mobile-tab"><span class="tab-star">⭐</span>VIP</a>
 </div>
 
 <div class="hero">
@@ -3743,23 +3765,23 @@ footer{position:relative;z-index:1;border-top:1px solid var(--border);padding:20
 <nav>
   <a class="logo" href="../../../index.html"><img src="/Asset/Logo/logo.webp" alt="" class="logo-img"><span class="logo-text">Tempting Babes</span></a>
   <div class="tabs">
-    <a href="../../../AI-chat/index.html" class="tab">AI Chat</a>
-    <a href="../../../Cams/index.html" class="tab">Cams</a>
-    <a href="../../../Dating/index.html" class="tab">Dating</a>
-    <a href="../../../Offers/index.html" class="tab">Offers</a>
-    <a href="../../../Trending/index.html" class="tab">Trending</a>
-    <a href="../../../New/index.html" class="tab"><span class="tab-star">⭐</span>VIP</a>
+    <a href="../../../ai-chat/index.html" class="tab">AI Chat</a>
+    <a href="../../../cams/index.html" class="tab">Cams</a>
+    <a href="../../../dating/index.html" class="tab">Dating</a>
+    <a href="../../../offers/index.html" class="tab">Offers</a>
+    <a href="../../../trending/index.html" class="tab">Trending</a>
+    <a href="../../../new/index.html" class="tab"><span class="tab-star">⭐</span>VIP</a>
   </div>
   <a class="join-btn" href="https://t.crdtg2.com/389314/4299/37954?bo=2753,2754,2755,2756&po=6456&aff_sub5=SF_006OG000004lmDN">Join Free</a>
   <button class="menu-btn" id="menuBtn">&#9776;</button>
 </nav>
 <div class="mobile-menu" id="mobileMenu">
-  <a href="../../../AI-chat/index.html" class="mobile-tab">AI Chat</a>
-  <a href="../../../Cams/index.html" class="mobile-tab">Cams</a>
-  <a href="../../../Dating/index.html" class="mobile-tab">Dating</a>
-  <a href="../../../Offers/index.html" class="mobile-tab">Offers</a>
-  <a href="../../../Trending/index.html" class="mobile-tab">Trending</a>
-  <a href="../../../New/index.html" class="mobile-tab"><span class="tab-star">⭐</span>VIP</a>
+  <a href="../../../ai-chat/index.html" class="mobile-tab">AI Chat</a>
+  <a href="../../../cams/index.html" class="mobile-tab">Cams</a>
+  <a href="../../../dating/index.html" class="mobile-tab">Dating</a>
+  <a href="../../../offers/index.html" class="mobile-tab">Offers</a>
+  <a href="../../../trending/index.html" class="mobile-tab">Trending</a>
+  <a href="../../../new/index.html" class="mobile-tab"><span class="tab-star">⭐</span>VIP</a>
 </div>
 
 <div class="hero">
@@ -4077,23 +4099,23 @@ footer{position:relative;z-index:1;border-top:1px solid var(--border);padding:20
 <nav>
   <a class="logo" href="../../../index.html"><img src="/Asset/Logo/logo.webp" alt="" class="logo-img"><span class="logo-text">Tempting Babes</span></a>
   <div class="tabs">
-    <a href="../../../AI-chat/index.html" class="tab">AI Chat</a>
-    <a href="../../../Cams/index.html" class="tab">Cams</a>
-    <a href="../../../Dating/index.html" class="tab">Dating</a>
-    <a href="../../../Offers/index.html" class="tab">Offers</a>
-    <a href="../../../Trending/index.html" class="tab">Trending</a>
-    <a href="../../../New/index.html" class="tab"><span class="tab-star">⭐</span>VIP</a>
+    <a href="../../../ai-chat/index.html" class="tab">AI Chat</a>
+    <a href="../../../cams/index.html" class="tab">Cams</a>
+    <a href="../../../dating/index.html" class="tab">Dating</a>
+    <a href="../../../offers/index.html" class="tab">Offers</a>
+    <a href="../../../trending/index.html" class="tab">Trending</a>
+    <a href="../../../new/index.html" class="tab"><span class="tab-star">⭐</span>VIP</a>
   </div>
   <a class="join-btn" href="https://t.crdtg2.com/389314/4299/37954?bo=2753,2754,2755,2756&po=6456&aff_sub5=SF_006OG000004lmDN">Join Free</a>
   <button class="menu-btn" id="menuBtn">&#9776;</button>
 </nav>
 <div class="mobile-menu" id="mobileMenu">
-  <a href="../../../AI-chat/index.html" class="mobile-tab">AI Chat</a>
-  <a href="../../../Cams/index.html" class="mobile-tab">Cams</a>
-  <a href="../../../Dating/index.html" class="mobile-tab">Dating</a>
-  <a href="../../../Offers/index.html" class="mobile-tab">Offers</a>
-  <a href="../../../Trending/index.html" class="mobile-tab">Trending</a>
-  <a href="../../../New/index.html" class="mobile-tab"><span class="tab-star">⭐</span>VIP</a>
+  <a href="../../../ai-chat/index.html" class="mobile-tab">AI Chat</a>
+  <a href="../../../cams/index.html" class="mobile-tab">Cams</a>
+  <a href="../../../dating/index.html" class="mobile-tab">Dating</a>
+  <a href="../../../offers/index.html" class="mobile-tab">Offers</a>
+  <a href="../../../trending/index.html" class="mobile-tab">Trending</a>
+  <a href="../../../new/index.html" class="mobile-tab"><span class="tab-star">⭐</span>VIP</a>
 </div>
 
 <div class="hero">
@@ -4328,23 +4350,23 @@ footer{position:relative;z-index:1;border-top:1px solid var(--border);padding:20
 <nav>
   <a class="logo" href="../../../index.html"><img src="/Asset/Logo/logo.webp" alt="" class="logo-img"><span class="logo-text">Tempting Babes</span></a>
   <div class="tabs">
-    <a href="../../../AI-chat/index.html" class="tab">AI Chat</a>
-    <a href="../../../Cams/index.html" class="tab">Cams</a>
-    <a href="../../../Dating/index.html" class="tab">Dating</a>
-    <a href="../../../Offers/index.html" class="tab">Offers</a>
-    <a href="../../../Trending/index.html" class="tab">Trending</a>
-    <a href="../../../New/index.html" class="tab"><span class="tab-star">⭐</span>VIP</a>
+    <a href="../../../ai-chat/index.html" class="tab">AI Chat</a>
+    <a href="../../../cams/index.html" class="tab">Cams</a>
+    <a href="../../../dating/index.html" class="tab">Dating</a>
+    <a href="../../../offers/index.html" class="tab">Offers</a>
+    <a href="../../../trending/index.html" class="tab">Trending</a>
+    <a href="../../../new/index.html" class="tab"><span class="tab-star">⭐</span>VIP</a>
   </div>
   <a class="join-btn" href="https://t.crdtg2.com/389314/4299/37954?bo=2753,2754,2755,2756&po=6456&aff_sub5=SF_006OG000004lmDN">Join Free</a>
   <button class="menu-btn" id="menuBtn">&#9776;</button>
 </nav>
 <div class="mobile-menu" id="mobileMenu">
-  <a href="../../../AI-chat/index.html" class="mobile-tab">AI Chat</a>
-  <a href="../../../Cams/index.html" class="mobile-tab">Cams</a>
-  <a href="../../../Dating/index.html" class="mobile-tab">Dating</a>
-  <a href="../../../Offers/index.html" class="mobile-tab">Offers</a>
-  <a href="../../../Trending/index.html" class="mobile-tab">Trending</a>
-  <a href="../../../New/index.html" class="mobile-tab"><span class="tab-star">⭐</span>VIP</a>
+  <a href="../../../ai-chat/index.html" class="mobile-tab">AI Chat</a>
+  <a href="../../../cams/index.html" class="mobile-tab">Cams</a>
+  <a href="../../../dating/index.html" class="mobile-tab">Dating</a>
+  <a href="../../../offers/index.html" class="mobile-tab">Offers</a>
+  <a href="../../../trending/index.html" class="mobile-tab">Trending</a>
+  <a href="../../../new/index.html" class="mobile-tab"><span class="tab-star">⭐</span>VIP</a>
 </div>
 
 <div class="hero">

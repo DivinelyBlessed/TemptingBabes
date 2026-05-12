@@ -16,17 +16,17 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Blog &mdash; Dating Advice &amp; Guides | Tempting Babes</title>
-  <meta name="description" content="Practical dating advice for men. Improve your profile, get more matches, master texting, and level up your dating game with guides from Tempting Babes."/>
+  <meta name="description" content="Dating advice for men. Improve your profile, get more matches, master texting, and level up your dating game with guides from Tempting Babes."/>
   <meta name="robots" content="index, follow"/>
   <link rel="canonical" href="https://www.temptingbabes.com/Blog/"/>
   <link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600;700&family=Playfair+Display:wght@700;900&display=swap"/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600;700&display=swap"/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&display=block"/>
   <link rel="stylesheet" href="../styles.css"/>
   <script src="../script.js" defer></script>
   <style>
-    /* ── HERO ── */
     .blog-hero {
       text-align: center;
       padding: 72px 24px 56px;
@@ -36,16 +36,20 @@
       font-size: clamp(2.6rem, 7vw, 5rem);
       line-height: 1;
       color: #fff;
-      margin: 0;
+      margin: 0 0 12px;
     }
     .blog-hero h1 span {
-      background: linear-gradient(135deg, #ff8c00 0%, #ff8c42 100%);
+      background: linear-gradient(135deg, #ff8c00, #ff3d6b);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
     }
-
-    /* ── WRAPPER ── */
+    .blog-hero p {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 1rem;
+      color: rgba(255,255,255,0.4);
+      margin: 0;
+    }
     .blog-wrap {
       width: 100%;
       max-width: 1240px;
@@ -53,32 +57,50 @@
       padding: 0 24px 80px;
       box-sizing: border-box;
     }
-
-    /* ── CATEGORY SECTION ── */
     .cat-section {
       margin-bottom: 72px;
     }
     .cat-section-hd {
       display: flex;
       align-items: center;
+      justify-content: space-between;
       margin-bottom: 24px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
     }
     .cat-section-title {
       font-family: 'Bebas Neue', sans-serif;
-      font-size: 2rem;
+      font-size: 1.9rem;
       color: #fff;
       letter-spacing: 1px;
       margin: 0;
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 10px;
     }
-    .cat-section-title .cat-emoji {
-      font-size: 1.4rem;
-      line-height: 1;
+    .cat-section-title .cat-label {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--cat-color, #ff8c00);
+      background: rgba(255,255,255,0.05);
+      padding: 4px 10px;
+      border-radius: 20px;
+      margin-left: 4px;
     }
-
-    /* ── POSTS ROW ── */
+    .view-all-link {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--cat-color, #ff8c00);
+      text-decoration: none;
+      letter-spacing: 0.5px;
+      white-space: nowrap;
+      transition: opacity 0.2s;
+    }
+    .view-all-link:hover { opacity: 0.65; }
     .posts-row {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -86,23 +108,6 @@
     }
     @media (max-width: 900px) { .posts-row { grid-template-columns: repeat(2, 1fr); } }
     @media (max-width: 540px)  { .posts-row { grid-template-columns: 1fr; } }
-
-    /* ── VIEW MORE LINK ── */
-    .view-all-link {
-      display: block;
-      text-align: right;
-      padding-right: 8px;
-      margin-top: 20px;
-      font-family: 'DM Sans', sans-serif;
-      font-size: 0.85rem;
-      font-weight: 700;
-      color: var(--cat-color, #ff8c00);
-      text-decoration: none;
-      transition: opacity 0.2s;
-    }
-    .view-all-link:hover { opacity: 0.7; }
-
-    /* ── ARTICLE CARD ── */
     .article-card {
       background: #111;
       border: 1px solid rgba(255,255,255,0.07);
@@ -119,14 +124,12 @@
       box-shadow: 0 12px 40px rgba(0,0,0,0.5);
     }
     .article-card.is-placeholder {
-      opacity: 0.55;
+      opacity: 0.45;
       pointer-events: none;
     }
-
-    /* ── THUMB ── */
     .article-thumb {
       width: 100%;
-      height: 190px;
+      height: 180px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -135,8 +138,8 @@
       flex-shrink: 0;
     }
     .thumb-icon {
-      font-size: 3.5rem;
-      opacity: 0.25;
+      font-size: 3.2rem;
+      opacity: 0.22;
       user-select: none;
       line-height: 1;
     }
@@ -155,17 +158,15 @@
       border-radius: 20px;
       backdrop-filter: blur(6px);
     }
-
-    /* ── CARD BODY ── */
     .article-body {
-      padding: 18px 20px 22px;
+      padding: 16px 18px 20px;
       display: flex;
       flex-direction: column;
-      gap: 8px;
+      gap: 7px;
     }
     .article-cat-label {
       font-family: 'DM Sans', sans-serif;
-      font-size: 0.68rem;
+      font-size: 0.65rem;
       font-weight: 700;
       letter-spacing: 1.5px;
       text-transform: uppercase;
@@ -173,127 +174,97 @@
     }
     .article-title {
       font-family: 'DM Sans', sans-serif;
-      font-size: 0.95rem;
+      font-size: 0.92rem;
       font-weight: 700;
       color: #fff;
       line-height: 1.45;
       margin: 0;
     }
     .is-placeholder .article-title {
-      color: rgba(255,255,255,0.3);
+      color: rgba(255,255,255,0.22);
       font-style: italic;
     }
   </style>
 </head>
 <body>
 
-<!-- NAV -->
 <nav>
   <a class="logo" href="/"><img src="/Asset/Logo/logo.webp" alt="" class="logo-img" style="height:42px;width:auto;flex-shrink:0;display:block;"><span class="logo-text" style="font-family:'Playfair Display',serif;font-weight:900;font-size:1.35rem;line-height:1;letter-spacing:1.5px;background:linear-gradient(90deg,#ff8c00,#ff3d6b);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-left:-10px;">Tempting Babes</span></a>
   <div class="tabs">
-    <a href="/AI-chat/" class="tab">AI Chat</a>
-    <a href="/Cams/" class="tab">Cams</a>
-    <a href="/Dating/" class="tab">Dating</a>
-    <a href="/Offers/" class="tab">Offers</a>
-    <a href="/Trending/" class="tab">Trending</a>
-    <a href="/New/" class="tab"><span class="tab-star">⭐</span>VIP</a>
+    <a href="/ai-chat/" class="tab">AI Chat</a>
+    <a href="/cams/" class="tab">Cams</a>
+    <a href="/dating/" class="tab">Dating</a>
+    <a href="/offers/" class="tab">Offers</a>
+    <a href="/Blog/" class="tab">Blog</a>
+    <a href="/trending/" class="tab">Trending</a>
+    <a href="/new/" class="tab"><span class="tab-star">⭐</span>VIP</a>
   </div>
   <button class="join-btn" id="getAccessBtn" style="background:linear-gradient(135deg,#ff8c00,#ff3d6b);">Join Free</button>
   <button class="menu-btn" id="menuBtn">&#9776;</button>
 </nav>
 <div class="mobile-menu" id="mobileMenu">
-  <a href="/AI-chat/" class="mobile-tab">AI Chat</a>
-  <a href="/Cams/" class="mobile-tab">Cams</a>
-  <a href="/Dating/" class="mobile-tab">Dating</a>
-  <a href="/Offers/" class="mobile-tab">Offers</a>
-  <a href="/Trending/" class="mobile-tab">Trending</a>
-  <a href="/New/" class="mobile-tab"><span class="tab-star">⭐</span>VIP</a>
+  <a href="/ai-chat/" class="mobile-tab">AI Chat</a>
+  <a href="/cams/" class="mobile-tab">Cams</a>
+  <a href="/dating/" class="mobile-tab">Dating</a>
+  <a href="/offers/" class="mobile-tab">Offers</a>
+  <a href="/Blog/" class="mobile-tab">Blog</a>
+  <a href="/trending/" class="mobile-tab">Trending</a>
+  <a href="/new/" class="mobile-tab"><span class="tab-star">⭐</span>VIP</a>
 </div>
 
-<!-- HERO -->
 <section class="blog-hero">
-  <h1>Discover the <span>latest in&hellip;</span></h1>
+  <h1>The <span>Playbook</span></h1>
+  <p>Dating guides for men who want results, not relationship counselling.</p>
 </section>
 
-<!-- BLOG SECTIONS -->
 <div class="blog-wrap">
 
-  <!-- ── AI DATING ── -->
-  <section class="cat-section" style="--cat-color:#22d3ee;">
+  <!-- ── 1. DATING ADVICE ── -->
+  <section class="cat-section" style="--cat-color:#ff8c00;">
     <div class="cat-section-hd">
-      <h2 class="cat-section-title"><span class="cat-emoji">🤖</span> AI Dating</h2>
+      <h2 class="cat-section-title">🔥 Dating Advice <span class="cat-label">The Attraction Game</span></h2>
+      <a href="dating-advice/" class="view-all-link">View All &rsaquo;</a>
     </div>
     <div class="posts-row">
-      <a href="dating-advice/talking-to-ai-companion/" class="article-card">
-        <div class="article-thumb" style="background:linear-gradient(135deg,#22d3ee 0%,#0369a1 100%);"><span class="thumb-icon">🤖</span></div>
+      <a href="dating-advice/find-active-women-online-near-you/" class="article-card">
+        <div class="article-thumb" style="background:linear-gradient(135deg,#ff8c00 0%,#9f1239 100%);"><span class="thumb-icon">🔥</span></div>
         <div class="article-body">
-          <span class="article-cat-label">AI Dating</span>
-          <h3 class="article-title">What Talking to an AI Companion Actually Feels Like</h3>
+          <span class="article-cat-label">Dating Advice</span>
+          <h3 class="article-title">How to Find Active Women Online Near You</h3>
         </div>
       </a>
-      <a href="dating-advice/ai-chat-men-over-30/" class="article-card">
-        <div class="article-thumb" style="background:linear-gradient(135deg,#22d3ee 0%,#0369a1 100%);"><span class="thumb-icon">🤖</span></div>
+      <a href="dating-advice/no-matches-tinder-real-reason/" class="article-card">
+        <div class="article-thumb" style="background:linear-gradient(135deg,#ff8c00 0%,#9f1239 100%);"><span class="thumb-icon">🔥</span></div>
         <div class="article-body">
-          <span class="article-cat-label">AI Dating</span>
-          <h3 class="article-title">AI Chat for Men Over 30 — Is It Worth Your Time?</h3>
+          <span class="article-cat-label">Dating Advice</span>
+          <h3 class="article-title">No Matches on Tinder? The Real Reason</h3>
         </div>
       </a>
-      <div class="article-card is-placeholder">
-        <div class="article-thumb" style="background:linear-gradient(135deg,#22d3ee 0%,#0369a1 100%);"><span class="thumb-icon">🤖</span><span class="coming-soon-badge">Coming Soon</span></div>
+      <a href="dating-advice/why-women-dont-reply-dating-apps/" class="article-card">
+        <div class="article-thumb" style="background:linear-gradient(135deg,#ff8c00 0%,#9f1239 100%);"><span class="thumb-icon">🔥</span></div>
         <div class="article-body">
-          <span class="article-cat-label">AI Dating</span>
-          <h3 class="article-title">New guide coming soon</h3>
+          <span class="article-cat-label">Dating Advice</span>
+          <h3 class="article-title">Why Women Don't Reply on Dating Apps</h3>
         </div>
-      </div>
+      </a>
     </div>
-    <a href="dating-advice/" class="view-all-link">View More Posts &rsaquo;</a>
   </section>
 
-  <!-- ── APP REVIEWS ── -->
-  <section class="cat-section" style="--cat-color:#f97316;">
-    <div class="cat-section-hd">
-      <h2 class="cat-section-title"><span class="cat-emoji">⭐</span> App Reviews</h2>
-    </div>
-    <div class="posts-row">
-      <a href="dating-advice/ai-girlfriend-apps-ranked-2026/" class="article-card">
-        <div class="article-thumb" style="background:linear-gradient(135deg,#f97316 0%,#9a3412 100%);"><span class="thumb-icon">⭐</span></div>
-        <div class="article-body">
-          <span class="article-cat-label">App Reviews</span>
-          <h3 class="article-title">AI Girlfriend Apps Ranked 2026</h3>
-        </div>
-      </a>
-      <div class="article-card is-placeholder">
-        <div class="article-thumb" style="background:linear-gradient(135deg,#f97316 0%,#9a3412 100%);"><span class="thumb-icon">⭐</span><span class="coming-soon-badge">Coming Soon</span></div>
-        <div class="article-body">
-          <span class="article-cat-label">App Reviews</span>
-          <h3 class="article-title">New guide coming soon</h3>
-        </div>
-      </div>
-      <div class="article-card is-placeholder">
-        <div class="article-thumb" style="background:linear-gradient(135deg,#f97316 0%,#9a3412 100%);"><span class="thumb-icon">⭐</span><span class="coming-soon-badge">Coming Soon</span></div>
-        <div class="article-body">
-          <span class="article-cat-label">App Reviews</span>
-          <h3 class="article-title">New guide coming soon</h3>
-        </div>
-      </div>
-    </div>
-    <a href="dating-advice/" class="view-all-link">View More Posts &rsaquo;</a>
-  </section>
-
-  <!-- ── DATING APPS ── -->
+  <!-- ── 2. DATING APPS ── -->
   <section class="cat-section" style="--cat-color:#3b82f6;">
     <div class="cat-section-hd">
-      <h2 class="cat-section-title"><span class="cat-emoji">📱</span> Dating Apps</h2>
+      <h2 class="cat-section-title">📱 Dating Apps <span class="cat-label">Swipe Game</span></h2>
+      <a href="dating-apps/" class="view-all-link">View All &rsaquo;</a>
     </div>
     <div class="posts-row">
-      <a href="dating-advice/dating-apps-designed-to-keep-you-single/" class="article-card">
+      <a href="dating-apps/dating-apps-designed-to-keep-you-single/" class="article-card">
         <div class="article-thumb" style="background:linear-gradient(135deg,#3b82f6 0%,#1e3a8a 100%);"><span class="thumb-icon">📱</span></div>
         <div class="article-body">
           <span class="article-cat-label">Dating Apps</span>
           <h3 class="article-title">Are Dating Apps Designed to Keep You Single?</h3>
         </div>
       </a>
-      <a href="dating-advice/average-man-dating-app-stats/" class="article-card">
+      <a href="dating-apps/average-man-dating-app-stats/" class="article-card">
         <div class="article-thumb" style="background:linear-gradient(135deg,#3b82f6 0%,#1e3a8a 100%);"><span class="thumb-icon">📱</span></div>
         <div class="article-body">
           <span class="article-cat-label">Dating Apps</span>
@@ -308,291 +279,227 @@
         </div>
       </div>
     </div>
-    <a href="dating-advice/" class="view-all-link">View More Posts &rsaquo;</a>
   </section>
 
-  <!-- ── FIRST DATES ── -->
-  <section class="cat-section" style="--cat-color:#eab308;">
-    <div class="cat-section-hd">
-      <h2 class="cat-section-title"><span class="cat-emoji">📍</span> First Dates</h2>
-    </div>
-    <div class="posts-row">
-      <div class="article-card is-placeholder">
-        <div class="article-thumb" style="background:linear-gradient(135deg,#eab308 0%,#713f12 100%);"><span class="thumb-icon">📍</span><span class="coming-soon-badge">Coming Soon</span></div>
-        <div class="article-body">
-          <span class="article-cat-label">First Dates</span>
-          <h3 class="article-title">New guide coming soon</h3>
-        </div>
-      </div>
-      <div class="article-card is-placeholder">
-        <div class="article-thumb" style="background:linear-gradient(135deg,#eab308 0%,#713f12 100%);"><span class="thumb-icon">📍</span><span class="coming-soon-badge">Coming Soon</span></div>
-        <div class="article-body">
-          <span class="article-cat-label">First Dates</span>
-          <h3 class="article-title">New guide coming soon</h3>
-        </div>
-      </div>
-      <div class="article-card is-placeholder">
-        <div class="article-thumb" style="background:linear-gradient(135deg,#eab308 0%,#713f12 100%);"><span class="thumb-icon">📍</span><span class="coming-soon-badge">Coming Soon</span></div>
-        <div class="article-body">
-          <span class="article-cat-label">First Dates</span>
-          <h3 class="article-title">New guide coming soon</h3>
-        </div>
-      </div>
-    </div>
-    <a href="dating-advice/" class="view-all-link">View More Posts &rsaquo;</a>
-  </section>
-
-  <!-- ── GET MATCHES ── -->
-  <section class="cat-section" style="--cat-color:#ff8c00;">
-    <div class="cat-section-hd">
-      <h2 class="cat-section-title"><span class="cat-emoji">🔥</span> Get Matches</h2>
-    </div>
-    <div class="posts-row">
-      <a href="dating-advice/find-active-women-online-near-you/" class="article-card">
-        <div class="article-thumb" style="background:linear-gradient(135deg,#ff8c00 0%,#9f1239 100%);"><span class="thumb-icon">🔥</span></div>
-        <div class="article-body">
-          <span class="article-cat-label">Get Matches</span>
-          <h3 class="article-title">How to Find Active Women Online Near You</h3>
-        </div>
-      </a>
-      <a href="dating-advice/matching-vs-connecting/" class="article-card">
-        <div class="article-thumb" style="background:linear-gradient(135deg,#ff8c00 0%,#9f1239 100%);"><span class="thumb-icon">🔥</span></div>
-        <div class="article-body">
-          <span class="article-cat-label">Get Matches</span>
-          <h3 class="article-title">Matching vs. Actually Connecting</h3>
-        </div>
-      </a>
-      <a href="dating-advice/low-social-circle-meet-women/" class="article-card">
-        <div class="article-thumb" style="background:linear-gradient(135deg,#ff8c00 0%,#9f1239 100%);"><span class="thumb-icon">🔥</span></div>
-        <div class="article-body">
-          <span class="article-cat-label">Get Matches</span>
-          <h3 class="article-title">Low Social Circle? How to Meet Women Anyway</h3>
-        </div>
-      </a>
-    </div>
-    <a href="dating-advice/" class="view-all-link">View More Posts &rsaquo;</a>
-  </section>
-
-  <!-- ── HOOKUPS ── -->
-  <section class="cat-section" style="--cat-color:#f59e0b;">
-    <div class="cat-section-hd">
-      <h2 class="cat-section-title"><span class="cat-emoji">⚡</span> Hookups</h2>
-    </div>
-    <div class="posts-row">
-      <div class="article-card is-placeholder">
-        <div class="article-thumb" style="background:linear-gradient(135deg,#f59e0b 0%,#78350f 100%);"><span class="thumb-icon">⚡</span><span class="coming-soon-badge">Coming Soon</span></div>
-        <div class="article-body">
-          <span class="article-cat-label">Hookups</span>
-          <h3 class="article-title">New guide coming soon</h3>
-        </div>
-      </div>
-      <div class="article-card is-placeholder">
-        <div class="article-thumb" style="background:linear-gradient(135deg,#f59e0b 0%,#78350f 100%);"><span class="thumb-icon">⚡</span><span class="coming-soon-badge">Coming Soon</span></div>
-        <div class="article-body">
-          <span class="article-cat-label">Hookups</span>
-          <h3 class="article-title">New guide coming soon</h3>
-        </div>
-      </div>
-      <div class="article-card is-placeholder">
-        <div class="article-thumb" style="background:linear-gradient(135deg,#f59e0b 0%,#78350f 100%);"><span class="thumb-icon">⚡</span><span class="coming-soon-badge">Coming Soon</span></div>
-        <div class="article-body">
-          <span class="article-cat-label">Hookups</span>
-          <h3 class="article-title">New guide coming soon</h3>
-        </div>
-      </div>
-    </div>
-    <a href="dating-advice/" class="view-all-link">View More Posts &rsaquo;</a>
-  </section>
-
-  <!-- ── LEVEL UP ── -->
-  <section class="cat-section" style="--cat-color:#22c55e;">
-    <div class="cat-section-hd">
-      <h2 class="cat-section-title"><span class="cat-emoji">💪</span> Level Up</h2>
-    </div>
-    <div class="posts-row">
-      <div class="article-card is-placeholder">
-        <div class="article-thumb" style="background:linear-gradient(135deg,#22c55e 0%,#14532d 100%);"><span class="thumb-icon">💪</span><span class="coming-soon-badge">Coming Soon</span></div>
-        <div class="article-body">
-          <span class="article-cat-label">Level Up</span>
-          <h3 class="article-title">New guide coming soon</h3>
-        </div>
-      </div>
-      <div class="article-card is-placeholder">
-        <div class="article-thumb" style="background:linear-gradient(135deg,#22c55e 0%,#14532d 100%);"><span class="thumb-icon">💪</span><span class="coming-soon-badge">Coming Soon</span></div>
-        <div class="article-body">
-          <span class="article-cat-label">Level Up</span>
-          <h3 class="article-title">New guide coming soon</h3>
-        </div>
-      </div>
-      <div class="article-card is-placeholder">
-        <div class="article-thumb" style="background:linear-gradient(135deg,#22c55e 0%,#14532d 100%);"><span class="thumb-icon">💪</span><span class="coming-soon-badge">Coming Soon</span></div>
-        <div class="article-body">
-          <span class="article-cat-label">Level Up</span>
-          <h3 class="article-title">New guide coming soon</h3>
-        </div>
-      </div>
-    </div>
-    <a href="dating-advice/" class="view-all-link">View More Posts &rsaquo;</a>
-  </section>
-
-  <!-- ── LIVE CAMS ── -->
-  <section class="cat-section" style="--cat-color:#d946ef;">
-    <div class="cat-section-hd">
-      <h2 class="cat-section-title"><span class="cat-emoji">🎥</span> Live Cams</h2>
-    </div>
-    <div class="posts-row">
-      <div class="article-card is-placeholder">
-        <div class="article-thumb" style="background:linear-gradient(135deg,#d946ef 0%,#701a75 100%);"><span class="thumb-icon">🎥</span><span class="coming-soon-badge">Coming Soon</span></div>
-        <div class="article-body">
-          <span class="article-cat-label">Live Cams</span>
-          <h3 class="article-title">New guide coming soon</h3>
-        </div>
-      </div>
-      <div class="article-card is-placeholder">
-        <div class="article-thumb" style="background:linear-gradient(135deg,#d946ef 0%,#701a75 100%);"><span class="thumb-icon">🎥</span><span class="coming-soon-badge">Coming Soon</span></div>
-        <div class="article-body">
-          <span class="article-cat-label">Live Cams</span>
-          <h3 class="article-title">New guide coming soon</h3>
-        </div>
-      </div>
-      <div class="article-card is-placeholder">
-        <div class="article-thumb" style="background:linear-gradient(135deg,#d946ef 0%,#701a75 100%);"><span class="thumb-icon">🎥</span><span class="coming-soon-badge">Coming Soon</span></div>
-        <div class="article-body">
-          <span class="article-cat-label">Live Cams</span>
-          <h3 class="article-title">New guide coming soon</h3>
-        </div>
-      </div>
-    </div>
-    <a href="dating-advice/" class="view-all-link">View More Posts &rsaquo;</a>
-  </section>
-
-  <!-- ── MISTAKES ── -->
-  <section class="cat-section" style="--cat-color:#ef4444;">
-    <div class="cat-section-hd">
-      <h2 class="cat-section-title"><span class="cat-emoji">✕</span> Mistakes</h2>
-    </div>
-    <div class="posts-row">
-      <a href="dating-advice/no-matches-tinder-real-reason/" class="article-card">
-        <div class="article-thumb" style="background:linear-gradient(135deg,#ef4444 0%,#991b1b 100%);"><span class="thumb-icon">✕</span></div>
-        <div class="article-body">
-          <span class="article-cat-label">Mistakes</span>
-          <h3 class="article-title">No Matches on Tinder? The Real Reason</h3>
-        </div>
-      </a>
-      <a href="dating-advice/why-women-dont-reply-dating-apps/" class="article-card">
-        <div class="article-thumb" style="background:linear-gradient(135deg,#ef4444 0%,#991b1b 100%);"><span class="thumb-icon">✕</span></div>
-        <div class="article-body">
-          <span class="article-cat-label">Mistakes</span>
-          <h3 class="article-title">Why Women Don't Reply on Dating Apps</h3>
-        </div>
-      </a>
-      <div class="article-card is-placeholder">
-        <div class="article-thumb" style="background:linear-gradient(135deg,#ef4444 0%,#991b1b 100%);"><span class="thumb-icon">✕</span><span class="coming-soon-badge">Coming Soon</span></div>
-        <div class="article-body">
-          <span class="article-cat-label">Mistakes</span>
-          <h3 class="article-title">New guide coming soon</h3>
-        </div>
-      </div>
-    </div>
-    <a href="dating-advice/" class="view-all-link">View More Posts &rsaquo;</a>
-  </section>
-
-  <!-- ── PROFILE OPTIMISATION ── -->
+  <!-- ── 3. PROFILES ── -->
   <section class="cat-section" style="--cat-color:#06b6d4;">
     <div class="cat-section-hd">
-      <h2 class="cat-section-title"><span class="cat-emoji">📸</span> Profile Optimisation</h2>
+      <h2 class="cat-section-title">📸 Profiles <span class="cat-label">Profile Optimization</span></h2>
+      <a href="profiles/" class="view-all-link">View All &rsaquo;</a>
     </div>
     <div class="posts-row">
       <div class="article-card is-placeholder">
         <div class="article-thumb" style="background:linear-gradient(135deg,#06b6d4 0%,#164e63 100%);"><span class="thumb-icon">📸</span><span class="coming-soon-badge">Coming Soon</span></div>
         <div class="article-body">
-          <span class="article-cat-label">Profile Optimisation</span>
+          <span class="article-cat-label">Profiles</span>
           <h3 class="article-title">New guide coming soon</h3>
         </div>
       </div>
       <div class="article-card is-placeholder">
         <div class="article-thumb" style="background:linear-gradient(135deg,#06b6d4 0%,#164e63 100%);"><span class="thumb-icon">📸</span><span class="coming-soon-badge">Coming Soon</span></div>
         <div class="article-body">
-          <span class="article-cat-label">Profile Optimisation</span>
+          <span class="article-cat-label">Profiles</span>
           <h3 class="article-title">New guide coming soon</h3>
         </div>
       </div>
       <div class="article-card is-placeholder">
         <div class="article-thumb" style="background:linear-gradient(135deg,#06b6d4 0%,#164e63 100%);"><span class="thumb-icon">📸</span><span class="coming-soon-badge">Coming Soon</span></div>
         <div class="article-body">
-          <span class="article-cat-label">Profile Optimisation</span>
+          <span class="article-cat-label">Profiles</span>
           <h3 class="article-title">New guide coming soon</h3>
         </div>
       </div>
     </div>
-    <a href="dating-advice/" class="view-all-link">View More Posts &rsaquo;</a>
   </section>
 
-  <!-- ── PSYCHOLOGY ── -->
-  <section class="cat-section" style="--cat-color:#8b5cf6;">
-    <div class="cat-section-hd">
-      <h2 class="cat-section-title"><span class="cat-emoji">🧠</span> Psychology</h2>
-    </div>
-    <div class="posts-row">
-      <a href="dating-advice/doom-scrolling-vs-connecting/" class="article-card">
-        <div class="article-thumb" style="background:linear-gradient(135deg,#8b5cf6 0%,#5b21b6 100%);"><span class="thumb-icon">🧠</span></div>
-        <div class="article-body">
-          <span class="article-cat-label">Psychology</span>
-          <h3 class="article-title">Doom Scrolling vs. Actually Connecting</h3>
-        </div>
-      </a>
-      <a href="dating-advice/midnight-ache-scrolling-loneliness/" class="article-card">
-        <div class="article-thumb" style="background:linear-gradient(135deg,#8b5cf6 0%,#5b21b6 100%);"><span class="thumb-icon">🧠</span></div>
-        <div class="article-body">
-          <span class="article-cat-label">Psychology</span>
-          <h3 class="article-title">The Midnight Ache: Why You Scroll Instead of Connect</h3>
-        </div>
-      </a>
-      <a href="dating-advice/3am-loneliness-brain/" class="article-card">
-        <div class="article-thumb" style="background:linear-gradient(135deg,#8b5cf6 0%,#5b21b6 100%);"><span class="thumb-icon">🧠</span></div>
-        <div class="article-body">
-          <span class="article-cat-label">Psychology</span>
-          <h3 class="article-title">What Your 3AM Brain Is Really Telling You</h3>
-        </div>
-      </a>
-    </div>
-    <a href="dating-advice/" class="view-all-link">View More Posts &rsaquo;</a>
-  </section>
-
-  <!-- ── TEXTING & SEDUCTION ── -->
+  <!-- ── 4. MESSAGING ── -->
   <section class="cat-section" style="--cat-color:#ec4899;">
     <div class="cat-section-hd">
-      <h2 class="cat-section-title"><span class="cat-emoji">💬</span> Texting &amp; Seduction</h2>
+      <h2 class="cat-section-title">💬 Messaging <span class="cat-label">Text Game</span></h2>
+      <a href="messaging/" class="view-all-link">View All &rsaquo;</a>
     </div>
     <div class="posts-row">
-      <a href="dating-advice/what-women-want-first-message/" class="article-card">
+      <a href="messaging/what-women-want-first-message/" class="article-card">
         <div class="article-thumb" style="background:linear-gradient(135deg,#ec4899 0%,#831843 100%);"><span class="thumb-icon">💬</span></div>
         <div class="article-body">
-          <span class="article-cat-label">Texting &amp; Seduction</span>
+          <span class="article-cat-label">Messaging</span>
           <h3 class="article-title">What Women Actually Want in a First Message</h3>
         </div>
       </a>
-      <a href="dating-advice/start-conversation-online-without-being-ignored/" class="article-card">
+      <a href="messaging/start-conversation-online-without-being-ignored/" class="article-card">
         <div class="article-thumb" style="background:linear-gradient(135deg,#ec4899 0%,#831843 100%);"><span class="thumb-icon">💬</span></div>
         <div class="article-body">
-          <span class="article-cat-label">Texting &amp; Seduction</span>
+          <span class="article-cat-label">Messaging</span>
           <h3 class="article-title">How to Start a Conversation Online Without Being Ignored</h3>
         </div>
       </a>
       <div class="article-card is-placeholder">
         <div class="article-thumb" style="background:linear-gradient(135deg,#ec4899 0%,#831843 100%);"><span class="thumb-icon">💬</span><span class="coming-soon-badge">Coming Soon</span></div>
         <div class="article-body">
-          <span class="article-cat-label">Texting &amp; Seduction</span>
+          <span class="article-cat-label">Messaging</span>
           <h3 class="article-title">New guide coming soon</h3>
         </div>
       </div>
     </div>
-    <a href="dating-advice/" class="view-all-link">View More Posts &rsaquo;</a>
   </section>
 
-</div><!-- end .blog-wrap -->
+  <!-- ── 5. AI DATING ── -->
+  <section class="cat-section" style="--cat-color:#22d3ee;">
+    <div class="cat-section-hd">
+      <h2 class="cat-section-title">🤖 AI Dating <span class="cat-label">AI Girlfriends</span></h2>
+      <a href="ai-dating/" class="view-all-link">View All &rsaquo;</a>
+    </div>
+    <div class="posts-row">
+      <a href="ai-dating/talking-to-ai-companion/" class="article-card">
+        <div class="article-thumb" style="background:linear-gradient(135deg,#22d3ee 0%,#0369a1 100%);"><span class="thumb-icon">🤖</span></div>
+        <div class="article-body">
+          <span class="article-cat-label">AI Dating</span>
+          <h3 class="article-title">What Talking to an AI Companion Actually Feels Like</h3>
+        </div>
+      </a>
+      <a href="ai-dating/ai-chat-men-over-30/" class="article-card">
+        <div class="article-thumb" style="background:linear-gradient(135deg,#22d3ee 0%,#0369a1 100%);"><span class="thumb-icon">🤖</span></div>
+        <div class="article-body">
+          <span class="article-cat-label">AI Dating</span>
+          <h3 class="article-title">AI Chat for Men Over 30 — Is It Worth Your Time?</h3>
+        </div>
+      </a>
+      <a href="ai-dating/ai-girlfriend-apps-ranked-2026/" class="article-card">
+        <div class="article-thumb" style="background:linear-gradient(135deg,#22d3ee 0%,#0369a1 100%);"><span class="thumb-icon">🤖</span></div>
+        <div class="article-body">
+          <span class="article-cat-label">AI Dating</span>
+          <h3 class="article-title">AI Girlfriend Apps Ranked 2026</h3>
+        </div>
+      </a>
+    </div>
+  </section>
 
-<!-- SITE FOOTER -->
+  <!-- ── 6. CONFIDENCE ── -->
+  <section class="cat-section" style="--cat-color:#22c55e;">
+    <div class="cat-section-hd">
+      <h2 class="cat-section-title">💪 Confidence <span class="cat-label">Level Up</span></h2>
+      <a href="confidence/" class="view-all-link">View All &rsaquo;</a>
+    </div>
+    <div class="posts-row">
+      <div class="article-card is-placeholder">
+        <div class="article-thumb" style="background:linear-gradient(135deg,#22c55e 0%,#14532d 100%);"><span class="thumb-icon">💪</span><span class="coming-soon-badge">Coming Soon</span></div>
+        <div class="article-body">
+          <span class="article-cat-label">Confidence</span>
+          <h3 class="article-title">New guide coming soon</h3>
+        </div>
+      </div>
+      <div class="article-card is-placeholder">
+        <div class="article-thumb" style="background:linear-gradient(135deg,#22c55e 0%,#14532d 100%);"><span class="thumb-icon">💪</span><span class="coming-soon-badge">Coming Soon</span></div>
+        <div class="article-body">
+          <span class="article-cat-label">Confidence</span>
+          <h3 class="article-title">New guide coming soon</h3>
+        </div>
+      </div>
+      <div class="article-card is-placeholder">
+        <div class="article-thumb" style="background:linear-gradient(135deg,#22c55e 0%,#14532d 100%);"><span class="thumb-icon">💪</span><span class="coming-soon-badge">Coming Soon</span></div>
+        <div class="article-body">
+          <span class="article-cat-label">Confidence</span>
+          <h3 class="article-title">New guide coming soon</h3>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 7. HOOKUPS ── -->
+  <section class="cat-section" style="--cat-color:#f59e0b;">
+    <div class="cat-section-hd">
+      <h2 class="cat-section-title">⚡ Hookups <span class="cat-label">Fast Lane</span></h2>
+      <a href="hookups/" class="view-all-link">View All &rsaquo;</a>
+    </div>
+    <div class="posts-row">
+      <div class="article-card is-placeholder">
+        <div class="article-thumb" style="background:linear-gradient(135deg,#f59e0b 0%,#78350f 100%);"><span class="thumb-icon">⚡</span><span class="coming-soon-badge">Coming Soon</span></div>
+        <div class="article-body">
+          <span class="article-cat-label">Hookups</span>
+          <h3 class="article-title">New guide coming soon</h3>
+        </div>
+      </div>
+      <div class="article-card is-placeholder">
+        <div class="article-thumb" style="background:linear-gradient(135deg,#f59e0b 0%,#78350f 100%);"><span class="thumb-icon">⚡</span><span class="coming-soon-badge">Coming Soon</span></div>
+        <div class="article-body">
+          <span class="article-cat-label">Hookups</span>
+          <h3 class="article-title">New guide coming soon</h3>
+        </div>
+      </div>
+      <div class="article-card is-placeholder">
+        <div class="article-thumb" style="background:linear-gradient(135deg,#f59e0b 0%,#78350f 100%);"><span class="thumb-icon">⚡</span><span class="coming-soon-badge">Coming Soon</span></div>
+        <div class="article-body">
+          <span class="article-cat-label">Hookups</span>
+          <h3 class="article-title">New guide coming soon</h3>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 8. FIRST DATES ── -->
+  <section class="cat-section" style="--cat-color:#eab308;">
+    <div class="cat-section-hd">
+      <h2 class="cat-section-title">📍 First Dates <span class="cat-label">Seal the Deal</span></h2>
+      <a href="first-dates/" class="view-all-link">View All &rsaquo;</a>
+    </div>
+    <div class="posts-row">
+      <div class="article-card is-placeholder">
+        <div class="article-thumb" style="background:linear-gradient(135deg,#eab308 0%,#713f12 100%);"><span class="thumb-icon">📍</span><span class="coming-soon-badge">Coming Soon</span></div>
+        <div class="article-body">
+          <span class="article-cat-label">First Dates</span>
+          <h3 class="article-title">New guide coming soon</h3>
+        </div>
+      </div>
+      <div class="article-card is-placeholder">
+        <div class="article-thumb" style="background:linear-gradient(135deg,#eab308 0%,#713f12 100%);"><span class="thumb-icon">📍</span><span class="coming-soon-badge">Coming Soon</span></div>
+        <div class="article-body">
+          <span class="article-cat-label">First Dates</span>
+          <h3 class="article-title">New guide coming soon</h3>
+        </div>
+      </div>
+      <div class="article-card is-placeholder">
+        <div class="article-thumb" style="background:linear-gradient(135deg,#eab308 0%,#713f12 100%);"><span class="thumb-icon">📍</span><span class="coming-soon-badge">Coming Soon</span></div>
+        <div class="article-body">
+          <span class="article-cat-label">First Dates</span>
+          <h3 class="article-title">New guide coming soon</h3>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 9. DATING PSYCHOLOGY ── -->
+  <section class="cat-section" style="--cat-color:#8b5cf6;">
+    <div class="cat-section-hd">
+      <h2 class="cat-section-title">🧠 Dating Psychology <span class="cat-label">Attraction &amp; Seduction</span></h2>
+      <a href="dating-psychology/" class="view-all-link">View All &rsaquo;</a>
+    </div>
+    <div class="posts-row">
+      <a href="dating-psychology/doom-scrolling-vs-connecting/" class="article-card">
+        <div class="article-thumb" style="background:linear-gradient(135deg,#8b5cf6 0%,#5b21b6 100%);"><span class="thumb-icon">🧠</span></div>
+        <div class="article-body">
+          <span class="article-cat-label">Dating Psychology</span>
+          <h3 class="article-title">Doom Scrolling vs. Actually Connecting</h3>
+        </div>
+      </a>
+      <a href="dating-psychology/midnight-ache-scrolling-loneliness/" class="article-card">
+        <div class="article-thumb" style="background:linear-gradient(135deg,#8b5cf6 0%,#5b21b6 100%);"><span class="thumb-icon">🧠</span></div>
+        <div class="article-body">
+          <span class="article-cat-label">Dating Psychology</span>
+          <h3 class="article-title">The Midnight Ache: Why You Scroll Instead of Connect</h3>
+        </div>
+      </a>
+      <a href="dating-psychology/3am-loneliness-brain/" class="article-card">
+        <div class="article-thumb" style="background:linear-gradient(135deg,#8b5cf6 0%,#5b21b6 100%);"><span class="thumb-icon">🧠</span></div>
+        <div class="article-body">
+          <span class="article-cat-label">Dating Psychology</span>
+          <h3 class="article-title">What Your 3AM Brain Is Really Telling You</h3>
+        </div>
+      </a>
+    </div>
+  </section>
+
+</div>
+
 <footer class="site-footer">
   <div class="footer-inner">
     <div class="footer-brand">
@@ -603,14 +510,15 @@
       <h4 class="footer-col-title">Explore</h4>
       <ul class="footer-links">
         <li><a href="/Blog/">Blog</a></li>
-        <li><a href="/World-Cup/">FIFA World Cup 2026</a></li>
-        <li><a href="/Freebies/">Freebies</a></li>
+        <li><a href="/world-cup/">FIFA World Cup 2026</a></li>
+        <li><a href="/ways-to-meet/">Ways to Meet</a></li>
+        <li><a href="/popular/">Popular Girls</a></li>
       </ul>
     </div>
     <div class="footer-col">
       <h4 class="footer-col-title">Legal &amp; Info</h4>
       <ul class="footer-links">
-        <li><a href="/About/">About</a></li>
+        <li><a href="/about/">About</a></li>
         <li><a href="/privacy-policy/">Privacy Policy</a></li>
         <li><a href="/terms/">Terms of Service</a></li>
         <li><a href="/dmca/">DMCA Policy</a></li>
