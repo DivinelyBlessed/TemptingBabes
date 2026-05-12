@@ -498,6 +498,7 @@ footer a:hover{color:var(--muted);}
         <li><a href="/privacy-policy/">Privacy Policy</a></li>
         <li><a href="/terms/">Terms of Service</a></li>
         <li><a href="/dmca/">DMCA Policy</a></li>
+        <li><a href="/2257/">18 U.S.C. § 2257</a></li>
         <li><a href="/contact/">Contact</a></li>
       </ul>
     </div>
@@ -505,6 +506,40 @@ footer a:hover{color:var(--muted);}
   <div class="footer-bottom">
     <p>18+ Only &nbsp;&middot;&nbsp; All rights reserved &nbsp;&middot;&nbsp; Tempting Babes&copy; 2026</p>
   </div>
+
+<!-- COOKIE CONSENT BANNER -->
+<div id="cookieBanner" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:9999;background:rgba(10,10,10,0.97);border-top:1px solid rgba(255,255,255,0.1);backdrop-filter:blur(20px);padding:16px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;">
+  <p style="font-family:'DM Sans',sans-serif;font-size:0.82rem;color:rgba(255,255,255,0.6);margin:0;flex:1;min-width:200px;">
+    We use cookies to analyse traffic and improve your experience. By continuing you consent to our use of cookies. <a href="/privacy-policy/" style="color:#ff8c00;text-decoration:none;">Privacy Policy</a>
+  </p>
+  <div style="display:flex;gap:10px;flex-shrink:0;">
+    <button id="cookieDecline" style="font-family:'DM Sans',sans-serif;font-size:0.78rem;font-weight:600;padding:8px 16px;border-radius:8px;border:1px solid rgba(255,255,255,0.15);background:transparent;color:rgba(255,255,255,0.5);cursor:pointer;">Essential Only</button>
+    <button id="cookieAccept" style="font-family:'DM Sans',sans-serif;font-size:0.78rem;font-weight:700;padding:8px 20px;border-radius:8px;border:none;background:linear-gradient(135deg,#ff8c00,#ff3d6b);color:#fff;cursor:pointer;">Accept All</button>
+  </div>
+</div>
+<script>
+(function(){
+  var CONSENT_KEY = 'tb_cookie_consent';
+  var banner = document.getElementById('cookieBanner');
+  if (!banner) return;
+  var stored = localStorage.getItem(CONSENT_KEY);
+  if (!stored) { banner.style.display = 'flex'; }
+  document.getElementById('cookieAccept').addEventListener('click', function(){
+    localStorage.setItem(CONSENT_KEY, 'all');
+    banner.style.display = 'none';
+    if (typeof gtag === 'function') {
+      gtag('consent', 'update', { analytics_storage: 'granted', ad_storage: 'granted' });
+    }
+  });
+  document.getElementById('cookieDecline').addEventListener('click', function(){
+    localStorage.setItem(CONSENT_KEY, 'essential');
+    banner.style.display = 'none';
+    if (typeof gtag === 'function') {
+      gtag('consent', 'update', { analytics_storage: 'denied', ad_storage: 'denied' });
+    }
+  });
+})();
+</script>
 </footer>
 </body>
 </html>
