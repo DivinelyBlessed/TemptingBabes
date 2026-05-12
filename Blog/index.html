@@ -195,7 +195,14 @@
       color: rgba(255,255,255,0.22);
       font-style: italic;
     }
-  </style>
+
+    .search-wrap{margin:28px auto 0;max-width:560px;position:relative;}
+    .search-wrap input{width:100%;padding:13px 48px 13px 20px;border-radius:50px;border:1px solid rgba(255,255,255,0.12);background:rgba(255,255,255,0.05);color:#fff;font-family:'DM Sans',sans-serif;font-size:0.95rem;outline:none;transition:border-color .2s,background .2s;box-sizing:border-box;}
+    .search-wrap input::placeholder{color:rgba(240,240,248,0.3);}
+    .search-wrap input:focus{border-color:rgba(255,140,0,0.5);background:rgba(255,255,255,0.08);}
+    .search-icon{position:absolute;right:18px;top:50%;transform:translateY(-50%);color:rgba(240,240,248,0.3);font-size:1rem;pointer-events:none;}
+    .no-results{display:none;text-align:center;padding:60px 24px;color:rgba(240,240,248,0.35);font-family:'DM Sans',sans-serif;font-size:1rem;}
+    </style>
 </head>
 <body>
 
@@ -224,7 +231,12 @@
 <section class="blog-hero">
   <h1>The <span>Playbook</span></h1>
   <p>Dating guides for men who want results, not relationship counselling.</p>
+  <div class="search-wrap">
+    <input type="search" id="blogSearch" placeholder="Search guides..." autocomplete="off" aria-label="Search articles"/>
+    <span class="search-icon">&#9906;</span>
+  </div>
 </section>
+<p class="no-results" id="noResults">No guides found. Try a different search.</p>
 
 <div class="blog-wrap">
 
@@ -574,5 +586,32 @@
 })();
 </script>
 </footer>
+
+<script>
+(function(){
+  var input = document.getElementById('blogSearch');
+  var noRes = document.getElementById('noResults');
+  if(!input) return;
+  input.addEventListener('input', function(){
+    var q = input.value.trim().toLowerCase();
+    var sections = document.querySelectorAll('.cat-section');
+    var anyVisible = false;
+    sections.forEach(function(sec){
+      var cards = sec.querySelectorAll('.article-card:not(.is-placeholder)');
+      var secVisible = false;
+      cards.forEach(function(card){
+        var text = (card.querySelector('.article-title')||card).textContent.toLowerCase()
+                 + ' ' + (card.querySelector('.article-cat-label')||{textContent:''}).textContent.toLowerCase();
+        var match = !q || text.includes(q);
+        card.style.display = match ? '' : 'none';
+        if(match) secVisible = true;
+      });
+      sec.style.display = secVisible ? '' : 'none';
+      if(secVisible) anyVisible = true;
+    });
+    noRes.style.display = (!q || anyVisible) ? 'none' : 'block';
+  });
+})();
+</script>
 </body>
 </html>
