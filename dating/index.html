@@ -41,7 +41,7 @@
     .hero-left {
       flex: 1;
       position: relative;
-      background: url('../Asset/Images/sophie.jpg') center top / cover no-repeat;
+      background: url('https://res.cloudinary.com/doslc6l1h/image/upload/v1778889277/sexdating_yqhrpj.png') center top / cover no-repeat;
       display: flex;
       align-items: flex-end;
       padding: 48px 44px;
@@ -161,18 +161,18 @@
       width: 100%;
       padding: 13px;
       border-radius: 4px;
-      background: #00d2e6;
+      background: linear-gradient(135deg, #ff8c00, #ff3d6b);
       color: #000;
       font-family: 'Bebas Neue', sans-serif;
       font-size: 1.2rem;
       letter-spacing: 3px;
       border: none;
       cursor: pointer;
-      box-shadow: 0 8px 28px rgba(0,210,230,0.35);
+      box-shadow: 0 8px 28px rgba(255,61,107,0.38);
       transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
       margin-top: 10px;
     }
-    .form-submit:hover { transform: scale(1.02); background: #00e8ff; box-shadow: 0 12px 36px rgba(0,210,230,0.55); }
+    .form-submit:hover { transform: scale(1.02); background: linear-gradient(135deg, #ff8c00, #ff3d6b); box-shadow: 0 12px 36px rgba(255,61,107,0.55); }
     .form-disclaimer {
       text-align: center;
       font-size: 0.65rem;
@@ -231,7 +231,7 @@
       z-index: 1;
       padding: 40px 28px 16px;
     }
-    .container { max-width: 1140px; margin: 0 auto; }
+    .container { max-width: 1400px; margin: 0 auto; }
     .section-header { margin-bottom: 22px; }
     .section-title-row {
       display: flex;
@@ -255,11 +255,11 @@
     }
     .section-sub span { color: #ff8c00; font-weight: 700; }
 
-    /* 8-col thumbnail grid */
+    /* 4-col thumbnail grid */
     .profiles-grid {
       display: grid;
-      grid-template-columns: repeat(8, 1fr);
-      gap: 8px;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
     }
 
     .profile-card {
@@ -283,7 +283,7 @@
     .card-img {
       position: relative;
       width: 100%;
-      aspect-ratio: 1/1;
+      aspect-ratio: 3/4;
       overflow: hidden;
       background: linear-gradient(135deg, #1a0a10, #2a0815);
     }
@@ -576,14 +576,15 @@
     footer {
       position: relative;
       z-index: 1;
-      border-top: 1px solid rgba(255,255,255,0.06);
-      padding: 20px 0;
+      padding: 0;
       background: rgba(6,6,6,0.95);
     }
     .footer-bottom {
       max-width: 1140px;
       margin: 0 auto;
       padding: 0 28px;
+      text-align: center;
+      justify-content: center;
       display: flex;
       justify-content: space-between;
       align-items: flex-start;
@@ -686,8 +687,9 @@
     }
     .intentions-title {
       font-family: 'Bebas Neue', sans-serif;
-      font-size: clamp(2rem, 3vw, 2.8rem);
-      letter-spacing: 3px;
+      font-size: clamp(1.5rem, 2.2vw, 2rem);
+      letter-spacing: 1px;
+      white-space: nowrap;
       line-height: 1.05;
       background: linear-gradient(90deg, #fff, #ff8c00);
       -webkit-background-clip: text;
@@ -773,7 +775,7 @@
       transition: border-color 0.2s, transform 0.22s;
     }
     .story-card:hover { border-color: rgba(255,140,0,0.3); transform: translateY(-4px); }
-    .story-avatars { display: flex; margin-bottom: 16px; }
+    .story-avatars { display: flex; margin-bottom: 16px; justify-content: center; }
     .story-av {
       width: 48px; height: 48px;
       border-radius: 50%;
@@ -793,13 +795,14 @@
     .av4 { background: linear-gradient(135deg, #06b6d4, #7c3aed); }
     .av5 { background: linear-gradient(135deg, #22c55e, #06b6d4); }
     .av6 { background: linear-gradient(135deg, #ff8c00, #22c55e); }
-    .story-names { font-weight: 600; font-size: 0.95rem; color: #fff; margin-bottom: 4px; }
-    .story-location { font-size: 0.75rem; color: rgba(255,255,255,0.4); margin-bottom: 16px; }
+    .story-names { font-weight: 600; font-size: 0.95rem; color: #fff; margin-bottom: 4px; text-align: center; }
+    .story-location { font-size: 0.75rem; color: rgba(255,255,255,0.4); margin-bottom: 16px; text-align: center; }
     .story-quote {
       font-size: 0.87rem;
-      color: rgba(255,255,255,0.6);
+      color: rgba(255,255,255,0.9);
       line-height: 1.7;
       font-style: italic;
+      text-align: center;
     }
     .story-quote::before { content: '\201C'; color: #ff8c00; font-size: 1.6rem; line-height: 0; vertical-align: -0.35em; margin-right: 3px; font-style: normal; }
 
@@ -839,6 +842,7 @@
 
     @media(max-width: 900px) {
       .intentions-grid { grid-template-columns: 1fr; gap: 36px; }
+      .intentions-title { white-space: normal; font-size: clamp(1.4rem, 4vw, 1.8rem); }
       .stories-grid { grid-template-columns: 1fr; gap: 14px; }
       .trust-grid { grid-template-columns: repeat(2, 1fr); }
     }
@@ -884,24 +888,6 @@
   <a href="/new/" class="mobile-tab"><span class="tab-star">⭐</span>VIP</a>
 </div>
 
-<!-- TICKER -->
-<div class="ticker-wrap">
-  <div class="ticker-label">🔥 HOT</div>
-  <div class="ticker-track">
-    <span class="ticker-item"><span class="ticker-dot">•</span> <span class="ticker-name">Ashley M. — Miami ·</span> <span class="ticker-result">Active 2 mins ago</span></span>
-    <span class="ticker-item"><span class="ticker-dot">•</span> <span class="ticker-name">Jessica L. — New York ·</span> <span class="ticker-result">Just joined today</span></span>
-    <span class="ticker-item"><span class="ticker-dot">•</span> <span class="ticker-name">Brianna K. — Los Angeles ·</span> <span class="ticker-result">Looking for fun</span></span>
-    <span class="ticker-item"><span class="ticker-dot">•</span> <span class="ticker-name">Mia R. — Las Vegas ·</span> <span class="ticker-result">Online right now</span></span>
-    <span class="ticker-item"><span class="ticker-dot">•</span> <span class="ticker-name">Kayla T. — Houston ·</span> <span class="ticker-result">Sent you a wink</span></span>
-    <span class="ticker-item"><span class="ticker-dot">•</span> <span class="ticker-name">Sophia G. — Chicago ·</span> <span class="ticker-result">Wants to chat</span></span>
-    <span class="ticker-item"><span class="ticker-dot">•</span> <span class="ticker-name">Ashley M. — Miami ·</span> <span class="ticker-result">Active 2 mins ago</span></span>
-    <span class="ticker-item"><span class="ticker-dot">•</span> <span class="ticker-name">Jessica L. — New York ·</span> <span class="ticker-result">Just joined today</span></span>
-    <span class="ticker-item"><span class="ticker-dot">•</span> <span class="ticker-name">Brianna K. — Los Angeles ·</span> <span class="ticker-result">Looking for fun</span></span>
-    <span class="ticker-item"><span class="ticker-dot">•</span> <span class="ticker-name">Mia R. — Las Vegas ·</span> <span class="ticker-result">Online right now</span></span>
-    <span class="ticker-item"><span class="ticker-dot">•</span> <span class="ticker-name">Kayla T. — Houston ·</span> <span class="ticker-result">Sent you a wink</span></span>
-    <span class="ticker-item"><span class="ticker-dot">•</span> <span class="ticker-name">Sophia G. — Chicago ·</span> <span class="ticker-result">Wants to chat</span></span>
-  </div>
-</div>
 
 <!-- ═══════════════════════ HERO SPLIT ═══════════════════════ -->
 <section class="hero-section">
@@ -923,29 +909,6 @@
   <div class="hero-right">
     <div class="form-heading">Find Matches</div>
     <div class="form-subheading">FREE · INSTANT · NO SIGNUP REQUIRED</div>
-
-    <div class="form-group">
-      <label class="form-label">I am a</label>
-      <select class="form-select">
-        <option>Man</option>
-        <option>Woman</option>
-        <option>Couple (Man &amp; Woman)</option>
-        <option>Couple (2 Women)</option>
-        <option>Couple (2 Men)</option>
-        <option>Group</option>
-      </select>
-    </div>
-
-    <div class="form-group">
-      <label class="form-label">Looking for</label>
-      <select class="form-select">
-        <option>Woman</option>
-        <option>Man</option>
-        <option>Couple</option>
-        <option>Group</option>
-        <option>Any</option>
-      </select>
-    </div>
 
     <div class="form-group">
       <label class="form-label">Age Range</label>
@@ -979,6 +942,57 @@
       </select>
     </div>
 
+    <div class="form-group">
+      <label class="form-label">Personality</label>
+      <select class="form-select">
+        <option>Extrovert</option>
+        <option>Introvert</option>
+        <option>Somewhere in between</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label class="form-label">Intent</label>
+      <select class="form-select">
+        <option>Anything</option>
+        <option>Isn't seeking a relationship or any kind of commitment</option>
+        <option>Wants to date but nothing serious</option>
+        <option>Is looking for a relationship</option>
+        <option>Is actively seeking a relationship</option>
+        <option>Wants to find someone to marry</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label class="form-label">Ethnicity</label>
+      <select class="form-select">
+        <option>All</option>
+        <option>African American</option>
+        <option>Asian</option>
+        <option>Caucasian</option>
+        <option>Black</option>
+        <option>Indian</option>
+        <option>Indigenous / Aboriginal</option>
+        <option>Latin / Hispanic</option>
+        <option>Middle Eastern</option>
+        <option>Mixed</option>
+        <option>Other/prefer not to say</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label class="form-label">Body Type</label>
+      <select class="form-select">
+        <option>Anything</option>
+        <option>Prefer not to say</option>
+        <option>Thin</option>
+        <option>Athletic</option>
+        <option>Average</option>
+        <option>Curvy</option>
+        <option>Big and Tall / BBW</option>
+      </select>
+    </div>
+
     <div class="form-divider"></div>
 
     <button class="form-submit" onclick="window.open('https://t.mbjms.com','_blank')">SEARCH</button>
@@ -987,36 +1001,17 @@
 
 </section>
 
-<!-- ═══════════════════════ STATS BAR ═══════════════════════ -->
-<div class="stats-bar">
-  <div class="stat-item">
-    <span class="stat-num">2.3M+</span>
-    <span class="stat-lbl">Active Members</span>
-  </div>
-  <div class="stat-item">
-    <span class="stat-num">850K+</span>
-    <span class="stat-lbl">Online Today</span>
-  </div>
-  <div class="stat-item">
-    <span class="stat-num">Instant</span>
-    <span class="stat-lbl">No Signup Needed</span>
-  </div>
-  <div class="stat-item">
-    <span class="stat-num">98%</span>
-    <span class="stat-lbl">Would Recommend</span>
-  </div>
-</div>
 
 <!-- ═══════════════════════ INTENTIONS ═══════════════════════ -->
 <section class="intentions-section">
   <div class="intentions-grid">
 
     <div class="intentions-img">
-      <img src="../Asset/Images/sophie.jpg" alt="Meet someone real tonight" />
+      <img src="../Asset/Images/sophie.jpg" alt="Meet someone real tonight" loading="lazy" />
       <div class="intentions-card">
         <div class="int-avatar">💋</div>
         <div class="int-info">
-          <div class="int-name">Sophia, 24 — Los Angeles</div>
+          <div class="int-name">Sophia, 24 · Los Angeles</div>
           <div class="int-tag">Looking for something fun &amp; real</div>
         </div>
         <div class="int-online">● Online Now</div>
@@ -1026,9 +1021,9 @@
     <div class="intentions-text">
       <div class="intentions-eyebrow">Skip the Guessing</div>
       <h2 class="intentions-title">Meet People Who Want the Same Thing</h2>
-      <p class="intentions-body">Tired of apps where no one says what they actually want? Here, members are upfront. You know what you're getting before you match — no wasted time, no awkward mixed signals.</p>
+      <p class="intentions-body">Tired of apps where no one says what they actually want? Here, members are upfront. You know what you're getting before you match. No wasted time, no awkward mixed signals.</p>
       <ul class="intentions-list">
-        <li>🔥 Casual fun — no strings attached</li>
+        <li>🔥 Casual fun, no strings attached</li>
         <li>💬 Flirting, sexting and online fun</li>
         <li>❤️ Something real and ongoing</li>
         <li>🎥 Live cam connections</li>
@@ -1044,9 +1039,8 @@
   <div class="container">
 
     <div class="section-header">
-      <div class="section-title-row">
-        <div class="section-title">Hot Singles Near You</div>
-        <div class="section-sub">Matches near <span>Los Angeles</span> right now</div>
+      <div class="section-title-row" style="justify-content:center;">
+        <div class="section-title" style="text-align:center;">Hot Singles Near You</div>
       </div>
     </div>
 
@@ -1055,7 +1049,7 @@
       <!-- Kate — real profile -->
       <a href="kate/index.html" class="profile-card">
         <div class="card-img">
-          <img src="../Asset/Images/kate.jpg" alt="Kate" />
+          <img src="../Asset/Images/sophie.jpg" alt="Kate" loading="lazy" />
           <div class="card-online-dot"></div>
           <div class="card-handle">Kate <span>24/F</span></div>
           <div class="card-location">Los Angeles</div>
@@ -1168,7 +1162,7 @@
       <div class="promo-block dark">
         <div class="promo-eyebrow">Why Choose Us</div>
         <h2 class="promo-heading">The World's Hottest Dating Community</h2>
-        <p class="promo-body">Tempting Babes is home to millions of members worldwide looking for real connections. Chat live, view exclusive profiles, and meet someone exciting — all in one place.</p>
+        <p class="promo-body">Tempting Babes is home to millions of members worldwide looking for real connections. Chat live, view exclusive profiles, and meet someone exciting, all in one place.</p>
         <ul class="promo-features">
           <li><span class="feat-dot"></span> Browse detailed profiles of real members</li>
           <li><span class="feat-dot"></span> Find matches in your area or anywhere you travel</li>
@@ -1180,7 +1174,7 @@
 
       <!-- Right: image -->
       <div class="promo-block image-block">
-        <img src="../Asset/Images/sophie.jpg" alt="Hot girls near you" />
+        <img src="../Asset/Images/sophie.jpg" alt="Hot girls near you" loading="lazy" />
       </div>
 
     </div>
@@ -1239,7 +1233,7 @@
         </div>
         <div class="story-names">Marcus &amp; Jessica</div>
         <div class="story-location">📍 Miami, FL</div>
-        <p class="story-quote">We matched on a Friday night. By Sunday we'd met up. She was exactly like her photos — real, fun, zero drama. Best decision I made all year.</p>
+        <p class="story-quote">We matched on a Friday night. By Sunday we'd met up. She was exactly like her photos. Real, fun, zero drama. Best decision I made all year.</p>
       </div>
 
       <div class="story-card">
@@ -1249,7 +1243,7 @@
         </div>
         <div class="story-names">Ryan &amp; Kayla</div>
         <div class="story-location">📍 Los Angeles, CA</div>
-        <p class="story-quote">I'd tried the big apps and got nowhere. Tried this on a friend's recommendation — matched within an hour. We've been seeing each other for three months.</p>
+        <p class="story-quote">I'd tried the big apps and got nowhere. Tried this on a friend's recommendation. Matched within an hour. We've been seeing each other for three months.</p>
       </div>
 
       <div class="story-card">
@@ -1259,7 +1253,7 @@
         </div>
         <div class="story-names">Derek &amp; Ashley</div>
         <div class="story-location">📍 New York, NY</div>
-        <p class="story-quote">Honestly didn't expect much. She messaged me first — which never happens on other platforms. Two weeks later we were inseparable.</p>
+        <p class="story-quote">Honestly didn't expect much. She messaged me first, which never happens on other platforms. Two weeks later we were inseparable.</p>
       </div>
 
     </div>
@@ -1271,7 +1265,7 @@
 <section class="final-cta">
   <div class="container">
     <h2 class="final-cta-title">Ready To Find Your Match Tonight?</h2>
-    <p class="final-cta-sub">Thousands of hot girls are online right now. Browse free and connect instantly — no signup required.</p>
+    <p class="final-cta-sub">Thousands of hot girls are online right now. Browse free and connect instantly, no signup required.</p>
     <div class="cta-wrap">
       <button class="cta-btn" onclick="window.open('https://t.mbjms.com','_blank')">FIND YOUR MATCH!</button>
     </div>
@@ -1303,9 +1297,6 @@
         <li><a href="/contact/">Contact</a></li>
       </ul>
     </div>
-  </div>
-  <div class="footer-bottom">
-    <p>18+ Only &nbsp;&middot;&nbsp; All rights reserved &nbsp;&middot;&nbsp; Tempting Babes&copy; 2026</p>
   </div>
 
 <!-- COOKIE CONSENT BANNER -->
@@ -1368,7 +1359,7 @@
           <li>Match with Women Near You Tonight</li>
           <li>Exclusive Cam &amp; Chat Access</li>
           <li>100% Discreet &amp; Anonymous</li>
-          <li>Free to Join — No Card Needed</li>
+          <li>Free to Join, No Card Needed</li>
         </ul>
       </div>
     </div>

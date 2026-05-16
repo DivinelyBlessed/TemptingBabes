@@ -31,7 +31,8 @@
       "Read(//c/Users/Hp/OneDrive/Desktop/StrippersWorldwide/Strippers-Worldwide/**)",
       "Bash(node -e ' *)",
       "WebSearch",
-      "PowerShell(Get-ChildItem \"c:\\\\Users\\\\Hp\\\\OneDrive\\\\Desktop\\\\Tempting Babes\\\\world-cup\\\\\" -Directory | Where-Object { $_.Name -match \"schedule\" })"
+      "PowerShell(Get-ChildItem \"c:\\\\Users\\\\Hp\\\\OneDrive\\\\Desktop\\\\Tempting Babes\\\\world-cup\\\\\" -Directory | Where-Object { $_.Name -match \"schedule\" })",
+      "PowerShell(@\\(\"predictions\",\"betting-odds\",\"hottest-fans\"\\) | ForEach-Object { $p = \"c:\\\\Users\\\\Hp\\\\OneDrive\\\\Desktop\\\\Tempting Babes\\\\world-cup\\\\$_\"; [PSCustomObject]@{ Folder=$_; Exists=\\(Test-Path $p\\) } })"
     ],
     "additionalDirectories": [
       "c:\\Users\\Hp\\OneDrive\\Desktop\\2 - temptingBabes\\Dating\\monica",
