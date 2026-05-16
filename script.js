@@ -730,12 +730,12 @@ function initHeroWord() {
   const el = document.getElementById('heroWild');
   if (!el) return;
 
-  const WORDS = ['Wild', 'Spicy', 'Flirty', 'Teasing', 'Naughty', 'Seductive', 'Irresistible', 'Tempting'];
-  const HOLDS = [1280, 400, 450, 500, 600, 800, 700, 2400];
+  const WORDS = ['Hot<span style="letter-spacing:0;margin-left:-16px">🔥</span>', 'Wild', 'Spicy', 'Flirty', 'Teasing', 'Naughty', 'Seductive', 'Irresistible', 'Tempting'];
+  const HOLDS = [1280, 1280, 400, 450, 500, 600, 800, 700, 2400];
   let idx = 0;
 
   function setWord(i) {
-    el.textContent = WORDS[i];
+    el.innerHTML = WORDS[i];
   }
 
   setWord(0);

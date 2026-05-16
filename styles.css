@@ -232,9 +232,9 @@ nav {
 }
 
 .ticker-dot { color: var(--accent2); font-size: 1.1rem; line-height: 1; }
-.tab-star { filter: brightness(2) saturate(1.5); }
+.tab-star { filter: brightness(1.4) saturate(3) drop-shadow(0 0 4px #ffd700); }
 .ticker-name { color: #fff; }
-.ticker-result { color: var(--accent2); font-weight: 600; }
+.ticker-result { color: #ff8c00; font-weight: 600; }
 
 @keyframes ticker-scroll {
   0%   { transform: translateX(0); }
@@ -379,8 +379,8 @@ nav {
   flex: 0 0 160px;
   padding-top: 20px;
 }
-.ad-left { margin-left: 20px; }
-.ad-right { margin-right: 20px; }
+.ad-left { margin-left: 20px; margin-right: 0px; }
+.ad-right { margin-right: 20px; margin-left: 0px; }
 
 .ad-box {
   background: rgba(22,22,22,0.55);
@@ -795,6 +795,21 @@ nav {
 .cta-btn:hover::after { background: rgba(255,255,255,0.08); }
 .cta-btn:active { transform: translateY(0) scale(0.99); }
 
+/* ── BLINK DOT ── */
+.blink-dot {
+  display: inline-block;
+  width: 24px; height: 24px;
+  border-radius: 50%;
+  background: #cc1a1a;
+  margin-right: 12px;
+  vertical-align: middle;
+  animation: blink-dot 2.5s step-start infinite;
+}
+@keyframes blink-dot {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
 /* ── SEO TEXT BLOCK ── */
 .seo-text-block {
   max-width: 1160px;
@@ -804,10 +819,17 @@ nav {
 }
 .seo-text-block h2 {
   font-family: 'Bebas Neue', sans-serif;
-  font-size: 4.8rem;
-  letter-spacing: 4px;
+  font-size: 5.5vw;
+  letter-spacing: 3px;
   line-height: 1;
   white-space: nowrap;
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  transform: translateX(-51.5%);
+  padding: 0 32px;
+  box-sizing: border-box;
+  text-align: center;
   background: linear-gradient(90deg, #ffcc80 0%, #ff3d6b 55%, #ff8c00 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -830,7 +852,7 @@ nav {
 }
 .seo-text-block p {
   font-size: 1.08rem;
-  color: rgba(240,240,248,0.68);
+  color: rgba(255,255,255,0.95);
   line-height: 1.9;
   margin-bottom: 20px;
   text-align: left;
@@ -1526,7 +1548,7 @@ nav {
 }
 .c-stat-num {
   font-family: 'Bebas Neue', sans-serif;
-  font-size: 2.8rem;
+  font-size: 3.8rem;
   letter-spacing: 2px;
   background: linear-gradient(90deg, var(--accent2), var(--accent));
   -webkit-background-clip: text;
@@ -1571,6 +1593,8 @@ nav {
 .section-hd-sub {
   font-size: 1.1rem;
   color: var(--muted);
+  max-width: 640px;
+  margin: 0 auto;
 }
 .section-hd-live {
   display: inline-flex;
@@ -1645,6 +1669,7 @@ nav {
   letter-spacing: 0.5px;
   white-space: nowrap;
   flex-shrink: 0;
+  color: #fde047;
 }
 .profile-card-dash {
   font-size: 0.75rem;
@@ -1654,7 +1679,7 @@ nav {
 }
 .profile-card-meta {
   font-size: 0.78rem;
-  color: var(--muted);
+  color: #ffffff;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -1782,6 +1807,38 @@ nav {
 }
 .offer-cta-link:hover { gap: 10px; }
 
+/* ── VIP WAVE SECTION ── */
+@keyframes vipWave {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+.vip-section {
+  position: relative;
+  background: linear-gradient(135deg,
+    rgba(255,20,147,0.10) 0%,
+    rgba(255,61,107,0.08) 25%,
+    rgba(200,20,70,0.12) 50%,
+    rgba(255,61,107,0.08) 75%,
+    rgba(255,20,147,0.10) 100%);
+  background-size: 400% 400%;
+  animation: vipWave 12s ease-in-out infinite;
+  border-top: 1px solid rgba(255,61,107,0.22);
+  border-bottom: 1px solid rgba(255,61,107,0.22);
+  overflow: hidden;
+}
+.vip-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 100% 80% at 30% 50%, rgba(255,20,147,0.10) 0%, transparent 70%),
+              radial-gradient(ellipse 80% 100% at 70% 50%, rgba(200,20,60,0.08) 0%, transparent 70%);
+  animation: vipWave 16s ease-in-out infinite reverse;
+  background-size: 300% 300%;
+  pointer-events: none;
+  filter: blur(8px);
+}
+
 /* ── FINAL CTA SECTION ── */
 #finalCtaBubbles {
   position: absolute;
@@ -1833,7 +1890,7 @@ nav {
 .final-cta-disclaimer {
   margin-top: 14px;
   font-size: 0.72rem;
-  color: rgba(255,255,255,0.25);
+  color: rgba(255,255,255,0.85);
   position: relative;
   z-index: 1;
   letter-spacing: 0.5px;
@@ -1886,7 +1943,7 @@ nav {
 .site-footer {
   background: #080808;
   border-top: 1px solid rgba(255,61,107,0.15);
-  padding: 52px 40px 28px;
+  padding: 32px 40px 28px;
   position: relative;
   z-index: 1;
 }
@@ -1916,7 +1973,7 @@ nav {
 }
 .footer-tagline {
   font-size: 0.88rem;
-  color: rgba(255,255,255,0.45);
+  color: rgba(255,255,255,0.85);
   line-height: 1.7;
   max-width: 280px;
   display: block;
@@ -1928,11 +1985,12 @@ nav {
   font-weight: 700;
   letter-spacing: 2px;
   text-transform: uppercase;
-  color: rgba(255,255,255,0.35);
   margin: 0 0 18px;
   padding: 0;
-  background: none;
-  -webkit-text-fill-color: rgba(255,255,255,0.35);
+  background: linear-gradient(90deg, #ff8c00, #ff3d6b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 .footer-links {
   list-style: none !important;
@@ -1950,8 +2008,8 @@ nav {
 }
 .footer-links a {
   font-size: 0.92rem;
-  color: rgba(255,255,255,0.6) !important;
-  -webkit-text-fill-color: rgba(255,255,255,0.6);
+  color: rgba(255,255,255,0.9) !important;
+  -webkit-text-fill-color: rgba(255,255,255,0.9);
   text-decoration: none !important;
   transition: color 0.18s;
   display: inline !important;
@@ -1971,8 +2029,8 @@ nav {
 }
 .footer-bottom p {
   margin: 0;
-  color: rgba(255,255,255,0.22);
-  -webkit-text-fill-color: rgba(255,255,255,0.22);
+  color: rgba(255,255,255,0.35);
+  -webkit-text-fill-color: rgba(255,255,255,0.35);
 }
 @media (max-width: 768px) {
   .site-footer { padding: 40px 20px 24px; }
