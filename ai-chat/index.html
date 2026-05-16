@@ -24,6 +24,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet"/>
+  <link rel="preload" as="video" href="https://res.cloudinary.com/doslc6l1h/video/upload/v1778924738/Enhancer-Ultra_HD-Untitled_design_zbvrs5.mp4" type="video/mp4"/>
   <link rel="stylesheet" href="../styles.css"/>
 
   <style>
@@ -899,7 +900,7 @@
 <!-- ─────────────── HERO ─────────────── -->
 <header class="pillar-hero">
   <div class="hero-video-bg">
-    <video autoplay muted playsinline preload="auto">
+    <video autoplay muted playsinline preload="auto" poster="https://res.cloudinary.com/doslc6l1h/video/upload/so_0/v1778924738/Enhancer-Ultra_HD-Untitled_design_zbvrs5.jpg">
       <source src="https://res.cloudinary.com/doslc6l1h/video/upload/v1778924738/Enhancer-Ultra_HD-Untitled_design_zbvrs5.mp4" type="video/mp4"/>
     </video>
   </div>
@@ -1328,26 +1329,31 @@
 </script>
 
 <script>
-/* Manual video loop — seeks back before trailing black frames kick in */
 (function(){
   var video = document.querySelector('.hero-video-bg video');
   if (!video) return;
-  var CUTOFF = 0.8; // jump back this many seconds before the end
-  var FADE   = 0.2; // quick fade at restart
-  var seeking = false;
+  var CUTOFF  = 0.8;  // seek back this many seconds before end
+  var looping = false;
 
+  /* Manual loop — jump back before black trailing frames */
   video.addEventListener('timeupdate', function(){
-    if (!video.duration || seeking) return;
+    if (!video.duration || looping) return;
     if (video.currentTime >= video.duration - CUTOFF) {
-      seeking = true;
-      video.style.opacity = 0;
+      looping = true;
       video.currentTime = 0;
-      video.play();
-      setTimeout(function(){
-        video.style.opacity = 1;
-        seeking = false;
-      }, FADE * 1000);
+      var p = video.play();
+      if (p && p.catch) {
+        p.catch(function(){ video.load(); video.play(); });
+      }
+      /* Release lock after short delay */
+      setTimeout(function(){ looping = false; }, 500);
     }
+  });
+
+  /* Recovery — if video stalls, reload and play */
+  video.addEventListener('stalled', function(){
+    video.load();
+    video.play();
   });
 })();
 </script>
