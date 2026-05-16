@@ -27,22 +27,86 @@
   <link rel="stylesheet" href="../styles.css"/>
 
   <style>
+    html { scrollbar-gutter: stable; }
+
+    /* Fix: body::after bleeds past right viewport edge */
+    body::after {
+      right: 0;
+      bottom: 0;
+      transform: translateZ(0);
+    }
+
+    /* Isolate nav on its own GPU layer so backdrop-filter re-renders
+       don't bleed into the video hero on the right side */
+    nav {
+      transform: translateZ(0);
+      will-change: transform;
+    }
+
+    /* Fix heartbeat — transform only, no box-shadow CPU repaint */
+    @keyframes heartbeat {
+      0%   { transform: scale(1); }
+      18%  { transform: scale(1.06); }
+      36%  { transform: scale(1); }
+      100% { transform: scale(1); }
+    }
+    .join-btn {
+      will-change: transform;
+      isolation: isolate;
+    }
+
+    /* Fix pulse-ai — swap box-shadow for opacity (GPU composited) */
+    @keyframes pulse-ai {
+      0%, 100% { opacity: 1;   transform: scale(1); }
+      50%       { opacity: 0.5; transform: scale(1.8); }
+    }
+    .pillar-eyebrow-dot, .pillar-cta-dot {
+      will-change: opacity, transform;
+    }
+
     /* ── HERO ── */
     .pillar-hero {
       position: relative;
-      min-height: 520px;
+      min-height: 720px;
       display: flex;
       align-items: center;
       justify-content: center;
       overflow: hidden;
-      background: linear-gradient(135deg, #0a0005, #100008, #0f000a, #0a0a0a);
+      background: #0a0005;
       border-bottom: 1px solid rgba(255,140,0,0.18);
       text-align: center;
+    }
+    .hero-video-bg {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      pointer-events: none;
+      z-index: 0;
+    }
+    .hero-video-bg::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(5, 0, 8, 0.55);
+      z-index: 1;
+    }
+    .hero-video-bg video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 20%;
+      pointer-events: none;
+      filter: brightness(0.92);
     }
     .pillar-hero-glow {
       position: absolute;
       inset: 0;
       pointer-events: none;
+      z-index: 2;
+      overflow: hidden;
     }
     .pillar-hero-glow::before {
       content: '';
@@ -60,7 +124,7 @@
     }
     .pillar-hero-inner {
       position: relative;
-      z-index: 1;
+      z-index: 3;
       padding: 70px 24px 60px;
       max-width: 880px;
       margin: 0 auto;
@@ -78,7 +142,6 @@
       border: 1px solid rgba(255,140,0,0.38);
       border-radius: 50px;
       padding: 6px 16px;
-      margin-bottom: 24px;
     }
     .pillar-eyebrow-dot {
       width: 8px; height: 8px; border-radius: 50%;
@@ -835,15 +898,22 @@
 
 <!-- ─────────────── HERO ─────────────── -->
 <header class="pillar-hero">
+  <div class="hero-video-bg">
+    <video autoplay muted playsinline preload="auto">
+      <source src="https://res.cloudinary.com/doslc6l1h/video/upload/v1778924738/Enhancer-Ultra_HD-Untitled_design_zbvrs5.mp4" type="video/mp4"/>
+    </video>
+  </div>
   <div class="pillar-hero-glow"></div>
+  <span class="pillar-eyebrow" style="position:absolute;top:24px;left:50%;transform:translateX(-50%);z-index:4;white-space:nowrap;"><span class="pillar-eyebrow-dot"></span> AI Companions</span>
   <div class="pillar-hero-inner">
-    <span class="pillar-eyebrow"><span class="pillar-eyebrow-dot"></span> AI Companions · Always On · 18+</span>
     <h1>Real Conversation.<br>AI Companions.<br>Zero Waiting.</h1>
     <p class="pillar-hero-sub">
       Flirt, roleplay, vent, or just have someone there when you want to talk. Pick the experience that fits your mood. Skip the ghosting, the pressure, and the guesswork.
     </p>
+  </div>
+  <div style="position:absolute;bottom:36px;left:50%;transform:translateX(-50%);z-index:4;text-align:center;white-space:nowrap;">
     <a href="#showcase" class="pillar-hero-cta"><span class="pillar-cta-dot"></span> Find Your AI Match</a>
-    <p class="pillar-hero-meta">Free to start · No credit card required · 18+ only</p>
+    <p class="pillar-hero-meta" style="margin-top:12px;">Free to start · No credit card required · 18+ only</p>
   </div>
 </header>
 
@@ -1254,6 +1324,31 @@
   var ag  = document.getElementById('ageGateOverlay');
   if (!btn || !ag) return;
   btn.addEventListener('click', function() { ag.style.display = 'flex'; });
+})();
+</script>
+
+<script>
+/* Manual video loop — seeks back before trailing black frames kick in */
+(function(){
+  var video = document.querySelector('.hero-video-bg video');
+  if (!video) return;
+  var CUTOFF = 0.8; // jump back this many seconds before the end
+  var FADE   = 0.2; // quick fade at restart
+  var seeking = false;
+
+  video.addEventListener('timeupdate', function(){
+    if (!video.duration || seeking) return;
+    if (video.currentTime >= video.duration - CUTOFF) {
+      seeking = true;
+      video.style.opacity = 0;
+      video.currentTime = 0;
+      video.play();
+      setTimeout(function(){
+        video.style.opacity = 1;
+        seeking = false;
+      }, FADE * 1000);
+    }
+  });
 })();
 </script>
 
