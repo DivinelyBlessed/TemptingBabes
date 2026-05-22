@@ -138,13 +138,65 @@
       appearance: none;
       outline: none;
       transition: border-color 0.2s, background 0.2s;
+      text-align: center;
+      text-align-last: center;
     }
     .form-select:focus, .form-input:focus {
-      border-color: rgba(255,61,107,0.5);
       background: rgba(255,255,255,0.08);
     }
+    .form-select:hover, .form-input:hover {
+      border-color: rgba(255,140,0,0.7);
+    }
     .form-select option { background: #1a1a1a; color: #fff; }
+    .form-select option:checked { background-color: #5a3200; color: #ffb347; }
+    .cs-wrap { position: relative; width: 100%; user-select: none; }
+    .cs-selected {
+      width: 100%; padding: 9px 32px 9px 12px;
+      border-radius: 10px; border: 1px solid rgba(255,255,255,0.1);
+      background: rgba(255,255,255,0.05); color: #fff;
+      font-family: 'DM Sans', sans-serif; font-size: 0.88rem;
+      cursor: pointer; text-align: center;
+      transition: border-color 0.2s, background 0.2s;
+      position: relative;
+    }
+    .cs-selected::after {
+      content: '▾'; position: absolute; right: 12px; top: 50%;
+      transform: translateY(-50%); color: rgba(255,255,255,0.4); font-size: 0.8rem;
+    }
+    .cs-wrap:hover .cs-selected { border-color: rgba(255,140,0,0.7); }
+    .cs-wrap.open .cs-selected { border-color: rgba(255,140,0,0.7); border-radius: 10px 10px 0 0; }
+    .cs-options {
+      display: none; position: absolute; top: 100%; left: 0; right: 0;
+      background: #1a1a1a; border: 1px solid rgba(255,140,0,0.4);
+      border-top: none; border-radius: 0 0 10px 10px;
+      list-style: none; z-index: 999; max-height: 200px; overflow-y: auto;
+    }
+    .cs-wrap.open .cs-options { display: block; }
+    .cs-options li {
+      padding: 9px 12px; color: #fff; font-family: 'DM Sans', sans-serif;
+      font-size: 0.88rem; cursor: pointer; text-align: center;
+      transition: background 0.15s, color 0.15s;
+    }
+    .cs-options li:hover { background: rgba(255,140,0,0.25); color: #ffb347; }
+    .cs-options li.selected { background: rgba(255,140,0,0.15); color: #ff8c00; }
     .age-row { display: flex; gap: 8px; align-items: center; }
+    .age-input { text-align: center; }
+    .age-input::-webkit-inner-spin-button {
+      -webkit-appearance: auto;
+      opacity: 0;
+      cursor: pointer;
+      filter: invert(1);
+      transition: opacity 0.2s;
+    }
+    .age-input::-webkit-outer-spin-button {
+      -webkit-appearance: auto;
+      opacity: 0;
+      transition: opacity 0.2s;
+    }
+    .age-input:hover::-webkit-inner-spin-button,
+    .age-input:focus::-webkit-inner-spin-button { opacity: 1; }
+    .age-input:hover::-webkit-outer-spin-button,
+    .age-input:focus::-webkit-outer-spin-button { opacity: 1; }
     .age-row span { color: rgba(255,255,255,0.4); font-size: 0.8rem; flex-shrink: 0; }
     .form-input.age-input { text-align: center; }
     .form-submit {
@@ -1184,89 +1236,78 @@
     <div class="form-group">
       <label class="form-label">Age Range</label>
       <div class="age-row">
-        <input type="text" class="form-input age-input" value="18" maxlength="2" />
+        <input type="number" class="form-input age-input" value="18" min="18" max="99" />
         <span>to</span>
-        <input type="text" class="form-input age-input" value="35" maxlength="2" />
+        <input type="number" class="form-input age-input" value="35" min="18" max="99" />
       </div>
     </div>
 
     <div class="form-group">
       <label class="form-label">Location</label>
-      <select class="form-select">
-        <option value="">Select your state...</option>
-        <option>Alabama</option><option>Alaska</option><option>Arizona</option>
-        <option>Arkansas</option><option>California</option><option>Colorado</option>
-        <option>Connecticut</option><option>Delaware</option><option>Florida</option>
-        <option>Georgia</option><option>Hawaii</option><option>Idaho</option>
-        <option>Illinois</option><option>Indiana</option><option>Iowa</option>
-        <option>Kansas</option><option>Kentucky</option><option>Louisiana</option>
-        <option>Maine</option><option>Maryland</option><option>Massachusetts</option>
-        <option>Michigan</option><option>Minnesota</option><option>Mississippi</option>
-        <option>Missouri</option><option>Montana</option><option>Nebraska</option>
-        <option>Nevada</option><option>New Hampshire</option><option>New Jersey</option>
-        <option>New Mexico</option><option>New York</option><option>North Carolina</option>
-        <option>Ohio</option><option>Oklahoma</option><option>Oregon</option>
-        <option>Pennsylvania</option><option>Rhode Island</option>
-        <option>South Carolina</option><option>Tennessee</option>
-        <option>Texas</option><option>Utah</option><option>Vermont</option>
-        <option>Virginia</option><option>Washington</option><option>Wisconsin</option>
-      </select>
+      <div class="cs-wrap">
+        <div class="cs-selected">Select Your Country</div>
+        <ul class="cs-options">
+          <li>United States</li><li>United Kingdom</li><li>Canada</li>
+          <li>Australia</li><li>New Zealand</li><li>Ireland</li>
+          <li>Germany</li><li>France</li><li>Netherlands</li>
+          <li>Belgium</li><li>Sweden</li><li>Norway</li>
+          <li>Denmark</li><li>Finland</li><li>Switzerland</li>
+          <li>Austria</li><li>Spain</li><li>Italy</li>
+          <li>Portugal</li><li>Brazil</li><li>Mexico</li>
+          <li>Japan</li><li>Singapore</li><li>South Africa</li>
+          <li>Nigeria</li><li>Other</li>
+        </ul>
+      </div>
     </div>
 
     <div class="form-group">
       <label class="form-label">Personality</label>
-      <select class="form-select">
-        <option>Extrovert</option>
-        <option>Introvert</option>
-        <option>Somewhere in between</option>
-      </select>
+      <div class="cs-wrap">
+        <div class="cs-selected">Extrovert</div>
+        <ul class="cs-options">
+          <li>Extrovert</li><li>Introvert</li><li>Somewhere in between</li>
+        </ul>
+      </div>
     </div>
 
     <div class="form-group">
       <label class="form-label">Intent</label>
-      <select class="form-select">
-        <option>Anything</option>
-        <option>Isn't seeking a relationship or any kind of commitment</option>
-        <option>Wants to date but nothing serious</option>
-        <option>Is looking for a relationship</option>
-        <option>Is actively seeking a relationship</option>
-        <option>Wants to find someone to marry</option>
-      </select>
+      <div class="cs-wrap">
+        <div class="cs-selected">Anything</div>
+        <ul class="cs-options">
+          <li>Anything</li><li>No commitment</li><li>Casual dating</li>
+          <li>Something serious</li><li>Relationship</li><li>Marriage</li>
+        </ul>
+      </div>
     </div>
 
     <div class="form-group">
       <label class="form-label">Ethnicity</label>
-      <select class="form-select">
-        <option>All</option>
-        <option>African American</option>
-        <option>Asian</option>
-        <option>Caucasian</option>
-        <option>Black</option>
-        <option>Indian</option>
-        <option>Indigenous / Aboriginal</option>
-        <option>Latin / Hispanic</option>
-        <option>Middle Eastern</option>
-        <option>Mixed</option>
-        <option>Other/prefer not to say</option>
-      </select>
+      <div class="cs-wrap">
+        <div class="cs-selected">All</div>
+        <ul class="cs-options">
+          <li>All</li><li>African American</li><li>Asian</li>
+          <li>Caucasian</li><li>Black</li><li>Indian</li>
+          <li>Latin / Hispanic</li><li>Middle Eastern</li>
+          <li>Mixed</li><li>Other</li>
+        </ul>
+      </div>
     </div>
 
     <div class="form-group">
       <label class="form-label">Body Type</label>
-      <select class="form-select">
-        <option>Anything</option>
-        <option>Prefer not to say</option>
-        <option>Thin</option>
-        <option>Athletic</option>
-        <option>Average</option>
-        <option>Curvy</option>
-        <option>Big and Tall / BBW</option>
-      </select>
+      <div class="cs-wrap">
+        <div class="cs-selected">Anything</div>
+        <ul class="cs-options">
+          <li>Anything</li><li>Thin</li><li>Athletic</li>
+          <li>Average</li><li>Curvy</li><li>BBW</li>
+        </ul>
+      </div>
     </div>
 
     <div class="form-divider"></div>
 
-    <button class="form-submit" onclick="window.open('https://t.mbjms.com','_blank')">SEARCH</button>
+    <button class="form-submit" onclick="window.open('https://t.mbjms.com/389314/3785/0?po=6456&aff_sub5=SF_006OG000004lmDN','_blank')">SEARCH</button>
     <p class="form-disclaimer">Free to browse · No credit card required · 2.3M+ active members</p>
   </div>
 
@@ -1337,7 +1378,7 @@
           <div><strong>Verified Profiles Only</strong><p>Real people, real energy, real possibilities. Always verified.</p></div>
         </li>
       </ul>
-      <a href="https://t.mbjms.com" target="_blank" class="rp-cta">Start Matching Now</a>
+      <a href="https://t.crdtg2.com/389314/9863/38004?po=6456&aff_sub5=SF_006OG000004lmDN" target="_blank" rel="noopener noreferrer" class="rp-cta">Start Matching Now</a>
     </div>
     <div class="rp-right">
       <img src="https://res.cloudinary.com/doslc6l1h/image/upload/v1777353149/Monica_ktkfyx.jpg" alt="Real connection"/>
@@ -1373,7 +1414,7 @@
           <div><strong>100% Discreet</strong><p>Your profile is only visible to members. Browse anonymously, always.</p></div>
         </li>
       </ul>
-      <a href="https://t.mbjms.com" target="_blank" class="rp-cta rp-cta--alt">Browse Profiles Now</a>
+      <a href="https://t.crdtg2.com/389314/10091/0?po=6456&aff_sub5=SF_006OG000004lmDN" target="_blank" rel="noopener noreferrer" class="rp-cta rp-cta--alt">Browse Profiles Now</a>
     </div>
   </div>
 </section>
@@ -1403,7 +1444,7 @@
           <div><strong>No Bots. Ever.</strong><p>Real humans only. Our moderation team removes fakes within hours.</p></div>
         </li>
       </ul>
-      <a href="https://t.mbjms.com" target="_blank" class="rp-cta" style="background:linear-gradient(90deg,#7b2ff7,#e0185e);">Find My Match</a>
+      <a href="https://t.crdtg2.com/389314/4299/37947?po=6456&aff_sub5=SF_006OG000004lmDN" target="_blank" rel="noopener noreferrer" class="rp-cta" style="background:linear-gradient(90deg,#7b2ff7,#e0185e);">Find My Match</a>
     </div>
     <div class="rp-right">
       <img src="https://res.cloudinary.com/doslc6l1h/image/upload/v1777353790/Chloe_pgy97u.jpg" alt="Find your match"/>
@@ -1659,7 +1700,30 @@
   btn.addEventListener('click', function() { ag.style.display = 'flex'; });
 })();
 </script>
-
+<script>
+(function(){
+  document.querySelectorAll('.cs-wrap').forEach(function(wrap){
+    var selected = wrap.querySelector('.cs-selected');
+    var options = wrap.querySelectorAll('.cs-options li');
+    selected.addEventListener('click', function(e){
+      e.stopPropagation();
+      document.querySelectorAll('.cs-wrap.open').forEach(function(o){ if(o!==wrap) o.classList.remove('open'); });
+      wrap.classList.toggle('open');
+    });
+    options.forEach(function(li){
+      li.addEventListener('click', function(){
+        selected.childNodes[0].textContent = li.textContent;
+        options.forEach(function(o){ o.classList.remove('selected'); });
+        li.classList.add('selected');
+        wrap.classList.remove('open');
+      });
+    });
+  });
+  document.addEventListener('click', function(){
+    document.querySelectorAll('.cs-wrap.open').forEach(function(o){ o.classList.remove('open'); });
+  });
+})();
+</script>
 </body>
 </html>
 

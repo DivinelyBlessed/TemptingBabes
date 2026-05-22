@@ -294,35 +294,35 @@ body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;min
 
       <div class="cb-feat-card">
         <div class="cb-feat-icon">
-          <svg viewBox="0 0 24 24" fill="none">
+          <span class="icon-tilt"><svg viewBox="0 0 24 24" fill="none">
             <circle cx="12" cy="12" r="10" stroke-width="1.8"/>
             <polygon points="10,8 18,12 10,16" fill="var(--orange)" stroke="none"/>
-          </svg>
+          </svg></span>
         </div>
-        <div class="cb-feat-text">&#128293; <span>Start watching in seconds</span></div>
+        <div class="cb-feat-text">&#128293;<span>Start watching in seconds</span></div>
       </div>
 
       <div class="cb-feat-card">
         <div class="cb-feat-icon">
-          <svg viewBox="0 0 24 24" fill="none">
+          <span class="icon-tilt"><svg viewBox="0 0 24 24" fill="none">
             <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" stroke-width="1.8" stroke-linejoin="round"/>
-          </svg>
+          </svg></span>
         </div>
-        <div class="cb-feat-text">&#128172; <span>Chat and interact live</span></div>
+        <div class="cb-feat-text">&#128172;&#8202;<span>Chat and interact live</span></div>
       </div>
 
       <div class="cb-feat-card">
         <div class="cb-feat-icon">
-          <svg viewBox="0 0 24 24" fill="none">
+          <span class="icon-tilt"><svg viewBox="0 0 24 24" fill="none">
             <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke-width="1.8" stroke-linejoin="round"/>
             <path d="M9 12l2 2 4-4" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
+          </svg></span>
         </div>
-        <div class="cb-feat-text">&#128274; <span>Anonymous &amp; discreet</span></div>
+        <div class="cb-feat-text">&#128274;<span>Anonymous &amp; discreet</span></div>
       </div>
 
     </div>
-    <a href="https://t.mbjms.com/389314/3785/0?bo=2753,2754,2755,2756&po=6456&aff_sub5=SF_006OG000004lmDN" class="cb-right-cta" target="_blank" rel="noopener">Join Room Now &rarr;</a>
+    <a href="https://t.ajrkmx1.com/389314/8780/36934?po=6533&aff_sub5=SF_006OG000004lmDN" class="cb-right-cta" target="_blank" rel="noopener">Join Room Now &rarr;</a>
   </div>
 </div>
 
@@ -618,7 +618,7 @@ body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;min
   <canvas id="camsBubbles"></canvas>
   <h2>Ready To Take Things Further?</h2>
   <p>Type in chat, make requests, or take her into a Private VIP Room for a one-on-one performance</p>
-  <a href="https://t.mbjms.com/389314/3785/0?bo=2753,2754,2755,2756&po=6456&aff_sub5=SF_006OG000004lmDN" class="lc-cta" target="_blank" rel="noopener" style="display:inline-block;padding:18px 60px;border-radius:100px;background:linear-gradient(135deg,#ff8c00,#ff3d6b);color:#fff;font-family:'Bebas Neue',sans-serif;font-size:1.45rem;letter-spacing:2px;box-shadow:0 8px 40px rgba(255,140,0,.4);text-decoration:none;">Start Your Experience</a>
+  <a href="https://t.mbjms.com/389314/3785/0?po=6456&aff_sub5=SF_006OG000004lmDN" class="lc-cta" target="_blank" rel="noopener" style="display:inline-block;padding:18px 60px;border-radius:100px;background:linear-gradient(135deg,#ff8c00,#ff3d6b);color:#fff;font-family:'Bebas Neue',sans-serif;font-size:1.45rem;letter-spacing:2px;box-shadow:0 8px 40px rgba(255,140,0,.4);text-decoration:none;">Start Your Experience</a>
   <span class="lc-note">18+ only &middot; watch now</span>
 </div>
 
@@ -710,6 +710,27 @@ body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;min
   function init(){ resize(); bubbles=[]; for(let i=0;i<30;i++){const b=randomBubble();b.y=Math.random()*canvas.height;bubbles.push(b);} }
   function draw(){ ctx.clearRect(0,0,canvas.width,canvas.height); bubbles.forEach(b=>{ctx.beginPath();ctx.arc(b.x,b.y,b.r,0,Math.PI*2);ctx.fillStyle=b.color;ctx.globalAlpha=b.opacity;ctx.shadowBlur=8;ctx.shadowColor=b.color;ctx.fill();ctx.globalAlpha=1;ctx.shadowBlur=0;b.y-=b.speedY;b.x+=b.speedX;if(b.y<-b.r*2)Object.assign(b,randomBubble());}); requestAnimationFrame(draw); }
   window.addEventListener('resize', init); init(); draw();
+})();
+</script>
+<script>
+(function(){
+  document.querySelectorAll('.cb-feat-icon').forEach(function(icon){
+    var tilt = icon.querySelector('.icon-tilt');
+    if (!tilt) return;
+    tilt.style.display = 'inline-flex';
+    tilt.style.transition = 'transform 0.15s ease';
+    icon.addEventListener('mousemove', function(e){
+      var rect = icon.getBoundingClientRect();
+      var cx = rect.left + rect.width / 2;
+      var cy = rect.top + rect.height / 2;
+      var dx = (e.clientX - cx) / (rect.width / 2);
+      var dy = (e.clientY - cy) / (rect.height / 2);
+      tilt.style.transform = 'translate(' + (dx * 8) + 'px, ' + (dy * 8) + 'px)';
+    });
+    icon.addEventListener('mouseleave', function(){
+      tilt.style.transform = 'translate(0px, 0px)';
+    });
+  });
 })();
 </script>
 </body>
