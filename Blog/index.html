@@ -1,0 +1,1051 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script>
+    if (!navigator.globalPrivacyControl) {
+      var _ga = document.createElement('script');
+      _ga.async = true;
+      _ga.src = 'https://www.googletagmanager.com/gtag/js?id=G-PL9NPRYWP3';
+      document.head.appendChild(_ga);
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-PL9NPRYWP3', { anonymize_ip: true });
+    }
+  </script>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Blog &mdash; Dating Advice &amp; Guides | Tempting Babes</title>
+  <meta name="description" content="Dating advice for men. Improve your profile, get more matches, master texting, and level up your dating game with guides from Tempting Babes."/>
+  <meta name="robots" content="index, follow"/>
+  <link rel="canonical" href="https://www.temptingbabes.com/Blog/"/>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:site_name" content="Tempting Babes"/>
+  <meta property="og:title" content="Dating Advice &amp; Guides for Men | Tempting Babes Blog"/>
+  <meta property="og:description" content="Dating playbooks for men who want results. Profiles, messaging, psychology, hookups, AI companions and more."/>
+  <meta property="og:url" content="https://www.temptingbabes.com/Blog/"/>
+  <meta property="og:image" content="https://res.cloudinary.com/doslc6l1h/image/upload/v1777368073/Cassandra_ghyxtn.jpg"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600;700&display=swap"/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&display=swap"/>
+  <link rel="stylesheet" href="../styles.css"/>
+  <script src="../script.js" defer></script>
+  <style>
+    /* ── HERO ─────────────────────────────── */
+    .blog-hero {
+      text-align: center;
+      padding: 64px 24px 44px;
+    }
+    .blog-hero h1 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(2.6rem, 7vw, 5rem);
+      line-height: 1;
+      color: #fff;
+      margin: 0 0 12px;
+    }
+    .blog-hero h1 span {
+      background: linear-gradient(135deg, #ff8c00, #ff3d6b);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .blog-hero p {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 1rem;
+      color: rgba(255,255,255,0.4);
+      margin: 0;
+    }
+    .search-wrap { margin: 28px auto 0; max-width: 560px; position: relative; }
+    .search-wrap input { width: 100%; padding: 13px 48px 13px 20px; border-radius: 50px; border: 1px solid rgba(255,255,255,0.12); background: rgba(255,255,255,0.05); color: #fff; font-family: 'DM Sans', sans-serif; font-size: 0.95rem; outline: none; transition: border-color .2s, background .2s; box-sizing: border-box; }
+    .search-wrap input::placeholder { color: rgba(255,255,255,0.28); }
+    .search-wrap input:focus { border-color: rgba(255,140,0,0.5); background: rgba(255,255,255,0.08); }
+    .search-icon { position: absolute; right: 18px; top: 50%; transform: translateY(-50%); color: rgba(255,255,255,0.28); font-size: 1rem; pointer-events: none; }
+    .no-results { display: none; text-align: center; padding: 60px 24px; color: rgba(255,255,255,0.35); font-family: 'DM Sans', sans-serif; }
+
+    /* ── STICKY CATEGORY JUMP NAV ─────────── */
+    .cat-nav {
+      position: sticky;
+      top: 62px;
+      z-index: 90;
+      background: rgba(13,13,13,0.96);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      padding: 0 24px;
+      display: flex;
+      gap: 4px;
+      overflow-x: auto;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+    }
+    .cat-nav::-webkit-scrollbar { display: none; }
+    .cat-nav-pill {
+      flex-shrink: 0;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.73rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.38);
+      text-decoration: none;
+      padding: 13px 14px;
+      border-bottom: 2px solid transparent;
+      transition: color .2s, border-color .2s;
+      white-space: nowrap;
+    }
+    .cat-nav-pill:hover { color: rgba(255,255,255,0.7); }
+    .cat-nav-pill.is-active {
+      color: var(--pill-c, #ff8c00);
+      border-bottom-color: var(--pill-c, #ff8c00);
+    }
+
+    /* ── EDITOR'S NOTE ────────────────────── */
+    .editor-note {
+      width: 100%;
+      max-width: 1240px;
+      margin: 32px auto 0;
+      padding: 0 24px;
+      box-sizing: border-box;
+    }
+    .editor-note-inner {
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+      background: rgba(255,140,0,0.04);
+      border: 1px solid rgba(255,140,0,0.12);
+      border-left: 3px solid #ff8c00;
+      border-radius: 12px;
+      padding: 20px 24px;
+    }
+    .editor-avatar {
+      flex-shrink: 0;
+      width: 44px; height: 44px;
+      border-radius: 50%;
+      background: linear-gradient(135deg,#ff8c00,#ff3d6b);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.3rem;
+    }
+    .editor-text { flex: 1; min-width: 0; }
+    .editor-label {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.6rem; font-weight: 700;
+      letter-spacing: 2.5px; text-transform: uppercase;
+      color: #ff8c00; display: block; margin-bottom: 6px;
+    }
+    .editor-quote {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.88rem;
+      color: rgba(255,255,255,0.65);
+      line-height: 1.65;
+      margin: 0 0 6px;
+      font-style: italic;
+    }
+    .editor-sig {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.72rem; font-weight: 700;
+      color: rgba(255,255,255,0.28);
+      letter-spacing: 0.5px;
+    }
+
+    /* ── FEATURED HERO CARD ───────────────── */
+    .feat-hero-wrap {
+      width: 100%; max-width: 1240px;
+      margin: 32px auto 0;
+      padding: 0 24px;
+      box-sizing: border-box;
+    }
+    .feat-hero-label {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.62rem; font-weight: 700;
+      letter-spacing: 3px; text-transform: uppercase;
+      color: rgba(255,255,255,0.3);
+      margin-bottom: 12px; display: block;
+    }
+    .feat-hero-card {
+      display: grid;
+      grid-template-columns: 0.7fr 1fr;
+      border-radius: 14px;
+      overflow: hidden;
+      text-decoration: none;
+      background: #111;
+      border: 1px solid rgba(255,255,255,0.08);
+      transition: border-color .25s, box-shadow .25s;
+      min-height: 200px;
+    }
+    @media (max-width: 680px) { .feat-hero-card { grid-template-columns: 1fr; min-height: auto; } }
+    .feat-hero-card:hover {
+      border-color: rgba(255,140,0,0.3);
+      box-shadow: 0 16px 60px rgba(0,0,0,0.6);
+    }
+    .feat-hero-card:hover .feat-hero-img img { transform: scale(1.05); }
+    @media (max-width: 680px) {
+      .feat-hero-card { grid-template-columns: 1fr; min-height: auto; }
+    }
+    .feat-hero-img {
+      position: relative; overflow: hidden;
+      background: #1a1a1a;
+    }
+    .feat-hero-img img {
+      width: 100%; height: 100%;
+      object-fit: cover; object-position: top center;
+      display: block;
+      transition: transform .5s ease;
+    }
+    .feat-hero-body {
+      padding: 20px 26px;
+      display: flex; flex-direction: column;
+      justify-content: center; gap: 8px;
+    }
+    @media (max-width: 680px) { .feat-hero-body { padding: 18px 18px; } }
+    .feat-hero-eyebrow {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.65rem; font-weight: 700;
+      letter-spacing: 2px; text-transform: uppercase;
+      color: #ff8c00;
+    }
+    .feat-hero-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(1.3rem, 2.4vw, 1.7rem);
+      line-height: 1.05; color: #fff;
+      letter-spacing: 1px; margin: 0;
+    }
+    .feat-hero-desc {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.82rem; color: rgba(255,255,255,0.45);
+      line-height: 1.6; margin: 0;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    .feat-hero-meta {
+      display: flex; align-items: center; gap: 14px;
+      flex-wrap: wrap;
+    }
+    .feat-hero-cat {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.65rem; font-weight: 700;
+      letter-spacing: 1.5px; text-transform: uppercase;
+      background: linear-gradient(135deg,#ff8c00,#ff3d6b);
+      color: #fff; padding: 4px 12px;
+      border-radius: 20px;
+    }
+    .feat-hero-time {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.72rem; color: rgba(255,255,255,0.3);
+    }
+    .feat-hero-cta {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.82rem; font-weight: 700;
+      color: #ff8c00; margin-top: 4px;
+      transition: gap .2s;
+    }
+    .feat-hero-card:hover .feat-hero-cta { gap: 10px; }
+
+    /* ── LAYOUT WRAP ──────────────────────── */
+    .blog-wrap {
+      width: 100%; max-width: 1240px;
+      margin: 0 auto;
+      padding: 48px 24px 80px;
+      box-sizing: border-box;
+    }
+    .cat-section { margin-bottom: 72px; }
+    .cat-section-hd {
+      display: flex; align-items: center;
+      justify-content: space-between;
+      margin-bottom: 24px; padding-bottom: 14px;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+    }
+    .cat-section-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.9rem; color: #fff;
+      letter-spacing: 1px; margin: 0;
+      display: flex; align-items: center; gap: 10px;
+    }
+    .cat-section-title .cat-label {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.68rem; font-weight: 700;
+      letter-spacing: 2px; text-transform: uppercase;
+      color: var(--cat-color, #ff8c00);
+      background: rgba(255,255,255,0.05);
+      padding: 4px 10px; border-radius: 20px; margin-left: 4px;
+    }
+    .view-all-link {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.82rem; font-weight: 700;
+      color: var(--cat-color, #ff8c00);
+      text-decoration: none; white-space: nowrap;
+      transition: opacity .2s;
+    }
+    .view-all-link:hover { opacity: 0.65; }
+    .view-all-bottom {
+      display: block;
+      text-align: right;
+      padding-right: 6px;
+      margin-top: 22px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--cat-color, #ff8c00);
+      text-decoration: none;
+      letter-spacing: 0.5px;
+      transition: opacity .2s;
+    }
+    .view-all-bottom:hover { opacity: 0.65; }
+
+    /* ── ARTICLE GRID ─────────────────────── */
+    .posts-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    @media (max-width: 900px) { .posts-row { grid-template-columns: repeat(2,1fr); } }
+    @media (max-width: 540px)  { .posts-row { grid-template-columns: 1fr; } }
+
+    /* ── ARTICLE CARD ─────────────────────── */
+    .article-card {
+      background: #111;
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 14px; overflow: hidden;
+      text-decoration: none; display: flex; flex-direction: column;
+      transition: transform .22s ease, border-color .22s ease, box-shadow .22s ease;
+    }
+    .article-card:not(.is-placeholder):hover {
+      transform: translateY(-4px);
+      border-color: rgba(255,255,255,0.15);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.5);
+    }
+    .article-card.is-placeholder { opacity: 0.42; pointer-events: none; }
+    .article-thumb {
+      width: 100%; height: 180px;
+      display: flex; align-items: center; justify-content: center;
+      position: relative; overflow: hidden; flex-shrink: 0;
+    }
+    .article-thumb img {
+      width: 100%; height: 100%;
+      object-fit: cover; object-position: top center; display: block;
+      transition: transform .4s ease;
+    }
+    .article-card:not(.is-placeholder):hover .article-thumb img { transform: scale(1.06); }
+    .thumb-icon { font-size: 3.2rem; opacity: 0.22; user-select: none; line-height: 1; }
+
+    /* ── BADGES ───────────────────────────── */
+    .badge {
+      position: absolute; top: 11px; left: 11px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.58rem; font-weight: 700;
+      letter-spacing: 1.8px; text-transform: uppercase;
+      padding: 4px 10px; border-radius: 20px;
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+    }
+    .badge--editor {
+      background: linear-gradient(135deg, #ff8c00, #ff3d6b);
+      color: #fff;
+    }
+    .badge--hot {
+      background: rgba(239,68,68,0.9);
+      color: #fff;
+    }
+    .badge--new {
+      background: rgba(34,197,94,0.9);
+      color: #fff;
+    }
+    .coming-soon-badge {
+      position: absolute; bottom: 11px; left: 11px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.62rem; font-weight: 700; letter-spacing: 2px;
+      text-transform: uppercase; color: rgba(255,255,255,0.6);
+      background: rgba(0,0,0,0.35); padding: 4px 10px;
+      border-radius: 20px; backdrop-filter: blur(6px);
+    }
+
+    /* ── CARD BODY ────────────────────────── */
+    .article-body {
+      padding: 16px 18px 20px;
+      display: flex; flex-direction: column; gap: 6px;
+      flex: 1;
+    }
+    .article-cat-label {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.65rem; font-weight: 700;
+      letter-spacing: 1.5px; text-transform: uppercase;
+      color: var(--cat-color, #ff8c00);
+    }
+    .article-title {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.92rem; font-weight: 700;
+      color: #fff; line-height: 1.45; margin: 0;
+      flex: 1;
+    }
+    .is-placeholder .article-title { color: rgba(255,255,255,0.22); font-style: italic; }
+    .article-read-time {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.68rem; color: rgba(255,255,255,0.22);
+      margin-top: 2px;
+    }
+
+    /* ── SCROLL TO TOP ────────────────────── */
+    .scroll-top {
+      position: fixed; bottom: 28px; right: 28px;
+      width: 44px; height: 44px; border-radius: 50%;
+      background: linear-gradient(135deg,#ff8c00,#ff3d6b);
+      border: none; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 4px 20px rgba(255,61,107,0.4);
+      opacity: 0; pointer-events: none;
+      transform: translateY(10px);
+      transition: opacity .3s, transform .3s;
+      z-index: 200;
+      color: #fff; font-size: 1.1rem;
+    }
+    .scroll-top.is-visible { opacity: 1; pointer-events: auto; transform: translateY(0); }
+    .scroll-top:hover { box-shadow: 0 6px 28px rgba(255,61,107,0.65); transform: translateY(-2px); }
+
+    /* ── JOIN BTN PULSE ───────────────────── */
+    .join-btn { animation: heartbeat 5s ease-in-out infinite; }
+    .join-btn:hover { animation: none; transform: scale(1.05); box-shadow: 0 6px 28px rgba(255,140,0,.55); }
+    @keyframes heartbeat {
+      0%   { transform: scale(1);    box-shadow: 0 4px 20px rgba(255,140,0,0.4); }
+      18%  { transform: scale(1.06); box-shadow: 0 6px 28px rgba(255,140,0,0.6); }
+      36%  { transform: scale(1);    box-shadow: 0 4px 20px rgba(255,140,0,0.4); }
+      100% { transform: scale(1);    box-shadow: 0 4px 20px rgba(255,140,0,0.4); }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a class="logo" href="/"><img src="/Asset/Logo/logo.webp" alt="Tempting Babes" class="logo-img" style="height:42px;width:auto;flex-shrink:0;display:block;"><span class="logo-text" style="font-family:'Playfair Display',serif;font-weight:900;font-size:1.35rem;line-height:1;letter-spacing:1.5px;background:linear-gradient(90deg,#ff8c00,#ff3d6b);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-left:-10px;">Tempting Babes</span></a>
+  <div class="tabs">
+    <a href="/ai-chat/" class="tab">AI Girls</a>
+    <a href="/cams/" class="tab">Cams</a>
+    <a href="/dating/" class="tab">Dating</a>
+    <a href="/offers/" class="tab">Offers</a>
+    <a href="/trending/" class="tab">Trending</a>
+    <a href="/vip/" class="tab"><span class="tab-star">&#11088;</span>VIP</a>
+  </div>
+  <button class="join-btn" id="getAccessBtn" onclick="document.getElementById('ageGateOverlay').style.display='flex'" style="background:linear-gradient(135deg,#ff8c00,#ff3d6b);">Join Free</button>
+  <button class="menu-btn" id="menuBtn">&#9776;</button>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="/ai-chat/" class="mobile-tab">AI Girls</a>
+  <a href="/cams/" class="mobile-tab">Cams</a>
+  <a href="/dating/" class="mobile-tab">Dating</a>
+  <a href="/offers/" class="mobile-tab">Offers</a>
+  <a href="/trending/" class="mobile-tab">Trending</a>
+  <a href="/vip/" class="mobile-tab"><span class="tab-star">&#11088;</span>VIP</a>
+</div>
+
+<!-- AGE GATE -->
+<div class="ag-overlay" id="ageGateOverlay" style="display:none">
+  <div class="ag-modal">
+    <div class="ag-brand"><img src="/Asset/Logo/logo.webp" alt="Tempting Babes" class="ag-logo-img"/><span class="ag-logo-text">Tempting Babes</span></div>
+    <h2 class="ag-title">Are You 18+?</h2>
+    <p class="ag-body">Please confirm your age to continue</p>
+    <button class="ag-yes" id="ageGateYes" onclick="document.getElementById('ageGateOverlay').style.display='none';document.getElementById('getAccessOverlay').style.display='flex';">Yes, I Am 18 or Older</button>
+    <button class="ag-no" id="ageGateNo" onclick="document.getElementById('ageGateOverlay').style.display='none';">No, Take Me Away</button>
+    <p class="ag-legal">By entering, you confirm you are 18+ and agree to our <a href="/privacy-policy/" class="ag-link">Terms of Service and Privacy Policy</a>. This site contains affiliate links.</p>
+  </div>
+</div>
+
+<!-- GET ACCESS POPUP -->
+<div class="ga-overlay" id="getAccessOverlay" style="display:none" onclick="if(event.target===this)this.style.display='none'">
+  <div class="ga-modal">
+    <button class="ga-close" id="gaClose" onclick="document.getElementById('getAccessOverlay').style.display='none'">&#10005;</button>
+    <div class="ga-right">
+      <div class="ga-benefits">
+        <h3 class="ga-benefits-title">Member Benefits</h3>
+        <ul class="ga-benefits-list">
+          <li>Flirty Women Ready To Chat</li>
+          <li>Connect With Singles In Your Area</li>
+          <li>Exclusive Access To Hot Profiles</li>
+          <li>Instant Replies From Active Members</li>
+          <li>100% Private And Discreet</li>
+          
+        </ul>
+      </div>
+    </div>
+    <div class="ga-left">
+      <h2 class="ga-title">Get Instant Access</h2>
+      <p class="ga-sub">Join 2.3M+ members and find your match now</p>
+      <form class="ga-form" id="gaForm" novalidate onsubmit="return tbSubmitGA(event)">
+        <input class="ga-input" id="gaName" type="text" placeholder="Enter your name" autocomplete="given-name">
+        <input class="ga-input" id="gaEmail" type="email" placeholder="Enter your email" autocomplete="email">
+        <button class="ga-submit" type="submit">Join Now</button>
+      </form>
+      
+      <p class="ga-legal">By continuing you confirm you are 18+ and agree to our <a href="/privacy-policy/">Privacy Policy</a>. Tempting Babes may earn a commission if you sign up.</p>
+    </div>
+  </div>
+</div>
+<script>
+function tbSubmitGA(e) {
+  e.preventDefault();
+  var email = document.getElementById('gaEmail').value.trim();
+  var emailEl = document.getElementById('gaEmail');
+  if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    emailEl.style.borderColor = '#ff3d6b'; emailEl.focus(); return false;
+  }
+  emailEl.style.borderColor = '';
+  var url = 'https://t.mbjms.com/visit/?bta=36027&nci=5349&afp=getaccess&email=' + encodeURIComponent(email);
+  window.open(url, '_blank', 'noopener,noreferrer');
+  document.getElementById('getAccessOverlay').style.display = 'none';
+  return false;
+}
+</script>
+
+<!-- ── HERO ── -->
+<section class="blog-hero">
+  <h1>The <span>Playbook</span></h1>
+  <p>Dating guides for men who want results, not relationship counselling.</p>
+  <div class="search-wrap">
+    <input type="search" id="blogSearch" placeholder="Search guides&hellip;" autocomplete="off" aria-label="Search articles"/>
+    <span class="search-icon">&#9906;</span>
+  </div>
+</section>
+<p class="no-results" id="noResults">No guides found. Try a different search.</p>
+
+<!-- ── STICKY CATEGORY JUMP NAV ── -->
+<nav class="cat-nav" id="catNav" aria-label="Jump to category">
+  <a href="#sec-dating-advice"    class="cat-nav-pill is-active" style="--pill-c:#ff8c00;">Dating Advice</a>
+  <a href="#sec-dating-apps"      class="cat-nav-pill"            style="--pill-c:#3b82f6;">Dating Apps</a>
+  <a href="#sec-messaging"        class="cat-nav-pill"            style="--pill-c:#ec4899;">Messaging</a>
+  <a href="#sec-ai-dating"        class="cat-nav-pill"            style="--pill-c:#22d3ee;">AI Dating</a>
+  <a href="#sec-psychology"       class="cat-nav-pill"            style="--pill-c:#8b5cf6;">Psychology</a>
+  <a href="#sec-profiles"         class="cat-nav-pill"            style="--pill-c:#06b6d4;">Profiles</a>
+  <a href="#sec-confidence"       class="cat-nav-pill"            style="--pill-c:#22c55e;">Confidence</a>
+  <a href="#sec-hookups"          class="cat-nav-pill"            style="--pill-c:#f59e0b;">Hookups</a>
+  <a href="#sec-first-dates"      class="cat-nav-pill"            style="--pill-c:#eab308;">First Dates</a>
+</nav>
+
+<!-- ── EDITOR'S NOTE ── -->
+<div class="editor-note">
+  <div class="editor-note-inner">
+    <div class="editor-avatar">&#9998;</div>
+    <div class="editor-text">
+      <span class="editor-label">Editor&rsquo;s Note &mdash; This Week</span>
+      <p class="editor-quote">&ldquo;The number one mistake we see? Men swiping for hours, then opening with &lsquo;Hey&rsquo;. You&rsquo;re not failing because of your looks or your height. You&rsquo;re failing because nobody ever taught you the actual rules. That&rsquo;s what this playbook is for.&rdquo;</p>
+      <span class="editor-sig">— The Playbook Team</span>
+    </div>
+  </div>
+</div>
+
+<!-- ── EDITOR'S TOP PICK (featured hero) ── -->
+<div class="feat-hero-wrap">
+  <span class="feat-hero-label">&#127775; Editor&rsquo;s Top Pick This Week</span>
+  <a href="dating-advice/why-women-dont-reply-dating-apps/" class="feat-hero-card">
+    <div class="feat-hero-img">
+      <img src="https://res.cloudinary.com/doslc6l1h/image/upload/v1777353790/Chloe_pgy97u.jpg" alt="Why Women Don't Reply on Dating Apps"/>
+    </div>
+    <div class="feat-hero-body">
+      <span class="feat-hero-eyebrow">&#127775; Editor&rsquo;s Pick</span>
+      <h2 class="feat-hero-title">Why Women Don&rsquo;t Reply on Dating Apps</h2>
+      <p class="feat-hero-desc">You&rsquo;ve got matches. They&rsquo;re not replying. This guide breaks down the real reasons women go silent — and the specific fixes that actually change the ratio.</p>
+      <div class="feat-hero-meta">
+        <span class="feat-hero-cat">Dating Advice</span>
+        <span class="feat-hero-time">6 min read</span>
+      </div>
+      <span class="feat-hero-cta">Read the Guide &rarr;</span>
+    </div>
+  </a>
+</div>
+
+<!-- ── MAIN CONTENT ── -->
+<div class="blog-wrap">
+
+  <!-- 1. DATING ADVICE -->
+  <section class="cat-section" id="sec-dating-advice" style="--cat-color:#ff8c00;">
+    <div class="cat-section-hd">
+      <h2 class="cat-section-title">&#128293; Dating Advice <span class="cat-label">The Attraction Game</span></h2>
+    </div>
+    <div class="posts-row">
+      <a href="dating-advice/no-matches-tinder-real-reason/" class="article-card">
+        <div class="article-thumb">
+          <img src="https://res.cloudinary.com/doslc6l1h/image/upload/v1777368073/Cassandra_ghyxtn.jpg" alt="No Matches on Tinder?"/>
+          <span class="badge badge--hot">&#128293; Hot</span>
+        </div>
+        <div class="article-body">
+          <span class="article-cat-label">Dating Advice</span>
+          <h3 class="article-title">No Matches on Tinder? The Real Reason</h3>
+          <span class="article-read-time">7 min read</span>
+        </div>
+      </a>
+      <a href="dating-advice/how-to-attract-women-without-chasing/" class="article-card">
+        <div class="article-thumb">
+          <img src="https://res.cloudinary.com/doslc6l1h/image/upload/v1777353149/Monica_ktkfyx.jpg" alt="Attract Women Without Chasing"/>
+          <span class="badge badge--new">New</span>
+        </div>
+        <div class="article-body">
+          <span class="article-cat-label">Dating Advice</span>
+          <h3 class="article-title">How to Attract Women Without Chasing Them</h3>
+          <span class="article-read-time">8 min read</span>
+        </div>
+      </a>
+      <a href="dating-advice/find-active-women-online-near-you/" class="article-card">
+        <div class="article-thumb">
+          <img src="https://res.cloudinary.com/doslc6l1h/image/upload/v1777353697/Rose_gt05gt.jpg" alt="Find Active Women Online"/>
+        </div>
+        <div class="article-body">
+          <span class="article-cat-label">Dating Advice</span>
+          <h3 class="article-title">How to Find Active Women Online Near You</h3>
+          <span class="article-read-time">5 min read</span>
+        </div>
+      </a>
+    </div>
+    <a href="dating-advice/" class="view-all-bottom">View All &rsaquo;</a>
+  </section>
+
+  <!-- 2. DATING APPS -->
+  <section class="cat-section" id="sec-dating-apps" style="--cat-color:#3b82f6;">
+    <div class="cat-section-hd">
+      <h2 class="cat-section-title">&#128242; Dating Apps <span class="cat-label">Swipe Game</span></h2>
+    </div>
+    <div class="posts-row">
+      <a href="dating-apps/dating-apps-designed-to-keep-you-single/" class="article-card">
+        <div class="article-thumb">
+          <img src="https://res.cloudinary.com/doslc6l1h/image/upload/v1777368521/Nicole_z37c1p.jpg" alt="Dating Apps Keep You Single"/>
+          <span class="badge badge--editor">Editor&rsquo;s Pick</span>
+        </div>
+        <div class="article-body">
+          <span class="article-cat-label">Dating Apps</span>
+          <h3 class="article-title">Are Dating Apps Designed to Keep You Single?</h3>
+          <span class="article-read-time">6 min read</span>
+        </div>
+      </a>
+      <a href="dating-apps/average-man-dating-app-stats/" class="article-card">
+        <div class="article-thumb">
+          <img src="https://res.cloudinary.com/doslc6l1h/image/upload/v1777350763/Abigail_ge8glu.jpg" alt="Average Man Dating Stats"/>
+          <span class="badge badge--hot">&#128293; Hot</span>
+        </div>
+        <div class="article-body">
+          <span class="article-cat-label">Dating Apps</span>
+          <h3 class="article-title">The Average Man&rsquo;s Dating App Stats (They&rsquo;re Brutal)</h3>
+          <span class="article-read-time">5 min read</span>
+        </div>
+      </a>
+      <div class="article-card is-placeholder">
+        <div class="article-thumb" style="background:linear-gradient(135deg,#3b82f6,#1e3a8a);"><span class="thumb-icon">&#128242;</span><span class="coming-soon-badge">Coming Soon</span></div>
+        <div class="article-body">
+          <span class="article-cat-label">Dating Apps</span>
+          <h3 class="article-title">New guide coming soon</h3>
+        </div>
+      </div>
+    </div>
+    <a href="dating-apps/" class="view-all-bottom">View All &rsaquo;</a>
+  </section>
+
+  <!-- 3. MESSAGING -->
+  <section class="cat-section" id="sec-messaging" style="--cat-color:#ec4899;">
+    <div class="cat-section-hd">
+      <h2 class="cat-section-title">&#128172; Messaging <span class="cat-label">Text Game</span></h2>
+    </div>
+    <div class="posts-row">
+      <a href="messaging/what-women-want-first-message/" class="article-card">
+        <div class="article-thumb">
+          <img src="https://res.cloudinary.com/doslc6l1h/image/upload/v1777367998/Corina_rlrtk6.jpg" alt="What Women Want in First Message"/>
+          <span class="badge badge--hot">&#128293; Hot</span>
+        </div>
+        <div class="article-body">
+          <span class="article-cat-label">Messaging</span>
+          <h3 class="article-title">What Women Actually Want in a First Message</h3>
+          <span class="article-read-time">6 min read</span>
+        </div>
+      </a>
+      <a href="messaging/start-conversation-online-without-being-ignored/" class="article-card">
+        <div class="article-thumb">
+          <img src="https://res.cloudinary.com/doslc6l1h/image/upload/v1777367902/Angel_dhw00u.jpg" alt="Start Conversation Online"/>
+        </div>
+        <div class="article-body">
+          <span class="article-cat-label">Messaging</span>
+          <h3 class="article-title">How to Start a Conversation Online Without Being Ignored</h3>
+          <span class="article-read-time">7 min read</span>
+        </div>
+      </a>
+      <div class="article-card is-placeholder">
+        <div class="article-thumb" style="background:linear-gradient(135deg,#ec4899,#831843);"><span class="thumb-icon">&#128172;</span><span class="coming-soon-badge">Coming Soon</span></div>
+        <div class="article-body">
+          <span class="article-cat-label">Messaging</span>
+          <h3 class="article-title">New guide coming soon</h3>
+        </div>
+      </div>
+    </div>
+    <a href="messaging/" class="view-all-bottom">View All &rsaquo;</a>
+  </section>
+
+  <!-- 4. AI DATING -->
+  <section class="cat-section" id="sec-ai-dating" style="--cat-color:#22d3ee;">
+    <div class="cat-section-hd">
+      <h2 class="cat-section-title">&#129302; AI Dating <span class="cat-label">AI Girlfriends</span></h2>
+    </div>
+    <div class="posts-row">
+      <a href="ai-dating/ai-girlfriend-apps-ranked-2026/" class="article-card">
+        <div class="article-thumb">
+          <img src="https://res.cloudinary.com/doslc6l1h/image/upload/v1777368336/Charlie_pkrxoy.jpg" alt="AI Girlfriend Apps Ranked"/>
+          <span class="badge badge--editor">Editor&rsquo;s Pick</span>
+        </div>
+        <div class="article-body">
+          <span class="article-cat-label">AI Dating</span>
+          <h3 class="article-title">AI Girlfriend Apps Ranked 2026</h3>
+          <span class="article-read-time">9 min read</span>
+        </div>
+      </a>
+      <a href="ai-dating/talking-to-ai-companion/" class="article-card">
+        <div class="article-thumb">
+          <img src="https://res.cloudinary.com/doslc6l1h/image/upload/v1777577475/katty_uzjfd5.jpg" alt="Talking to AI Companion"/>
+        </div>
+        <div class="article-body">
+          <span class="article-cat-label">AI Dating</span>
+          <h3 class="article-title">What Talking to an AI Companion Actually Feels Like</h3>
+          <span class="article-read-time">5 min read</span>
+        </div>
+      </a>
+      <a href="ai-dating/ai-chat-men-over-30/" class="article-card">
+        <div class="article-thumb">
+          <img src="https://res.cloudinary.com/doslc6l1h/image/upload/v1777368217/Emily_lwa1nn.jpg" alt="AI Chat Men Over 30"/>
+          <span class="badge badge--new">New</span>
+        </div>
+        <div class="article-body">
+          <span class="article-cat-label">AI Dating</span>
+          <h3 class="article-title">AI Chat for Men Over 30 &mdash; Is It Worth Your Time?</h3>
+          <span class="article-read-time">6 min read</span>
+        </div>
+      </a>
+    </div>
+    <a href="ai-dating/" class="view-all-bottom">View All &rsaquo;</a>
+  </section>
+
+  <!-- 5. DATING PSYCHOLOGY -->
+  <section class="cat-section" id="sec-psychology" style="--cat-color:#8b5cf6;">
+    <div class="cat-section-hd">
+      <h2 class="cat-section-title">&#129504; Dating Psychology <span class="cat-label">Attraction &amp; Mindset</span></h2>
+    </div>
+    <div class="posts-row">
+      <a href="dating-psychology/doom-scrolling-vs-connecting/" class="article-card">
+        <div class="article-thumb">
+          <img src="https://res.cloudinary.com/doslc6l1h/image/upload/v1777368709/Tracy_halosd.jpg" alt="Doom Scrolling vs Connecting"/>
+        </div>
+        <div class="article-body">
+          <span class="article-cat-label">Dating Psychology</span>
+          <h3 class="article-title">Doom Scrolling vs. Actually Connecting</h3>
+          <span class="article-read-time">5 min read</span>
+        </div>
+      </a>
+      <a href="dating-psychology/3am-loneliness-brain/" class="article-card">
+        <div class="article-thumb">
+          <img src="https://res.cloudinary.com/doslc6l1h/image/upload/v1777368521/Nicole_z37c1p.jpg" alt="3AM Brain"/>
+          <span class="badge badge--hot">&#128293; Hot</span>
+        </div>
+        <div class="article-body">
+          <span class="article-cat-label">Dating Psychology</span>
+          <h3 class="article-title">What Your 3AM Brain Is Really Telling You</h3>
+          <span class="article-read-time">6 min read</span>
+        </div>
+      </a>
+      <a href="dating-psychology/midnight-ache-scrolling-loneliness/" class="article-card">
+        <div class="article-thumb">
+          <img src="https://res.cloudinary.com/doslc6l1h/image/upload/v1777368073/Cassandra_ghyxtn.jpg" alt="Midnight Ache"/>
+          <span class="badge badge--new">New</span>
+        </div>
+        <div class="article-body">
+          <span class="article-cat-label">Dating Psychology</span>
+          <h3 class="article-title">The Midnight Ache: Why You Scroll Instead of Connect</h3>
+          <span class="article-read-time">7 min read</span>
+        </div>
+      </a>
+    </div>
+    <a href="dating-psychology/" class="view-all-bottom">View All &rsaquo;</a>
+  </section>
+
+  <!-- 6. PROFILES -->
+  <section class="cat-section" id="sec-profiles" style="--cat-color:#06b6d4;">
+    <div class="cat-section-hd">
+      <h2 class="cat-section-title">&#128248; Profiles <span class="cat-label">Profile Optimization</span></h2>
+    </div>
+    <div class="posts-row">
+      <div class="article-card is-placeholder">
+        <div class="article-thumb" style="background:linear-gradient(135deg,#06b6d4,#164e63);"><span class="thumb-icon">&#128248;</span><span class="coming-soon-badge">Coming Soon</span></div>
+        <div class="article-body"><span class="article-cat-label">Profiles</span><h3 class="article-title">How to Write a Bio She Actually Reads</h3></div>
+      </div>
+      <div class="article-card is-placeholder">
+        <div class="article-thumb" style="background:linear-gradient(135deg,#06b6d4,#164e63);"><span class="thumb-icon">&#128248;</span><span class="coming-soon-badge">Coming Soon</span></div>
+        <div class="article-body"><span class="article-cat-label">Profiles</span><h3 class="article-title">The 5 Photos That Get You Right-Swiped</h3></div>
+      </div>
+      <div class="article-card is-placeholder">
+        <div class="article-thumb" style="background:linear-gradient(135deg,#06b6d4,#164e63);"><span class="thumb-icon">&#128248;</span><span class="coming-soon-badge">Coming Soon</span></div>
+        <div class="article-body"><span class="article-cat-label">Profiles</span><h3 class="article-title">New guide coming soon</h3></div>
+      </div>
+    </div>
+    <a href="profiles/" class="view-all-bottom">View All &rsaquo;</a>
+  </section>
+
+  <!-- 7. CONFIDENCE -->
+  <section class="cat-section" id="sec-confidence" style="--cat-color:#22c55e;">
+    <div class="cat-section-hd">
+      <h2 class="cat-section-title">&#128170; Confidence <span class="cat-label">Level Up</span></h2>
+    </div>
+    <div class="posts-row">
+      <div class="article-card is-placeholder">
+        <div class="article-thumb" style="background:linear-gradient(135deg,#22c55e,#14532d);"><span class="thumb-icon">&#128170;</span><span class="coming-soon-badge">Coming Soon</span></div>
+        <div class="article-body"><span class="article-cat-label">Confidence</span><h3 class="article-title">The Confidence Loop: Why You Feel Good Some Days and Dead Inside Others</h3></div>
+      </div>
+      <div class="article-card is-placeholder">
+        <div class="article-thumb" style="background:linear-gradient(135deg,#22c55e,#14532d);"><span class="thumb-icon">&#128170;</span><span class="coming-soon-badge">Coming Soon</span></div>
+        <div class="article-body"><span class="article-cat-label">Confidence</span><h3 class="article-title">New guide coming soon</h3></div>
+      </div>
+      <div class="article-card is-placeholder">
+        <div class="article-thumb" style="background:linear-gradient(135deg,#22c55e,#14532d);"><span class="thumb-icon">&#128170;</span><span class="coming-soon-badge">Coming Soon</span></div>
+        <div class="article-body"><span class="article-cat-label">Confidence</span><h3 class="article-title">New guide coming soon</h3></div>
+      </div>
+    </div>
+    <a href="confidence/" class="view-all-bottom">View All &rsaquo;</a>
+  </section>
+
+  <!-- 8. HOOKUPS -->
+  <section class="cat-section" id="sec-hookups" style="--cat-color:#f59e0b;">
+    <div class="cat-section-hd">
+      <h2 class="cat-section-title">&#9889; Hookups <span class="cat-label">Fast Lane</span></h2>
+    </div>
+    <div class="posts-row">
+      <div class="article-card is-placeholder">
+        <div class="article-thumb" style="background:linear-gradient(135deg,#f59e0b,#78350f);"><span class="thumb-icon">&#9889;</span><span class="coming-soon-badge">Coming Soon</span></div>
+        <div class="article-body"><span class="article-cat-label">Hookups</span><h3 class="article-title">Fast Lane: How to Navigate Casual Dating</h3></div>
+      </div>
+      <div class="article-card is-placeholder">
+        <div class="article-thumb" style="background:linear-gradient(135deg,#f59e0b,#78350f);"><span class="thumb-icon">&#9889;</span><span class="coming-soon-badge">Coming Soon</span></div>
+        <div class="article-body"><span class="article-cat-label">Hookups</span><h3 class="article-title">New guide coming soon</h3></div>
+      </div>
+      <div class="article-card is-placeholder">
+        <div class="article-thumb" style="background:linear-gradient(135deg,#f59e0b,#78350f);"><span class="thumb-icon">&#9889;</span><span class="coming-soon-badge">Coming Soon</span></div>
+        <div class="article-body"><span class="article-cat-label">Hookups</span><h3 class="article-title">New guide coming soon</h3></div>
+      </div>
+    </div>
+    <a href="hookups/" class="view-all-bottom">View All &rsaquo;</a>
+  </section>
+
+  <!-- 9. FIRST DATES -->
+  <section class="cat-section" id="sec-first-dates" style="--cat-color:#eab308;">
+    <div class="cat-section-hd">
+      <h2 class="cat-section-title">&#128205; First Dates <span class="cat-label">Seal the Deal</span></h2>
+    </div>
+    <div class="posts-row">
+      <div class="article-card is-placeholder">
+        <div class="article-thumb" style="background:linear-gradient(135deg,#eab308,#713f12);"><span class="thumb-icon">&#128205;</span><span class="coming-soon-badge">Coming Soon</span></div>
+        <div class="article-body"><span class="article-cat-label">First Dates</span><h3 class="article-title">Seal the Deal: First Date Moves That Actually Work</h3></div>
+      </div>
+      <div class="article-card is-placeholder">
+        <div class="article-thumb" style="background:linear-gradient(135deg,#eab308,#713f12);"><span class="thumb-icon">&#128205;</span><span class="coming-soon-badge">Coming Soon</span></div>
+        <div class="article-body"><span class="article-cat-label">First Dates</span><h3 class="article-title">New guide coming soon</h3></div>
+      </div>
+      <div class="article-card is-placeholder">
+        <div class="article-thumb" style="background:linear-gradient(135deg,#eab308,#713f12);"><span class="thumb-icon">&#128205;</span><span class="coming-soon-badge">Coming Soon</span></div>
+        <div class="article-body"><span class="article-cat-label">First Dates</span><h3 class="article-title">New guide coming soon</h3></div>
+      </div>
+    </div>
+    <a href="first-dates/" class="view-all-bottom">View All &rsaquo;</a>
+  </section>
+
+</div>
+
+<!-- ── SCROLL TO TOP ── -->
+<button class="scroll-top" id="scrollTopBtn" aria-label="Back to top">&#8593;</button>
+
+<script>
+(function(){
+  var AFFILIATE_URL = 'https://t.mbjms.com/visit/?bta=36027&nci=5349&afp=getaccess';
+  var btn     = document.getElementById('getAccessBtn');
+  var ageGate = document.getElementById('ageGateOverlay');
+  var popup   = document.getElementById('getAccessOverlay');
+  var form    = document.getElementById('gaForm');
+  var emailEl = document.getElementById('gaEmail');
+
+  if (!btn || !ageGate || !popup) return;
+
+  /* Step 1: Join Free → age gate */
+  btn.addEventListener('click', function(e) {
+    e.preventDefault();
+    ageGate.style.display = 'flex';
+  });
+
+  /* Age gate: Yes → open email popup */
+  var yesBtn = document.getElementById('ageGateYes');
+  if (yesBtn) yesBtn.addEventListener('click', function() {
+    ageGate.style.display = 'none';
+    popup.style.display = 'flex';
+    if (emailEl) { emailEl.value = ''; emailEl.style.borderColor = ''; }
+  });
+
+  /* Age gate: No → close */
+  var noBtn = document.getElementById('ageGateNo');
+  if (noBtn) noBtn.addEventListener('click', function() {
+    ageGate.style.display = 'none';
+  });
+
+  /* Close age gate on backdrop click */
+  ageGate.addEventListener('click', function(e) {
+    if (e.target === ageGate) ageGate.style.display = 'none';
+  });
+
+  /* Close email popup */
+  function closePopup() { popup.style.display = 'none'; }
+  var closeBtn = document.getElementById('gaClose');
+  if (closeBtn) closeBtn.addEventListener('click', closePopup);
+  popup.addEventListener('click', function(e) {
+    if (e.target === popup) closePopup();
+  });
+
+  /* Step 2: Email form → affiliate URL */
+  if (form) {
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      var email = emailEl ? emailEl.value.trim() : '';
+      if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        if (emailEl) { emailEl.focus(); emailEl.style.borderColor = '#ff3d6b'; }
+        return;
+      }
+      if (emailEl) emailEl.style.borderColor = '';
+      if (typeof gtag !== 'undefined') gtag('event', 'ga_email_submit');
+      window.open(AFFILIATE_URL + '&email=' + encodeURIComponent(email), '_blank', 'noopener,noreferrer');
+      closePopup();
+    });
+  }
+
+  /* Escape closes both */
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+      ageGate.style.display = 'none';
+      popup.style.display = 'none';
+    }
+  });
+})();
+</script>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a href="/" class="footer-logo" style="text-decoration:none;">Tempting Babes</a>
+      <p class="footer-tagline">Your all-in-one hub for Dating, Live Cams, AI Girls and VIP access. Built for real connections and instant interaction.</p>
+    </div>
+    <div class="footer-col">
+      <h4 class="footer-col-title">Explore</h4>
+      <ul class="footer-links">
+        <li><a href="/Blog/">Blog</a></li>
+        <li><a href="/Blog/world-cup/fifa-world-cup-2026-schedule/">FIFA World Cup 2026</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4 class="footer-col-title">Legal &amp; Info</h4>
+      <ul class="footer-links">
+        <li><a href="/about/">About</a></li>
+        <li><a href="/privacy-policy/">Privacy Policy</a></li>
+        <li><a href="/terms/">Terms of Service</a></li>
+        <li><a href="/dmca/">DMCA Policy</a></li>
+        <li><a href="/2257/">18 U.S.C. &sect; 2257</a></li>
+        <li><a href="/contact/">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>18+ Only &nbsp;&middot;&nbsp; All rights reserved &nbsp;&middot;&nbsp; Tempting Babes&copy; 2026</p>
+  </div>
+
+  <div id="cookieBanner" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:9999;background:rgba(10,10,10,0.97);border-top:1px solid rgba(255,255,255,0.1);backdrop-filter:blur(20px);padding:16px 24px;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;">
+    <p style="font-family:'DM Sans',sans-serif;font-size:0.82rem;color:rgba(255,255,255,0.6);margin:0;flex:1;min-width:200px;">
+      We use cookies to analyse traffic and improve your experience. <a href="/privacy-policy/" style="color:#ff8c00;text-decoration:none;">Privacy Policy</a>
+    </p>
+    <div style="display:flex;gap:10px;flex-shrink:0;">
+      <button id="cookieDecline" style="font-family:'DM Sans',sans-serif;font-size:0.78rem;font-weight:600;padding:8px 16px;border-radius:8px;border:1px solid rgba(255,255,255,0.15);background:transparent;color:rgba(255,255,255,0.5);cursor:pointer;">Essential Only</button>
+      <button id="cookieAccept" style="font-family:'DM Sans',sans-serif;font-size:0.78rem;font-weight:700;padding:8px 20px;border-radius:8px;border:none;background:linear-gradient(135deg,#ff8c00,#ff3d6b);color:#fff;cursor:pointer;">Accept All</button>
+    </div>
+  </div>
+  <script>
+  (function(){
+    var KEY = 'tb_cookie_consent';
+    var banner = document.getElementById('cookieBanner');
+    if (!banner) return;
+    if (!localStorage.getItem(KEY)) banner.style.display = 'flex';
+    document.getElementById('cookieAccept').addEventListener('click', function(){
+      localStorage.setItem(KEY,'all'); banner.style.display='none';
+      if (typeof gtag==='function') gtag('consent','update',{analytics_storage:'granted',ad_storage:'granted'});
+    });
+    document.getElementById('cookieDecline').addEventListener('click', function(){
+      localStorage.setItem(KEY,'essential'); banner.style.display='none';
+      if (typeof gtag==='function') gtag('consent','update',{analytics_storage:'denied',ad_storage:'denied'});
+    });
+  })();
+  </script>
+</footer>
+
+<script>
+(function(){
+  /* ── SEARCH ── */
+  var input = document.getElementById('blogSearch');
+  var noRes = document.getElementById('noResults');
+  if (input) {
+    input.addEventListener('input', function(){
+      var q = input.value.trim().toLowerCase();
+      var sections = document.querySelectorAll('.cat-section');
+      var anyVisible = false;
+      sections.forEach(function(sec){
+        var cards = sec.querySelectorAll('.article-card:not(.is-placeholder)');
+        var secVisible = false;
+        cards.forEach(function(card){
+          var text = (card.querySelector('.article-title')||card).textContent.toLowerCase()
+                   + ' ' + (card.querySelector('.article-cat-label')||{textContent:''}).textContent.toLowerCase();
+          var match = !q || text.includes(q);
+          card.style.display = match ? '' : 'none';
+          if (match) secVisible = true;
+        });
+        sec.style.display = secVisible ? '' : 'none';
+        if (secVisible) anyVisible = true;
+      });
+      noRes.style.display = (!q || anyVisible) ? 'none' : 'block';
+    });
+  }
+
+  /* ── SCROLL TO TOP ── */
+  var scrollBtn = document.getElementById('scrollTopBtn');
+  if (scrollBtn) {
+    window.addEventListener('scroll', function(){
+      scrollBtn.classList.toggle('is-visible', window.scrollY > 400);
+    }, { passive: true });
+    scrollBtn.addEventListener('click', function(){
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+
+  /* ── JUMP NAV: smooth scroll + active pill ── */
+  var pills = document.querySelectorAll('.cat-nav-pill');
+  var sections = document.querySelectorAll('.cat-section[id]');
+
+  pills.forEach(function(pill){
+    pill.addEventListener('click', function(e){
+      var target = document.querySelector(pill.getAttribute('href'));
+      if (target) {
+        e.preventDefault();
+        var offset = 120;
+        var top = target.getBoundingClientRect().top + window.scrollY - offset;
+        window.scrollTo({ top: top, behavior: 'smooth' });
+      }
+    });
+  });
+
+  window.addEventListener('scroll', function(){
+    var scrollY = window.scrollY + 160;
+    var active = null;
+    sections.forEach(function(sec){
+      if (sec.offsetTop <= scrollY) active = sec.id;
+    });
+    pills.forEach(function(pill){
+      var href = pill.getAttribute('href').replace('#','');
+      pill.classList.toggle('is-active', href === active);
+    });
+  }, { passive: true });
+})();
+</script>
+</body>
+</html>

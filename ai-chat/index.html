@@ -1,0 +1,1422 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PL9NPRYWP3"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-PL9NPRYWP3');
+  </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AI Companions That Actually Feel Personal | Tempting Babes</title>
+  <meta name="description" content="Flirt, roleplay, vent, or just have someone to talk to — 24/7, no ghosting, no pressure. Find the right AI companion for what you want right now."/>
+  <link rel="canonical" href="https://www.temptingbabes.com/ai-chat/"/>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
+  <meta property="og:type" content="article"/>
+  <meta property="og:title" content="AI Companions That Actually Feel Personal"/>
+  <meta property="og:description" content="Flirt, roleplay, vent, or just have someone there. No ghosting, no pressure, no awkward small talk — available 24/7."/>
+  <meta property="og:url" content="https://www.temptingbabes.com/ai-chat/"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="AI Companions That Actually Feel Personal"/>
+  <meta name="twitter:description" content="Pick the kind of chat you actually want. Always on. No judgment. Free to start."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@700;900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'"/>
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@700;900&display=swap"/></noscript>
+  <link rel="preload" as="video" href="https://res.cloudinary.com/doslc6l1h/video/upload/v1778924738/Enhancer-Ultra_HD-Untitled_design_zbvrs5.mp4" type="video/mp4"/>
+  <link rel="stylesheet" href="../styles.css"/>
+
+  <style>
+    html { scrollbar-gutter: stable; }
+
+    /* Fix: body::after bleeds past right viewport edge */
+    body::after {
+      right: 0;
+      bottom: 0;
+      transform: translateZ(0);
+    }
+
+    /* Isolate nav on its own GPU layer so backdrop-filter re-renders
+       don't bleed into the video hero on the right side */
+    nav {
+      transform: translateZ(0);
+      will-change: transform;
+    }
+
+    @keyframes glow-pulse{
+      0%,100%{
+        text-shadow:0 2px 10px rgba(255,100,0,0.3),0 0 14px rgba(220,60,90,0.3),0 0 22px rgba(200,150,20,0.2),0 0 8px rgba(255,255,255,0.1);
+        transform:scale(1);opacity:1;
+      }
+      50%{
+        text-shadow:0 2px 16px rgba(255,100,0,0.5),0 0 22px rgba(220,60,90,0.6),0 0 40px rgba(200,150,20,0.4),0 0 55px rgba(200,150,20,0.2),0 0 12px rgba(255,255,255,0.25);
+        transform:scale(1.03);opacity:0.88;
+      }
+    }
+    .glow-pulse-text{animation:glow-pulse 2.4s ease-in-out infinite;display:inline-block;}
+
+    /* Fix heartbeat — transform only, no box-shadow CPU repaint */
+    @keyframes heartbeat {
+      0%   { transform: scale(1); }
+      18%  { transform: scale(1.06); }
+      36%  { transform: scale(1); }
+      100% { transform: scale(1); }
+    }
+    .join-btn {
+      will-change: transform;
+      isolation: isolate;
+    }
+
+    /* Fix pulse-ai — swap box-shadow for opacity (GPU composited) */
+    @keyframes pulse-ai {
+      0%, 100% { opacity: 1;   transform: scale(1); }
+      50%       { opacity: 0.5; transform: scale(1.8); }
+    }
+    .pillar-eyebrow-dot, .pillar-cta-dot {
+      will-change: opacity, transform;
+    }
+
+    /* ── HERO ── */
+    .pillar-hero {
+      position: relative;
+      min-height: 720px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      background: #0a0005;
+      border-bottom: 1px solid rgba(255,140,0,0.18);
+      text-align: center;
+    }
+    .hero-video-bg {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      pointer-events: none;
+      z-index: 0;
+    }
+    .hero-video-bg::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(5, 0, 8, 0.55);
+      z-index: 1;
+    }
+    .hero-video-bg video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 20%;
+      pointer-events: none;
+      filter: brightness(0.92);
+    }
+    .pillar-hero-glow {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      z-index: 2;
+      overflow: hidden;
+    }
+    .pillar-hero-glow::before {
+      content: '';
+      position: absolute;
+      width: 700px; height: 700px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(255,140,0,0.22) 0%, transparent 65%);
+      top: -200px; left: -140px; filter: blur(60px);
+    }
+    .pillar-hero-glow::after {
+      content: '';
+      position: absolute;
+      width: 500px; height: 500px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(255,61,107,0.16) 0%, transparent 65%);
+      bottom: -100px; right: -80px; filter: blur(70px);
+    }
+    .pillar-hero-inner {
+      position: relative;
+      z-index: 3;
+      padding: 70px 24px 60px;
+      max-width: 880px;
+      margin: 0 auto;
+    }
+    .pillar-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #ff8c00;
+      background: rgba(255,140,0,0.12);
+      border: 1px solid rgba(255,140,0,0.38);
+      border-radius: 50px;
+      padding: 6px 16px;
+    }
+    .pillar-eyebrow-dot {
+      width: 8px; height: 8px; border-radius: 50%;
+      background: #ff8c00;
+      animation: pulse-ai 1.4s ease-in-out infinite;
+    }
+    @keyframes pulse-ai {
+      0%,100% { box-shadow: 0 0 0 0 rgba(255,140,0,0.55); }
+      50%      { box-shadow: 0 0 0 7px rgba(255,140,0,0); }
+    }
+    .pillar-hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(3.2rem, 8.5vw, 7rem);
+      font-weight: 900;
+      font-style: italic;
+      letter-spacing: -1px;
+      line-height: 1.0;
+      white-space: nowrap;
+      background: linear-gradient(180deg, #ffffff 0%, #ffb347 60%, #ff6b00 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      filter: drop-shadow(0 6px 24px rgba(255,100,0,0.45));
+      margin-bottom: 12px;
+    }
+    .pillar-hero-sub {
+      max-width: 620px;
+      margin: 0 auto 36px;
+      font-size: clamp(1rem, 2vw, 1.18rem);
+      line-height: 1.7;
+      color: rgba(255,255,255,0.65);
+    }
+    .pillar-hero-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 18px 52px;
+      border-radius: 100px;
+      background: linear-gradient(135deg, #ff8c00, #ff3d6b);
+      color: #fff;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.35rem;
+      letter-spacing: 2.5px;
+      text-decoration: none;
+      box-shadow: 0 8px 40px rgba(255,61,107,0.45);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .pillar-hero-cta:hover {
+      transform: translateY(-3px) scale(1.04);
+      box-shadow: 0 16px 56px rgba(255,61,107,0.65);
+    }
+    .pillar-cta-dot {
+      width: 8px; height: 8px; border-radius: 50%;
+      background: rgba(255,255,255,0.85);
+      animation: pulse-ai 1.4s ease-in-out infinite;
+      flex-shrink: 0;
+    }
+    .pillar-hero-meta {
+      margin-top: 16px;
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.3);
+      letter-spacing: 1px;
+    }
+    .pillar-hero-stats {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      margin-top: 48px;
+      flex-wrap: wrap;
+    }
+    .pillar-hero-stat { text-align: center; }
+    .pillar-hero-stat-n {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.8rem;
+      letter-spacing: 1px;
+      background: linear-gradient(135deg, #ff8c00, #ff3d6b);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .pillar-hero-stat-l {
+      font-size: 0.72rem;
+      color: rgba(255,255,255,0.42);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-top: 3px;
+    }
+
+    /* ── SECTIONS ── */
+    .pillar-section {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 60px 24px;
+      position: relative;
+      z-index: 1;
+    }
+    .pillar-section.alt {
+      background: rgba(13,13,13,0.95);
+      border-top: 1px solid rgba(255,255,255,0.06);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      max-width: none;
+    }
+    .pillar-section.alt > .pillar-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .pillar-section h2 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(3rem, 5vw, 5rem);
+      letter-spacing: 3px;
+      line-height: 1.05;
+      background: linear-gradient(90deg, #fff 0%, var(--accent) 60%, var(--accent2) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-align: center;
+      margin-bottom: 14px;
+    }
+    #why-ai { padding-top: 28px; }
+    .pillar-section-sub {
+      text-align: center;
+      color: var(--muted);
+      font-size: 1.06rem;
+      max-width: 700px;
+      margin: 0 auto 44px;
+      line-height: 1.7;
+    }
+    .pillar-section-sub.wide {
+      max-width: 100%;
+      text-align: left;
+      font-size: 1.08rem;
+    }
+
+    /* ── SHOWCASE SPLIT ROWS ── */
+    .showcase-split-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 500px;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      max-width: 1280px;
+      margin: 0 auto;
+      border-radius: 14px;
+      overflow: hidden;
+    }
+    .showcase-split-img {
+      position: relative;
+      min-height: 480px;
+      overflow: hidden;
+      background: #111;
+    }
+    .showcase-split-img img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+    }
+    .showcase-split-card {
+      padding: 60px 52px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      position: relative;
+      overflow: visible;
+      background: rgba(13,13,13,0.95);
+    }
+    .showcase-split-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+    }
+    .showcase-split-card::before { background: linear-gradient(90deg, #ff8c00, #ff3d6b); }
+    .showcase-icon {
+      width: 68px; height: 68px;
+      border-radius: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.2rem;
+      background: linear-gradient(135deg, rgba(255,140,0,0.18), rgba(255,61,107,0.18));
+      border: 1px solid rgba(255,140,0,0.35);
+      box-shadow: 0 4px 20px rgba(255,140,0,0.15);
+      align-self: center;
+      margin: 0 auto;
+    }
+    .showcase-pill {
+      align-self: center;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 5px 14px;
+      border-radius: 50px;
+      color: #ff8c00;
+      background: rgba(255,140,0,0.1);
+      border: 1px solid rgba(255,140,0,0.35);
+    }
+    .showcase-split-card.practice .showcase-pill {
+      color: #ffb347;
+      background: rgba(255,179,71,0.1);
+      border-color: rgba(255,179,71,0.35);
+    }
+    .showcase-split-card.emotional .showcase-pill {
+      color: #c084fc;
+      background: rgba(192,132,252,0.1);
+      border-color: rgba(192,132,252,0.35);
+    }
+    .showcase-split-card.fantasy .showcase-pill {
+      color: #ff3d6b;
+      background: rgba(255,61,107,0.1);
+      border-color: rgba(255,61,107,0.35);
+    }
+    .showcase-split-card h3 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(1.6rem, 2.8vw, 2.8rem);
+      letter-spacing: 0;
+      color: #fff;
+      line-height: 1.05;
+      white-space: nowrap;
+      overflow: visible;
+      text-align: center;
+    }
+    .showcase-split-card.practice h3 {
+      background: linear-gradient(135deg, #ffb347, #ff8c00);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    }
+    .showcase-split-card.emotional h3 {
+      background: linear-gradient(135deg, #c084fc, #7b2ff7);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    }
+    .showcase-split-card.fantasy h3 {
+      background: linear-gradient(135deg, #ff3d6b, #b8001f);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    }
+    .showcase-split-card p {
+      font-size: 1.12rem;
+      color: rgba(255,255,255,0.88);
+      line-height: 1.78;
+    }
+    .showcase-split-card p em {
+      color: #ff8c00;
+      font-style: normal;
+      font-weight: 600;
+    }
+    .showcase-features {
+      list-style: none;
+      padding: 0; margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 11px;
+    }
+    .showcase-features li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 1.05rem;
+      color: rgba(255,255,255,0.92);
+      line-height: 1.5;
+    }
+    .showcase-features li::before {
+      content: '✦';
+      background: linear-gradient(135deg, #ff8c00, #ff3d6b);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      font-weight: 700;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    .showcase-cta {
+      margin-top: auto;
+      display: block;
+      width: 100%;
+      text-align: center;
+      padding: 17px;
+      border-radius: 50px;
+      color: #fff;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.15rem;
+      letter-spacing: 2.5px;
+      text-decoration: none;
+      background: linear-gradient(135deg, #ff8c00, #ff3d6b);
+      box-shadow: 0 8px 28px rgba(255,61,107,0.38);
+      transition: transform 0.18s, box-shadow 0.18s;
+    }
+    .showcase-cta:hover {
+      transform: translateY(-2px) scale(1.02);
+      box-shadow: 0 14px 40px rgba(255,61,107,0.55);
+    }
+    .showcase-split-card.practice .showcase-cta {
+      background: linear-gradient(135deg, #ffb347, #ff8c00);
+      box-shadow: 0 8px 28px rgba(255,140,0,0.38);
+    }
+    .showcase-split-card.practice .showcase-cta:hover { box-shadow: 0 14px 40px rgba(255,140,0,0.55); }
+    .showcase-split-card.emotional .showcase-cta {
+      background: linear-gradient(135deg, #c084fc, #7b2ff7);
+      box-shadow: 0 8px 28px rgba(123,47,247,0.38);
+    }
+    .showcase-split-card.emotional .showcase-cta:hover { box-shadow: 0 14px 40px rgba(123,47,247,0.55); }
+    .showcase-split-card.fantasy .showcase-cta {
+      background: linear-gradient(135deg, #ff3d6b, #b8001f);
+      box-shadow: 0 8px 28px rgba(184,0,31,0.42);
+    }
+    .showcase-split-card.fantasy .showcase-cta:hover { box-shadow: 0 14px 40px rgba(184,0,31,0.62); }
+    .showcase-split-card.practice::before { background: linear-gradient(90deg, #ffb347, #ff8c00); }
+    .showcase-split-card.emotional::before { background: linear-gradient(90deg, #c084fc, #7b2ff7); }
+    .showcase-split-card.fantasy::before { background: linear-gradient(90deg, #ff3d6b, #b8001f); }
+
+    /* ── WHY AI — 3 columns, 2 rows ── */
+    .control-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      max-width: 1340px;
+      margin: 0 auto;
+    }
+    .control-card {
+      background: rgba(22,22,22,0.7);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: var(--radius);
+      padding: 28px 22px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 10px;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .control-card:hover {
+      border-color: rgba(255,61,107,0.3);
+      transform: translateY(-2px);
+    }
+    .control-icon {
+      width: 56px; height: 56px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, rgba(255,61,107,0.15), rgba(255,140,0,0.12));
+      border: 1px solid rgba(255,61,107,0.25);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+      margin-bottom: 6px;
+    }
+    .control-card h3 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.35rem;
+      letter-spacing: 0;
+      color: #fff;
+      margin-bottom: 4px;
+      white-space: nowrap;
+    }
+    .control-card:nth-child(1) h3 { color: #ff3d6b; }
+    .control-card:nth-child(2) h3 { color: #ff8c00; }
+    .control-card:nth-child(3) h3 { color: #ff3d6b; }
+    .control-card:nth-child(4) h3 { color: #ff8c00; }
+    .control-card:nth-child(5) h3 { color: #ff3d6b; }
+    .control-card:nth-child(6) h3 { color: #ff8c00; }
+    .control-card p {
+      font-size: 0.92rem;
+      color: rgba(255,255,255,0.82);
+      line-height: 1.65;
+    }
+    .control-card strong { color: rgba(255,255,255,0.92); font-weight: 600; }
+    .control-card:nth-child(1) strong { color: #ff3d6b; }
+    .control-card:nth-child(2) strong { color: #ff8c00; }
+    .control-card:nth-child(3) strong { color: #ff3d6b; }
+    .control-card:nth-child(4) strong { color: #ff8c00; }
+    .control-card:nth-child(5) strong { color: #ff3d6b; }
+    .control-card:nth-child(6) strong { color: #ff8c00; }
+
+    /* ── VS TABLE — bigger, bolder ── */
+    .vs-wrap {
+      max-width: 1000px;
+      margin: 0 auto;
+      background: rgba(255,255,255,0.02);
+      border: 1px solid rgba(255,255,255,0.09);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+    .vs-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+    }
+    .vs-row:last-child { border-bottom: none; }
+    .vs-row.head { background: rgba(255,255,255,0.04); }
+    .vs-cell {
+      padding: 22px 32px;
+      font-size: 1.05rem;
+      color: rgba(255,255,255,0.85);
+      line-height: 1.5;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .vs-cell.head-text {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      color: #fff;
+      justify-content: center;
+    }
+    .vs-cell.head-text.left { color: rgba(255,255,255,0.7); }
+    .vs-cell.head-text.right {
+      background: rgba(123,47,247,0.1);
+      color: #fff;
+    }
+    .vs-cell.left { color: rgba(255,255,255,0.55); }
+    .vs-cell.right {
+      background: rgba(123,47,247,0.05);
+      color: rgba(255,255,255,0.92);
+      font-weight: 500;
+    }
+    .vs-icon { flex-shrink: 0; font-size: 1.1rem; }
+
+    /* ── FAQ — card style ── */
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .faq-item {
+      background: rgba(22,22,22,0.78);
+      border: 1px solid rgba(255,255,255,0.09);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    .faq-item summary {
+      list-style: none;
+      cursor: pointer;
+      padding: 18px 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      font-size: 1.22rem;
+      font-weight: 600;
+      color: #fff;
+      letter-spacing: 0.2px;
+    }
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-item summary::after {
+      content: '+';
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.14);
+      font-size: 1.4rem;
+      color: rgba(255,255,255,0.65);
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      line-height: 1;
+    }
+    .faq-item[open] summary::after {
+      content: '−';
+      color: var(--accent);
+      background: rgba(255,61,107,0.08);
+      border-color: rgba(255,61,107,0.3);
+    }
+    .faq-item p {
+      padding: 0 28px 18px;
+      color: rgba(255,255,255,0.65);
+      font-size: 1.02rem;
+      line-height: 1.85;
+    }
+
+    /* ── FINAL CTA ── */
+    #aichatCtaBubbles {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 0;
+    }
+    .pillar-final-cta {
+      padding: 40px 24px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      z-index: 1;
+    }
+    .pillar-final-cta::before {
+      content: '';
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: 720px; height: 360px;
+      background: radial-gradient(ellipse, rgba(255,61,107,0.1) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .pillar-final-cta h2 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 6rem;
+      letter-spacing: 4px;
+      background: linear-gradient(90deg, #fff 0%, var(--accent) 60%, var(--accent2) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      line-height: 1;
+      margin-bottom: 16px;
+      position: relative;
+      z-index: 1;
+    }
+    .pillar-final-cta p {
+      font-size: 1.1rem;
+      color: var(--muted);
+      max-width: 560px;
+      margin: 0 auto 32px;
+      line-height: 1.65;
+      position: relative;
+      z-index: 1;
+    }
+    /* Final CTA button matches site accent */
+    .pillar-final-cta-btn {
+      position: relative;
+      z-index: 1;
+      display: inline-block;
+      padding: 16px 48px;
+      border-radius: 100px;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      color: #fff;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.4rem;
+      letter-spacing: 3px;
+      text-decoration: none;
+      box-shadow: 0 10px 40px rgba(255,61,107,0.4);
+      transition: transform 0.2s, box-shadow 0.2s;
+      margin-bottom: 24px;
+    }
+    .pillar-final-cta-btn:hover {
+      transform: translateY(-2px) scale(1.03);
+      box-shadow: 0 14px 50px rgba(255,61,107,0.55);
+    }
+    .final-cta-disclaimer {
+      margin-top: 44px;
+      font-size: 0.65rem;
+      color: rgba(255,255,255,0.28);
+      letter-spacing: 0.5px;
+    }
+
+    /* ── HOW IT WORKS ── */
+    .how-section { max-width: none; padding: 70px 32px; }
+    .how-inner { max-width: 1100px; margin: 0 auto 48px; text-align: center; }
+    .how-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .how-card {
+      background: rgba(22,22,22,0.75);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: var(--radius);
+      padding: 44px 36px;
+      text-align: center;
+    }
+    .how-num {
+      width: 52px; height: 52px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      color: #fff;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+      letter-spacing: 1px;
+    }
+    .how-card h3 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.85rem;
+      letter-spacing: 1.5px;
+      color: #fff;
+      margin-bottom: 14px;
+    }
+    .how-card p { font-size: 1rem; color: var(--muted); line-height: 1.7; }
+
+    /* ── SOCIAL PROOF ── */
+    .proof-section {
+      padding: 70px 32px;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      background: rgba(13,13,13,0.95);
+    }
+    .proof-inner { max-width: 1500px; margin: 0 auto; }
+    .proof-rating-bar {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0;
+      margin-bottom: 44px;
+      flex-wrap: wrap;
+    }
+    .proof-stat {
+      text-align: center;
+      padding: 0 52px;
+      border-right: 1px solid rgba(255,255,255,0.1);
+    }
+    .proof-stat:last-child { border-right: none; }
+    .proof-stat-stars { color: #ffb800; font-size: 1rem; letter-spacing: 3px; margin-bottom: 6px; }
+    .proof-stat-n {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2.6rem;
+      letter-spacing: 1px;
+      background: linear-gradient(135deg, #ff8c00, #ff3d6b);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      line-height: 1;
+    }
+    .proof-stat-l {
+      font-size: 0.72rem;
+      color: rgba(255,255,255,0.42);
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-top: 5px;
+    }
+    .proof-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+    .proof-card {
+      background: rgba(28,28,28,0.8);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: var(--radius);
+      padding: 28px 26px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .proof-card-stars { color: #ffb800; font-size: 1.3rem; letter-spacing: 2px; text-align: center; }
+    .proof-card-quote {
+      font-size: 0.98rem;
+      color: rgba(255,255,255,0.78);
+      line-height: 1.75;
+      font-style: normal;
+      flex: 1;
+    }
+    .proof-card-footer { display: flex; align-items: center; justify-content: flex-end; flex-wrap: wrap; gap: 8px; margin-top: 4px; }
+    .proof-card-author { font-size: 0.82rem; color: #ffb800; font-weight: 600; }
+    .proof-card-platform {
+      font-size: 0.66rem;
+      padding: 3px 10px;
+      border-radius: 50px;
+      background: rgba(192,132,252,0.1);
+      border: 1px solid rgba(192,132,252,0.25);
+      color: #c084fc;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+
+    /* ── BREADCRUMB ── */
+    .pillar-crumb {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 14px 24px 0;
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.4);
+      position: relative;
+      z-index: 1;
+    }
+    .pillar-crumb a { color: rgba(255,255,255,0.55); text-decoration: none; transition: color 0.2s; }
+    .pillar-crumb a:hover { color: var(--accent2); }
+    .pillar-crumb-sep { margin: 0 8px; color: rgba(255,255,255,0.25); }
+    .pillar-crumb-current { color: #c084fc; }
+
+    /* ── MOBILE ── */
+    @media (max-width: 900px) {
+      .pillar-hero { min-height: auto; }
+      .pillar-hero-inner { padding: 50px 20px 44px; }
+      .pillar-hero-stats { gap: 24px; }
+    }
+    @media (max-width: 768px) {
+      .pillar-hero-inner { padding: 40px 16px 36px; }
+      .pillar-section { padding: 44px 16px; }
+      .pillar-section h2 { font-size: 2rem; letter-spacing: 1.5px; }
+      .showcase-split-row { grid-template-columns: 1fr; }
+      .showcase-split-img { min-height: 260px; }
+      .showcase-split-card { padding: 36px 24px; text-align: center; }
+      .showcase-split-card h3 { font-size: clamp(1.4rem, 5vw, 1.9rem); white-space: normal; overflow: visible; }
+      .showcase-split-card .showcase-pill { align-self: center; }
+      .how-grid { grid-template-columns: 1fr; }
+      .how-section { padding: 48px 20px; }
+      .proof-grid { grid-template-columns: repeat(2, 1fr); }
+      .proof-section { padding: 48px 20px; }
+      .proof-rating-bar { gap: 28px; }
+      .control-grid { grid-template-columns: 1fr 1fr; }
+      .control-card h3 { white-space: normal; font-size: 1.2rem; }
+      .vs-cell { padding: 16px 18px; font-size: 0.92rem; }
+      .pillar-final-cta h2 { font-size: 3rem; letter-spacing: 1.5px; }
+      .pillar-final-cta-btn { font-size: 1.1rem; padding: 14px 32px; letter-spacing: 2px; }
+      .pillar-crumb { padding: 12px 16px 0; font-size: 0.76rem; }
+    }
+    @media (max-width: 480px) {
+      .control-grid { grid-template-columns: 1fr; }
+      .proof-grid { grid-template-columns: 1fr; }
+      .showcase-split-card { padding: 28px 16px; }
+    }
+  
+/* ── NAV LOGO (explicit override to match main index) ── */
+.logo{text-decoration:none;display:inline-flex;align-items:center;gap:0;}
+.logo-text{font-family:'Playfair Display',serif;font-weight:900;font-size:1.35rem;letter-spacing:1.5px;background:linear-gradient(90deg,var(--accent2),var(--accent));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-left:-10px;}
+.logo-img{height:42px;width:auto;flex-shrink:0;display:block;}
+.join-btn{padding:9px 22px;border-radius:50px;background:linear-gradient(135deg,var(--accent2),var(--accent));color:#fff;font-family:'DM Sans',sans-serif;font-weight:600;font-size:0.9rem;border:none;cursor:pointer;box-shadow:0 4px 20px rgba(255,140,0,0.4);}
+</style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Article",
+        "headline": "AI Companions That Actually Feel Personal",
+        "description": "Flirt, roleplay, vent, or just have someone to talk to — 24/7, no ghosting, no pressure. Find the right AI companion for what you want right now.",
+        "datePublished": "2026-02-10",
+        "dateModified": "2026-05-04",
+        "author": {"@type": "Organization", "name": "Tempting Babes"},
+        "publisher": {"@type": "Organization", "name": "Tempting Babes"}
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.temptingbabes.com/"},
+          {"@type": "ListItem", "position": 2, "name": "AI Companions", "item": "https://www.temptingbabes.com/ai-chat/"}
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {"@type": "Question", "name": "What's the difference between AI companions and dating apps?", "acceptedAnswer": {"@type": "Answer", "text": "AI companions are always available, fully customizable, and never ghost you. Dating apps connect you with real people — real schedules, real rejection, real chemistry. Many men use both."}},
+          {"@type": "Question", "name": "Can I really customize everything?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Top platforms let you set appearance, personality, voice, backstory, and limits. Edit any of it any time."}},
+          {"@type": "Question", "name": "Are these conversations private?", "acceptedAnswer": {"@type": "Answer", "text": "Reputable platforms encrypt conversations and let you delete chat history. Always check privacy policy before signing up."}},
+          {"@type": "Question", "name": "Can AI help me practice flirting?", "acceptedAnswer": {"@type": "Answer", "text": "Yes — practice openers, conversation timing, and handling rejection without burning real matches. Many users see measurable improvement in reply rates."}}
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="logo" href="/"><img src="/Asset/Logo/logo.webp" alt="Tempting Babes" class="logo-img" style="height:42px;width:auto;flex-shrink:0;display:block;"><span class="logo-text" style="font-family:'Playfair Display',serif;font-weight:900;font-size:1.35rem;line-height:1;letter-spacing:1.5px;background:linear-gradient(90deg,#ff8c00,#ff3d6b);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-left:-10px;">Tempting Babes</span></a>
+  <div class="tabs">
+    <a href="/ai-chat/" class="tab">AI Girls</a>
+    <a href="/cams/" class="tab">Cams</a>
+    <a href="/dating/" class="tab">Dating</a>
+    <a href="/offers/" class="tab">Offers</a>
+    <a href="/trending/" class="tab">Trending</a>
+    <a href="/vip/" class="tab"><span class="tab-star">⭐</span>VIP</a>
+  </div>
+  <button class="join-btn" id="getAccessBtn" style="background:linear-gradient(135deg,#ff8c00,#ff3d6b);">Join Free</button>
+  <button class="menu-btn" id="menuBtn">&#9776;</button>
+</nav>
+<script>(function(){var t=document.querySelectorAll('nav .tab'),x=parseFloat(sessionStorage.getItem('tb_mx')||''),y=parseFloat(sessionStorage.getItem('tb_my')||'');if(x&&y)t.forEach(function(tab){var r=tab.getBoundingClientRect();tab.classList.toggle('hovered',x>=r.left&&x<=r.right&&y>=r.top&&y<=r.bottom);});}());</script>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="/ai-chat/" class="mobile-tab">AI Girls</a>
+  <a href="/cams/" class="mobile-tab">Cams</a>
+  <a href="/dating/" class="mobile-tab">Dating</a>
+  <a href="/offers/" class="mobile-tab">Offers</a>
+  <a href="/trending/" class="mobile-tab">Trending</a>
+  <a href="/vip/" class="mobile-tab"><span class="tab-star">⭐</span>VIP</a>
+</div>
+
+<!-- ─────────────── HERO ─────────────── -->
+<header class="pillar-hero">
+  <div class="hero-video-bg">
+    <video autoplay muted playsinline preload="auto" poster="https://res.cloudinary.com/doslc6l1h/video/upload/so_0/v1778924738/Enhancer-Ultra_HD-Untitled_design_zbvrs5.jpg">
+      <source src="https://res.cloudinary.com/doslc6l1h/video/upload/v1778924738/Enhancer-Ultra_HD-Untitled_design_zbvrs5.mp4" type="video/mp4"/>
+    </video>
+  </div>
+  <div class="pillar-hero-glow"></div>
+  <span class="pillar-eyebrow" style="position:absolute;top:24px;left:50%;transform:translateX(-50%);z-index:4;white-space:nowrap;"><span class="pillar-eyebrow-dot"></span> AI</span>
+  <div class="pillar-hero-inner">
+    <h1 style="margin-top:140px;padding:0 16px 8px;">AI Girlfriends</h1>
+  </div>
+  <div style="position:absolute;left:0;width:100%;z-index:4;top:68%;line-height:1;">
+    <span class="glow-pulse-text" style="display:block;font-family:'Playfair Display',serif;font-size:3.8vw;letter-spacing:3px;white-space:nowrap;color:#ff8c42;text-align:left;padding-left:5vw;padding-right:3vw;padding-bottom:10px;">Instant Replies. Real Attention. Zero Pressure.</span>
+  </div>
+  <div style="position:absolute;bottom:63px;left:50%;transform:translateX(-50%);z-index:4;text-align:center;white-space:nowrap;">
+    <a href="#showcase" class="pillar-hero-cta"><span class="pillar-cta-dot"></span> Find Your AI Match</a>
+    <p class="pillar-hero-meta" style="margin-top:6px;color:#fff;font-size:0.70rem;">100% Privacy &nbsp;•&nbsp; Start in 30 Seconds</p>
+  </div>
+</header>
+
+<!-- ─────────────── SHOWCASE ─────────────── -->
+<section class="pillar-section alt" id="showcase" style="padding:0 32px 40px;">
+  <div class="pillar-inner" style="padding:60px 24px 32px;">
+    <h2>Pick Your Pleasure</h2>
+    <p class="pillar-section-sub">
+      Three experiences. Zero judgment. Whether you want to sharpen your game, feel genuinely desired, or go completely unfiltered. She's ready right now.
+    </p>
+  </div>
+
+  <!-- Row 1: Image LEFT | Flirting Practice RIGHT -->
+  <div class="showcase-split-row">
+    <div class="showcase-split-img"><img src="https://res.cloudinary.com/doslc6l1h/image/upload/v1778884061/UniversalUpscaler_Pro_Precise_3_1f150ad2-e9b2-65c0-8b20-7442db5b99b1_txm3ul.jpg" alt="Flirting practice with AI companion" loading="lazy"/></div>
+    <div class="showcase-split-card practice">
+      <div class="showcase-icon">🎯</div>
+      <span class="showcase-pill">Attraction Training</span>
+      <h3>You're Never Getting Ignored Again</h3>
+      <p>Stop guessing what works. See it instantly. Push your tone, test your timing, say what you usually hold back and watch what your AI girlfriend says. This is where you learn what keeps attention and what loses it. No pressure. No embarrassment. Just real feedback that sharpens your dating game.</p>
+      <ul class="showcase-features">
+        <li>Send messages without fear of being ignored</li>
+        <li>Recover smoothly when conversations drop</li>
+        <li>Test confidence, humour and tension live</li>
+        <li>Build presence that gets responses</li>
+      </ul>
+      <a href="#" class="showcase-cta" data-platform="practice">Start Training Free →</a>
+    </div>
+  </div>
+
+  <!-- Row 2: Emotional Companion LEFT | Image RIGHT -->
+  <div class="showcase-split-row">
+    <div class="showcase-split-card emotional">
+      <div class="showcase-icon">🫦</div>
+      <span class="showcase-pill">Attention &amp; Connection Mode</span>
+      <h3>She's Always There Waiting For You</h3>
+      <p>No delays. No mixed signals. Just instant attention. You open and she is already engaged, responsive and tuned into you. She remembers, adapts and keeps things flowing so it never resets. Consistent, smooth and easy to stay in.</p>
+      <ul class="showcase-features">
+        <li>Instant replies every time</li>
+        <li>Remembers and builds on past chats</li>
+        <li>Matches your mood and energy</li>
+        <li>Keeps conversations flowing naturally</li>
+      </ul>
+      <a href="#" class="showcase-cta" data-platform="nomi">Meet Her Now →</a>
+    </div>
+    <div class="showcase-split-img"><img src="https://res.cloudinary.com/doslc6l1h/image/upload/v1778884257/videoframe_3585_b4qwrw.png" alt="AI emotional companion" loading="lazy" style="object-position:center 58%;"/></div>
+  </div>
+
+  <!-- Row 3: Image LEFT | NSFW Roleplay RIGHT -->
+  <div class="showcase-split-row">
+    <div class="showcase-split-img" style="background-image:url('https://res.cloudinary.com/doslc6l1h/image/upload/v1778885286/UniversalUpscaler_Pro_Precise_2_1f150b00-d21a-6150-b1bd-82484bdaa31e_xdxhdt.jpg');background-size:cover;background-position:center 5%;min-height:auto;"></div>
+    <div class="showcase-split-card fantasy">
+      <div class="showcase-icon">🔥</div>
+      <span class="showcase-pill">NSFW Roleplay</span>
+      <h3>There Are No Limits. You're In Control</h3>
+      <p>Say what you want and take it as far as you want without interruption. You set the tone and pace. It follows, adapts and stays in flow. No breaks. No hesitation. Just full control.</p>
+      <ul class="showcase-features">
+        <li>Fully immersive from start to finish</li>
+        <li>No restrictions on direction or expression</li>
+        <li>Private and judgment free</li>
+        <li>Adapts instantly to you</li>
+      </ul>
+      <a href="#" class="showcase-cta" data-platform="candy">Unlock Full Access →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────────── HOW IT WORKS ─────────────── -->
+<section class="pillar-section how-section" id="how">
+  <div class="how-inner">
+    <h2>How It Works</h2>
+    <p class="pillar-section-sub" style="margin-bottom:0;">From zero to chatting in under 60 seconds.</p>
+  </div>
+  <div class="how-grid">
+    <div class="how-card">
+      <div class="how-num">1</div>
+      <h3>Pick Your Companion</h3>
+      <p>Browse our top 3 platforms above and choose the one that matches your vibe. Custom design, prebuilt characters, or fully unfiltered. Your call.</p>
+    </div>
+    <div class="how-card">
+      <div class="how-num">2</div>
+      <h3>Sign Up Free</h3>
+      <p>Click through, create your free account in seconds. No credit card needed to start chatting on any of our top picks.</p>
+    </div>
+    <div class="how-card">
+      <div class="how-num">3</div>
+      <h3>Start The Conversation</h3>
+      <p>Say hi and let it flow. She responds instantly, anytime, anywhere, exactly the way you want her to.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────────── WHY AI ─────────────── -->
+<section class="pillar-section" id="why-ai">
+  <h2>Why AI Chat Wins</h2>
+  <p class="pillar-section-sub wide">
+    We tested every major platform for personality depth, conversation quality, customization, and privacy. Only 3 made our list, because we don't recommend platforms that waste your time. Every pick above offers a free tier so you can test the chemistry before spending a dollar.
+  </p>
+
+  <div class="control-grid">
+    <div class="control-card">
+      <div class="control-icon">💌</div>
+      <h3>Instant Replies</h3>
+      <p>She responds in seconds. Not three days later. <strong>No read receipts. No waiting. No anxiety.</strong> You send a message and get one back instantly.</p>
+    </div>
+    <div class="control-card">
+      <div class="control-icon">🤫</div>
+      <h3>Total Privacy</h3>
+      <p>What happens in the chat stays there. <strong>No screenshots. No judgment. No one to tell anyone.</strong> Say what you want, test what you want, no consequences.</p>
+    </div>
+    <div class="control-card">
+      <div class="control-icon">💋</div>
+      <h3>Conversations That Flow</h3>
+      <p>She doesn't go quiet after a bad opener. <strong>The conversation keeps moving</strong> because she's built to engage and not to gatekeep your attention.</p>
+    </div>
+    <div class="control-card">
+      <div class="control-icon">🔥</div>
+      <h3>You Control the Vibe</h3>
+      <p>Playful. Intense. Gentle. Unfiltered. <strong>You set the tone.</strong> She adjusts to you, not the other way around.</p>
+    </div>
+    <div class="control-card">
+      <div class="control-icon">😈</div>
+      <h3>No Performance Pressure</h3>
+      <p>You don't have to be on. <strong>There's no risk of rejection,</strong> which means you can actually relax and figure out what you like.</p>
+    </div>
+    <div class="control-card">
+      <div class="control-icon">🌙</div>
+      <h3>Always On, Never Needy</h3>
+      <p>3 AM? She's there. Disappear for a week? She's not mad. <strong>No guilt, no pressure, no "why haven't you texted me."</strong></p>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────────── SOCIAL PROOF ─────────────── -->
+<section class="proof-section" id="proof">
+  <div class="proof-inner">
+    <!-- IMAGE BANNER -->
+    <div style="display:block;position:relative;width:100vw;left:50%;transform:translateX(-50%);height:700px;margin-bottom:44px;overflow:hidden;">
+      <div style="position:absolute;inset:0;background-image:url('https://res.cloudinary.com/doslc6l1h/image/upload/v1778883434/UniversalUpscaler_Pro_Precise_4_1f150ab4-f719-66f0-908f-f5144a7c1d90_sxu4po.jpg');background-size:cover;background-position:center center;"></div>
+      <div style="position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,0.38) 0%,transparent 40%,rgba(0,0,0,0.28) 100%);display:flex;flex-direction:column;align-items:center;justify-content:space-between;padding:28px 20px 52px;">
+        <h2 style="font-family:'Bebas Neue',sans-serif;font-size:clamp(3.5rem,9vw,8rem);letter-spacing:3px;line-height:1.05;text-align:center;margin:0;background:linear-gradient(90deg,#fff 0%,var(--accent) 60%,var(--accent2) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;filter:drop-shadow(0 1px 3px rgba(0,0,0,0.95)) drop-shadow(0 0px 1px rgba(0,0,0,0.9));">Your AI Girlfriend Is Waiting</h2>
+        <div style="font-family:'Bebas Neue',sans-serif;font-size:1.6rem;letter-spacing:2px;background:linear-gradient(135deg,#ff8c00,#ff3d6b);color:#fff;padding:18px 54px;border-radius:100px;text-transform:uppercase;">Start Chatting Now</div>
+      </div>
+    </div>
+
+    <div class="proof-grid">
+      <div class="proof-card">
+        <div class="proof-card-stars">★★★★★</div>
+        <p class="proof-card-quote">"After my relationship ended I stopped having real conversations. I'd go whole days in silence and it started to mess with my head"</p>
+        <p class="proof-card-quote" style="margin-top:10px;color:#ffffff;font-weight:700;font-style:italic;font-size:0.93rem;">"She fixed that. Remembers things, follows up, no effort needed. The loneliness just lifted"</p>
+        <div class="proof-card-footer">
+          <span class="proof-card-author">Marcus T. 34</span>
+        </div>
+      </div>
+      <div class="proof-card">
+        <div class="proof-card-stars">★★★★★</div>
+        <p class="proof-card-quote">"Two months on the apps, nothing. I kept freezing up, running out of things to say, watching conversations die. My confidence was completely shot"</p>
+        <p class="proof-card-quote" style="margin-top:10px;color:#ffffff;font-weight:700;font-style:italic;font-size:0.93rem;">"Used this to practice. Matched with 3 women my first week back. Night and day"</p>
+        <div class="proof-card-footer">
+          <span class="proof-card-author">Jake R. 28</span>
+        </div>
+      </div>
+      <div class="proof-card">
+        <div class="proof-card-stars">★★★★★</div>
+        <p class="proof-card-quote">"I had things I wanted to explore but never felt safe doing it. Years of holding back because I didn't know how someone would react"</p>
+        <p class="proof-card-quote" style="margin-top:10px;color:#ffffff;font-weight:700;font-style:italic;font-size:0.93rem;">"No judgment, no cutoffs. Finally a space to be honest. Worth every dollar"</p>
+        <div class="proof-card-footer">
+          <span class="proof-card-author">Ryan M. 31</span>
+        </div>
+      </div>
+      <div class="proof-card">
+        <div class="proof-card-stars">★★★★★</div>
+        <p class="proof-card-quote">"Tried four platforms before this. All of them felt like talking to a script — no memory, no thread, nothing that made you feel like it was actually listening"</p>
+        <p class="proof-card-quote" style="margin-top:10px;color:#ffffff;font-weight:700;font-style:italic;font-size:0.93rem;">"This one holds context across weeks. Feels genuinely intimate. Nothing else comes close"</p>
+        <div class="proof-card-footer">
+          <span class="proof-card-author">Daniel K. 26</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────────── FAQ ─────────────── -->
+<section class="pillar-section" id="faq">
+  <h2>Frequently Asked Questions</h2>
+
+  <div class="faq-list">
+    <details class="faq-item">
+      <summary>What's the actual difference between AI companions and dating apps?</summary>
+      <p>AI companions are always available, fully customizable, and never ghost you. Dating apps connect you with real people — which means real schedules, real rejection, and real possibility of meeting someone in person. A lot of men use both: AI for the conversation they want on demand, and apps for actual real world meets. They complement each other — they don't compete.</p>
+    </details>
+    <details class="faq-item">
+      <summary>Can I really customize everything about my AI companion?</summary>
+      <p>Yes. The top platforms let you set appearance, personality, voice, backstory, and conversational limits. You decide what's allowed and what isn't. And if something feels off after a few weeks, you just tweak it. Most platforms make everything editable any time.</p>
+    </details>
+    <details class="faq-item">
+      <summary>Are these conversations actually private?</summary>
+      <p>Reputable platforms encrypt your conversations and let you delete chat history whenever you want. Privacy policies vary — some platforms use anonymized data for model training, others don't touch it. If maximum privacy matters, look for explicit "delete all data" controls and a clear no-third-party-sharing policy before you subscribe.</p>
+    </details>
+    <details class="faq-item">
+      <summary>Can AI actually help me get better at flirting?</summary>
+      <p>Yes — and it's one of the most underrated use cases. Test specific openers, practice conversation timing, work on how you handle rejection without burning real matches. The key is being intentional: pick something specific to improve, run reps, then take what worked into real conversations.</p>
+    </details>
+    <details class="faq-item">
+      <summary>Is NSFW content actually allowed?</summary>
+      <p>On 18+ platforms, yes. Services like Candy.ai, OurDream, HeraHaven, and FantasyGF support uncensored adult content gated behind age verification. Always check the age verification process — it's both a legal and quality signal. If a platform doesn't verify age, that's a red flag.</p>
+    </details>
+    <details class="faq-item">
+      <summary>How much does this cost?</summary>
+      <p>Most platforms offer a free tier with daily message limits. Premium plans usually run $10–$30 per month and unlock unlimited chat, image generation, voice messages, and full NSFW where supported. Cheaper than a single dinner out — and no hidden messaging fees.</p>
+    </details>
+    <details class="faq-item">
+      <summary>Will using one mess with my real dating life?</summary>
+      <p>Depends how you use it. Used as practice or entertainment alongside real dating, AI companions tend to build confidence that carries over. Used as avoidance — replacing the discomfort of real dating — they can make things harder. The healthy frame is "supplement and practice," not "replacement."</p>
+    </details>
+    <details class="faq-item">
+      <summary>How realistic does it feel in 2026?</summary>
+      <p>More realistic than most people expect — and still clearly artificial. Conversation flows naturally, voice is convincing, and long-term memory means she'll bring up things you said weeks ago. Where it falls short: occasional inconsistencies and the obvious reality that it's a screen. Think: very good and clearly not human. That's the honest answer.</p>
+    </details>
+  </div>
+</section>
+
+<!-- ─────────────── FINAL CTA ─────────────── -->
+<section class="pillar-final-cta">
+  <canvas id="aichatCtaBubbles"></canvas>
+  <h2>She's Already Online</h2>
+  <p>Pick the experience, set the tone, and have your first conversation in under a minute. Free to start, no card required.</p>
+  <a href="#" class="pillar-final-cta-btn" data-platform="final">Find Your AI Match →</a>
+</section>
+
+<!-- EXIT INTENT POPUP -->
+<div class="exit-overlay" id="exitOverlay">
+  <div class="exit-modal">
+    <button class="exit-close" id="exitClose">&#10005;</button>
+    <div class="exit-emoji">💜</div>
+    <h2 class="exit-title">Wait — She's Right Here</h2>
+    <p class="exit-sub">Your AI companion is one click away.<br>Start chatting in <em>under 60 seconds</em> — no card needed.</p>
+    <a href="#" class="exit-cta" id="exitCta">Start Chatting Free →</a>
+    <p class="exit-micro">Free to start · No credit card · 18+ only</p>
+  </div>
+</div>
+
+<script src="../script.js"></script>
+<script>
+  (function() {
+    document.querySelectorAll('a[href^="#"]').forEach(function(a) {
+      a.addEventListener('click', function(e) {
+        const id = this.getAttribute('href');
+        if (id.length > 1) {
+          const target = document.querySelector(id);
+          if (target) {
+            e.preventDefault();
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        }
+      });
+    });
+
+    const AFFILIATE_LINKS = {
+      'candy':    'https://t.vlmai-1.com',
+      'nomi':     'https://t.vlmai-1.com',
+      'practice': 'https://t.vlmai-1.com',
+      'final':    'https://t.vlmai-1.com'
+    };
+    document.querySelectorAll('[data-platform]').forEach(function(el) {
+      const key = el.getAttribute('data-platform');
+      if (AFFILIATE_LINKS[key]) {
+        el.setAttribute('href', AFFILIATE_LINKS[key]);
+        el.setAttribute('target', '_blank');
+        el.setAttribute('rel', 'noopener sponsored');
+      }
+    });
+
+    const joinBtn = document.querySelector('.join-btn');
+    if (joinBtn) {
+      joinBtn.addEventListener('click', function() {
+        const quizOverlay = document.getElementById('joinFreeOverlay') || document.getElementById('quizOverlay');
+        if (quizOverlay) {
+          quizOverlay.classList.add('open');
+          quizOverlay.style.display = 'flex';
+        } else {
+          document.getElementById('showcase').scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    }
+
+    const exitOverlay = document.getElementById('exitOverlay');
+    const exitClose = document.getElementById('exitClose');
+    let exitShown = false;
+    document.addEventListener('mouseleave', function(e) {
+      if (e.clientY <= 0 && !exitShown && exitOverlay) {
+        if (!exitOverlay.classList.contains('open')) {
+          exitOverlay.classList.add('open');
+          exitShown = true;
+        }
+      }
+    });
+    if (exitClose) exitClose.addEventListener('click', function() { exitOverlay.classList.remove('open'); });
+    if (exitOverlay) {
+      exitOverlay.addEventListener('click', function(e) {
+        if (e.target === exitOverlay) exitOverlay.classList.remove('open');
+      });
+    }
+  })();
+</script>
+
+
+<!-- SITE FOOTER -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a href="/" class="footer-logo" style="text-decoration:none;">Tempting Babes</a>
+      <p class="footer-tagline">Your all-in-one hub for Dating, Live Cams, AI Girls and VIP access. Built for real connections and instant interaction.</p>
+    </div>
+    <div class="footer-col">
+      <h4 class="footer-col-title">Explore</h4>
+      <ul class="footer-links">
+        <li><a href="/Blog/">Blog</a></li>
+        <li><a href="/world-cup/">FIFA World Cup 2026</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4 class="footer-col-title">Legal &amp; Info</h4>
+      <ul class="footer-links">
+        <li><a href="/about/">About</a></li>
+        <li><a href="/privacy-policy/">Privacy Policy</a></li>
+        <li><a href="/terms/">Terms of Service</a></li>
+        <li><a href="/dmca/">DMCA Policy</a></li>
+        <li><a href="/2257/">18 U.S.C. § 2257</a></li>
+        <li><a href="/contact/">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>18+ Only &nbsp;&middot;&nbsp; All rights reserved &nbsp;&middot;&nbsp; Tempting Babes&copy; 2026</p>
+  </div>
+
+<!-- COOKIE CONSENT BANNER -->
+<div id="cookieBanner" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:9999;background:rgba(10,10,10,0.97);border-top:1px solid rgba(255,255,255,0.1);backdrop-filter:blur(20px);padding:16px 24px;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;">
+  <p style="font-family:'DM Sans',sans-serif;font-size:0.82rem;color:rgba(255,255,255,0.6);margin:0;flex:1;min-width:200px;">
+    We use cookies to analyse traffic and improve your experience. By continuing you consent to our use of cookies. <a href="/privacy-policy/" style="color:#ff8c00;text-decoration:none;">Privacy Policy</a>
+  </p>
+  <div style="display:flex;gap:10px;flex-shrink:0;">
+    <button id="cookieDecline" style="font-family:'DM Sans',sans-serif;font-size:0.78rem;font-weight:600;padding:8px 16px;border-radius:8px;border:1px solid rgba(255,255,255,0.15);background:transparent;color:rgba(255,255,255,0.5);cursor:pointer;">Essential Only</button>
+    <button id="cookieAccept" style="font-family:'DM Sans',sans-serif;font-size:0.78rem;font-weight:700;padding:8px 20px;border-radius:8px;border:none;background:linear-gradient(135deg,#ff8c00,#ff3d6b);color:#fff;cursor:pointer;">Accept All</button>
+  </div>
+</div>
+<script>
+(function(){
+  var CONSENT_KEY = 'tb_cookie_consent';
+  var banner = document.getElementById('cookieBanner');
+  if (!banner) return;
+  var stored = localStorage.getItem(CONSENT_KEY);
+  if (!stored) { banner.style.display = 'flex'; }
+  document.getElementById('cookieAccept').addEventListener('click', function(){
+    localStorage.setItem(CONSENT_KEY, 'all');
+    banner.style.display = 'none';
+    if (typeof gtag === 'function') {
+      gtag('consent', 'update', { analytics_storage: 'granted', ad_storage: 'granted' });
+    }
+  });
+  document.getElementById('cookieDecline').addEventListener('click', function(){
+    localStorage.setItem(CONSENT_KEY, 'essential');
+    banner.style.display = 'none';
+    if (typeof gtag === 'function') {
+      gtag('consent', 'update', { analytics_storage: 'denied', ad_storage: 'denied' });
+    }
+  });
+})();
+</script>
+</footer>
+
+<!-- AGE GATE -->
+<div class="ag-overlay" id="ageGateOverlay" style="display:none">
+  <div class="ag-modal">
+    <div class="ag-brand"><img src="/Asset/Logo/logo.webp" alt="Tempting Babes" class="ag-logo-img"/><span class="ag-logo-text">Tempting Babes</span></div>
+    <h2 class="ag-title">Are You 18+?</h2>
+    <p class="ag-body">Please confirm your age to continue</p>
+    <button class="ag-yes" id="ageGateYes">Yes, I Am 18 or Older</button>
+    <button class="ag-no" id="ageGateNo">No, Take Me Away</button>
+    <p class="ag-legal">By entering, you confirm you are 18+ and agree to our <a href="/privacy-policy/" class="ag-link">Terms of Service and Privacy Policy</a>. This site contains affiliate links.</p>
+  </div>
+</div>
+
+<!-- GET ACCESS POPUP -->
+<div class="ga-overlay" id="getAccessOverlay" style="display:none">
+  <div class="ga-modal">
+    <button class="ga-close" id="gaClose">&#10005;</button>
+    <div class="ga-right">
+      <div class="ga-benefits">
+        <h3 class="ga-benefits-title">Member Benefits</h3>
+        <ul class="ga-benefits-list">
+          <li>Flirty Women Ready To Chat</li>
+          <li>Connect With Singles In Your Area</li>
+          <li>Exclusive Access To Hot Profiles</li>
+          <li>Instant Replies From Active Members</li>
+          <li>100% Private And Discreet</li>
+          
+        </ul>
+      </div>
+    </div>
+    <div class="ga-left">
+      <h2 class="ga-title">Get Instant Access</h2>
+      <p class="ga-sub">Join 2.3M+ members and find your match now</p>
+      <form class="ga-form" id="gaForm" novalidate>
+        <input class="ga-input" id="gaName" type="text" placeholder="Enter your name" autocomplete="given-name">
+        <input class="ga-input" id="gaEmail" type="email" placeholder="Enter your email" autocomplete="email">
+        <button class="ga-submit" type="submit">Join Now</button>
+      </form>
+      
+      <p class="ga-legal">By continuing you confirm you are 18+ and agree to our <a href="/privacy-policy/">Privacy Policy</a>. Tempting Babes may earn a commission if you sign up.</p>
+    </div>
+  </div>
+</div>
+
+<script>
+/* Wire Join Free button → age gate (script.js handles the rest) */
+(function(){
+  var btn = document.getElementById('getAccessBtn');
+  var ag  = document.getElementById('ageGateOverlay');
+  if (!btn || !ag) return;
+  btn.addEventListener('click', function() { ag.style.display = 'flex'; });
+})();
+</script>
+
+<script>
+(function(){
+  var video = document.querySelector('.hero-video-bg video');
+  if (!video) return;
+  var CUTOFF  = 0.8;  // seek back this many seconds before end
+  var looping = false;
+
+  /* Manual loop — jump back before black trailing frames */
+  video.addEventListener('timeupdate', function(){
+    if (!video.duration || looping) return;
+    if (video.currentTime >= video.duration - CUTOFF) {
+      looping = true;
+      video.currentTime = 0;
+      var p = video.play();
+      if (p && p.catch) {
+        p.catch(function(){ video.load(); video.play(); });
+      }
+      /* Release lock after short delay */
+      setTimeout(function(){ looping = false; }, 500);
+    }
+  });
+
+  /* Recovery — if video stalls, reload and play */
+  video.addEventListener('stalled', function(){
+    video.load();
+    video.play();
+  });
+})();
+</script>
+
+<script>
+(function(){
+  const canvas=document.getElementById('aichatCtaBubbles');
+  if(!canvas)return;
+  const ctx=canvas.getContext('2d');
+  const colors=['#ff3d6b','#ff6b8a','#c0392b','#ff5580'];
+  let bubbles=[];
+  function resize(){canvas.width=canvas.offsetWidth;canvas.height=canvas.offsetHeight;}
+  function randomBubble(){const r=Math.random()*3+1;return{x:Math.random()*canvas.width,y:canvas.height+r+10,r,speedY:Math.random()*0.6+0.2,speedX:(Math.random()-0.5)*0.3,opacity:Math.random()*0.35+0.15,color:colors[Math.floor(Math.random()*colors.length)]};}
+  function init(){resize();bubbles=[];for(let i=0;i<30;i++){const b=randomBubble();b.y=Math.random()*canvas.height;bubbles.push(b);}}
+  function draw(){ctx.clearRect(0,0,canvas.width,canvas.height);bubbles.forEach(b=>{ctx.beginPath();ctx.arc(b.x,b.y,b.r,0,Math.PI*2);ctx.fillStyle=b.color;ctx.globalAlpha=b.opacity;ctx.shadowBlur=8;ctx.shadowColor=b.color;ctx.fill();ctx.globalAlpha=1;ctx.shadowBlur=0;b.y-=b.speedY;b.x+=b.speedX;if(b.y<-b.r*2)Object.assign(b,randomBubble());});requestAnimationFrame(draw);}
+  window.addEventListener('resize',init);init();draw();
+})();
+</script>
+</body>
+</html>
+

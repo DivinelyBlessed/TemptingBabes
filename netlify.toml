@@ -1,0 +1,322 @@
+# ──────────────────────────────────────────────────────────────
+# Netlify Configuration — temptingbabes.com
+# ──────────────────────────────────────────────────────────────
+
+[build]
+  command = "node build.js"
+  publish = "."
+
+# IMPORTANT: Replace "YOUR-SITE-NAME" below with your actual Netlify
+# site slug (found in Netlify dashboard → Site configuration → Site name).
+# This 301 redirect prevents your netlify.app URL from creating
+# duplicate content that competes with your real domain in Google.
+[[redirects]]
+  from   = "https://tempting-babes.netlify.app/*"
+  to     = "https://www.temptingbabes.com/:splat"
+  status = 301
+  force  = true
+
+# ── Old spaced-folder URLs → new hyphenated URLs ─────────────
+[[redirects]]
+  from   = "/FIFA World Cup 2026/*"
+  to     = "/world-cup/:splat"
+  status = 301
+  force  = true
+
+[[redirects]]
+  from   = "/FIFA World Cup 2026"
+  to     = "/world-cup/"
+  status = 301
+  force  = true
+
+[[redirects]]
+  from   = "/Endura Naturals/*"
+  to     = "/endura-naturals/:splat"
+  status = 301
+  force  = true
+
+[[redirects]]
+  from   = "/Endura Naturals"
+  to     = "/endura-naturals/"
+  status = 301
+  force  = true
+
+[[redirects]]
+  from   = "/Our Dream AI/*"
+  to     = "/our-dream-ai/:splat"
+  status = 301
+  force  = true
+
+[[redirects]]
+  from   = "/Our Dream AI"
+  to     = "/our-dream-ai/"
+  status = 301
+  force  = true
+
+[[redirects]]
+  from   = "/Ways To Meet/*"
+  to     = "/ways-to-meet/:splat"
+  status = 301
+  force  = true
+
+[[redirects]]
+  from   = "/Ways To Meet"
+  to     = "/ways-to-meet/"
+  status = 301
+  force  = true
+
+[[redirects]]
+  from   = "/Blog/dating-advice/talking-to-ai-companion/"
+  to     = "/Blog/ai-dating/talking-to-ai-companion/"
+  status = 301
+  force  = true
+
+[[redirects]]
+  from   = "/Blog/dating-advice/ai-chat-men-over-30/"
+  to     = "/Blog/ai-dating/ai-chat-men-over-30/"
+  status = 301
+  force  = true
+
+[[redirects]]
+  from   = "/Blog/dating-advice/ai-girlfriend-apps-ranked-2026/"
+  to     = "/Blog/ai-dating/ai-girlfriend-apps-ranked-2026/"
+  status = 301
+  force  = true
+
+[[redirects]]
+  from   = "/Blog/dating-advice/dating-apps-designed-to-keep-you-single/"
+  to     = "/Blog/dating-apps/dating-apps-designed-to-keep-you-single/"
+  status = 301
+  force  = true
+
+[[redirects]]
+  from   = "/Blog/dating-advice/average-man-dating-app-stats/"
+  to     = "/Blog/dating-apps/average-man-dating-app-stats/"
+  status = 301
+  force  = true
+
+[[redirects]]
+  from   = "/Blog/dating-advice/doom-scrolling-vs-connecting/"
+  to     = "/Blog/dating-psychology/doom-scrolling-vs-connecting/"
+  status = 301
+  force  = true
+
+[[redirects]]
+  from   = "/Blog/dating-advice/midnight-ache-scrolling-loneliness/"
+  to     = "/Blog/dating-psychology/midnight-ache-scrolling-loneliness/"
+  status = 301
+  force  = true
+
+[[redirects]]
+  from   = "/Blog/dating-advice/3am-loneliness-brain/"
+  to     = "/Blog/dating-psychology/3am-loneliness-brain/"
+  status = 301
+  force  = true
+
+[[redirects]]
+  from   = "/Blog/dating-advice/lonely-weekends/"
+  to     = "/Blog/dating-psychology/lonely-weekends/"
+  status = 301
+  force  = true
+
+[[redirects]]
+  from   = "/Blog/dating-advice/what-women-want-first-message/"
+  to     = "/Blog/messaging/what-women-want-first-message/"
+  status = 301
+  force  = true
+
+[[redirects]]
+  from   = "/Blog/dating-advice/start-conversation-online-without-being-ignored/"
+  to     = "/Blog/messaging/start-conversation-online-without-being-ignored/"
+  status = 301
+  force  = true
+
+[[redirects]]
+  from   = "/sex-messanger/"
+  to     = "/sex-messenger/"
+  status = 301
+  force  = true
+
+[[redirects]]
+  from   = "/sex-messanger/*"
+  to     = "/sex-messenger/:splat"
+  status = 301
+  force  = true
+
+[[redirects]]
+  from   = "/AI-chat/"
+  to     = "/ai-chat/"
+  status = 301
+  force  = true
+
+[[redirects]]
+  from   = "/AI-chat/*"
+  to     = "/ai-chat/:splat"
+  status = 301
+  force  = true
+
+[[redirects]]
+  from   = "/About/"
+  to     = "/about/"
+  status = 301
+  force  = true
+
+[[redirects]]
+  from   = "/About/*"
+  to     = "/about/:splat"
+  status = 301
+  force  = true
+
+[[redirects]]
+  from   = "/Cams/"
+  to     = "/cams/"
+  status = 301
+  force  = true
+
+[[redirects]]
+  from   = "/Cams/*"
+  to     = "/cams/:splat"
+  status = 301
+  force  = true
+
+[[redirects]]
+  from   = "/Contact/"
+  to     = "/contact/"
+  status = 301
+  force  = true
+
+[[redirects]]
+  from   = "/Contact/*"
+  to     = "/contact/:splat"
+  status = 301
+  force  = true
+
+[[redirects]]
+  from   = "/Dating/"
+  to     = "/dating/"
+  status = 301
+  force  = true
+
+[[redirects]]
+  from   = "/Dating/*"
+  to     = "/dating/:splat"
+  status = 301
+  force  = true
+
+[[redirects]]
+  from   = "/Instabang/"
+  to     = "/instabang/"
+  status = 301
+  force  = true
+
+[[redirects]]
+  from   = "/Instabang/*"
+  to     = "/instabang/:splat"
+  status = 301
+  force  = true
+
+[[redirects]]
+  from   = "/New/"
+  to     = "/new/"
+  status = 301
+  force  = true
+
+[[redirects]]
+  from   = "/New/*"
+  to     = "/new/:splat"
+  status = 301
+  force  = true
+
+[[redirects]]
+  from   = "/Offers/"
+  to     = "/offers/"
+  status = 301
+  force  = true
+
+[[redirects]]
+  from   = "/Offers/*"
+  to     = "/offers/:splat"
+  status = 301
+  force  = true
+
+[[redirects]]
+  from   = "/Popular/"
+  to     = "/popular/"
+  status = 301
+  force  = true
+
+[[redirects]]
+  from   = "/Popular/*"
+  to     = "/popular/:splat"
+  status = 301
+  force  = true
+
+[[redirects]]
+  from   = "/Trending/"
+  to     = "/trending/"
+  status = 301
+  force  = true
+
+[[redirects]]
+  from   = "/Trending/*"
+  to     = "/trending/:splat"
+  status = 301
+  force  = true
+
+[[redirects]]
+  from   = "/World-Cup/"
+  to     = "/world-cup/"
+  status = 301
+  force  = true
+
+[[redirects]]
+  from   = "/World-Cup/*"
+  to     = "/world-cup/:splat"
+  status = 301
+  force  = true
+
+# ── Security headers on every page ───────────────────────────
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options            = "SAMEORIGIN"
+    X-Content-Type-Options     = "nosniff"
+    X-XSS-Protection           = "1; mode=block"
+    Referrer-Policy            = "strict-origin-when-cross-origin"
+    Permissions-Policy         = "camera=(), microphone=(), geolocation=()"
+
+# ── Long-lived cache for images & videos ─────────────────────
+[[headers]]
+  for = "/Asset/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# ── Long-lived cache for CSS & JS ────────────────────────────
+[[headers]]
+  for = "/*.css"
+  [headers.values]
+    Cache-Control = "public, max-age=86400, must-revalidate"
+
+[[headers]]
+  for = "/*.js"
+  [headers.values]
+    Cache-Control = "public, max-age=86400, must-revalidate"
+
+# ── Short cache for crawl-discovery files ────────────────────
+[[headers]]
+  for = "/sitemap.xml"
+  [headers.values]
+    Cache-Control = "public, max-age=3600"
+
+[[headers]]
+  for = "/robots.txt"
+  [headers.values]
+    Cache-Control = "public, max-age=86400"
+
+# ── GPC signal file ──────────────────────────────────────────
+[[headers]]
+  for = "/.well-known/gpc.json"
+  [headers.values]
+    Content-Type  = "application/json"
+    Cache-Control = "public, max-age=86400"
+    Access-Control-Allow-Origin = "*"

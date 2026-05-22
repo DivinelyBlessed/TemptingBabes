@@ -1,0 +1,7 @@
+# Lowercase blog → canonical capital-B path
+/blog         /Blog/    301
+/blog/        /Blog/    301
+/blog/*       /Blog/:splat    301
+
+# FIFA World Cup folder with spaces → clean URL
+/FIFA%20World%20Cup%202026/*    /world-cup/:splat    301
