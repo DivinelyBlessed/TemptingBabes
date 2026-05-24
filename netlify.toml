@@ -5,6 +5,7 @@
 [build]
   command = "node build.js"
   publish = "."
+  functions = "netlify/functions"
 
 # IMPORTANT: Replace "YOUR-SITE-NAME" below with your actual Netlify
 # site slug (found in Netlify dashboard → Site configuration → Site name).
