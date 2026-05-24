@@ -1,4 +1,4 @@
-const SYSTEME_KEY = 'msr0ee9k6kdj8icftr2zi29s7e1j6c4yhyxlkxu84qqtzxkxan4l48u95q12wosp';
+const SYSTEME_KEY = process.env.SYSTEME_API_KEY;
 const POPUP_TAG_ID = 2021881;
 const CORS = {
   'Access-Control-Allow-Origin': '*',
