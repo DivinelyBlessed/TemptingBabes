@@ -792,11 +792,32 @@ function initGetAccessPopup() {
       if (emailEl) { emailEl.focus(); emailEl.style.borderColor = '#ff3d6b'; }
       return;
     }
+    var SYSTEME_KEY = 'msr0ee9k6kdj8icftr2zi29s7e1j6c4yhyxlkxu84qqtzxkxan4l48u95q12wosp';
+    var POPUP_TAG_ID = 2021881;
+    function addTagToContact(contactId) {
+      fetch('https://api.systeme.io/api/contacts/' + contactId + '/tags', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'X-API-Key': SYSTEME_KEY },
+        body: JSON.stringify({ tagId: POPUP_TAG_ID })
+      }).catch(function(){});
+    }
     fetch('https://api.systeme.io/api/contacts', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json', 'X-API-Key': 'msr0ee9k6kdj8icftr2zi29s7e1j6c4yhyxlkxu84qqtzxkxan4l48u95q12wosp' },
-      body: JSON.stringify({ email: email, firstName: name || undefined, tags: [{ name: 'popup-signup' }] })
-    }).catch(() => {});
+      headers: { 'Content-Type': 'application/json', 'X-API-Key': SYSTEME_KEY },
+      body: JSON.stringify({ email: email, firstName: name || undefined })
+    }).then(function(r) {
+      if (r.status === 201) {
+        r.json().then(function(data) { addTagToContact(data.id); });
+      } else if (r.status === 422) {
+        fetch('https://api.systeme.io/api/contacts?email=' + encodeURIComponent(email), {
+          headers: { 'X-API-Key': SYSTEME_KEY }
+        }).then(function(r2) {
+          r2.json().then(function(data) {
+            if (data.items && data.items.length > 0) addTagToContact(data.items[0].id);
+          });
+        });
+      }
+    }).catch(function(){});
     if (typeof gtag !== 'undefined') gtag('event', 'ga_email_submit');
     window.open(AFFILIATE_URL + '&email=' + encodeURIComponent(email), '_blank', 'noopener,noreferrer');
     closeGA();
