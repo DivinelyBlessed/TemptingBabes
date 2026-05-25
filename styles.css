@@ -1722,6 +1722,7 @@ nav {
   white-space: nowrap;
   flex-shrink: 0;
 }
+.profile-card-distance { display: none; }
 .profile-card-dot {
   width: 6px; height: 6px;
   border-radius: 50%;
@@ -2276,25 +2277,37 @@ nav {
   .ticker-wrap { height: 44px; margin-top: 10px; }
 
   .hero-title-wrap { padding: 14px 16px 0; }
-  .hero-title { font-size: 2rem; letter-spacing: 1px; }
+  .hero-title { font-size: clamp(1.1rem, 7.1vw, 2.5rem); letter-spacing: 0.5px; font-family: 'Manrope', sans-serif; font-weight: 800; white-space: nowrap; text-align: center; width: 100%; }
+  #heroWild span { margin-left: -3px !important; }
 
   .ad-panel { display: none; }
 
-  .main-layout { flex-direction: row; align-items: center; padding: 0 14px; gap: 0; overflow: hidden; }
-  .carousel-section { padding: 16px; gap: 12px; flex: 1; min-width: 0; }
+  .main-layout { flex-direction: row; align-items: center; padding: 0; gap: 0; overflow: visible; }
+  .carousel-section { padding: 8px 0; gap: 12px; flex: 1; min-width: 0; }
 
   .scroll-divider { flex-shrink: 0; height: 100px; margin-bottom: 0; }
   .scroll-line { display: none; }
-  #scrollLeft { margin-left: 12px; }
-  #scrollRight { margin-right: 12px; }
+  #scrollLeft { margin-left: 4px; margin-right: 8px; transform: translateY(-26px); }
+  #scrollRight { margin-right: 4px; margin-left: 8px; transform: translateY(-26px); }
 
-  .carousel-stage { height: 420px; }
+  .carousel-stage { height: 520px; }
 
   .pos-left, .pos-right, .pos-enter-left, .pos-exit-right { display: none; }
   .pos-center { left: 0; width: 100%; }
 
-  .cta-btn { padding: 14px 72px; font-size: 1.3rem; white-space: nowrap; }
-  .cta-wrap { width: 100%; padding: 4px 16px 0; }
+  .cta-btn { padding: 13px 32px; font-size: 1rem; white-space: nowrap; width: auto; }
+  .cta-wrap { width: 100%; padding: 4px 16px 0; display: flex; justify-content: center; }
+
+  .seo-text-block, .content-stats-bar { display: none; }
+  .profiles-section { padding-top: 8px; background: transparent; }
+  .profiles-section .section-hd { margin-bottom: 28px; padding-top: 16px; }
+  .profiles-section .section-hd p { line-height: 1.65 !important; font-size: 1rem !important; }
+  .profiles-section .section-hd-title { font-family: 'Syne', sans-serif; font-size: 2rem !important; letter-spacing: 1px; }
+  .offers-section .section-hd-title span { margin-right: -8px !important; }
+  .cta-btn { box-shadow: none; }
+
+  .vip-grid { grid-template-columns: 1fr !important; gap: 28px !important; }
+  .discretion-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 12px !important; }
 
   /* ── Get Access popup mobile ── */
   .ga-modal { flex-direction: column; max-width: 96vw; min-height: unset; border-radius: 16px; }
@@ -2303,5 +2316,29 @@ nav {
   .ga-benefits { padding: 20px 18px; }
   .ga-benefits-title { font-size: 1rem; }
   .ga-title { font-size: 1.6rem; }
+
+  /* ── Profile card mobile format: TRACY - 21, 8 km away ── */
+  .profile-card { position: relative; }
+  .profile-card::after {
+    content: '';
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: #3dffa0;
+    border: 1px solid #ff8c00;
+    z-index: 2;
+    animation: pulse-green 2.8s ease-in-out infinite;
+  }
+  .profile-card-status { display: none; }
+  .profile-card-city { display: inline; font-size: 0.72rem; color: #ffffff; white-space: nowrap; margin-left: auto; flex-shrink: 0; }
+  .profile-card-left { flex: 1; overflow: hidden; align-items: center; min-width: 0; }
+  .profile-card-name { font-size: 1rem; white-space: nowrap; flex-shrink: 0; }
+  .profile-card-dash { font-size: 0.75rem; color: rgba(255,255,255,0.5); margin: 0 3px; flex-shrink: 0; }
+  .profile-card-age { font-size: 0.82rem; color: #3dffa0; flex-shrink: 0; white-space: nowrap; }
+  .profile-card-age::after { content: ','; }
+  .profile-card-distance { display: none; }
 }
 }
