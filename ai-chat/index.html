@@ -55,7 +55,13 @@
         transform:scale(1.03);opacity:0.88;
       }
     }
-    .glow-pulse-text{animation:glow-pulse 2.4s ease-in-out infinite;display:inline-block;}
+    .glow-pulse-text{animation:none;display:inline-block;}
+    @keyframes cta-pulse{
+      0%,100%{box-shadow:0 8px 40px rgba(255,61,107,0.45);transform:scale(1);}
+      50%{box-shadow:0 8px 60px rgba(255,61,107,0.75),0 0 40px rgba(255,140,0,0.45);transform:scale(1.04);}
+    }
+    .pillar-hero-cta{animation:cta-pulse 3.2s ease-in-out infinite;}
+    .join-btn{animation:cta-pulse 3.2s ease-in-out infinite;}
 
     /* Fix heartbeat — transform only, no box-shadow CPU repaint */
     @keyframes heartbeat {
@@ -275,7 +281,7 @@
     #why-ai { padding-top: 28px; }
     .pillar-section-sub {
       text-align: center;
-      color: var(--muted);
+      color: rgba(255,255,255,0.92);
       font-size: 1.06rem;
       max-width: 700px;
       margin: 0 auto 44px;
@@ -825,39 +831,119 @@
     .pillar-crumb-sep { margin: 0 8px; color: rgba(255,255,255,0.25); }
     .pillar-crumb-current { color: #c084fc; }
 
-    /* ── MOBILE ── */
+    /* Card wrappers are transparent on desktop — children participate in card's flex layout */
+    .card-top, .card-body { display: contents; }
+
+/* ── MOBILE ── */
     @media (max-width: 900px) {
       .pillar-hero { min-height: auto; }
       .pillar-hero-inner { padding: 50px 20px 44px; }
       .pillar-hero-stats { gap: 24px; }
     }
     @media (max-width: 768px) {
+      /* Hero */
+      .pillar-hero { min-height: 75vh; }
+      .pillar-eyebrow { font-size: 0.80rem !important; padding: 5px 13px !important; top: 10px !important; gap: 6px !important; }
+      .pillar-eyebrow-dot { width: 6px !important; height: 6px !important; }
       .pillar-hero-inner { padding: 40px 16px 36px; }
+      .pillar-hero-inner h1 { margin-top: 27vh !important; font-size: clamp(2.8rem, 11vw, 4.5rem); }
+      #heroTagline { top: 71% !important; }
+      .glow-pulse-text { font-size: 3.5vw !important; letter-spacing: 0 !important; white-space: nowrap !important; padding-left: 4px !important; padding-right: 4px !important; text-align: center !important; }
       .pillar-section { padding: 44px 16px; }
+      .pillar-section.alt { padding: 0 16px 40px !important; }
       .pillar-section h2 { font-size: 2rem; letter-spacing: 1.5px; }
-      .showcase-split-row { grid-template-columns: 1fr; }
-      .showcase-split-img { min-height: 260px; }
-      .showcase-split-card { padding: 36px 24px; text-align: center; }
-      .showcase-split-card h3 { font-size: clamp(1.4rem, 5vw, 1.9rem); white-space: normal; overflow: visible; }
+      /* Showcase: flex column, card becomes display:contents so card-top/card-body are flex siblings with img */
+      .showcase-split-row { display: flex !important; flex-direction: column; }
+      .showcase-split-img { min-height: 460px; order: 2; }
+      .showcase-split-card { display: contents !important; }
+      .showcase-split-card::before { display: none !important; }
+      .card-top {
+        display: flex !important;
+        flex-direction: column;
+        align-items: center;
+        gap: 14px;
+        padding: 28px 20px 16px;
+        text-align: center;
+        background: rgba(13,13,13,0.95);
+        position: relative;
+        order: 1;
+      }
+      .card-top::before { display: none; }
+      #showcase .pillar-inner { padding-top: 28px !important; padding-bottom: 0 !important; }
+      #showcase h2 { margin-bottom: 4px !important; }
+      #showcase > p { padding: 0 !important; font-size: 1.13rem !important; text-align: left !important; }
+      .card-body {
+        display: flex !important;
+        flex-direction: column;
+        gap: 10px;
+        padding: 14px 17px 1px;
+        margin-left: -17px;
+        margin-right: -17px;
+        text-align: left;
+        background: rgba(13,13,13,0.95);
+        order: 3;
+      }
+      .card-body p { font-size: 1.15rem !important; line-height: 1.7 !important; }
+      .card-body .showcase-features { gap: 10px; }
+      .card-body .showcase-features li { font-size: 1.1rem; line-height: 1.55; }
+      .showcase-split-card h3 { font-size: clamp(1.8rem, 6.5vw, 2.4rem); white-space: normal; overflow: visible; }
+      .showcase-split-card.practice h3 { transform: translateX(-6px); }
+      .showcase-split-card.practice .card-top .showcase-icon { transform: translateX(-6px); }
+      .showcase-split-card.practice .card-top .showcase-pill { transform: translateX(-6px); }
+      .showcase-split-card.emotional h3 { transform: translateX(-6px); }
+      .showcase-split-card.emotional .card-top .showcase-icon { transform: translateX(-6px); }
+      .showcase-split-card.emotional .card-top .showcase-pill { transform: translateX(-6px); }
+      .showcase-split-card.fantasy h3 { font-size: 7.3vw !important; white-space: nowrap !important; text-align: center !important; width: 100% !important; transform: translateX(-6px); }
+      .showcase-split-card.fantasy .card-top .showcase-icon { transform: translateX(-6px); }
+      .showcase-split-card.fantasy .card-top .showcase-pill { transform: translateX(-6px); }
+      .showcase-split-card.fantasy .card-top { text-align: left !important; }
       .showcase-split-card .showcase-pill { align-self: center; }
-      .how-grid { grid-template-columns: 1fr; }
-      .how-section { padding: 48px 20px; }
-      .proof-grid { grid-template-columns: repeat(2, 1fr); }
-      .proof-section { padding: 48px 20px; }
+      .card-body .showcase-cta { width: auto !important; align-self: center; padding: 14px 32px; transform: translateX(-6px); margin-top: 10px; }
+      /* How it works */
+      .how-grid { grid-template-columns: repeat(3, 1fr); gap: 12px; }
+      .how-card { padding: 20px 12px; }
+      .how-card h3 { font-size: 1.1rem; letter-spacing: 0.5px; }
+      .how-card p { display: none; }
+      .how-section { padding: 24px 20px 48px; }
+      /* Social proof */
+      #proofBanner { height: 320px !important; }
+      #proofBanner > div:first-child { background-position: 38% center !important; }
+      .proof-grid { grid-template-columns: 1fr !important; }
+      .proof-card { display: none; }
+      .proof-card.active { display: flex; }
+.proof-section { padding: 48px 20px; }
       .proof-rating-bar { gap: 28px; }
+      /* Rest */
       .control-grid { grid-template-columns: 1fr 1fr; }
       .control-card h3 { white-space: normal; font-size: 1.2rem; }
       .vs-cell { padding: 16px 18px; font-size: 0.92rem; }
       .pillar-final-cta h2 { font-size: 3rem; letter-spacing: 1.5px; }
       .pillar-final-cta-btn { font-size: 1.1rem; padding: 14px 32px; letter-spacing: 2px; }
       .pillar-crumb { padding: 12px 16px 0; font-size: 0.76rem; }
+      .join-btn { padding: 7px 16px; font-size: 0.82rem; margin-left: auto; }
+      .menu-btn { display: flex; align-items: center; justify-content: center; background: transparent; border: 1px solid rgba(255,255,255,0.25); color: #fff; width: 34px; height: 34px; border-radius: 8px; font-size: 1.1rem; cursor: pointer; margin-left: 4px; flex-shrink: 0; }
+      .tabs { display: none; }
     }
     @media (max-width: 480px) {
       .control-grid { grid-template-columns: 1fr; }
-      .proof-grid { grid-template-columns: 1fr; }
-      .showcase-split-card { padding: 28px 16px; }
+      .proof-grid { grid-template-columns: 1fr !important; }
+      .card-top { padding: 24px 16px 14px; }
+      .card-body { padding: 16px 16px 24px; }
     }
   
+/* ── SHOWCASE H2 — blended gradient matching hero h1 ── */
+#showcase h2 {
+  font-family: 'Playfair Display', serif !important;
+  font-style: italic !important;
+  font-weight: 900 !important;
+  letter-spacing: 0 !important;
+  font-size: clamp(2rem, 4.5vw, 4.2rem) !important;
+  background: linear-gradient(90deg, #ff3d6b 0%, #ff6b00 40%, #ffb347 72%, #ffd080 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
 /* ── NAV LOGO (explicit override to match main index) ── */
 .logo{text-decoration:none;display:inline-flex;align-items:center;gap:0;}
 .logo-text{font-family:'Playfair Display',serif;font-weight:900;font-size:1.35rem;letter-spacing:1.5px;background:linear-gradient(90deg,var(--accent2),var(--accent));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-left:-10px;}
@@ -911,7 +997,7 @@
     <a href="/trending/" class="tab">Trending</a>
     <a href="/vip/" class="tab"><span class="tab-star">⭐</span>VIP</a>
   </div>
-  <button class="join-btn" id="getAccessBtn" style="background:linear-gradient(135deg,#ff8c00,#ff3d6b);">Join Free</button>
+  <a href="https://t.vlmai-1.com/389314/10418/0?aff_sub5=SF_006OG000004lmDN" class="join-btn" id="getAccessBtn" style="background:linear-gradient(135deg,#ff8c00,#ff3d6b);text-decoration:none;" target="_blank" rel="noopener">Join Free</a>
   <button class="menu-btn" id="menuBtn">&#9776;</button>
 </nav>
 <script>(function(){var t=document.querySelectorAll('nav .tab'),x=parseFloat(sessionStorage.getItem('tb_mx')||''),y=parseFloat(sessionStorage.getItem('tb_my')||'');if(x&&y)t.forEach(function(tab){var r=tab.getBoundingClientRect();tab.classList.toggle('hovered',x>=r.left&&x<=r.right&&y>=r.top&&y<=r.bottom);});}());</script>
@@ -936,12 +1022,12 @@
   <div class="pillar-hero-inner">
     <h1 style="margin-top:140px;padding:0 16px 8px;">AI Girlfriends</h1>
   </div>
-  <div style="position:absolute;left:0;width:100%;z-index:4;top:68%;line-height:1;">
+  <div id="heroTagline" style="position:absolute;left:0;width:100%;z-index:4;top:68%;line-height:1;">
     <span class="glow-pulse-text" style="display:block;font-family:'Playfair Display',serif;font-size:3.8vw;letter-spacing:3px;white-space:nowrap;color:#ff8c42;text-align:left;padding-left:5vw;padding-right:3vw;padding-bottom:10px;">Instant Replies. Real Attention. Zero Pressure.</span>
   </div>
   <div style="position:absolute;bottom:63px;left:50%;transform:translateX(-50%);z-index:4;text-align:center;white-space:nowrap;">
     <a href="https://t.vlmai-1.com/389314/10418/0?aff_sub5=SF_006OG000004lmDN" target="_blank" rel="noopener noreferrer" class="pillar-hero-cta"><span class="pillar-cta-dot"></span> Find Your AI Match</a>
-    <p class="pillar-hero-meta" style="margin-top:6px;color:#fff;font-size:0.70rem;">💬&thinsp;Chat Now &nbsp;•&nbsp; 🔒&thinsp;100% Discreet</p>
+    <p class="pillar-hero-meta" style="margin-top:6px;color:#fff;font-size:0.70rem;">💬Chat Now &nbsp;•&nbsp; 🔒100% Discreet</p>
   </div>
 </header>
 
@@ -950,59 +1036,71 @@
   <div class="pillar-inner" style="padding:60px 24px 16px;">
     <h2>Choose Your Fantasy</h2>
   </div>
-  <p style="text-align:center;font-size:1.15rem;color:rgba(255,255,255,0.88);white-space:nowrap;overflow:hidden;padding:0 40px;margin:0 auto 32px;">We offer AI companions, chat experiences, and interactive platforms designed for connection, conversation, and personalized engagement</p>
+  <p style="text-align:center;font-size:1.15rem;color:rgba(255,255,255,0.88);padding:0 40px;margin:0 auto 32px;">We offer AI companions, chat experiences, and interactive platforms designed for connection, conversation, and personalized engagement</p>
 
   <!-- Row 1: Image LEFT | Flirting Practice RIGHT -->
   <div class="showcase-split-row">
     <div class="showcase-split-img"><img src="https://res.cloudinary.com/doslc6l1h/image/upload/v1778884061/UniversalUpscaler_Pro_Precise_3_1f150ad2-e9b2-65c0-8b20-7442db5b99b1_txm3ul.jpg" alt="Flirting practice with AI companion" loading="lazy"/></div>
     <div class="showcase-split-card practice">
-      <div class="showcase-icon">🎯</div>
-      <span class="showcase-pill">Seduction Training</span>
-      <h3>Master the Art of Seduction</h3>
-      <p>Stop wondering why conversations die out. Test risky openers, sharpen your flirting skills, and discover what actually keeps her interested</p>
-      <ul class="showcase-features">
-        <li>Learn what sparks interest — and what kills it</li>
-        <li>Practice bold openers without real&#8209;world risk</li>
-        <li>Strengthen timing, tone, and confidence</li>
-        <li>Build conversational momentum that keeps attention</li>
-      </ul>
-      <a href="#" class="showcase-cta" data-platform="practice">Start Training Free →</a>
+      <div class="card-top">
+        <div class="showcase-icon">🎯</div>
+        <span class="showcase-pill">Seduction Training</span>
+        <h3>Master the Art of Seduction</h3>
+      </div>
+      <div class="card-body">
+        <p>Stop wondering why conversations die out. Test risky openers, sharpen your flirting skills, and discover what actually keeps her interested</p>
+        <ul class="showcase-features">
+          <li>Learn what sparks interest — and what kills it</li>
+          <li>Practice bold openers without real&#8209;world risk</li>
+          <li>Strengthen timing, tone, and confidence</li>
+          <li>Build conversational momentum that keeps attention</li>
+        </ul>
+        <a href="#" class="showcase-cta" data-platform="practice">Start Training Free →</a>
+      </div>
     </div>
   </div>
 
   <!-- Row 2: Emotional Companion LEFT | Image RIGHT -->
   <div class="showcase-split-row">
     <div class="showcase-split-card emotional">
-      <div class="showcase-icon">🫦</div>
-      <span class="showcase-pill">Obsession Mode</span>
-      <h3>She stays locked into you</h3>
-      <p>Always responsive, always engaged. She remembers your chats, adapts to your tone, and keeps the conversation flowing smoothly every time</p>
-      <ul class="showcase-features">
-        <li>Replies instantly, every single time</li>
-        <li>Remembers your past chats and builds on them</li>
-        <li>Mirrors your mood and energy effortlessly</li>
-        <li>Keeps the conversation flowing without breaks or resets</li>
-      </ul>
-      <a href="#" class="showcase-cta" data-platform="nomi">Meet Her Now →</a>
+      <div class="card-top">
+        <div class="showcase-icon">🫦</div>
+        <span class="showcase-pill">Obsession Mode</span>
+        <h3>She stays locked into you</h3>
+      </div>
+      <div class="card-body">
+        <p>Always responsive, always engaged. She remembers your chats, adapts to your tone, and keeps the conversation flowing smoothly every time</p>
+        <ul class="showcase-features">
+          <li>Replies instantly, every single time</li>
+          <li>Remembers your past chats and builds on them</li>
+          <li>Mirrors your mood and energy effortlessly</li>
+          <li>Keeps the conversation flowing without breaks or resets</li>
+        </ul>
+        <a href="#" class="showcase-cta" data-platform="nomi">Meet Her Now →</a>
+      </div>
     </div>
     <div class="showcase-split-img"><img src="https://res.cloudinary.com/doslc6l1h/image/upload/v1778884257/videoframe_3585_b4qwrw.png" alt="AI emotional companion" loading="lazy" style="object-position:center 58%;"/></div>
   </div>
 
   <!-- Row 3: Image LEFT | NSFW RIGHT -->
   <div class="showcase-split-row">
-    <div class="showcase-split-img" style="background-image:url('https://res.cloudinary.com/doslc6l1h/image/upload/v1778885286/UniversalUpscaler_Pro_Precise_2_1f150b00-d21a-6150-b1bd-82484bdaa31e_xdxhdt.jpg');background-size:cover;background-position:center 5%;min-height:auto;"></div>
+    <div class="showcase-split-img" style="background-image:url('https://res.cloudinary.com/doslc6l1h/image/upload/v1778885286/UniversalUpscaler_Pro_Precise_2_1f150b00-d21a-6150-b1bd-82484bdaa31e_xdxhdt.jpg');background-size:cover;background-position:center 5%;"></div>
     <div class="showcase-split-card fantasy">
-      <div class="showcase-icon">🔥</div>
-      <span class="showcase-pill">NSFW</span>
-      <h3>Roleplay your Unfiltered Fantasies</h3>
-      <p>Say exactly what you want and take it as far as you can imagine. You dictate the pace, and she commands the vibe, staying completely uncensored, uninhibited, and tailored entirely to your darkest cravings</p>
-      <ul class="showcase-features">
-        <li>Fully immersive from start to finish</li>
-        <li>No restrictions on direction or expression</li>
-        <li>Private, judgment&#8209;free experience</li>
-        <li>Instantly adapts to your tone, pace, and style</li>
-      </ul>
-      <a href="#" class="showcase-cta" data-platform="candy">Unlock Full Access →</a>
+      <div class="card-top">
+        <div class="showcase-icon">🔥</div>
+        <span class="showcase-pill">NSFW</span>
+        <h3>Roleplay your Secret Fantasies</h3>
+      </div>
+      <div class="card-body">
+        <p>Say exactly what you want and take it as far as you can imagine. You dictate the pace completely uncensored, uninhibited, and according to your darkest cravings</p>
+        <ul class="showcase-features">
+          <li>Fully immersive from start to finish</li>
+          <li>No restrictions on direction or expression</li>
+          <li>Private, judgment&#8209;free experience</li>
+          <li>Instantly adapts to your tone, pace, and style</li>
+        </ul>
+        <a href="#" class="showcase-cta" data-platform="candy">Unlock Full Access →</a>
+      </div>
     </div>
   </div>
 </section>
@@ -1076,7 +1174,7 @@
 <section class="proof-section" id="proof">
   <div class="proof-inner">
     <!-- IMAGE BANNER -->
-    <div style="display:block;position:relative;width:100vw;left:50%;transform:translateX(-50%);height:700px;margin-bottom:44px;overflow:hidden;">
+    <div id="proofBanner" style="display:block;position:relative;width:100vw;left:50%;transform:translateX(-50%);height:700px;margin-bottom:44px;overflow:hidden;">
       <div style="position:absolute;inset:0;background-image:url('https://res.cloudinary.com/doslc6l1h/image/upload/v1778883434/UniversalUpscaler_Pro_Precise_4_1f150ab4-f719-66f0-908f-f5144a7c1d90_sxu4po.jpg');background-size:cover;background-position:center center;"></div>
       <div style="position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,0.38) 0%,transparent 40%,rgba(0,0,0,0.28) 100%);display:flex;flex-direction:column;align-items:center;justify-content:space-between;padding:28px 20px 52px;">
         <h2 style="font-family:'Bebas Neue',sans-serif;font-size:clamp(3.5rem,9vw,8rem);letter-spacing:3px;line-height:1.05;text-align:center;margin:0;background:linear-gradient(90deg,#fff 0%,var(--accent) 60%,var(--accent2) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;filter:drop-shadow(0 1px 3px rgba(0,0,0,0.95)) drop-shadow(0 0px 1px rgba(0,0,0,0.9));">Your AI Girlfriend Is Waiting</h2>
@@ -1084,7 +1182,7 @@
       </div>
     </div>
 
-    <div class="proof-grid">
+    <div class="proof-grid" id="proofGrid">
       <div class="proof-card">
         <div class="proof-card-stars">★★★★★</div>
         <p class="proof-card-quote">"After my relationship ended I stopped having real conversations. I'd go whole days in silence and it started to mess with my head"</p>
@@ -1169,17 +1267,6 @@
   <a href="https://t.vlmai-1.com/389314/10182/40571?aff_sub5=SF_006OG000004lmDN" target="_blank" rel="noopener noreferrer" class="pillar-final-cta-btn" data-platform="final">Find Your AI Match →</a>
 </section>
 
-<!-- EXIT INTENT POPUP -->
-<div class="exit-overlay" id="exitOverlay">
-  <div class="exit-modal">
-    <button class="exit-close" id="exitClose">&#10005;</button>
-    <div class="exit-emoji">💜</div>
-    <h2 class="exit-title">Wait — She's Right Here</h2>
-    <p class="exit-sub">Your AI companion is one click away.<br>Start chatting in <em>under 60 seconds</em> — no card needed.</p>
-    <a href="#" class="exit-cta" id="exitCta">Start Chatting Free →</a>
-    <p class="exit-micro">Free to start · No credit card · 18+ only</p>
-  </div>
-</div>
 
 <script src="../script.js"></script>
 <script>
@@ -1225,23 +1312,6 @@
       });
     }
 
-    const exitOverlay = document.getElementById('exitOverlay');
-    const exitClose = document.getElementById('exitClose');
-    let exitShown = false;
-    document.addEventListener('mouseleave', function(e) {
-      if (e.clientY <= 0 && !exitShown && exitOverlay) {
-        if (!exitOverlay.classList.contains('open')) {
-          exitOverlay.classList.add('open');
-          exitShown = true;
-        }
-      }
-    });
-    if (exitClose) exitClose.addEventListener('click', function() { exitOverlay.classList.remove('open'); });
-    if (exitOverlay) {
-      exitOverlay.addEventListener('click', function(e) {
-        if (e.target === exitOverlay) exitOverlay.classList.remove('open');
-      });
-    }
   })();
 </script>
 
@@ -1251,7 +1321,7 @@
   <div class="footer-inner">
     <div class="footer-brand">
       <a href="/" class="footer-logo" style="text-decoration:none;">Tempting Babes</a>
-      <p class="footer-tagline">Your all-in-one hub for Dating, Live Cams, AI Girls and VIP access. Built for real connections and instant interaction.</p>
+      <p class="footer-tagline">Your all-in-one hub for Dating, Live Cams, AI Girls<br>and VIP access. Built for real connections and instant interaction</p>
     </div>
     <div class="footer-col">
       <h4 class="footer-col-title">Legal &amp; Info</h4>
@@ -1408,6 +1478,23 @@
   function init(){resize();bubbles=[];for(let i=0;i<30;i++){const b=randomBubble();b.y=Math.random()*canvas.height;bubbles.push(b);}}
   function draw(){ctx.clearRect(0,0,canvas.width,canvas.height);bubbles.forEach(b=>{ctx.beginPath();ctx.arc(b.x,b.y,b.r,0,Math.PI*2);ctx.fillStyle=b.color;ctx.globalAlpha=b.opacity;ctx.shadowBlur=8;ctx.shadowColor=b.color;ctx.fill();ctx.globalAlpha=1;ctx.shadowBlur=0;b.y-=b.speedY;b.x+=b.speedX;if(b.y<-b.r*2)Object.assign(b,randomBubble());});requestAnimationFrame(draw);}
   window.addEventListener('resize',init);init();draw();
+})();
+</script>
+
+<script>
+/* Rotating testimonials on mobile */
+(function(){
+  if(window.innerWidth > 768) return;
+  var cards = document.querySelectorAll('#proofGrid .proof-card');
+  if(!cards.length) return;
+  var current = 0;
+  function showCard(i){
+    cards[current].classList.remove('active');
+    current = i;
+    cards[current].classList.add('active');
+  }
+  cards[0].classList.add('active');
+  setInterval(function(){ showCard((current + 1) % cards.length); }, 4500);
 })();
 </script>
 </body>
