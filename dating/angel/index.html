@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-PL9NPRYWP3"></script>
@@ -30,7 +30,7 @@ body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;min
 body::before,body::after{content:'';position:fixed;border-radius:50%;pointer-events:none;z-index:0;}
 body::before{width:500px;height:500px;background:radial-gradient(circle,rgba(255,61,107,0.18) 0%,transparent 70%);top:-120px;left:-120px;filter:blur(80px);}
 body::after{width:400px;height:400px;background:radial-gradient(circle,rgba(255,140,0,0.12) 0%,transparent 70%);bottom:-80px;right:-80px;filter:blur(80px);}
-nav{position:sticky;top:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:10px 24px;background:rgba(10,10,10,0.6);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,0.08);box-shadow:0 4px 30px rgba(0,0,0,0.4);gap:16px;}
+nav{position:sticky;top:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:10px 24px;background:rgba(10,10,10,0.6);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,0.08);box-shadow:0 4px 30px rgba(0,0,0,0.4);line-height:normal;}
 .logo{text-decoration:none;display:inline-flex;align-items:center;gap:0;}
 .logo-img{height:42px;width:auto;flex-shrink:0;display:block;}
 .logo-text{font-family:'Playfair Display',serif;font-weight:900;font-size:1.35rem;letter-spacing:1.5px;background:linear-gradient(90deg,var(--accent2),var(--accent));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-left:-10px;}
@@ -45,7 +45,7 @@ nav{position:sticky;top:0;z-index:200;display:flex;align-items:center;justify-co
 .container{max-width:1100px;margin:0 auto;position:relative;z-index:1;}
 .profile-layout{display:grid;grid-template-columns:360px 1fr;grid-template-rows:auto auto;column-gap:32px;row-gap:10px;align-items:start;}
 .profile-image-wrap{grid-column:1;grid-row:1/3;position:sticky;top:80px;}
-.profile-about{grid-column:2;grid-row:1;}
+.profile-about{grid-column:2;grid-row:1;position:relative;z-index:2;}
 .profile-stats{grid-column:2;grid-row:2;}
 .profile-img-placeholder{width:100%;height:calc(100vh - 130px);max-height:640px;background:var(--surface);border:1px solid rgba(255,61,107,0.2);border-radius:18px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;color:var(--muted);font-size:0.85rem;font-weight:600;letter-spacing:1px;text-transform:uppercase;overflow:hidden;position:relative;box-shadow:0 20px 60px rgba(0,0,0,0.5);}
 .profile-img-placeholder::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(255,61,107,0.1) 0%,transparent 65%);pointer-events:none;}
@@ -53,16 +53,18 @@ nav{position:sticky;top:0;z-index:200;display:flex;align-items:center;justify-co
 .profile-img-placeholder svg{opacity:0.2;position:relative;z-index:1;}
 .profile-img-placeholder span{position:relative;z-index:1;}
 .profile-name{font-family:'Bebas Neue',sans-serif;font-size:clamp(2rem,3.5vw,2.8rem);letter-spacing:3px;line-height:1.15;margin-bottom:8px;color:#ff8c00;}
-.cast-tag{display:inline-flex;align-items:center;gap:8px;background:rgba(255,61,107,0.1);border:1px solid rgba(255,61,107,0.25);border-radius:100px;padding:6px 16px;font-size:0.75rem;font-weight:700;color:var(--muted);letter-spacing:1px;margin-bottom:20px;}
+.cast-tag{display:inline-flex;align-items:center;gap:8px;background:rgba(255,61,107,0.1);border:1px solid rgba(255,61,107,0.25);border-radius:100px;padding:6px 16px;font-size:0.75rem;font-weight:700;color:rgba(255,255,255,0.88);letter-spacing:1px;margin-bottom:20px;}
 .cast-tag span{color:var(--accent);}
-.about-heading{font-family:'Bebas Neue',sans-serif;font-size:1.2rem;letter-spacing:3px;background:linear-gradient(90deg,var(--accent2),var(--accent));-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:10px;}
-.profile-bio{color:var(--muted);font-size:0.93rem;line-height:1.75;margin-bottom:0;padding-bottom:0;}
-.profile-stats-heading{font-family:'Bebas Neue',sans-serif;font-size:1.2rem;letter-spacing:3px;background:linear-gradient(90deg,var(--accent2),var(--accent));-webkit-background-clip:text;-webkit-text-fill-color:transparent;text-transform:uppercase;margin-bottom:14px;text-align:center;}
+.cast-val{background:linear-gradient(135deg,#ff8c00,#ff3d6b);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.about-heading,.profile-stats-heading{font-family:'Bebas Neue',sans-serif;font-size:1.45rem;letter-spacing:3px;text-transform:uppercase;margin-bottom:14px;text-align:center;}
+.about-heading{color:#ffaa00;text-shadow:0 0 12px rgba(255,180,0,0.55),0 0 4px rgba(255,140,0,0.3);margin-bottom:8px;}
+.profile-stats-heading{color:#ffaa00;text-shadow:0 0 12px rgba(255,180,0,0.55),0 0 4px rgba(255,140,0,0.3);padding-top:20px;}
+.profile-bio{color:rgba(255,255,255,0.75);font-size:0.93rem;line-height:1.75;margin-bottom:0;padding-bottom:0;}
 .stats-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;}
 .stat-row{display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.06);gap:12px;}
 .stat-row:last-child{border-bottom:none;}
-.stat-label{font-size:0.75rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);white-space:nowrap;}
-.stat-value{font-size:0.9rem;font-weight:600;color:var(--text);text-align:right;}
+.stat-label{font-size:0.82rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;background:linear-gradient(135deg,#ff8c00,#ff3d6b);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;white-space:nowrap;}
+.stat-value{font-size:1rem;font-weight:600;color:#ffb300;text-align:right;}
 .stats-col-left .stat-row{padding-right:28px;border-right:1px solid rgba(255,255,255,0.06);}
 .stats-col-right .stat-row{padding-left:28px;}
 .profile-cta-wrap{margin-top:32px;text-align:center;}
@@ -76,9 +78,19 @@ nav{position:sticky;top:0;z-index:200;display:flex;align-items:center;justify-co
 .mobile-tab:hover{background:rgba(255,255,255,0.07);color:#fff;}
 .mobile-header{display:none;}
 .desktop-only{display:block;}
-footer{position:relative;z-index:1;border-top:1px solid rgba(255,255,255,0.06);padding:16px 0;background:rgba(8,8,8,0.8);}
-.footer-bottom{max-width:1100px;margin:0 auto;padding:0 20px;display:flex;justify-content:space-between;align-items:flex-start;gap:8px;flex-wrap:wrap;}
-.footer-bottom span{font-size:0.75rem;color:rgba(255,255,255,0.18);line-height:1.6;}
+.site-footer{background:#080808;border-top:1px solid rgba(255,61,107,0.15);padding:32px 40px 28px;position:relative;z-index:1;}
+.footer-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:48px;padding-bottom:40px;border-bottom:1px solid rgba(255,255,255,0.07);}
+.footer-brand,.footer-col{display:block;}
+.footer-col{padding-top:7px;}
+.footer-logo{font-family:'Playfair Display',serif;font-weight:900;font-size:1.4rem;letter-spacing:1.5px;background:linear-gradient(90deg,#ff8c00,#ff3d6b);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:7px;display:inline-block;line-height:1.3;text-decoration:none;}
+.footer-tagline{font-size:0.88rem;color:rgba(255,255,255,0.85);line-height:1.7;max-width:280px;display:block;margin:0;}
+.footer-col-title{display:block;font-size:0.72rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin:0 0 18px;padding:0;background:linear-gradient(90deg,#ff8c00,#ff3d6b);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.footer-links{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:12px;}
+.footer-links li{padding:0;margin:0;}
+.footer-links a{font-size:0.92rem;color:rgba(255,255,255,0.9);-webkit-text-fill-color:rgba(255,255,255,0.9);text-decoration:none;transition:color 0.18s;}
+.footer-links a:hover{color:#cc8800;-webkit-text-fill-color:#cc8800;}
+.footer-bottom{max-width:1100px;margin:28px auto 0;text-align:center;font-size:0.78rem;color:rgba(255,255,255,0.22);}
+.footer-bottom p{margin:0;color:rgba(255,255,255,0.35);-webkit-text-fill-color:rgba(255,255,255,0.35);}
 @media(max-width:760px){
   nav{padding:13px 8px 11px 12px;}
   .tabs{display:none;}
@@ -90,22 +102,54 @@ footer{position:relative;z-index:1;border-top:1px solid rgba(255,255,255,0.06);p
   .profile-section{padding:20px 16px 40px;}
   .profile-layout{display:flex;flex-direction:column;gap:0;}
   .mobile-header{display:block;width:100%;text-align:center;order:1;}
-  .profile-about{order:3;width:385px;max-width:100%;margin:0 auto;}
-  .profile-bio{text-align:justify;margin-bottom:0;padding-bottom:16px;border-bottom:none;}
+  .profile-about{order:3;width:100%;max-width:100%;}
+  .profile-bio{text-align:justify;margin:0 -4px;padding:10px 16px;border-bottom:none;color:rgba(255,205,195,0.92);background:rgba(255,61,107,0.07);border:1px solid rgba(255,61,107,0.18);border-radius:14px;line-height:2;}
   .profile-image-wrap{order:2;position:static;width:98%;margin:0 auto;margin-bottom:12px;}
-  .profile-stats{order:4;display:flex;flex-direction:column;align-items:center;width:100%;}
+  .profile-stats{order:4;display:flex;flex-direction:column;align-items:flex-start;width:100%;}
   .profile-stats-heading{width:100%;text-align:center;}
   .profile-img-placeholder{height:480px;max-height:480px;border-radius:14px;}
   .profile-name{font-size:2.2rem;text-align:center;}
-  .stats-grid{display:flex;flex-direction:column;width:100%;max-width:320px;}
+  .stats-grid{display:flex;flex-direction:column;width:100%;max-width:100%;}
   .stats-col-left,.stats-col-right{width:100%;}
   .stats-col-left .stat-row{padding-right:0;border-right:none;}
   .stats-col-right .stat-row{padding-left:0;}
   .profile-cta-wrap{width:100%;display:flex;flex-direction:column;align-items:center;margin-top:24px;}
-  .footer-bottom{padding:20px 20px 0;flex-direction:column;gap:10px;align-items:center;text-align:center;}
+  .site-footer{display:none;}
+  .footer-bottom{display:none;}
+  .footer-tagline{max-width:100%;}
+  .footer-inner{grid-template-columns:1fr 1fr !important;gap:20px;padding-bottom:0;border-bottom:none;}
+  .footer-brand{grid-column:1/-1;}
+  .footer-col:nth-child(2){order:1;}
+  .footer-col:nth-child(3){order:2;}
+  .footer-col-title{font-size:0.88rem !important;margin-bottom:10px !important;padding-top:20px;}
 }
 .match-count{font-size:0.78rem;color:rgba(255,140,0,0.8);font-weight:600;letter-spacing:0.3px;margin-bottom:16px;}
-
+@keyframes pulse-green{0%,100%{opacity:1;transform:scale(1);}50%{opacity:0.55;transform:scale(1.25);}}
+.img-overlay-info{display:none;position:absolute;bottom:16px;left:16px;right:16px;z-index:5;}
+.img-overlay-name{font-family:'Bebas Neue',sans-serif;font-size:2.2rem;letter-spacing:2px;line-height:0.9;color:#fff;}
+.img-name-text{background:linear-gradient(135deg,#ff8c00,#ff3d6b);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.img-overlay-age{color:rgba(255,170,0,0.88);text-shadow:0 0 4px rgba(255,170,0,0.13);letter-spacing:-0.2px;margin-left:-6px;}
+.img-overlay-status{display:flex;align-items:center;gap:7px;font-size:0.8rem;margin-top:6px;font-weight:600;letter-spacing:0.3px;background:linear-gradient(135deg,#ff8c00,#ff3d6b);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.img-overlay-dot{width:8px;height:8px;border-radius:50%;background:#3dffa0;flex-shrink:0;box-shadow:0 0 6px #3dffa0;animation:pulse-green 2s ease-in-out infinite;display:inline-block;vertical-align:middle;margin-right:2px;}
+.img-overlay-location{font-size:0.82rem;font-weight:600;background:linear-gradient(135deg,#ff8c00,#ff3d6b);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-top:0;letter-spacing:0.5px;padding-left:24px;}
+.social-proof-row{display:none;align-items:center;justify-content:center;gap:8px;font-size:0.78rem;color:rgba(255,255,255,0.45);font-weight:600;margin-top:10px;flex-wrap:wrap;}
+.social-proof-row .sp-star{color:#ffb300;}
+.social-proof-row .sp-green{color:#3dffa0;}
+.sticky-cta{display:none;position:fixed;bottom:0;left:0;right:0;z-index:9999;background:rgba(8,8,8,0.97);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-top:1px solid rgba(255,255,255,0.07);padding:12px 16px 14px;}
+.sticky-cta.active{display:block;}
+.sticky-cta-inner{display:flex;align-items:center;justify-content:space-between;gap:12px;max-width:500px;margin:0 auto;}
+.sticky-cta-left{display:flex;flex-direction:column;gap:2px;}
+.sticky-cta-status{font-size:0.78rem;font-weight:700;color:#3dffa0;display:flex;align-items:center;gap:5px;}
+.sticky-cta-status::before{content:'';width:7px;height:7px;border-radius:50%;background:#3dffa0;flex-shrink:0;box-shadow:0 0 5px #3dffa0;animation:pulse-green 2s ease-in-out infinite;}
+.sticky-cta-sub{font-size:0.68rem;color:rgba(255,255,255,0.35);letter-spacing:0.3px;}
+.sticky-cta-btn{background:linear-gradient(135deg,#ff8c00,#ff3d6b);color:#fff;font-family:'Bebas Neue',sans-serif;font-size:1.05rem;letter-spacing:1.5px;padding:13px 26px;border-radius:50px;text-decoration:none;white-space:nowrap;box-shadow:0 4px 20px rgba(255,61,107,0.45);flex-shrink:0;}
+@media(max-width:760px){
+  .img-overlay-info{display:block;}
+  .mobile-header{display:none!important;}
+  .profile-img-placeholder::after{content:'';position:absolute;bottom:0;left:0;right:0;height:58%;background:linear-gradient(to top,rgba(0,0,0,0.9) 0%,rgba(0,0,0,0.35) 55%,transparent 100%);z-index:4;border-radius:0 0 14px 14px;pointer-events:none;}
+  .social-proof-row{display:flex;}
+  .sticky-cta.active{display:block;}
+}
 
 </style>
 </head>
@@ -120,7 +164,7 @@ footer{position:relative;z-index:1;border-top:1px solid rgba(255,255,255,0.06);p
     <a href="/trending/" class="tab">Trending</a>
     <a href="/vip/" class="tab"><span class="tab-star">⭐</span>VIP</a>
   </div>
-  <button class="join-btn" id="getAccessBtn" style="background:linear-gradient(135deg,#ff8c00,#ff3d6b);">Join Free</button>
+  <a href="https://t.crdtg2.com/389314/4299/37954?bo=2753,2754,2755,2756&po=6456&aff_sub5=SF_006OG000004lmDN" class="join-btn" id="getAccessBtn" style="background:linear-gradient(135deg,#ff8c00,#ff3d6b);text-decoration:none;" target="_blank" rel="noopener">Join Free</a>
   <button class="menu-btn" id="menuBtn">&#9776;</button>
 </nav>
 <div class="mobile-menu" id="mobileMenu">
@@ -137,7 +181,7 @@ footer{position:relative;z-index:1;border-top:1px solid rgba(255,255,255,0.06);p
   <div class="container">
     <div class="profile-layout">
       <div class="mobile-header">        <div class="profile-name">Angel</div>
-        <div><div class="cast-tag"><span>Age:</span> 23 &nbsp;·&nbsp; <span>City:</span> Las Vegas</div></div>
+        <div><div class="cast-tag"><span>Age:</span> <span class="cast-val">23</span> &nbsp;·&nbsp; <span>City:</span> <span class="cast-val">Las Vegas</span></div></div>
         
       </div>
       <div class="profile-image-wrap">
@@ -145,16 +189,20 @@ footer{position:relative;z-index:1;border-top:1px solid rgba(255,255,255,0.06);p
           <img src="https://res.cloudinary.com/doslc6l1h/image/upload/v1777367902/Angel_dhw00u.jpg" alt="Angel"/>
           <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
           <span>Profile Image</span>
+          <div class="img-overlay-info">
+            <div class="img-overlay-name"><span class="img-overlay-dot"></span> <span class="img-name-text">Angel,</span> <span class="img-overlay-age">23</span></div>
+            <div class="img-overlay-location">Las Vegas</div>
+          </div>
         </div>
       </div>
       <div class="profile-about">
         <div class="desktop-only" style="text-align:center;"></div>
         <div class="profile-name desktop-only" style="text-align:center;">Angel</div>
         <div class="desktop-only" style="text-align:center;">
-          <div class="cast-tag"><span>Age:</span> 23 &nbsp;·&nbsp; <span>City:</span> Las Vegas</div>
+          <div class="cast-tag"><span>Age:</span> <span class="cast-val">23</span> &nbsp;·&nbsp; <span>City:</span> <span class="cast-val">Las Vegas</span></div>
         </div>
         
-        <div class="about-heading">About</div>
+        <div class="about-heading">About Me</div>
         <p class="profile-bio">They say I look innocent. They're not entirely wrong — but get me talking and you'll find out there's a lot more going on behind the smile. I'm Angel, and I promise I'm worth the conversation.</p>
       </div>
       <div class="profile-stats">
@@ -201,127 +249,59 @@ footer{position:relative;z-index:1;border-top:1px solid rgba(255,255,255,0.06);p
   const menuBtn=document.getElementById('menuBtn'),mobileMenu=document.getElementById('mobileMenu');
   if(menuBtn)menuBtn.addEventListener('click',()=>mobileMenu.classList.toggle('open'));
 </script>
-<!-- JOIN FREE QUIZ -->
-<style>
-#pjfOv{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.85);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);z-index:9999;align-items:center;justify-content:center;padding:20px;}
-#pjfOv.open{display:flex;}
-#pjfM{background:rgba(22,22,22,0.97);border:1px solid rgba(255,255,255,0.08);border-radius:20px;padding:36px 32px;max-width:440px;width:100%;position:relative;max-height:90vh;overflow-y:auto;box-shadow:0 24px 80px rgba(0,0,0,0.6);}
-#pjfX{position:absolute;top:16px;right:16px;background:rgba(255,255,255,0.08);border:none;color:#fff;width:32px;height:32px;border-radius:50%;cursor:pointer;font-size:14px;}
-.pjfd-wrap{display:flex;gap:6px;justify-content:center;margin-bottom:24px;}
-.pjfd{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,0.2);transition:background .3s;}
-.pjfd.on{background:#ff8c00;}
-.pjs{display:none;text-align:center;}
-.pjs.on{display:block;}
-.pjf-emoji{font-size:2.5rem;margin-bottom:12px;}
-.pjf-title{font-family:'Bebas Neue',sans-serif;font-size:1.55rem;letter-spacing:1px;color:#f0f0f8;margin-bottom:8px;line-height:1.2;}
-.pjf-sub{color:rgba(255,255,255,0.5);font-size:0.88rem;margin-bottom:24px;}
-.pjf-opts{display:flex;flex-direction:column;gap:10px;}
-.pjf-opt{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:12px;color:#f0f0f8;font-family:'DM Sans',sans-serif;font-size:0.92rem;font-weight:500;padding:14px 18px;cursor:pointer;text-align:left;transition:all .2s;}
-.pjf-opt:hover{background:rgba(255,61,107,0.12);border-color:rgba(255,61,107,0.5);}
-.pjf-res-icon{font-size:3rem;margin-bottom:10px;}
-.pjf-res-h{font-family:'Bebas Neue',sans-serif;font-size:1.6rem;letter-spacing:1px;color:#f0f0f8;margin-bottom:10px;}
-.pjf-res-sub{color:rgba(255,255,255,0.65);font-size:0.9rem;margin-bottom:20px;line-height:1.5;}
-.pjf-feats{display:flex;flex-direction:column;gap:8px;margin-bottom:20px;text-align:left;}
-.pjf-feat{background:rgba(123,47,247,0.12);border:1px solid rgba(123,47,247,0.25);border-radius:8px;padding:10px 14px;font-size:0.88rem;color:rgba(255,255,255,0.88);}
-.pjf-cta{display:block;width:100%;padding:16px;border-radius:50px;background:linear-gradient(135deg,#7b2ff7,#a855f7);color:#fff;font-family:'Bebas Neue',sans-serif;font-size:1.25rem;letter-spacing:2px;text-decoration:none;text-align:center;box-shadow:0 8px 32px rgba(123,47,247,0.45);margin-top:4px;}
-.pjf-disc{color:rgba(255,255,255,0.3);font-size:0.72rem;margin-top:10px;text-align:center;}
-</style>
-<div id="pjfOv">
-  <div id="pjfM">
-    <button id="pjfX">&#10005;</button>
-    <div class="pjfd-wrap"><span class="pjfd on" id="pjfd1"></span><span class="pjfd" id="pjfd2"></span><span class="pjfd" id="pjfd3"></span><span class="pjfd" id="pjfd4"></span><span class="pjfd" id="pjfd5"></span></div>
-    <div class="pjs on" id="pjs1">
-      <div class="pjf-emoji">💬</div>
-      <h2 class="pjf-title">What kind of conversations are you after?</h2>
-      <p class="pjf-sub">We'll match you to the perfect experience</p>
-      <div class="pjf-opts">
-        <button class="pjf-opt" data-next="2">😏 Flirty and playful</button>
-        <button class="pjf-opt" data-next="2">💭 Deep and personal</button>
-        <button class="pjf-opt" data-next="2">😄 Fun and lighthearted</button>
-        <button class="pjf-opt" data-next="2">🤝 Real and honest connection</button>
-      </div>
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a href="/" class="footer-logo">Tempting Babes</a>
+      <p class="footer-tagline">Your all-in-one hub for Dating, Live Cams, AI Girls<br>and VIP access. Built for real connections and instant interaction</p>
     </div>
-    <div class="pjs" id="pjs2">
-      <div class="pjf-emoji">🌙</div>
-      <h2 class="pjf-title">When do you most want to connect?</h2>
-      <p class="pjf-sub">No wrong answer here</p>
-      <div class="pjf-opts">
-        <button class="pjf-opt" data-next="3">🌒 Late nights — when I can't sleep</button>
-        <button class="pjf-opt" data-next="3">☀️ During the day, randomly</button>
-        <button class="pjf-opt" data-next="3">🌆 Evenings, when I wind down</button>
-        <button class="pjf-opt" data-next="3">🔄 Anytime — I want on-demand access</button>
-      </div>
+    <div class="footer-col">
+      <h4 class="footer-col-title">Legal &amp; Info</h4>
+      <ul class="footer-links">
+        <li><a href="/about/">About</a></li>
+        <li><a href="/privacy-policy/">Privacy Policy</a></li>
+        <li><a href="/terms/">Terms of Service</a></li>
+        <li><a href="/dmca/">DMCA Policy</a></li>
+        <li><a href="/2257/">18 U.S.C. &sect; 2257</a></li>
+        <li><a href="/contact/">Contact</a></li>
+      </ul>
     </div>
-    <div class="pjs" id="pjs3">
-      <div class="pjf-emoji">✨</div>
-      <h2 class="pjf-title">What matters most to you?</h2>
-      <p class="pjf-sub">Pick the one that resonates</p>
-      <div class="pjf-opts">
-        <button class="pjf-opt" data-next="4">💌 She always responds — no ghosting</button>
-        <button class="pjf-opt" data-next="4">🧠 Real conversation, no small talk</button>
-        <button class="pjf-opt" data-next="4">🔒 Total privacy, no judgment</button>
-        <button class="pjf-opt" data-next="4">🧩 She remembers what I said before</button>
-      </div>
+    <div class="footer-col">
+      <h4 class="footer-col-title">Explore</h4>
+      <ul class="footer-links">
+        <li><a href="/Blog/">Blog</a></li>
+        <li><a href="/world-cup/">FIFA World Cup 2026</a></li>
+        <li><a href="/surprise-me/">Surprise Me</a></li>
+        <li><a href="/tip-us/">Tip Us</a></li>
+      </ul>
     </div>
-    <div class="pjs" id="pjs4">
-      <div class="pjf-emoji">😤</div>
-      <h2 class="pjf-title">What's frustrated you about apps before?</h2>
-      <p class="pjf-sub">This helps us skip what you hate</p>
-      <div class="pjf-opts">
-        <button class="pjf-opt" data-next="5">👻 Getting ghosted mid-conversation</button>
-        <button class="pjf-opt" data-next="5">🤥 Fake profiles and bots</button>
-        <button class="pjf-opt" data-next="5">😴 Dull replies that go nowhere</button>
-        <button class="pjf-opt" data-next="5">⏱️ She's never online when I need her</button>
-      </div>
+  </div>
+  <div class="footer-bottom">
+    <p>18+ Only &nbsp;&middot;&nbsp; All rights reserved &nbsp;&middot;&nbsp; Tempting Babes&copy; 2026</p>
+  </div>
+</footer>
+<div class="sticky-cta" id="stickyCta">
+  <div class="sticky-cta-inner">
+    <div class="sticky-cta-left">
+      <div class="sticky-cta-status">Angel is online</div>
+      <div class="sticky-cta-sub">Responding instantly &middot; Free to start</div>
     </div>
-    <div class="pjs" id="pjs5">
-      <div class="pjf-emoji">🎂</div>
-      <h2 class="pjf-title">Last one — your age group?</h2>
-      <p class="pjf-sub">Required to set up your account</p>
-      <div class="pjf-opts">
-        <button class="pjf-opt" data-next="result">18 – 24</button>
-        <button class="pjf-opt" data-next="result">25 – 34</button>
-        <button class="pjf-opt" data-next="result">35 – 44</button>
-        <button class="pjf-opt" data-next="result">45+</button>
-      </div>
-    </div>
-    <div class="pjs" id="pjsResult">
-      <div class="pjf-res-icon">💜</div>
-      <h2 class="pjf-res-h">Your Companion Is Online Now</h2>
-      <p class="pjf-res-sub">No waiting, no ghosting, no awkwardness. Real conversation on your terms — whenever you need it.</p>
-      <div class="pjf-feats">
-        <div class="pjf-feat">✅ Responds to every message instantly</div>
-        <div class="pjf-feat">✅ Remembers you across conversations</div>
-        <div class="pjf-feat">✅ Available 24/7 — even at 3am</div>
-        <div class="pjf-feat">✅ Start talking free in under a minute</div>
-      </div>
-      <a href="https://t.vlmai-1.com" class="pjf-cta" id="pjfCta" target="_blank" rel="noopener">Start Talking Free →</a>
-      <p class="pjf-disc">Free to start · No credit card · 18+ only</p>
-    </div>
+    <a href="https://t.crdtg2.com/389314/4299/37954?bo=2753,2754,2755,2756&amp;po=6456&amp;aff_sub5=SF_006OG000004lmDN" class="sticky-cta-btn">&#x1F4AC; Chat Now</a>
   </div>
 </div>
 <script>
 (function(){
-  var ov=document.getElementById('pjfOv');
-  function openQ(){ov.classList.add('open');}
-  function closeQ(){ov.classList.remove('open');show('pjs1');dot(1);}
-  function show(id){document.querySelectorAll('.pjs').forEach(function(s){s.classList.remove('on');});document.getElementById(id).classList.add('on');}
-  function dot(n){document.querySelectorAll('.pjfd').forEach(function(d){d.classList.remove('on');});var d=document.getElementById('pjfd'+n);if(d)d.classList.add('on');}
-  document.getElementById('pjfX').addEventListener('click',closeQ);
-  ov.addEventListener('click',function(e){if(e.target===ov)closeQ();});
-  document.querySelectorAll('.pjf-opt').forEach(function(btn){
-    btn.addEventListener('click',function(){
-      var next=btn.dataset.next;
-      if(next==='result'){show('pjsResult');}else{var n=Number(next);show('pjs'+n);dot(n);}
-      if(typeof gtag!=='undefined')gtag('event','jf_profile_step',{step:next});
-    });
-  });
-  document.querySelectorAll('.join-btn').forEach(function(b){
-    b.addEventListener('click',function(){if(typeof gtag!=='undefined')gtag('event','join_free_click');openQ();});
-  });
-  document.getElementById('pjfCta').addEventListener('click',function(){setTimeout(closeQ,300);});
+  if(window.innerWidth>760)return;
+  var bar=document.getElementById('stickyCta');
+  var mainBtn=document.querySelector('.btn-primary');
+  if(!bar||!mainBtn)return;
+  function check(){
+    var r=mainBtn.getBoundingClientRect();
+    if(r.bottom<0){bar.classList.add('active');}else{bar.classList.remove('active');}
+  }
+  window.addEventListener('scroll',check,{passive:true});
+  check();
 })();
 </script>
-
 </body>
 </html>

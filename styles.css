@@ -1722,7 +1722,10 @@ nav {
   white-space: nowrap;
   flex-shrink: 0;
 }
+.profile-card-city { display: none; }
 .profile-card-distance { display: none; }
+.profile-card-age { color: #ff4d7a; }
+.profile-card-age::after { content: ' yrs,'; }
 .profile-card-dot {
   width: 6px; height: 6px;
   border-radius: 50%;
@@ -2069,8 +2072,9 @@ nav {
 @media (max-width: 480px) {
   .footer-inner { grid-template-columns: 1fr 1fr !important; gap: 20px; }
   .footer-brand { grid-column: 1 / -1; }
-  .footer-col:nth-child(2) { order: 2; }
-  .footer-col:nth-child(3) { order: 1; }
+  .footer-col:nth-child(2) { order: 1; }
+  .footer-col:nth-child(3) { order: 2; }
+  .footer-col-title { font-size: 0.88rem !important; margin-bottom: 10px !important; padding-top: 20px; }
 }
 
 /* ── GET ACCESS POPUP ── */
@@ -2290,7 +2294,7 @@ nav {
   #scrollLeft { margin-left: 4px; margin-right: 8px; transform: translateY(-26px); }
   #scrollRight { margin-right: 4px; margin-left: 8px; transform: translateY(-26px); }
 
-  .carousel-stage { height: 520px; }
+  .carousel-stage { height: 460px; }
 
   .pos-left, .pos-right, .pos-enter-left, .pos-exit-right { display: none; }
   .pos-center { left: 0; width: 100%; }
@@ -2306,7 +2310,10 @@ nav {
   .offers-section .section-hd-title span { margin-right: -8px !important; }
   .cta-btn { box-shadow: none; }
 
+  .vip-section { display: none; }
   .vip-grid { grid-template-columns: 1fr !important; gap: 28px !important; }
+  .discretion-section { padding-top: 16px !important; }
+  .discretion-section .section-hd-title { margin-bottom: 4px !important; }
   .discretion-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 12px !important; }
 
   /* ── Get Access popup mobile ── */
@@ -2338,7 +2345,8 @@ nav {
   .profile-card-name { font-size: 1rem; white-space: nowrap; flex-shrink: 0; }
   .profile-card-dash { font-size: 0.75rem; color: rgba(255,255,255,0.5); margin: 0 3px; flex-shrink: 0; }
   .profile-card-age { font-size: 0.82rem; color: #3dffa0; flex-shrink: 0; white-space: nowrap; }
-  .profile-card-age::after { content: ','; }
+  .profile-card-age::after { content: ''; }
+  .profile-card-name::before { content: '• '; color: #3dffa0; font-size: 1.4rem; line-height: 1; vertical-align: middle; animation: pulse-green 2.4s ease-in-out infinite; }
   .profile-card-distance { display: none; }
 }
 }
