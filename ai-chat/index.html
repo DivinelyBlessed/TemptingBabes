@@ -23,13 +23,14 @@
   <meta name="twitter:description" content="Pick the kind of chat you actually want. Always on. No judgment. Free to start."/>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@700;900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'"/>
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@700;900&display=swap"/></noscript>
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,700;0,900;1,700;1,900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'"/>
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,700;0,900;1,700;1,900&display=swap"/></noscript>
   <link rel="preload" as="video" href="https://res.cloudinary.com/doslc6l1h/video/upload/v1778924738/Enhancer-Ultra_HD-Untitled_design_zbvrs5.mp4" type="video/mp4"/>
   <link rel="stylesheet" href="../styles.css"/>
 
   <style>
-    html { scrollbar-gutter: stable; }
+    html { scrollbar-gutter: stable; overflow-x: hidden; }
+    body { overflow-x: hidden; }
 
     /* Fix: body::after bleeds past right viewport edge */
     body::after {
@@ -62,6 +63,7 @@
     }
     .pillar-hero-cta{animation:cta-pulse 3.2s ease-in-out infinite;}
     .join-btn{animation:cta-pulse 3.2s ease-in-out infinite;}
+    .proof-banner-cta{animation:cta-pulse 3.2s ease-in-out infinite;}
 
     /* Fix heartbeat — transform only, no box-shadow CPU repaint */
     @keyframes heartbeat {
@@ -202,9 +204,10 @@
       border-radius: 100px;
       background: linear-gradient(135deg, #ff8c00, #ff3d6b);
       color: #fff;
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 1.35rem;
-      letter-spacing: 2.5px;
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 700;
+      font-size: 1.05rem;
+      letter-spacing: 0.5px;
       text-decoration: none;
       box-shadow: 0 8px 40px rgba(255,61,107,0.45);
       transition: transform 0.2s, box-shadow 0.2s;
@@ -272,13 +275,15 @@
       font-size: clamp(3rem, 5vw, 5rem);
       letter-spacing: 3px;
       line-height: 1.05;
-      background: linear-gradient(90deg, #fff 0%, var(--accent) 60%, var(--accent2) 100%);
+      background: linear-gradient(90deg, #ffb3c6 0%, #ff3d6b 60%, #ff8c00 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       text-align: center;
       margin-bottom: 14px;
     }
+    #faq h2 { background: linear-gradient(90deg, #ff7a9a 0%, #ff3d6b 55%, #ff8c00 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
     #why-ai { padding-top: 28px; }
+    .proof-banner-cta { box-shadow: 0 8px 24px rgba(255, 61, 107, 0.5), 0 3px 8px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.2); }
     .pillar-section-sub {
       text-align: center;
       color: rgba(255,255,255,0.92);
@@ -289,7 +294,7 @@
     }
     .pillar-section-sub.wide {
       max-width: 100%;
-      text-align: left;
+      text-align: center;
       font-size: 1.08rem;
     }
 
@@ -440,9 +445,10 @@
       padding: 17px;
       border-radius: 50px;
       color: #fff;
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 1.15rem;
-      letter-spacing: 2.5px;
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+      letter-spacing: 0.5px;
       text-decoration: none;
       background: linear-gradient(135deg, #ff8c00, #ff3d6b);
       box-shadow: 0 8px 28px rgba(255,61,107,0.38);
@@ -521,7 +527,7 @@
     .control-card:nth-child(5) h3 { color: #ff3d6b; }
     .control-card:nth-child(6) h3 { color: #ff8c00; }
     .control-card p {
-      font-size: 0.92rem;
+      font-size: 1rem;
       color: rgba(255,248,230,0.88);
       line-height: 1.65;
     }
@@ -657,7 +663,7 @@
       font-family: 'Bebas Neue', sans-serif;
       font-size: 6rem;
       letter-spacing: 4px;
-      background: linear-gradient(90deg, #fff 0%, var(--accent) 60%, var(--accent2) 100%);
+      background: linear-gradient(90deg, #ffb3c6 0%, #ff3d6b 60%, #ff8c00 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       line-height: 1;
@@ -850,7 +856,8 @@
       #heroTagline { top: 71% !important; }
       .glow-pulse-text { font-size: 3.5vw !important; letter-spacing: 0 !important; white-space: nowrap !important; padding-left: 4px !important; padding-right: 4px !important; text-align: center !important; }
       .pillar-section { padding: 44px 16px; }
-      .pillar-section.alt { padding: 0 16px 40px !important; }
+      #why-ai .pillar-section-sub { padding: 0 4px; }
+      .pillar-section.alt { padding: 0 16px 40px 6px !important; }
       .pillar-section h2 { font-size: 2rem; letter-spacing: 1.5px; }
       /* Showcase: flex column, card becomes display:contents so card-top/card-body are flex siblings with img */
       .showcase-split-row { display: flex !important; flex-direction: column; }
@@ -870,15 +877,15 @@
       }
       .card-top::before { display: none; }
       #showcase .pillar-inner { padding-top: 28px !important; padding-bottom: 0 !important; }
-      #showcase h2 { margin-bottom: 4px !important; }
-      #showcase > p { padding: 0 !important; font-size: 1.13rem !important; text-align: left !important; }
+      #showcase h2 { margin-bottom: 4px !important; transform: translateX(-16px); }
+      #showcase > p { padding: 3px 0 0 0 !important; margin-left: 6.5px !important; font-size: 1.13rem !important; text-align: left !important; line-height: 1.6 !important; }
       .card-body {
         display: flex !important;
         flex-direction: column;
         gap: 10px;
-        padding: 14px 17px 1px;
-        margin-left: -17px;
-        margin-right: -17px;
+        padding: 14px 17px 1px 0;
+        margin-left: -12px;
+        margin-right: 0;
         text-align: left;
         background: rgba(13,13,13,0.95);
         order: 3;
@@ -886,14 +893,14 @@
       .card-body p { font-size: 1.15rem !important; line-height: 1.7 !important; }
       .card-body .showcase-features { gap: 10px; }
       .card-body .showcase-features li { font-size: 1.1rem; line-height: 1.55; }
-      .showcase-split-card h3 { font-size: clamp(1.8rem, 6.5vw, 2.4rem); white-space: normal; overflow: visible; }
-      .showcase-split-card.practice h3 { transform: translateX(-6px); }
+      .showcase-split-card h3 { font-size: clamp(1.4rem, 6.7vw, 2.3rem) !important; white-space: nowrap !important; overflow: hidden !important; font-family: 'Playfair Display', serif !important; font-weight: 900 !important; }
+      .showcase-split-card.practice h3 { transform: translateX(-12px); }
       .showcase-split-card.practice .card-top .showcase-icon { transform: translateX(-6px); }
       .showcase-split-card.practice .card-top .showcase-pill { transform: translateX(-6px); }
-      .showcase-split-card.emotional h3 { transform: translateX(-6px); }
+      .showcase-split-card.emotional h3 { transform: translateX(-12px); }
       .showcase-split-card.emotional .card-top .showcase-icon { transform: translateX(-6px); }
       .showcase-split-card.emotional .card-top .showcase-pill { transform: translateX(-6px); }
-      .showcase-split-card.fantasy h3 { font-size: 7.3vw !important; white-space: nowrap !important; text-align: center !important; width: 100% !important; transform: translateX(-6px); }
+      .showcase-split-card.fantasy h3 { white-space: nowrap !important; text-align: center !important; width: 100% !important; transform: translateX(-12px); }
       .showcase-split-card.fantasy .card-top .showcase-icon { transform: translateX(-6px); }
       .showcase-split-card.fantasy .card-top .showcase-pill { transform: translateX(-6px); }
       .showcase-split-card.fantasy .card-top { text-align: left !important; }
@@ -915,14 +922,20 @@
       .proof-rating-bar { gap: 28px; }
       /* Rest */
       .control-grid { grid-template-columns: 1fr 1fr; }
-      .control-card h3 { white-space: normal; font-size: 1.2rem; }
+      .control-card { gap: 2px !important; padding: 16px 14px !important; }
+      .control-card h3 { white-space: normal; font-size: 1.4rem; margin-bottom: 0 !important; margin-top: 0 !important; }
+      .control-card p { margin-top: 0 !important; margin-bottom: 0 !important; font-size: 1rem !important; }
       .vs-cell { padding: 16px 18px; font-size: 0.92rem; }
-      .pillar-final-cta h2 { font-size: 3rem; letter-spacing: 1.5px; }
+      .pillar-final-cta h2 { font-size: clamp(1.8rem, 9vw, 3rem); letter-spacing: 1.5px; white-space: nowrap; overflow: hidden; }
+      #faq h2 { font-size: clamp(1.5rem, 7.5vw, 2.3rem); white-space: nowrap; overflow: hidden; }
       .pillar-final-cta-btn { font-size: 1.1rem; padding: 14px 32px; letter-spacing: 2px; }
       .pillar-crumb { padding: 12px 16px 0; font-size: 0.76rem; }
+      .proof-banner-cta { font-family: 'Syne', sans-serif !important; font-weight: 700 !important; font-size: 0.92rem !important; padding: 13px 32px !important; letter-spacing: 0.5px !important; margin-top: 48px !important; box-shadow: 0 8px 24px rgba(255, 61, 107, 0.5), 0 3px 8px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.2) !important; }
+      .proof-cta-text { -webkit-text-fill-color: #fff8ee; color: #fff8ee; }
       .join-btn { padding: 7px 16px; font-size: 0.82rem; margin-left: auto; }
       .menu-btn { display: flex; align-items: center; justify-content: center; background: transparent; border: 1px solid rgba(255,255,255,0.25); color: #fff; width: 34px; height: 34px; border-radius: 8px; font-size: 1.1rem; cursor: pointer; margin-left: 4px; flex-shrink: 0; }
       .tabs { display: none; }
+      .footer-tagline { max-width: 100% !important; font-size: 0.95rem !important; line-height: 1.75 !important; }
     }
     @media (max-width: 480px) {
       .control-grid { grid-template-columns: 1fr; }
@@ -1048,7 +1061,7 @@
         <h3>Master the Art of Seduction</h3>
       </div>
       <div class="card-body">
-        <p>Stop wondering why conversations die out. Test risky openers, sharpen your flirting skills, and discover what actually keeps her interested</p>
+        <p>Stop wondering why conversations die out.<br>Test risky openers, sharpen your flirting skills, and discover what actually keeps her interested</p>
         <ul class="showcase-features">
           <li>Learn what sparks interest — and what kills it</li>
           <li>Practice bold openers without real&#8209;world risk</li>
@@ -1069,12 +1082,12 @@
         <h3>She stays locked into you</h3>
       </div>
       <div class="card-body">
-        <p>Always responsive, always engaged. She remembers your chats, adapts to your tone, and keeps the conversation flowing smoothly every time</p>
+        <p>Always responsive, always engaged.<br>She remembers your chats, adapts to your tone, and keeps the conversation flowing smoothly every time</p>
         <ul class="showcase-features">
           <li>Replies instantly, every single time</li>
           <li>Remembers your past chats and builds on them</li>
           <li>Mirrors your mood and energy effortlessly</li>
-          <li>Keeps the conversation flowing without breaks or resets</li>
+          <li>Keeps the interaction intimate and spicy</li>
         </ul>
         <a href="#" class="showcase-cta" data-platform="nomi">Meet Her Now →</a>
       </div>
@@ -1133,7 +1146,7 @@
 <section class="pillar-section" id="why-ai">
   <h2>Why AI Chat Wins</h2>
   <p class="pillar-section-sub wide">
-    We tested every major platform for personality depth, conversation quality, customization, and privacy. Every pick above offers a free tier so you can test the chemistry before spending a dollar
+    Every pick above has been tested for personality depth, conversation quality, customization, and privacy
 </p>
 
   <div class="control-grid">
@@ -1160,12 +1173,12 @@
     <div class="control-card">
       <div class="control-icon">😈</div>
       <h3>No Performance Pressure</h3>
-      <p>You don't have to be on. <strong>There's no risk of rejection,</strong> which means you can actually relax and figure out what you like</p>
+      <p>You don't have to be on. <strong>There's no risk of rejection,</strong> which means you can actually relax and figure things out</p>
     </div>
     <div class="control-card">
       <div class="control-icon">🌙</div>
       <h3>Always On, Never Needy</h3>
-      <p>3 AM? She's there. Disappear for a week? She's not mad. <strong>No guilt, no pressure, no <span style="color:#ff3d6b">"why haven't you texted me"</span></strong></p>
+      <p>3 AM? Disappear for a week? She's not mad. <strong>No guilt, no pressure, no <span style="color:#ff3d6b">"why haven't you texted me"</span></strong></p>
     </div>
   </div>
 </section>
@@ -1177,8 +1190,8 @@
     <div id="proofBanner" style="display:block;position:relative;width:100vw;left:50%;transform:translateX(-50%);height:700px;margin-bottom:44px;overflow:hidden;">
       <div style="position:absolute;inset:0;background-image:url('https://res.cloudinary.com/doslc6l1h/image/upload/v1778883434/UniversalUpscaler_Pro_Precise_4_1f150ab4-f719-66f0-908f-f5144a7c1d90_sxu4po.jpg');background-size:cover;background-position:center center;"></div>
       <div style="position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,0.38) 0%,transparent 40%,rgba(0,0,0,0.28) 100%);display:flex;flex-direction:column;align-items:center;justify-content:space-between;padding:28px 20px 52px;">
-        <h2 style="font-family:'Bebas Neue',sans-serif;font-size:clamp(3.5rem,9vw,8rem);letter-spacing:3px;line-height:1.05;text-align:center;margin:0;background:linear-gradient(90deg,#fff 0%,var(--accent) 60%,var(--accent2) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;filter:drop-shadow(0 1px 3px rgba(0,0,0,0.95)) drop-shadow(0 0px 1px rgba(0,0,0,0.9));">Your AI Girlfriend Is Waiting</h2>
-        <a href="https://t.vlmai-1.com/389314/10046/38042?aff_sub5=SF_006OG000004lmDN" target="_blank" rel="noopener noreferrer" style="font-family:'Bebas Neue',sans-serif;font-size:1.6rem;letter-spacing:2px;background:linear-gradient(135deg,#ff8c00,#ff3d6b);color:#fff;padding:18px 54px;border-radius:100px;text-transform:uppercase;text-decoration:none;display:inline-block;">Start Chatting Now</a>
+        <h2 style="font-family:'Bebas Neue',sans-serif;font-size:clamp(3.5rem,9vw,8rem);letter-spacing:3px;line-height:1.05;text-align:center;margin:0;background:linear-gradient(90deg,#ffb3c6 0%,#ff3d6b 60%,#ff8c00 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;filter:drop-shadow(0 1px 3px rgba(0,0,0,0.95)) drop-shadow(0 0px 1px rgba(0,0,0,0.9));">Your AI Girlfriend Is Waiting</h2>
+        <a href="https://t.vlmai-1.com/389314/10046/38042?aff_sub5=SF_006OG000004lmDN" target="_blank" rel="noopener noreferrer" class="proof-banner-cta" style="font-family:'Syne',sans-serif;font-weight:700;font-size:1rem;letter-spacing:0.5px;background:linear-gradient(135deg,#ff8c00,#ff3d6b);color:#fff8ee;padding:18px 54px;border-radius:100px;text-transform:uppercase;text-decoration:none;display:inline-block;"><span class="proof-cta-text">Start Chatting Now</span></a>
       </div>
     </div>
 
@@ -1263,7 +1276,7 @@
 <section class="pillar-final-cta">
   <canvas id="aichatCtaBubbles"></canvas>
   <h2>She's Already Online</h2>
-  <p>Pick the experience, set the tone, and have your first conversation in under a minute. Free to start, no card required.</p>
+  <p>Pick the experience, set the tone, and have your first conversation in under a minute</p>
   <a href="https://t.vlmai-1.com/389314/10182/40571?aff_sub5=SF_006OG000004lmDN" target="_blank" rel="noopener noreferrer" class="pillar-final-cta-btn" data-platform="final">Find Your AI Match →</a>
 </section>
 
@@ -1323,14 +1336,14 @@
       <a href="/" class="footer-logo" style="text-decoration:none;">Tempting Babes</a>
       <p class="footer-tagline">Your all-in-one hub for Dating, Live Cams, AI Girls<br>and VIP access. Built for real connections and instant interaction</p>
     </div>
-    <div class="footer-col">
+        <div class="footer-col">
       <h4 class="footer-col-title">Legal &amp; Info</h4>
       <ul class="footer-links">
         <li><a href="/about/">About</a></li>
         <li><a href="/privacy-policy/">Privacy Policy</a></li>
         <li><a href="/terms/">Terms of Service</a></li>
         <li><a href="/dmca/">DMCA Policy</a></li>
-        <li><a href="/2257/">18 U.S.C. § 2257</a></li>
+        <li><a href="/2257/">18 U.S.C. &sect; 2257</a></li>
         <li><a href="/contact/">Contact</a></li>
       </ul>
     </div>
@@ -1343,9 +1356,6 @@
         <li><a href="/tip-us/">Tip Us</a></li>
       </ul>
     </div>
-  </div>
-  <div class="footer-bottom">
-    <p>18+ Only &nbsp;&middot;&nbsp; All rights reserved &nbsp;&middot;&nbsp; Tempting Babes&copy; 2026</p>
   </div>
 
 <!-- COOKIE CONSENT BANNER -->

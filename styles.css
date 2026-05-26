@@ -1692,7 +1692,7 @@ nav {
 }
 .profile-card-name {
   font-family: 'Bebas Neue', sans-serif;
-  font-size: 1.1rem;
+  font-size: 1.25rem;
   letter-spacing: 0.5px;
   white-space: nowrap;
   flex-shrink: 0;
@@ -1725,7 +1725,7 @@ nav {
 .profile-card-city { display: none; }
 .profile-card-distance { display: none; }
 .profile-card-age { color: #ff4d7a; }
-.profile-card-age::after { content: ' yrs,'; }
+.profile-card-age::after { content: ' years'; }
 .profile-card-dot {
   width: 6px; height: 6px;
   border-radius: 50%;
@@ -1931,6 +1931,8 @@ nav {
 @media (max-width: 768px) {
   .profiles-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
   .offers-grid { grid-template-columns: 1fr; }
+  .offers-grid .offer-card:nth-child(2) { order: 3; }
+  .offers-grid .offer-card:nth-child(3) { order: 2; }
   .content-stats-inner { flex-wrap: wrap; gap: 20px 0; }
   .c-stat-sep { display: none; }
   .c-stat { flex: 0 0 50%; }
@@ -2068,6 +2070,7 @@ nav {
   .site-footer { padding: 40px 20px 24px; }
   .footer-inner { grid-template-columns: 1fr 1fr !important; gap: 32px; }
   .footer-brand { grid-column: 1 / -1; }
+  .footer-tagline { max-width: 100% !important; font-size: 0.95rem !important; line-height: 1.75 !important; }
 }
 @media (max-width: 480px) {
   .footer-inner { grid-template-columns: 1fr 1fr !important; gap: 20px; }
@@ -2261,7 +2264,10 @@ nav {
   nav { padding: 13px 8px 11px 12px; align-items: center; }
   .tabs { display: none; }
   .logo { font-size: 1rem; padding-top: 4px; }
-  .join-btn { padding: 7px 16px; font-size: 0.82rem; margin-left: auto; }
+  .join-btn { padding: 7px 16px !important; font-size: 0.82rem !important; margin-left: auto !important; border-radius: 50px !important; }
+  .tb-desktop-text { display: none; }
+  .tb-mobile-text { display: inline !important; }
+
   .menu-btn {
     display: flex;
     align-items: center;
@@ -2326,27 +2332,57 @@ nav {
 
   /* ── Profile card mobile format: TRACY - 21, 8 km away ── */
   .profile-card { position: relative; }
-  .profile-card::after {
-    content: '';
-    position: absolute;
-    top: 8px;
-    left: 8px;
-    width: 9px;
-    height: 9px;
-    border-radius: 50%;
-    background: #3dffa0;
-    border: 1px solid #ff8c00;
-    z-index: 2;
-    animation: pulse-green 2.8s ease-in-out infinite;
-  }
-  .profile-card-status { display: none; }
-  .profile-card-city { display: inline; font-size: 0.72rem; color: #ffffff; white-space: nowrap; margin-left: auto; flex-shrink: 0; }
+  .profile-card::after { display: none; }
+  .profile-card-status { display: flex; align-items: center; gap: 5px; font-size: 0.78rem; color: #3dffa0; margin-left: auto; flex-shrink: 0; white-space: nowrap; }
+  .profile-card-city { display: none; }
   .profile-card-left { flex: 1; overflow: hidden; align-items: center; min-width: 0; }
   .profile-card-name { font-size: 1rem; white-space: nowrap; flex-shrink: 0; }
-  .profile-card-dash { font-size: 0.75rem; color: rgba(255,255,255,0.5); margin: 0 3px; flex-shrink: 0; }
-  .profile-card-age { font-size: 0.82rem; color: #3dffa0; flex-shrink: 0; white-space: nowrap; }
+  .profile-card-name::before { content: ''; }
+  .profile-card-dash { font-size: 0; }
+  .profile-card-name::after { content: ','; font-size: 1rem; color: rgba(255,255,255,0.7); }
+  .profile-card-age { font-size: 0.9rem; color: rgba(255,255,255,0.85); flex-shrink: 0; white-space: nowrap; }
   .profile-card-age::after { content: ''; }
-  .profile-card-name::before { content: '• '; color: #3dffa0; font-size: 1.4rem; line-height: 1; vertical-align: middle; animation: pulse-green 2.4s ease-in-out infinite; }
   .profile-card-distance { display: none; }
 }
+}
+
+@media (min-width: 769px) {
+  .tb-mobile-text { display: none; }
+}
+
+@media (max-width: 768px) {
+  /* Unified feminine section title style */
+  .section-hd-title,
+  .final-cta-title {
+    font-family: 'Syne', sans-serif !important;
+    font-size: 2rem !important;
+    letter-spacing: 1px !important;
+    background: linear-gradient(90deg, #ffb3c6 0%, #ff3d6b 60%, #ff8c00 100%) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+  }
+  .section-hd-sub {
+    font-size: 1rem !important;
+    color: rgba(255, 255, 255, 0.82) !important;
+    line-height: 1.65 !important;
+  }
+  /* Profile card: Tracy, 24   Online */
+  .profile-card { border-radius: 10px !important; }
+  .profile-card::after { display: none !important; }
+  .profile-card-body { padding-left: 8px !important; }
+  .profile-card-name::before { content: '• ' !important; color: #3dffa0 !important; font-size: 1.7rem !important; line-height: 1 !important; vertical-align: middle !important; animation: pulse-green 2.4s ease-in-out infinite !important; }
+  .profile-card-name::after { content: ', ' !important; font-size: 1rem !important; color: #fde047 !important; margin-right: 4px !important; }
+  .profile-card-dash { font-size: 0 !important; margin: 0 !important; }
+  .profile-card-city { display: none !important; }
+  .profile-card-age { font-size: 0.9rem !important; color: #ff4d7a !important; }
+  .profile-card-age::after { content: '' !important; }
+  .profile-card-status { display: flex !important; align-items: center; gap: 4px; font-size: 0.78rem !important; color: #3dffa0 !important; margin-left: auto; white-space: nowrap; }
+  .profile-card-dot { display: none !important; }
+  .profile-card-distance { display: none !important; }
+  /* Section top-padding reductions */
+  .offers-section { padding-top: 24px !important; }
+  .why-men-section { padding-bottom: 16px !important; }
+  .discretion-section { padding-top: 0px !important; }
+  .final-cta-section { padding-top: 24px !important; }
 }
