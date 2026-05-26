@@ -138,6 +138,9 @@ body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;min
   cursor:pointer;border:none;
 }
 .cb-right-cta:hover{transform:translateY(-2px) scale(1.04);box-shadow:0 8px 28px rgba(255,140,0,.55);}
+.cb-cta-mobile{display:none;}
+.cb-video-wrap{flex:0 0 55%;display:flex;flex-direction:column;}
+.cb-video-wrap .cb-preview{flex:1 1 auto;}
 
 /* ── CATEGORY PILLS ── */
 .cb-cats-wrap{
@@ -184,14 +187,14 @@ body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;min
 }
 .lower-cta p{font-size:1.25rem;color:var(--muted);max-width:none;margin:0 auto 36px;white-space:nowrap;}
 .lc-cta{
-  display:inline-block;padding:18px 60px;border-radius:100px;
+  display:inline-block;padding:16px 54px;border-radius:100px;margin-bottom:5px;
   background:linear-gradient(135deg,var(--orange),var(--pink));
-  color:#fff;font-family:'Bebas Neue',sans-serif;font-size:1.45rem;letter-spacing:2px;
+  color:#fff;font-family:'Bebas Neue',sans-serif;font-size:1.3rem;letter-spacing:2px;
   box-shadow:0 8px 40px rgba(255,140,0,.4);
   transition:transform .2s,box-shadow .2s;text-decoration:none;
 }
 .lc-cta:hover{transform:translateY(-3px) scale(1.04);box-shadow:0 16px 56px rgba(255,140,0,.6);}
-.lc-note{display:block;margin-top:18px;font-size:.78rem;color:rgba(255,255,255,.28);}
+.lc-note{display:block;margin-top:4px;font-size:.78rem;color:rgba(255,255,255,.75);}
 
 /* ── TRUST CARDS ── */
 .trust-section{padding:60px 24px;background:var(--bg);}
@@ -217,15 +220,45 @@ body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;min
   36% {transform:scale(1);   box-shadow:0 4px 20px rgba(255,140,0,.4);}
   100%{transform:scale(1);   box-shadow:0 4px 20px rgba(255,140,0,.4);}
 }
+@keyframes cta-glow-pulse{
+  0%,100%{box-shadow:0 6px 22px rgba(255,61,107,0.45),0 3px 8px rgba(0,0,0,0.35),inset 0 1px 0 rgba(255,255,255,0.2);transform:scale(1);}
+  50%{box-shadow:0 8px 32px rgba(255,61,107,0.75),0 0 24px rgba(255,140,0,0.45),inset 0 1px 0 rgba(255,255,255,0.2);transform:scale(1.04);}
+}
+.lc-cta{animation:cta-glow-pulse 3.2s ease-in-out infinite;box-shadow:0 6px 22px rgba(255,61,107,0.45),0 3px 8px rgba(0,0,0,0.35),inset 0 1px 0 rgba(255,255,255,0.2);}
+.cb-cta-mobile{animation:cta-glow-pulse 3.2s ease-in-out infinite;box-shadow:0 6px 22px rgba(255,61,107,0.45),0 3px 8px rgba(0,0,0,0.35),inset 0 1px 0 rgba(255,255,255,0.2);}
+.cb-right-cta:not(.cb-cta-mobile){animation:cta-glow-pulse 3.2s ease-in-out infinite;box-shadow:0 6px 22px rgba(255,61,107,0.45),0 3px 8px rgba(0,0,0,0.35),inset 0 1px 0 rgba(255,255,255,0.2);}
 
 /* ── MOBILE ── */
 @media(max-width:767px){
   .cb-wrapper{flex-direction:column;min-height:auto;}
-  .cb-preview{flex:none;height:70vw;min-height:260px;max-height:400px;}
+  #cbPreview.cb-preview{flex:none !important;height:650px !important;min-height:650px !important;max-height:none !important;}
+  .live-badge{font-size:1.1rem !important;}
+  .cb-cta-mobile{display:block !important;text-align:center;margin-top:-55px !important;margin-left:auto !important;margin-right:auto !important;margin-bottom:0 !important;width:68% !important;position:relative;z-index:10;padding:12px 22px !important;line-height:1 !important;}
+  #cbPreview.cb-preview{padding-bottom:0 !important;margin-bottom:0 !important;}
+  .cb-video-wrap{flex:none !important;width:100% !important;display:flex;flex-direction:column;}
+  .cb-right-desc{display:none !important;}
+  .cb-cats-wrap{display:none !important;}
+  .trust-section{display:none !important;}
+  .profiles-section .section-hd{display:none !important;}
+  .cb-right{display:flex;flex-direction:column;}
+  .cb-right-headline{order:2;margin-top:40px !important;margin-bottom:0 !important;}
+  .cb-right{padding-bottom:4px !important;}
+  .lower-cta p{display:none !important;}
+  .lc-cta{margin-top:6px !important;font-size:1.2rem !important;padding:14px 44px !important;}
+  .lower-cta h2{font-family:'Playfair Display',serif !important;font-weight:700 !important;background:linear-gradient(90deg,#ff8c00 0%,#ff3d6b 100%) !important;-webkit-background-clip:text !important;-webkit-text-fill-color:transparent !important;background-clip:text !important;font-size:clamp(1.6rem,8vw,2.8rem) !important;white-space:normal !important;}
+  .cb-feat-grid{order:1;}
+  .feat-emoji{display:none !important;}
+  .cb-feat-text{font-size:1.3rem !important;white-space:normal !important;}
+  .cb-right-cta:not(.cb-cta-mobile){display:none !important;}
+  .cb-right-headline{filter:none !important;}
+  .cb-hl-gold{background:linear-gradient(90deg,#FFA500 0%,#FF8C00 55%,#FF6600 100%) !important;-webkit-background-clip:text !important;-webkit-text-fill-color:transparent !important;background-clip:text !important;}
+  .cb-hl-red{background:linear-gradient(90deg,#FF0033 0%,#FF0080 45%,#FF6600 100%) !important;-webkit-background-clip:text !important;-webkit-text-fill-color:transparent !important;background-clip:text !important;}
+  #cbPreview iframe{width:100% !important;height:100% !important;min-height:650px !important;position:absolute !important;top:50% !important;left:50% !important;transform:translate(-50%,-50%) scale(1.08) !important;}
   .cb-right{padding:28px 20px;flex:none;}
   .cb-right-headline{font-size:2rem;}
-  .cb-feat-grid{grid-template-columns:1fr;gap:10px;}
-  .cb-feat-card{flex-direction:row;text-align:left;gap:16px;padding:14px 16px;}
+  .cb-feat-grid{grid-template-columns:repeat(2,1fr);gap:10px;}
+  .cb-feat-card{flex-direction:column;text-align:center;gap:8px;padding:14px 16px;}
+  .cb-feat-card:last-child{grid-column:1 / -1;}
   .cb-feat-icon{width:48px;height:48px;flex-shrink:0;}
   .profiles-section .profiles-grid{grid-template-columns:repeat(2,1fr);}
   .profiles-section .profile-card-img{height:160px;}
@@ -270,24 +303,28 @@ body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;min
 <!-- ── PAGE TITLE ── -->
 <div style="background:#000;padding:28px 48px 10px;text-align:center;">
   <h1 style="font-family:'Bebas Neue',sans-serif;font-size:clamp(2.7rem,5.2vw,4.2rem);letter-spacing:3px;line-height:1;margin:0;color:#fff;">
-    <span style="background:linear-gradient(90deg,#FF4500,#FF8C00,#FFD700);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;filter:drop-shadow(0 0 10px rgba(255,215,0,.35));">HOT PRIVATE ROOMS LIVE NOW</span>
+    <span style="background:linear-gradient(90deg,#FF4500,#FF8C00,#FFD700);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;filter:drop-shadow(0 0 10px rgba(255,215,0,.35));">ENTER PRIVATE ROOMS NOW</span>
   </h1>
 </div>
 
 <!-- ── MAIN BANNER ── -->
 <div class="cb-wrapper">
 
-  <!-- LEFT: Live Cam Widget -->
-  <div class="cb-preview" id="cbPreview" style="overflow:hidden;background:#000;position:relative;">
-    <div style="position:absolute;top:0;left:0;right:0;z-index:10;padding:18px 24px;background:linear-gradient(to bottom,rgba(0,0,0,.75) 0%,transparent 100%);pointer-events:none;">
-      <span style="font-family:'Bebas Neue',sans-serif;font-size:1.5rem;letter-spacing:2px;color:#fff;"><span style="font-size:.75em;vertical-align:middle;">&#128308;</span> LIVE &nbsp;&middot;&nbsp; 12,450+ MODELS ONLINE NOW</span>
+  <!-- LEFT: Live Cam Widget + Mobile CTA -->
+  <div class="cb-video-wrap">
+    <div class="cb-preview" id="cbPreview" style="overflow:hidden;background:#000;position:relative;">
+      <div style="position:absolute;top:0;left:0;right:0;z-index:10;padding:18px 24px;background:linear-gradient(to bottom,rgba(0,0,0,.75) 0%,transparent 100%);pointer-events:none;">
+        <span class="live-badge" style="font-family:'Bebas Neue',sans-serif;font-size:1.25rem;letter-spacing:2px;color:#fff;"><span style="font-size:.75em;vertical-align:middle;">&#128308;</span> LIVE</span>
+      </div>
+      <script src="https://crxcra.com/cams-widget-ext/script?landing_id=%7Boffer_url_id%7D&genders=f&providers=chaturbate&skin=0&containerAlignment=center&iframeHeight=580px&iframeWidth=850px&cols=1&rows=1&number=1&background=transparent&useFeed=1&animateFeed=1&smoothAnimation=1&ratio=1&verticalSpace=10px&horizontalSpace=10px&colorFilter=0&colorFilterStrength=0&showOnline=0&infoTopLeftContent=-&infoTopRightContent=-&infoBottomLeftContent=-&infoBottomRightContent=-&AuxiliaryCSS=.cw-info-ctn%7B%0A%20%20display%3A%20%20none%3B%0A%7D&lang=en&token=88b384c0-5117-11f1-b642-2bc7c7897355&api_key=a2be32c2e768fb93bb92d7700dab7cd84c0a8f8ae16da87ecdb9871474d6f536"></script>
     </div>
-    <script src="https://crxcra.com/cams-widget-ext/script?landing_id=%7Boffer_url_id%7D&genders=f&providers=chaturbate&skin=0&containerAlignment=center&iframeHeight=580px&iframeWidth=850px&cols=1&rows=1&number=1&background=transparent&useFeed=1&animateFeed=1&smoothAnimation=1&ratio=1&verticalSpace=10px&horizontalSpace=10px&colorFilter=0&colorFilterStrength=0&showOnline=0&infoTopLeftContent=-&infoTopRightContent=-&infoBottomLeftContent=-&infoBottomRightContent=-&AuxiliaryCSS=.cw-info-ctn%7B%0A%20%20display%3A%20%20none%3B%0A%7D&lang=en&token=88b384c0-5117-11f1-b642-2bc7c7897355&api_key=a2be32c2e768fb93bb92d7700dab7cd84c0a8f8ae16da87ecdb9871474d6f536"></script>
+    <!-- Mobile-only CTA below video -->
+    <a href="https://t.ajrkmx1.com/389314/8780/36934?po=6533&aff_sub5=SF_006OG000004lmDN" class="cb-right-cta cb-cta-mobile" target="_blank" rel="noopener" style="margin-top:0;padding-top:0;">Join Room Now &rarr;</a>
   </div>
 
   <!-- RIGHT: Headline + Feature Cards -->
   <div class="cb-right">
-    <h1 class="cb-right-headline"><span class="cb-hl-gold">Watch</span> <span class="cb-hl-red">Nude Cam</span> <span class="cb-hl-gold">Models</span></h1>
+    <h1 class="cb-right-headline"><span class="cb-hl-gold" style="background:linear-gradient(90deg,#FFA500 0%,#FF8C00 55%,#FF6600 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Watch</span> <span class="cb-hl-red" style="background:linear-gradient(90deg,#FF0033 0%,#FF0080 45%,#FF6600 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Nude Cam</span> <span class="cb-hl-gold" style="background:linear-gradient(90deg,#FFA500 0%,#FF8C00 55%,#FF6600 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Models</span></h1>
     <p class="cb-right-desc">Browse live models, private rooms, one-on-one shows, and real-time flirtation<br>Access this 18+ experience built for adults who want instant excitement</p>
 
     <div class="cb-feat-grid">
@@ -299,7 +336,7 @@ body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;min
             <polygon points="10,8 18,12 10,16" fill="var(--orange)" stroke="none"/>
           </svg></span>
         </div>
-        <div class="cb-feat-text">&#128293;<span>Start watching in seconds</span></div>
+        <div class="cb-feat-text"><span class="feat-emoji">&#128293;</span><span>Start watching in seconds</span></div>
       </div>
 
       <div class="cb-feat-card">
@@ -308,7 +345,7 @@ body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;min
             <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" stroke-width="1.8" stroke-linejoin="round"/>
           </svg></span>
         </div>
-        <div class="cb-feat-text">&#128172;&#8202;<span>Chat and interact live</span></div>
+        <div class="cb-feat-text"><span class="feat-emoji">&#128172;&#8202;</span><span>Chat and interact live</span></div>
       </div>
 
       <div class="cb-feat-card">
@@ -318,7 +355,7 @@ body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;min
             <path d="M9 12l2 2 4-4" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
           </svg></span>
         </div>
-        <div class="cb-feat-text">&#128274;<span>Anonymous &amp; discreet</span></div>
+        <div class="cb-feat-text"><span class="feat-emoji">&#128274;</span><span>Anonymous &amp; discreet</span></div>
       </div>
 
     </div>
@@ -618,8 +655,8 @@ body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;min
   <canvas id="camsBubbles"></canvas>
   <h2>Ready To Take Things Further?</h2>
   <p>Type in chat, make requests, or take her into a Private VIP Room for a one-on-one performance</p>
-  <a href="https://t.mbjms.com/389314/3785/0?po=6456&aff_sub5=SF_006OG000004lmDN" class="lc-cta" target="_blank" rel="noopener" style="display:inline-block;padding:18px 60px;border-radius:100px;background:linear-gradient(135deg,#ff8c00,#ff3d6b);color:#fff;font-family:'Bebas Neue',sans-serif;font-size:1.45rem;letter-spacing:2px;box-shadow:0 8px 40px rgba(255,140,0,.4);text-decoration:none;">Start Your Experience</a>
-  <span class="lc-note">18+ only &middot; watch now</span>
+  <a href="https://t.mbjms.com/389314/3785/0?po=6456&aff_sub5=SF_006OG000004lmDN" class="lc-cta" target="_blank" rel="noopener" style="display:inline-block;padding:16px 54px;border-radius:100px;background:linear-gradient(135deg,#ff8c00,#ff3d6b);color:#fff;font-family:'Bebas Neue',sans-serif;font-size:1.3rem;letter-spacing:2px;box-shadow:0 8px 40px rgba(255,140,0,.4);text-decoration:none;">Start Your Experience</a>
+  <span class="lc-note">18+ only &middot; Start watch now</span>
 </div>
 
 <!-- ── FOOTER ── -->
@@ -728,6 +765,41 @@ body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;min
       tilt.style.transform = 'translate(0px, 0px)';
     });
   });
+})();
+</script>
+<script>
+(function(){
+  if (window.innerWidth > 767) return;
+  function fixPreview() {
+    var preview = document.getElementById('cbPreview');
+    if (!preview) return;
+    var iframe = preview.querySelector('iframe');
+    if (iframe) {
+      preview.style.height = '650px';
+      preview.style.minHeight = '650px';
+      preview.style.overflow = 'hidden';
+      preview.style.position = 'relative';
+      preview.style.marginBottom = '0';
+      preview.style.paddingBottom = '0';
+      var mobileBtn = document.querySelector('.cb-cta-mobile');
+      if (mobileBtn) {
+        mobileBtn.style.setProperty('margin-top', '-55px', 'important');
+        mobileBtn.style.setProperty('position', 'relative', 'important');
+        mobileBtn.style.setProperty('z-index', '10', 'important');
+        mobileBtn.style.display = 'block';
+      }
+      iframe.style.position = 'absolute';
+      iframe.style.width = '100%';
+      iframe.style.height = '650px';
+      iframe.style.top = '50%';
+      iframe.style.left = '50%';
+      iframe.style.transform = 'translate(-50%, -50%) scale(1.08)';
+      iframe.style.filter = 'blur(20px)';
+    } else {
+      setTimeout(fixPreview, 300);
+    }
+  }
+  setTimeout(fixPreview, 500);
 })();
 </script>
 </body>
