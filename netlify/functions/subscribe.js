@@ -27,10 +27,15 @@ exports.handler = async function(event) {
     });
   }
 
+  const payload = { email };
+  if (firstName) {
+    payload.fields = [{ slug: 'first_name', value: firstName }];
+  }
+
   const createRes = await fetch('https://api.systeme.io/api/contacts', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json', 'X-API-Key': SYSTEME_KEY },
-    body: JSON.stringify({ email, firstName: firstName || undefined })
+    body: JSON.stringify(payload)
   });
 
   if (createRes.status === 201) {

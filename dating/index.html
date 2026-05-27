@@ -1120,8 +1120,14 @@
     }
     .rp-cta:hover { opacity: 0.88; }
     @media (max-width: 768px) {
-      .rp-inner { flex-direction: column; }
-      .rp-right { flex: 0 0 260px; width: 100%; height: 300px; }
+      .rp-inner { flex-direction: column; gap: 12px; }
+      .rp-left { display: contents; }
+      .rp-pill    { order: 1; margin-bottom: 0; }
+      .rp-heading { order: 2; margin-bottom: 0; font-size: clamp(1.6rem, 7vw, 2.1rem); white-space: nowrap; overflow: hidden; }
+      .rp-right   { order: 3; flex: none; width: 100%; height: 520px; }
+      .rp-sub      { order: 4; }
+      .rp-features { order: 5; }
+      .rp-cta      { order: 6; }
     }
 
     .rp-section--alt { background: #0e0e0e; }
@@ -1177,6 +1183,7 @@
       .intentions-img img { height: 300px; }
       .stories-section { padding: 44px 16px; }
       .trust-strip { padding: 40px 16px; }
+      .profile-scroll-item { width: 285px; height: 410px; }
     }
     @media(max-width: 480px) {
       .trust-grid { grid-template-columns: 1fr; }
@@ -1424,7 +1431,7 @@
   <div class="rp-inner">
     <div class="rp-left">
       <span class="rp-pill" style="background:linear-gradient(90deg,#7b2ff7,#e0185e);">&#9889; NO GAMES</span>
-      <h2 class="rp-heading">Discover Who's Online Tonight</h2>
+      <h2 class="rp-heading">Discover Who's Online Now</h2>
       <p class="rp-sub">Everyone here knows what they want. No mixed signals, no ghosting — just honest people ready for something real.</p>
       <ul class="rp-features">
         <li>
