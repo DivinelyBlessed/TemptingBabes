@@ -127,6 +127,53 @@
   <p class="pg-body">The USA kit — hosting their first World Cup in 32 years — has been the most anticipated in North America. Adidas and Nike both produced special edition USA jerseys with design elements drawn from American culture. With home nation energy expected to fill stadiums, expect the American red, white and blue to be one of the dominant visual elements of the 2026 tournament.</p>
 </div>
 
-<footer class="pg-footer">18+ Only &middot; All rights reserved &middot; Tempting Babes&copy; 2026</footer>
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a href="/" class="footer-logo" style="text-decoration:none;">Tempting Babes</a>
+      <p class="footer-tagline">Your all-in-one hub for Dating, Live Cams, AI Girls and VIP access. Built for real connections<br>and instant interaction</p>
+    </div>
+    <div class="footer-col">
+      <h4 class="footer-col-title">Legal &amp; Info</h4>
+      <ul class="footer-links">
+        <li><a href="/about/">About</a></li>
+        <li><a href="/privacy-policy/">Privacy Policy</a></li>
+        <li><a href="/terms/">Terms of Service</a></li>
+        <li><a href="/dmca/">DMCA Policy</a></li>
+        <li><a href="/2257/">18 U.S.C. &sect; 2257</a></li>
+        <li><a href="/contact/">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4 class="footer-col-title">Explore</h4>
+      <ul class="footer-links">
+        <li><a href="/Blog/">Blog</a></li>
+        <li><a href="/world-cup/">FIFA World Cup 2026</a></li>
+        <li><a href="/surprise-me/">Surprise Me</a></li>
+        <li><a href="/tip-us/">Tip Us</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>18+ Only &nbsp;&middot;&nbsp; All rights reserved &nbsp;&middot;&nbsp; Tempting Babes&copy; 2026</p>
+  </div>
+<div id="cookieBanner" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:9999;background:rgba(10,10,10,0.97);border-top:1px solid rgba(255,255,255,0.1);backdrop-filter:blur(20px);padding:16px 24px;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;">
+  <p style="font-family:'DM Sans',sans-serif;font-size:0.82rem;color:rgba(255,255,255,0.6);margin:0;flex:1;min-width:200px;">We use cookies to analyse traffic and improve your experience. By continuing you consent to our use of cookies. <a href="/privacy-policy/" style="color:#ff8c00;text-decoration:none;">Privacy Policy</a></p>
+  <div style="display:flex;gap:10px;flex-shrink:0;">
+    <button id="cookieDecline" style="font-family:'DM Sans',sans-serif;font-size:0.78rem;font-weight:600;padding:8px 16px;border-radius:8px;border:1px solid rgba(255,255,255,0.15);background:transparent;color:rgba(255,255,255,0.5);cursor:pointer;">Essential Only</button>
+    <button id="cookieAccept" style="font-family:'DM Sans',sans-serif;font-size:0.78rem;font-weight:700;padding:8px 20px;border-radius:8px;border:none;background:linear-gradient(135deg,#ff8c00,#ff3d6b);color:#fff;cursor:pointer;">Accept All</button>
+  </div>
+</div>
+<script>
+(function(){
+  var CONSENT_KEY='tb_cookie_consent';
+  var banner=document.getElementById('cookieBanner');
+  if(!banner)return;
+  if(!localStorage.getItem(CONSENT_KEY)){banner.style.display='flex';}
+  document.getElementById('cookieAccept').addEventListener('click',function(){localStorage.setItem(CONSENT_KEY,'all');banner.style.display='none';if(typeof gtag==='function'){gtag('consent','update',{analytics_storage:'granted',ad_storage:'granted'});}});
+  document.getElementById('cookieDecline').addEventListener('click',function(){localStorage.setItem(CONSENT_KEY,'essential');banner.style.display='none';if(typeof gtag==='function'){gtag('consent','update',{analytics_storage:'denied',ad_storage:'denied'});}});
+})();
+</script>
+</footer>
 </body>
 </html>

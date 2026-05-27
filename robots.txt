@@ -1,3 +1,6 @@
 User-agent: *
 Allow: /
+Disallow: /netlify/
+Disallow: /_partials/
+
 Sitemap: https://www.temptingbabes.com/sitemap.xml
