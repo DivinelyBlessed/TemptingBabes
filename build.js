@@ -1,40 +1,56 @@
-/**
- * build.js — inject nav and footer partials into all main-site HTML files.
+﻿/**
+ * build.js -- sync nav and footer partials into all site HTML files.
  *
  * Usage:
- *   node build.js          — inject into all eligible HTML files
+ *   node build.js             -- update all eligible HTML files in-place
+ *   node build.js --dry-run   -- preview what would change, no writes
  *
- * To change the nav or footer:
+ * To update nav or footer sitewide:
  *   1. Edit  _partials/nav.html   or  _partials/footer.html
  *   2. Run   node build.js
- *   3. Commit everything and push — done.
+ *   3. Commit all changed files and push -- done.
  *
- * Netlify runs this automatically on every deploy (see netlify.toml).
+ * Netlify also runs this automatically on every deploy (netlify.toml).
  */
 
 const fs   = require('fs');
 const path = require('path');
 const { execSync } = require('child_process');
 
-// ── Load partials ──────────────────────────────────────────────
+const DRY = process.argv.includes('--dry-run');
+
+// Load partials
 const NAV    = fs.readFileSync('_partials/nav.html',    'utf8').trim();
 const FOOTER = fs.readFileSync('_partials/footer.html', 'utf8').trim();
 
-// ── Get all tracked HTML files ─────────────────────────────────
-const allFiles = execSync('git ls-files "*.html"')
-  .toString()
-  .trim()
-  .split('\n')
-  .map(f => f.trim())
-  .filter(Boolean);
+// Nav regex: matches from <nav> through the closing </div> of the mobile-menu,
+// including any <script> that may sit between </nav> and <div id="mobileMenu">.
+const NAV_RE = /<nav[\s\S]*?<div[^>]+id="mobileMenu"[^>]*>[\s\S]*?<\/div>/;
 
-// ── Skip profile pages (Dating/name/index.html) ───────────────
-const SKIP = /^Dating\/[^/]+\/index\.html$/;
+// Footer regex
+const FOOTER_RE = /<footer[\s\S]*?<\/footer>/;
+
+// Files / directories to skip
+const SKIP_PATTERNS = [
+  /^_partials\//i,          // the partials themselves
+  /^_template/i,            // template files
+  /^dating\/[^/]+\/index\.html$/i,  // individual dating profiles
+];
+
+function shouldSkip(file) {
+  return SKIP_PATTERNS.some(re => re.test(file));
+}
+
+// Get all tracked HTML files
+const allFiles = execSync('git ls-files "*.html"')
+  .toString().trim().split('\n')
+  .map(f => f.trim()).filter(Boolean);
 
 let updated = 0;
+let skipped = 0;
 
 allFiles.forEach(file => {
-  if (SKIP.test(file)) return;
+  if (shouldSkip(file)) { skipped++; return; }
 
   const absPath = path.resolve(file);
   if (!fs.existsSync(absPath)) return;
@@ -42,25 +58,21 @@ allFiles.forEach(file => {
   let html = fs.readFileSync(absPath, 'utf8');
   let changed = false;
 
-  // Replace nav block (from <nav> through closing </div> of mobile-menu)
-  const navRE = /<nav>[\s\S]*?<\/nav>\s*<div class="mobile-menu"[\s\S]*?<\/div>/;
-  if (navRE.test(html)) {
-    html = html.replace(navRE, NAV);
+  if (NAV_RE.test(html)) {
+    html = html.replace(NAV_RE, NAV);
     changed = true;
   }
 
-  // Replace main site footer
-  const footerRE = /<footer class="site-footer">[\s\S]*?<\/footer>/;
-  if (footerRE.test(html)) {
-    html = html.replace(footerRE, FOOTER);
+  if (FOOTER_RE.test(html)) {
+    html = html.replace(FOOTER_RE, FOOTER);
     changed = true;
   }
 
   if (changed) {
-    fs.writeFileSync(absPath, html);
-    console.log('✓', file);
+    if (!DRY) fs.writeFileSync(absPath, html, 'utf8');
+    console.log((DRY ? '[dry] ' : 'ok ') + file);
     updated++;
   }
 });
 
-console.log(`\nDone — ${updated} file(s) updated.`);
+console.log('\n' + (DRY ? '[dry-run] ' : '') + 'Done -- ' + updated + ' file(s) ' + (DRY ? 'would be ' : '') + 'updated, ' + skipped + ' skipped.');

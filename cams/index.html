@@ -281,13 +281,13 @@ body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;min
   <a class="logo" href="/"><img src="/Asset/Logo/logo.webp" alt="Tempting Babes" class="logo-img" style="height:42px;width:auto;flex-shrink:0;display:block;"><span class="logo-text" style="font-family:'Playfair Display',serif;font-weight:900;font-size:1.35rem;line-height:1;letter-spacing:1.5px;background:linear-gradient(90deg,#ff8c00,#ff3d6b);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-left:-10px;">Tempting Babes</span></a>
   <div class="tabs">
     <a href="/ai-chat/" class="tab">AI Girls</a>
-    <a href="/cams/" class="tab active">Cams</a>
+    <a href="/cams/" class="tab">Cams</a>
     <a href="/dating/" class="tab">Dating</a>
     <a href="/offers/" class="tab">Offers</a>
     <a href="/trending/" class="tab">Trending</a>
     <a href="/vip/" class="tab"><span class="tab-star">⭐</span>VIP</a>
   </div>
-  <button class="join-btn" id="getAccessBtn" style="background:linear-gradient(135deg,#ff8c00,#ff3d6b);">Join Free</button>
+  <a href="https://t.mbjms.com/389314/3785/0?bo=2753,2754,2755,2756&po=6456&aff_sub5=SF_006OG000004lmDN" class="join-btn" id="getAccessBtn" style="background:linear-gradient(135deg,#ff8c00,#ff3d6b);text-decoration:none;" target="_blank" rel="noopener">Join Free</a>
   <button class="menu-btn" id="menuBtn">&#9776;</button>
 </nav>
 <script>(function(){var t=document.querySelectorAll('nav .tab'),x=parseFloat(sessionStorage.getItem('tb_mx')||''),y=parseFloat(sessionStorage.getItem('tb_my')||'');if(x&&y)t.forEach(function(tab){var r=tab.getBoundingClientRect();tab.classList.toggle('hovered',x>=r.left&&x<=r.right&&y>=r.top&&y<=r.bottom);});}());</script>
@@ -708,12 +708,16 @@ body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;min
   document.getElementById('cookieAccept').addEventListener('click', function(){
     localStorage.setItem(CONSENT_KEY, 'all');
     banner.style.display = 'none';
-    if (typeof gtag === 'function') gtag('consent', 'update', { analytics_storage: 'granted', ad_storage: 'granted' });
+    if (typeof gtag === 'function') {
+      gtag('consent', 'update', { analytics_storage: 'granted', ad_storage: 'granted' });
+    }
   });
   document.getElementById('cookieDecline').addEventListener('click', function(){
     localStorage.setItem(CONSENT_KEY, 'essential');
     banner.style.display = 'none';
-    if (typeof gtag === 'function') gtag('consent', 'update', { analytics_storage: 'denied', ad_storage: 'denied' });
+    if (typeof gtag === 'function') {
+      gtag('consent', 'update', { analytics_storage: 'denied', ad_storage: 'denied' });
+    }
   });
 })();
 </script>
