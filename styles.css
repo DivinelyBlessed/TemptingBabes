@@ -3,7 +3,7 @@
 html { overflow-x: hidden; scrollbar-gutter: stable; }
 
 :root {
-  --bg: #0a0a0a;
+  --bg: #0d0d0d;
   --accent: #ff3d6b;
   --accent2: #ff8c00;
   --card-bg: #161616;
@@ -444,7 +444,7 @@ nav {
   background-size: 100% auto;
   background-position: center top;
   background-repeat: no-repeat;
-  background-color: #06060c;
+  background-color: #0d0d0d;
 }
 
 .ad-copy {
@@ -1974,7 +1974,7 @@ nav {
 
 /* ── SITE FOOTER ── */
 .site-footer {
-  background: #080808;
+  background: #0d0d0d;
   border-top: 1px solid rgba(255,61,107,0.15);
   padding: 32px 40px 28px;
   position: relative;
@@ -2105,7 +2105,7 @@ nav {
 }
 .ga-left {
   flex: 0 0 46%;
-  background: #0e0e0e;
+  background: #0d0d0d;
   padding: 44px 22px 36px;
   display: flex;
   flex-direction: column;
