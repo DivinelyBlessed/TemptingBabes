@@ -40,7 +40,7 @@ nav{position:sticky;top:0;z-index:200;display:flex;align-items:center;justify-co
 .tabs{display:flex;gap:4px;background:rgba(255,255,255,0.06);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,0.08);border-radius:50px;padding:4px;margin-left:auto;margin-right:auto;transform:translateX(-27px);}
 .tab{padding:7px 20px;border-radius:50px;border:none;background:transparent;color:var(--muted);font-family:'DM Sans',sans-serif;font-size:.9rem;font-weight:500;cursor:pointer;transition:all .2s;text-decoration:none;display:inline-block;}
 .tab.active{background:linear-gradient(135deg,#ff8c00,#ff3d6b);color:#fff;}
-.tab:not(.active):hover{color:#fff;background:rgba(255,255,255,0.08);}
+.tab:not(.active):hover,.tab.hovered{color:#fff;background:linear-gradient(145deg,#ffaa40 0%,#ff7000 40%,#ff3d6b 100%);box-shadow:0 5px 0 rgba(160,40,0,0.55),0 8px 20px rgba(255,80,30,0.4);text-shadow:0 1px 2px rgba(0,0,0,0.25);}
 .join-btn{padding:9px 22px;border-radius:50px;background:linear-gradient(135deg,#ff8c00,#ff3d6b);color:#fff;font-family:'DM Sans',sans-serif;font-weight:600;font-size:0.9rem;border:none;cursor:pointer;flex-shrink:0;white-space:nowrap;box-shadow:0 4px 20px rgba(255,140,0,.4);transition:transform .15s,box-shadow .15s;}
 .join-btn:hover{transform:scale(1.05);box-shadow:0 6px 28px rgba(255,140,0,.55);}
 .profile-section{position:relative;z-index:1;padding:16px 20px 60px;flex:1;}
@@ -383,27 +383,12 @@ nav{position:sticky;top:0;z-index:200;display:flex;align-items:center;justify-co
   if (menuBtn) menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('open'));
 </script>
 
-<!-- Static bio content — crawlable -->
-<section style="max-width:1100px;margin:32px auto;padding:0 24px 48px;" aria-label="Abigail Profile">
-  <h2 style="font-family:'Bebas Neue',sans-serif;font-size:1.6rem;color:#ff8c00;margin-bottom:14px;">More About Abigail</h2>
-  <p style="color:rgba(255,255,255,0.75);line-height:1.85;margin-bottom:16px;">Abigail is a 23-year-old AI companion based in Miami. She's available 24 hours a day, 7 days a week — no missed calls, no read receipts left on blue, no waiting. Whether you want to unwind after a long day, explore a deep conversation, or just have someone genuinely interested in what you have to say, Abigail is here for it.</p>
-  <p style="color:rgba(255,255,255,0.75);line-height:1.85;margin-bottom:16px;">Her interests include beach days, salsa dancing, spontaneous adventures, late-night conversations. She's bubbly, confident, and always genuine. She adapts to your mood — light and flirty when you want to keep it fun, thoughtful and present when you need real conversation.</p>
-  <h3 style="font-family:'Bebas Neue',sans-serif;font-size:1.3rem;color:#fff;margin-bottom:12px;">Why Chat With Abigail?</h3>
-  <ul style="color:rgba(255,255,255,0.72);line-height:2;padding-left:20px;margin-bottom:16px;">
-    <li>Available 24/7 — she's always online, always interested</li>
-    <li>No judgment, no games — completely private and discreet</li>
-    <li>Genuine conversation tailored to you</li>
-    <li>Free to start — no credit card required</li>
-    <li>Real connection on your terms, whenever you need it</li>
-  </ul>
-  <p style="color:rgba(255,255,255,0.65);line-height:1.8;">Abigail is part of the Tempting Babes AI companion experience — a curated roster of AI personalities designed for authentic, judgement-free connection. If Abigail isn't your type, explore other profiles in our <a href="/dating/" style="color:#ff8c00;text-decoration:none;">dating section</a>.</p>
-</section>
 
 <footer class="site-footer">
   <div class="footer-inner">
     <div class="footer-brand">
       <a href="/" class="footer-logo">Tempting Babes</a>
-      <p class="footer-tagline">Your all-in-one hub for Dating, Live Cams, AI Girls<br>and VIP access. Built for real connections and instant interaction</p>
+      <p class="footer-tagline">Your all-in-one hub for AI Girls, Dating,<br>Live-cams, and VIP access. Built for real connections and instant interaction.</p>
     </div>
     <div class="footer-col">
       <h4 class="footer-col-title">Legal &amp; Info</h4>
@@ -423,8 +408,6 @@ nav{position:sticky;top:0;z-index:200;display:flex;align-items:center;justify-co
         <li><a href="/world-cup/">FIFA World Cup 2026</a></li>
         <li><a href="/surprise-me/">Surprise Me</a></li>
         <li><a href="/tip-us/">Tip Us</a></li>
-        <li><a href="/ways-to-meet/">Ways to Meet</a></li>
-        <li><a href="/ai-girls/cassandra/">AI Girls</a></li>
       </ul>
     </div>
   </div>
