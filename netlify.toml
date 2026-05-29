@@ -67,6 +67,30 @@
   force  = true
 
 [[redirects]]
+  from   = "/AI girls/*"
+  to     = "/ai-girls/:splat"
+  status = 301
+  force  = true
+
+[[redirects]]
+  from   = "/AI girls"
+  to     = "/ai-girls/"
+  status = 301
+  force  = true
+
+[[redirects]]
+  from   = "/AI-Girls/*"
+  to     = "/ai-girls/:splat"
+  status = 301
+  force  = true
+
+[[redirects]]
+  from   = "/AI-Girls"
+  to     = "/ai-girls/"
+  status = 301
+  force  = true
+
+[[redirects]]
   from   = "/Blog/dating-advice/talking-to-ai-companion/"
   to     = "/Blog/ai-dating/talking-to-ai-companion/"
   status = 301
