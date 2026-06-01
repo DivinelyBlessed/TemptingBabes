@@ -64,9 +64,9 @@
 
 /* SECTION */
 .p-section{padding:64px 3%;max-width:1400px;margin:0 auto;}
-.p-section-label{font-family:'DM Sans',sans-serif;font-size:0.68rem;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--wc-orange);margin-bottom:8px;}
-.p-section-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(1.9rem,4vw,3.2rem);color:#fff;line-height:1;margin-bottom:10px;}
-.p-section-sub{font-family:'DM Sans',sans-serif;font-size:0.9rem;color:rgba(255,255,255,0.45);margin-bottom:40px;max-width:560px;line-height:1.65;}
+.p-section-label{font-family:'DM Sans',sans-serif;font-size:0.68rem;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--wc-orange);margin-bottom:8px;text-align:center;display:block;text-align:center;display:block;text-align:center;display:block;}
+.p-section-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(1.9rem,4vw,3.2rem);color:#fff;line-height:1;margin-bottom:10px;text-align:center;text-align:center;text-align:center;}
+.p-section-sub{font-family:'DM Sans',sans-serif;font-size:0.9rem;color:rgba(255,255,255,0.45);margin-bottom:40px;max-width:560px;line-height:1.65;text-align:center;margin-left:auto;margin-right:auto;text-align:center;margin-left:auto;margin-right:auto;text-align:center;margin-left:auto;margin-right:auto;}
 .p-divider{border:none;border-top:1px solid rgba(255,255,255,0.06);margin:0;}
 
 /* OUR PICK — hero card */
@@ -165,9 +165,42 @@
 .p-final-cta-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(2.4rem,6vw,4.5rem);color:#fff;line-height:0.95;margin-bottom:16px;}
 .p-final-cta-title span{background:var(--wc-grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
 .p-final-cta-sub{font-family:'DM Sans',sans-serif;font-size:0.95rem;color:rgba(255,255,255,0.48);line-height:1.7;margin-bottom:36px;}
-</style>
+
+/* Centre card content */
+[class*="-icon"],[class*="-flag"]{text-align:center;display:block;}
+[class*="-card"]{text-align:center;}
+[class*="-why-title"],[class*="why-title"],[class*="-why-body"],[class*="why-body"]{text-align:center;}
+[class*="-city-name"],[class*="city-name"],[class*="-venue-type"],[class*="venue-type"]{text-align:center;}
+[class*="-feature-title"],[class*="feature-title"],[class*="-feature-body"]{text-align:center;}
+[class*="-fanzone-city"],[class*="-fanzone-body"],[class*="-fashion-title"],[class*="-fashion-body"]{text-align:center;}
+[class*="-dark-nation"],[class*="-dark-why"],[class*="-dark-flag"]{text-align:center;}
+[class*="-nation-name"],[class*="-nation-body"],[class*="-nation-flag"]{text-align:center;}
+[class*="-cont-verdict"],[class*="-cont-nation"],[class*="-cont-flag"]{text-align:center;}</style>
 </head>
 <body>
+
+<nav>
+  <a class="logo" href="/"><img src="/Asset/Logo/logo.webp" alt="Tempting Babes" class="logo-img" style="height:42px;width:auto;flex-shrink:0;display:block;"><span class="logo-text" style="font-family:'Playfair Display',serif;font-weight:900;font-size:1.35rem;line-height:1;letter-spacing:1.5px;background:linear-gradient(90deg,#ff8c00,#ff3d6b);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-left:-10px;">Tempting Babes</span></a>
+  <div class="tabs">
+    <a href="/ai-chat/" class="tab">AI Girls</a>
+    <a href="/cams/" class="tab">Cams</a>
+    <a href="/dating/" class="tab">Dating</a>
+    <a href="/offers/" class="tab">Offers</a>
+    <a href="/trending/" class="tab">Trending</a>
+    <a href="/vip/" class="tab"><span class="tab-star">⭐</span>VIP</a>
+  </div>
+  <a href="https://t.mbjms.com/389314/3785/0?bo=2753,2754,2755,2756&po=6456&aff_sub5=SF_006OG000004lmDN" class="join-btn" id="getAccessBtn" style="background:linear-gradient(135deg,#ff8c00,#ff3d6b);text-decoration:none;" target="_blank" rel="noopener">Join Free</a>
+  <button class="menu-btn" id="menuBtn">&#9776;</button>
+</nav>
+<script>(function(){var t=document.querySelectorAll('nav .tab'),x=parseFloat(sessionStorage.getItem('tb_mx')||''),y=parseFloat(sessionStorage.getItem('tb_my')||'');if(x&&y)t.forEach(function(tab){var r=tab.getBoundingClientRect();tab.classList.toggle('hovered',x>=r.left&&x<=r.right&&y>=r.top&&y<=r.bottom);});}());</script>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="/ai-chat/" class="mobile-tab">AI Girls</a>
+  <a href="/cams/" class="mobile-tab">Cams</a>
+  <a href="/dating/" class="mobile-tab">Dating</a>
+  <a href="/offers/" class="mobile-tab">Offers</a>
+  <a href="/trending/" class="mobile-tab">Trending</a>
+  <a href="/vip/" class="mobile-tab"><span class="tab-star">⭐</span>VIP</a>
+</div>
 
 <section class="p-hero">
   <div class="p-hero-glow"></div>
@@ -182,25 +215,11 @@
   </div>
 </section>
 
-<div class="p-stats-bar">
-  <div class="p-stat"><div class="p-stat-num">48</div><div class="p-stat-label">Nations</div></div>
   <div class="p-stat"><div class="p-stat-num">104</div><div class="p-stat-label">Matches</div></div>
   <div class="p-stat"><div class="p-stat-num">8</div><div class="p-stat-label">Contenders</div></div>
   <div class="p-stat"><div class="p-stat-num">1</div><div class="p-stat-label">Champion</div></div>
 </div>
 
-<nav class="p-phase-nav">
-  <div class="p-phase-pills">
-    <a href="#our-pick" class="p-phase-pill">&#x1F451; Our Winner Pick</a>
-    <a href="#match-predictions" class="p-phase-pill">&#x26BD; Match Predictions</a>
-    <a href="#contenders" class="p-phase-pill">&#x1F3C5; Top Contenders</a>
-    <a href="#groups" class="p-phase-pill">&#x1F4CB; Group Picks</a>
-    <a href="#scorer" class="p-phase-pill">&#x1F945; Top Scorer</a>
-    <a href="#dark-horses" class="p-phase-pill">&#x1F0CF; Dark Horses</a>
-    <a href="#upsets" class="p-phase-pill">&#x1F4A5; Upsets</a>
-  </div>
-</nav>
-<hr class="p-divider"/>
 
 <!-- OUR PICK -->
 <section class="p-section" id="our-pick">
@@ -377,135 +396,7 @@
 </section>
 <hr class="p-divider"/>
 
-<!-- GROUP PREDICTIONS -->
-<section class="p-section" id="groups">
-  <div class="p-section-label">Group Stage</div>
-  <h2 class="p-section-title">Our Group Predictions</h2>
-  <p class="p-section-sub">Who advances from each group? Here are our picks for the top two from all 12 groups — plus the teams we think will shock everyone.</p>
 
-  <div class="p-groups-grid">
-    <div class="p-group-card">
-      <div class="p-group-letter">Group A</div>
-      <div class="p-group-pick"><span class="p-group-flag">&#x1F1F2;&#x1F1FD;</span><span class="p-group-name">Mexico</span><span class="p-group-pos">1st</span></div>
-      <div class="p-group-pick"><span class="p-group-flag">&#x1F1F0;&#x1F1F7;</span><span class="p-group-name">South Korea</span><span class="p-group-pos">2nd</span></div>
-    </div>
-    <div class="p-group-card">
-      <div class="p-group-letter">Group B</div>
-      <div class="p-group-pick"><span class="p-group-flag">&#x1F1E8;&#x1F1E6;</span><span class="p-group-name">Canada</span><span class="p-group-pos">1st</span></div>
-      <div class="p-group-pick"><span class="p-group-flag">&#x1F1E8;&#x1F1ED;</span><span class="p-group-name">Switzerland</span><span class="p-group-pos">2nd</span></div>
-    </div>
-    <div class="p-group-card">
-      <div class="p-group-letter">Group C</div>
-      <div class="p-group-pick"><span class="p-group-flag">&#x1F1E7;&#x1F1F7;</span><span class="p-group-name">Brazil</span><span class="p-group-pos">1st</span></div>
-      <div class="p-group-pick"><span class="p-group-flag">&#x1F1F2;&#x1F1E6;</span><span class="p-group-name">Morocco</span><span class="p-group-pos">2nd</span></div>
-    </div>
-    <div class="p-group-card">
-      <div class="p-group-letter">Group D</div>
-      <div class="p-group-pick"><span class="p-group-flag">&#x1F1FA;&#x1F1F8;</span><span class="p-group-name">USA</span><span class="p-group-pos">1st</span></div>
-      <div class="p-group-pick"><span class="p-group-flag">&#x1F1F9;&#x1F1F7;</span><span class="p-group-name">T&#xFC;rkiye</span><span class="p-group-pos">2nd</span></div>
-    </div>
-    <div class="p-group-card">
-      <div class="p-group-letter">Group E</div>
-      <div class="p-group-pick"><span class="p-group-flag">&#x1F1E9;&#x1F1EA;</span><span class="p-group-name">Germany</span><span class="p-group-pos">1st</span></div>
-      <div class="p-group-pick"><span class="p-group-flag">&#x1F1EA;&#x1F1E8;</span><span class="p-group-name">Ecuador</span><span class="p-group-pos">2nd</span></div>
-    </div>
-    <div class="p-group-card">
-      <div class="p-group-letter">Group F</div>
-      <div class="p-group-pick"><span class="p-group-flag">&#x1F1F3;&#x1F1F1;</span><span class="p-group-name">Netherlands</span><span class="p-group-pos">1st</span></div>
-      <div class="p-group-pick"><span class="p-group-flag">&#x1F1EF;&#x1F1F5;</span><span class="p-group-name">Japan</span><span class="p-group-pos">2nd</span></div>
-    </div>
-    <div class="p-group-card">
-      <div class="p-group-letter">Group G</div>
-      <div class="p-group-pick"><span class="p-group-flag">&#x1F1E7;&#x1F1EA;</span><span class="p-group-name">Belgium</span><span class="p-group-pos">1st</span></div>
-      <div class="p-group-pick"><span class="p-group-flag">&#x1F1EA;&#x1F1EC;</span><span class="p-group-name">Egypt</span><span class="p-group-pos">2nd</span></div>
-    </div>
-    <div class="p-group-card">
-      <div class="p-group-letter">Group H</div>
-      <div class="p-group-pick"><span class="p-group-flag">&#x1F1EA;&#x1F1F8;</span><span class="p-group-name">Spain</span><span class="p-group-pos">1st</span></div>
-      <div class="p-group-pick"><span class="p-group-flag">&#x1F1FA;&#x1F1FE;</span><span class="p-group-name">Uruguay</span><span class="p-group-pos">2nd</span></div>
-    </div>
-    <div class="p-group-card">
-      <div class="p-group-letter">Group I</div>
-      <div class="p-group-pick"><span class="p-group-flag">&#x1F1EB;&#x1F1F7;</span><span class="p-group-name">France</span><span class="p-group-pos">1st</span></div>
-      <div class="p-group-pick"><span class="p-group-flag">&#x1F1F8;&#x1F1F3;</span><span class="p-group-name">Senegal</span><span class="p-group-pos">2nd</span></div>
-    </div>
-    <div class="p-group-card">
-      <div class="p-group-letter">Group J</div>
-      <div class="p-group-pick"><span class="p-group-flag">&#x1F1E6;&#x1F1F7;</span><span class="p-group-name">Argentina</span><span class="p-group-pos">1st</span></div>
-      <div class="p-group-pick"><span class="p-group-flag">&#x1F1E6;&#x1F1F9;</span><span class="p-group-name">Austria</span><span class="p-group-pos">2nd</span></div>
-    </div>
-    <div class="p-group-card">
-      <div class="p-group-letter">Group K</div>
-      <div class="p-group-pick"><span class="p-group-flag">&#x1F1F5;&#x1F1F9;</span><span class="p-group-name">Portugal</span><span class="p-group-pos">1st</span></div>
-      <div class="p-group-pick"><span class="p-group-flag">&#x1F1E8;&#x1F1F4;</span><span class="p-group-name">Colombia</span><span class="p-group-pos">2nd</span></div>
-    </div>
-    <div class="p-group-card">
-      <div class="p-group-letter">Group L</div>
-      <div class="p-group-pick"><span class="p-group-flag">&#x1F3F4;&#xE0067;&#xE0062;&#xE0065;&#xE006E;&#xE0067;&#xE007F;</span><span class="p-group-name">England</span><span class="p-group-pos">1st</span></div>
-      <div class="p-group-pick"><span class="p-group-flag">&#x1F1ED;&#x1F1F7;</span><span class="p-group-name">Croatia</span><span class="p-group-pos">2nd</span></div>
-    </div>
-  </div>
-</section>
-<hr class="p-divider"/>
-
-<!-- TOP SCORER -->
-<section class="p-section" id="scorer">
-  <div class="p-section-label">Golden Boot Race</div>
-  <h2 class="p-section-title">Top Scorer Predictions</h2>
-  <p class="p-section-sub">Who finishes as the tournament's top goalscorer? These six players will be fighting for the Golden Boot — and our money is on one of them.</p>
-
-  <div class="p-scorer-list">
-    <div class="p-scorer-row">
-      <div class="p-scorer-rank">1</div>
-      <div class="p-scorer-info">
-        <div class="p-scorer-name">&#x1F1EB;&#x1F1F7; Kylian Mbapp&#xe9;</div>
-        <div class="p-scorer-detail">France &bull; Group I &bull; Our pick for the Golden Boot</div>
-      </div>
-      <div class="p-scorer-odds">Favourite</div>
-    </div>
-    <div class="p-scorer-row">
-      <div class="p-scorer-rank">2</div>
-      <div class="p-scorer-info">
-        <div class="p-scorer-name">&#x1F3F4;&#xE0067;&#xE0062;&#xE0065;&#xE006E;&#xE0067;&#xE007F; Jude Bellingham</div>
-        <div class="p-scorer-detail">England &bull; Group L &bull; Can score and create from deep</div>
-      </div>
-      <div class="p-scorer-odds">+600</div>
-    </div>
-    <div class="p-scorer-row">
-      <div class="p-scorer-rank">3</div>
-      <div class="p-scorer-info">
-        <div class="p-scorer-name">&#x1F1E7;&#x1F1F7; Vinicius Jr</div>
-        <div class="p-scorer-detail">Brazil &bull; Group C &bull; Electric. Unstoppable on the right night</div>
-      </div>
-      <div class="p-scorer-odds">+700</div>
-    </div>
-    <div class="p-scorer-row">
-      <div class="p-scorer-rank">4</div>
-      <div class="p-scorer-info">
-        <div class="p-scorer-name">&#x1F3F4;&#xE0067;&#xE0062;&#xE0065;&#xE006E;&#xE0067;&#xE007F; Harry Kane</div>
-        <div class="p-scorer-detail">England &bull; Group L &bull; Pure penalty box predator</div>
-      </div>
-      <div class="p-scorer-odds">+800</div>
-    </div>
-    <div class="p-scorer-row">
-      <div class="p-scorer-rank">5</div>
-      <div class="p-scorer-info">
-        <div class="p-scorer-name">&#x1F1EA;&#x1F1F8; Lamine Yamal</div>
-        <div class="p-scorer-detail">Spain &bull; Group H &bull; The teenager the world cannot stop</div>
-      </div>
-      <div class="p-scorer-odds">+900</div>
-    </div>
-    <div class="p-scorer-row">
-      <div class="p-scorer-rank">6</div>
-      <div class="p-scorer-info">
-        <div class="p-scorer-name">&#x1F1F5;&#x1F1F9; Crist&#xed;ano Ronaldo</div>
-        <div class="p-scorer-detail">Portugal &bull; Group K &bull; His last World Cup. Expect goals</div>
-      </div>
-      <div class="p-scorer-odds">+1200</div>
-    </div>
-  </div>
-</section>
-<hr class="p-divider"/>
 
 <!-- DARK HORSES -->
 <section class="p-section" id="dark-horses">
@@ -542,37 +433,6 @@
 </section>
 <hr class="p-divider"/>
 
-<!-- UPSETS -->
-<section class="p-section" id="upsets">
-  <div class="p-section-label">Bold Calls</div>
-  <h2 class="p-section-title">Upsets We're Predicting</h2>
-  <p class="p-section-sub">Every World Cup has moments that rewrite the script. Here are the results nobody's talking about — that we think will actually happen.</p>
-
-  <div style="display:flex;flex-direction:column;gap:12px;">
-    <div style="background:#111;border:1px solid rgba(255,255,255,0.07);border-radius:14px;padding:22px 24px;display:grid;grid-template-columns:1fr auto;gap:20px;align-items:center;">
-      <div>
-        <div style="font-family:'DM Sans',sans-serif;font-size:1rem;font-weight:700;color:#fff;margin-bottom:6px;">&#x1F1F2;&#x1F1E6; Morocco beat Brazil in Group C</div>
-        <div style="font-family:'DM Sans',sans-serif;font-size:0.85rem;color:rgba(255,255,255,0.45);line-height:1.65;">They did it to Portugal in 2022. They're compact, organised and lethal on the counter. Brazil's vulnerability against defensive sides is real.</div>
-      </div>
-      <div style="font-family:'Bebas Neue',sans-serif;font-size:1.2rem;color:#22c55e;white-space:nowrap;">CALLING IT</div>
-    </div>
-    <div style="background:#111;border:1px solid rgba(255,255,255,0.07);border-radius:14px;padding:22px 24px;display:grid;grid-template-columns:1fr auto;gap:20px;align-items:center;">
-      <div>
-        <div style="font-family:'DM Sans',sans-serif;font-size:1rem;font-weight:700;color:#fff;margin-bottom:6px;">&#x1F1EF;&#x1F1F5; Japan beat Belgium in the knockouts</div>
-        <div style="font-family:'DM Sans',sans-serif;font-size:0.85rem;color:rgba(255,255,255,0.45);line-height:1.65;">Japan are organised, disciplined and built for the knockout format. They beat Germany and Spain in 2022. Belgium are ageing. This matchup sets up perfectly.</div>
-      </div>
-      <div style="font-family:'Bebas Neue',sans-serif;font-size:1.2rem;color:#22c55e;white-space:nowrap;">CALLING IT</div>
-    </div>
-    <div style="background:#111;border:1px solid rgba(255,255,255,0.07);border-radius:14px;padding:22px 24px;display:grid;grid-template-columns:1fr auto;gap:20px;align-items:center;">
-      <div>
-        <div style="font-family:'DM Sans',sans-serif;font-size:1rem;font-weight:700;color:#fff;margin-bottom:6px;">&#x1F1E6;&#x1F1F7; Argentina exit before the semi-finals</div>
-        <div style="font-family:'DM Sans',sans-serif;font-size:0.85rem;color:rgba(255,255,255,0.45);line-height:1.65;">Defending champions rarely win back-to-back. Messi at 38 cannot carry this squad alone. A quarter-final exit is our prediction — and it'll break the internet.</div>
-      </div>
-      <div style="font-family:'Bebas Neue',sans-serif;font-size:1.2rem;color:var(--wc-orange);white-space:nowrap;">BOLD CALL</div>
-    </div>
-  </div>
-</section>
-<hr class="p-divider"/>
 
 <!-- MATCH PREDICTIONS -->
 <section class="p-section" id="match-predictions">

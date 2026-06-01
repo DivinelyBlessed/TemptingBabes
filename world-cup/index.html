@@ -86,9 +86,9 @@
 
 /* SECTION WRAPPER */
 .wc-section { padding:72px 32px; max-width:1400px; margin:0 auto; width:100%; box-sizing:border-box; }
-.wc-section-label { font-family:'DM Sans',sans-serif; font-size:0.7rem; font-weight:700; letter-spacing:2.5px; text-transform:uppercase; color:var(--wc-orange); margin-bottom:10px; text-align:center; }
-.wc-section-title { font-family:'Bebas Neue',sans-serif; font-size:clamp(2rem,5vw,3.2rem); letter-spacing:.5px; color:#fff; line-height:1; margin-bottom:12px; text-align:center; }
-.wc-section-sub { font-family:'DM Sans',sans-serif; font-size:0.92rem; color:rgba(255,255,255,0.5); margin-bottom:44px; max-width:540px; line-height:1.65; text-align:center; margin-left:auto; margin-right:auto; }
+.wc-section-label { font-family:'DM Sans',sans-serif; font-size:0.7rem; font-weight:700; letter-spacing:2.5px; text-transform:uppercase; color:var(--wc-orange); margin-bottom:10px; text-align:center; text-align:center;display:block;}
+.wc-section-title { font-family:'Bebas Neue',sans-serif; font-size:clamp(2rem,5vw,3.2rem); letter-spacing:.5px; color:#fff; line-height:1; margin-bottom:12px; text-align:center; text-align:center;}
+.wc-section-sub { font-family:'DM Sans',sans-serif; font-size:0.92rem; color:rgba(255,255,255,0.5); margin-bottom:44px; max-width:540px; line-height:1.65; text-align:center; margin-left:auto; margin-right:auto; text-align:center;margin-left:auto;margin-right:auto;}
 .wc-divider { border:none; border-top:1px solid rgba(255,255,255,0.06); margin:0; }
 
 /* QUICK NAV */
@@ -213,7 +213,17 @@
 @media (max-width:900px) { .wc-groups-grid { grid-template-columns:repeat(4,1fr); } .wc-country-grid { grid-template-columns:1fr; } }
 @media (max-width:768px) { .wc-nav-categories { grid-template-columns:1fr 1fr; } .wc-section { padding:52px 20px; } .wc-quicknav { padding:40px 20px; } .wc-fan-section { padding:52px 20px; } .wc-final-cta { padding:60px 20px; } .wc-hero { padding:60px 20px 52px; } }
 @media (max-width:540px) { .wc-groups-grid { grid-template-columns:repeat(3,1fr); } .wc-nav-categories { grid-template-columns:1fr; } .wc-vip-banner { padding:36px 22px; } }
-</style>
+
+/* Centre card content */
+[class*="-icon"],[class*="-flag"]{text-align:center;display:block;}
+[class*="-card"]{text-align:center;}
+[class*="-why-title"],[class*="why-title"],[class*="-why-body"],[class*="why-body"]{text-align:center;}
+[class*="-city-name"],[class*="city-name"],[class*="-venue-type"],[class*="venue-type"]{text-align:center;}
+[class*="-feature-title"],[class*="feature-title"],[class*="-feature-body"]{text-align:center;}
+[class*="-fanzone-city"],[class*="-fanzone-body"],[class*="-fashion-title"],[class*="-fashion-body"]{text-align:center;}
+[class*="-dark-nation"],[class*="-dark-why"],[class*="-dark-flag"]{text-align:center;}
+[class*="-nation-name"],[class*="-nation-body"],[class*="-nation-flag"]{text-align:center;}
+[class*="-cont-verdict"],[class*="-cont-nation"],[class*="-cont-flag"]{text-align:center;}</style>
 </head>
 <body>
 

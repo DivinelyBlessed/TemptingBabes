@@ -66,6 +66,19 @@
   status = 301
   force  = true
 
+# ── Blog/world-cup → Blog/fifa-world-cup-2026 (GSC redirect error fix) ──
+[[redirects]]
+  from   = "/Blog/world-cup/*"
+  to     = "/Blog/fifa-world-cup-2026/:splat"
+  status = 301
+  force  = true
+
+[[redirects]]
+  from   = "/Blog/world-cup"
+  to     = "/Blog/fifa-world-cup-2026/"
+  status = 301
+  force  = true
+
 [[redirects]]
   from   = "/AI girls/*"
   to     = "/ai-girls/:splat"

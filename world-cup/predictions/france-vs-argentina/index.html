@@ -269,7 +269,7 @@ nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-co
 .section-inner{max-width:1280px;margin:0 auto}
 .section-eyebrow{font-family:'JetBrains Mono',monospace;font-size:.68rem;color:var(--neon-orange);letter-spacing:.25em;text-transform:uppercase;margin-bottom:.6rem;display:flex;align-items:center;gap:.75rem}
 .section-eyebrow::after{content:'';max-width:40px;height:1px;background:var(--neon-orange);opacity:.4}
-.section-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(2.4rem,5vw,4.5rem);letter-spacing:.04em;line-height:.95;margin-bottom:2.5rem}
+.section-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(2.4rem,5vw,4.5rem);letter-spacing:.04em;line-height:.95;margin-bottom:2.5remtext-align:center;}
 .divider{height:1px;background:linear-gradient(90deg,transparent,var(--neon-a),var(--neon-b),transparent);opacity:.2;margin:0 5vw;position:relative;z-index:1}
 
 .battle-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
@@ -386,7 +386,17 @@ nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-co
 @media(max-width:420px){.packs-grid{grid-template-columns:1fr}}
 
 main{flex:1}
-</style>
+
+/* Centre card content */
+[class*="-icon"],[class*="-flag"]{text-align:center;display:block;}
+[class*="-card"]{text-align:center;}
+[class*="-why-title"],[class*="why-title"],[class*="-why-body"],[class*="why-body"]{text-align:center;}
+[class*="-city-name"],[class*="city-name"],[class*="-venue-type"],[class*="venue-type"]{text-align:center;}
+[class*="-feature-title"],[class*="feature-title"],[class*="-feature-body"]{text-align:center;}
+[class*="-fanzone-city"],[class*="-fanzone-body"],[class*="-fashion-title"],[class*="-fashion-body"]{text-align:center;}
+[class*="-dark-nation"],[class*="-dark-why"],[class*="-dark-flag"]{text-align:center;}
+[class*="-nation-name"],[class*="-nation-body"],[class*="-nation-flag"]{text-align:center;}
+[class*="-cont-verdict"],[class*="-cont-nation"],[class*="-cont-flag"]{text-align:center;}</style>
 </head>
 <body>
 

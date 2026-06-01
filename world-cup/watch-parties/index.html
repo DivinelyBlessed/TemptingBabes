@@ -64,9 +64,9 @@
 .wp-content{max-width:1100px;margin:0 auto;padding:60px 24px;}
 
 /* SECTION LABELS */
-.sec-label{font-family:'DM Sans',sans-serif;font-size:0.68rem;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--wc-orange);margin-bottom:8px;}
-.sec-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(1.9rem,4.5vw,3rem);color:#fff;margin-bottom:14px;line-height:1.05;}
-.sec-sub{font-family:'DM Sans',sans-serif;font-size:0.97rem;color:rgba(255,255,255,0.52);line-height:1.78;margin-bottom:32px;max-width:680px;}
+.sec-label{font-family:'DM Sans',sans-serif;font-size:0.68rem;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--wc-orange);margin-bottom:8px;text-align:center;display:block;}
+.sec-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(1.9rem,4.5vw,3rem);color:#fff;margin-bottom:14px;line-height:1.05;text-align:center;}
+.sec-sub{font-family:'DM Sans',sans-serif;font-size:0.97rem;color:rgba(255,255,255,0.52);line-height:1.78;margin-bottom:32px;max-width:680px;text-align:center;margin-left:auto;margin-right:auto;}
 .pg-body{font-family:'DM Sans',sans-serif;font-size:0.97rem;color:rgba(255,255,255,0.58);line-height:1.82;margin-bottom:24px;}
 .pg-divider{border:none;border-top:1px solid rgba(255,255,255,0.06);margin:52px 0;}
 
@@ -142,7 +142,17 @@
 .footer-links a{font-family:'DM Sans',sans-serif;font-size:0.84rem;color:rgba(255,255,255,0.45);text-decoration:none;transition:color .15s;}
 .footer-links a:hover{color:var(--wc-orange);}
 .footer-bottom{border-top:1px solid rgba(255,255,255,0.06);padding:20px 24px;text-align:center;font-family:'DM Sans',sans-serif;font-size:0.75rem;color:rgba(255,255,255,0.2);}
-</style>
+
+/* Centre card content */
+[class*="-icon"],[class*="-flag"]{text-align:center;display:block;}
+[class*="-card"]{text-align:center;}
+[class*="-why-title"],[class*="why-title"],[class*="-why-body"],[class*="why-body"]{text-align:center;}
+[class*="-city-name"],[class*="city-name"],[class*="-venue-type"],[class*="venue-type"]{text-align:center;}
+[class*="-feature-title"],[class*="feature-title"],[class*="-feature-body"]{text-align:center;}
+[class*="-fanzone-city"],[class*="-fanzone-body"],[class*="-fashion-title"],[class*="-fashion-body"]{text-align:center;}
+[class*="-dark-nation"],[class*="-dark-why"],[class*="-dark-flag"]{text-align:center;}
+[class*="-nation-name"],[class*="-nation-body"],[class*="-nation-flag"]{text-align:center;}
+[class*="-cont-verdict"],[class*="-cont-nation"],[class*="-cont-flag"]{text-align:center;}</style>
 </head>
 <body>
 <nav>
@@ -169,11 +179,6 @@
 </div>
 
 <!-- BREADCRUMB -->
-<div class="breadcrumb">
-  <a href="/">Tempting Babes</a> ›
-  <a href="/world-cup/">World Cup 2026</a> ›
-  Watch Parties
-</div>
 
 <!-- HERO -->
 <section class="h-hero">

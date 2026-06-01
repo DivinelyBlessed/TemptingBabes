@@ -27,9 +27,9 @@
 .t-stat-label{font-family:'DM Sans',sans-serif;font-size:0.62rem;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,0.3);margin-top:4px;}
 /* SECTION */
 .t-section{padding:56px 3%;max-width:1300px;margin:0 auto;}
-.t-section-label{font-family:'DM Sans',sans-serif;font-size:0.68rem;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--wc-orange);margin-bottom:8px;}
-.t-section-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(1.8rem,4vw,3rem);color:#fff;line-height:1;margin-bottom:10px;}
-.t-section-sub{font-family:'DM Sans',sans-serif;font-size:0.9rem;color:rgba(255,255,255,0.45);margin-bottom:36px;max-width:560px;line-height:1.65;}
+.t-section-label{font-family:'DM Sans',sans-serif;font-size:0.68rem;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--wc-orange);margin-bottom:8px;text-align:center;display:block;text-align:center;display:block;}
+.t-section-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(1.8rem,4vw,3rem);color:#fff;line-height:1;margin-bottom:10px;text-align:center;text-align:center;}
+.t-section-sub{font-family:'DM Sans',sans-serif;font-size:0.9rem;color:rgba(255,255,255,0.45);margin-bottom:36px;max-width:560px;line-height:1.65;text-align:center;margin-left:auto;margin-right:auto;text-align:center;margin-left:auto;margin-right:auto;}
 .t-divider{border:none;border-top:1px solid rgba(255,255,255,0.06);margin:0;}
 /* TOP FAVOURITES */
 .t-fav-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-bottom:12px;}
@@ -57,7 +57,17 @@
 .t-aff p{font-family:'DM Sans',sans-serif;font-size:0.9rem;color:rgba(255,255,255,0.5);margin-bottom:22px;line-height:1.65;max-width:520px;margin-left:auto;margin-right:auto;}
 .t-aff-btn{display:inline-flex;align-items:center;gap:8px;font-family:'DM Sans',sans-serif;font-size:0.94rem;font-weight:700;padding:15px 36px;border-radius:50px;background:var(--wc-grad);color:#fff;text-decoration:none;box-shadow:0 8px 28px rgba(255,61,107,0.3);transition:opacity .2s,transform .2s;}
 .t-aff-btn:hover{opacity:.9;transform:translateY(-2px);}
-</style>
+
+/* Centre card content */
+[class*="-icon"],[class*="-flag"]{text-align:center;display:block;}
+[class*="-card"]{text-align:center;}
+[class*="-why-title"],[class*="why-title"],[class*="-why-body"],[class*="why-body"]{text-align:center;}
+[class*="-city-name"],[class*="city-name"],[class*="-venue-type"],[class*="venue-type"]{text-align:center;}
+[class*="-feature-title"],[class*="feature-title"],[class*="-feature-body"]{text-align:center;}
+[class*="-fanzone-city"],[class*="-fanzone-body"],[class*="-fashion-title"],[class*="-fashion-body"]{text-align:center;}
+[class*="-dark-nation"],[class*="-dark-why"],[class*="-dark-flag"]{text-align:center;}
+[class*="-nation-name"],[class*="-nation-body"],[class*="-nation-flag"]{text-align:center;}
+[class*="-cont-verdict"],[class*="-cont-nation"],[class*="-cont-flag"]{text-align:center;}</style>
 
 <script type="application/ld+json">
 {
@@ -84,6 +94,7 @@
 }
 </script></head>
 <body>
+
 <nav>
   <a class="logo" href="/"><img src="/Asset/Logo/logo.webp" alt="Tempting Babes" class="logo-img" style="height:42px;width:auto;flex-shrink:0;display:block;"><span class="logo-text" style="font-family:'Playfair Display',serif;font-weight:900;font-size:1.35rem;line-height:1;letter-spacing:1.5px;background:linear-gradient(90deg,#ff8c00,#ff3d6b);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-left:-10px;">Tempting Babes</span></a>
   <div class="tabs">
@@ -107,9 +118,6 @@
   <a href="/vip/" class="mobile-tab"><span class="tab-star">⭐</span>VIP</a>
 </div>
 
-<div style="padding:12px 3%;font-family:'DM Sans',sans-serif;font-size:0.78rem;color:rgba(255,255,255,0.3);">
-  <a href="../" style="color:rgba(255,140,0,0.7);text-decoration:none;">World Cup 2026</a> &rsaquo; All Teams
-</div>
 
 <section class="t-hero">
   <div style="position:relative;z-index:1;">
@@ -134,13 +142,13 @@
 
   <div class="t-fav-grid">
     <a href="./france/" class="t-fav-card">
-      <span class="t-fav-flag">ðŸ‡«ðŸ‡·</span>
+      <span class="t-fav-flag">🇫🇷</span>
       <div class="t-fav-name">France</div>
       <div class="t-fav-status">Bookmakers' Favourite</div>
       <div class="t-fav-desc">MbappÃ©'s squad is built to win it. The deepest, most talented French side in history.</div>
     </a>
     <a href="./brazil/" class="t-fav-card">
-      <span class="t-fav-flag">ðŸ‡§ðŸ‡·</span>
+      <span class="t-fav-flag">🇧🇷</span>
       <div class="t-fav-name">Brazil</div>
       <div class="t-fav-status">Contenders</div>
       <div class="t-fav-desc">24 years without the trophy. Vinicius, Rodrygo, Raphinha — the most exciting attack in the draw.</div>
@@ -152,19 +160,19 @@
       <div class="t-fav-desc">Bellingham leads the most talented English generation in decades. 60 years of hurt ends here?</div>
     </a>
     <a href="./argentina/" class="t-fav-card">
-      <span class="t-fav-flag">ðŸ‡¦ðŸ‡·</span>
+      <span class="t-fav-flag">🇦🇷</span>
       <div class="t-fav-name">Argentina</div>
       <div class="t-fav-status">Defending Champions</div>
       <div class="t-fav-desc">Qatar 2022 winners. Post-Messi but not post-greatness. The Albiceleste return to defend their crown.</div>
     </a>
     <a href="./germany/" class="t-fav-card">
-      <span class="t-fav-flag">ðŸ‡©ðŸ‡ª</span>
+      <span class="t-fav-flag">🇩🇪</span>
       <div class="t-fav-name">Germany</div>
       <div class="t-fav-status">Contenders</div>
       <div class="t-fav-desc">Musiala and Wirtz lead Germany's new golden era. The 2022 humiliation fuels everything.</div>
     </a>
     <a href="./spain/" class="t-fav-card">
-      <span class="t-fav-flag">ðŸ‡ªðŸ‡¸</span>
+      <span class="t-fav-flag">🇪🇸</span>
       <div class="t-fav-name">Spain</div>
       <div class="t-fav-status">Euro 2024 Champions</div>
       <div class="t-fav-desc">Pedri, Yamal, Morata. Spain play the most beautiful football in the world — and they win with it.</div>
@@ -187,22 +195,22 @@
   <p class="t-section-sub">16 European teams in the draw — the continent of football titans, tactical masterclasses and the world's richest club culture.</p>
   <div class="t-conf-label">UEFA Teams (16)</div>
   <div class="t-teams-list">
-    <a href="./france/" class="t-team-chip"><span class="t-team-chip-flag">ðŸ‡«ðŸ‡·</span><span class="t-team-chip-name">France</span><span class="t-team-chip-link">View â†’</span></a>
+    <a href="./france/" class="t-team-chip"><span class="t-team-chip-flag">🇫🇷</span><span class="t-team-chip-name">France</span><span class="t-team-chip-link">View â†’</span></a>
     <a href="./england/" class="t-team-chip"><span class="t-team-chip-flag">ðŸ´ó §ó ¢ó ¥ó ®ó §ó ¿</span><span class="t-team-chip-name">England</span><span class="t-team-chip-link">View â†’</span></a>
-    <a href="./germany/" class="t-team-chip"><span class="t-team-chip-flag">ðŸ‡©ðŸ‡ª</span><span class="t-team-chip-name">Germany</span><span class="t-team-chip-link">View â†’</span></a>
-    <a href="./spain/" class="t-team-chip"><span class="t-team-chip-flag">ðŸ‡ªðŸ‡¸</span><span class="t-team-chip-name">Spain</span><span class="t-team-chip-link">View â†’</span></a>
-    <a href="./portugal/" class="t-team-chip"><span class="t-team-chip-flag">ðŸ‡µðŸ‡¹</span><span class="t-team-chip-name">Portugal</span><span class="t-team-chip-link">View â†’</span></a>
-    <a href="./netherlands/" class="t-team-chip"><span class="t-team-chip-flag">ðŸ‡³ðŸ‡±</span><span class="t-team-chip-name">Netherlands</span><span class="t-team-chip-link">View â†’</span></a>
-    <a href="./italy/" class="t-team-chip"><span class="t-team-chip-flag">ðŸ‡®ðŸ‡¹</span><span class="t-team-chip-name">Italy</span><span class="t-team-chip-link">View â†’</span></a>
-    <a href="./croatia/" class="t-team-chip"><span class="t-team-chip-flag">ðŸ‡­ðŸ‡·</span><span class="t-team-chip-name">Croatia</span><span class="t-team-chip-link">View â†’</span></a>
-    <a class="t-team-chip" href="../groups/group-c/"><span class="t-team-chip-flag">ðŸ‡§ðŸ‡ª</span><span class="t-team-chip-name">Belgium</span></a>
-    <a class="t-team-chip" href="../groups/group-l/"><span class="t-team-chip-flag">ðŸ‡¹ðŸ‡·</span><span class="t-team-chip-name">Turkey</span></a>
-    <a class="t-team-chip" href="../groups/group-l/"><span class="t-team-chip-flag">ðŸ‡ºðŸ‡¦</span><span class="t-team-chip-name">Ukraine</span></a>
-    <a class="t-team-chip" href="../groups/group-k/"><span class="t-team-chip-flag">ðŸ‡·ðŸ‡¸</span><span class="t-team-chip-name">Serbia</span></a>
-    <a class="t-team-chip" href="../groups/group-i/"><span class="t-team-chip-flag">ðŸ‡®ðŸ‡ª</span><span class="t-team-chip-name">Ireland</span></a>
-    <a class="t-team-chip" href="../groups/group-a/"><span class="t-team-chip-flag">ðŸ‡¦ðŸ‡¹</span><span class="t-team-chip-name">Austria</span></a>
-    <a class="t-team-chip" href="../groups/group-g/"><span class="t-team-chip-flag">ðŸ‡³ðŸ‡´</span><span class="t-team-chip-name">Norway</span></a>
-    <a class="t-team-chip" href="../groups/"><span class="t-team-chip-flag">ðŸ‡¨ðŸ‡­</span><span class="t-team-chip-name">Switzerland</span></a>
+    <a href="./germany/" class="t-team-chip"><span class="t-team-chip-flag">🇩🇪</span><span class="t-team-chip-name">Germany</span><span class="t-team-chip-link">View â†’</span></a>
+    <a href="./spain/" class="t-team-chip"><span class="t-team-chip-flag">🇪🇸</span><span class="t-team-chip-name">Spain</span><span class="t-team-chip-link">View â†’</span></a>
+    <a href="./portugal/" class="t-team-chip"><span class="t-team-chip-flag">🇵🇹</span><span class="t-team-chip-name">Portugal</span><span class="t-team-chip-link">View â†’</span></a>
+    <a href="./netherlands/" class="t-team-chip"><span class="t-team-chip-flag">🇳🇱</span><span class="t-team-chip-name">Netherlands</span><span class="t-team-chip-link">View â†’</span></a>
+    <a href="./italy/" class="t-team-chip"><span class="t-team-chip-flag">🇮🇹</span><span class="t-team-chip-name">Italy</span><span class="t-team-chip-link">View â†’</span></a>
+    <a href="./croatia/" class="t-team-chip"><span class="t-team-chip-flag">🇭🇷</span><span class="t-team-chip-name">Croatia</span><span class="t-team-chip-link">View â†’</span></a>
+    <a class="t-team-chip" href="../groups/group-c/"><span class="t-team-chip-flag">🇧🇪</span><span class="t-team-chip-name">Belgium</span></a>
+    <a class="t-team-chip" href="../groups/group-l/"><span class="t-team-chip-flag">🇹🇷</span><span class="t-team-chip-name">Turkey</span></a>
+    <a class="t-team-chip" href="../groups/group-l/"><span class="t-team-chip-flag">🇺🇦</span><span class="t-team-chip-name">Ukraine</span></a>
+    <a class="t-team-chip" href="../groups/group-k/"><span class="t-team-chip-flag">🇷🇸</span><span class="t-team-chip-name">Serbia</span></a>
+    <a class="t-team-chip" href="../groups/group-i/"><span class="t-team-chip-flag">🇮🇪</span><span class="t-team-chip-name">Ireland</span></a>
+    <a class="t-team-chip" href="../groups/group-a/"><span class="t-team-chip-flag">🇦🇹</span><span class="t-team-chip-name">Austria</span></a>
+    <a class="t-team-chip" href="../groups/group-g/"><span class="t-team-chip-flag">🇳🇴</span><span class="t-team-chip-name">Norway</span></a>
+    <a class="t-team-chip" href="../groups/"><span class="t-team-chip-flag">🇨🇭</span><span class="t-team-chip-name">Switzerland</span></a>
   </div>
 
   <div class="t-section-label" style="margin-top:20px;">Confederation</div>
@@ -210,12 +218,12 @@
   <p class="t-section-sub">6 South American nations including the two most successful World Cup teams of all time — Brazil and Argentina.</p>
   <div class="t-conf-label">CONMEBOL Teams (6)</div>
   <div class="t-teams-list">
-    <a href="./brazil/" class="t-team-chip"><span class="t-team-chip-flag">ðŸ‡§ðŸ‡·</span><span class="t-team-chip-name">Brazil</span><span class="t-team-chip-link">View â†’</span></a>
-    <a href="./argentina/" class="t-team-chip"><span class="t-team-chip-flag">ðŸ‡¦ðŸ‡·</span><span class="t-team-chip-name">Argentina</span><span class="t-team-chip-link">View â†’</span></a>
-    <a class="t-team-chip" href="../groups/group-e/"><span class="t-team-chip-flag">ðŸ‡ºðŸ‡¾</span><span class="t-team-chip-name">Uruguay</span></a>
-    <a class="t-team-chip" href="../groups/group-d/"><span class="t-team-chip-flag">ðŸ‡ªðŸ‡¨</span><span class="t-team-chip-name">Ecuador</span></a>
-    <a class="t-team-chip" href="../groups/group-f/"><span class="t-team-chip-flag">ðŸ‡¨ðŸ‡±</span><span class="t-team-chip-name">Chile</span></a>
-    <a class="t-team-chip" href="../groups/group-d/"><span class="t-team-chip-flag">ðŸ‡»ðŸ‡ª</span><span class="t-team-chip-name">Venezuela</span></a>
+    <a href="./brazil/" class="t-team-chip"><span class="t-team-chip-flag">🇧🇷</span><span class="t-team-chip-name">Brazil</span><span class="t-team-chip-link">View â†’</span></a>
+    <a href="./argentina/" class="t-team-chip"><span class="t-team-chip-flag">🇦🇷</span><span class="t-team-chip-name">Argentina</span><span class="t-team-chip-link">View â†’</span></a>
+    <a class="t-team-chip" href="../groups/group-e/"><span class="t-team-chip-flag">🇺🇾</span><span class="t-team-chip-name">Uruguay</span></a>
+    <a class="t-team-chip" href="../groups/group-d/"><span class="t-team-chip-flag">🇪🇨</span><span class="t-team-chip-name">Ecuador</span></a>
+    <a class="t-team-chip" href="../groups/group-f/"><span class="t-team-chip-flag">🇨🇱</span><span class="t-team-chip-name">Chile</span></a>
+    <a class="t-team-chip" href="../groups/group-d/"><span class="t-team-chip-flag">🇻🇪</span><span class="t-team-chip-name">Venezuela</span></a>
   </div>
 
   <div class="t-section-label" style="margin-top:20px;">Confederation</div>
@@ -223,14 +231,14 @@
   <p class="t-section-sub">Three host nations lead a confederation that arrives with home support, passion and real quality for the first time.</p>
   <div class="t-conf-label">CONCACAF Teams (8+)</div>
   <div class="t-teams-list">
-    <a href="./usa/" class="t-team-chip"><span class="t-team-chip-flag">ðŸ‡ºðŸ‡¸</span><span class="t-team-chip-name">USA</span><span class="t-team-chip-link">View â†’</span></a>
-    <a href="./mexico/" class="t-team-chip"><span class="t-team-chip-flag">ðŸ‡²ðŸ‡½</span><span class="t-team-chip-name">Mexico</span><span class="t-team-chip-link">View â†’</span></a>
-    <a href="./canada/" class="t-team-chip"><span class="t-team-chip-flag">ðŸ‡¨ðŸ‡¦</span><span class="t-team-chip-name">Canada</span><span class="t-team-chip-link">View â†’</span></a>
-    <a class="t-team-chip" href="../groups/group-b/"><span class="t-team-chip-flag">ðŸ‡¯ðŸ‡²</span><span class="t-team-chip-name">Jamaica</span></a>
-    <a class="t-team-chip" href="../groups/group-c/"><span class="t-team-chip-flag">ðŸ‡¹ðŸ‡¹</span><span class="t-team-chip-name">Trinidad &amp; Tobago</span></a>
-    <a class="t-team-chip" href="../groups/group-e/"><span class="t-team-chip-flag">ðŸ‡¨ðŸ‡·</span><span class="t-team-chip-name">Costa Rica</span></a>
-    <a class="t-team-chip" href="../groups/group-l/"><span class="t-team-chip-flag">ðŸ‡­ðŸ‡³</span><span class="t-team-chip-name">Honduras</span></a>
-    <a class="t-team-chip" href="../groups/group-a/"><span class="t-team-chip-flag">ðŸ‡µðŸ‡¦</span><span class="t-team-chip-name">Panama</span></a>
+    <a href="./usa/" class="t-team-chip"><span class="t-team-chip-flag">🇺🇸</span><span class="t-team-chip-name">USA</span><span class="t-team-chip-link">View â†’</span></a>
+    <a href="./mexico/" class="t-team-chip"><span class="t-team-chip-flag">🇲🇽</span><span class="t-team-chip-name">Mexico</span><span class="t-team-chip-link">View â†’</span></a>
+    <a href="./canada/" class="t-team-chip"><span class="t-team-chip-flag">🇨🇦</span><span class="t-team-chip-name">Canada</span><span class="t-team-chip-link">View â†’</span></a>
+    <a class="t-team-chip" href="../groups/group-b/"><span class="t-team-chip-flag">🇯🇲</span><span class="t-team-chip-name">Jamaica</span></a>
+    <a class="t-team-chip" href="../groups/group-c/"><span class="t-team-chip-flag">🇹🇹</span><span class="t-team-chip-name">Trinidad &amp; Tobago</span></a>
+    <a class="t-team-chip" href="../groups/group-e/"><span class="t-team-chip-flag">🇨🇷</span><span class="t-team-chip-name">Costa Rica</span></a>
+    <a class="t-team-chip" href="../groups/group-l/"><span class="t-team-chip-flag">🇭🇳</span><span class="t-team-chip-name">Honduras</span></a>
+    <a class="t-team-chip" href="../groups/group-a/"><span class="t-team-chip-flag">🇵🇦</span><span class="t-team-chip-name">Panama</span></a>
   </div>
 
   <div class="t-section-label" style="margin-top:20px;">Confederation</div>
@@ -238,15 +246,15 @@
   <p class="t-section-sub">9 African nations featuring the continent's most dangerous sides — Morocco's semi-finalists and Senegal's powerhouses lead a historic contingent.</p>
   <div class="t-conf-label">CAF Teams (9)</div>
   <div class="t-teams-list">
-    <a href="./morocco/" class="t-team-chip"><span class="t-team-chip-flag">ðŸ‡²ðŸ‡¦</span><span class="t-team-chip-name">Morocco</span><span class="t-team-chip-link">View â†’</span></a>
-    <a href="./senegal/" class="t-team-chip"><span class="t-team-chip-flag">ðŸ‡¸ðŸ‡³</span><span class="t-team-chip-name">Senegal</span><span class="t-team-chip-link">View â†’</span></a>
-    <a class="t-team-chip" href="../groups/group-a/"><span class="t-team-chip-flag">ðŸ‡©ðŸ‡¿</span><span class="t-team-chip-name">Algeria</span></a>
-    <a class="t-team-chip" href="../groups/group-f/"><span class="t-team-chip-flag">ðŸ‡³ðŸ‡¬</span><span class="t-team-chip-name">Nigeria</span></a>
-    <a class="t-team-chip" href="../groups/group-j/"><span class="t-team-chip-flag">ðŸ‡¨ðŸ‡®</span><span class="t-team-chip-name">Ivory Coast</span></a>
-    <a class="t-team-chip" href="../groups/group-j/"><span class="t-team-chip-flag">ðŸ‡¬ðŸ‡­</span><span class="t-team-chip-name">Ghana</span></a>
-    <a class="t-team-chip" href="../groups/group-i/"><span class="t-team-chip-flag">ðŸ‡ªðŸ‡¬</span><span class="t-team-chip-name">Egypt</span></a>
-    <a class="t-team-chip" href="../groups/group-l/"><span class="t-team-chip-flag">ðŸ‡¿ðŸ‡²</span><span class="t-team-chip-name">Zambia</span></a>
-    <a class="t-team-chip" href="../groups/group-k/"><span class="t-team-chip-flag">ðŸ‡°ðŸ‡ª</span><span class="t-team-chip-name">Kenya</span></a>
+    <a href="./morocco/" class="t-team-chip"><span class="t-team-chip-flag">🇲🇦</span><span class="t-team-chip-name">Morocco</span><span class="t-team-chip-link">View â†’</span></a>
+    <a href="./senegal/" class="t-team-chip"><span class="t-team-chip-flag">🇸🇳</span><span class="t-team-chip-name">Senegal</span><span class="t-team-chip-link">View â†’</span></a>
+    <a class="t-team-chip" href="../groups/group-a/"><span class="t-team-chip-flag">🇩🇿</span><span class="t-team-chip-name">Algeria</span></a>
+    <a class="t-team-chip" href="../groups/group-f/"><span class="t-team-chip-flag">🇳🇬</span><span class="t-team-chip-name">Nigeria</span></a>
+    <a class="t-team-chip" href="../groups/group-j/"><span class="t-team-chip-flag">🇨🇮</span><span class="t-team-chip-name">Ivory Coast</span></a>
+    <a class="t-team-chip" href="../groups/group-j/"><span class="t-team-chip-flag">🇬🇭</span><span class="t-team-chip-name">Ghana</span></a>
+    <a class="t-team-chip" href="../groups/group-i/"><span class="t-team-chip-flag">🇪🇬</span><span class="t-team-chip-name">Egypt</span></a>
+    <a class="t-team-chip" href="../groups/group-l/"><span class="t-team-chip-flag">🇿🇲</span><span class="t-team-chip-name">Zambia</span></a>
+    <a class="t-team-chip" href="../groups/group-k/"><span class="t-team-chip-flag">🇰🇪</span><span class="t-team-chip-name">Kenya</span></a>
   </div>
 
   <div class="t-section-label" style="margin-top:20px;">Confederation</div>
@@ -254,14 +262,14 @@
   <p class="t-section-sub">8 Asian nations — Japan lead a continent that has proved it can beat anyone. Saudi Arabia shocked Argentina in 2022. The AFC arrives with ambition.</p>
   <div class="t-conf-label">AFC Teams (8)</div>
   <div class="t-teams-list">
-    <a href="./japan/" class="t-team-chip"><span class="t-team-chip-flag">ðŸ‡¯ðŸ‡µ</span><span class="t-team-chip-name">Japan</span><span class="t-team-chip-link">View â†’</span></a>
-    <a class="t-team-chip" href="../groups/group-h/"><span class="t-team-chip-flag">ðŸ‡°ðŸ‡·</span><span class="t-team-chip-name">South Korea</span></a>
-    <a class="t-team-chip" href="../groups/group-g/"><span class="t-team-chip-flag">ðŸ‡¸ðŸ‡¦</span><span class="t-team-chip-name">Saudi Arabia</span></a>
-    <a class="t-team-chip" href="../groups/group-i/"><span class="t-team-chip-flag">ðŸ‡®ðŸ‡·</span><span class="t-team-chip-name">Iran</span></a>
-    <a class="t-team-chip" href="../groups/group-b/"><span class="t-team-chip-flag">ðŸ‡ºðŸ‡¿</span><span class="t-team-chip-name">Uzbekistan</span></a>
-    <a class="t-team-chip" href="../groups/group-e/"><span class="t-team-chip-flag">ðŸ‡¦ðŸ‡º</span><span class="t-team-chip-name">Australia</span></a>
-    <a class="t-team-chip" href="../groups/group-l/"><span class="t-team-chip-flag">ðŸ‡­ðŸ‡³</span><span class="t-team-chip-name">Jordan</span></a>
-    <a class="t-team-chip" href="../groups/"><span class="t-team-chip-flag">ðŸ‡¶ðŸ‡¦</span><span class="t-team-chip-name">Qatar</span></a>
+    <a href="./japan/" class="t-team-chip"><span class="t-team-chip-flag">🇯🇵</span><span class="t-team-chip-name">Japan</span><span class="t-team-chip-link">View â†’</span></a>
+    <a class="t-team-chip" href="../groups/group-h/"><span class="t-team-chip-flag">🇰🇷</span><span class="t-team-chip-name">South Korea</span></a>
+    <a class="t-team-chip" href="../groups/group-g/"><span class="t-team-chip-flag">🇸🇦</span><span class="t-team-chip-name">Saudi Arabia</span></a>
+    <a class="t-team-chip" href="../groups/group-i/"><span class="t-team-chip-flag">🇮🇷</span><span class="t-team-chip-name">Iran</span></a>
+    <a class="t-team-chip" href="../groups/group-b/"><span class="t-team-chip-flag">🇺🇿</span><span class="t-team-chip-name">Uzbekistan</span></a>
+    <a class="t-team-chip" href="../groups/group-e/"><span class="t-team-chip-flag">🇦🇺</span><span class="t-team-chip-name">Australia</span></a>
+    <a class="t-team-chip" href="../groups/group-l/"><span class="t-team-chip-flag">🇭🇳</span><span class="t-team-chip-name">Jordan</span></a>
+    <a class="t-team-chip" href="../groups/"><span class="t-team-chip-flag">🇶🇦</span><span class="t-team-chip-name">Qatar</span></a>
   </div>
 
   <div class="t-section-label" style="margin-top:20px;">Confederation</div>
@@ -269,7 +277,7 @@
   <p class="t-section-sub">New Zealand represent Oceania on football's biggest stage.</p>
   <div class="t-conf-label">OFC Teams (1)</div>
   <div class="t-teams-list">
-    <a class="t-team-chip" href="../groups/group-f/"><span class="t-team-chip-flag">ðŸ‡³ðŸ‡¿</span><span class="t-team-chip-name">New Zealand</span></a>
+    <a class="t-team-chip" href="../groups/group-f/"><span class="t-team-chip-flag">🇳🇿</span><span class="t-team-chip-name">New Zealand</span></a>
   </div>
 </div>
 

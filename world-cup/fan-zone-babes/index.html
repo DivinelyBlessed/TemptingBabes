@@ -64,9 +64,9 @@
 
 /* SHARED SECTION LAYOUT */
 .h-section{padding:64px 3%;max-width:1400px;margin:0 auto;}
-.h-section-label{font-family:'DM Sans',sans-serif;font-size:0.68rem;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--wc-orange);margin-bottom:8px;}
-.h-section-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(1.9rem,4vw,3.2rem);color:#fff;line-height:1;margin-bottom:10px;}
-.h-section-sub{font-family:'DM Sans',sans-serif;font-size:0.9rem;color:rgba(255,255,255,0.45);margin-bottom:44px;max-width:620px;line-height:1.65;}
+.h-section-label{font-family:'DM Sans',sans-serif;font-size:0.68rem;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--wc-orange);margin-bottom:8px;text-align:center;display:block;text-align:center;display:block;}
+.h-section-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(1.9rem,4vw,3.2rem);color:#fff;line-height:1;margin-bottom:10px;text-align:center;text-align:center;}
+.h-section-sub{font-family:'DM Sans',sans-serif;font-size:0.9rem;color:rgba(255,255,255,0.45);margin-bottom:44px;max-width:620px;line-height:1.65;text-align:center;margin-left:auto;margin-right:auto;text-align:center;margin-left:auto;margin-right:auto;}
 .h-divider{border:none;border-top:1px solid rgba(255,255,255,0.06);margin:0;}
 
 /* NATION CARDS — featured (Brazil #1) */
@@ -146,14 +146,43 @@
 .h-final-cta-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(2.6rem,7vw,5rem);color:#fff;line-height:0.92;margin-bottom:18px;}
 .h-final-cta-title span{background:var(--wc-grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
 .h-final-cta-sub{font-family:'DM Sans',sans-serif;font-size:0.95rem;color:rgba(255,255,255,0.48);line-height:1.7;margin-bottom:38px;}
-</style>
+
+/* Centre card content */
+[class*="-icon"],[class*="-flag"]{text-align:center;display:block;}
+[class*="-card"]{text-align:center;}
+[class*="-why-title"],[class*="why-title"],[class*="-why-body"],[class*="why-body"]{text-align:center;}
+[class*="-city-name"],[class*="city-name"],[class*="-venue-type"],[class*="venue-type"]{text-align:center;}
+[class*="-feature-title"],[class*="feature-title"],[class*="-feature-body"]{text-align:center;}
+[class*="-fanzone-city"],[class*="-fanzone-body"],[class*="-fashion-title"],[class*="-fashion-body"]{text-align:center;}
+[class*="-dark-nation"],[class*="-dark-why"],[class*="-dark-flag"]{text-align:center;}
+[class*="-nation-name"],[class*="-nation-body"],[class*="-nation-flag"]{text-align:center;}
+[class*="-cont-verdict"],[class*="-cont-nation"],[class*="-cont-flag"]{text-align:center;}</style>
 </head>
 <body>
 
-<!-- BREADCRUMB -->
-<nav class="h-breadcrumb">
-  <a href="/">Tempting Babes</a> &#x203A; <a href="/world-cup/">World Cup 2026</a> &#x203A; Fan Zone Babes
+<nav>
+  <a class="logo" href="/"><img src="/Asset/Logo/logo.webp" alt="Tempting Babes" class="logo-img" style="height:42px;width:auto;flex-shrink:0;display:block;"><span class="logo-text" style="font-family:'Playfair Display',serif;font-weight:900;font-size:1.35rem;line-height:1;letter-spacing:1.5px;background:linear-gradient(90deg,#ff8c00,#ff3d6b);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-left:-10px;">Tempting Babes</span></a>
+  <div class="tabs">
+    <a href="/ai-chat/" class="tab">AI Girls</a>
+    <a href="/cams/" class="tab">Cams</a>
+    <a href="/dating/" class="tab">Dating</a>
+    <a href="/offers/" class="tab">Offers</a>
+    <a href="/trending/" class="tab">Trending</a>
+    <a href="/vip/" class="tab"><span class="tab-star">⭐</span>VIP</a>
+  </div>
+  <a href="https://t.mbjms.com/389314/3785/0?bo=2753,2754,2755,2756&po=6456&aff_sub5=SF_006OG000004lmDN" class="join-btn" id="getAccessBtn" style="background:linear-gradient(135deg,#ff8c00,#ff3d6b);text-decoration:none;" target="_blank" rel="noopener">Join Free</a>
+  <button class="menu-btn" id="menuBtn">&#9776;</button>
 </nav>
+<script>(function(){var t=document.querySelectorAll('nav .tab'),x=parseFloat(sessionStorage.getItem('tb_mx')||''),y=parseFloat(sessionStorage.getItem('tb_my')||'');if(x&&y)t.forEach(function(tab){var r=tab.getBoundingClientRect();tab.classList.toggle('hovered',x>=r.left&&x<=r.right&&y>=r.top&&y<=r.bottom);});}());</script>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="/ai-chat/" class="mobile-tab">AI Girls</a>
+  <a href="/cams/" class="mobile-tab">Cams</a>
+  <a href="/dating/" class="mobile-tab">Dating</a>
+  <a href="/offers/" class="mobile-tab">Offers</a>
+  <a href="/trending/" class="mobile-tab">Trending</a>
+  <a href="/vip/" class="mobile-tab"><span class="tab-star">⭐</span>VIP</a>
+</div>
+
 
 <!-- HERO -->
 <section class="h-hero">
@@ -440,103 +469,7 @@
   </div>
 </div>
 
-<!-- FAN ZONE HOST CITIES -->
-<section class="h-section" id="fan-festivals">
-  <div class="h-section-label">Official Fan Zones &#x2014; 2026</div>
-  <h2 class="h-section-title">What the Fan Zones Look Like</h2>
-  <p class="h-section-sub">FIFA Fan Festivals in 2026 are bigger, louder and more packed with people than anything that came before. Here's what to expect at each major hub &#x2014; and who you'll meet there.</p>
 
-  <div class="h-fanzone-grid">
-
-    <div class="h-fanzone-card">
-      <span class="h-fanzone-icon">&#x1F1FA;&#x1F1F8;</span>
-      <div class="h-fanzone-city">LA Fan Festival</div>
-      <span class="h-fanzone-tag">Los Angeles, California</span>
-      <div class="h-fanzone-body">The LA Fan Festival will be the largest fan zone event in World Cup 2026 &#x2014; a city of 13 million people with a football-mad Latin American diaspora essentially giving the whole city one enormous excuse to party. Giant screens, live DJ sets, food trucks from every Latin nation, and a crowd that is beautiful, diverse and completely electric. The Rose Bowl and SoFi Stadium games nearby mean fan zones here are connecting points for fans from Brazil, Mexico, Colombia, Argentina and more &#x2014; all in one of the world's most glamorous cities. If you're going to meet someone at a fan zone, LA is where it happens.</div>
-      <a href="https://t.mbjms.com/389314/3785/0?bo=2753,2754,2755,2756&po=6456&aff_sub5=SF_006OG000004lmDN" class="h-fanzone-meet" target="_blank" rel="noopener">&#x1F48B; Meet LA fans online &#x2192;</a>
-    </div>
-
-    <div class="h-fanzone-card">
-      <span class="h-fanzone-icon">&#x1F5FD;</span>
-      <div class="h-fanzone-city">New York / NJ</div>
-      <span class="h-fanzone-tag">MetLife Stadium Host City</span>
-      <div class="h-fanzone-body">The New York and New Jersey fan zone corridor hosts the most culturally diverse crowd at any World Cup ever. MetLife Stadium itself &#x2014; the Final venue &#x2014; sits in the most populous metropolitan area in the Western hemisphere. Fan zones in Manhattan and across the bridge draw fans from every nation on the pitch and half the planet off it. Brazilian samba sections set up next to English pub crowds. Argentine chant walls form in Times Square. It's football as a cultural tornado, and somewhere in the middle of it all are thousands of single women who've fallen completely in love with the tournament.</div>
-      <a href="https://t.mbjms.com/389314/3785/0?bo=2753,2754,2755,2756&po=6456&aff_sub5=SF_006OG000004lmDN" class="h-fanzone-meet" target="_blank" rel="noopener">&#x1F48B; Meet New York fans online &#x2192;</a>
-    </div>
-
-    <div class="h-fanzone-card">
-      <span class="h-fanzone-icon">&#x2B50;</span>
-      <div class="h-fanzone-city">Dallas</div>
-      <span class="h-fanzone-tag">AT&amp;T Stadium Hub</span>
-      <div class="h-fanzone-body">Dallas is arguably the most underrated fan zone destination of 2026. AT&amp;T Stadium &#x2014; known as "Jerry's World" &#x2014; holds 100,000 people and will stage some of the biggest games of the tournament. The Dallas-Fort Worth metro area has one of the largest Mexican-American populations in the US, which means fan zones here are basically El Tri home games. Green everywhere, mariachi energy seeping from every corner, and the kind of party atmosphere that Texas does better than anywhere. The dating energy here is absolutely real &#x2014; it's a fiesta that doesn't stop for three weeks.</div>
-      <a href="https://t.mbjms.com/389314/3785/0?bo=2753,2754,2755,2756&po=6456&aff_sub5=SF_006OG000004lmDN" class="h-fanzone-meet" target="_blank" rel="noopener">&#x1F48B; Meet Dallas fans online &#x2192;</a>
-    </div>
-
-    <div class="h-fanzone-card">
-      <span class="h-fanzone-icon">&#x1F1E8;&#x1F1E6;</span>
-      <div class="h-fanzone-city">Vancouver / Toronto</div>
-      <span class="h-fanzone-tag">Canada's Fan Zones</span>
-      <div class="h-fanzone-body">Canada's fan zones at Vancouver and Toronto offer something different to their US counterparts &#x2014; a more intimate, European-influenced atmosphere with serious football culture built over decades of immigration. Vancouver's Stanley Park fan zone with mountain views, Toronto's multicultural streets turning into football corridors &#x2014; Canadian venues attract European fans, African diaspora groups, and South Americans who couldn't get US tickets. The crowd is cosmopolitan, the vibe is charged, and both cities are well-known for their open, friendly, social culture. Meeting people here comes naturally when 50,000 strangers are already united by 90 minutes of football.</div>
-      <a href="https://t.mbjms.com/389314/3785/0?bo=2753,2754,2755,2756&po=6456&aff_sub5=SF_006OG000004lmDN" class="h-fanzone-meet" target="_blank" rel="noopener">&#x1F48B; Meet Canadian fans online &#x2192;</a>
-    </div>
-
-  </div>
-</section>
-<hr class="h-divider"/>
-
-<!-- FAN ZONE FASHION -->
-<section class="h-section" id="fan-fashion">
-  <div class="h-section-label">The Looks &#x2014; 2026</div>
-  <h2 class="h-section-title">Fan Zone Fashion</h2>
-  <p class="h-section-sub">The stands in 2026 are a runway. Here's what the female fans are wearing &#x2014; and why every single look is electric.</p>
-
-  <div class="h-fashion-grid">
-
-    <div class="h-fashion-card">
-      <span class="h-fashion-icon">&#x1F3A8;</span>
-      <div class="h-fashion-title">Face Paint</div>
-      <div class="h-fashion-body">Face paint is the universal language of the fan zone. Brazilian women with green and yellow swirls across their cheeks. Moroccan fans painting the star of their national flag with near-surgical precision. Japanese sections with matching blue-and-white designs across an entire row. When face paint is done right &#x2014; and at a World Cup it almost always is &#x2014; it transforms a regular match attendance into a cultural event. It says: I gave everything to be here today. And it's impossible to look away from.</div>
-      <span class="h-fashion-verdict">Peak Fan Zone</span>
-    </div>
-
-    <div class="h-fashion-card">
-      <span class="h-fashion-icon">&#x1F455;</span>
-      <div class="h-fashion-title">National Jersey (Worn Tight)</div>
-      <div class="h-fashion-body">The classic. The original. The football shirt worn by someone who makes it look like it was designed specifically for them. Colombia's yellow jersey. Brazil's Canarinho. Spain's deep red. At every World Cup there's a collective realisation that the national kit is actually brilliant fashion when worn by the right person with the right energy. Female fans who show up in their nation's shirt and absolutely own it are the backbone of every great fan zone experience. Simple. Iconic. Perfect.</div>
-      <span class="h-fashion-verdict">Timeless Classic</span>
-    </div>
-
-    <div class="h-fashion-card">
-      <span class="h-fashion-icon">&#x1F6A9;</span>
-      <div class="h-fashion-title">Flags as Accessories</div>
-      <div class="h-fashion-body">The creative use of national flags as wearable accessories is an art form that World Cup fan zones have perfected over decades. Capes made from oversized flags. Flags tied around shoulders. Miniature flags braided into hair. Brazilian fans turning their national colours into full outfits using only fabric and ingenuity. The flag-as-accessory look says: I'm not just here to watch, I'm here to represent. It's bold, it's beautiful, and it photographs brilliantly in a packed fan zone environment.</div>
-      <span class="h-fashion-verdict">Bold Statement</span>
-    </div>
-
-    <div class="h-fashion-card">
-      <span class="h-fashion-icon">&#x1F48E;</span>
-      <div class="h-fashion-title">Country-Coloured Hair</div>
-      <div class="h-fashion-body">The commitment level of someone who dyes their hair their nation's colours for a World Cup is genuinely inspiring. Brazilian fans with yellow and green highlights. Mexican fans with green braids. Colombian women rocking red and gold streaks through dark hair. It's a level of dedication that turns matchday into an identity statement. You don't just love your country's football team &#x2014; you carry that love with you everywhere you go for the entire duration of the tournament. Magnetic doesn't begin to cover it.</div>
-      <span class="h-fashion-verdict">Serious Commitment</span>
-    </div>
-
-    <div class="h-fashion-card">
-      <span class="h-fashion-icon">&#x1F457;</span>
-      <div class="h-fashion-title">Traditional Dress</div>
-      <div class="h-fashion-body">Some of the most striking looks at any World Cup fan zone come from women who blend traditional national dress with football culture. Moroccan kaftans in national colours. Senegalese boubous with team badges. Mexican huipil embroidery combined with El Tri green. Traditional dress in a football context isn't a costume &#x2014; it's a statement that football belongs to every culture on earth and every culture's history is present in the stands. It's stunning, it's political, and it's deeply, unmistakably powerful.</div>
-      <span class="h-fashion-verdict">Cultural Power</span>
-    </div>
-
-    <div class="h-fashion-card">
-      <span class="h-fashion-icon">&#x1F48B;</span>
-      <div class="h-fashion-title">Body Paint</div>
-      <div class="h-fashion-body">The boldest call in the fan zone style playbook. Body paint that transforms skin into a canvas for national colours is the highest expression of fan commitment &#x2014; it takes hours to apply and looks extraordinary under stadium lights and fan zone screens. Brazilian women with body paint in Canarinho gold. Colombian fans with the tricolour across their shoulders. It's celebratory, it's athletic, and it turns the person wearing it into the visual centre of the entire section. The cameras always find them first.</div>
-      <span class="h-fashion-verdict">Maximum Impact</span>
-    </div>
-
-  </div>
-</section>
-<hr class="h-divider"/>
 
 <!-- FAQ -->
 <section class="h-section" id="faq">
