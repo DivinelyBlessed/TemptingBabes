@@ -49,6 +49,10 @@
 .b-btn-ghost{display:inline-flex;align-items:center;gap:8px;font-family:'DM Sans',sans-serif;font-size:0.9rem;font-weight:600;padding:13px 28px;border-radius:50px;background:transparent;color:rgba(255,255,255,0.72);text-decoration:none;border:1px solid rgba(255,255,255,0.18);transition:border-color .2s,color .2s;}
 .b-btn-ghost:hover{border-color:var(--wc-orange);color:var(--wc-orange);}
 
+/* MARKET CARD ICON */
+.b-market-icon{margin-bottom:12px;display:block;}
+.b-market-icon img{width:48px;height:32px;object-fit:cover;border-radius:4px;}
+
 /* DISCLAIMER */
 .b-disclaimer{background:rgba(255,200,0,0.06);border-bottom:1px solid rgba(255,200,0,0.15);padding:14px 3%;text-align:center;}
 .b-disclaimer-text{font-family:'DM Sans',sans-serif;font-size:0.75rem;color:rgba(255,200,0,0.7);max-width:900px;margin:0 auto;line-height:1.6;}
@@ -130,11 +134,11 @@
 .b-book-region{font-family:'DM Sans',sans-serif;font-size:0.6rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,140,0,0.6);}
 
 /* ODDS EXPLAINER */
-.b-explainer{background:#111;border:1px solid rgba(255,255,255,0.07);border-radius:18px;padding:36px 32px;margin-bottom:40px;}
-.b-explainer-title{font-family:'Bebas Neue',sans-serif;font-size:1.6rem;color:#fff;margin-bottom:20px;}
+.b-explainer{background:#111;border:1px solid rgba(255,255,255,0.07);border-radius:18px;padding:36px 32px;margin-bottom:40px;text-align:center;}
+.b-explainer-title{font-family:'Bebas Neue',sans-serif;font-size:1.6rem;background:linear-gradient(90deg,#f72585,#f76500);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:20px;}
 .b-explainer-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
 @media(max-width:700px){.b-explainer-grid{grid-template-columns:1fr;}}
-.b-explainer-col{}
+.b-explainer-col{text-align:center;background:#161616;border:1px solid rgba(255,255,255,0.08);border-radius:14px;padding:28px 20px;}
 .b-explainer-col-title{font-family:'DM Sans',sans-serif;font-size:0.7rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--wc-orange);margin-bottom:10px;}
 .b-explainer-col-body{font-family:'DM Sans',sans-serif;font-size:0.85rem;color:rgba(255,255,255,0.5);line-height:1.7;}
 .b-explainer-example{display:inline-block;background:rgba(255,140,0,0.08);border:1px solid rgba(255,140,0,0.15);border-radius:8px;padding:8px 14px;margin-top:10px;font-family:'Bebas Neue',sans-serif;font-size:1.1rem;color:var(--wc-orange);}
@@ -164,7 +168,7 @@
 .b-final-cta{text-align:center;padding:80px 3%;position:relative;overflow:hidden;}
 .b-final-cta-glow{position:absolute;inset:0;pointer-events:none;}
 .b-final-cta-glow::before{content:'';position:absolute;width:500px;height:300px;top:50%;left:50%;transform:translate(-50%,-50%);background:radial-gradient(ellipse,rgba(34,197,94,0.12) 0%,transparent 65%);filter:blur(60px);}
-.b-final-cta-inner{position:relative;z-index:1;max-width:600px;margin:0 auto;}
+.b-final-cta-inner{position:relative;z-index:1;max-width:700px;margin:0 auto;}
 .b-final-cta-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(2.4rem,6vw,4.5rem);color:#fff;line-height:0.95;margin-bottom:16px;}
 .b-final-cta-title span{background:var(--wc-grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
 .b-final-cta-sub{font-family:'DM Sans',sans-serif;font-size:0.95rem;color:rgba(255,255,255,0.48);line-height:1.7;margin-bottom:36px;}
@@ -182,15 +186,38 @@
 </head>
 <body>
 
+<nav>
+  <a class="logo" href="\"><img src="\Asset\Logo\logo.webp" alt="Tempting Babes" class="logo-img" style="height:42px;width:auto;flex-shrink:0;display:block;"><span class="logo-text" style="font-family:'Playfair Display',serif;font-weight:900;font-size:1.35rem;line-height:1;letter-spacing:1.5px;background:linear-gradient(90deg,#ff8c00,#ff3d6b);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-left:-10px;">Tempting Babes</span></a>
+  <div class="tabs">
+    <a href="/ai-chat/" class="tab">AI Girls</a>
+    <a href="/cams/" class="tab">Cams</a>
+    <a href="/dating/" class="tab">Dating</a>
+    <a href="/offers/" class="tab">Offers</a>
+    <a href="/trending/" class="tab">Trending</a>
+    <a href="/vip/" class="tab"><span class="tab-star">⭐</span>VIP</a>
+  </div>
+  <a href="https://t.mbjms.com/389314/3785/0?bo=2753,2754,2755,2756&po=6456&aff_sub5=SF_006OG000004lmDN" class="join-btn" id="getAccessBtn" style="background:linear-gradient(135deg,#ff8c00,#ff3d6b);text-decoration:none;" target="_blank" rel="noopener">Join Free</a>
+  <button class="menu-btn" id="menuBtn">&#9776;</button>
+</nav>
+<script>(function(){var t=document.querySelectorAll('nav .tab'),x=parseFloat(sessionStorage.getItem('tb_mx')||''),y=parseFloat(sessionStorage.getItem('tb_my')||'');if(x&&y)t.forEach(function(tab){var r=tab.getBoundingClientRect();tab.classList.toggle('hovered',x>=r.left&&x<=r.right&&y>=r.top&&y<=r.bottom);});}());</script>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="/ai-chat/" class="mobile-tab">AI Girls</a>
+  <a href="/cams/" class="mobile-tab">Cams</a>
+  <a href="/dating/" class="mobile-tab">Dating</a>
+  <a href="/offers/" class="mobile-tab">Offers</a>
+  <a href="/trending/" class="mobile-tab">Trending</a>
+  <a href="/vip/" class="mobile-tab"><span class="tab-star">⭐</span>VIP</a>
+</div>
+
 <section class="b-hero">
   <div class="b-hero-glow"></div>
   <div class="b-hero-inner">
     <div class="b-hero-badge">&#x1F4B0; Odds Updated Daily</div>
-    <h1 class="b-hero-title">World Cup 2026<br/><span>Betting Odds</span></h1>
-    <p class="b-hero-sub">France and Spain are joint favourites at +500. England, Brazil and Argentina in the mix. Here are the latest outright odds, top scorer prices, value bets and every major market — so you know exactly where to put your money.</p>
+    <h1 class="b-hero-title">World Cup 2026 <span>Betting Odds</span></h1>
+    <p class="b-hero-sub">France and Spain are joint favourites at +500. England, Brazil and Argentina in the mix. Here are the latest group stage odds, markets and every price — so you know exactly where to put your money.</p>
     <div class="b-hero-ctas">
-      <a href="#outright" class="b-btn-primary">&#x1F3C6; See Outright Odds</a>
-      <a href="#value" class="b-btn-ghost">&#x1F4A1; Find Value Bets</a>
+      <a href="#matches" class="b-btn-primary">&#x26BD; See Match Odds</a>
+      <a href="#markets" class="b-btn-ghost">&#x1F4CA; Other Markets</a>
     </div>
   </div>
 </section>
@@ -199,236 +226,320 @@
   <div class="b-disclaimer-text">&#x26A0;&#xFE0F; 18+ only. Gambling should be fun — never bet more than you can afford to lose. Odds shown are approximate and change frequently. Please check your chosen sportsbook for current prices. BeGambleAware.org &bull; GamCare.org.uk &bull; 1-800-GAMBLER (US)</div>
 </div>
 
-<div class="b-stats-bar">
-  <div class="b-stat"><div class="b-stat-num">+500</div><div class="b-stat-label">Joint Favourite</div></div>
-  <div class="b-stat"><div class="b-stat-num">17%</div><div class="b-stat-label">France Win Prob.</div></div>
-  <div class="b-stat"><div class="b-stat-num">8</div><div class="b-stat-label">Real Contenders</div></div>
-  <div class="b-stat"><div class="b-stat-num">100+</div><div class="b-stat-label">Markets Available</div></div>
-</div>
-
-<nav class="b-phase-nav">
-  <div class="b-phase-pills">
-    <a href="#outright" class="b-phase-pill">&#x1F3C6; Outright Winner</a>
-    <a href="#explain" class="b-phase-pill">&#x2753; How Odds Work</a>
-    <a href="#value" class="b-phase-pill">&#x1F4A1; Value Bets</a>
-    <a href="#scorer" class="b-phase-pill">&#x26BD; Top Scorer</a>
-    <a href="#markets" class="b-phase-pill">&#x1F4CA; Other Markets</a>
-    <a href="#books" class="b-phase-pill">&#x1F4F1; Sportsbooks</a>
-  </div>
-</nav>
 <hr class="b-divider"/>
 
-<!-- OUTRIGHT ODDS -->
-<section class="b-section" id="outright">
-  <div class="b-section-label">Outright Winner Market</div>
-  <h2 class="b-section-title">Who's Favourite to Win?</h2>
-  <p class="b-section-sub">France and Spain lead the market. Here are the top contenders ranked by implied probability — the bookmakers' honest view of each nation's chances.</p>
+<!-- MATCH ODDS PANEL -->
+<style>
+.mo-section{padding:64px 3%;max-width:1400px;margin:0 auto;}
+.mo-panel{border:1px solid rgba(255,255,255,0.1);border-radius:16px;overflow:hidden;background:#161616;}
+.mo-nav{background:#111;border-bottom:1px solid rgba(255,255,255,0.08);padding:0 18px;display:flex;align-items:center;gap:16px;height:56px;}
+.mo-nav-logo{display:flex;align-items:center;gap:0;text-decoration:none;flex-shrink:0;}
+.mo-nav-logo-text{font-family:'Bebas Neue',sans-serif;font-size:1.15rem;background:linear-gradient(90deg,#ff8c00,#ff3d6b);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1;white-space:nowrap;}
+.mo-nav-info{display:flex;align-items:center;gap:6px;flex:1;justify-content:center;overflow-x:auto;scrollbar-width:none;flex-wrap:nowrap;}
+.mo-nav-info::-webkit-scrollbar{display:none;}
+.mo-nav-chip{display:inline-flex;align-items:center;gap:5px;font-family:'DM Sans',sans-serif;font-size:0.7rem;font-weight:600;padding:5px 12px;border-radius:20px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);color:rgba(255,255,255,0.45);white-space:nowrap;text-decoration:none;transition:background .15s,border-color .15s,color .15s;}
+.mo-nav-chip:hover{background:rgba(255,140,0,0.07);border-color:rgba(255,140,0,0.2);color:rgba(255,140,0,0.8);}
+.mo-nav-chip.active-chip{background:rgba(255,140,0,0.12);border-color:rgba(255,140,0,0.4);color:#ff8c00;}
+.mo-nav-chip-dot{width:5px;height:5px;border-radius:50%;background:#22c55e;animation:pulse-dot 1.4s ease-in-out infinite;flex-shrink:0;}
+@keyframes pulse-dot{0%,100%{opacity:1;transform:scale(1);}50%{opacity:.4;transform:scale(.7);}}
+.mo-date-strip{background:#1e1e1e;padding:10px 18px;display:flex;align-items:center;justify-content:space-between;border-top:1px solid rgba(255,255,255,0.06);border-bottom:1px solid rgba(255,255,255,0.06);}
+.mo-date-label{font-family:'DM Sans',sans-serif;font-size:0.8rem;font-weight:800;color:#fff;}
+.mo-col-hdrs{display:flex;gap:0;}
+.mo-col-hdr{font-family:'DM Sans',sans-serif;font-size:0.7rem;font-weight:800;color:rgba(255,255,255,0.4);width:70px;text-align:center;letter-spacing:1px;}
+.mo-row{display:flex;align-items:center;justify-content:space-between;padding:12px 18px;border-bottom:1px solid rgba(255,255,255,0.04);text-decoration:none;transition:background .12s;gap:12px;background:#161616;}
+.mo-row:hover{background:#1c1c1c;}
+.mo-row:hover .mo-row-name{color:#ff8c00;}
+.mo-row-left{flex:1;min-width:0;}
+.mo-row-team{display:flex;align-items:center;gap:8px;margin-bottom:3px;}
+.mo-row-flag{width:18px;height:auto;border-radius:2px;flex-shrink:0;}
+.mo-row-name{font-family:'DM Sans',sans-serif;font-size:0.88rem;font-weight:600;color:#fff;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;transition:color .12s;}
+.mo-row-time{font-family:'DM Sans',sans-serif;font-size:0.72rem;font-weight:700;color:rgba(255,140,0,0.6);margin-top:5px;}
+.mo-row-live-tag{display:inline-flex;align-items:center;gap:4px;font-family:'DM Sans',sans-serif;font-size:0.65rem;font-weight:700;color:#22c55e;margin-top:5px;}
+.mo-live-dot{width:5px;height:5px;border-radius:50%;background:#22c55e;display:inline-block;animation:pulse-dot 1.4s ease-in-out infinite;flex-shrink:0;}
+.mo-pills{display:flex;gap:5px;flex-shrink:0;}
+.mo-pill{display:flex;align-items:center;justify-content:center;width:68px;height:44px;background:#252525;border:1px solid rgba(255,255,255,0.08);border-radius:8px;font-family:'DM Sans',sans-serif;font-size:0.9rem;font-weight:700;color:#ff8c00;transition:all .12s;white-space:nowrap;}
+.mo-pill:hover{background:#2e2e2e;border-color:rgba(255,140,0,0.5);}
+.mo-pill.best{background:#1b281b;border-color:rgba(34,197,94,0.35);color:#22c55e;}
+.mo-pill.best:hover{background:#1e2f1e;border-color:rgba(34,197,94,0.6);}
+.mo-date-cta{padding:14px 18px 16px;border-top:1px solid rgba(255,255,255,0.05);text-align:center;}
+.mo-date-cta a{display:inline-flex;align-items:center;gap:8px;font-family:'DM Sans',sans-serif;font-size:0.85rem;font-weight:700;padding:11px 32px;border-radius:50px;background:linear-gradient(135deg,#f72585,#f76500);color:#fff;text-decoration:none;box-shadow:0 4px 18px rgba(247,37,133,0.35);transition:opacity .2s,transform .2s;}
+.mo-date-cta a:hover{opacity:.9;transform:translateY(-2px);}
+.mo-note{font-family:'DM Sans',sans-serif;font-size:0.62rem;color:rgba(255,255,255,0.2);text-align:center;margin-top:12px;}
+@media(max-width:560px){.mo-pill{width:56px;height:40px;font-size:0.8rem;}.mo-row{padding:10px 12px;}}
+</style>
+<script>
+function setChip(day){
+  ['thu','fri','sat','sun','mon','tue','wed'].forEach(function(d){
+    var el=document.getElementById('chip-'+d);
+    if(el){el.classList.toggle('active-chip',d===day);}
+  });
+  document.querySelectorAll('.mo-nav-chip .mo-nav-chip-dot').forEach(function(d){d.style.display='none';});
+  var dot=document.querySelector('#chip-'+day+' .mo-nav-chip-dot');
+  if(dot)dot.style.display='inline-block';
+}
+</script>
 
-  <div style="background:#111;border:1px solid rgba(255,255,255,0.07);border-radius:18px;overflow:hidden;">
-    <div style="padding:14px 16px;border-bottom:1px solid rgba(255,255,255,0.06);display:grid;grid-template-columns:36px 40px 1fr 120px 120px;gap:12px;">
-      <div style="font-family:'DM Sans',sans-serif;font-size:0.58rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.25);">#</div>
-      <div></div>
-      <div style="font-family:'DM Sans',sans-serif;font-size:0.58rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.25);">Nation</div>
-      <div style="font-family:'DM Sans',sans-serif;font-size:0.58rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.25);">Odds (US)</div>
-      <div style="font-family:'DM Sans',sans-serif;font-size:0.58rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.25);">Probability</div>
+<section class="mo-section" id="matches">
+  <div class="b-section-label">Opening Fixtures</div>
+  <h2 class="b-section-title">Group Stage Match Odds</h2>
+  <p class="b-section-sub">1X2 odds for the opening group stage fixtures. Click any price to bet.</p>
+  <div class="mo-panel">
+    <div class="mo-nav">
+      <a href="/world-cup/" class="mo-nav-logo">
+        <span style="font-size:1.15rem;line-height:1;">&#9917;</span><span class="mo-nav-logo-text">World Cup 2026 Odds</span>
+      </a>
+      <div class="mo-nav-info">
+        <a href="#mo-thu" class="mo-nav-chip active-chip" id="chip-thu" onclick="setChip('thu')"><span class="mo-nav-chip-dot"></span> Thu 11</a>
+        <a href="#mo-fri" class="mo-nav-chip" id="chip-fri" onclick="setChip('fri')">Fri 12</a>
+        <a href="#mo-sat" class="mo-nav-chip" id="chip-sat" onclick="setChip('sat')">Sat 13</a>
+        <a href="#mo-sun" class="mo-nav-chip" id="chip-sun" onclick="setChip('sun')">Sun 14</a>
+        <a href="#mo-mon" class="mo-nav-chip" id="chip-mon" onclick="setChip('mon')">Mon 15</a>
+        <a href="#mo-tue" class="mo-nav-chip" id="chip-tue" onclick="setChip('tue')">Tue 16</a>
+        <a href="#mo-wed" class="mo-nav-chip" id="chip-wed" onclick="setChip('wed')">Wed 17</a>
+      </div>
     </div>
 
-    <div class="b-odds-row">
-      <div class="b-odds-pos">1</div><div class="b-odds-flag">&#x1F1EB;&#x1F1F7;</div>
-      <div><div class="b-odds-nation">France</div><div style="font-family:'DM Sans',sans-serif;font-size:0.7rem;color:rgba(255,255,255,0.3);">Co-favourite &bull; Group I</div></div>
-      <div class="b-odds-price">+500</div>
-      <div class="b-odds-prob"><div class="b-odds-prob-bar"><div class="b-odds-prob-fill" style="width:17%"></div></div><div class="b-odds-prob-pct">17%</div></div>
-    </div>
-    <div class="b-odds-row">
-      <div class="b-odds-pos">1</div><div class="b-odds-flag">&#x1F1EA;&#x1F1F8;</div>
-      <div><div class="b-odds-nation">Spain</div><div style="font-family:'DM Sans',sans-serif;font-size:0.7rem;color:rgba(255,255,255,0.3);">Co-favourite &bull; Group H</div></div>
-      <div class="b-odds-price">+500</div>
-      <div class="b-odds-prob"><div class="b-odds-prob-bar"><div class="b-odds-prob-fill" style="width:17%"></div></div><div class="b-odds-prob-pct">17%</div></div>
-    </div>
-    <div class="b-odds-row">
-      <div class="b-odds-pos">3</div><div class="b-odds-flag">&#x1F3F4;&#xE0067;&#xE0062;&#xE0065;&#xE006E;&#xE0067;&#xE007F;</div>
-      <div><div class="b-odds-nation">England</div><div style="font-family:'DM Sans',sans-serif;font-size:0.7rem;color:rgba(255,255,255,0.3);">Third favourite &bull; Group L</div></div>
-      <div class="b-odds-price">+600</div>
-      <div class="b-odds-prob"><div class="b-odds-prob-bar"><div class="b-odds-prob-fill" style="width:14%"></div></div><div class="b-odds-prob-pct">14%</div></div>
-    </div>
-    <div class="b-odds-row">
-      <div class="b-odds-pos">4</div><div class="b-odds-flag">&#x1F1E7;&#x1F1F7;</div>
-      <div><div class="b-odds-nation">Brazil</div><div style="font-family:'DM Sans',sans-serif;font-size:0.7rem;color:rgba(255,255,255,0.3);">CONMEBOL power &bull; Group C (Death)</div></div>
-      <div class="b-odds-price">+700</div>
-      <div class="b-odds-prob"><div class="b-odds-prob-bar"><div class="b-odds-prob-fill" style="width:12%"></div></div><div class="b-odds-prob-pct">12%</div></div>
-    </div>
-    <div class="b-odds-row">
-      <div class="b-odds-pos">5</div><div class="b-odds-flag">&#x1F1E6;&#x1F1F7;</div>
-      <div><div class="b-odds-nation">Argentina</div><div style="font-family:'DM Sans',sans-serif;font-size:0.7rem;color:rgba(255,255,255,0.3);">Defending champions &bull; Group J</div></div>
-      <div class="b-odds-price">+900</div>
-      <div class="b-odds-prob"><div class="b-odds-prob-bar"><div class="b-odds-prob-fill" style="width:10%"></div></div><div class="b-odds-prob-pct">10%</div></div>
-    </div>
-    <div class="b-odds-row">
-      <div class="b-odds-pos">6</div><div class="b-odds-flag">&#x1F1E9;&#x1F1EA;</div>
-      <div><div class="b-odds-nation">Germany</div><div style="font-family:'DM Sans',sans-serif;font-size:0.7rem;color:rgba(255,255,255,0.3);">Resurgent &bull; Group E</div></div>
-      <div class="b-odds-price">+1000</div>
-      <div class="b-odds-prob"><div class="b-odds-prob-bar"><div class="b-odds-prob-fill" style="width:9%"></div></div><div class="b-odds-prob-pct">9%</div></div>
-    </div>
-    <div class="b-odds-row">
-      <div class="b-odds-pos">7</div><div class="b-odds-flag">&#x1F1F5;&#x1F1F9;</div>
-      <div><div class="b-odds-nation">Portugal</div><div style="font-family:'DM Sans',sans-serif;font-size:0.7rem;color:rgba(255,255,255,0.3);">Dark contender &bull; Group K</div></div>
-      <div class="b-odds-price">+1200</div>
-      <div class="b-odds-prob"><div class="b-odds-prob-bar"><div class="b-odds-prob-fill" style="width:7%"></div></div><div class="b-odds-prob-pct">7%</div></div>
-    </div>
-    <div class="b-odds-row">
-      <div class="b-odds-pos">8</div><div class="b-odds-flag">&#x1F1F3;&#x1F1F1;</div>
-      <div><div class="b-odds-nation">Netherlands</div><div style="font-family:'DM Sans',sans-serif;font-size:0.7rem;color:rgba(255,255,255,0.3);">Value pick &bull; Group F</div></div>
-      <div class="b-odds-price">+1400</div>
-      <div class="b-odds-prob"><div class="b-odds-prob-bar"><div class="b-odds-prob-fill" style="width:6%"></div></div><div class="b-odds-prob-pct">6%</div></div>
-    </div>
-    <div class="b-odds-row">
-      <div class="b-odds-pos">9</div><div class="b-odds-flag">&#x1F1E7;&#x1F1EA;</div>
-      <div><div class="b-odds-nation">Belgium</div><div style="font-family:'DM Sans',sans-serif;font-size:0.7rem;color:rgba(255,255,255,0.3);">Group G &bull; Last golden generation?</div></div>
-      <div class="b-odds-price">+1600</div>
-      <div class="b-odds-prob"><div class="b-odds-prob-bar"><div class="b-odds-prob-fill" style="width:6%"></div></div><div class="b-odds-prob-pct">6%</div></div>
-    </div>
-    <div class="b-odds-row">
-      <div class="b-odds-pos">10</div><div class="b-odds-flag">&#x1F1F2;&#x1F1E6;</div>
-      <div><div class="b-odds-nation">Morocco</div><div style="font-family:'DM Sans',sans-serif;font-size:0.7rem;color:rgba(255,255,255,0.3);">Group C &bull; 2022 semi-finalists</div></div>
-      <div class="b-odds-price">+2500</div>
-      <div class="b-odds-prob"><div class="b-odds-prob-bar"><div class="b-odds-prob-fill" style="width:4%"></div></div><div class="b-odds-prob-pct">4%</div></div>
-    </div>
-    <div class="b-odds-row">
-      <div class="b-odds-pos">11</div><div class="b-odds-flag">&#x1F1FA;&#x1F1F8;</div>
-      <div><div class="b-odds-nation">USA</div><div style="font-family:'DM Sans',sans-serif;font-size:0.7rem;color:rgba(255,255,255,0.3);">Host nation &bull; Group D</div></div>
-      <div class="b-odds-price">+3000</div>
-      <div class="b-odds-prob"><div class="b-odds-prob-bar"><div class="b-odds-prob-fill" style="width:3%"></div></div><div class="b-odds-prob-pct">3%</div></div>
-    </div>
-    <div class="b-odds-row">
-      <div class="b-odds-pos">12</div><div class="b-odds-flag">&#x1F1FA;&#x1F1FE;</div>
-      <div><div class="b-odds-nation">Uruguay</div><div style="font-family:'DM Sans',sans-serif;font-size:0.7rem;color:rgba(255,255,255,0.3);">Group H &bull; South American dark horse</div></div>
-      <div class="b-odds-price">+4000</div>
-      <div class="b-odds-prob"><div class="b-odds-prob-bar"><div class="b-odds-prob-fill" style="width:2%"></div></div><div class="b-odds-prob-pct">2%</div></div>
-    </div>
-  </div>
+    <!-- Group A -->
+    <div class="mo-date-strip" id="mo-thu"><span class="mo-date-label">Group A</span><div class="mo-col-hdrs"><span class="mo-col-hdr">1</span><span class="mo-col-hdr">X</span><span class="mo-col-hdr">2</span></div></div>
+    <a class="mo-row" href="https://t.mbjms.com/389314/3785/0?bo=2753,2754,2755,2756&po=6456&aff_sub5=SF_006OG000004lmDN" target="_blank" rel="noopener">
+      <div class="mo-row-left">
+        <div class="mo-row-team"><img src="https://flagcdn.com/w40/mx.png" class="mo-row-flag" alt="Mexico"/><span class="mo-row-name">Mexico</span></div>
+        <div class="mo-row-team"><img src="https://flagcdn.com/w40/za.png" class="mo-row-flag" alt="South Africa"/><span class="mo-row-name">South Africa</span></div>
+        <div class="mo-row-live-tag"><span class="mo-live-dot"></span> LIVE &nbsp;·&nbsp; 20:00</div>
+      </div>
+      <div class="mo-pills"><span class="mo-pill best">1.40</span><span class="mo-pill">4.00</span><span class="mo-pill">7.00</span></div>
+    </a>
+    <a class="mo-row" href="https://t.mbjms.com/389314/3785/0?bo=2753,2754,2755,2756&po=6456&aff_sub5=SF_006OG000004lmDN" target="_blank" rel="noopener">
+      <div class="mo-row-left">
+        <div class="mo-row-team"><img src="https://flagcdn.com/w40/kr.png" class="mo-row-flag" alt="South Korea"/><span class="mo-row-name">South Korea</span></div>
+        <div class="mo-row-team"><img src="https://flagcdn.com/w40/cz.png" class="mo-row-flag" alt="Czechia"/><span class="mo-row-name">Czechia</span></div>
+        <div class="mo-row-time">03:00</div>
+      </div>
+      <div class="mo-pills"><span class="mo-pill">2.60</span><span class="mo-pill best">2.90</span><span class="mo-pill">2.75</span></div>
+    </a>
+    <div class="mo-date-cta"><a href="https://t.mbjms.com/389314/3785/0?bo=2753,2754,2755,2756&po=6456&aff_sub5=SF_006OG000004lmDN" target="_blank" rel="noopener">Bet Now &#8594;</a></div>
 
-  <p style="font-family:'DM Sans',sans-serif;font-size:0.75rem;color:rgba(255,255,255,0.25);margin-top:16px;">Odds are approximate composite prices as of May 2026. Check your sportsbook for current prices before placing any bet.</p>
-</section>
-<hr class="b-divider"/>
+    <!-- Group B -->
+    <div class="mo-date-strip" id="mo-fri"><span class="mo-date-label">Group B</span><div class="mo-col-hdrs"><span class="mo-col-hdr">1</span><span class="mo-col-hdr">X</span><span class="mo-col-hdr">2</span></div></div>
+    <a class="mo-row" href="https://t.mbjms.com/389314/3785/0?bo=2753,2754,2755,2756&po=6456&aff_sub5=SF_006OG000004lmDN" target="_blank" rel="noopener">
+      <div class="mo-row-left">
+        <div class="mo-row-team"><img src="https://flagcdn.com/w40/ca.png" class="mo-row-flag" alt="Canada"/><span class="mo-row-name">Canada</span></div>
+        <div class="mo-row-team"><img src="https://flagcdn.com/w40/ba.png" class="mo-row-flag" alt="Bosnia and Herzegovina"/><span class="mo-row-name">Bosnia H.</span></div>
+        <div class="mo-row-time">15:00</div>
+      </div>
+      <div class="mo-pills"><span class="mo-pill best">1.80</span><span class="mo-pill">3.40</span><span class="mo-pill">4.00</span></div>
+    </a>
+    <a class="mo-row" href="https://t.mbjms.com/389314/3785/0?bo=2753,2754,2755,2756&po=6456&aff_sub5=SF_006OG000004lmDN" target="_blank" rel="noopener">
+      <div class="mo-row-left">
+        <div class="mo-row-team"><img src="https://flagcdn.com/w40/qa.png" class="mo-row-flag" alt="Qatar"/><span class="mo-row-name">Qatar</span></div>
+        <div class="mo-row-team"><img src="https://flagcdn.com/w40/ch.png" class="mo-row-flag" alt="Switzerland"/><span class="mo-row-name">Switzerland</span></div>
+        <div class="mo-row-time">15:00</div>
+      </div>
+      <div class="mo-pills"><span class="mo-pill">12.00</span><span class="mo-pill">5.50</span><span class="mo-pill best">1.22</span></div>
+    </a>
+    <div class="mo-date-cta"><a href="https://t.mbjms.com/389314/3785/0?bo=2753,2754,2755,2756&po=6456&aff_sub5=SF_006OG000004lmDN" target="_blank" rel="noopener">Bet Now &#8594;</a></div>
 
-<!-- ODDS EXPLAINED -->
-<section class="b-section" id="explain">
-  <div class="b-section-label">New to Betting?</div>
-  <h2 class="b-section-title">How to Read Odds</h2>
-  <p class="b-section-sub">American odds, decimal odds, implied probability — here's everything you need to understand the market in 60 seconds.</p>
+    <!-- Group C -->
+    <div class="mo-date-strip"><span class="mo-date-label">Group C</span><div class="mo-col-hdrs"><span class="mo-col-hdr">1</span><span class="mo-col-hdr">X</span><span class="mo-col-hdr">2</span></div></div>
+    <a class="mo-row" href="https://t.mbjms.com/389314/3785/0?bo=2753,2754,2755,2756&po=6456&aff_sub5=SF_006OG000004lmDN" target="_blank" rel="noopener">
+      <div class="mo-row-left">
+        <div class="mo-row-team"><img src="https://flagcdn.com/w40/br.png" class="mo-row-flag" alt="Brazil"/><span class="mo-row-name">Brazil</span></div>
+        <div class="mo-row-team"><img src="https://flagcdn.com/w40/ma.png" class="mo-row-flag" alt="Morocco"/><span class="mo-row-name">Morocco</span></div>
+        <div class="mo-row-time">18:00</div>
+      </div>
+      <div class="mo-pills"><span class="mo-pill best">1.60</span><span class="mo-pill">3.60</span><span class="mo-pill">5.50</span></div>
+    </a>
+    <a class="mo-row" href="https://t.mbjms.com/389314/3785/0?bo=2753,2754,2755,2756&po=6456&aff_sub5=SF_006OG000004lmDN" target="_blank" rel="noopener">
+      <div class="mo-row-left">
+        <div class="mo-row-team"><img src="https://flagcdn.com/w40/ht.png" class="mo-row-flag" alt="Haiti"/><span class="mo-row-name">Haiti</span></div>
+        <div class="mo-row-team"><img src="https://flagcdn.com/w40/gb-sct.png" class="mo-row-flag" alt="Scotland"/><span class="mo-row-name">Scotland</span></div>
+        <div class="mo-row-time">21:00</div>
+      </div>
+      <div class="mo-pills"><span class="mo-pill">6.50</span><span class="mo-pill">4.20</span><span class="mo-pill best">1.44</span></div>
+    </a>
+    <div class="mo-date-cta"><a href="https://t.mbjms.com/389314/3785/0?bo=2753,2754,2755,2756&po=6456&aff_sub5=SF_006OG000004lmDN" target="_blank" rel="noopener">Bet Now &#8594;</a></div>
 
-  <div class="b-explainer">
-    <div class="b-explainer-title">Odds 101</div>
-    <div class="b-explainer-grid">
-      <div class="b-explainer-col">
-        <div class="b-explainer-col-title">American Odds (+/-)</div>
-        <div class="b-explainer-col-body">Positive (+) odds show profit on a $100 bet. +500 means you win $500 profit on a $100 stake — total return $600. Negative (-) odds show how much you need to bet to win $100. -200 means bet $200 to profit $100.</div>
-        <div class="b-explainer-example">+500 → $100 bet wins $500</div>
+    <!-- Group D -->
+    <div class="mo-date-strip" id="mo-sat"><span class="mo-date-label">Group D</span><div class="mo-col-hdrs"><span class="mo-col-hdr">1</span><span class="mo-col-hdr">X</span><span class="mo-col-hdr">2</span></div></div>
+    <a class="mo-row" href="https://t.mbjms.com/389314/3785/0?bo=2753,2754,2755,2756&po=6456&aff_sub5=SF_006OG000004lmDN" target="_blank" rel="noopener">
+      <div class="mo-row-left">
+        <div class="mo-row-team"><img src="https://flagcdn.com/w40/us.png" class="mo-row-flag" alt="USA"/><span class="mo-row-name">USA</span></div>
+        <div class="mo-row-team"><img src="https://flagcdn.com/w40/py.png" class="mo-row-flag" alt="Paraguay"/><span class="mo-row-name">Paraguay</span></div>
+        <div class="mo-row-time">21:00</div>
       </div>
-      <div class="b-explainer-col">
-        <div class="b-explainer-col-title">Implied Probability</div>
-        <div class="b-explainer-col-body">Odds translate to a percentage chance. +500 = 16.7% implied probability. +1000 = 9.1%. The lower the odds, the higher the probability the bookmaker assigns. All probabilities in a market add up to over 100% — that's the bookmaker's margin.</div>
-        <div class="b-explainer-example">+500 = ~17% chance</div>
+      <div class="mo-pills"><span class="mo-pill best">1.95</span><span class="mo-pill">3.20</span><span class="mo-pill">3.75</span></div>
+    </a>
+    <a class="mo-row" href="https://t.mbjms.com/389314/3785/0?bo=2753,2754,2755,2756&po=6456&aff_sub5=SF_006OG000004lmDN" target="_blank" rel="noopener">
+      <div class="mo-row-left">
+        <div class="mo-row-team"><img src="https://flagcdn.com/w40/au.png" class="mo-row-flag" alt="Australia"/><span class="mo-row-name">Australia</span></div>
+        <div class="mo-row-team"><img src="https://flagcdn.com/w40/tr.png" class="mo-row-flag" alt="Turkey"/><span class="mo-row-name">Turkey</span></div>
+        <div class="mo-row-time">00:00</div>
       </div>
-      <div class="b-explainer-col">
-        <div class="b-explainer-col-title">Finding Value</div>
-        <div class="b-explainer-col-body">Value exists when you believe the true probability is higher than the implied probability. If you think Morocco have a 10% chance but the market prices them at 4% (+2500), that's value. Compare prices across sportsbooks — a 10% difference in odds compounds over time.</div>
-        <div class="b-explainer-example">Your 10% &gt; Market 4% = Value</div>
-      </div>
-    </div>
-  </div>
-</section>
-<hr class="b-divider"/>
+      <div class="mo-pills"><span class="mo-pill">4.40</span><span class="mo-pill">3.40</span><span class="mo-pill best">1.75</span></div>
+    </a>
+    <div class="mo-date-cta"><a href="https://t.mbjms.com/389314/3785/0?bo=2753,2754,2755,2756&po=6456&aff_sub5=SF_006OG000004lmDN" target="_blank" rel="noopener">Bet Now &#8594;</a></div>
 
-<!-- VALUE BETS -->
-<section class="b-section" id="value">
-  <div class="b-section-label">Sharp Picks</div>
-  <h2 class="b-section-title">Our Value Bets</h2>
-  <p class="b-section-sub">The favourites rarely offer value. Here are the three bets where we think the market is getting it wrong — and why.</p>
+    <!-- Group E -->
+    <div class="mo-date-strip"><span class="mo-date-label">Group E</span><div class="mo-col-hdrs"><span class="mo-col-hdr">1</span><span class="mo-col-hdr">X</span><span class="mo-col-hdr">2</span></div></div>
+    <a class="mo-row" href="https://t.mbjms.com/389314/3785/0?bo=2753,2754,2755,2756&po=6456&aff_sub5=SF_006OG000004lmDN" target="_blank" rel="noopener">
+      <div class="mo-row-left">
+        <div class="mo-row-team"><img src="https://flagcdn.com/w40/de.png" class="mo-row-flag" alt="Germany"/><span class="mo-row-name">Germany</span></div>
+        <div class="mo-row-team"><img src="https://flagcdn.com/w40/cw.png" class="mo-row-flag" alt="Curaçao"/><span class="mo-row-name">Curaçao</span></div>
+        <div class="mo-row-time">13:00</div>
+      </div>
+      <div class="mo-pills"><span class="mo-pill best">1.05</span><span class="mo-pill">13.00</span><span class="mo-pill">41.00</span></div>
+    </a>
+    <a class="mo-row" href="https://t.mbjms.com/389314/3785/0?bo=2753,2754,2755,2756&po=6456&aff_sub5=SF_006OG000004lmDN" target="_blank" rel="noopener">
+      <div class="mo-row-left">
+        <div class="mo-row-team"><img src="https://flagcdn.com/w40/ci.png" class="mo-row-flag" alt="Côte d'Ivoire"/><span class="mo-row-name">Côte d'Ivoire</span></div>
+        <div class="mo-row-team"><img src="https://flagcdn.com/w40/ec.png" class="mo-row-flag" alt="Ecuador"/><span class="mo-row-name">Ecuador</span></div>
+        <div class="mo-row-time">19:00</div>
+      </div>
+      <div class="mo-pills"><span class="mo-pill best">1.95</span><span class="mo-pill">3.20</span><span class="mo-pill">3.75</span></div>
+    </a>
+    <div class="mo-date-cta"><a href="https://t.mbjms.com/389314/3785/0?bo=2753,2754,2755,2756&po=6456&aff_sub5=SF_006OG000004lmDN" target="_blank" rel="noopener">Bet Now &#8594;</a></div>
 
-  <div class="b-value-grid">
-    <div class="b-value-card">
-      <div class="b-value-kicker">&#x1F525; Best Value Pick</div>
-      <div class="b-value-pick">&#x1F1F3;&#x1F1F1; Netherlands <span class="b-value-odds">+1400</span></div>
-      <div class="b-value-why">The Dutch are flying under the radar. Organised, hard to beat, tournament-tested. Van Dijk is the best defender in the world on his day. At +1400 they offer nearly twice the implied value of their real chances. Group F is winnable. If they peak in the knockouts, this is live money.</div>
-    </div>
-    <div class="b-value-card">
-      <div class="b-value-kicker">&#x26BD; Top Scorer Value</div>
-      <div class="b-value-pick">&#x1F1EA;&#x1F1F8; Yamal <span class="b-value-odds">+900</span></div>
-      <div class="b-value-why">If Spain go deep — and they should — Lamine Yamal will have 6–7 matches to accumulate goals and assists. At 18 he is already one of the best players in the world. He's been priced as a long shot behind Mbappé and Kane but the gap between them is smaller than the market suggests.</div>
-    </div>
-    <div class="b-value-card">
-      <div class="b-value-kicker">&#x1F0CF; Longshot Special</div>
-      <div class="b-value-pick">&#x1F1FA;&#x1F1F8; USA <span class="b-value-odds">+3000</span></div>
-      <div class="b-value-why">At +3000 this is a fun longshot, not a serious outright bet. But as a each-way play or to reach the quarter-final — which has a separate market — USA at home is genuinely dangerous. The crowd factor at AT&T and SoFi is real. This is the bet that buys you a good story regardless of outcome.</div>
-    </div>
-  </div>
-</section>
-<hr class="b-divider"/>
+    <!-- Group F -->
+    <div class="mo-date-strip" id="mo-sun"><span class="mo-date-label">Group F</span><div class="mo-col-hdrs"><span class="mo-col-hdr">1</span><span class="mo-col-hdr">X</span><span class="mo-col-hdr">2</span></div></div>
+    <a class="mo-row" href="https://t.mbjms.com/389314/3785/0?bo=2753,2754,2755,2756&po=6456&aff_sub5=SF_006OG000004lmDN" target="_blank" rel="noopener">
+      <div class="mo-row-left">
+        <div class="mo-row-team"><img src="https://flagcdn.com/w40/nl.png" class="mo-row-flag" alt="Netherlands"/><span class="mo-row-name">Netherlands</span></div>
+        <div class="mo-row-team"><img src="https://flagcdn.com/w40/jp.png" class="mo-row-flag" alt="Japan"/><span class="mo-row-name">Japan</span></div>
+        <div class="mo-row-time">16:00</div>
+      </div>
+      <div class="mo-pills"><span class="mo-pill best">1.90</span><span class="mo-pill">3.40</span><span class="mo-pill">3.60</span></div>
+    </a>
+    <a class="mo-row" href="https://t.mbjms.com/389314/3785/0?bo=2753,2754,2755,2756&po=6456&aff_sub5=SF_006OG000004lmDN" target="_blank" rel="noopener">
+      <div class="mo-row-left">
+        <div class="mo-row-team"><img src="https://flagcdn.com/w40/tn.png" class="mo-row-flag" alt="Tunisia"/><span class="mo-row-name">Tunisia</span></div>
+        <div class="mo-row-team"><img src="https://flagcdn.com/w40/se.png" class="mo-row-flag" alt="Sweden"/><span class="mo-row-name">Sweden</span></div>
+        <div class="mo-row-time">19:00</div>
+      </div>
+      <div class="mo-pills"><span class="mo-pill">3.80</span><span class="mo-pill">3.40</span><span class="mo-pill best">1.95</span></div>
+    </a>
+    <div class="mo-date-cta"><a href="https://t.mbjms.com/389314/3785/0?bo=2753,2754,2755,2756&po=6456&aff_sub5=SF_006OG000004lmDN" target="_blank" rel="noopener">Bet Now &#8594;</a></div>
 
-<!-- TOP SCORER ODDS -->
-<section class="b-section" id="scorer">
-  <div class="b-section-label">Golden Boot Market</div>
-  <h2 class="b-section-title">Top Scorer Odds</h2>
-  <p class="b-section-sub">Mbappé leads the market. But the Golden Boot has surprised us before — here's the full picture.</p>
+    <!-- Group G -->
+    <div class="mo-date-strip" id="mo-mon"><span class="mo-date-label">Group G</span><div class="mo-col-hdrs"><span class="mo-col-hdr">1</span><span class="mo-col-hdr">X</span><span class="mo-col-hdr">2</span></div></div>
+    <a class="mo-row" href="https://t.mbjms.com/389314/3785/0?bo=2753,2754,2755,2756&po=6456&aff_sub5=SF_006OG000004lmDN" target="_blank" rel="noopener">
+      <div class="mo-row-left">
+        <div class="mo-row-team"><img src="https://flagcdn.com/w40/be.png" class="mo-row-flag" alt="Belgium"/><span class="mo-row-name">Belgium</span></div>
+        <div class="mo-row-team"><img src="https://flagcdn.com/w40/eg.png" class="mo-row-flag" alt="Egypt"/><span class="mo-row-name">Egypt</span></div>
+        <div class="mo-row-time">21:00</div>
+      </div>
+      <div class="mo-pills"><span class="mo-pill best">1.35</span><span class="mo-pill">4.50</span><span class="mo-pill">7.50</span></div>
+    </a>
+    <a class="mo-row" href="https://t.mbjms.com/389314/3785/0?bo=2753,2754,2755,2756&po=6456&aff_sub5=SF_006OG000004lmDN" target="_blank" rel="noopener">
+      <div class="mo-row-left">
+        <div class="mo-row-team"><img src="https://flagcdn.com/w40/ir.png" class="mo-row-flag" alt="Iran"/><span class="mo-row-name">Iran</span></div>
+        <div class="mo-row-team"><img src="https://flagcdn.com/w40/nz.png" class="mo-row-flag" alt="New Zealand"/><span class="mo-row-name">New Zealand</span></div>
+        <div class="mo-row-time">18:00</div>
+      </div>
+      <div class="mo-pills"><span class="mo-pill best">2.20</span><span class="mo-pill">3.40</span><span class="mo-pill">3.00</span></div>
+    </a>
+    <div class="mo-date-cta"><a href="https://t.mbjms.com/389314/3785/0?bo=2753,2754,2755,2756&po=6456&aff_sub5=SF_006OG000004lmDN" target="_blank" rel="noopener">Bet Now &#8594;</a></div>
 
-  <div class="b-scorer-grid">
-    <div class="b-scorer-row">
-      <div class="b-scorer-rank">1</div>
-      <div>
-        <div class="b-scorer-name">&#x1F1EB;&#x1F1F7; Kylian Mbapp&#xe9;</div>
-        <div class="b-scorer-sub">France &bull; In his absolute prime at 27</div>
+    <!-- Group H -->
+    <div class="mo-date-strip" id="mo-tue"><span class="mo-date-label">Group H</span><div class="mo-col-hdrs"><span class="mo-col-hdr">1</span><span class="mo-col-hdr">X</span><span class="mo-col-hdr">2</span></div></div>
+    <a class="mo-row" href="https://t.mbjms.com/389314/3785/0?bo=2753,2754,2755,2756&po=6456&aff_sub5=SF_006OG000004lmDN" target="_blank" rel="noopener">
+      <div class="mo-row-left">
+        <div class="mo-row-team"><img src="https://flagcdn.com/w40/es.png" class="mo-row-flag" alt="Spain"/><span class="mo-row-name">Spain</span></div>
+        <div class="mo-row-team"><img src="https://flagcdn.com/w40/cv.png" class="mo-row-flag" alt="Cabo Verde"/><span class="mo-row-name">Cabo Verde</span></div>
+        <div class="mo-row-time">12:00</div>
       </div>
-      <div class="b-scorer-price">Fav</div>
-    </div>
-    <div class="b-scorer-row">
-      <div class="b-scorer-rank">2</div>
-      <div>
-        <div class="b-scorer-name">&#x1F3F4;&#xE0067;&#xE0062;&#xE0065;&#xE006E;&#xE0067;&#xE007F; Jude Bellingham</div>
-        <div class="b-scorer-sub">England &bull; Goals and assists from midfield</div>
+      <div class="mo-pills"><span class="mo-pill best">1.25</span><span class="mo-pill">5.50</span><span class="mo-pill">10.00</span></div>
+    </a>
+    <a class="mo-row" href="https://t.mbjms.com/389314/3785/0?bo=2753,2754,2755,2756&po=6456&aff_sub5=SF_006OG000004lmDN" target="_blank" rel="noopener">
+      <div class="mo-row-left">
+        <div class="mo-row-team"><img src="https://flagcdn.com/w40/sa.png" class="mo-row-flag" alt="Saudi Arabia"/><span class="mo-row-name">Saudi Arabia</span></div>
+        <div class="mo-row-team"><img src="https://flagcdn.com/w40/uy.png" class="mo-row-flag" alt="Uruguay"/><span class="mo-row-name">Uruguay</span></div>
+        <div class="mo-row-time">15:00</div>
       </div>
-      <div class="b-scorer-price">+600</div>
-    </div>
-    <div class="b-scorer-row">
-      <div class="b-scorer-rank">3</div>
-      <div>
-        <div class="b-scorer-name">&#x1F1E7;&#x1F1F7; Vinicius Jr</div>
-        <div class="b-scorer-sub">Brazil &bull; Electric winger, big game performer</div>
+      <div class="mo-pills"><span class="mo-pill">22.00</span><span class="mo-pill">7.00</span><span class="mo-pill best">1.08</span></div>
+    </a>
+    <div class="mo-date-cta"><a href="https://t.mbjms.com/389314/3785/0?bo=2753,2754,2755,2756&po=6456&aff_sub5=SF_006OG000004lmDN" target="_blank" rel="noopener">Bet Now &#8594;</a></div>
+
+    <!-- Group I -->
+    <div class="mo-date-strip" id="mo-wed"><span class="mo-date-label">Group I</span><div class="mo-col-hdrs"><span class="mo-col-hdr">1</span><span class="mo-col-hdr">X</span><span class="mo-col-hdr">2</span></div></div>
+    <a class="mo-row" href="https://t.mbjms.com/389314/3785/0?bo=2753,2754,2755,2756&po=6456&aff_sub5=SF_006OG000004lmDN" target="_blank" rel="noopener">
+      <div class="mo-row-left">
+        <div class="mo-row-team"><img src="https://flagcdn.com/w40/fr.png" class="mo-row-flag" alt="France"/><span class="mo-row-name">France</span></div>
+        <div class="mo-row-team"><img src="https://flagcdn.com/w40/sn.png" class="mo-row-flag" alt="Senegal"/><span class="mo-row-name">Senegal</span></div>
+        <div class="mo-row-time">15:00</div>
       </div>
-      <div class="b-scorer-price">+700</div>
-    </div>
-    <div class="b-scorer-row">
-      <div class="b-scorer-rank">4</div>
-      <div>
-        <div class="b-scorer-name">&#x1F3F4;&#xE0067;&#xE0062;&#xE0065;&#xE006E;&#xE0067;&#xE007F; Harry Kane</div>
-        <div class="b-scorer-sub">England &bull; Clinical finisher, penalty specialist</div>
+      <div class="mo-pills"><span class="mo-pill best">1.45</span><span class="mo-pill">4.00</span><span class="mo-pill">6.50</span></div>
+    </a>
+    <a class="mo-row" href="https://t.mbjms.com/389314/3785/0?bo=2753,2754,2755,2756&po=6456&aff_sub5=SF_006OG000004lmDN" target="_blank" rel="noopener">
+      <div class="mo-row-left">
+        <div class="mo-row-team"><img src="https://flagcdn.com/w40/no.png" class="mo-row-flag" alt="Norway"/><span class="mo-row-name">Norway</span></div>
+        <div class="mo-row-team"><img src="https://flagcdn.com/w40/iq.png" class="mo-row-flag" alt="Iraq"/><span class="mo-row-name">Iraq</span></div>
+        <div class="mo-row-time">18:00</div>
       </div>
-      <div class="b-scorer-price">+800</div>
-    </div>
-    <div class="b-scorer-row">
-      <div class="b-scorer-rank">5</div>
-      <div>
-        <div class="b-scorer-name">&#x1F1EA;&#x1F1F8; Lamine Yamal</div>
-        <div class="b-scorer-sub">Spain &bull; Best value in the market at +900</div>
+      <div class="mo-pills"><span class="mo-pill best">2.50</span><span class="mo-pill">3.20</span><span class="mo-pill">2.80</span></div>
+    </a>
+    <div class="mo-date-cta"><a href="https://t.mbjms.com/389314/3785/0?bo=2753,2754,2755,2756&po=6456&aff_sub5=SF_006OG000004lmDN" target="_blank" rel="noopener">Bet Now &#8594;</a></div>
+
+    <!-- Group J -->
+    <div class="mo-date-strip"><span class="mo-date-label">Group J</span><div class="mo-col-hdrs"><span class="mo-col-hdr">1</span><span class="mo-col-hdr">X</span><span class="mo-col-hdr">2</span></div></div>
+    <a class="mo-row" href="https://t.mbjms.com/389314/3785/0?bo=2753,2754,2755,2756&po=6456&aff_sub5=SF_006OG000004lmDN" target="_blank" rel="noopener">
+      <div class="mo-row-left">
+        <div class="mo-row-team"><img src="https://flagcdn.com/w40/ar.png" class="mo-row-flag" alt="Argentina"/><span class="mo-row-name">Argentina</span></div>
+        <div class="mo-row-team"><img src="https://flagcdn.com/w40/dz.png" class="mo-row-flag" alt="Algeria"/><span class="mo-row-name">Algeria</span></div>
+        <div class="mo-row-time">21:00</div>
       </div>
-      <div class="b-scorer-price">+900</div>
-    </div>
-    <div class="b-scorer-row">
-      <div class="b-scorer-rank">6</div>
-      <div>
-        <div class="b-scorer-name">&#x1F1F5;&#x1F1F9; Crist&#xed;ano Ronaldo</div>
-        <div class="b-scorer-sub">Portugal &bull; Last World Cup — could go on a run</div>
+      <div class="mo-pills"><span class="mo-pill best">1.28</span><span class="mo-pill">5.00</span><span class="mo-pill">8.50</span></div>
+    </a>
+    <a class="mo-row" href="https://t.mbjms.com/389314/3785/0?bo=2753,2754,2755,2756&po=6456&aff_sub5=SF_006OG000004lmDN" target="_blank" rel="noopener">
+      <div class="mo-row-left">
+        <div class="mo-row-team"><img src="https://flagcdn.com/w40/at.png" class="mo-row-flag" alt="Austria"/><span class="mo-row-name">Austria</span></div>
+        <div class="mo-row-team"><img src="https://flagcdn.com/w40/jo.png" class="mo-row-flag" alt="Jordan"/><span class="mo-row-name">Jordan</span></div>
+        <div class="mo-row-time">00:00</div>
       </div>
-      <div class="b-scorer-price">+1200</div>
-    </div>
-    <div class="b-scorer-row">
-      <div class="b-scorer-rank">7</div>
-      <div>
-        <div class="b-scorer-name">&#x1F1E6;&#x1F1F7; Lautaro Mart&#xed;nez</div>
-        <div class="b-scorer-sub">Argentina &bull; Serie A's deadliest striker</div>
+      <div class="mo-pills"><span class="mo-pill best">1.55</span><span class="mo-pill">3.75</span><span class="mo-pill">5.50</span></div>
+    </a>
+    <div class="mo-date-cta"><a href="https://t.mbjms.com/389314/3785/0?bo=2753,2754,2755,2756&po=6456&aff_sub5=SF_006OG000004lmDN" target="_blank" rel="noopener">Bet Now &#8594;</a></div>
+
+    <!-- Group K -->
+    <div class="mo-date-strip"><span class="mo-date-label">Group K</span><div class="mo-col-hdrs"><span class="mo-col-hdr">1</span><span class="mo-col-hdr">X</span><span class="mo-col-hdr">2</span></div></div>
+    <a class="mo-row" href="https://t.mbjms.com/389314/3785/0?bo=2753,2754,2755,2756&po=6456&aff_sub5=SF_006OG000004lmDN" target="_blank" rel="noopener">
+      <div class="mo-row-left">
+        <div class="mo-row-team"><img src="https://flagcdn.com/w40/pt.png" class="mo-row-flag" alt="Portugal"/><span class="mo-row-name">Portugal</span></div>
+        <div class="mo-row-team"><img src="https://flagcdn.com/w40/uz.png" class="mo-row-flag" alt="Uzbekistan"/><span class="mo-row-name">Uzbekistan</span></div>
+        <div class="mo-row-time">13:00</div>
       </div>
-      <div class="b-scorer-price">+1400</div>
-    </div>
+      <div class="mo-pills"><span class="mo-pill best">1.30</span><span class="mo-pill">4.75</span><span class="mo-pill">9.00</span></div>
+    </a>
+    <a class="mo-row" href="https://t.mbjms.com/389314/3785/0?bo=2753,2754,2755,2756&po=6456&aff_sub5=SF_006OG000004lmDN" target="_blank" rel="noopener">
+      <div class="mo-row-left">
+        <div class="mo-row-team"><img src="https://flagcdn.com/w40/co.png" class="mo-row-flag" alt="Colombia"/><span class="mo-row-name">Colombia</span></div>
+        <div class="mo-row-team"><img src="https://flagcdn.com/w40/cd.png" class="mo-row-flag" alt="Congo DR"/><span class="mo-row-name">Congo DR</span></div>
+        <div class="mo-row-time">22:00</div>
+      </div>
+      <div class="mo-pills"><span class="mo-pill best">1.50</span><span class="mo-pill">3.90</span><span class="mo-pill">5.75</span></div>
+    </a>
+    <div class="mo-date-cta"><a href="https://t.mbjms.com/389314/3785/0?bo=2753,2754,2755,2756&po=6456&aff_sub5=SF_006OG000004lmDN" target="_blank" rel="noopener">Bet Now &#8594;</a></div>
+
+    <!-- Group L -->
+    <div class="mo-date-strip"><span class="mo-date-label">Group L</span><div class="mo-col-hdrs"><span class="mo-col-hdr">1</span><span class="mo-col-hdr">X</span><span class="mo-col-hdr">2</span></div></div>
+    <a class="mo-row" href="https://t.mbjms.com/389314/3785/0?bo=2753,2754,2755,2756&po=6456&aff_sub5=SF_006OG000004lmDN" target="_blank" rel="noopener">
+      <div class="mo-row-left">
+        <div class="mo-row-team"><img src="https://flagcdn.com/w40/gb-eng.png" class="mo-row-flag" alt="England"/><span class="mo-row-name">England</span></div>
+        <div class="mo-row-team"><img src="https://flagcdn.com/w40/hr.png" class="mo-row-flag" alt="Croatia"/><span class="mo-row-name">Croatia</span></div>
+        <div class="mo-row-time">16:00</div>
+      </div>
+      <div class="mo-pills"><span class="mo-pill best">1.65</span><span class="mo-pill">3.50</span><span class="mo-pill">4.75</span></div>
+    </a>
+    <a class="mo-row" href="https://t.mbjms.com/389314/3785/0?bo=2753,2754,2755,2756&po=6456&aff_sub5=SF_006OG000004lmDN" target="_blank" rel="noopener">
+      <div class="mo-row-left">
+        <div class="mo-row-team"><img src="https://flagcdn.com/w40/gh.png" class="mo-row-flag" alt="Ghana"/><span class="mo-row-name">Ghana</span></div>
+        <div class="mo-row-team"><img src="https://flagcdn.com/w40/pa.png" class="mo-row-flag" alt="Panama"/><span class="mo-row-name">Panama</span></div>
+        <div class="mo-row-time">19:00</div>
+      </div>
+      <div class="mo-pills"><span class="mo-pill best">1.95</span><span class="mo-pill">3.20</span><span class="mo-pill">3.75</span></div>
+    </a>
+    <div class="mo-date-cta"><a href="https://t.mbjms.com/389314/3785/0?bo=2753,2754,2755,2756&po=6456&aff_sub5=SF_006OG000004lmDN" target="_blank" rel="noopener">Bet Now &#8594;</a></div>
+
+    <p class="mo-note">&#9888;&#xFE0F; Odds sourced from composite market data. Always verify current prices at your sportsbook before placing any bet. 18+ only. BeGambleAware.org</p>
   </div>
 </section>
 <hr class="b-divider"/>
@@ -437,41 +548,40 @@
 <section class="b-section" id="markets">
   <div class="b-section-label">More Markets</div>
   <h2 class="b-section-title">Other Bets to Consider</h2>
-  <p class="b-section-sub">Beyond the outright, the top scorer market offers some of the best value in tournament betting. These are the markets worth a look.</p>
-
+  <p class="b-section-sub">Beyond the match winner, these markets offer some of the best value in tournament betting.</p>
   <div class="b-markets-grid">
     <div class="b-market-card">
-      <span class="b-market-icon">&#x1F1E7;&#x1F1F7;</span>
+      <span class="b-market-icon"><img src="https://flagcdn.com/w80/br.png" alt="Brazil"/></span>
       <div class="b-market-title">Brazil to Win Group C</div>
       <div class="b-market-pick">Brazil are in the Group of Death alongside Morocco, Scotland and Haiti. They should top the group — but Morocco are dangerous. Brazil to win Group C is priced attractively given the slight doubt.</div>
       <div class="b-market-price">~-150</div>
     </div>
     <div class="b-market-card">
-      <span class="b-market-icon">&#x1F1FA;&#x1F1F8;</span>
+      <span class="b-market-icon"><img src="https://flagcdn.com/w80/us.png" alt="USA"/></span>
       <div class="b-market-title">USA to Reach Quarter-Finals</div>
       <div class="b-market-pick">Home advantage is massive. USA in Group D are favoured to advance. The quarter-final market (typically around +180 to +220) offers a clear route for backers willing to skip the outright.</div>
       <div class="b-market-price">+200 approx</div>
     </div>
     <div class="b-market-card">
-      <span class="b-market-icon">&#x1F1F2;&#x1F1E6;</span>
+      <span class="b-market-icon"><img src="https://flagcdn.com/w80/ma.png" alt="Morocco"/></span>
       <div class="b-market-title">Morocco to Reach Semi-Finals</div>
       <div class="b-market-pick">They did it in 2022. If they navigate Group C — and they can — Morocco's defensive organisation is capable of eliminating anyone in the knockouts. The semi-final market is where the real value sits.</div>
       <div class="b-market-price">+800 approx</div>
     </div>
     <div class="b-market-card">
-      <span class="b-market-icon">&#x1F1EB;&#x1F1F7;</span>
+      <span class="b-market-icon"><img src="https://flagcdn.com/w80/fr.png" alt="France"/></span>
       <div class="b-market-title">France / Spain Final</div>
       <div class="b-market-pick">Both co-favourites on opposite sides of the bracket. A France vs Spain final is arguably the most likely single outcome in the market. Find the correct score or first scorer markets inside this fixture if it lands.</div>
       <div class="b-market-price">Most likely final</div>
     </div>
     <div class="b-market-card">
-      <span class="b-market-icon">&#x1F1EC;&#x1F1E7;</span>
+      <span class="b-market-icon"><img src="https://flagcdn.com/w80/ar.png" alt="Argentina"/></span>
       <div class="b-market-title">CONMEBOL Winner</div>
       <div class="b-market-pick">If you believe in South American football but aren't sure which nation — a bet on CONMEBOL to provide the champion covers Argentina, Brazil, Uruguay and Colombia. Useful as a hedge against European dominance.</div>
       <div class="b-market-price">Regional market</div>
     </div>
     <div class="b-market-card">
-      <span class="b-market-icon">&#x1F1EF;&#x1F1F5;</span>
+      <span class="b-market-icon"><img src="https://flagcdn.com/w80/jp.png" alt="Japan"/></span>
       <div class="b-market-title">Japan to Cause a Shock</div>
       <div class="b-market-pick">Japan beat Germany and Spain in 2022 before exiting to Croatia. In 2026 they face Netherlands and Sweden in Group F. A first knockout stage win for Japan is priced at attractive odds given their 2022 form.</div>
       <div class="b-market-price">Speculative pick</div>
@@ -480,78 +590,38 @@
 </section>
 <hr class="b-divider"/>
 
-<!-- SPORTSBOOKS -->
-<section class="b-section" id="books">
-  <div class="b-section-label">Where to Bet</div>
-  <h2 class="b-section-title">Top Sportsbooks</h2>
-  <p class="b-section-sub">Compare prices across these platforms to find the best value. Odds vary significantly between books — shopping around is always worth it. 18+ only. Terms apply.</p>
-
-  <div class="b-books-grid">
-    <div class="b-book-card">
-      <div class="b-book-name">FanDuel</div>
-      <div class="b-book-desc">Deep World Cup markets with live betting and same-game parlays. Strong US coverage.</div>
-      <div class="b-book-region">&#x1F1FA;&#x1F1F8; United States</div>
-    </div>
-    <div class="b-book-card">
-      <div class="b-book-name">DraftKings</div>
-      <div class="b-book-desc">Competitive outright odds with a strong in-play product. Great app experience.</div>
-      <div class="b-book-region">&#x1F1FA;&#x1F1F8; United States</div>
-    </div>
-    <div class="b-book-card">
-      <div class="b-book-name">BetMGM</div>
-      <div class="b-book-desc">Early prices and boosted odds regularly. Consistent coverage of tournament futures.</div>
-      <div class="b-book-region">&#x1F1FA;&#x1F1F8; United States</div>
-    </div>
-    <div class="b-book-card">
-      <div class="b-book-name">bet365</div>
-      <div class="b-book-desc">World's largest sportsbook. Exceptional depth of World Cup markets, best live streaming.</div>
-      <div class="b-book-region">&#x1F1EC;&#x1F1E7; UK / International</div>
-    </div>
-    <div class="b-book-card">
-      <div class="b-book-name">Paddy Power</div>
-      <div class="b-book-desc">Fun markets and price boosts. Strong football coverage with regular enhanced odds.</div>
-      <div class="b-book-region">&#x1F1EC;&#x1F1E7; UK / Ireland</div>
-    </div>
-    <div class="b-book-card">
-      <div class="b-book-name">William Hill</div>
-      <div class="b-book-desc">Classic sportsbook with competitive outright prices and extensive tournament coverage.</div>
-      <div class="b-book-region">&#x1F1EC;&#x1F1E7; UK / International</div>
+<!-- HOW TO BET -->
+<section class="b-section" id="explain">
+  <div class="b-section-label">First Time?</div>
+  <h2 class="b-section-title">How to Place a Bet</h2>
+  <p class="b-section-sub">Placing your first World Cup bet takes less than 5 minutes. Here's exactly how it works.</p>
+  <div class="b-explainer">
+    <div class="b-explainer-title">3 Simple Steps</div>
+    <div class="b-explainer-grid">
+      <div class="b-explainer-col">
+        <div class="b-explainer-col-title">Step 1 — Pick Your Sportsbook</div>
+        <div class="b-explainer-col-body">Sign up with a licensed sportsbook — FanDuel, DraftKings or bet365 are good starting points. Most offer a welcome bonus for new players. Deposit takes 2 minutes via card or PayPal. Make sure betting is legal in your state or country first.</div>
+        <div class="b-explainer-example">Sign up → Deposit → Done</div>
+      </div>
+      <div class="b-explainer-col">
+        <div class="b-explainer-col-title">Step 2 — Choose Your Match</div>
+        <div class="b-explainer-col-body">Find the World Cup section, pick a match and select a market. Match Winner (1X2) is the simplest — you back Home Win, Draw or Away Win. Click the odds button you want and it gets added to your bet slip automatically.</div>
+        <div class="b-explainer-example">Click odds → Added to bet slip</div>
+      </div>
+      <div class="b-explainer-col">
+        <div class="b-explainer-col-title">Step 3 — Set Your Stake</div>
+        <div class="b-explainer-col-body">Enter how much you want to bet in the bet slip. You'll see your potential return calculated instantly. Review it, then hit Place Bet. Winnings are paid to your account as soon as the match ends. Always set a budget before you start.</div>
+        <div class="b-explainer-example">Enter stake → Place Bet → Collect</div>
+      </div>
     </div>
   </div>
-  <p style="font-family:'DM Sans',sans-serif;font-size:0.75rem;color:rgba(255,255,255,0.22);margin-top:20px;">Always check that online betting is legal in your jurisdiction before signing up. Gambling laws vary by country and state.</p>
 </section>
 <hr class="b-divider"/>
 
-<!-- FAN SECTION -->
-<section class="b-fan-section">
-  <div class="b-fan-inner">
-    <div class="b-section-label">Go Deeper</div>
-    <h2 class="b-section-title">More Than Just Odds</h2>
-    <p class="b-section-sub">The best bets are backed by research. Use these to sharpen your picks before you stake.</p>
-    <div class="b-fan-grid">
-      <a href="/world-cup/predictions/" class="b-fan-card">
-        <span class="b-fan-icon">&#x1F3AF;</span>
-        <div class="b-fan-card-title">Our Predictions</div>
-        <div class="b-fan-card-desc">France to win it all. Top scorer, group picks, dark horses and the upsets we're calling — free expert analysis to inform your bets.</div>
-      </a>
-      <a href="/world-cup/groups/" class="b-fan-card">
-        <span class="b-fan-icon">&#x1F4CB;</span>
-        <div class="b-fan-card-title">Group Draw Analysis</div>
-        <div class="b-fan-card-desc">Who advances? Group of Death breakdown and our prediction for every group winner. Essential reading before backing any outright.</div>
-      </a>
-      <a href="/world-cup/ai-football-girlfriend/" class="b-fan-card">
-        <span class="b-fan-icon">&#x1F916;</span>
-        <div class="b-fan-card-title">Talk Tactics With Your AI GF</div>
-        <div class="b-fan-card-desc">Debate your bets, get a second opinion on your parlay, and celebrate the wins together. Your AI football companion knows the game.</div>
-      </a>
-      <a href="/world-cup/schedule/" class="b-fan-card">
-        <span class="b-fan-icon">&#x1F4C5;</span>
-        <div class="b-fan-card-title">Full Match Schedule</div>
-        <div class="b-fan-card-desc">Every match date, kickoff time and venue. Know when your team plays so you can time your in-play bets perfectly.</div>
-      </a>
-    </div>
-  </div>
-</section>
+<!-- REMOVED: Outright Winner, Value Bets, Top Scorer, Sportsbooks, Fan sections as requested -->
+<!-- FAQ anchor -->
+<div id="faq"></div>
+
 
 <!-- FAQ -->
 <section class="b-faq-section">
@@ -589,9 +659,9 @@
 <section class="b-final-cta">
   <div class="b-final-cta-glow"></div>
   <div class="b-final-cta-inner">
-    <h2 class="b-final-cta-title">Know the Odds.<br/><span>Back Your Pick.</span></h2>
+    <h2 class="b-final-cta-title" style="white-space:nowrap;">Know the Odds. <span>Back Your Pick.</span></h2>
     <p class="b-final-cta-sub">Read the predictions. Check the groups. Then find the fans who'll be watching every match with you.</p>
-    <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+    <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:8px;">
       <a href="/world-cup/predictions/" class="b-btn-primary">&#x1F3AF; Read Our Predictions</a>
       <a href="/world-cup/" class="b-btn-ghost">&#x1F3E0; Back to Hub</a>
     </div>
@@ -660,6 +730,10 @@
 })();
 </script>
 </footer>
+
+<div class="b-disclaimer">
+  <div class="b-disclaimer-text">&#x26A0;&#xFE0F; 18+ only. Gambling should be fun — never bet more than you can afford to lose. Odds shown are approximate and change frequently. Please check your chosen sportsbook for current prices. BeGambleAware.org &bull; GamCare.org.uk &bull; 1-800-GAMBLER (US)</div>
+</div>
 
 </body>
 </html>

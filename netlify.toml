@@ -313,6 +313,31 @@
   status = 301
   force  = true
 
+# ── Duplicate page redirects ─────────────────────────────────
+[[redirects]]
+  from   = "/world-cup/final/"
+  to     = "/world-cup/the-final/"
+  status = 301
+  force  = true
+
+[[redirects]]
+  from   = "/world-cup/records/"
+  to     = "/world-cup/records-stats/"
+  status = 301
+  force  = true
+
+[[redirects]]
+  from   = "/world-cup/live-kickoff/"
+  to     = "/world-cup/live-scores/"
+  status = 301
+  force  = true
+
+[[redirects]]
+  from   = "/world-cup/betting/"
+  to     = "/world-cup/betting-odds/"
+  status = 301
+  force  = true
+
 # ── Security headers on every page ───────────────────────────
 [[headers]]
   for = "/*"
