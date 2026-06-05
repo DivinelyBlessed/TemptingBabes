@@ -21,9 +21,11 @@ function vi(offset) {
 
 function makeEmbed(videoId) {
   const iframe = document.createElement('iframe');
-  iframe.src = `https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&mute=1&loop=1&playlist=${videoId}&controls=0&rel=0&playsinline=1&modestbranding=1&showinfo=0&iv_load_policy=3&fs=0`;
+  iframe.src = `https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&mute=1&loop=1&playlist=${videoId}&controls=0&rel=0&playsinline=1&modestbranding=1&showinfo=0&iv_load_policy=3&fs=0&enablejsapi=1`;
   iframe.setAttribute('allow', 'autoplay; encrypted-media');
   iframe.setAttribute('frameborder', '0');
+  iframe.setAttribute('disablepictureinpicture', '');
+  iframe.setAttribute('disableremoteplayback', '');
   iframe.title = 'Video preview';
   iframe.style.opacity   = '0';
   iframe.style.transition = 'opacity 0.5s ease';
@@ -50,16 +52,36 @@ function vipOverlay() {
   return ov;
 }
 
+const PLAY_ICON  = '<svg width="26" height="26" viewBox="0 0 24 24" fill="white"><polygon points="6,3 20,12 6,21"/></svg>';
+const PAUSE_ICON = '<svg width="26" height="26" viewBox="0 0 24 24" fill="white"><rect x="5" y="3" width="4" height="18"/><rect x="15" y="3" width="4" height="18"/></svg>';
+
 function makePlayBtn(slot) {
   const btn = document.createElement('div');
   btn.className = 'slot-center-play-btn';
-  btn.innerHTML = '<svg width="26" height="26" viewBox="0 0 24 24" fill="white"><polygon points="6,3 20,12 6,21"/></svg>';
+  btn.innerHTML = PLAY_ICON;
+  let playing = false;
+
   btn.addEventListener('click', () => {
     const thumb  = slot.querySelector('img');
     const iframe = slot.querySelector('iframe');
-    btn.remove();
-    if (thumb)  { thumb.style.opacity  = '0'; }
-    if (iframe) { iframe.style.opacity = '1'; }
+
+    if (!playing) {
+      // First click: reveal video, switch to pause icon
+      if (thumb)  thumb.style.opacity  = '0';
+      if (iframe) {
+        iframe.style.opacity = '1';
+        iframe.contentWindow.postMessage('{"event":"command","func":"playVideo","args":""}', '*');
+      }
+      btn.innerHTML = PAUSE_ICON;
+      playing = true;
+    } else {
+      // Subsequent clicks: toggle pause/play
+      if (iframe) {
+        iframe.contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
+        btn.innerHTML = PLAY_ICON;
+      }
+      playing = false;
+    }
   });
   return btn;
 }
@@ -846,6 +868,16 @@ function initHeroWord() {
   }
 
   setTimeout(cycle, HOLDS[0]);
+}
+
+// Suppress Chrome media session skip controls
+if ('mediaSession' in navigator) {
+  navigator.mediaSession.metadata = null;
+  try { navigator.mediaSession.setActionHandler('previoustrack', () => {}); } catch(e){}
+  try { navigator.mediaSession.setActionHandler('nexttrack', () => {}); } catch(e){}
+  try { navigator.mediaSession.setActionHandler('seekbackward', () => {}); } catch(e){}
+  try { navigator.mediaSession.setActionHandler('seekforward', () => {}); } catch(e){}
+  try { navigator.mediaSession.setActionHandler('skipad', () => {}); } catch(e){}
 }
 
 document.addEventListener('DOMContentLoaded', () => {
