@@ -34,6 +34,9 @@ function makeThumb(videoId) {
   const img = document.createElement('img');
   img.src = `https://i.ytimg.com/vi/${videoId}/maxresdefault.jpg`;
   img.alt = '';
+  img.loading = 'eager';
+  img.fetchPriority = 'high';
+  img.decoding = 'sync';
   return img;
 }
 
@@ -128,6 +131,7 @@ function initCarousel() {
   if (!stage) return;
   stage.innerHTML = '';
   stage.classList.add('carousel-loading');
+  stage.style.opacity = '0';
 
   const left   = makeSlot(VIDEOS[vi(-1)], 'pos-left',  false);
   const center = makeSlot(VIDEOS[vi(0)],  'pos-center', true);
@@ -141,6 +145,8 @@ function initCarousel() {
   requestAnimationFrame(() => {
     requestAnimationFrame(() => {
       stage.classList.remove('carousel-loading');
+      stage.style.transition = 'opacity 0.3s ease';
+      stage.style.opacity = '1';
     });
   });
 

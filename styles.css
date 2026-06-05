@@ -530,6 +530,7 @@ nav {
   top: 50%;
   border-radius: 18px;
   overflow: hidden;
+  background: #1a1a1a;
   transition: left 0.72s cubic-bezier(0.4,0,0.2,1),
               width 0.72s cubic-bezier(0.4,0,0.2,1),
               height 0.72s cubic-bezier(0.4,0,0.2,1),
