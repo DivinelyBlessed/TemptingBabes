@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
   <!-- ── Core pages ───────────────────────────────────────── -->
@@ -37,7 +37,7 @@
   <!-- ── World Cup — Fixtures & Live ── -->
   <url><loc>https://www.temptingbabes.com/world-cup/schedule/</loc><lastmod>2026-05-27</lastmod><changefreq>daily</changefreq><priority>0.9</priority></url>
   <url><loc>https://www.temptingbabes.com/world-cup/all-fixtures/</loc><lastmod>2026-05-27</lastmod><changefreq>daily</changefreq><priority>0.9</priority></url>
-  <url><loc>https://www.temptingbabes.com/world-cup/live-scores/</loc><lastmod>2026-05-27</lastmod><changefreq>daily</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.temptingbabes.com/world-cup/live-scores/</loc><lastmod>2026-06-05</lastmod><changefreq>daily</changefreq><priority>0.9</priority></url>
   <url><loc>https://www.temptingbabes.com/world-cup/live-kickoff/</loc><lastmod>2026-05-27</lastmod><changefreq>daily</changefreq><priority>0.9</priority></url>
   <url><loc>https://www.temptingbabes.com/world-cup/knockout-bracket/</loc><lastmod>2026-05-27</lastmod><changefreq>daily</changefreq><priority>0.9</priority></url>
   <url><loc>https://www.temptingbabes.com/world-cup/goals/</loc><lastmod>2026-05-27</lastmod><changefreq>daily</changefreq><priority>0.8</priority></url>
@@ -47,7 +47,7 @@
 
   <!-- ── World Cup — Money pages ── -->
   <url><loc>https://www.temptingbabes.com/world-cup/tickets/</loc><lastmod>2026-05-27</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://www.temptingbabes.com/world-cup/betting-odds/</loc><lastmod>2026-05-27</lastmod><changefreq>daily</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.temptingbabes.com/world-cup/betting-odds/</loc><lastmod>2026-06-05</lastmod><changefreq>daily</changefreq><priority>0.9</priority></url>
   <url><loc>https://www.temptingbabes.com/world-cup/streaming-guide/</loc><lastmod>2026-05-27</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
   <url><loc>https://www.temptingbabes.com/world-cup/where-to-watch/</loc><lastmod>2026-05-27</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
   <url><loc>https://www.temptingbabes.com/world-cup/free-streams/</loc><lastmod>2026-05-27</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
@@ -57,7 +57,7 @@
   <url><loc>https://www.temptingbabes.com/world-cup/transportation/</loc><lastmod>2026-05-27</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
 
   <!-- ── World Cup — Groups & Teams ───────────────────────── -->
-  <url><loc>https://www.temptingbabes.com/world-cup/groups/</loc><lastmod>2026-05-27</lastmod><changefreq>daily</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.temptingbabes.com/world-cup/groups/</loc><lastmod>2026-06-05</lastmod><changefreq>daily</changefreq><priority>0.9</priority></url>
   <url><loc>https://www.temptingbabes.com/world-cup/groups/group-a/</loc><lastmod>2026-05-27</lastmod><changefreq>daily</changefreq><priority>0.8</priority></url>
   <url><loc>https://www.temptingbabes.com/world-cup/groups/group-b/</loc><lastmod>2026-05-27</lastmod><changefreq>daily</changefreq><priority>0.8</priority></url>
   <url><loc>https://www.temptingbabes.com/world-cup/groups/group-c/</loc><lastmod>2026-05-27</lastmod><changefreq>daily</changefreq><priority>0.8</priority></url>
@@ -86,9 +86,9 @@
   <url><loc>https://www.temptingbabes.com/world-cup/predictions/spain-vs-germany/</loc><lastmod>2026-05-28</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
 
   <url><loc>https://www.temptingbabes.com/world-cup/the-final/</loc><lastmod>2026-05-27</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.temptingbabes.com/world-cup/opening-ceremony/</loc><lastmod>2026-05-27</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.temptingbabes.com/world-cup/opening-ceremony/</loc><lastmod>2026-06-05</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
   <url><loc>https://www.temptingbabes.com/world-cup/host-cities/</loc><lastmod>2026-05-27</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.temptingbabes.com/world-cup/stadiums/</loc><lastmod>2026-05-27</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.temptingbabes.com/world-cup/stadiums/</loc><lastmod>2026-06-05</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://www.temptingbabes.com/world-cup/history/</loc><lastmod>2026-05-27</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://www.temptingbabes.com/world-cup/records-stats/</loc><lastmod>2026-05-27</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://www.temptingbabes.com/world-cup/fantasy-football/</loc><lastmod>2026-05-27</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
@@ -223,8 +223,8 @@
   <url><loc>https://www.temptingbabes.com/world-cup/photobook/</loc><lastmod>2026-06-01</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
   <url><loc>https://www.temptingbabes.com/world-cup/merchandise/</loc><lastmod>2026-06-01</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://www.temptingbabes.com/world-cup/songs/</loc><lastmod>2026-06-01</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.temptingbabes.com/world-cup/betting-odds/</loc><lastmod>2026-06-01</lastmod><changefreq>daily</changefreq><priority>0.9</priority></url>
-  <url><loc>https://www.temptingbabes.com/world-cup/live-scores/</loc><lastmod>2026-06-01</lastmod><changefreq>daily</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.temptingbabes.com/world-cup/betting-odds/</loc><lastmod>2026-06-05</lastmod><changefreq>daily</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.temptingbabes.com/world-cup/live-scores/</loc><lastmod>2026-06-05</lastmod><changefreq>daily</changefreq><priority>0.9</priority></url>
   <url><loc>https://www.temptingbabes.com/world-cup/streaming-guide/</loc><lastmod>2026-06-01</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://www.temptingbabes.com/world-cup/watch-parties/</loc><lastmod>2026-06-01</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
   <url><loc>https://www.temptingbabes.com/world-cup/vip/</loc><lastmod>2026-06-01</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
@@ -247,4 +247,42 @@
   <url><loc>https://www.temptingbabes.com/world-cup/travel/</loc><lastmod>2026-06-01</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
   <url><loc>https://www.temptingbabes.com/world-cup/party/</loc><lastmod>2026-06-01</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
   <url><loc>https://www.temptingbabes.com/world-cup/meetup/</loc><lastmod>2026-06-01</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+
+  <!-- ++ Added / updated 2026-06-05 ++++++++++++++++++++++++++ -->
+  <url><loc>https://www.temptingbabes.com/dating/belinda/</loc><lastmod>2026-06-05</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
+
+  <!-- World Cup pages previously missing -->
+  <url><loc>https://www.temptingbabes.com/world-cup/final-predictions/</loc><lastmod>2026-06-05</lastmod><changefreq>daily</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.temptingbabes.com/world-cup/stadiums/estadio-azteca/opening-ceremony.html</loc><lastmod>2026-06-05</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.temptingbabes.com/world-cup/game-of-the-day/</loc><lastmod>2026-06-05</lastmod><changefreq>daily</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.temptingbabes.com/world-cup/fan-zone-babes/</loc><lastmod>2026-06-05</lastmod><changefreq>daily</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.temptingbabes.com/world-cup/upcoming-matches/</loc><lastmod>2026-06-05</lastmod><changefreq>daily</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.temptingbabes.com/world-cup/match-predictions/</loc><lastmod>2026-06-05</lastmod><changefreq>daily</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.temptingbabes.com/world-cup/matches/</loc><lastmod>2026-06-05</lastmod><changefreq>daily</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.temptingbabes.com/world-cup/fixtures/</loc><lastmod>2026-06-05</lastmod><changefreq>daily</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.temptingbabes.com/world-cup/match-countdowns/</loc><lastmod>2026-06-05</lastmod><changefreq>daily</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.temptingbabes.com/world-cup/live-match-chat/</loc><lastmod>2026-06-05</lastmod><changefreq>daily</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.temptingbabes.com/world-cup/star-players/</loc><lastmod>2026-06-05</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.temptingbabes.com/world-cup/players/</loc><lastmod>2026-06-05</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.temptingbabes.com/world-cup/team-preview/</loc><lastmod>2026-06-05</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.temptingbabes.com/world-cup/team-tactical-analysis/</loc><lastmod>2026-06-05</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.temptingbabes.com/world-cup/support-your-team/</loc><lastmod>2026-06-05</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.temptingbabes.com/world-cup/fan-guide/</loc><lastmod>2026-06-05</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.temptingbabes.com/world-cup/fan-voting/</loc><lastmod>2026-06-05</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.temptingbabes.com/world-cup/fantasy/</loc><lastmod>2026-06-05</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.temptingbabes.com/world-cup/dating-profile/</loc><lastmod>2026-06-05</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.temptingbabes.com/world-cup/vip-fan-zone/</loc><lastmod>2026-06-05</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.temptingbabes.com/world-cup/final-highlights/</loc><lastmod>2026-06-05</lastmod><changefreq>daily</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.temptingbabes.com/world-cup/final-reactions/</loc><lastmod>2026-06-05</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.temptingbabes.com/world-cup/final-watch-party/</loc><lastmod>2026-06-05</lastmod><changefreq>daily</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.temptingbabes.com/world-cup/viral-reactions/</loc><lastmod>2026-06-05</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.temptingbabes.com/world-cup/football-matches/</loc><lastmod>2026-06-05</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.temptingbabes.com/world-cup/soccer-matches/</loc><lastmod>2026-06-05</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.temptingbabes.com/world-cup/records/</loc><lastmod>2026-06-05</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.temptingbabes.com/world-cup/quiz/</loc><lastmod>2026-06-05</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.temptingbabes.com/world-cup/streaming/</loc><lastmod>2026-06-05</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.temptingbabes.com/world-cup/betting/</loc><lastmod>2026-06-05</lastmod><changefreq>daily</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.temptingbabes.com/world-cup/offers/</loc><lastmod>2026-06-05</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.temptingbabes.com/world-cup/world-cup-shorts/</loc><lastmod>2026-06-05</lastmod><changefreq>daily</changefreq><priority>0.6</priority></url>
+
 </urlset>
