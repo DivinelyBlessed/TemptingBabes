@@ -518,6 +518,8 @@ nav {
   position: relative;
   height: 480px;
   width: 100%;
+  background: #0d0d0d;
+  overflow: hidden;
 }
 
 /* ── VIDEO SLOTS ── */
@@ -591,7 +593,7 @@ nav {
 /* Left visible slot */
 .pos-left {
   left: 0;
-  width: 30%;
+  width: 28%;
   height: 93%;
   transform: translateY(-50%) scale(0.93);
   opacity: 0.72;
@@ -603,8 +605,8 @@ nav {
 
 /* Center featured slot */
 .pos-center {
-  left: 32%;
-  width: 36%;
+  left: 30%;
+  width: 40%;
   height: 100%;
   transform: translateY(-50%) scale(1);
   opacity: 1;
@@ -616,8 +618,8 @@ nav {
 
 /* Right visible slot */
 .pos-right {
-  left: 70%;
-  width: 30%;
+  left: 72%;
+  width: 28%;
   height: 93%;
   transform: translateY(-50%) scale(0.93);
   opacity: 0.72;
@@ -629,7 +631,7 @@ nav {
 
 /* Exiting off-screen right */
 .pos-exit-right {
-  left: 102%;
+  left: 100%;
   width: 30%;
   height: 93%;
   transform: translateY(-50%) scale(0.86);
