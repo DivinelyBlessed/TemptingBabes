@@ -70,7 +70,7 @@
 .wc-hero-badge { display:inline-flex; align-items:center; gap:8px; font-family:'DM Sans',sans-serif; font-size:0.72rem; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:var(--wc-orange); border:1px solid rgba(255,140,0,0.35); padding:6px 18px; border-radius:50px; margin-bottom:24px; background:rgba(255,140,0,0.06); }
 .wc-hero-title { font-family:'Bebas Neue',sans-serif; font-size:clamp(3rem,9vw,6.5rem); line-height:0.95; letter-spacing:1px; color:#fff; margin-bottom:20px; }
 .wc-hero-title span { background:var(--wc-grad); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
-.wc-hero-sub { font-family:'DM Sans',sans-serif; font-size:clamp(0.95rem,2vw,1.1rem); color:rgba(255,255,255,0.6); max-width:600px; margin:0 auto 36px; line-height:1.65; }
+.wc-hero-sub { font-family:'DM Sans',sans-serif; font-size:clamp(0.95rem,2vw,1.1rem); color:rgba(255,255,255,0.8); max-width:600px; margin:0 auto 36px; line-height:1.65; }
 .wc-hero-ctas { display:flex; gap:14px; justify-content:center; flex-wrap:wrap; margin-bottom:52px; }
 .wc-btn-primary { display:inline-flex; align-items:center; gap:8px; font-family:'DM Sans',sans-serif; font-size:0.92rem; font-weight:700; padding:14px 32px; border-radius:50px; background:var(--wc-grad); color:#fff; text-decoration:none; box-shadow:0 8px 30px rgba(255,140,0,0.35); transition:opacity .2s,transform .2s; }
 .wc-btn-primary:hover { opacity:.9; transform:translateY(-2px); }
@@ -89,19 +89,19 @@
 .wc-section { padding:72px 32px; max-width:1400px; margin:0 auto; width:100%; box-sizing:border-box; }
 .wc-section-label { font-family:'DM Sans',sans-serif; font-size:0.7rem; font-weight:700; letter-spacing:2.5px; text-transform:uppercase; color:var(--wc-orange); margin-bottom:10px; text-align:center; text-align:center;display:block;}
 .wc-section-title { font-family:'Bebas Neue',sans-serif; font-size:clamp(2rem,5vw,3.2rem); letter-spacing:.5px; line-height:1; margin-bottom:12px; text-align:center; background:linear-gradient(90deg,#ff2d78 0%,#ff6348 55%,#ff8c00 100%); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
-.wc-section-sub { font-family:'DM Sans',sans-serif; font-size:0.92rem; color:rgba(255,255,255,0.5); margin-bottom:44px; max-width:540px; line-height:1.65; text-align:center; margin-left:auto; margin-right:auto; text-align:center;margin-left:auto;margin-right:auto;}
+.wc-section-sub { font-family:'DM Sans',sans-serif; font-size:0.92rem; color:rgba(255,255,255,0.8); margin-bottom:44px; max-width:540px; line-height:1.65; text-align:center; margin-left:auto; margin-right:auto; text-align:center;margin-left:auto;margin-right:auto;}
 .wc-divider { border:none; border-top:1px solid rgba(255,255,255,0.06); margin:0; }
 
 /* QUICK NAV */
 .wc-quicknav { padding:52px 32px; background:rgba(255,255,255,0.015); border-bottom:1px solid rgba(255,255,255,0.06); }
 .wc-quicknav-inner { max-width:1400px; margin:0 auto; width:100%; }
-.wc-quicknav-heading { font-family:'Bebas Neue',sans-serif; font-size:1.4rem; color:rgba(255,255,255,0.28); letter-spacing:2px; text-align:center; margin-bottom:32px; }
+.wc-quicknav-heading { font-family:'Bebas Neue',sans-serif; font-size:1.4rem; letter-spacing:2px; text-align:center; margin-bottom:32px; background:linear-gradient(90deg,#ff2d78 0%,#ff6348 55%,#ff8c00 100%); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
 .wc-nav-categories { display:grid; grid-template-columns:repeat(auto-fit,minmax(190px,1fr)); gap:20px; }
-.wc-nav-cat { background:#111; border:1px solid rgba(255,255,255,0.07); border-radius:14px; padding:20px; }
-.wc-nav-cat-title { font-family:'DM Sans',sans-serif; font-size:0.62rem; font-weight:700; letter-spacing:2px; text-transform:uppercase; margin-bottom:14px; padding-bottom:10px; border-bottom:1px solid rgba(255,255,255,0.07); }
+.wc-nav-cat { background:#111; border:1px solid rgba(255,255,255,0.07); border-radius:14px; padding:20px 0; overflow:hidden; }
+.wc-nav-cat-title { font-family:'DM Sans',sans-serif; font-size:0.62rem; font-weight:700; letter-spacing:2px; text-transform:uppercase; margin-bottom:14px; padding:0 20px 10px; border-bottom:1px solid rgba(255,255,255,0.07); text-align:center; }
 .wc-nav-links { list-style:none; display:flex; flex-direction:column; gap:2px; }
-.wc-nav-links a { display:flex; align-items:center; gap:8px; font-family:'DM Sans',sans-serif; font-size:0.84rem; font-weight:500; color:rgba(255,255,255,0.6); text-decoration:none; padding:6px 8px; border-radius:8px; transition:background .15s,color .15s; }
-.wc-nav-links a:hover { background:rgba(255,255,255,0.05); color:#fff; }
+.wc-nav-links a { display:flex; align-items:center; justify-content:center; gap:8px; font-family:'DM Sans',sans-serif; font-size:0.84rem; font-weight:500; color:rgba(255,255,255,0.8); text-decoration:none; padding:6px 8px; border-radius:0; transition:background .15s,color .15s; width:100%; box-sizing:border-box; }
+.wc-nav-links a:hover { background:rgba(255,140,0,0.18); color:#ff8c00; }
 .wc-nav-links .ni { font-size:0.88rem; width:20px; text-align:center; flex-shrink:0; }
 
 /* CARDS */
@@ -112,7 +112,7 @@
 .wc-card:hover::before { opacity:1; }
 .wc-card-icon { font-size:2rem; margin-bottom:14px; display:block; text-align:center; }
 .wc-card-title { font-family:'DM Sans',sans-serif; font-size:1rem; font-weight:700; color:#fff; margin-bottom:8px; text-align:center; }
-.wc-card-desc { font-family:'DM Sans',sans-serif; font-size:0.82rem; color:rgba(255,255,255,0.45); line-height:1.55; text-align:center; }
+.wc-card-desc { font-family:'DM Sans',sans-serif; font-size:0.82rem; color:rgba(255,255,255,0.8); line-height:1.55; text-align:center; }
 .wc-card-arrow { position:absolute; bottom:20px; right:20px; font-size:0.8rem; color:var(--wc-orange); opacity:0; transition:opacity .22s,transform .22s; }
 .wc-card:hover .wc-card-arrow { opacity:1; transform:translateX(3px); }
 
@@ -148,7 +148,7 @@
 .wc-badge.free { background:rgba(34,197,94,0.1); color:#22c55e; border:1px solid rgba(34,197,94,0.2); }
 .wc-badge.paid { background:rgba(255,140,0,0.08); color:var(--wc-orange); border:1px solid rgba(255,140,0,0.18); }
 .wc-watch-title { font-family:'DM Sans',sans-serif; font-size:1rem; font-weight:700; color:#fff; }
-.wc-watch-desc { font-family:'DM Sans',sans-serif; font-size:0.82rem; color:rgba(255,255,255,0.45); line-height:1.5; }
+.wc-watch-desc { font-family:'DM Sans',sans-serif; font-size:0.82rem; color:rgba(255,255,255,0.8); line-height:1.5; }
 
 /* HOST CITIES */
 .wc-country-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
@@ -156,9 +156,9 @@
 .wc-country-card:hover { transform:translateY(-3px); border-color:rgba(255,140,0,0.2); }
 .wc-country-flag { font-size:2.8rem; margin-bottom:12px; display:block; }
 .wc-country-name { font-family:'Bebas Neue',sans-serif; font-size:1.7rem; color:#fff; letter-spacing:1px; margin-bottom:6px; }
-.wc-country-meta { font-family:'DM Sans',sans-serif; font-size:0.75rem; color:rgba(255,255,255,0.4); margin-bottom:16px; }
+.wc-country-meta { font-family:'DM Sans',sans-serif; font-size:0.75rem; color:rgba(255,255,255,0.8); margin-bottom:16px; }
 .wc-cities-list { list-style:none; display:flex; flex-direction:column; gap:6px; }
-.wc-cities-list li { font-family:'DM Sans',sans-serif; font-size:0.8rem; color:rgba(255,255,255,0.58); display:flex; align-items:center; justify-content:center; gap:8px; }
+.wc-cities-list li { font-family:'DM Sans',sans-serif; font-size:0.8rem; color:rgba(255,255,255,0.8); display:flex; align-items:center; justify-content:center; gap:8px; }
 .wc-cities-list li::before { content:'→'; color:var(--wc-orange); font-size:0.68rem; flex-shrink:0; }
 
 /* FAN SECTION */
@@ -171,7 +171,7 @@
 .wc-fan-card:hover::before { opacity:1; }
 .wc-fan-icon { font-size:2.2rem; margin-bottom:12px; display:block; }
 .wc-fan-title { font-family:'DM Sans',sans-serif; font-size:0.95rem; font-weight:700; color:#fff; margin-bottom:6px; }
-.wc-fan-desc { font-family:'DM Sans',sans-serif; font-size:0.78rem; color:rgba(255,255,255,0.4); line-height:1.5; }
+.wc-fan-desc { font-family:'DM Sans',sans-serif; font-size:0.78rem; color:rgba(255,255,255,0.8); line-height:1.5; }
 
 /* HIGHLIGHTS */
 .wc-highlights-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(200px,1fr)); gap:14px; }
@@ -185,17 +185,17 @@
 .wc-vip-banner::before { content:''; position:absolute; inset:0; background:radial-gradient(ellipse at center,rgba(255,140,0,0.1) 0%,transparent 70%); pointer-events:none; }
 .wc-vip-badge { display:inline-flex; align-items:center; gap:6px; font-family:'DM Sans',sans-serif; font-size:0.65rem; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:var(--wc-orange); border:1px solid rgba(255,140,0,0.35); padding:5px 14px; border-radius:50px; margin-bottom:20px; background:rgba(255,140,0,0.06); }
 .wc-vip-title { font-family:'Bebas Neue',sans-serif; font-size:clamp(2rem,5vw,3.5rem); color:#fff; letter-spacing:1px; margin-bottom:14px; }
-.wc-vip-sub { font-family:'DM Sans',sans-serif; font-size:0.95rem; color:rgba(255,255,255,0.55); max-width:480px; margin:0 auto 28px; line-height:1.65; }
+.wc-vip-sub { font-family:'DM Sans',sans-serif; font-size:0.95rem; color:rgba(255,255,255,0.8); max-width:480px; margin:0 auto 28px; line-height:1.65; }
 
 /* FAQ */
-.wc-faq-list { display:flex; flex-direction:column; gap:10px; width:100%; }
+.wc-faq-list { display:flex; flex-direction:column; gap:10px; width:100%; max-width:760px; margin:0 auto; }
 .wc-faq-item { background:#111; border:1px solid rgba(255,255,255,0.07); border-radius:14px; overflow:hidden; transition:border-color .2s; }
 .wc-faq-item[open] { border-color:rgba(255,140,0,0.2); }
-.wc-faq-item summary { list-style:none; cursor:pointer; padding:22px 70px 22px 28px; position:relative; display:block; text-align:center; font-family:'DM Sans',sans-serif; font-size:1rem; font-weight:600; color:#ff8c00; }
+.wc-faq-item summary { list-style:none; cursor:pointer; padding:22px 28px; position:relative; display:block; text-align:center; font-family:'DM Sans',sans-serif; font-size:1rem; font-weight:600; color:#ff8c00; }
 .wc-faq-item summary::-webkit-details-marker { display:none; }
 .wc-faq-item summary::after { content:'∨'; position:absolute; right:20px; top:50%; transform:translateY(-50%); width:32px; height:32px; border-radius:50%; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); display:flex; align-items:center; justify-content:center; font-size:0.75rem; color:rgba(255,255,255,0.4); transition:all .2s; }
 .wc-faq-item[open] summary::after { content:'∧'; color:var(--wc-orange); background:rgba(255,140,0,0.08); border-color:rgba(255,140,0,0.3); }
-.wc-faq-body { padding:0 28px 24px; font-family:'DM Sans',sans-serif; font-size:0.9rem; color:rgba(255,255,255,0.55); line-height:1.7; }
+.wc-faq-body { padding:0 28px 24px; font-family:'DM Sans',sans-serif; font-size:0.9rem; color:rgba(255,255,255,0.8); line-height:1.7; }
 .wc-faq-body a { color:var(--wc-orange); text-decoration:none; }
 
 /* FINAL CTA */
@@ -205,7 +205,7 @@
 .wc-final-cta-inner { position:relative; z-index:1; max-width:640px; margin:0 auto; }
 .wc-final-cta-title { font-family:'Bebas Neue',sans-serif; font-size:clamp(2.5rem,7vw,5rem); line-height:0.95; color:#fff; margin-bottom:18px; }
 .wc-final-cta-title span { background:var(--wc-grad); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
-.wc-final-cta-sub { font-family:'DM Sans',sans-serif; font-size:1rem; color:rgba(255,255,255,0.5); margin-bottom:32px; line-height:1.65; }
+.wc-final-cta-sub { font-family:'DM Sans',sans-serif; font-size:1rem; color:rgba(255,255,255,0.8); margin-bottom:32px; line-height:1.65; }
 
 /* VIEW ALL LINK */
 .wc-view-all { display:block; text-align:center; margin-top:20px; font-family:'DM Sans',sans-serif; font-size:0.85rem; font-weight:700; color:var(--wc-orange); text-decoration:none; transition:opacity .2s; }
@@ -221,7 +221,7 @@
 .wc-money-card.download { background:linear-gradient(135deg,rgba(34,197,94,0.12),rgba(6,182,212,0.08)); border:1px solid rgba(34,197,94,0.25); }
 .wc-money-icon { font-size:2.4rem; margin-bottom:14px; display:block; }
 .wc-money-title { font-family:'Bebas Neue',sans-serif; font-size:1.8rem; color:#fff; letter-spacing:.5px; margin-bottom:8px; }
-.wc-money-desc { font-family:'DM Sans',sans-serif; font-size:0.85rem; color:rgba(255,255,255,0.55); line-height:1.6; margin-bottom:20px; }
+.wc-money-desc { font-family:'DM Sans',sans-serif; font-size:0.85rem; color:rgba(255,255,255,0.8); line-height:1.6; margin-bottom:20px; }
 .wc-money-btn { display:inline-flex; align-items:center; gap:6px; font-family:'DM Sans',sans-serif; font-size:0.85rem; font-weight:700; padding:10px 24px; border-radius:50px; color:#fff; }
 .wc-money-card.bet .wc-money-btn { background:linear-gradient(135deg,#ff8c00,#ff3d6b); }
 .wc-money-card.date .wc-money-btn { background:linear-gradient(135deg,#ff3d6b,#8b5cf6); }
@@ -233,7 +233,7 @@
 .wc-layer-card:hover { transform:translateY(-3px); border-color:rgba(255,140,0,0.25); }
 .wc-layer-card-icon { font-size:1.8rem; margin-bottom:10px; display:block; }
 .wc-layer-card-title { font-family:'DM Sans',sans-serif; font-size:0.9rem; font-weight:700; color:#fff; margin-bottom:4px; }
-.wc-layer-card-desc { font-family:'DM Sans',sans-serif; font-size:0.75rem; color:rgba(255,255,255,0.4); line-height:1.5; }
+.wc-layer-card-desc { font-family:'DM Sans',sans-serif; font-size:0.75rem; color:rgba(255,255,255,0.8); line-height:1.5; }
 
 /* PRODUCT GRID */
 .wc-product-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,200px)); gap:16px; justify-content:center; }
@@ -241,7 +241,7 @@
 .wc-product-card:hover { transform:translateY(-3px); border-color:rgba(34,197,94,0.35); }
 .wc-product-icon { font-size:2rem; margin-bottom:12px; display:block; }
 .wc-product-title { font-family:'DM Sans',sans-serif; font-size:0.95rem; font-weight:700; color:#fff; margin-bottom:6px; }
-.wc-product-desc { font-family:'DM Sans',sans-serif; font-size:0.76rem; color:rgba(255,255,255,0.45); line-height:1.5; margin-bottom:12px; }
+.wc-product-desc { font-family:'DM Sans',sans-serif; font-size:0.76rem; color:rgba(255,255,255,0.8); line-height:1.5; margin-bottom:12px; }
 .wc-product-price { font-family:'Bebas Neue',sans-serif; font-size:1.2rem; color:#22c55e; }
 
 /* RESPONSIVE */
@@ -251,12 +251,21 @@
 }
 @media (max-width:768px) {
   .wc-trophy-img { max-width:300px !important; aspect-ratio:3/5 !important; }
+  .wc-faq-item summary::after { content:none !important; display:none !important; width:0 !important; height:0 !important; }
+  .wc-faq-item[open] summary::after { content:none !important; display:none !important; }
+  .wc-faq-item summary { padding:18px !important; }
   .wc-hero { padding:72px 20px 64px; }
   .wc-hero-title { white-space:normal !important; font-size:clamp(2rem,10vw,4rem) !important; }
   .wc-hero-sub { font-size:0.9rem; }
   .wc-section { padding:44px 18px; }
-  .wc-section-sub { white-space:normal !important; text-overflow:clip !important; font-size:0.85rem; }
+  .wc-section-sub { white-space:normal !important; text-overflow:clip !important; font-size:1rem; color:rgba(255,255,255,0.8); }
+  .wc-nav-links a { color:rgba(255,255,255,0.92); font-size:0.95rem; gap:4px; }
+  .wc-hero-sub { font-size:1.05rem; color:rgba(255,255,255,0.8); }
+  .wc-card-desc, .wc-watch-desc { font-size:0.92rem; color:rgba(255,255,255,0.8); }
+  .wc-fan-desc, .wc-layer-card-desc, .wc-product-desc { font-size:0.88rem; color:rgba(255,255,255,0.8); }
+  .wc-vip-sub, .wc-faq-body, .wc-final-cta-sub, .wc-money-desc { font-size:1rem; color:rgba(255,255,255,0.8); }
   .wc-quicknav { padding:32px 18px; }
+  .wc-quicknav-heading { background:linear-gradient(90deg,#ff2d78 0%,#ff6348 55%,#ff8c00 100%); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
   .wc-fan-section { padding:44px 18px; }
   .wc-final-cta { padding:56px 18px; }
   .wc-nav-categories { grid-template-columns:1fr 1fr; }
@@ -267,14 +276,14 @@
   .wc-nav-links a:hover { background:transparent; color:rgba(255,255,255,0.6); }
   .wc-nav-links a:active { background:rgba(255,140,0,0.18); color:#ff8c00; }
   .wc-card-grid { grid-template-columns:1fr 1fr; gap:14px; }
-  .wc-stats-bar .wc-stat { flex:0 0 33.33%; min-width:0; padding:24px 10px; }
+  .wc-stats-bar .wc-stat { flex:0 0 33.33%; min-width:0; padding:24px 10px; border-bottom:1px solid rgba(255,255,255,0.07); }
   .wc-stat-number { font-size:2.2rem; }
   .wc-countdown-wrap { padding:28px 20px; }
   .wc-count-unit { padding:12px 14px; min-width:64px; }
   .wc-count-num { font-size:2rem; }
   .wc-product-grid { grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); justify-content:stretch; }
   .wc-vip-banner { padding:36px 22px; }
-  .wc-faq-item summary { padding:18px 52px 18px 18px; font-size:0.92rem; text-align:left; }
+  .wc-faq-item summary { padding:18px; font-size:0.92rem; text-align:center; }
   .wc-money-strip { grid-template-columns:1fr; padding:28px 18px; }
   .wc-layer-grid { grid-template-columns:1fr 1fr; gap:12px; }
   .wc-fan-grid { grid-template-columns:1fr 1fr; gap:12px; }
@@ -656,17 +665,17 @@
       <div class="wc-product-desc">Instant access to all World Cup 2026 digital content.</div>
       <div class="wc-product-price">From €3</div>
     </a>
-    <a href="/world-cup/wallpapers/" class="wc-product-card">
-      <span class="wc-product-icon">🖼️</span>
-      <div class="wc-product-title">Wallpapers</div>
-      <div class="wc-product-desc">Stunning match day wallpapers for every nation. Phone and desktop.</div>
-      <div class="wc-product-price">Free</div>
-    </a>
     <a href="/world-cup/merchandise/" class="wc-product-card">
       <span class="wc-product-icon">👕</span>
       <div class="wc-product-title">Merchandise</div>
       <div class="wc-product-desc">Jerseys, fan shirts and country merch. Print-on-demand.</div>
       <div class="wc-product-price">From €25</div>
+    </a>
+    <a href="/world-cup/wallpapers/" class="wc-product-card">
+      <span class="wc-product-icon">🖼️</span>
+      <div class="wc-product-title">Wallpapers</div>
+      <div class="wc-product-desc">Stunning match day wallpapers for every nation. Phone and desktop.</div>
+      <div class="wc-product-price">Free</div>
     </a>
   </div>
 </div>
@@ -690,7 +699,7 @@
     </details>
 
     <details class="wc-faq-item">
-      <summary>Which countries are hosting the World Cup 2026?</summary>
+      <summary style="white-space:nowrap;">Which countries are hosting the World Cup 2026?</summary>
       <div class="wc-faq-body">The World Cup 2026 is jointly hosted by <strong>the United States, Canada and Mexico</strong> — the first World Cup hosted by three nations simultaneously, across 16 host cities.</div>
     </details>
 
@@ -725,7 +734,7 @@
     </details>
 
     <details class="wc-faq-item">
-      <summary>When is the World Cup 2026 opening ceremony?</summary>
+      <summary style="white-space:nowrap;">When is the World Cup 2026 opening ceremony?</summary>
       <div class="wc-faq-body">The opening ceremony takes place on <strong>June 11, 2026</strong> at Estadio Azteca in Mexico City, before the first match. Full details on our <a href="/world-cup/opening-ceremony/">opening ceremony page</a>.</div>
     </details>
 

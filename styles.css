@@ -2291,10 +2291,7 @@ nav {
   .main-layout { flex-direction: row; align-items: center; padding: 0; gap: 0; overflow: visible; }
   .carousel-section { padding: 8px 0; gap: 12px; flex: 1; min-width: 0; }
 
-  .scroll-divider { flex-shrink: 0; height: 100px; margin-bottom: 0; }
-  .scroll-line { display: none; }
-  #scrollLeft { margin-left: 4px; margin-right: 8px; transform: translateY(-26px); }
-  #scrollRight { margin-right: 4px; margin-left: 8px; transform: translateY(-26px); }
+  .scroll-divider, #scrollLeft, #scrollRight, .scroll-icon { display: none !important; }
 
   .carousel-stage { height: 460px; }
 
