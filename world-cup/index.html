@@ -62,7 +62,7 @@
 :root { --wc-orange:#ff8c00; --wc-pink:#ff3d6b; --wc-grad:linear-gradient(135deg,#ff8c00,#ff3d6b); }
 
 /* HERO */
-.wc-hero { position:relative; overflow:hidden; padding:100px 24px 100px; text-align:center; background:linear-gradient(180deg,rgba(6,6,10,0.72) 0%,rgba(10,10,10,0.92) 100%),url('https://pub-8ec39968108e49b79a06aa21a79210e6.r2.dev/3KP%20(1).jpg') center top/cover no-repeat; contain:paint; }
+.wc-hero { position:relative; overflow:hidden; padding:111px 24px 111px; text-align:center; background:linear-gradient(180deg,rgba(6,6,10,0.72) 0%,rgba(10,10,10,0.92) 100%),url('https://pub-8ec39968108e49b79a06aa21a79210e6.r2.dev/3KP%20(1).jpg') center top/cover no-repeat; contain:paint; }
 .wc-hero-glow { position:absolute; inset:0; pointer-events:none; }
 .wc-hero-glow::before { content:''; position:absolute; width:700px; height:500px; top:-100px; left:50%; transform:translateX(-50%); background:radial-gradient(ellipse,rgba(255,140,0,0.2) 0%,transparent 65%); filter:blur(60px); }
 .wc-hero-glow::after { content:''; position:absolute; width:500px; height:400px; bottom:-80px; left:50%; transform:translateX(-50%); background:radial-gradient(ellipse,rgba(255,61,107,0.15) 0%,transparent 65%); filter:blur(60px); }
@@ -199,8 +199,9 @@
 .wc-faq-body a { color:var(--wc-orange); text-decoration:none; }
 
 /* FINAL CTA */
-.wc-final-cta { text-align:center; padding:80px 32px; position:relative; overflow:hidden; }
-.wc-final-cta::before { content:''; position:absolute; inset:0; background:radial-gradient(ellipse at center,rgba(255,140,0,0.1) 0%,transparent 65%); pointer-events:none; }
+.wc-final-cta { text-align:center; padding:80px 32px; position:relative; overflow:hidden; background:#0a0a0a; border-top:1px solid rgba(255,255,255,0.06); }
+.wc-final-cta::before { content:''; position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:700px; height:350px; background:radial-gradient(ellipse,rgba(255,61,107,0.09) 0%,transparent 65%); pointer-events:none; }
+#wcAloneBubbles { position:absolute; inset:0; width:100%; height:100%; pointer-events:none; z-index:0; }
 .wc-final-cta-inner { position:relative; z-index:1; max-width:640px; margin:0 auto; }
 .wc-final-cta-title { font-family:'Bebas Neue',sans-serif; font-size:clamp(2.5rem,7vw,5rem); line-height:0.95; color:#fff; margin-bottom:18px; }
 .wc-final-cta-title span { background:var(--wc-grad); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
@@ -244,9 +245,58 @@
 .wc-product-price { font-family:'Bebas Neue',sans-serif; font-size:1.2rem; color:#22c55e; }
 
 /* RESPONSIVE */
-@media (max-width:900px) { .wc-groups-grid { grid-template-columns:repeat(4,1fr); } .wc-country-grid { grid-template-columns:1fr; } }
-@media (max-width:768px) { .wc-nav-categories { grid-template-columns:1fr 1fr; } .wc-section { padding:52px 20px; } .wc-quicknav { padding:40px 20px; } .wc-fan-section { padding:52px 20px; } .wc-final-cta { padding:60px 20px; } .wc-hero { padding:60px 20px 52px; } }
-@media (max-width:540px) { .wc-groups-grid { grid-template-columns:repeat(3,1fr); } .wc-nav-categories { grid-template-columns:1fr; } .wc-vip-banner { padding:36px 22px; } }
+@media (max-width:900px) {
+  .wc-groups-grid { grid-template-columns:repeat(4,1fr); }
+  .wc-country-grid { grid-template-columns:1fr; }
+}
+@media (max-width:768px) {
+  .wc-trophy-img { max-width:300px !important; aspect-ratio:3/5 !important; }
+  .wc-hero { padding:72px 20px 64px; }
+  .wc-hero-title { white-space:normal !important; font-size:clamp(2rem,10vw,4rem) !important; }
+  .wc-hero-sub { font-size:0.9rem; }
+  .wc-section { padding:44px 18px; }
+  .wc-section-sub { white-space:normal !important; text-overflow:clip !important; font-size:0.85rem; }
+  .wc-quicknav { padding:32px 18px; }
+  .wc-fan-section { padding:44px 18px; }
+  .wc-final-cta { padding:56px 18px; }
+  .wc-nav-categories { grid-template-columns:1fr 1fr; }
+  .wc-nav-cat { text-align:center; padding:0; overflow:hidden; }
+  .wc-nav-cat-title { text-align:center; margin:0; padding:14px 16px 10px; border-radius:0; }
+  .wc-nav-links { gap:0; }
+  .wc-nav-links a { justify-content:center; width:100%; box-sizing:border-box; border-radius:0; padding:9px 16px; }
+  .wc-nav-links a:hover { background:transparent; color:rgba(255,255,255,0.6); }
+  .wc-nav-links a:active { background:rgba(255,140,0,0.18); color:#ff8c00; }
+  .wc-card-grid { grid-template-columns:1fr 1fr; gap:14px; }
+  .wc-stats-bar .wc-stat { flex:0 0 33.33%; min-width:0; padding:24px 10px; }
+  .wc-stat-number { font-size:2.2rem; }
+  .wc-countdown-wrap { padding:28px 20px; }
+  .wc-count-unit { padding:12px 14px; min-width:64px; }
+  .wc-count-num { font-size:2rem; }
+  .wc-product-grid { grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); justify-content:stretch; }
+  .wc-vip-banner { padding:36px 22px; }
+  .wc-faq-item summary { padding:18px 52px 18px 18px; font-size:0.92rem; text-align:left; }
+  .wc-money-strip { grid-template-columns:1fr; padding:28px 18px; }
+  .wc-layer-grid { grid-template-columns:1fr 1fr; gap:12px; }
+  .wc-fan-grid { grid-template-columns:1fr 1fr; gap:12px; }
+  .wc-highlights-grid { grid-template-columns:1fr 1fr; gap:10px; }
+}
+@media (max-width:540px) {
+  .wc-trophy-img { max-width:260px !important; aspect-ratio:3/5 !important; }
+  .wc-hero { padding:60px 16px 52px; }
+  .wc-section { padding:36px 16px; }
+  .wc-groups-grid { grid-template-columns:repeat(3,1fr); }
+  .wc-nav-categories { grid-template-columns:1fr; }
+  .wc-card-grid { grid-template-columns:1fr; }
+  .wc-stats-bar .wc-stat { flex:0 0 50%; }
+  .wc-layer-grid { grid-template-columns:1fr; }
+  .wc-fan-grid { grid-template-columns:1fr; }
+  .wc-highlights-grid { grid-template-columns:1fr; }
+  .wc-product-grid { grid-template-columns:1fr 1fr; }
+  .wc-country-grid { grid-template-columns:1fr; }
+  .wc-teams-grid { grid-template-columns:1fr 1fr; }
+  .wc-watch-grid { grid-template-columns:1fr; }
+  .wc-final-cta-title { font-size:clamp(2rem,9vw,3.5rem); }
+}
 
 /* Centre card content */
 [class*="-icon"],[class*="-flag"]{text-align:center;display:block;}
@@ -296,7 +346,6 @@
 <section class="wc-hero">
   <div class="wc-hero-glow"></div>
   <div class="wc-hero-inner">
-    <div class="wc-hero-badge">&#x26BD; FIFA World Cup 2026 &nbsp;&middot;&nbsp; 48 Teams &nbsp;&middot;&nbsp; 104 Matches</div>
     <h1 class="wc-hero-title" style="white-space:nowrap;font-size:clamp(2rem,8vw,6.5rem);margin-bottom:20px;">FIFA <span>World Cup 2026</span></h1>
     <p class="wc-hero-sub">48 teams. 104 matches. 3 countries. Everything you need &mdash; live scores, predictions, tickets, streaming, and the hottest fans on the planet.</p>
     <div class="wc-hero-ctas" style="margin-bottom:36px;">
@@ -318,7 +367,7 @@
 <!-- IMAGE BELOW STATS -->
 <div style="background:#0a0a0a;padding:40px 24px;border-bottom:1px solid rgba(255,255,255,0.06);">
   <div style="max-width:860px;margin:0 auto;">
-    <div style="width:100%;max-width:480px;height:520px;margin:0 auto;border-radius:16px;overflow:hidden;border:1px solid rgba(255,140,0,0.25);">
+    <div class="wc-trophy-img" style="width:100%;max-width:400px;aspect-ratio:3/4;margin:0 auto;border-radius:16px;overflow:hidden;border:1px solid rgba(255,140,0,0.25);">
       <img src="https://pub-8ec39968108e49b79a06aa21a79210e6.r2.dev/world-cup-asset/670518744_17868282786607338_8408029651445113573_n%20(1).webp" alt="FIFA World Cup 2026" style="width:100%;height:100%;object-fit:cover;object-position:center;display:block;filter:brightness(0.84);">
     </div>
   </div>
@@ -364,7 +413,7 @@
 
   <div class="wc-section-label" style="margin-top:52px;">The Tournament</div>
   <h2 class="wc-section-title">World Cup 2026 at a Glance</h2>
-  <p class="wc-section-sub">The biggest World Cup in history. For the first time, 48 teams compete across three nations — USA, Canada and Mexico.</p>
+  <p class="wc-section-sub" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">The biggest World Cup in history. For the first time, 48 teams compete across three nations — USA, Canada and Mexico.</p>
 
   <div class="wc-card-grid">
     <a href="/world-cup/opening-ceremony/" class="wc-card"><span class="wc-card-icon">🎆</span><div class="wc-card-title">Opening Ceremony</div><div class="wc-card-desc">Performers, schedule and everything to know about the 2026 opening show at Estadio Azteca.</div><span class="wc-card-arrow">→</span></a>
@@ -380,7 +429,7 @@
 <div class="wc-section">
   <div class="wc-section-label">Host Nations</div>
   <h2 class="wc-section-title">USA &middot; Canada &middot; Mexico</h2>
-  <p class="wc-section-sub">16 host cities across three countries. Find your nearest stadium, book your trip and plan match day.</p>
+  <p class="wc-section-sub" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">16 host cities across three countries. Find your nearest stadium, book your trip and plan match day.</p>
   <div class="wc-country-grid">
     <a href="/world-cup/host-cities/" class="wc-country-card">
       <span class="wc-country-flag"><img src="https://flagcdn.com/ca.svg" alt="Canada" style="width:56px;height:auto;border-radius:4px;display:inline-block;box-shadow:0 2px 8px rgba(0,0,0,0.4);"></span>
@@ -517,7 +566,7 @@
 <div class="wc-section">
   <div class="wc-section-label" style="color:#f97316;">🔥 Viral &amp; Social</div>
   <h2 class="wc-section-title">Trending Right Now</h2>
-  <p class="wc-section-sub">The pages your TikTok and Instagram audience will land on. Share-worthy, reaction-ready content.</p>
+  <p class="wc-section-sub" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">The pages your TikTok and Instagram audience will land on. Share-worthy, reaction-ready content.</p>
   <div class="wc-layer-grid">
     <a href="/world-cup/predictions/" class="wc-layer-card">
       <span class="wc-layer-card-icon">🔮</span>
@@ -539,15 +588,10 @@
       <div class="wc-layer-card-title">Goals</div>
       <div class="wc-layer-card-desc">Best goals of the tournament ranked and voted.</div>
     </a>
-    <a href="/world-cup/memes/" class="wc-layer-card">
-      <span class="wc-layer-card-icon">😂</span>
-      <div class="wc-layer-card-title">Memes</div>
-      <div class="wc-layer-card-desc">The funniest fan content from every matchday.</div>
-    </a>
     <a href="/world-cup/wc-shorts/" class="wc-layer-card">
-      <span class="wc-layer-card-icon">📱</span>
+      <span class="wc-layer-card-icon">😂</span>
       <div class="wc-layer-card-title">WC Shorts</div>
-      <div class="wc-layer-card-desc">Short-form clips and Reels for every game.</div>
+      <div class="wc-layer-card-desc">Short-form clips and funniest fan content.</div>
     </a>
   </div>
 </div>
@@ -557,7 +601,7 @@
 <div class="wc-section">
   <div class="wc-section-label" style="color:#22d3ee;">🔄 Engagement</div>
   <h2 class="wc-section-title">Come Back Every Matchday</h2>
-  <p class="wc-section-sub">Tools and games that bring fans back — live scores, bracket simulators, quizzes and daily challenges.</p>
+  <p class="wc-section-sub" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Tools and games that bring fans back — live scores, bracket simulators, quizzes and daily challenges.</p>
   <div class="wc-layer-grid">
     <a href="/world-cup/live-scores/" class="wc-layer-card">
       <span class="wc-layer-card-icon">📊</span>
@@ -592,7 +636,7 @@
 <div class="wc-section">
   <div class="wc-section-label" style="color:#22c55e;">📦 Digital Products</div>
   <h2 class="wc-section-title">Own a Piece of the World Cup</h2>
-  <p class="wc-section-sub">Fan packs, photobooks, wallpapers and merchandise. Direct revenue — no ad clicks needed.</p>
+  <p class="wc-section-sub" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Fan packs, photobooks, wallpapers and merchandise. Direct revenue — no ad clicks needed.</p>
   <div class="wc-product-grid">
     <a href="/world-cup/photobook/" class="wc-product-card">
       <span class="wc-product-icon">📚</span>
@@ -695,6 +739,7 @@
 
 <!-- FINAL CTA -->
 <section class="wc-final-cta">
+  <canvas id="wcAloneBubbles"></canvas>
   <div class="wc-final-cta-inner">
     <h2 class="wc-final-cta-title">Don't Watch the<br><span>World Cup Alone</span></h2>
     <p class="wc-final-cta-sub">Join thousands of fans already on Tempting Babes — live match chat, AI companions, the hottest fan content and real connections with supporters from every nation.</p>
@@ -780,6 +825,21 @@
     document.getElementById('cd-secs').textContent=pad(Math.floor((diff%60000)/1000));
   }
   tick();setInterval(tick,1000);
+})();
+</script>
+
+<script>
+(function(){
+  const canvas=document.getElementById('wcAloneBubbles');
+  if(!canvas)return;
+  const ctx=canvas.getContext('2d');
+  const colors=['#ff3d6b','#ff6b8a','#c0392b','#ff5580'];
+  let bubbles=[];
+  function resize(){canvas.width=canvas.offsetWidth;canvas.height=canvas.offsetHeight;}
+  function randomBubble(){const r=Math.random()*3+1;return{x:Math.random()*canvas.width,y:canvas.height+r+10,r,speedY:Math.random()*0.6+0.2,speedX:(Math.random()-0.5)*0.3,opacity:Math.random()*0.35+0.15,color:colors[Math.floor(Math.random()*colors.length)]};}
+  function init(){resize();bubbles=[];for(let i=0;i<30;i++){const b=randomBubble();b.y=Math.random()*canvas.height;bubbles.push(b);}}
+  function draw(){ctx.clearRect(0,0,canvas.width,canvas.height);bubbles.forEach(b=>{ctx.beginPath();ctx.arc(b.x,b.y,b.r,0,Math.PI*2);ctx.fillStyle=b.color;ctx.globalAlpha=b.opacity;ctx.shadowBlur=8;ctx.shadowColor=b.color;ctx.fill();ctx.globalAlpha=1;ctx.shadowBlur=0;b.y-=b.speedY;b.x+=b.speedX;if(b.y<-b.r*2)Object.assign(b,randomBubble());});requestAnimationFrame(draw);}
+  window.addEventListener('resize',init);init();draw();
 })();
 </script>
 
