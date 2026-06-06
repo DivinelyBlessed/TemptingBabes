@@ -78,16 +78,17 @@
 .wc-btn-ghost:hover { border-color:var(--wc-orange); color:var(--wc-orange); }
 
 /* STATS BAR */
-.wc-stats-bar { display:flex; justify-content:center; align-items:stretch; flex-wrap:wrap; background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.08); border-radius:16px; overflow:hidden; }
-.wc-stat { flex:1; min-width:100px; padding:20px 14px; text-align:center; border-right:1px solid rgba(255,255,255,0.08); }
+.wc-stats-bar { display:flex; justify-content:center; align-items:stretch; flex-wrap:wrap; background:linear-gradient(90deg,rgba(255,45,120,0.12) 0%,rgba(10,10,10,0.95) 40%,rgba(10,10,10,0.95) 60%,rgba(255,140,0,0.12) 100%); border-top:1px solid rgba(255,255,255,0.07); border-bottom:1px solid rgba(255,255,255,0.07); border-radius:0; overflow:hidden; position:relative; }
+.wc-stats-bar::before { content:''; position:absolute; inset:0; background:radial-gradient(ellipse 60% 100% at 50% 50%, rgba(255,140,0,0.06) 0%, transparent 70%); pointer-events:none; }
+.wc-stat { flex:1; min-width:100px; padding:36px 20px; text-align:center; border-right:1px solid rgba(255,255,255,0.07); position:relative; z-index:1; }
 .wc-stat:last-child { border-right:none; }
-.wc-stat-number { font-family:'Bebas Neue',sans-serif; font-size:2.2rem; line-height:1; background:var(--wc-grad); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
-.wc-stat-label { font-family:'DM Sans',sans-serif; font-size:0.65rem; font-weight:600; letter-spacing:1.2px; text-transform:uppercase; color:rgba(255,255,255,0.4); margin-top:4px; }
+.wc-stat-number { font-family:'Bebas Neue',sans-serif; font-size:2.8rem; line-height:1; background:var(--wc-grad); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+.wc-stat-label { font-family:'DM Sans',sans-serif; font-size:0.68rem; font-weight:600; letter-spacing:1.5px; text-transform:uppercase; color:rgba(255,255,255,0.45); margin-top:6px; }
 
 /* SECTION WRAPPER */
 .wc-section { padding:72px 32px; max-width:1400px; margin:0 auto; width:100%; box-sizing:border-box; }
 .wc-section-label { font-family:'DM Sans',sans-serif; font-size:0.7rem; font-weight:700; letter-spacing:2.5px; text-transform:uppercase; color:var(--wc-orange); margin-bottom:10px; text-align:center; text-align:center;display:block;}
-.wc-section-title { font-family:'Bebas Neue',sans-serif; font-size:clamp(2rem,5vw,3.2rem); letter-spacing:.5px; color:#fff; line-height:1; margin-bottom:12px; text-align:center; text-align:center;}
+.wc-section-title { font-family:'Bebas Neue',sans-serif; font-size:clamp(2rem,5vw,3.2rem); letter-spacing:.5px; line-height:1; margin-bottom:12px; text-align:center; background:linear-gradient(90deg,#ff2d78 0%,#ff6348 55%,#ff8c00 100%); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
 .wc-section-sub { font-family:'DM Sans',sans-serif; font-size:0.92rem; color:rgba(255,255,255,0.5); margin-bottom:44px; max-width:540px; line-height:1.65; text-align:center; margin-left:auto; margin-right:auto; text-align:center;margin-left:auto;margin-right:auto;}
 .wc-divider { border:none; border-top:1px solid rgba(255,255,255,0.06); margin:0; }
 
@@ -118,7 +119,7 @@
 /* COUNTDOWN */
 .wc-countdown-wrap { background:linear-gradient(135deg,rgba(255,140,0,0.07),rgba(255,61,107,0.07)); border:1px solid rgba(255,140,0,0.2); border-radius:18px; padding:36px; text-align:center; margin-bottom:44px; }
 .wc-countdown-label { font-family:'DM Sans',sans-serif; font-size:0.72rem; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:var(--wc-orange); margin-bottom:14px; }
-.wc-countdown-title { font-family:'Bebas Neue',sans-serif; font-size:clamp(1.6rem,4vw,2.4rem); color:#fff; margin-bottom:20px; letter-spacing:.5px; }
+.wc-countdown-title { font-family:'Bebas Neue',sans-serif; font-size:clamp(1.6rem,4vw,2.4rem); margin-bottom:20px; letter-spacing:.5px; background:linear-gradient(90deg,#ff2d78 0%,#ff6348 55%,#ff8c00 100%); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
 .wc-countdown-timer { display:flex; gap:10px; justify-content:center; flex-wrap:wrap; }
 .wc-count-unit { background:rgba(0,0,0,0.4); border:1px solid rgba(255,255,255,0.1); border-radius:12px; padding:16px 20px; min-width:80px; }
 .wc-count-num { font-family:'Bebas Neue',sans-serif; font-size:2.5rem; line-height:1; background:var(--wc-grad); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
@@ -190,7 +191,7 @@
 .wc-faq-list { display:flex; flex-direction:column; gap:10px; width:100%; }
 .wc-faq-item { background:#111; border:1px solid rgba(255,255,255,0.07); border-radius:14px; overflow:hidden; transition:border-color .2s; }
 .wc-faq-item[open] { border-color:rgba(255,140,0,0.2); }
-.wc-faq-item summary { list-style:none; cursor:pointer; padding:22px 70px 22px 28px; position:relative; display:block; text-align:center; font-family:'DM Sans',sans-serif; font-size:1rem; font-weight:600; color:#fff; }
+.wc-faq-item summary { list-style:none; cursor:pointer; padding:22px 70px 22px 28px; position:relative; display:block; text-align:center; font-family:'DM Sans',sans-serif; font-size:1rem; font-weight:600; color:#ff8c00; }
 .wc-faq-item summary::-webkit-details-marker { display:none; }
 .wc-faq-item summary::after { content:'∨'; position:absolute; right:20px; top:50%; transform:translateY(-50%); width:32px; height:32px; border-radius:50%; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); display:flex; align-items:center; justify-content:center; font-size:0.75rem; color:rgba(255,255,255,0.4); transition:all .2s; }
 .wc-faq-item[open] summary::after { content:'∧'; color:var(--wc-orange); background:rgba(255,140,0,0.08); border-color:rgba(255,140,0,0.3); }
@@ -305,18 +306,20 @@
   </div>
 </section>
 
-<!-- IMAGE + STATS BELOW HERO -->
+<!-- STATS STRIP — full width social proof -->
+<div class="wc-stats-bar">
+  <div class="wc-stat"><div class="wc-stat-number">48</div><div class="wc-stat-label">Teams</div></div>
+  <div class="wc-stat"><div class="wc-stat-number">104</div><div class="wc-stat-label">Matches</div></div>
+  <div class="wc-stat"><div class="wc-stat-number">16</div><div class="wc-stat-label">Host Cities</div></div>
+  <div class="wc-stat"><div class="wc-stat-number">3</div><div class="wc-stat-label">Countries</div></div>
+  <div class="wc-stat"><div class="wc-stat-number">39</div><div class="wc-stat-label">Days</div></div>
+</div>
+
+<!-- IMAGE BELOW STATS -->
 <div style="background:#0a0a0a;padding:40px 24px;border-bottom:1px solid rgba(255,255,255,0.06);">
   <div style="max-width:860px;margin:0 auto;">
-    <div style="width:100%;max-width:480px;height:520px;margin:0 auto 28px;border-radius:16px;overflow:hidden;border:1px solid rgba(255,140,0,0.25);">
-      <img src="https://pub-8ec39968108e49b79a06aa21a79210e6.r2.dev/world-cup-asset/kne_notifications_1779199109_3900527291935077527_55343338888%20(1).heic" alt="FIFA World Cup 2026" style="width:100%;height:100%;object-fit:cover;object-position:center;display:block;">
-    </div>
-    <div class="wc-stats-bar">
-      <div class="wc-stat"><div class="wc-stat-number">48</div><div class="wc-stat-label">Teams</div></div>
-      <div class="wc-stat"><div class="wc-stat-number">104</div><div class="wc-stat-label">Matches</div></div>
-      <div class="wc-stat"><div class="wc-stat-number">16</div><div class="wc-stat-label">Host Cities</div></div>
-      <div class="wc-stat"><div class="wc-stat-number">3</div><div class="wc-stat-label">Countries</div></div>
-      <div class="wc-stat"><div class="wc-stat-number">39</div><div class="wc-stat-label">Days</div></div>
+    <div style="width:100%;max-width:480px;height:520px;margin:0 auto;border-radius:16px;overflow:hidden;border:1px solid rgba(255,140,0,0.25);">
+      <img src="https://pub-8ec39968108e49b79a06aa21a79210e6.r2.dev/world-cup-asset/670518744_17868282786607338_8408029651445113573_n%20(1).webp" alt="FIFA World Cup 2026" style="width:100%;height:100%;object-fit:cover;object-position:center;display:block;filter:brightness(0.84);">
     </div>
   </div>
 </div>
@@ -364,9 +367,9 @@
   <p class="wc-section-sub">The biggest World Cup in history. For the first time, 48 teams compete across three nations — USA, Canada and Mexico.</p>
 
   <div class="wc-card-grid">
+    <a href="/world-cup/opening-ceremony/" class="wc-card"><span class="wc-card-icon">🎆</span><div class="wc-card-title">Opening Ceremony</div><div class="wc-card-desc">Performers, schedule and everything to know about the 2026 opening show at Estadio Azteca.</div><span class="wc-card-arrow">→</span></a>
     <a href="/world-cup/schedule/" class="wc-card"><span class="wc-card-icon">📅</span><div class="wc-card-title">Full Schedule</div><div class="wc-card-desc">Every match date, kickoff time and venue — group stage through to the final on July 19.</div><span class="wc-card-arrow">→</span></a>
     <a href="/world-cup/knockout-bracket/" class="wc-card"><span class="wc-card-icon">🏆</span><div class="wc-card-title">Knockout Bracket</div><div class="wc-card-desc">Round of 32, quarters, semis and the final at MetLife Stadium, New Jersey.</div><span class="wc-card-arrow">→</span></a>
-    <a href="/world-cup/opening-ceremony/" class="wc-card"><span class="wc-card-icon">🎆</span><div class="wc-card-title">Opening Ceremony</div><div class="wc-card-desc">Performers, schedule and everything to know about the 2026 opening show at Estadio Azteca.</div><span class="wc-card-arrow">→</span></a>
     <a href="/world-cup/final/" class="wc-card"><span class="wc-card-icon">🥇</span><div class="wc-card-title">The Final</div><div class="wc-card-desc">July 19, 2026 · MetLife Stadium, New Jersey. The biggest sporting event on earth.</div><span class="wc-card-arrow">→</span></a>
   </div>
 </div>
@@ -380,7 +383,7 @@
   <p class="wc-section-sub">16 host cities across three countries. Find your nearest stadium, book your trip and plan match day.</p>
   <div class="wc-country-grid">
     <a href="/world-cup/host-cities/" class="wc-country-card">
-      <span class="wc-country-flag">🇨🇦</span>
+      <span class="wc-country-flag"><img src="https://flagcdn.com/ca.svg" alt="Canada" style="width:56px;height:auto;border-radius:4px;display:inline-block;box-shadow:0 2px 8px rgba(0,0,0,0.4);"></span>
       <div class="wc-country-name">Canada</div>
       <div class="wc-country-meta">2 venues</div>
       <ul class="wc-cities-list">
@@ -389,7 +392,7 @@
       </ul>
     </a>
     <a href="/world-cup/host-cities/" class="wc-country-card">
-      <span class="wc-country-flag">🇺🇸</span>
+      <span class="wc-country-flag"><img src="https://flagcdn.com/us.svg" alt="United States" style="width:56px;height:auto;border-radius:4px;display:inline-block;box-shadow:0 2px 8px rgba(0,0,0,0.4);"></span>
       <div class="wc-country-name">United States</div>
       <div class="wc-country-meta">11 venues &middot; Hosts the Final</div>
       <ul class="wc-cities-list">
@@ -402,7 +405,7 @@
       </ul>
     </a>
     <a href="/world-cup/host-cities/" class="wc-country-card">
-      <span class="wc-country-flag">🇲🇽</span>
+      <span class="wc-country-flag"><img src="https://flagcdn.com/mx.svg" alt="Mexico" style="width:56px;height:auto;border-radius:4px;display:inline-block;box-shadow:0 2px 8px rgba(0,0,0,0.4);"></span>
       <div class="wc-country-name">Mexico</div>
       <div class="wc-country-meta">3 venues &middot; Hosts Opening Match</div>
       <ul class="wc-cities-list">
