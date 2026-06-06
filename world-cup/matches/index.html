@@ -19,18 +19,89 @@
 <link rel="stylesheet" href="../../styles.css"/><script src="../../script.js" defer></script>
 <style>
 :root{--wc-orange:#ff8c00;--wc-pink:#ff3d6b;--wc-grad:linear-gradient(135deg,#ff8c00,#ff3d6b);}
-.pg-hero{position:relative;overflow:hidden;padding:88px 24px 80px;text-align:center;background:linear-gradient(180deg,rgba(6,6,10,0.72) 0%,rgba(10,10,10,0.85) 100%),url('https://pub-8ec39968108e49b79a06aa21a79210e6.r2.dev/3KP%20(1).jpg') center top/cover no-repeat;border-bottom:1px solid rgba(255,140,0,0.15);contain:paint;}
+
+/* HERO */
+.pg-hero{position:relative;overflow:hidden;padding:96px 24px 88px;text-align:center;background:linear-gradient(180deg,rgba(6,6,10,0.72) 0%,rgba(10,10,10,0.88) 100%),url('https://pub-8ec39968108e49b79a06aa21a79210e6.r2.dev/3KP%20(1).jpg') center top/cover no-repeat;border-bottom:1px solid rgba(255,140,0,0.15);contain:paint;}
 .pg-hero-glow{position:absolute;inset:0;pointer-events:none;}
 .pg-hero-glow::before{content:'';position:absolute;width:700px;height:400px;top:-80px;left:50%;transform:translateX(-50%);background:radial-gradient(ellipse,rgba(255,140,0,0.18) 0%,transparent 65%);filter:blur(70px);}
 .pg-inner{position:relative;z-index:1;max-width:820px;margin:0 auto;}
 .pg-eyebrow{display:inline-flex;align-items:center;gap:8px;font-family:'DM Sans',sans-serif;font-size:0.7rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--wc-orange);border:1px solid rgba(255,140,0,0.35);padding:6px 18px;border-radius:50px;margin-bottom:22px;background:rgba(255,140,0,0.06);}
-.pg-h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(3rem,9vw,6rem);line-height:0.93;color:#fff;margin-bottom:18px;}
+.pg-h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(3rem,9vw,6.2rem);line-height:0.93;color:#fff;margin-bottom:20px;}
 .pg-h1 span{background:var(--wc-grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
-.pg-sub{font-family:'DM Sans',sans-serif;font-size:clamp(0.95rem,2vw,1.1rem);color:rgba(255,255,255,0.55);max-width:620px;margin:0 auto 36px;line-height:1.72;}
-.pg-cta{display:inline-flex;align-items:center;gap:8px;font-family:'DM Sans',sans-serif;font-size:0.9rem;font-weight:700;padding:14px 32px;border-radius:50px;background:var(--wc-grad);color:#fff;text-decoration:none;box-shadow:0 6px 24px rgba(255,61,107,0.35);transition:opacity .2s,transform .2s;}
+.pg-sub{font-family:'DM Sans',sans-serif;font-size:clamp(0.95rem,2vw,1.12rem);color:rgba(255,255,255,0.7);max-width:640px;margin:0 auto 36px;line-height:1.78;}
+.pg-cta{display:inline-flex;align-items:center;gap:8px;font-family:'DM Sans',sans-serif;font-size:0.95rem;font-weight:700;padding:16px 38px;border-radius:50px;background:var(--wc-grad);color:#fff;text-decoration:none;box-shadow:0 6px 28px rgba(255,61,107,0.38);transition:opacity .2s,transform .2s;}
 .pg-cta:hover{opacity:.9;transform:translateY(-2px);}
-.pg-body{max-width:860px;margin:0 auto;padding:64px 24px 80px;text-align:center;}
-.pg-body p{font-family:'DM Sans',sans-serif;font-size:1rem;color:rgba(255,255,255,0.6);line-height:1.8;margin-bottom:20px;}
+.pg-cta-note{font-family:'DM Sans',sans-serif;font-size:0.76rem;color:rgba(255,255,255,0.32);margin-top:12px;letter-spacing:.5px;}
+
+/* SHARED SECTION */
+.m-section{padding:72px 24px;max-width:860px;margin:0 auto;text-align:center;}
+.m-section-wide{padding:72px 24px;max-width:1100px;margin:0 auto;text-align:center;}
+.m-eyebrow{font-family:'DM Sans',sans-serif;font-size:0.68rem;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--wc-orange);margin-bottom:14px;}
+.m-h2{font-family:'Bebas Neue',sans-serif;font-size:clamp(2rem,5vw,3.2rem);color:#fff;line-height:1;margin-bottom:18px;}
+.m-h2 span{background:var(--wc-grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.m-divider{width:48px;height:3px;background:var(--wc-grad);border-radius:2px;margin:0 auto 32px;}
+.m-body{font-family:'DM Sans',sans-serif;font-size:1.02rem;color:rgba(255,255,255,0.72);line-height:1.85;margin-bottom:18px;}
+
+/* LEAD */
+.m-lead{background:rgba(255,140,0,0.03);border-top:1px solid rgba(255,140,0,0.1);border-bottom:1px solid rgba(255,140,0,0.1);}
+.m-lead-qs{display:flex;flex-direction:column;gap:10px;margin:28px auto 0;max-width:560px;}
+.m-lead-q{font-family:'Bebas Neue',sans-serif;font-size:clamp(1.4rem,3vw,2rem);color:rgba(255,255,255,0.88);line-height:1.1;}
+
+/* STORY */
+.m-story-highlight{font-family:'DM Sans',sans-serif;font-size:1.15rem;color:#fff;font-weight:600;line-height:1.7;max-width:700px;margin:0 auto 20px;border-left:3px solid var(--wc-orange);padding-left:20px;text-align:left;}
+
+/* PITCH */
+.m-pitch-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;margin-top:40px;text-align:left;}
+.m-pitch-card{background:#111;border:1px solid rgba(255,255,255,0.07);border-radius:16px;padding:28px 24px;transition:border-color .2s;}
+.m-pitch-card:hover{border-color:rgba(255,140,0,0.3);}
+.m-pitch-icon{font-size:1.8rem;margin-bottom:14px;display:block;}
+.m-pitch-title{font-family:'Bebas Neue',sans-serif;font-size:1.4rem;color:#fff;margin-bottom:8px;}
+.m-pitch-desc{font-family:'DM Sans',sans-serif;font-size:0.88rem;color:rgba(255,255,255,0.6);line-height:1.65;}
+.m-pitch-link{display:inline-block;margin-top:12px;font-family:'DM Sans',sans-serif;font-size:0.8rem;font-weight:700;color:var(--wc-orange);text-decoration:none;letter-spacing:.5px;}
+.m-pitch-link:hover{opacity:.75;}
+
+/* EVIDENCE */
+.m-evidence{background:rgba(255,255,255,0.016);border-top:1px solid rgba(255,255,255,0.06);border-bottom:1px solid rgba(255,255,255,0.06);}
+.m-stats-row{display:flex;flex-wrap:wrap;justify-content:center;gap:32px;margin:32px 0 48px;}
+.m-stat-box{text-align:center;min-width:120px;}
+.m-stat-num{font-family:'Bebas Neue',sans-serif;font-size:3rem;background:var(--wc-grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1;}
+.m-stat-lbl{font-family:'DM Sans',sans-serif;font-size:0.7rem;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,0.38);margin-top:5px;}
+.m-testimonials{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;margin-top:0;text-align:left;}
+.m-testi{background:#111;border:1px solid rgba(255,255,255,0.07);border-radius:14px;padding:24px;}
+.m-testi-stars{color:var(--wc-orange);font-size:0.8rem;margin-bottom:10px;letter-spacing:2px;}
+.m-testi-text{font-family:'DM Sans',sans-serif;font-size:0.9rem;color:rgba(255,255,255,0.72);line-height:1.72;margin-bottom:14px;font-style:italic;}
+.m-testi-name{font-family:'DM Sans',sans-serif;font-size:0.76rem;font-weight:700;color:var(--wc-orange);}
+
+/* OFFER */
+.m-offer-wrap{background:linear-gradient(135deg,rgba(255,140,0,0.06),rgba(255,61,107,0.06));border:1px solid rgba(255,140,0,0.2);border-radius:22px;padding:52px 40px;max-width:680px;margin:0 auto;}
+.m-offer-badge{display:inline-block;font-family:'DM Sans',sans-serif;font-size:0.68rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--wc-orange);border:1px solid rgba(255,140,0,0.3);border-radius:50px;padding:5px 16px;margin-bottom:18px;}
+.m-offer-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(1.8rem,4vw,2.8rem);color:#fff;margin-bottom:10px;}
+.m-offer-sub{font-family:'DM Sans',sans-serif;font-size:0.95rem;color:rgba(255,255,255,0.6);margin-bottom:28px;line-height:1.65;}
+.m-offer-list{list-style:none;text-align:left;display:inline-flex;flex-direction:column;gap:11px;margin:0 0 32px;}
+.m-offer-list li{font-family:'DM Sans',sans-serif;font-size:0.96rem;color:rgba(255,255,255,0.82);display:flex;align-items:flex-start;gap:10px;}
+.m-offer-list li::before{content:'✓';color:#ff8c00;font-weight:700;flex-shrink:0;}
+.m-offer-price{font-family:'DM Sans',sans-serif;font-size:0.85rem;color:rgba(255,255,255,0.38);margin-bottom:28px;}
+.m-offer-price strong{color:#ff8c00;font-size:1.7rem;font-weight:800;}
+
+/* CLOSE */
+.m-close{background:linear-gradient(180deg,rgba(10,10,10,0) 0%,rgba(255,45,120,0.05) 100%);border-top:1px solid rgba(255,45,120,0.12);padding:88px 24px 96px;text-align:center;}
+.m-close-h2{font-family:'Bebas Neue',sans-serif;font-size:clamp(2.4rem,6vw,4.2rem);color:#fff;line-height:1;margin-bottom:16px;}
+.m-close-h2 span{background:var(--wc-grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.m-close-sub{font-family:'DM Sans',sans-serif;font-size:1rem;color:rgba(255,255,255,0.65);max-width:540px;margin:0 auto 36px;line-height:1.75;}
+.m-cta-big{display:inline-flex;align-items:center;gap:10px;font-family:'DM Sans',sans-serif;font-size:1.05rem;font-weight:800;padding:18px 52px;border-radius:50px;background:var(--wc-grad);color:#fff;text-decoration:none;box-shadow:0 8px 36px rgba(255,61,107,0.38);transition:opacity .2s,transform .2s;margin-bottom:14px;}
+.m-cta-big:hover{opacity:.88;transform:translateY(-2px);}
+.m-urgency{font-family:'DM Sans',sans-serif;font-size:0.78rem;font-weight:700;letter-spacing:1.8px;text-transform:uppercase;color:var(--wc-pink);margin-top:22px;}
+.m-risk{font-family:'DM Sans',sans-serif;font-size:0.82rem;color:rgba(255,255,255,0.3);margin-top:10px;}
+.m-warning{font-family:'DM Sans',sans-serif;font-size:0.85rem;color:rgba(255,255,255,0.35);margin-top:18px;border-top:1px solid rgba(255,255,255,0.06);padding-top:18px;max-width:480px;margin-left:auto;margin-right:auto;}
+
+@media(max-width:600px){
+  .m-offer-wrap{padding:36px 22px;}
+  .m-pitch-grid{grid-template-columns:1fr;}
+  .m-testimonials{grid-template-columns:1fr;}
+  .m-stats-row{gap:20px;}
+  .m-stat-num{font-size:2.4rem;}
+  .m-story-highlight{font-size:1rem;}
+}
 </style>
 <link rel="preload" as="image" href="https://pub-8ec39968108e49b79a06aa21a79210e6.r2.dev/3KP%20(1).jpg" fetchpriority="high"/>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-8X37JGGZY1"></script>
@@ -64,19 +135,163 @@
   <a href="/vip/" class="mobile-tab"><span class="tab-star">⭐</span>VIP</a>
 </div>
 
+<!-- 1. HEADLINE -->
 <section class="pg-hero">
   <div class="pg-hero-glow"></div>
   <div class="pg-inner">
-    <div class="pg-eyebrow">⚽ Matches &nbsp;·&nbsp; FIFA World Cup 2026</div>
-    <h1 class="pg-h1">World Cup <span>Matches</span></h1>
-    <p class="pg-sub">Every 2026 FIFA World Cup match in one place. Group stage results, knockout fixtures, live scores and everything you need to follow the tournament from start to finish.</p>
-    <a href="http://refpa30902.com/L?tag=d_5662146m_65195c_&site=5662146&ad=65195" class="pg-cta" target="_blank" rel="noopener">Get Access &#x2192;</a>
+    <div class="pg-eyebrow">⚽ FIFA World Cup 2026 &nbsp;·&nbsp; 104 Matches</div>
+    <h1 class="pg-h1">104 Matches.<br><span>One Summer.</span><br>Are You Ready?</h1>
+    <p class="pg-sub">The biggest World Cup in history is already underway. 48 nations, 16 host cities, and 104 games that will define careers, break hearts, and create the moments fans will talk about for the next 50 years. Don't miss a single one.</p>
+    <a href="http://refpa30902.com/L?tag=d_5662146m_65195c_&site=5662146&ad=65195" class="pg-cta" target="_blank" rel="noopener">Get Full Access &#x2192;</a>
+    <p class="pg-cta-note">Free to start &nbsp;·&nbsp; No card required</p>
   </div>
 </section>
 
-<div class="pg-body">
-  <p>The 2026 FIFA World Cup runs from June 11 to July 19, 2026 across 16 host cities in the United States, Canada and Mexico. With 48 nations, 104 matches and the biggest fan zones in tournament history, this is the most ambitious World Cup ever staged.</p>
-  <p>Explore the full <a href="/world-cup/" style="color:#ff8c00;text-decoration:none;">World Cup 2026 hub</a> for live scores, predictions, team guides, group tables and fan content — all in one place.</p>
+<!-- 2. LEAD -->
+<div class="m-lead">
+  <div class="m-section">
+    <p class="m-eyebrow">The Question Every Fan Should Ask</p>
+    <h2 class="m-h2">How Many Of These <span>104 Matches</span> Will You Actually Experience?</h2>
+    <div class="m-divider"></div>
+    <p class="m-body">Not just watch — experience. There's a difference between having a game on in the background and actually feeling every tackle, every near-miss, every last-minute winner like it matters. The World Cup only comes around every four years. This one — USA, Canada, Mexico, 48 teams — is the biggest ever staged.</p>
+    <div class="m-lead-qs">
+      <div class="m-lead-q">Who are you watching it with?</div>
+      <div class="m-lead-q">Do they actually care about football?</div>
+      <div class="m-lead-q">Or are you doing this alone — again?</div>
+    </div>
+  </div>
+</div>
+
+<!-- 3. STORY -->
+<div class="m-section">
+  <p class="m-eyebrow">The Fan Problem Nobody Talks About</p>
+  <h2 class="m-h2">You Know Football.<br><span>Your Circle Doesn't.</span></h2>
+  <div class="m-divider"></div>
+  <div class="m-story-highlight">
+    You're explaining why that offside call was wrong. They're looking at their phone. You're furious at the 89th-minute substitution. They're asking when the game ends. You feel everything about football — and you're surrounded by people who feel nothing.
+  </div>
+  <p class="m-body">That's the real problem with the World Cup for fans who actually care. It's not access to the matches. It's access to people who feel the same way. Women who text you the team news before kickoff. Fans who already know the group standings. Someone who understands why France vs. Brazil in the quarter-finals means more than just a football game.</p>
+  <p class="m-body">The 2026 World Cup runs June 11 to July 19. That's 39 days, 104 matches, and some of the most emotionally charged nights in sports. You deserve to share every single one of them with someone who gets it.</p>
+</div>
+
+<!-- 4. PITCH -->
+<div style="background:rgba(255,255,255,0.016);border-top:1px solid rgba(255,255,255,0.06);border-bottom:1px solid rgba(255,255,255,0.06);">
+  <div class="m-section-wide">
+    <p class="m-eyebrow">The Solution</p>
+    <h2 class="m-h2">Everything You Need.<br><span>All In One Place.</span></h2>
+    <div class="m-divider"></div>
+    <p class="m-body" style="max-width:660px;margin:0 auto 40px;">We've built the only World Cup 2026 hub that covers the matches and the people who love them. Schedule, predictions, fan content — and 850,000+ members who are watching the same games you are.</p>
+    <div class="m-pitch-grid">
+      <div class="m-pitch-card">
+        <span class="m-pitch-icon">📅</span>
+        <div class="m-pitch-title">Full Match Schedule</div>
+        <p class="m-pitch-desc">Every group stage fixture, knockout tie and final — with dates, kick-off times and venues across all 16 host cities. Never miss a match.</p>
+        <a href="/world-cup/fixtures/" class="m-pitch-link">View All Fixtures →</a>
+      </div>
+      <div class="m-pitch-card">
+        <span class="m-pitch-icon">🎯</span>
+        <div class="m-pitch-title">Expert Predictions</div>
+        <p class="m-pitch-desc">Match-by-match predictions, group table forecasts, and the stat-backed bracket picks that win prediction leagues. Updated before every matchday.</p>
+        <a href="/world-cup/predictions/" class="m-pitch-link">See Predictions →</a>
+      </div>
+      <div class="m-pitch-card">
+        <span class="m-pitch-icon">🔥</span>
+        <div class="m-pitch-title">Meet Football Fans</div>
+        <p class="m-pitch-desc">850,000+ members online. Football women who pick their team before kickoff, not after. Connect during half-time, match nights, and the moments that matter most.</p>
+        <a href="/world-cup/dating/" class="m-pitch-link">Meet Fans →</a>
+      </div>
+      <div class="m-pitch-card">
+        <span class="m-pitch-icon">📦</span>
+        <div class="m-pitch-title">Free Fan Pack</div>
+        <p class="m-pitch-desc">Bracket templates, wallpapers for all 48 nations, and the complete match-day guide — free instant download before the next kickoff.</p>
+        <a href="/world-cup/fan-pack/" class="m-pitch-link">Download Free →</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 5. EVIDENCE -->
+<div class="m-evidence">
+  <div class="m-section">
+    <p class="m-eyebrow">The Numbers</p>
+    <h2 class="m-h2">The <span>Biggest</span> World Cup Ever Staged</h2>
+    <div class="m-divider"></div>
+    <div class="m-stats-row">
+      <div class="m-stat-box">
+        <div class="m-stat-num">48</div>
+        <div class="m-stat-lbl">Nations</div>
+      </div>
+      <div class="m-stat-box">
+        <div class="m-stat-num">104</div>
+        <div class="m-stat-lbl">Matches</div>
+      </div>
+      <div class="m-stat-box">
+        <div class="m-stat-num">16</div>
+        <div class="m-stat-lbl">Host Cities</div>
+      </div>
+      <div class="m-stat-box">
+        <div class="m-stat-num">39</div>
+        <div class="m-stat-lbl">Days of Football</div>
+      </div>
+      <div class="m-stat-box">
+        <div class="m-stat-num">850K+</div>
+        <div class="m-stat-lbl">Members Online</div>
+      </div>
+    </div>
+    <div class="m-testimonials">
+      <div class="m-testi">
+        <div class="m-testi-stars">★★★★★</div>
+        <p class="m-testi-text">"I found someone who knows every player in the Brazilian squad. We've been watching every match together since the group stage. Best World Cup I've ever had."</p>
+        <div class="m-testi-name">— James, 29 · England</div>
+      </div>
+      <div class="m-testi">
+        <div class="m-testi-stars">★★★★★</div>
+        <p class="m-testi-text">"The predictions were spot on — won my office league for the first time. Used the bracket guide all the way from the group stage to the semi-finals."</p>
+        <div class="m-testi-name">— Marco, 34 · Spain</div>
+      </div>
+      <div class="m-testi">
+        <div class="m-testi-stars">★★★★★</div>
+        <p class="m-testi-text">"She messaged me right after the 90th-minute goal in the Argentina match. Couldn't believe a woman was as invested in it as I was. We haven't stopped talking."</p>
+        <div class="m-testi-name">— Luca, 27 · Italy</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 6. OFFER -->
+<div class="m-section">
+  <p class="m-eyebrow">What You Get</p>
+  <h2 class="m-h2">Your Complete <span>World Cup Package</span></h2>
+  <div class="m-divider"></div>
+  <div class="m-offer-wrap">
+    <div class="m-offer-badge">Limited To The 2026 Tournament</div>
+    <div class="m-offer-title">The World Cup 2026 Fan Access Pass</div>
+    <p class="m-offer-sub">Everything you need to follow all 104 matches — and share the experience with people who actually care about football.</p>
+    <ul class="m-offer-list">
+      <li>Full fixture list — all 104 matches with dates, times &amp; venues</li>
+      <li>Group stage predictions — all 12 groups ranked by upset potential</li>
+      <li>Knockout bracket guide — stat-backed picks to the final</li>
+      <li>Free bracket template — print or digital, instant download</li>
+      <li>Wallpapers for all 48 nations — phone and desktop</li>
+      <li>Access to 850,000+ members — football fans, matchday nights</li>
+      <li>Live match chat — connect with fans during every game</li>
+    </ul>
+    <p class="m-offer-price">Everything above — start from <strong>Free</strong></p>
+    <a href="http://refpa30902.com/L?tag=d_5662146m_65195c_&site=5662146&ad=65195" class="pg-cta" target="_blank" rel="noopener" style="display:inline-flex;text-decoration:none;">Get Access Now &#x2192;</a>
+  </div>
+</div>
+
+<!-- 7. CLOSE -->
+<div class="m-close">
+  <div style="max-width:700px;margin:0 auto;">
+    <p class="m-eyebrow">This Is Your Moment</p>
+    <h2 class="m-close-h2">Don't Watch The <span>Final Alone.</span></h2>
+    <p class="m-close-sub">The 2026 World Cup is already underway. Group matches are happening now. Every day you wait is a match you could have shared with someone who feels football the same way you do. Join free. Connect before the next kickoff.</p>
+    <a href="http://refpa30902.com/L?tag=d_5662146m_65195c_&site=5662146&ad=65195" class="m-cta-big" target="_blank" rel="noopener">Join Free — Start Now &#x2192;</a>
+    <p class="m-risk">No card required &nbsp;·&nbsp; Instant access &nbsp;·&nbsp; Cancel anytime</p>
+    <p class="m-urgency">⚽ Tournament ends July 19, 2026</p>
+    <p class="m-warning">104 matches. 39 days. The biggest World Cup in history. You have one window to experience it the right way. This offer is live during the tournament only.</p>
+  </div>
 </div>
 
 <footer class="site-footer">
