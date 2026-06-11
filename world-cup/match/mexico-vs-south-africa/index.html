@@ -108,7 +108,7 @@ const MATCH = {
   venue:    'Estadio Azteca, Mexico City',
   date:     'June 11, 2026',
   time:     '8:00 PM CT',
-  kickoff:  '2026-06-12T01:00:00Z',
+  kickoff:  '2026-06-11T00:00:00Z',
   odds:  { a: '1.444', draw: '4.55', b: '8.8' },
   videoId: '',
   bettingUrl: 'http://refpa30902.com/L?tag=d_5662146m_65195c_&site=5662146&ad=65195&r=top-events/wc2026',
@@ -233,6 +233,10 @@ nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-co
 .cd-sub{font-family:'JetBrains Mono',monospace;font-size:.45rem;color:var(--muted);letter-spacing:.1em}
 .cd-sep{font-family:'Bebas Neue',sans-serif;font-size:1.6rem;color:var(--neon-a);align-self:center;margin-bottom:2rem;animation:blink 1s ease-in-out infinite}
 @keyframes blink{0%,100%{opacity:1}50%{opacity:.2}}
+.live-badge{display:flex;align-items:center;justify-content:center;gap:.5rem;font-family:'Bebas Neue',sans-serif;font-size:1.6rem;color:var(--neon-orange);letter-spacing:.15em;}
+.live-dot{width:9px;height:9px;border-radius:50%;background:var(--neon-orange);animation:livePulse 1s ease-in-out infinite;flex-shrink:0;}
+@keyframes livePulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.3;transform:scale(.7)}}
+.countdown-card.live-mode{background:transparent;border:none;padding:0;backdrop-filter:none;-webkit-backdrop-filter:none;box-shadow:none;}
 
 .match-info-center{font-family:'JetBrains Mono',monospace;font-size:.95rem;color:#c9a227;letter-spacing:.08em;text-align:center;line-height:1.9;font-weight:600;}
 
@@ -466,9 +470,9 @@ main{flex:1}
 
       <div class="vs-center">
         <div class="vs-badge">VS</div>
-        <div class="countdown-card">
-          <div class="cd-label">⏱ Kickoff In</div>
-          <div class="cd-digits">
+        <div class="countdown-card live-mode" id="countdownCard">
+          <div class="cd-label" id="cdLabel" style="display:none;">⏱ Kickoff In</div>
+          <div class="cd-digits" id="cdDigits" style="display:none;">
             <div class="cd-unit"><span class="cd-num" id="cdD">00</span><span class="cd-sub">DAYS</span></div>
             <div class="cd-sep">:</div>
             <div class="cd-unit"><span class="cd-num" id="cdH">00</span><span class="cd-sub">HRS</span></div>
@@ -477,6 +481,7 @@ main{flex:1}
             <div class="cd-sep">:</div>
             <div class="cd-unit"><span class="cd-num" id="cdS">00</span><span class="cd-sub">SEC</span></div>
           </div>
+          <div class="live-badge" id="liveBadge"><span class="live-dot"></span>LIVE NOW</div>
         </div>
         <div class="match-info-center" id="matchInfoCenter"></div>
         <a id="oddsRowLink" href="http://refpa30902.com/L?tag=d_5662146m_65195c_&site=5662146&ad=65195&r=top-events/wc2026" target="_blank" rel="noopener sponsored" style="display:block;text-decoration:none;width:100%;">
@@ -666,7 +671,7 @@ var var_neon_cyan='#00e5ff';
   if(prev)highlightVote(prev);
 
   var kick=new Date(M.kickoff);
-  function updateCd(){var diff=kick-Date.now();if(diff<=0){['cdD','cdH','cdM','cdS'].forEach(function(id){document.getElementById(id).textContent='00';});return;}var d=Math.floor(diff/86400000),h=Math.floor((diff%86400000)/3600000),m=Math.floor((diff%3600000)/60000),s=Math.floor((diff%60000)/1000);document.getElementById('cdD').textContent=pad(d);document.getElementById('cdH').textContent=pad(h);document.getElementById('cdM').textContent=pad(m);document.getElementById('cdS').textContent=pad(s);}
+  function updateCd(){var diff=kick-Date.now();if(diff<=0){document.getElementById('cdDigits').style.display='none';document.getElementById('cdLabel').style.display='none';document.getElementById('liveBadge').style.display='flex';return;}var d=Math.floor(diff/86400000),h=Math.floor((diff%86400000)/3600000),m=Math.floor((diff%3600000)/60000),s=Math.floor((diff%60000)/1000);document.getElementById('cdD').textContent=pad(d);document.getElementById('cdH').textContent=pad(h);document.getElementById('cdM').textContent=pad(m);document.getElementById('cdS').textContent=pad(s);}
   function pad(n){return n<10?'0'+n:''+n;}
   updateCd();setInterval(updateCd,1000);
 
