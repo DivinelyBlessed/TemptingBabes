@@ -414,7 +414,7 @@
 <div class="wc-section">
 
   <div class="wc-countdown-wrap">
-    <div class="wc-countdown-label">⚽ Opening Match &nbsp;&middot;&nbsp; Estadio Azteca, Mexico City</div>
+    <div class="wc-countdown-label">⚽ Mexico vs South Africa &nbsp;&middot;&nbsp; Estadio Azteca, Mexico City</div>
     <div class="wc-countdown-title">World Cup 2026 Kicks Off In</div>
     <div class="wc-countdown-timer" id="wcCountdown">
       <div class="wc-count-unit"><div class="wc-count-num" id="cd-days">--</div><div class="wc-count-label">Days</div></div>
@@ -719,7 +719,7 @@
 
     <details class="wc-faq-item">
       <summary>Who are the favourites to win World Cup 2026?</summary>
-      <div class="wc-faq-body">France, Brazil and Argentina are consistently listed among the pre-tournament favourites, with England, Germany and Portugal considered dark horses. See our <a href="/world-cup/predictions/">predictions and betting odds</a> for the latest.</div>
+      <div class="wc-faq-body"><strong>Spain</strong> lead the market as slight favourites, followed by <strong>France, England, Brazil</strong> and <strong>Argentina</strong>. Portugal and Germany are considered strong dark horses. See our <a href="/world-cup/predictions/">predictions and betting odds</a> for the latest.</div>
     </details>
 
     <details class="wc-faq-item">
@@ -739,12 +739,12 @@
 
     <details class="wc-faq-item">
       <summary style="white-space:nowrap;">When is the World Cup 2026 opening ceremony?</summary>
-      <div class="wc-faq-body">The opening ceremony takes place on <strong>June 11, 2026</strong> at Estadio Azteca in Mexico City, before the first match. Full details on our <a href="/world-cup/opening-ceremony/">opening ceremony page</a>.</div>
+      <div class="wc-faq-body">The opening ceremony takes place on <strong>June 11, 2026</strong> at Estadio Azteca in Mexico City, starting at <strong>1:30 PM ET (18:30 UTC)</strong> — 90 minutes before kick-off. Headlined by Shakira, Burna Boy, J Balvin, Tyla and more. Full details on our <a href="/world-cup/opening-ceremony/">opening ceremony page</a>.</div>
     </details>
 
     <details class="wc-faq-item">
       <summary>What is the World Cup 2026 official song?</summary>
-      <div class="wc-faq-body">FIFA typically announces the official World Cup anthem in the months before the tournament. Check our <a href="/world-cup/songs/">World Cup songs page</a> for the official anthem and past World Cup soundtracks.</div>
+      <div class="wc-faq-body">The official song is <strong>"Dai Dai"</strong> by <strong>Shakira &amp; Burna Boy</strong>, performed live at the opening ceremony on June 11 at Estadio Azteca. Check our <a href="/world-cup/songs/">World Cup songs page</a> for the full soundtrack and past anthems.</div>
     </details>
 
   </div>
@@ -827,11 +827,11 @@
 <!-- COUNTDOWN -->
 <script>
 (function(){
-  var target=new Date('2026-06-11T00:00:00Z');
+  var target=new Date('2026-06-11T19:00:00Z');
   function pad(n){return n<10?'0'+n:n;}
   function tick(){
     var diff=target-new Date();
-    if(diff<=0){document.getElementById('wcCountdown').innerHTML='<div style="font-family:\'Bebas Neue\',sans-serif;font-size:2rem;color:#ff8c00;letter-spacing:1px;">The World Cup Has Started!</div>';return;}
+    if(diff<=0){document.getElementById('wcCountdown').innerHTML='<div style="font-family:\'Bebas Neue\',sans-serif;font-size:1.6rem;color:#ff8c00;letter-spacing:1px;margin-bottom:18px;">⚽ The World Cup Is Live!</div><a href="/world-cup/betting-odds/" style="display:inline-block;background:linear-gradient(135deg,#ff8c00,#ff3d6b);color:#fff;font-family:\'DM Sans\',sans-serif;font-weight:700;font-size:1rem;padding:14px 32px;border-radius:50px;text-decoration:none;margin:0 8px 10px;">Bet on Today\'s Match →</a><a href="/world-cup/live-scores/" style="display:inline-block;border:1px solid rgba(255,255,255,0.2);color:rgba(255,255,255,0.8);font-family:\'DM Sans\',sans-serif;font-weight:600;font-size:1rem;padding:14px 32px;border-radius:50px;text-decoration:none;margin:0 8px 10px;">Live Scores →</a>';return;}
     document.getElementById('cd-days').textContent=Math.floor(diff/86400000);
     document.getElementById('cd-hours').textContent=pad(Math.floor((diff%86400000)/3600000));
     document.getElementById('cd-mins').textContent=pad(Math.floor((diff%3600000)/60000));

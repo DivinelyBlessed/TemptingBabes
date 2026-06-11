@@ -1476,8 +1476,11 @@
     }
   });
 
-  /* Recovery — if video stalls, reload and play */
+  /* Recovery — only reload if video already started playing (not during initial buffering) */
+  var hasPlayed = false;
+  video.addEventListener('playing', function(){ hasPlayed = true; });
   video.addEventListener('stalled', function(){
+    if (!hasPlayed) return;
     video.load();
     video.play();
   });
